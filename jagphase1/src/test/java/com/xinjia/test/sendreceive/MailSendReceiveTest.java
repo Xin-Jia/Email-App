@@ -1,7 +1,7 @@
 package com.xinjia.test.sendreceive;
 
 import com.xinjia.business.SendAndReceive;
-import com.xinjia.data.MailConfigBean;
+import com.xinjia.properties.MailConfigBean;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;

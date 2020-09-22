@@ -1,5 +1,5 @@
 
-package com.xinjia.data;
+package com.xinjia.properties;
 
 /**
  * Class to contain the information for an email account. This is sufficient for

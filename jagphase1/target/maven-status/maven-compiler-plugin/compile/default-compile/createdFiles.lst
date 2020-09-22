@@ -1,2 +1,2 @@
-com\xinjia\data\MailConfigBean.class
+com\xinjia\properties\MailConfigBean.class
 com\xinjia\business\SendAndReceive.class

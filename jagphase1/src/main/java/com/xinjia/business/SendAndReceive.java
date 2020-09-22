@@ -1,6 +1,6 @@
 package com.xinjia.business;
 
-import com.xinjia.data.MailConfigBean;
+import com.xinjia.properties.MailConfigBean;
 import java.io.File;
 import java.util.ArrayList;
 import javax.mail.Flags;
