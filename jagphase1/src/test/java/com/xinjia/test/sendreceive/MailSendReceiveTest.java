@@ -1,4 +1,4 @@
-package com.xinjia.test;
+package com.xinjia.test.sendreceive;
 
 import com.xinjia.business.SendAndReceive;
 import com.xinjia.data.MailConfigBean;

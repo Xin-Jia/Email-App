@@ -1,4 +1,0 @@
--------------------------------------------------------------------------------
-Test set: com.xinjia.test.MailSendReceiveTest
--------------------------------------------------------------------------------
-Tests run: 35, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 98.274 s - in com.xinjia.test.MailSendReceiveTest
