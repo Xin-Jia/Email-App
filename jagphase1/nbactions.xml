@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actions>
+        <action>
+            <actionName>CUSTOM-Test</actionName>
+            <displayName>Test</displayName>
+        </action>
+        <action>
+            <actionName>CUSTOM-Test2</actionName>
+            <displayName>Test2</displayName>
+        </action>
+    </actions>
