@@ -16,8 +16,8 @@ public class MailConfigBean {
     private String host;
     private String userEmailAddress;
     private String password;
-    private String imapurl;
-    private String smtpurl;
+    private String imapUrl;
+    private String smtpUrl;
     private int imapPort;
     private int smtpPort;
     private String dbUrl;
@@ -34,6 +34,16 @@ public class MailConfigBean {
         this.host = "";
         this.userEmailAddress = "";
         this.password = "";
+        this.imapUrl = "";
+        this.smtpUrl = "";
+        this.imapPort = 0;
+        this.smtpPort = 0;
+        this.dbUrl = "";
+        this.dbName = "";
+        this.dbPort = 0;
+        this.dbUsername = "";
+        this.dbPassword = "";
+        
     }
 
     /**
@@ -89,6 +99,63 @@ public class MailConfigBean {
      */
     public final void setPassword(final String password) {
         this.password = password;
+    }
+    
+    /**
+     * @return the imap url
+     */
+    public final String getImapUrl() {
+        return imapUrl;
+    }
+    
+    /**
+     * @return the smtp url
+     */
+    public final String getSmtpUrl() {
+        return smtpUrl;
+    }
+    
+    /**
+     * @return the imap port
+     */
+    public final int getImapPort() {
+        return imapPort;
+    }
+    /**
+     * @return the smtp port
+     */
+    public final int getSmtpPort() {
+        return smtpPort;
+    }
+    /**
+     * @return the database url
+     */
+    public final String getDbUrl() {
+        return dbUrl;
+    }
+    /**
+     * @return the database name
+     */
+    public final String getDbName() {
+        return dbName;
+    }
+    /**
+     * @return the database port
+     */
+    public final int getDbPort() {
+        return dbPort;
+    }
+    /**
+     * @return the database username
+     */
+    public final String getDbUsername() {
+        return dbUsername;
+    }
+    /**
+     * @return the database password
+     */
+    public final String getDbPassword() {
+        return dbPassword;
     }
 }
 
