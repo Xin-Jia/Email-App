@@ -597,6 +597,7 @@ public class MailSendReceiveTest {
      * @return the message in the email (we would only get the first position of the list)
      */
     private ArrayList<String> retrieveMessageContent(List<EmailMessage> messages, String format) {
+        //it uses an ArrayList since members in a lambda cannot be changed
         ArrayList<String> msgToReturn = new ArrayList<>();
         messages.stream().map((mesg) -> {
             log.info("------");
