@@ -95,14 +95,22 @@ public class SendAndReceive {
 
         if (!regFiles.isEmpty()) {
             for (File rfile : regFiles) {
-                if (rfile != null) {
+                if (rfile == null) {
+                    LOG.warn("Null: please provide a valid attachment");
+                    throw new NullPointerException();
+                }
+                else{
                     email.attachment(EmailAttachment.with().content(rfile));
                 }
             }
         }
         if (!embedFiles.isEmpty()) {
             for (File efile : embedFiles) {
-                if (efile != null) {
+                if (efile == null) {
+                    LOG.warn("Null: please provide a valid attachment");
+                    throw new NullPointerException();
+                }
+                else{
                     email.embeddedAttachment(EmailAttachment.with().content(efile));
                 }
             }

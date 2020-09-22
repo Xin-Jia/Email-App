@@ -522,6 +522,16 @@ public class MailSendReceiveTest {
         regFiles = null;
         Email emailSend = mailFunction.sendMail(toRecipients, ccRecipients, bccRecipients, subject, msg, htmlMsg, regFiles, embedFiles);
     }
+    
+    //Throws a NullPointerException when the regular attachment has a null file.
+    //The user gets a warning and the email is not sent.
+    @Test(expected = NullPointerException.class)
+    public void checkNullRegularFileInList() {
+        log.info("---------------Check Null Regular File In List--------------");
+        toRecipients.add("xinjia1.cao@gmail.com");
+        regFiles.add(null);
+        Email emailSend = mailFunction.sendMail(toRecipients, ccRecipients, bccRecipients, subject, msg, htmlMsg, regFiles, embedFiles);
+    }
 
     //Throws a NullPointerException when the embedded attachment is null.
     //The user gets a warning and the email is not sent.
