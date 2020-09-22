@@ -18,6 +18,10 @@ import static org.junit.Assert.assertEquals;
 
 /**
  * Unit test for sending and receiving emails.
+ * Note : I could not test the bcc field for receive. 
+ * I could not see the bcc address in the To field of ReceivedEmail as you said it would.
+ * The only address I can see from the bcc address is the recipients in the 
+ * To field excluding bcc and the address of the sender.
  * @author Xin Jia Cao
  */
 public class MailSendReceiveTest {
