@@ -101,26 +101,15 @@ public class SendAndReceive {
 
         if (!regFiles.isEmpty()) {
             for (File rfile : regFiles) {
-                if (rfile == null) {
-                    LOG.warn("Null: please provide a valid attachment");
-                    throw new NullPointerException();
-                }
-                else{
-                    email.attachment(EmailAttachment.with().content(rfile));
-                }
+                email.attachment(EmailAttachment.with().content(rfile));
             }
         }
         if (!embedFiles.isEmpty()) {
             for (File efile : embedFiles) {
-                if (efile == null) {
-                    LOG.warn("Null: please provide a valid attachment");
-                    throw new NullPointerException();
-                }
-                else{
-                    email.embeddedAttachment(EmailAttachment.with().content(efile));
-                }
+                email.embeddedAttachment(EmailAttachment.with().content(efile));
             }
         }
+
         email.subject(subject)
                 .textMessage(msg)
                 .htmlMessage(htmlMsg);
@@ -131,9 +120,9 @@ public class SendAndReceive {
 
     /**
      * Sends an email to its recipient(s).Opens an smtp server and creates a
- session to send the email created.If at least one of the given inputs is
- null or one of the recipients has an invalid email address, an exception
- is thrown.
+     * session to send the email created.If at least one of the given inputs is
+     * null or one of the recipients has an invalid email address, an exception
+     * is thrown.
      *
      * @param toRecipients Recipients in the To field
      * @param ccRecipients Recipients in the CC field
@@ -150,18 +139,13 @@ public class SendAndReceive {
      * @throws com.xinjia.exceptions.NullCCEmailAddressException
      * @throws com.xinjia.exceptions.NullBCCEmailException
      * @throws com.xinjia.exceptions.NullBCCEmailAddressException
-     * @throws NullPointerException when at least one parameter is null. Every
-     * field needs to be valid in order to send the email.
      * @throws MailException when one of the recipients' email address is
      * invalid
      */
     public Email sendMail(ArrayList<String> toRecipients, ArrayList<String> ccRecipients, ArrayList<String> bccRecipients, String subject, String msg, String htmlMsg, ArrayList<File> regFiles, ArrayList<File> embedFiles) throws NullToEmailException, NullToEmailAddressException, NullCCEmailException, NullCCEmailAddressException, NullBCCEmailException, NullBCCEmailAddressException {
 
         Email email = null;
-        if (subject == null || msg == null || htmlMsg == null || regFiles == null || embedFiles == null) {
-            LOG.warn("Null: one or more parameters are null");
-            throw new NullPointerException();
-        }
+
         if (checkToEmails(toRecipients) && checkCCEmails(ccRecipients) && checkBCCEmails(bccRecipients)) {
             SmtpServer smtpServer = MailServer.create()
                     .ssl(true)
@@ -220,7 +204,7 @@ public class SendAndReceive {
 
                     emails = session.receiveEmailAndMarkSeen(EmailFilter.filter().flag(Flags.Flag.SEEN, false));
                 } catch (MailException ex) {
-                    LOG.error("Failure in receive session: "+ ex.getCause());
+                    LOG.error("Failure in receive session: " + ex.getCause());
 
                 }
             } else {
@@ -236,8 +220,9 @@ public class SendAndReceive {
      *
      * @param address the email address to be checked
      * @return boolean : true if the address is valid and false otherwise
-     * @throws NullPointerException when the address is null. 
-     *         (This helper is used only to check the send and receive config bean, so they must not be null)
+     * @throws NullPointerException when the address is null. (This helper is
+     * used only to check the send and receive config bean, so they must not be
+     * null)
      */
     private boolean checkEmail(String address) {
         if (address == null) {
@@ -249,35 +234,22 @@ public class SendAndReceive {
     }
 
     /**
-     * Checks if a given email address is valid in a list of addresses regarding
+     * Checks if a given email address is valid in a To list of addresses regarding
      * its format. If an address is null, an exception is thrown.
      *
      * @param addresses the list of email addresses to be checked
-     * @throws NullPointerException if an email is null
+     * @throws NullToEmailException if an email list is null
+     * @throws NullToEmailAddressException if an email address is null
      * @return boolean : true if the address is valid and false otherwise
      */
-    private boolean checkEmails(ArrayList<String> addresses) {
-            
-        for (String address : addresses) {
-            if (address == null) {
-                LOG.warn("Null: Please enter a valid email address");
-                throw new NullPointerException();
-            }
-            if (!(RFC2822AddressParser.STRICT.parseToEmailAddress(address) != null)) {
-                return false;
-            }
-        }
-        return true;
-    }
-    
     private boolean checkToEmails(ArrayList<String> addresses) throws NullToEmailException, NullToEmailAddressException {
-        if(addresses == null){
+        if (addresses == null) {
             throw new NullToEmailException("The list of To recipients is null");
         }
         for (String address : addresses) {
             if (address == null) {
                 LOG.warn("Null: Please enter a valid email address");
-                throw new NullToEmailAddressException("The email address: "+address+" is null");
+                throw new NullToEmailAddressException("The email address: " + address + " is null");
             }
             if (!(RFC2822AddressParser.STRICT.parseToEmailAddress(address) != null)) {
                 return false;
@@ -285,14 +257,24 @@ public class SendAndReceive {
         }
         return true;
     }
+
+    /**
+     * Checks if a given email address is valid in a CC list of addresses regarding
+     * its format. If an address is null, an exception is thrown.
+     *
+     * @param addresses the list of email addresses to be checked
+     * @throws NullCCEmailException if an email list is null
+     * @throws NullCCEmailAddressException if an email address is null
+     * @return boolean : true if the address is valid and false otherwise
+     */
     private boolean checkCCEmails(ArrayList<String> addresses) throws NullCCEmailException, NullCCEmailAddressException {
-        if(addresses == null){
+        if (addresses == null) {
             throw new NullCCEmailException("The list of CC recipients is null");
         }
         for (String address : addresses) {
             if (address == null) {
                 LOG.warn("Null: Please enter a valid email address");
-                throw new NullCCEmailAddressException("The email address: "+address+" is null");
+                throw new NullCCEmailAddressException("The email address: " + address + " is null");
             }
             if (!(RFC2822AddressParser.STRICT.parseToEmailAddress(address) != null)) {
                 return false;
@@ -300,14 +282,24 @@ public class SendAndReceive {
         }
         return true;
     }
+
+    /**
+     * Checks if a given email address is valid in a BCC list of addresses regarding
+     * its format. If an address is null, an exception is thrown.
+     *
+     * @param addresses the list of email addresses to be checked
+     * @throws NullBCCEmailException if an email list is null
+     * @throws NullBCCEmailAddressException if an email address is null
+     * @return boolean : true if the address is valid and false otherwise
+     */
     private boolean checkBCCEmails(ArrayList<String> addresses) throws NullBCCEmailException, NullBCCEmailAddressException {
-        if(addresses == null){
+        if (addresses == null) {
             throw new NullBCCEmailException("The list of BCC recipients is null");
         }
         for (String address : addresses) {
             if (address == null) {
                 LOG.warn("Null: Please enter a valid email address");
-                throw new NullBCCEmailAddressException("The email address: "+address+" is null");
+                throw new NullBCCEmailAddressException("The email address: " + address + " is null");
             }
             if (!(RFC2822AddressParser.STRICT.parseToEmailAddress(address) != null)) {
                 return false;

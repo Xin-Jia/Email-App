@@ -9613,3 +9613,945 @@ Caused by: javax.mail.AuthenticationFailedException: [AUTHENTICATIONFAILED] Inva
 [INFO ] 2020-09-30 14:54:56.998 [main] MailSendReceiveTest - ---------------Check Invalid Email---------------
 [WARN ] 2020-09-30 14:54:56.998 [main] SendAndReceive - One or more send addresses are invalid.
 [INFO ] 2020-09-30 14:54:56.999 [main] MailSendReceiveTest - ---------------Check Null Send Bean Address---------------
+[INFO ] 2020-09-30 15:15:08.356 [main] MailSendReceiveTest - ---------------Check Number Of Received Regular Files---------------
+[INFO ] 2020-09-30 15:15:10.957 [main] SendAndReceive - Email sent
+[INFO ] 2020-09-30 15:15:14.858 [main] SendAndReceive - Message count: 97
+[DEBUG] 2020-09-30 15:15:17.648 [main] MailSendReceiveTest - sent files: 2
+[DEBUG] 2020-09-30 15:15:17.649 [main] MailSendReceiveTest - received files: 2
+[INFO ] 2020-09-30 15:15:17.650 [main] MailSendReceiveTest - ---------------Check Received Plain Messages---------------
+[INFO ] 2020-09-30 15:15:18.876 [main] SendAndReceive - Email sent
+[INFO ] 2020-09-30 15:15:18.953 [main] MailSendReceiveTest - ------
+[INFO ] 2020-09-30 15:15:18.953 [main] MailSendReceiveTest - text/plain
+[DEBUG] 2020-09-30 15:15:18.954 [main] MailSendReceiveTest - The message sent: This is the message of the test
+[DEBUG] 2020-09-30 15:15:18.954 [main] MailSendReceiveTest - The message sent type: text/plain
+[INFO ] 2020-09-30 15:15:18.954 [main] MailSendReceiveTest - ------
+[INFO ] 2020-09-30 15:15:18.954 [main] MailSendReceiveTest - text/html
+[INFO ] 2020-09-30 15:15:22.799 [main] SendAndReceive - Message count: 98
+[INFO ] 2020-09-30 15:15:23.715 [main] MailSendReceiveTest - ------
+[INFO ] 2020-09-30 15:15:23.715 [main] MailSendReceiveTest - TEXT/PLAIN
+[DEBUG] 2020-09-30 15:15:23.715 [main] MailSendReceiveTest - The message sent: This is the message of the test
+[DEBUG] 2020-09-30 15:15:23.715 [main] MailSendReceiveTest - The message sent type: TEXT/PLAIN
+[INFO ] 2020-09-30 15:15:23.716 [main] MailSendReceiveTest - ------
+[INFO ] 2020-09-30 15:15:23.716 [main] MailSendReceiveTest - TEXT/HTML
+[INFO ] 2020-09-30 15:15:23.717 [main] MailSendReceiveTest - ---------------Check Null Receive Bean---------------
+[INFO ] 2020-09-30 15:15:24.888 [main] SendAndReceive - Email sent
+[WARN ] 2020-09-30 15:15:27.930 [main] SendAndReceive - Null: please enter a valid receive config bean
+[INFO ] 2020-09-30 15:15:27.931 [main] MailSendReceiveTest - ---------------Check Null Receive Bean Address---------------
+[WARN ] 2020-09-30 15:15:27.931 [main] SendAndReceive - Null: please enter a valid email address
+[INFO ] 2020-09-30 15:15:27.932 [main] MailSendReceiveTest - ---------------Check Invalid Send Bean Address---------------
+[WARN ] 2020-09-30 15:15:27.932 [main] SendAndReceive - Invalid send bean: invalidemail
+[INFO ] 2020-09-30 15:15:27.933 [main] MailSendReceiveTest - ---------------Check Invalid Receive Bean Address---------------
+[WARN ] 2020-09-30 15:15:27.933 [main] SendAndReceive - Invalid receive email address
+[INFO ] 2020-09-30 15:15:27.933 [main] MailSendReceiveTest - ---------------Check No Recipients---------------
+[WARN ] 2020-09-30 15:15:27.933 [main] SendAndReceive - Please enter at least one recipient
+[INFO ] 2020-09-30 15:15:27.934 [main] MailSendReceiveTest - ---------------Check Null CC List---------------
+[INFO ] 2020-09-30 15:15:27.934 [main] MailSendReceiveTest - ---------------Check Null Send Bean---------------
+[WARN ] 2020-09-30 15:15:27.935 [main] SendAndReceive - Null: please enter a valid send config bean
+[INFO ] 2020-09-30 15:15:27.935 [main] MailSendReceiveTest - ---------------Check If Mails Are Received From the Right Sender---------------
+[INFO ] 2020-09-30 15:15:29.223 [main] SendAndReceive - Email sent
+[INFO ] 2020-09-30 15:15:32.963 [main] SendAndReceive - Message count: 100
+[DEBUG] 2020-09-30 15:15:34.548 [main] MailSendReceiveTest - From email: xinjia.caoxin@gmail.com
+[DEBUG] 2020-09-30 15:15:34.548 [main] MailSendReceiveTest - Email Sent From Receiver: xinjia.caoxin@gmail.com
+[INFO ] 2020-09-30 15:15:34.550 [main] MailSendReceiveTest - ---------------Check If All Mails Received From One Account---------------
+[INFO ] 2020-09-30 15:15:35.791 [main] SendAndReceive - Email sent
+[INFO ] 2020-09-30 15:15:37.000 [main] SendAndReceive - Email sent
+[INFO ] 2020-09-30 15:15:38.234 [main] SendAndReceive - Email sent
+[INFO ] 2020-09-30 15:15:39.595 [main] SendAndReceive - Email sent
+[INFO ] 2020-09-30 15:15:41.286 [main] SendAndReceive - Email sent
+[INFO ] 2020-09-30 15:15:45.045 [main] SendAndReceive - Message count: 105
+[DEBUG] 2020-09-30 15:15:48.505 [main] MailSendReceiveTest - 5 mails received
+[INFO ] 2020-09-30 15:15:48.507 [main] MailSendReceiveTest - ---------------Check Received HTML messages---------------
+[INFO ] 2020-09-30 15:15:49.785 [main] SendAndReceive - Email sent
+[INFO ] 2020-09-30 15:15:49.826 [main] MailSendReceiveTest - ------
+[INFO ] 2020-09-30 15:15:49.826 [main] MailSendReceiveTest - text/plain
+[INFO ] 2020-09-30 15:15:49.826 [main] MailSendReceiveTest - ------
+[INFO ] 2020-09-30 15:15:49.826 [main] MailSendReceiveTest - text/html
+[DEBUG] 2020-09-30 15:15:49.826 [main] MailSendReceiveTest - The message sent: <html><META http-equiv=Content-Type content="text/html; charset=utf-8"><body><h1>HTML Message</h1><h2>Here is some text in the HTML message</h2></body></html>
+[DEBUG] 2020-09-30 15:15:49.827 [main] MailSendReceiveTest - The message sent type: text/html
+[INFO ] 2020-09-30 15:15:53.358 [main] SendAndReceive - Message count: 106
+[INFO ] 2020-09-30 15:15:54.275 [main] MailSendReceiveTest - ------
+[INFO ] 2020-09-30 15:15:54.275 [main] MailSendReceiveTest - TEXT/PLAIN
+[INFO ] 2020-09-30 15:15:54.275 [main] MailSendReceiveTest - ------
+[INFO ] 2020-09-30 15:15:54.275 [main] MailSendReceiveTest - TEXT/HTML
+[DEBUG] 2020-09-30 15:15:54.276 [main] MailSendReceiveTest - The message sent: <html><META http-equiv=Content-Type content="text/html; charset=utf-8"><body><h1>HTML Message</h1><h2>Here is some text in the HTML message</h2></body></html>
+[DEBUG] 2020-09-30 15:15:54.276 [main] MailSendReceiveTest - The message sent type: TEXT/HTML
+[INFO ] 2020-09-30 15:15:54.277 [main] MailSendReceiveTest - ---------------Check Received CC Recipients---------------
+[INFO ] 2020-09-30 15:15:55.516 [main] SendAndReceive - Email sent
+[INFO ] 2020-09-30 15:15:59.239 [main] SendAndReceive - Message count: 107
+[DEBUG] 2020-09-30 15:16:00.132 [main] MailSendReceiveTest - Expected 'CC' mails: [xinjia1.cao@gmail.com, xinjia2.cao@gmail.com]
+[DEBUG] 2020-09-30 15:16:00.132 [main] MailSendReceiveTest - Sent 'CC' mails: [xinjia1.cao@gmail.com, xinjia2.cao@gmail.com]
+[INFO ] 2020-09-30 15:16:00.133 [main] MailSendReceiveTest - ---------------Check Number Of Send Regular and Embedded Files---------------
+[INFO ] 2020-09-30 15:16:01.835 [main] SendAndReceive - Email sent
+[DEBUG] 2020-09-30 15:16:01.875 [main] MailSendReceiveTest - Sent files: 2
+[INFO ] 2020-09-30 15:16:01.875 [main] MailSendReceiveTest - Expected files: 3
+[INFO ] 2020-09-30 15:16:01.883 [main] MailSendReceiveTest - ---------------Check Send HTML Message---------------
+[INFO ] 2020-09-30 15:16:03.143 [main] SendAndReceive - Email sent
+[INFO ] 2020-09-30 15:16:03.183 [main] MailSendReceiveTest - ------
+[INFO ] 2020-09-30 15:16:03.183 [main] MailSendReceiveTest - text/plain
+[INFO ] 2020-09-30 15:16:03.183 [main] MailSendReceiveTest - ------
+[INFO ] 2020-09-30 15:16:03.183 [main] MailSendReceiveTest - text/html
+[DEBUG] 2020-09-30 15:16:03.183 [main] MailSendReceiveTest - The message sent: <html><META http-equiv=Content-Type content="text/html; charset=utf-8"><body><h1>HTML Message</h1><h2>Here is some text in the HTML message</h2></body></html>
+[DEBUG] 2020-09-30 15:16:03.183 [main] MailSendReceiveTest - The message sent type: text/html
+[DEBUG] 2020-09-30 15:16:03.184 [main] MailSendReceiveTest - Sent HTML message: <html><META http-equiv=Content-Type content="text/html; charset=utf-8"><body><h1>HTML Message</h1><h2>Here is some text in the HTML message</h2></body></html>
+[DEBUG] 2020-09-30 15:16:03.184 [main] MailSendReceiveTest - Expected HTML message: <html><META http-equiv=Content-Type content="text/html; charset=utf-8"><body><h1>HTML Message</h1><h2>Here is some text in the HTML message</h2></body></html>
+[INFO ] 2020-09-30 15:16:03.186 [main] MailSendReceiveTest - ---------------Check Received 'To' Recipients---------------
+[INFO ] 2020-09-30 15:16:04.483 [main] SendAndReceive - Email sent
+[INFO ] 2020-09-30 15:16:08.192 [main] SendAndReceive - Message count: 110
+[DEBUG] 2020-09-30 15:16:10.813 [main] MailSendReceiveTest - Expected 'To' mails: [xinjia1.cao@gmail.com, xinjia2.cao@gmail.com]
+[DEBUG] 2020-09-30 15:16:10.814 [main] MailSendReceiveTest - Sent 'To' mails: [xinjia1.cao@gmail.com, xinjia2.cao@gmail.com]
+[INFO ] 2020-09-30 15:16:10.815 [main] MailSendReceiveTest - ---------------Check If Sender Is The Send Bean---------------
+[INFO ] 2020-09-30 15:16:12.017 [main] SendAndReceive - Email sent
+[INFO ] 2020-09-30 15:16:12.057 [main] MailSendReceiveTest - ---------------Check Non-Existent Files---------------
+[WARN ] 2020-09-30 15:16:12.058 [main] MailSendReceiveTest - Can't find file: dsfvsddsc.png
+[INFO ] 2020-09-30 15:16:12.059 [main] MailSendReceiveTest - ---------------Check Null 'To' Recipient---------------
+[WARN ] 2020-09-30 15:16:12.059 [main] SendAndReceive - Null: Please enter a valid email address
+[INFO ] 2020-09-30 15:16:12.061 [main] MailSendReceiveTest - ---------------Check Received Subject---------------
+[INFO ] 2020-09-30 15:16:13.193 [main] SendAndReceive - Email sent
+[INFO ] 2020-09-30 15:16:16.920 [main] SendAndReceive - Message count: 112
+[DEBUG] 2020-09-30 15:16:18.448 [main] MailSendReceiveTest - subject sent: checkReceivedSubject
+[DEBUG] 2020-09-30 15:16:18.448 [main] MailSendReceiveTest - subject received: checkReceivedSubject
+[INFO ] 2020-09-30 15:16:18.449 [main] MailSendReceiveTest - ---------------Check Number Of Received Embedded And Regular Files---------------
+[INFO ] 2020-09-30 15:16:20.939 [main] SendAndReceive - Email sent
+[INFO ] 2020-09-30 15:16:24.675 [main] SendAndReceive - Message count: 113
+[DEBUG] 2020-09-30 15:16:25.810 [main] MailSendReceiveTest - sent files: 1
+[DEBUG] 2020-09-30 15:16:25.811 [main] MailSendReceiveTest - received files: 1
+[INFO ] 2020-09-30 15:16:25.811 [main] MailSendReceiveTest - ---------------Check Send BCC Recipients---------------
+[INFO ] 2020-09-30 15:16:27.746 [main] SendAndReceive - Email sent
+[DEBUG] 2020-09-30 15:16:27.785 [main] MailSendReceiveTest - Expected 'BCC' mails: [xinjia1.cao@gmail.com, xinjia2.cao@gmail.com]
+[DEBUG] 2020-09-30 15:16:27.785 [main] MailSendReceiveTest - Sent 'BCC' mails: [xinjia1.cao@gmail.com, xinjia2.cao@gmail.com]
+[INFO ] 2020-09-30 15:16:27.786 [main] MailSendReceiveTest - ---------------Check Send 'To' Recipients---------------
+[INFO ] 2020-09-30 15:16:29.116 [main] SendAndReceive - Email sent
+[DEBUG] 2020-09-30 15:16:29.156 [main] MailSendReceiveTest - Expected 'To' mails: [xinjia1.cao@gmail.com, xinjia2.cao@gmail.com, xinjia3.cao@gmail.com]
+[DEBUG] 2020-09-30 15:16:29.156 [main] MailSendReceiveTest - Sent 'To' mails: [xinjia1.cao@gmail.com, xinjia2.cao@gmail.com, xinjia3.cao@gmail.com]
+[INFO ] 2020-09-30 15:16:29.157 [main] MailSendReceiveTest - ---------------Check Received Embedded File Name---------------
+[INFO ] 2020-09-30 15:16:30.302 [main] SendAndReceive - Email sent
+[INFO ] 2020-09-30 15:16:34.012 [main] SendAndReceive - Message count: 116
+[INFO ] 2020-09-30 15:16:36.189 [main] MailSendReceiveTest - ---------------Check Send Subject---------------
+[INFO ] 2020-09-30 15:16:37.698 [main] SendAndReceive - Email sent
+[DEBUG] 2020-09-30 15:16:37.737 [main] MailSendReceiveTest - Sent subject: checkSendSubject
+[DEBUG] 2020-09-30 15:16:37.737 [main] MailSendReceiveTest - Expected subject: checkSendSubject
+[INFO ] 2020-09-30 15:16:37.738 [main] MailSendReceiveTest - ---------------Check Received Regular File Name---------------
+[INFO ] 2020-09-30 15:16:39.163 [main] SendAndReceive - Email sent
+[INFO ] 2020-09-30 15:16:42.882 [main] SendAndReceive - Message count: 118
+[DEBUG] 2020-09-30 15:16:44.800 [main] MailSendReceiveTest - expected file name: img1.png
+[DEBUG] 2020-09-30 15:16:44.800 [main] MailSendReceiveTest - received file name: img1.png
+[INFO ] 2020-09-30 15:16:44.801 [main] MailSendReceiveTest - ---------------Check Send Message---------------
+[INFO ] 2020-09-30 15:16:46.116 [main] SendAndReceive - Email sent
+[INFO ] 2020-09-30 15:16:46.157 [main] MailSendReceiveTest - ------
+[INFO ] 2020-09-30 15:16:46.157 [main] MailSendReceiveTest - text/plain
+[DEBUG] 2020-09-30 15:16:46.157 [main] MailSendReceiveTest - The message sent: This is the message of the test
+[DEBUG] 2020-09-30 15:16:46.157 [main] MailSendReceiveTest - The message sent type: text/plain
+[INFO ] 2020-09-30 15:16:46.157 [main] MailSendReceiveTest - ------
+[INFO ] 2020-09-30 15:16:46.157 [main] MailSendReceiveTest - text/html
+[DEBUG] 2020-09-30 15:16:46.158 [main] MailSendReceiveTest - Sent Message: This is the message of the test
+[DEBUG] 2020-09-30 15:16:46.158 [main] MailSendReceiveTest - Expected message: This is the message of the test
+[INFO ] 2020-09-30 15:16:46.159 [main] MailSendReceiveTest - ---------------Check Send CC Recipients---------------
+[INFO ] 2020-09-30 15:16:47.958 [main] SendAndReceive - Email sent
+[DEBUG] 2020-09-30 15:16:47.997 [main] MailSendReceiveTest - Expected 'CC' mails: [xinjia1.cao@gmail.com, xinjia2.cao@gmail.com]
+[DEBUG] 2020-09-30 15:16:47.997 [main] MailSendReceiveTest - Sent 'CC' mails: [xinjia1.cao@gmail.com, xinjia2.cao@gmail.com]
+[INFO ] 2020-09-30 15:16:47.997 [main] MailSendReceiveTest - ---------------Check Invalid Email---------------
+[WARN ] 2020-09-30 15:16:47.997 [main] SendAndReceive - One or more send addresses are invalid.
+[INFO ] 2020-09-30 15:16:47.998 [main] MailSendReceiveTest - ---------------Check Null Send Bean Address---------------
+[INFO ] 2020-09-30 15:18:19.138 [main] MailSendReceiveTest - ---------------Check Number Of Received Regular Files---------------
+[INFO ] 2020-09-30 15:18:21.292 [main] SendAndReceive - Email sent
+[INFO ] 2020-09-30 15:18:25.205 [main] SendAndReceive - Message count: 1
+[DEBUG] 2020-09-30 15:18:26.544 [main] MailSendReceiveTest - sent files: 2
+[DEBUG] 2020-09-30 15:18:26.544 [main] MailSendReceiveTest - received files: 2
+[INFO ] 2020-09-30 15:18:26.548 [main] MailSendReceiveTest - ---------------Check Received Plain Messages---------------
+[INFO ] 2020-09-30 15:18:27.650 [main] SendAndReceive - Email sent
+[INFO ] 2020-09-30 15:18:27.693 [main] MailSendReceiveTest - ------
+[INFO ] 2020-09-30 15:18:27.693 [main] MailSendReceiveTest - text/plain
+[DEBUG] 2020-09-30 15:18:27.693 [main] MailSendReceiveTest - The message sent: This is the message of the test
+[DEBUG] 2020-09-30 15:18:27.694 [main] MailSendReceiveTest - The message sent type: text/plain
+[INFO ] 2020-09-30 15:18:27.694 [main] MailSendReceiveTest - ------
+[INFO ] 2020-09-30 15:18:27.694 [main] MailSendReceiveTest - text/html
+[INFO ] 2020-09-30 15:18:31.383 [main] SendAndReceive - Message count: 2
+[INFO ] 2020-09-30 15:18:32.246 [main] MailSendReceiveTest - ------
+[INFO ] 2020-09-30 15:18:32.246 [main] MailSendReceiveTest - TEXT/PLAIN
+[DEBUG] 2020-09-30 15:18:32.246 [main] MailSendReceiveTest - The message sent: This is the message of the test
+[DEBUG] 2020-09-30 15:18:32.246 [main] MailSendReceiveTest - The message sent type: TEXT/PLAIN
+[INFO ] 2020-09-30 15:18:32.247 [main] MailSendReceiveTest - ------
+[INFO ] 2020-09-30 15:18:32.247 [main] MailSendReceiveTest - TEXT/HTML
+[INFO ] 2020-09-30 15:18:32.249 [main] MailSendReceiveTest - ---------------Check Null Receive Bean---------------
+[INFO ] 2020-09-30 15:18:33.405 [main] SendAndReceive - Email sent
+[WARN ] 2020-09-30 15:18:36.447 [main] SendAndReceive - Null: please enter a valid receive config bean
+[INFO ] 2020-09-30 15:18:36.448 [main] MailSendReceiveTest - ---------------Check Null Receive Bean Address---------------
+[WARN ] 2020-09-30 15:18:36.448 [main] SendAndReceive - Null: please enter a valid email address
+[INFO ] 2020-09-30 15:18:36.449 [main] MailSendReceiveTest - ---------------Check Invalid Send Bean Address---------------
+[WARN ] 2020-09-30 15:18:36.449 [main] SendAndReceive - Invalid send bean: invalidemail
+[INFO ] 2020-09-30 15:18:36.450 [main] MailSendReceiveTest - ---------------Check Invalid Receive Bean Address---------------
+[WARN ] 2020-09-30 15:18:36.451 [main] SendAndReceive - Invalid receive email address
+[INFO ] 2020-09-30 15:18:36.452 [main] MailSendReceiveTest - ---------------Check No Recipients---------------
+[WARN ] 2020-09-30 15:18:36.452 [main] SendAndReceive - Please enter at least one recipient
+[INFO ] 2020-09-30 15:18:36.453 [main] MailSendReceiveTest - ---------------Check Null CC List---------------
+[INFO ] 2020-09-30 15:18:36.453 [main] MailSendReceiveTest - ---------------Check Null Send Bean---------------
+[WARN ] 2020-09-30 15:18:36.454 [main] SendAndReceive - Null: please enter a valid send config bean
+[INFO ] 2020-09-30 15:18:36.454 [main] MailSendReceiveTest - ---------------Check If Mails Are Received From the Right Sender---------------
+[INFO ] 2020-09-30 15:18:37.595 [main] SendAndReceive - Email sent
+[INFO ] 2020-09-30 15:18:41.337 [main] SendAndReceive - Message count: 4
+[DEBUG] 2020-09-30 15:18:42.889 [main] MailSendReceiveTest - From email: xinjia.caoxin@gmail.com
+[DEBUG] 2020-09-30 15:18:42.889 [main] MailSendReceiveTest - Email Sent From Receiver: xinjia.caoxin@gmail.com
+[INFO ] 2020-09-30 15:18:42.890 [main] MailSendReceiveTest - ---------------Check If All Mails Received From One Account---------------
+[INFO ] 2020-09-30 15:18:44.123 [main] SendAndReceive - Email sent
+[INFO ] 2020-09-30 15:18:45.329 [main] SendAndReceive - Email sent
+[INFO ] 2020-09-30 15:18:46.535 [main] SendAndReceive - Email sent
+[INFO ] 2020-09-30 15:18:47.727 [main] SendAndReceive - Email sent
+[INFO ] 2020-09-30 15:18:48.959 [main] SendAndReceive - Email sent
+[INFO ] 2020-09-30 15:18:52.681 [main] SendAndReceive - Message count: 9
+[DEBUG] 2020-09-30 15:18:56.229 [main] MailSendReceiveTest - 5 mails received
+[INFO ] 2020-09-30 15:18:56.230 [main] MailSendReceiveTest - ---------------Check Received HTML messages---------------
+[INFO ] 2020-09-30 15:18:57.390 [main] SendAndReceive - Email sent
+[INFO ] 2020-09-30 15:18:57.432 [main] MailSendReceiveTest - ------
+[INFO ] 2020-09-30 15:18:57.432 [main] MailSendReceiveTest - text/plain
+[INFO ] 2020-09-30 15:18:57.433 [main] MailSendReceiveTest - ------
+[INFO ] 2020-09-30 15:18:57.433 [main] MailSendReceiveTest - text/html
+[DEBUG] 2020-09-30 15:18:57.433 [main] MailSendReceiveTest - The message sent: <html><META http-equiv=Content-Type content="text/html; charset=utf-8"><body><h1>HTML Message</h1><h2>Here is some text in the HTML message</h2></body></html>
+[DEBUG] 2020-09-30 15:18:57.433 [main] MailSendReceiveTest - The message sent type: text/html
+[INFO ] 2020-09-30 15:19:01.132 [main] SendAndReceive - Message count: 10
+[INFO ] 2020-09-30 15:19:01.996 [main] MailSendReceiveTest - ------
+[INFO ] 2020-09-30 15:19:01.996 [main] MailSendReceiveTest - TEXT/PLAIN
+[INFO ] 2020-09-30 15:19:01.996 [main] MailSendReceiveTest - ------
+[INFO ] 2020-09-30 15:19:01.996 [main] MailSendReceiveTest - TEXT/HTML
+[DEBUG] 2020-09-30 15:19:01.997 [main] MailSendReceiveTest - The message sent: <html><META http-equiv=Content-Type content="text/html; charset=utf-8"><body><h1>HTML Message</h1><h2>Here is some text in the HTML message</h2></body></html>
+[DEBUG] 2020-09-30 15:19:01.997 [main] MailSendReceiveTest - The message sent type: TEXT/HTML
+[INFO ] 2020-09-30 15:19:01.998 [main] MailSendReceiveTest - ---------------Check Received CC Recipients---------------
+[INFO ] 2020-09-30 15:19:03.235 [main] SendAndReceive - Email sent
+[INFO ] 2020-09-30 15:19:06.939 [main] SendAndReceive - Message count: 11
+[DEBUG] 2020-09-30 15:19:07.824 [main] MailSendReceiveTest - Expected 'CC' mails: [xinjia1.cao@gmail.com, xinjia2.cao@gmail.com]
+[DEBUG] 2020-09-30 15:19:07.824 [main] MailSendReceiveTest - Sent 'CC' mails: [xinjia1.cao@gmail.com, xinjia2.cao@gmail.com]
+[INFO ] 2020-09-30 15:19:07.825 [main] MailSendReceiveTest - ---------------Check Number Of Send Regular and Embedded Files---------------
+[INFO ] 2020-09-30 15:19:10.974 [main] SendAndReceive - Email sent
+[DEBUG] 2020-09-30 15:19:11.017 [main] MailSendReceiveTest - Sent files: 2
+[INFO ] 2020-09-30 15:19:11.018 [main] MailSendReceiveTest - Expected files: 3
+[INFO ] 2020-09-30 15:19:11.026 [main] MailSendReceiveTest - ---------------Check Send HTML Message---------------
+[INFO ] 2020-09-30 15:19:12.159 [main] SendAndReceive - Email sent
+[INFO ] 2020-09-30 15:19:12.201 [main] MailSendReceiveTest - ------
+[INFO ] 2020-09-30 15:19:12.201 [main] MailSendReceiveTest - text/plain
+[INFO ] 2020-09-30 15:19:12.201 [main] MailSendReceiveTest - ------
+[INFO ] 2020-09-30 15:19:12.201 [main] MailSendReceiveTest - text/html
+[DEBUG] 2020-09-30 15:19:12.201 [main] MailSendReceiveTest - The message sent: <html><META http-equiv=Content-Type content="text/html; charset=utf-8"><body><h1>HTML Message</h1><h2>Here is some text in the HTML message</h2></body></html>
+[DEBUG] 2020-09-30 15:19:12.202 [main] MailSendReceiveTest - The message sent type: text/html
+[DEBUG] 2020-09-30 15:19:12.202 [main] MailSendReceiveTest - Sent HTML message: <html><META http-equiv=Content-Type content="text/html; charset=utf-8"><body><h1>HTML Message</h1><h2>Here is some text in the HTML message</h2></body></html>
+[DEBUG] 2020-09-30 15:19:12.202 [main] MailSendReceiveTest - Expected HTML message: <html><META http-equiv=Content-Type content="text/html; charset=utf-8"><body><h1>HTML Message</h1><h2>Here is some text in the HTML message</h2></body></html>
+[INFO ] 2020-09-30 15:19:12.203 [main] MailSendReceiveTest - ---------------Check Received 'To' Recipients---------------
+[INFO ] 2020-09-30 15:19:13.361 [main] SendAndReceive - Email sent
+[INFO ] 2020-09-30 15:19:17.086 [main] SendAndReceive - Message count: 14
+[DEBUG] 2020-09-30 15:19:19.766 [main] MailSendReceiveTest - Expected 'To' mails: [xinjia1.cao@gmail.com, xinjia2.cao@gmail.com]
+[DEBUG] 2020-09-30 15:19:19.767 [main] MailSendReceiveTest - Sent 'To' mails: [xinjia1.cao@gmail.com, xinjia2.cao@gmail.com]
+[INFO ] 2020-09-30 15:19:19.768 [main] MailSendReceiveTest - ---------------Check If Sender Is The Send Bean---------------
+[INFO ] 2020-09-30 15:19:20.906 [main] SendAndReceive - Email sent
+[INFO ] 2020-09-30 15:19:20.947 [main] MailSendReceiveTest - ---------------Check Non-Existent Files---------------
+[WARN ] 2020-09-30 15:19:20.947 [main] MailSendReceiveTest - Can't find file: dsfvsddsc.png
+[INFO ] 2020-09-30 15:19:20.948 [main] MailSendReceiveTest - ---------------Check Null 'To' Recipient---------------
+[WARN ] 2020-09-30 15:19:20.948 [main] SendAndReceive - Null: Please enter a valid email address
+[INFO ] 2020-09-30 15:19:20.949 [main] MailSendReceiveTest - ---------------Check Received Subject---------------
+[INFO ] 2020-09-30 15:19:22.128 [main] SendAndReceive - Email sent
+[INFO ] 2020-09-30 15:19:25.705 [main] SendAndReceive - Message count: 16
+[DEBUG] 2020-09-30 15:19:27.211 [main] MailSendReceiveTest - subject sent: checkReceivedSubject
+[DEBUG] 2020-09-30 15:19:27.211 [main] MailSendReceiveTest - subject received: checkReceivedSubject
+[INFO ] 2020-09-30 15:19:27.212 [main] MailSendReceiveTest - ---------------Check Number Of Received Embedded And Regular Files---------------
+[INFO ] 2020-09-30 15:19:28.776 [main] SendAndReceive - Email sent
+[INFO ] 2020-09-30 15:19:32.524 [main] SendAndReceive - Message count: 17
+[DEBUG] 2020-09-30 15:19:33.665 [main] MailSendReceiveTest - sent files: 1
+[DEBUG] 2020-09-30 15:19:33.665 [main] MailSendReceiveTest - received files: 1
+[INFO ] 2020-09-30 15:19:33.666 [main] MailSendReceiveTest - ---------------Check Send BCC Recipients---------------
+[INFO ] 2020-09-30 15:19:34.918 [main] SendAndReceive - Email sent
+[DEBUG] 2020-09-30 15:19:34.959 [main] MailSendReceiveTest - Expected 'BCC' mails: [xinjia1.cao@gmail.com, xinjia2.cao@gmail.com]
+[DEBUG] 2020-09-30 15:19:34.960 [main] MailSendReceiveTest - Sent 'BCC' mails: [xinjia1.cao@gmail.com, xinjia2.cao@gmail.com]
+[INFO ] 2020-09-30 15:19:34.960 [main] MailSendReceiveTest - ---------------Check Send 'To' Recipients---------------
+[INFO ] 2020-09-30 15:19:36.291 [main] SendAndReceive - Email sent
+[DEBUG] 2020-09-30 15:19:36.334 [main] MailSendReceiveTest - Expected 'To' mails: [xinjia1.cao@gmail.com, xinjia2.cao@gmail.com, xinjia3.cao@gmail.com]
+[DEBUG] 2020-09-30 15:19:36.334 [main] MailSendReceiveTest - Sent 'To' mails: [xinjia1.cao@gmail.com, xinjia2.cao@gmail.com, xinjia3.cao@gmail.com]
+[INFO ] 2020-09-30 15:19:36.335 [main] MailSendReceiveTest - ---------------Check Received Embedded File Name---------------
+[INFO ] 2020-09-30 15:19:37.514 [main] SendAndReceive - Email sent
+[INFO ] 2020-09-30 15:19:41.086 [main] SendAndReceive - Message count: 20
+[INFO ] 2020-09-30 15:19:43.305 [main] MailSendReceiveTest - ---------------Check Send Subject---------------
+[INFO ] 2020-09-30 15:19:44.544 [main] SendAndReceive - Email sent
+[DEBUG] 2020-09-30 15:19:44.595 [main] MailSendReceiveTest - Sent subject: checkSendSubject
+[DEBUG] 2020-09-30 15:19:44.595 [main] MailSendReceiveTest - Expected subject: checkSendSubject
+[INFO ] 2020-09-30 15:19:44.596 [main] MailSendReceiveTest - ---------------Check Received Regular File Name---------------
+[INFO ] 2020-09-30 15:19:46.121 [main] SendAndReceive - Email sent
+[INFO ] 2020-09-30 15:19:49.865 [main] SendAndReceive - Message count: 22
+[DEBUG] 2020-09-30 15:19:51.808 [main] MailSendReceiveTest - expected file name: img1.png
+[DEBUG] 2020-09-30 15:19:51.809 [main] MailSendReceiveTest - received file name: img1.png
+[INFO ] 2020-09-30 15:19:51.810 [main] MailSendReceiveTest - ---------------Check Send Message---------------
+[INFO ] 2020-09-30 15:19:53.294 [main] SendAndReceive - Email sent
+[INFO ] 2020-09-30 15:19:53.336 [main] MailSendReceiveTest - ------
+[INFO ] 2020-09-30 15:19:53.336 [main] MailSendReceiveTest - text/plain
+[DEBUG] 2020-09-30 15:19:53.336 [main] MailSendReceiveTest - The message sent: This is the message of the test
+[DEBUG] 2020-09-30 15:19:53.336 [main] MailSendReceiveTest - The message sent type: text/plain
+[INFO ] 2020-09-30 15:19:53.337 [main] MailSendReceiveTest - ------
+[INFO ] 2020-09-30 15:19:53.337 [main] MailSendReceiveTest - text/html
+[DEBUG] 2020-09-30 15:19:53.337 [main] MailSendReceiveTest - Sent Message: This is the message of the test
+[DEBUG] 2020-09-30 15:19:53.337 [main] MailSendReceiveTest - Expected message: This is the message of the test
+[INFO ] 2020-09-30 15:19:53.338 [main] MailSendReceiveTest - ---------------Check Send CC Recipients---------------
+[INFO ] 2020-09-30 15:19:54.533 [main] SendAndReceive - Email sent
+[DEBUG] 2020-09-30 15:19:54.914 [main] MailSendReceiveTest - Expected 'CC' mails: [xinjia1.cao@gmail.com, xinjia2.cao@gmail.com]
+[DEBUG] 2020-09-30 15:19:54.914 [main] MailSendReceiveTest - Sent 'CC' mails: [xinjia1.cao@gmail.com, xinjia2.cao@gmail.com]
+[INFO ] 2020-09-30 15:19:54.914 [main] MailSendReceiveTest - ---------------Check Invalid Email---------------
+[WARN ] 2020-09-30 15:19:54.915 [main] SendAndReceive - One or more send addresses are invalid.
+[INFO ] 2020-09-30 15:19:54.915 [main] MailSendReceiveTest - ---------------Check Null Send Bean Address---------------
+[INFO ] 2020-09-30 15:24:39.472 [main] MailSendReceiveTest - ---------------Check Number Of Received Regular Files---------------
+[INFO ] 2020-09-30 15:24:41.475 [main] SendAndReceive - Email sent
+[INFO ] 2020-09-30 15:24:45.151 [main] SendAndReceive - Message count: 25
+[DEBUG] 2020-09-30 15:24:47.776 [main] MailSendReceiveTest - sent files: 2
+[DEBUG] 2020-09-30 15:24:47.777 [main] MailSendReceiveTest - received files: 2
+[INFO ] 2020-09-30 15:24:47.779 [main] MailSendReceiveTest - ---------------Check Received Plain Messages---------------
+[INFO ] 2020-09-30 15:24:48.930 [main] SendAndReceive - Email sent
+[INFO ] 2020-09-30 15:24:48.972 [main] MailSendReceiveTest - ------
+[INFO ] 2020-09-30 15:24:48.973 [main] MailSendReceiveTest - text/plain
+[DEBUG] 2020-09-30 15:24:48.973 [main] MailSendReceiveTest - The message sent: This is the message of the test
+[DEBUG] 2020-09-30 15:24:48.974 [main] MailSendReceiveTest - The message sent type: text/plain
+[INFO ] 2020-09-30 15:24:48.974 [main] MailSendReceiveTest - ------
+[INFO ] 2020-09-30 15:24:48.974 [main] MailSendReceiveTest - text/html
+[INFO ] 2020-09-30 15:24:52.531 [main] SendAndReceive - Message count: 26
+[INFO ] 2020-09-30 15:24:53.415 [main] MailSendReceiveTest - ------
+[INFO ] 2020-09-30 15:24:53.415 [main] MailSendReceiveTest - TEXT/PLAIN
+[DEBUG] 2020-09-30 15:24:53.415 [main] MailSendReceiveTest - The message sent: This is the message of the test
+[DEBUG] 2020-09-30 15:24:53.416 [main] MailSendReceiveTest - The message sent type: TEXT/PLAIN
+[INFO ] 2020-09-30 15:24:53.416 [main] MailSendReceiveTest - ------
+[INFO ] 2020-09-30 15:24:53.416 [main] MailSendReceiveTest - TEXT/HTML
+[INFO ] 2020-09-30 15:24:53.417 [main] MailSendReceiveTest - ---------------Check Null Receive Bean---------------
+[INFO ] 2020-09-30 15:24:54.556 [main] SendAndReceive - Email sent
+[WARN ] 2020-09-30 15:24:57.614 [main] SendAndReceive - Null: please enter a valid receive config bean
+[INFO ] 2020-09-30 15:24:57.614 [main] MailSendReceiveTest - ---------------Check Null Receive Bean Address---------------
+[WARN ] 2020-09-30 15:24:57.614 [main] SendAndReceive - Null: please enter a valid email address
+[INFO ] 2020-09-30 15:24:57.615 [main] MailSendReceiveTest - ---------------Check Invalid Send Bean Address---------------
+[WARN ] 2020-09-30 15:24:57.615 [main] SendAndReceive - Invalid send bean: invalidemail
+[INFO ] 2020-09-30 15:24:57.616 [main] MailSendReceiveTest - ---------------Check Invalid Receive Bean Address---------------
+[WARN ] 2020-09-30 15:24:57.616 [main] SendAndReceive - Invalid receive email address
+[INFO ] 2020-09-30 15:24:57.617 [main] MailSendReceiveTest - ---------------Check No Recipients---------------
+[WARN ] 2020-09-30 15:24:57.617 [main] SendAndReceive - Please enter at least one recipient
+[INFO ] 2020-09-30 15:24:57.618 [main] MailSendReceiveTest - ---------------Check Null CC List---------------
+[INFO ] 2020-09-30 15:24:57.618 [main] MailSendReceiveTest - ---------------Check Null Send Bean---------------
+[WARN ] 2020-09-30 15:24:57.619 [main] SendAndReceive - Null: please enter a valid send config bean
+[INFO ] 2020-09-30 15:24:57.619 [main] MailSendReceiveTest - ---------------Check If Mails Are Received From the Right Sender---------------
+[INFO ] 2020-09-30 15:24:59.489 [main] SendAndReceive - Email sent
+[INFO ] 2020-09-30 15:25:03.202 [main] SendAndReceive - Message count: 28
+[DEBUG] 2020-09-30 15:25:04.738 [main] MailSendReceiveTest - From email: xinjia.caoxin@gmail.com
+[DEBUG] 2020-09-30 15:25:04.738 [main] MailSendReceiveTest - Email Sent From Receiver: xinjia.caoxin@gmail.com
+[INFO ] 2020-09-30 15:25:04.739 [main] MailSendReceiveTest - ---------------Check If All Mails Received From One Account---------------
+[INFO ] 2020-09-30 15:25:05.901 [main] SendAndReceive - Email sent
+[INFO ] 2020-09-30 15:25:07.213 [main] SendAndReceive - Email sent
+[INFO ] 2020-09-30 15:25:08.487 [main] SendAndReceive - Email sent
+[INFO ] 2020-09-30 15:25:09.781 [main] SendAndReceive - Email sent
+[INFO ] 2020-09-30 15:25:12.036 [main] SendAndReceive - Email sent
+[INFO ] 2020-09-30 15:25:15.685 [main] SendAndReceive - Message count: 33
+[DEBUG] 2020-09-30 15:25:19.427 [main] MailSendReceiveTest - 5 mails received
+[INFO ] 2020-09-30 15:25:19.429 [main] MailSendReceiveTest - ---------------Check Received HTML messages---------------
+[INFO ] 2020-09-30 15:25:20.719 [main] SendAndReceive - Email sent
+[INFO ] 2020-09-30 15:25:20.775 [main] MailSendReceiveTest - ------
+[INFO ] 2020-09-30 15:25:20.776 [main] MailSendReceiveTest - text/plain
+[INFO ] 2020-09-30 15:25:20.776 [main] MailSendReceiveTest - ------
+[INFO ] 2020-09-30 15:25:20.777 [main] MailSendReceiveTest - text/html
+[DEBUG] 2020-09-30 15:25:20.777 [main] MailSendReceiveTest - The message sent: <html><META http-equiv=Content-Type content="text/html; charset=utf-8"><body><h1>HTML Message</h1><h2>Here is some text in the HTML message</h2></body></html>
+[DEBUG] 2020-09-30 15:25:20.777 [main] MailSendReceiveTest - The message sent type: text/html
+[INFO ] 2020-09-30 15:25:24.459 [main] SendAndReceive - Message count: 34
+[INFO ] 2020-09-30 15:25:25.366 [main] MailSendReceiveTest - ------
+[INFO ] 2020-09-30 15:25:25.366 [main] MailSendReceiveTest - TEXT/PLAIN
+[INFO ] 2020-09-30 15:25:25.366 [main] MailSendReceiveTest - ------
+[INFO ] 2020-09-30 15:25:25.367 [main] MailSendReceiveTest - TEXT/HTML
+[DEBUG] 2020-09-30 15:25:25.367 [main] MailSendReceiveTest - The message sent: <html><META http-equiv=Content-Type content="text/html; charset=utf-8"><body><h1>HTML Message</h1><h2>Here is some text in the HTML message</h2></body></html>
+[DEBUG] 2020-09-30 15:25:25.367 [main] MailSendReceiveTest - The message sent type: TEXT/HTML
+[INFO ] 2020-09-30 15:25:25.368 [main] MailSendReceiveTest - ---------------Check Received CC Recipients---------------
+[INFO ] 2020-09-30 15:25:26.707 [main] SendAndReceive - Email sent
+[INFO ] 2020-09-30 15:25:30.440 [main] SendAndReceive - Message count: 35
+[DEBUG] 2020-09-30 15:25:31.348 [main] MailSendReceiveTest - Expected 'CC' mails: [xinjia1.cao@gmail.com, xinjia2.cao@gmail.com]
+[DEBUG] 2020-09-30 15:25:31.349 [main] MailSendReceiveTest - Sent 'CC' mails: [xinjia1.cao@gmail.com, xinjia2.cao@gmail.com]
+[INFO ] 2020-09-30 15:25:31.349 [main] MailSendReceiveTest - ---------------Check Number Of Send Regular and Embedded Files---------------
+[INFO ] 2020-09-30 15:25:33.062 [main] SendAndReceive - Email sent
+[DEBUG] 2020-09-30 15:25:33.103 [main] MailSendReceiveTest - Sent files: 2
+[INFO ] 2020-09-30 15:25:33.103 [main] MailSendReceiveTest - Expected files: 3
+[INFO ] 2020-09-30 15:25:33.110 [main] MailSendReceiveTest - ---------------Check Send HTML Message---------------
+[INFO ] 2020-09-30 15:25:34.326 [main] SendAndReceive - Email sent
+[INFO ] 2020-09-30 15:25:34.380 [main] MailSendReceiveTest - ------
+[INFO ] 2020-09-30 15:25:34.380 [main] MailSendReceiveTest - text/plain
+[INFO ] 2020-09-30 15:25:34.380 [main] MailSendReceiveTest - ------
+[INFO ] 2020-09-30 15:25:34.381 [main] MailSendReceiveTest - text/html
+[DEBUG] 2020-09-30 15:25:34.381 [main] MailSendReceiveTest - The message sent: <html><META http-equiv=Content-Type content="text/html; charset=utf-8"><body><h1>HTML Message</h1><h2>Here is some text in the HTML message</h2></body></html>
+[DEBUG] 2020-09-30 15:25:34.381 [main] MailSendReceiveTest - The message sent type: text/html
+[DEBUG] 2020-09-30 15:25:34.381 [main] MailSendReceiveTest - Sent HTML message: <html><META http-equiv=Content-Type content="text/html; charset=utf-8"><body><h1>HTML Message</h1><h2>Here is some text in the HTML message</h2></body></html>
+[DEBUG] 2020-09-30 15:25:34.382 [main] MailSendReceiveTest - Expected HTML message: <html><META http-equiv=Content-Type content="text/html; charset=utf-8"><body><h1>HTML Message</h1><h2>Here is some text in the HTML message</h2></body></html>
+[INFO ] 2020-09-30 15:25:34.384 [main] MailSendReceiveTest - ---------------Check Received 'To' Recipients---------------
+[INFO ] 2020-09-30 15:25:35.594 [main] SendAndReceive - Email sent
+[INFO ] 2020-09-30 15:25:39.142 [main] SendAndReceive - Message count: 38
+[DEBUG] 2020-09-30 15:25:41.679 [main] MailSendReceiveTest - Expected 'To' mails: [xinjia1.cao@gmail.com, xinjia2.cao@gmail.com]
+[DEBUG] 2020-09-30 15:25:41.680 [main] MailSendReceiveTest - Sent 'To' mails: [xinjia1.cao@gmail.com, xinjia2.cao@gmail.com]
+[INFO ] 2020-09-30 15:25:41.680 [main] MailSendReceiveTest - ---------------Check If Sender Is The Send Bean---------------
+[INFO ] 2020-09-30 15:25:42.806 [main] SendAndReceive - Email sent
+[INFO ] 2020-09-30 15:25:42.849 [main] MailSendReceiveTest - ---------------Check Non-Existent Files---------------
+[WARN ] 2020-09-30 15:25:42.850 [main] MailSendReceiveTest - Can't find file: dsfvsddsc.png
+[INFO ] 2020-09-30 15:25:42.851 [main] MailSendReceiveTest - ---------------Check Null 'To' Recipient---------------
+[WARN ] 2020-09-30 15:25:42.852 [main] SendAndReceive - Null: Please enter a valid email address
+[INFO ] 2020-09-30 15:25:42.853 [main] MailSendReceiveTest - ---------------Check Received Subject---------------
+[INFO ] 2020-09-30 15:25:44.008 [main] SendAndReceive - Email sent
+[INFO ] 2020-09-30 15:25:47.574 [main] SendAndReceive - Message count: 40
+[DEBUG] 2020-09-30 15:25:49.060 [main] MailSendReceiveTest - subject sent: checkReceivedSubject
+[DEBUG] 2020-09-30 15:25:49.060 [main] MailSendReceiveTest - subject received: checkReceivedSubject
+[INFO ] 2020-09-30 15:25:49.061 [main] MailSendReceiveTest - ---------------Check Number Of Received Embedded And Regular Files---------------
+[INFO ] 2020-09-30 15:25:50.574 [main] SendAndReceive - Email sent
+[INFO ] 2020-09-30 15:25:54.287 [main] SendAndReceive - Message count: 41
+[DEBUG] 2020-09-30 15:25:55.440 [main] MailSendReceiveTest - sent files: 1
+[DEBUG] 2020-09-30 15:25:55.441 [main] MailSendReceiveTest - received files: 1
+[INFO ] 2020-09-30 15:25:55.441 [main] MailSendReceiveTest - ---------------Check Send BCC Recipients---------------
+[INFO ] 2020-09-30 15:25:56.577 [main] SendAndReceive - Email sent
+[DEBUG] 2020-09-30 15:25:56.618 [main] MailSendReceiveTest - Expected 'BCC' mails: [xinjia1.cao@gmail.com, xinjia2.cao@gmail.com]
+[DEBUG] 2020-09-30 15:25:56.618 [main] MailSendReceiveTest - Sent 'BCC' mails: [xinjia1.cao@gmail.com, xinjia2.cao@gmail.com]
+[INFO ] 2020-09-30 15:25:56.619 [main] MailSendReceiveTest - ---------------Check Send 'To' Recipients---------------
+[INFO ] 2020-09-30 15:25:57.808 [main] SendAndReceive - Email sent
+[DEBUG] 2020-09-30 15:25:57.848 [main] MailSendReceiveTest - Expected 'To' mails: [xinjia1.cao@gmail.com, xinjia2.cao@gmail.com, xinjia3.cao@gmail.com]
+[DEBUG] 2020-09-30 15:25:57.848 [main] MailSendReceiveTest - Sent 'To' mails: [xinjia1.cao@gmail.com, xinjia2.cao@gmail.com, xinjia3.cao@gmail.com]
+[INFO ] 2020-09-30 15:25:57.849 [main] MailSendReceiveTest - ---------------Check Received Embedded File Name---------------
+[INFO ] 2020-09-30 15:25:58.955 [main] SendAndReceive - Email sent
+[INFO ] 2020-09-30 15:26:02.670 [main] SendAndReceive - Message count: 44
+[INFO ] 2020-09-30 15:26:04.959 [main] MailSendReceiveTest - ---------------Check Send Subject---------------
+[INFO ] 2020-09-30 15:26:06.089 [main] SendAndReceive - Email sent
+[DEBUG] 2020-09-30 15:26:06.128 [main] MailSendReceiveTest - Sent subject: checkSendSubject
+[DEBUG] 2020-09-30 15:26:06.128 [main] MailSendReceiveTest - Expected subject: checkSendSubject
+[INFO ] 2020-09-30 15:26:06.129 [main] MailSendReceiveTest - ---------------Check Received Regular File Name---------------
+[INFO ] 2020-09-30 15:26:07.598 [main] SendAndReceive - Email sent
+[INFO ] 2020-09-30 15:26:11.156 [main] SendAndReceive - Message count: 46
+[DEBUG] 2020-09-30 15:26:12.891 [main] MailSendReceiveTest - expected file name: img1.png
+[DEBUG] 2020-09-30 15:26:12.892 [main] MailSendReceiveTest - received file name: img1.png
+[INFO ] 2020-09-30 15:26:12.893 [main] MailSendReceiveTest - ---------------Check Send Message---------------
+[INFO ] 2020-09-30 15:26:14.079 [main] SendAndReceive - Email sent
+[INFO ] 2020-09-30 15:26:14.120 [main] MailSendReceiveTest - ------
+[INFO ] 2020-09-30 15:26:14.121 [main] MailSendReceiveTest - text/plain
+[DEBUG] 2020-09-30 15:26:14.121 [main] MailSendReceiveTest - The message sent: This is the message of the test
+[DEBUG] 2020-09-30 15:26:14.121 [main] MailSendReceiveTest - The message sent type: text/plain
+[INFO ] 2020-09-30 15:26:14.121 [main] MailSendReceiveTest - ------
+[INFO ] 2020-09-30 15:26:14.121 [main] MailSendReceiveTest - text/html
+[DEBUG] 2020-09-30 15:26:14.122 [main] MailSendReceiveTest - Sent Message: This is the message of the test
+[DEBUG] 2020-09-30 15:26:14.122 [main] MailSendReceiveTest - Expected message: This is the message of the test
+[INFO ] 2020-09-30 15:26:14.123 [main] MailSendReceiveTest - ---------------Check Send CC Recipients---------------
+[INFO ] 2020-09-30 15:26:15.323 [main] SendAndReceive - Email sent
+[DEBUG] 2020-09-30 15:26:15.362 [main] MailSendReceiveTest - Expected 'CC' mails: [xinjia1.cao@gmail.com, xinjia2.cao@gmail.com]
+[DEBUG] 2020-09-30 15:26:15.362 [main] MailSendReceiveTest - Sent 'CC' mails: [xinjia1.cao@gmail.com, xinjia2.cao@gmail.com]
+[INFO ] 2020-09-30 15:26:15.363 [main] MailSendReceiveTest - ---------------Check Invalid Email---------------
+[WARN ] 2020-09-30 15:26:15.363 [main] SendAndReceive - One or more send addresses are invalid.
+[INFO ] 2020-09-30 15:26:15.364 [main] MailSendReceiveTest - ---------------Check Null Send Bean Address---------------
+[INFO ] 2020-09-30 15:28:32.974 [main] MailSendReceiveTest - ---------------Check Number Of Received Regular Files---------------
+[INFO ] 2020-09-30 15:28:35.186 [main] SendAndReceive - Email sent
+[INFO ] 2020-09-30 15:28:39.023 [main] SendAndReceive - Message count: 49
+[DEBUG] 2020-09-30 15:28:41.848 [main] MailSendReceiveTest - sent files: 2
+[DEBUG] 2020-09-30 15:28:41.848 [main] MailSendReceiveTest - received files: 2
+[INFO ] 2020-09-30 15:28:41.851 [main] MailSendReceiveTest - ---------------Check Received Plain Messages---------------
+[INFO ] 2020-09-30 15:28:43.501 [main] SendAndReceive - Email sent
+[INFO ] 2020-09-30 15:28:43.544 [main] MailSendReceiveTest - ------
+[INFO ] 2020-09-30 15:28:43.544 [main] MailSendReceiveTest - text/plain
+[DEBUG] 2020-09-30 15:28:43.545 [main] MailSendReceiveTest - The message sent: This is the message of the test
+[DEBUG] 2020-09-30 15:28:43.545 [main] MailSendReceiveTest - The message sent type: text/plain
+[INFO ] 2020-09-30 15:28:43.546 [main] MailSendReceiveTest - ------
+[INFO ] 2020-09-30 15:28:43.546 [main] MailSendReceiveTest - text/html
+[INFO ] 2020-09-30 15:28:47.227 [main] SendAndReceive - Message count: 50
+[INFO ] 2020-09-30 15:28:48.100 [main] MailSendReceiveTest - ------
+[INFO ] 2020-09-30 15:28:48.100 [main] MailSendReceiveTest - TEXT/PLAIN
+[DEBUG] 2020-09-30 15:28:48.100 [main] MailSendReceiveTest - The message sent: This is the message of the test
+[DEBUG] 2020-09-30 15:28:48.100 [main] MailSendReceiveTest - The message sent type: TEXT/PLAIN
+[INFO ] 2020-09-30 15:28:48.101 [main] MailSendReceiveTest - ------
+[INFO ] 2020-09-30 15:28:48.101 [main] MailSendReceiveTest - TEXT/HTML
+[INFO ] 2020-09-30 15:28:48.102 [main] MailSendReceiveTest - ---------------Check Null Receive Bean---------------
+[INFO ] 2020-09-30 15:28:49.294 [main] SendAndReceive - Email sent
+[WARN ] 2020-09-30 15:28:52.335 [main] SendAndReceive - Null: please enter a valid receive config bean
+[INFO ] 2020-09-30 15:28:52.336 [main] MailSendReceiveTest - ---------------Check Null Receive Bean Address---------------
+[WARN ] 2020-09-30 15:28:52.337 [main] SendAndReceive - Null: please enter a valid email address
+[INFO ] 2020-09-30 15:28:52.338 [main] MailSendReceiveTest - ---------------Check Invalid Send Bean Address---------------
+[WARN ] 2020-09-30 15:28:52.339 [main] SendAndReceive - Invalid send bean: invalidemail
+[INFO ] 2020-09-30 15:28:52.341 [main] MailSendReceiveTest - ---------------Check Invalid Receive Bean Address---------------
+[WARN ] 2020-09-30 15:28:52.341 [main] SendAndReceive - Invalid receive email address
+[INFO ] 2020-09-30 15:28:52.342 [main] MailSendReceiveTest - ---------------Check No Recipients---------------
+[WARN ] 2020-09-30 15:28:52.343 [main] SendAndReceive - Please enter at least one recipient
+[INFO ] 2020-09-30 15:28:52.343 [main] MailSendReceiveTest - ---------------Check Null CC List---------------
+[INFO ] 2020-09-30 15:28:52.345 [main] MailSendReceiveTest - ---------------Check Null Send Bean---------------
+[WARN ] 2020-09-30 15:28:52.345 [main] SendAndReceive - Null: please enter a valid send config bean
+[INFO ] 2020-09-30 15:28:52.346 [main] MailSendReceiveTest - ---------------Check Null Subject---------------
+[INFO ] 2020-09-30 15:28:53.522 [main] SendAndReceive - Email sent
+[INFO ] 2020-09-30 15:28:53.564 [main] MailSendReceiveTest - ---------------Check If Mails Are Received From the Right Sender---------------
+[INFO ] 2020-09-30 15:28:54.748 [main] SendAndReceive - Email sent
+[INFO ] 2020-09-30 15:28:58.490 [main] SendAndReceive - Message count: 53
+[DEBUG] 2020-09-30 15:29:00.680 [main] MailSendReceiveTest - From email: xinjia.caoxin@gmail.com
+[DEBUG] 2020-09-30 15:29:00.680 [main] MailSendReceiveTest - Email Sent From Receiver: xinjia.caoxin@gmail.com
+[INFO ] 2020-09-30 15:29:00.681 [main] MailSendReceiveTest - ---------------Check If All Mails Received From One Account---------------
+[INFO ] 2020-09-30 15:29:01.824 [main] SendAndReceive - Email sent
+[INFO ] 2020-09-30 15:29:03.177 [main] SendAndReceive - Email sent
+[INFO ] 2020-09-30 15:29:04.416 [main] SendAndReceive - Email sent
+[INFO ] 2020-09-30 15:29:05.665 [main] SendAndReceive - Email sent
+[INFO ] 2020-09-30 15:29:06.930 [main] SendAndReceive - Email sent
+[INFO ] 2020-09-30 15:29:10.489 [main] SendAndReceive - Message count: 58
+[DEBUG] 2020-09-30 15:29:13.968 [main] MailSendReceiveTest - 5 mails received
+[INFO ] 2020-09-30 15:29:13.971 [main] MailSendReceiveTest - ---------------Check Received HTML messages---------------
+[INFO ] 2020-09-30 15:29:15.156 [main] SendAndReceive - Email sent
+[INFO ] 2020-09-30 15:29:15.195 [main] MailSendReceiveTest - ------
+[INFO ] 2020-09-30 15:29:15.195 [main] MailSendReceiveTest - text/plain
+[INFO ] 2020-09-30 15:29:15.195 [main] MailSendReceiveTest - ------
+[INFO ] 2020-09-30 15:29:15.195 [main] MailSendReceiveTest - text/html
+[DEBUG] 2020-09-30 15:29:15.195 [main] MailSendReceiveTest - The message sent: <html><META http-equiv=Content-Type content="text/html; charset=utf-8"><body><h1>HTML Message</h1><h2>Here is some text in the HTML message</h2></body></html>
+[DEBUG] 2020-09-30 15:29:15.196 [main] MailSendReceiveTest - The message sent type: text/html
+[INFO ] 2020-09-30 15:29:18.747 [main] SendAndReceive - Message count: 59
+[INFO ] 2020-09-30 15:29:19.608 [main] MailSendReceiveTest - ------
+[INFO ] 2020-09-30 15:29:19.608 [main] MailSendReceiveTest - TEXT/PLAIN
+[INFO ] 2020-09-30 15:29:19.608 [main] MailSendReceiveTest - ------
+[INFO ] 2020-09-30 15:29:19.608 [main] MailSendReceiveTest - TEXT/HTML
+[DEBUG] 2020-09-30 15:29:19.608 [main] MailSendReceiveTest - The message sent: <html><META http-equiv=Content-Type content="text/html; charset=utf-8"><body><h1>HTML Message</h1><h2>Here is some text in the HTML message</h2></body></html>
+[DEBUG] 2020-09-30 15:29:19.608 [main] MailSendReceiveTest - The message sent type: TEXT/HTML
+[INFO ] 2020-09-30 15:29:19.609 [main] MailSendReceiveTest - ---------------Check Received CC Recipients---------------
+[INFO ] 2020-09-30 15:29:20.780 [main] SendAndReceive - Email sent
+[INFO ] 2020-09-30 15:29:24.402 [main] SendAndReceive - Message count: 60
+[DEBUG] 2020-09-30 15:29:25.292 [main] MailSendReceiveTest - Expected 'CC' mails: [xinjia1.cao@gmail.com, xinjia2.cao@gmail.com]
+[DEBUG] 2020-09-30 15:29:25.293 [main] MailSendReceiveTest - Sent 'CC' mails: [xinjia1.cao@gmail.com, xinjia2.cao@gmail.com]
+[INFO ] 2020-09-30 15:29:25.294 [main] MailSendReceiveTest - ---------------Check Null Regular Files--------------
+[INFO ] 2020-09-30 15:29:25.300 [main] MailSendReceiveTest - ---------------Check Number Of Send Regular and Embedded Files---------------
+[INFO ] 2020-09-30 15:29:26.888 [main] SendAndReceive - Email sent
+[DEBUG] 2020-09-30 15:29:26.928 [main] MailSendReceiveTest - Sent files: 2
+[INFO ] 2020-09-30 15:29:26.928 [main] MailSendReceiveTest - Expected files: 3
+[INFO ] 2020-09-30 15:29:26.929 [main] MailSendReceiveTest - ---------------Check Send HTML Message---------------
+[INFO ] 2020-09-30 15:29:28.037 [main] SendAndReceive - Email sent
+[INFO ] 2020-09-30 15:29:28.076 [main] MailSendReceiveTest - ------
+[INFO ] 2020-09-30 15:29:28.076 [main] MailSendReceiveTest - text/plain
+[INFO ] 2020-09-30 15:29:28.076 [main] MailSendReceiveTest - ------
+[INFO ] 2020-09-30 15:29:28.077 [main] MailSendReceiveTest - text/html
+[DEBUG] 2020-09-30 15:29:28.077 [main] MailSendReceiveTest - The message sent: <html><META http-equiv=Content-Type content="text/html; charset=utf-8"><body><h1>HTML Message</h1><h2>Here is some text in the HTML message</h2></body></html>
+[DEBUG] 2020-09-30 15:29:28.077 [main] MailSendReceiveTest - The message sent type: text/html
+[DEBUG] 2020-09-30 15:29:28.077 [main] MailSendReceiveTest - Sent HTML message: <html><META http-equiv=Content-Type content="text/html; charset=utf-8"><body><h1>HTML Message</h1><h2>Here is some text in the HTML message</h2></body></html>
+[DEBUG] 2020-09-30 15:29:28.078 [main] MailSendReceiveTest - Expected HTML message: <html><META http-equiv=Content-Type content="text/html; charset=utf-8"><body><h1>HTML Message</h1><h2>Here is some text in the HTML message</h2></body></html>
+[INFO ] 2020-09-30 15:29:28.079 [main] MailSendReceiveTest - ---------------Check Received 'To' Recipients---------------
+[INFO ] 2020-09-30 15:29:29.247 [main] SendAndReceive - Email sent
+[INFO ] 2020-09-30 15:29:32.848 [main] SendAndReceive - Message count: 63
+[DEBUG] 2020-09-30 15:29:35.493 [main] MailSendReceiveTest - Expected 'To' mails: [xinjia1.cao@gmail.com, xinjia2.cao@gmail.com]
+[DEBUG] 2020-09-30 15:29:35.494 [main] MailSendReceiveTest - Sent 'To' mails: [xinjia1.cao@gmail.com, xinjia2.cao@gmail.com]
+[INFO ] 2020-09-30 15:29:35.495 [main] MailSendReceiveTest - ---------------Check If Sender Is The Send Bean---------------
+[INFO ] 2020-09-30 15:29:36.743 [main] SendAndReceive - Email sent
+[INFO ] 2020-09-30 15:29:36.784 [main] MailSendReceiveTest - ---------------Check Null Embedded Files--------------
+[INFO ] 2020-09-30 15:29:36.785 [main] MailSendReceiveTest - ---------------Check Non-Existent Files---------------
+[WARN ] 2020-09-30 15:29:36.785 [main] MailSendReceiveTest - Can't find file: dsfvsddsc.png
+[INFO ] 2020-09-30 15:29:36.787 [main] MailSendReceiveTest - ---------------Check Null 'To' Recipient---------------
+[WARN ] 2020-09-30 15:29:36.787 [main] SendAndReceive - Null: Please enter a valid email address
+[INFO ] 2020-09-30 15:29:36.788 [main] MailSendReceiveTest - ---------------Check Received Subject---------------
+[INFO ] 2020-09-30 15:29:37.925 [main] SendAndReceive - Email sent
+[INFO ] 2020-09-30 15:29:41.499 [main] SendAndReceive - Message count: 65
+[DEBUG] 2020-09-30 15:29:43.184 [main] MailSendReceiveTest - subject sent: checkReceivedSubject
+[DEBUG] 2020-09-30 15:29:43.184 [main] MailSendReceiveTest - subject received: checkReceivedSubject
+[INFO ] 2020-09-30 15:29:43.185 [main] MailSendReceiveTest - ---------------Check Null Regular File In List--------------
+[INFO ] 2020-09-30 15:29:43.186 [main] MailSendReceiveTest - ---------------Check Number Of Received Embedded And Regular Files---------------
+[INFO ] 2020-09-30 15:29:44.668 [main] SendAndReceive - Email sent
+[INFO ] 2020-09-30 15:29:48.236 [main] SendAndReceive - Message count: 66
+[DEBUG] 2020-09-30 15:29:49.336 [main] MailSendReceiveTest - sent files: 1
+[DEBUG] 2020-09-30 15:29:49.336 [main] MailSendReceiveTest - received files: 1
+[INFO ] 2020-09-30 15:29:49.337 [main] MailSendReceiveTest - ---------------Check Send BCC Recipients---------------
+[INFO ] 2020-09-30 15:29:50.497 [main] SendAndReceive - Email sent
+[DEBUG] 2020-09-30 15:29:50.538 [main] MailSendReceiveTest - Expected 'BCC' mails: [xinjia1.cao@gmail.com, xinjia2.cao@gmail.com]
+[DEBUG] 2020-09-30 15:29:50.539 [main] MailSendReceiveTest - Sent 'BCC' mails: [xinjia1.cao@gmail.com, xinjia2.cao@gmail.com]
+[INFO ] 2020-09-30 15:29:50.539 [main] MailSendReceiveTest - ---------------Check Send 'To' Recipients---------------
+[INFO ] 2020-09-30 15:29:51.844 [main] SendAndReceive - Email sent
+[DEBUG] 2020-09-30 15:29:51.884 [main] MailSendReceiveTest - Expected 'To' mails: [xinjia1.cao@gmail.com, xinjia2.cao@gmail.com, xinjia3.cao@gmail.com]
+[DEBUG] 2020-09-30 15:29:51.885 [main] MailSendReceiveTest - Sent 'To' mails: [xinjia1.cao@gmail.com, xinjia2.cao@gmail.com, xinjia3.cao@gmail.com]
+[INFO ] 2020-09-30 15:29:51.885 [main] MailSendReceiveTest - ---------------Check Received Embedded File Name---------------
+[INFO ] 2020-09-30 15:29:53.029 [main] SendAndReceive - Email sent
+[INFO ] 2020-09-30 15:29:56.731 [main] SendAndReceive - Message count: 69
+[INFO ] 2020-09-30 15:29:58.931 [main] MailSendReceiveTest - ---------------Check Send Subject---------------
+[INFO ] 2020-09-30 15:30:00.049 [main] SendAndReceive - Email sent
+[DEBUG] 2020-09-30 15:30:00.095 [main] MailSendReceiveTest - Sent subject: checkSendSubject
+[DEBUG] 2020-09-30 15:30:00.095 [main] MailSendReceiveTest - Expected subject: checkSendSubject
+[INFO ] 2020-09-30 15:30:00.095 [main] MailSendReceiveTest - ---------------Check Received Regular File Name---------------
+[INFO ] 2020-09-30 15:30:01.484 [main] SendAndReceive - Email sent
+[INFO ] 2020-09-30 15:30:05.211 [main] SendAndReceive - Message count: 71
+[DEBUG] 2020-09-30 15:30:07.018 [main] MailSendReceiveTest - expected file name: img1.png
+[DEBUG] 2020-09-30 15:30:07.019 [main] MailSendReceiveTest - received file name: img1.png
+[INFO ] 2020-09-30 15:30:07.020 [main] MailSendReceiveTest - ---------------Check Null Message---------------
+[INFO ] 2020-09-30 15:33:16.961 [main] MailSendReceiveTest - ---------------Check Number Of Received Regular Files---------------
+[INFO ] 2020-09-30 15:33:19.158 [main] SendAndReceive - Email sent
+[INFO ] 2020-09-30 15:33:23.034 [main] SendAndReceive - Message count: 1
+[DEBUG] 2020-09-30 15:33:24.381 [main] MailSendReceiveTest - sent files: 2
+[DEBUG] 2020-09-30 15:33:24.382 [main] MailSendReceiveTest - received files: 2
+[INFO ] 2020-09-30 15:33:24.388 [main] MailSendReceiveTest - ---------------Check Received Plain Messages---------------
+[INFO ] 2020-09-30 15:33:25.557 [main] SendAndReceive - Email sent
+[INFO ] 2020-09-30 15:33:25.604 [main] MailSendReceiveTest - ------
+[INFO ] 2020-09-30 15:33:25.604 [main] MailSendReceiveTest - text/plain
+[DEBUG] 2020-09-30 15:33:25.605 [main] MailSendReceiveTest - The message sent: This is the message of the test
+[DEBUG] 2020-09-30 15:33:25.606 [main] MailSendReceiveTest - The message sent type: text/plain
+[INFO ] 2020-09-30 15:33:25.606 [main] MailSendReceiveTest - ------
+[INFO ] 2020-09-30 15:33:25.606 [main] MailSendReceiveTest - text/html
+[INFO ] 2020-09-30 15:33:29.192 [main] SendAndReceive - Message count: 2
+[INFO ] 2020-09-30 15:33:30.079 [main] MailSendReceiveTest - ------
+[INFO ] 2020-09-30 15:33:30.079 [main] MailSendReceiveTest - TEXT/PLAIN
+[DEBUG] 2020-09-30 15:33:30.079 [main] MailSendReceiveTest - The message sent: This is the message of the test
+[DEBUG] 2020-09-30 15:33:30.080 [main] MailSendReceiveTest - The message sent type: TEXT/PLAIN
+[INFO ] 2020-09-30 15:33:30.080 [main] MailSendReceiveTest - ------
+[INFO ] 2020-09-30 15:33:30.080 [main] MailSendReceiveTest - TEXT/HTML
+[INFO ] 2020-09-30 15:33:30.081 [main] MailSendReceiveTest - ---------------Check Null Receive Bean---------------
+[INFO ] 2020-09-30 15:33:31.192 [main] SendAndReceive - Email sent
+[WARN ] 2020-09-30 15:33:34.237 [main] SendAndReceive - Null: please enter a valid receive config bean
+[INFO ] 2020-09-30 15:33:34.239 [main] MailSendReceiveTest - ---------------Check Null Receive Bean Address---------------
+[WARN ] 2020-09-30 15:33:34.240 [main] SendAndReceive - Null: please enter a valid email address
+[INFO ] 2020-09-30 15:33:34.242 [main] MailSendReceiveTest - ---------------Check Invalid Send Bean Address---------------
+[WARN ] 2020-09-30 15:33:34.243 [main] SendAndReceive - Invalid send bean: invalidemail
+[INFO ] 2020-09-30 15:33:34.245 [main] MailSendReceiveTest - ---------------Check Invalid Receive Bean Address---------------
+[WARN ] 2020-09-30 15:33:34.246 [main] SendAndReceive - Invalid receive email address
+[INFO ] 2020-09-30 15:33:34.248 [main] MailSendReceiveTest - ---------------Check No Recipients---------------
+[WARN ] 2020-09-30 15:33:34.249 [main] SendAndReceive - Please enter at least one recipient
+[INFO ] 2020-09-30 15:33:34.251 [main] MailSendReceiveTest - ---------------Check Null CC List---------------
+[INFO ] 2020-09-30 15:33:34.253 [main] MailSendReceiveTest - ---------------Check Null Send Bean---------------
+[WARN ] 2020-09-30 15:33:34.253 [main] SendAndReceive - Null: please enter a valid send config bean
+[INFO ] 2020-09-30 15:33:34.254 [main] MailSendReceiveTest - ---------------Check Null Subject---------------
+[INFO ] 2020-09-30 15:33:35.455 [main] SendAndReceive - Email sent
+[INFO ] 2020-09-30 15:33:35.496 [main] MailSendReceiveTest - ---------------Check If Mails Are Received From the Right Sender---------------
+[INFO ] 2020-09-30 15:33:36.670 [main] SendAndReceive - Email sent
+[INFO ] 2020-09-30 15:33:40.443 [main] SendAndReceive - Message count: 5
+[DEBUG] 2020-09-30 15:33:42.621 [main] MailSendReceiveTest - From email: xinjia.caoxin@gmail.com
+[DEBUG] 2020-09-30 15:33:42.622 [main] MailSendReceiveTest - Email Sent From Receiver: xinjia.caoxin@gmail.com
+[INFO ] 2020-09-30 15:33:42.624 [main] MailSendReceiveTest - ---------------Check If All Mails Received From One Account---------------
+[INFO ] 2020-09-30 15:33:43.744 [main] SendAndReceive - Email sent
+[INFO ] 2020-09-30 15:33:44.897 [main] SendAndReceive - Email sent
+[INFO ] 2020-09-30 15:33:46.019 [main] SendAndReceive - Email sent
+[INFO ] 2020-09-30 15:33:47.155 [main] SendAndReceive - Email sent
+[INFO ] 2020-09-30 15:33:48.329 [main] SendAndReceive - Email sent
+[INFO ] 2020-09-30 15:33:51.938 [main] SendAndReceive - Message count: 10
+[DEBUG] 2020-09-30 15:33:55.428 [main] MailSendReceiveTest - 5 mails received
+[INFO ] 2020-09-30 15:33:55.428 [main] MailSendReceiveTest - ---------------Check Received HTML messages---------------
+[INFO ] 2020-09-30 15:33:56.533 [main] SendAndReceive - Email sent
+[INFO ] 2020-09-30 15:33:56.576 [main] MailSendReceiveTest - ------
+[INFO ] 2020-09-30 15:33:56.576 [main] MailSendReceiveTest - text/plain
+[INFO ] 2020-09-30 15:33:56.576 [main] MailSendReceiveTest - ------
+[INFO ] 2020-09-30 15:33:56.576 [main] MailSendReceiveTest - text/html
+[DEBUG] 2020-09-30 15:33:56.576 [main] MailSendReceiveTest - The message sent: <html><META http-equiv=Content-Type content="text/html; charset=utf-8"><body><h1>HTML Message</h1><h2>Here is some text in the HTML message</h2></body></html>
+[DEBUG] 2020-09-30 15:33:56.577 [main] MailSendReceiveTest - The message sent type: text/html
+[INFO ] 2020-09-30 15:34:00.262 [main] SendAndReceive - Message count: 11
+[INFO ] 2020-09-30 15:34:01.132 [main] MailSendReceiveTest - ------
+[INFO ] 2020-09-30 15:34:01.133 [main] MailSendReceiveTest - TEXT/PLAIN
+[INFO ] 2020-09-30 15:34:01.133 [main] MailSendReceiveTest - ------
+[INFO ] 2020-09-30 15:34:01.133 [main] MailSendReceiveTest - TEXT/HTML
+[DEBUG] 2020-09-30 15:34:01.133 [main] MailSendReceiveTest - The message sent: <html><META http-equiv=Content-Type content="text/html; charset=utf-8"><body><h1>HTML Message</h1><h2>Here is some text in the HTML message</h2></body></html>
+[DEBUG] 2020-09-30 15:34:01.133 [main] MailSendReceiveTest - The message sent type: TEXT/HTML
+[INFO ] 2020-09-30 15:34:01.134 [main] MailSendReceiveTest - ---------------Check Received CC Recipients---------------
+[INFO ] 2020-09-30 15:34:02.383 [main] SendAndReceive - Email sent
+[INFO ] 2020-09-30 15:34:06.110 [main] SendAndReceive - Message count: 12
+[DEBUG] 2020-09-30 15:34:07.005 [main] MailSendReceiveTest - Expected 'CC' mails: [xinjia1.cao@gmail.com, xinjia2.cao@gmail.com]
+[DEBUG] 2020-09-30 15:34:07.006 [main] MailSendReceiveTest - Sent 'CC' mails: [xinjia1.cao@gmail.com, xinjia2.cao@gmail.com]
+[INFO ] 2020-09-30 15:34:07.006 [main] MailSendReceiveTest - ---------------Check Null Regular Files--------------
+[INFO ] 2020-09-30 15:34:07.014 [main] MailSendReceiveTest - ---------------Check Number Of Send Regular and Embedded Files---------------
+[INFO ] 2020-09-30 15:34:08.690 [main] SendAndReceive - Email sent
+[DEBUG] 2020-09-30 15:34:08.736 [main] MailSendReceiveTest - Sent files: 2
+[INFO ] 2020-09-30 15:34:08.736 [main] MailSendReceiveTest - Expected files: 3
+[INFO ] 2020-09-30 15:34:08.738 [main] MailSendReceiveTest - ---------------Check Send HTML Message---------------
+[INFO ] 2020-09-30 15:34:09.871 [main] SendAndReceive - Email sent
+[INFO ] 2020-09-30 15:34:09.911 [main] MailSendReceiveTest - ------
+[INFO ] 2020-09-30 15:34:09.912 [main] MailSendReceiveTest - text/plain
+[INFO ] 2020-09-30 15:34:09.912 [main] MailSendReceiveTest - ------
+[INFO ] 2020-09-30 15:34:09.913 [main] MailSendReceiveTest - text/html
+[DEBUG] 2020-09-30 15:34:09.913 [main] MailSendReceiveTest - The message sent: <html><META http-equiv=Content-Type content="text/html; charset=utf-8"><body><h1>HTML Message</h1><h2>Here is some text in the HTML message</h2></body></html>
+[DEBUG] 2020-09-30 15:34:09.914 [main] MailSendReceiveTest - The message sent type: text/html
+[DEBUG] 2020-09-30 15:34:09.915 [main] MailSendReceiveTest - Sent HTML message: <html><META http-equiv=Content-Type content="text/html; charset=utf-8"><body><h1>HTML Message</h1><h2>Here is some text in the HTML message</h2></body></html>
+[DEBUG] 2020-09-30 15:34:09.915 [main] MailSendReceiveTest - Expected HTML message: <html><META http-equiv=Content-Type content="text/html; charset=utf-8"><body><h1>HTML Message</h1><h2>Here is some text in the HTML message</h2></body></html>
+[INFO ] 2020-09-30 15:34:09.918 [main] MailSendReceiveTest - ---------------Check Received 'To' Recipients---------------
+[INFO ] 2020-09-30 15:34:11.054 [main] SendAndReceive - Email sent
+[INFO ] 2020-09-30 15:34:14.634 [main] SendAndReceive - Message count: 15
+[DEBUG] 2020-09-30 15:34:18.755 [main] MailSendReceiveTest - Expected 'To' mails: [xinjia1.cao@gmail.com, xinjia2.cao@gmail.com]
+[DEBUG] 2020-09-30 15:34:18.755 [main] MailSendReceiveTest - Sent 'To' mails: [xinjia1.cao@gmail.com, xinjia2.cao@gmail.com]
+[INFO ] 2020-09-30 15:34:18.756 [main] MailSendReceiveTest - ---------------Check If Sender Is The Send Bean---------------
+[INFO ] 2020-09-30 15:34:19.992 [main] SendAndReceive - Email sent
+[INFO ] 2020-09-30 15:34:20.037 [main] MailSendReceiveTest - ---------------Check Null Embedded Files--------------
+[INFO ] 2020-09-30 15:34:20.040 [main] MailSendReceiveTest - ---------------Check Non-Existent Files---------------
+[WARN ] 2020-09-30 15:34:20.040 [main] MailSendReceiveTest - Can't find file: dsfvsddsc.png
+[INFO ] 2020-09-30 15:34:20.041 [main] MailSendReceiveTest - ---------------Check Null 'To' Recipient---------------
+[WARN ] 2020-09-30 15:34:20.041 [main] SendAndReceive - Null: Please enter a valid email address
+[INFO ] 2020-09-30 15:34:20.041 [main] MailSendReceiveTest - ---------------Check Received Subject---------------
+[INFO ] 2020-09-30 15:34:21.165 [main] SendAndReceive - Email sent
+[INFO ] 2020-09-30 15:34:24.935 [main] SendAndReceive - Message count: 17
+[DEBUG] 2020-09-30 15:34:26.491 [main] MailSendReceiveTest - subject sent: checkReceivedSubject
+[DEBUG] 2020-09-30 15:34:26.492 [main] MailSendReceiveTest - subject received: checkReceivedSubject
+[INFO ] 2020-09-30 15:34:26.493 [main] MailSendReceiveTest - ---------------Check Null Regular File In List--------------
+[INFO ] 2020-09-30 15:34:26.494 [main] MailSendReceiveTest - ---------------Check Number Of Received Embedded And Regular Files---------------
+[INFO ] 2020-09-30 15:34:27.951 [main] SendAndReceive - Email sent
+[INFO ] 2020-09-30 15:34:31.537 [main] SendAndReceive - Message count: 18
+[DEBUG] 2020-09-30 15:34:32.745 [main] MailSendReceiveTest - sent files: 1
+[DEBUG] 2020-09-30 15:34:32.746 [main] MailSendReceiveTest - received files: 1
+[INFO ] 2020-09-30 15:34:32.748 [main] MailSendReceiveTest - ---------------Check Send BCC Recipients---------------
+[INFO ] 2020-09-30 15:34:34.115 [main] SendAndReceive - Email sent
+[DEBUG] 2020-09-30 15:34:34.166 [main] MailSendReceiveTest - Expected 'BCC' mails: [xinjia1.cao@gmail.com, xinjia2.cao@gmail.com]
+[DEBUG] 2020-09-30 15:34:34.167 [main] MailSendReceiveTest - Sent 'BCC' mails: [xinjia1.cao@gmail.com, xinjia2.cao@gmail.com]
+[INFO ] 2020-09-30 15:34:34.170 [main] MailSendReceiveTest - ---------------Check Send 'To' Recipients---------------
+[INFO ] 2020-09-30 15:34:35.451 [main] SendAndReceive - Email sent
+[DEBUG] 2020-09-30 15:34:35.498 [main] MailSendReceiveTest - Expected 'To' mails: [xinjia1.cao@gmail.com, xinjia2.cao@gmail.com, xinjia3.cao@gmail.com]
+[DEBUG] 2020-09-30 15:34:35.499 [main] MailSendReceiveTest - Sent 'To' mails: [xinjia1.cao@gmail.com, xinjia2.cao@gmail.com, xinjia3.cao@gmail.com]
+[INFO ] 2020-09-30 15:34:35.501 [main] MailSendReceiveTest - ---------------Check Received Embedded File Name---------------
+[INFO ] 2020-09-30 15:34:36.745 [main] SendAndReceive - Email sent
+[INFO ] 2020-09-30 15:34:40.403 [main] SendAndReceive - Message count: 21
+[INFO ] 2020-09-30 15:34:42.742 [main] MailSendReceiveTest - ---------------Check Send Subject---------------
+[INFO ] 2020-09-30 15:34:44.033 [main] SendAndReceive - Email sent
+[DEBUG] 2020-09-30 15:34:44.080 [main] MailSendReceiveTest - Sent subject: checkSendSubject
+[DEBUG] 2020-09-30 15:34:44.081 [main] MailSendReceiveTest - Expected subject: checkSendSubject
+[INFO ] 2020-09-30 15:34:44.081 [main] MailSendReceiveTest - ---------------Check Received Regular File Name---------------
+[INFO ] 2020-09-30 15:34:45.734 [main] SendAndReceive - Email sent
+[INFO ] 2020-09-30 15:34:49.420 [main] SendAndReceive - Message count: 23
+[DEBUG] 2020-09-30 15:34:51.389 [main] MailSendReceiveTest - expected file name: img1.png
+[DEBUG] 2020-09-30 15:34:51.390 [main] MailSendReceiveTest - received file name: img1.png
+[INFO ] 2020-09-30 15:34:51.392 [main] MailSendReceiveTest - ---------------Check Null Message---------------
+[INFO ] 2020-09-30 15:37:44.767 [main] MailSendReceiveTest - ---------------Check Number Of Received Regular Files---------------
+[INFO ] 2020-09-30 15:37:46.752 [main] SendAndReceive - Email sent
+[INFO ] 2020-09-30 15:37:50.586 [main] SendAndReceive - Message count: 24
+[DEBUG] 2020-09-30 15:37:51.956 [main] MailSendReceiveTest - sent files: 2
+[DEBUG] 2020-09-30 15:37:51.957 [main] MailSendReceiveTest - received files: 2
+[INFO ] 2020-09-30 15:37:51.958 [main] MailSendReceiveTest - ---------------Check Received Plain Messages---------------
+[INFO ] 2020-09-30 15:37:53.123 [main] SendAndReceive - Email sent
+[INFO ] 2020-09-30 15:37:53.168 [main] MailSendReceiveTest - ------
+[INFO ] 2020-09-30 15:37:53.169 [main] MailSendReceiveTest - text/plain
+[DEBUG] 2020-09-30 15:37:53.170 [main] MailSendReceiveTest - The message sent: This is the message of the test
+[DEBUG] 2020-09-30 15:37:53.171 [main] MailSendReceiveTest - The message sent type: text/plain
+[INFO ] 2020-09-30 15:37:53.172 [main] MailSendReceiveTest - ------
+[INFO ] 2020-09-30 15:37:53.173 [main] MailSendReceiveTest - text/html
+[INFO ] 2020-09-30 15:37:56.733 [main] SendAndReceive - Message count: 25
+[INFO ] 2020-09-30 15:37:57.616 [main] MailSendReceiveTest - ------
+[INFO ] 2020-09-30 15:37:57.617 [main] MailSendReceiveTest - TEXT/PLAIN
+[DEBUG] 2020-09-30 15:37:57.618 [main] MailSendReceiveTest - The message sent: This is the message of the test
+[DEBUG] 2020-09-30 15:37:57.618 [main] MailSendReceiveTest - The message sent type: TEXT/PLAIN
+[INFO ] 2020-09-30 15:37:57.618 [main] MailSendReceiveTest - ------
+[INFO ] 2020-09-30 15:37:57.619 [main] MailSendReceiveTest - TEXT/HTML
+[INFO ] 2020-09-30 15:37:57.620 [main] MailSendReceiveTest - ---------------Check Null Receive Bean---------------
+[INFO ] 2020-09-30 15:37:59.178 [main] SendAndReceive - Email sent
+[WARN ] 2020-09-30 15:38:02.221 [main] SendAndReceive - Null: please enter a valid receive config bean
+[INFO ] 2020-09-30 15:38:02.224 [main] MailSendReceiveTest - ---------------Check Null Receive Bean Address---------------
+[WARN ] 2020-09-30 15:38:02.225 [main] SendAndReceive - Null: please enter a valid email address
+[INFO ] 2020-09-30 15:38:02.226 [main] MailSendReceiveTest - ---------------Check Invalid Send Bean Address---------------
+[WARN ] 2020-09-30 15:38:02.226 [main] SendAndReceive - Invalid send bean: invalidemail
+[INFO ] 2020-09-30 15:38:02.227 [main] MailSendReceiveTest - ---------------Check Invalid Receive Bean Address---------------
+[WARN ] 2020-09-30 15:38:02.227 [main] SendAndReceive - Invalid receive email address
+[INFO ] 2020-09-30 15:38:02.228 [main] MailSendReceiveTest - ---------------Check No Recipients---------------
+[WARN ] 2020-09-30 15:38:02.228 [main] SendAndReceive - Please enter at least one recipient
+[INFO ] 2020-09-30 15:38:02.228 [main] MailSendReceiveTest - ---------------Check Null CC List---------------
+[INFO ] 2020-09-30 15:38:02.229 [main] MailSendReceiveTest - ---------------Check Null Send Bean---------------
+[WARN ] 2020-09-30 15:38:02.229 [main] SendAndReceive - Null: please enter a valid send config bean
+[INFO ] 2020-09-30 15:38:02.229 [main] MailSendReceiveTest - ---------------Check Null Subject---------------
+[INFO ] 2020-09-30 15:38:03.402 [main] SendAndReceive - Email sent
+[INFO ] 2020-09-30 15:38:03.446 [main] MailSendReceiveTest - ---------------Check If Mails Are Received From the Right Sender---------------
+[INFO ] 2020-09-30 15:38:04.662 [main] SendAndReceive - Email sent
+[INFO ] 2020-09-30 15:38:08.216 [main] SendAndReceive - Message count: 28
+[DEBUG] 2020-09-30 15:38:10.369 [main] MailSendReceiveTest - From email: xinjia.caoxin@gmail.com
+[DEBUG] 2020-09-30 15:38:10.370 [main] MailSendReceiveTest - Email Sent From Receiver: xinjia.caoxin@gmail.com
+[INFO ] 2020-09-30 15:38:10.371 [main] MailSendReceiveTest - ---------------Check If All Mails Received From One Account---------------
+[INFO ] 2020-09-30 15:38:11.539 [main] SendAndReceive - Email sent
+[INFO ] 2020-09-30 15:38:12.730 [main] SendAndReceive - Email sent
+[INFO ] 2020-09-30 15:38:13.989 [main] SendAndReceive - Email sent
+[INFO ] 2020-09-30 15:38:15.168 [main] SendAndReceive - Email sent
+[INFO ] 2020-09-30 15:38:16.438 [main] SendAndReceive - Email sent
+[INFO ] 2020-09-30 15:38:20.131 [main] SendAndReceive - Message count: 33
+[DEBUG] 2020-09-30 15:38:23.579 [main] MailSendReceiveTest - 5 mails received
+[INFO ] 2020-09-30 15:38:23.580 [main] MailSendReceiveTest - ---------------Check Received HTML messages---------------
+[INFO ] 2020-09-30 15:38:24.748 [main] SendAndReceive - Email sent
+[INFO ] 2020-09-30 15:38:24.787 [main] MailSendReceiveTest - ------
+[INFO ] 2020-09-30 15:38:24.787 [main] MailSendReceiveTest - text/plain
+[INFO ] 2020-09-30 15:38:24.787 [main] MailSendReceiveTest - ------
+[INFO ] 2020-09-30 15:38:24.787 [main] MailSendReceiveTest - text/html
+[DEBUG] 2020-09-30 15:38:24.787 [main] MailSendReceiveTest - The message sent: <html><META http-equiv=Content-Type content="text/html; charset=utf-8"><body><h1>HTML Message</h1><h2>Here is some text in the HTML message</h2></body></html>
+[DEBUG] 2020-09-30 15:38:24.788 [main] MailSendReceiveTest - The message sent type: text/html
+[INFO ] 2020-09-30 15:38:28.445 [main] SendAndReceive - Message count: 34
+[INFO ] 2020-09-30 15:38:29.314 [main] MailSendReceiveTest - ------
+[INFO ] 2020-09-30 15:38:29.315 [main] MailSendReceiveTest - TEXT/PLAIN
+[INFO ] 2020-09-30 15:38:29.316 [main] MailSendReceiveTest - ------
+[INFO ] 2020-09-30 15:38:29.316 [main] MailSendReceiveTest - TEXT/HTML
+[DEBUG] 2020-09-30 15:38:29.316 [main] MailSendReceiveTest - The message sent: <html><META http-equiv=Content-Type content="text/html; charset=utf-8"><body><h1>HTML Message</h1><h2>Here is some text in the HTML message</h2></body></html>
+[DEBUG] 2020-09-30 15:38:29.317 [main] MailSendReceiveTest - The message sent type: TEXT/HTML
+[INFO ] 2020-09-30 15:38:29.320 [main] MailSendReceiveTest - ---------------Check Received CC Recipients---------------
+[INFO ] 2020-09-30 15:38:30.568 [main] SendAndReceive - Email sent
+[INFO ] 2020-09-30 15:38:34.131 [main] SendAndReceive - Message count: 35
+[DEBUG] 2020-09-30 15:38:34.986 [main] MailSendReceiveTest - Expected 'CC' mails: [xinjia1.cao@gmail.com, xinjia2.cao@gmail.com]
+[DEBUG] 2020-09-30 15:38:34.988 [main] MailSendReceiveTest - Sent 'CC' mails: [xinjia1.cao@gmail.com, xinjia2.cao@gmail.com]
+[INFO ] 2020-09-30 15:38:34.990 [main] MailSendReceiveTest - ---------------Check Null Regular Files--------------
+[INFO ] 2020-09-30 15:38:34.998 [main] MailSendReceiveTest - ---------------Check Number Of Send Regular and Embedded Files---------------
+[INFO ] 2020-09-30 15:38:36.817 [main] SendAndReceive - Email sent
+[DEBUG] 2020-09-30 15:38:36.859 [main] MailSendReceiveTest - Sent files: 2
+[INFO ] 2020-09-30 15:38:36.860 [main] MailSendReceiveTest - Expected files: 3
+[INFO ] 2020-09-30 15:38:36.862 [main] MailSendReceiveTest - ---------------Check Send HTML Message---------------
+[INFO ] 2020-09-30 15:38:38.213 [main] SendAndReceive - Email sent
+[INFO ] 2020-09-30 15:38:38.253 [main] MailSendReceiveTest - ------
+[INFO ] 2020-09-30 15:38:38.254 [main] MailSendReceiveTest - text/plain
+[INFO ] 2020-09-30 15:38:38.254 [main] MailSendReceiveTest - ------
+[INFO ] 2020-09-30 15:38:38.255 [main] MailSendReceiveTest - text/html
+[DEBUG] 2020-09-30 15:38:38.255 [main] MailSendReceiveTest - The message sent: <html><META http-equiv=Content-Type content="text/html; charset=utf-8"><body><h1>HTML Message</h1><h2>Here is some text in the HTML message</h2></body></html>
+[DEBUG] 2020-09-30 15:38:38.255 [main] MailSendReceiveTest - The message sent type: text/html
+[DEBUG] 2020-09-30 15:38:38.256 [main] MailSendReceiveTest - Sent HTML message: <html><META http-equiv=Content-Type content="text/html; charset=utf-8"><body><h1>HTML Message</h1><h2>Here is some text in the HTML message</h2></body></html>
+[DEBUG] 2020-09-30 15:38:38.257 [main] MailSendReceiveTest - Expected HTML message: <html><META http-equiv=Content-Type content="text/html; charset=utf-8"><body><h1>HTML Message</h1><h2>Here is some text in the HTML message</h2></body></html>
+[INFO ] 2020-09-30 15:38:38.259 [main] MailSendReceiveTest - ---------------Check Received 'To' Recipients---------------
+[INFO ] 2020-09-30 15:38:39.509 [main] SendAndReceive - Email sent
+[INFO ] 2020-09-30 15:38:43.234 [main] SendAndReceive - Message count: 38
+[DEBUG] 2020-09-30 15:38:45.858 [main] MailSendReceiveTest - Expected 'To' mails: [xinjia1.cao@gmail.com, xinjia2.cao@gmail.com]
+[DEBUG] 2020-09-30 15:38:45.858 [main] MailSendReceiveTest - Sent 'To' mails: [xinjia1.cao@gmail.com, xinjia2.cao@gmail.com]
+[INFO ] 2020-09-30 15:38:45.859 [main] MailSendReceiveTest - ---------------Check If Sender Is The Send Bean---------------
+[INFO ] 2020-09-30 15:38:47.008 [main] SendAndReceive - Email sent
+[INFO ] 2020-09-30 15:38:47.052 [main] MailSendReceiveTest - ---------------Check Null Embedded Files--------------
+[INFO ] 2020-09-30 15:38:47.054 [main] MailSendReceiveTest - ---------------Check Non-Existent Files---------------
+[WARN ] 2020-09-30 15:38:47.054 [main] MailSendReceiveTest - Can't find file: dsfvsddsc.png
+[INFO ] 2020-09-30 15:38:47.055 [main] MailSendReceiveTest - ---------------Check Null 'To' Recipient---------------
+[WARN ] 2020-09-30 15:38:47.055 [main] SendAndReceive - Null: Please enter a valid email address
+[INFO ] 2020-09-30 15:38:47.056 [main] MailSendReceiveTest - ---------------Check Received Subject---------------
+[INFO ] 2020-09-30 15:38:48.157 [main] SendAndReceive - Email sent
+[INFO ] 2020-09-30 15:38:51.713 [main] SendAndReceive - Message count: 40
+[DEBUG] 2020-09-30 15:38:53.245 [main] MailSendReceiveTest - subject sent: checkReceivedSubject
+[DEBUG] 2020-09-30 15:38:53.246 [main] MailSendReceiveTest - subject received: checkReceivedSubject
+[INFO ] 2020-09-30 15:38:53.249 [main] MailSendReceiveTest - ---------------Check Null Regular File In List--------------
+[INFO ] 2020-09-30 15:38:53.252 [main] MailSendReceiveTest - ---------------Check Number Of Received Embedded And Regular Files---------------
+[INFO ] 2020-09-30 15:38:54.718 [main] SendAndReceive - Email sent
+[INFO ] 2020-09-30 15:38:58.308 [main] SendAndReceive - Message count: 41
+[DEBUG] 2020-09-30 15:38:59.398 [main] MailSendReceiveTest - sent files: 1
+[DEBUG] 2020-09-30 15:38:59.399 [main] MailSendReceiveTest - received files: 1
+[INFO ] 2020-09-30 15:38:59.399 [main] MailSendReceiveTest - ---------------Check Send BCC Recipients---------------
+[INFO ] 2020-09-30 15:39:00.586 [main] SendAndReceive - Email sent
+[DEBUG] 2020-09-30 15:39:00.626 [main] MailSendReceiveTest - Expected 'BCC' mails: [xinjia1.cao@gmail.com, xinjia2.cao@gmail.com]
+[DEBUG] 2020-09-30 15:39:00.627 [main] MailSendReceiveTest - Sent 'BCC' mails: [xinjia1.cao@gmail.com, xinjia2.cao@gmail.com]
+[INFO ] 2020-09-30 15:39:00.627 [main] MailSendReceiveTest - ---------------Check Send 'To' Recipients---------------
+[INFO ] 2020-09-30 15:39:01.811 [main] SendAndReceive - Email sent
+[DEBUG] 2020-09-30 15:39:01.852 [main] MailSendReceiveTest - Expected 'To' mails: [xinjia1.cao@gmail.com, xinjia2.cao@gmail.com, xinjia3.cao@gmail.com]
+[DEBUG] 2020-09-30 15:39:01.852 [main] MailSendReceiveTest - Sent 'To' mails: [xinjia1.cao@gmail.com, xinjia2.cao@gmail.com, xinjia3.cao@gmail.com]
+[INFO ] 2020-09-30 15:39:01.853 [main] MailSendReceiveTest - ---------------Check Received Embedded File Name---------------
+[INFO ] 2020-09-30 15:39:02.959 [main] SendAndReceive - Email sent
+[INFO ] 2020-09-30 15:39:06.657 [main] SendAndReceive - Message count: 44
+[INFO ] 2020-09-30 15:39:08.785 [main] MailSendReceiveTest - ---------------Check Send Subject---------------
+[INFO ] 2020-09-30 15:39:09.923 [main] SendAndReceive - Email sent
+[DEBUG] 2020-09-30 15:39:09.963 [main] MailSendReceiveTest - Sent subject: checkSendSubject
+[DEBUG] 2020-09-30 15:39:09.964 [main] MailSendReceiveTest - Expected subject: checkSendSubject
+[INFO ] 2020-09-30 15:39:09.964 [main] MailSendReceiveTest - ---------------Check Received Regular File Name---------------
+[INFO ] 2020-09-30 15:39:11.400 [main] SendAndReceive - Email sent
+[INFO ] 2020-09-30 15:39:15.012 [main] SendAndReceive - Message count: 46
+[DEBUG] 2020-09-30 15:39:16.803 [main] MailSendReceiveTest - expected file name: img1.png
+[DEBUG] 2020-09-30 15:39:16.804 [main] MailSendReceiveTest - received file name: img1.png
+[INFO ] 2020-09-30 15:39:16.806 [main] MailSendReceiveTest - ---------------Check Null HTML Message---------------
+[INFO ] 2020-09-30 15:56:46.451 [main] MailSendReceiveTest - ---------------Check Number Of Received Regular Files---------------
+[INFO ] 2020-09-30 15:56:48.700 [main] SendAndReceive - Email sent
+[INFO ] 2020-09-30 15:56:52.553 [main] SendAndReceive - Message count: 1
+[DEBUG] 2020-09-30 15:56:53.849 [main] MailSendReceiveTest - sent files: 2
+[DEBUG] 2020-09-30 15:56:53.849 [main] MailSendReceiveTest - received files: 2
+[INFO ] 2020-09-30 15:56:53.851 [main] MailSendReceiveTest - ---------------Check Received Plain Messages---------------
+[INFO ] 2020-09-30 15:56:55.401 [main] SendAndReceive - Email sent
+[INFO ] 2020-09-30 15:56:55.448 [main] MailSendReceiveTest - ------
+[INFO ] 2020-09-30 15:56:55.448 [main] MailSendReceiveTest - text/plain
+[DEBUG] 2020-09-30 15:56:55.449 [main] MailSendReceiveTest - The message sent: This is the message of the test
+[DEBUG] 2020-09-30 15:56:55.449 [main] MailSendReceiveTest - The message sent type: text/plain
+[INFO ] 2020-09-30 15:56:55.449 [main] MailSendReceiveTest - ------
+[INFO ] 2020-09-30 15:56:55.449 [main] MailSendReceiveTest - text/html
+[INFO ] 2020-09-30 15:56:59.179 [main] SendAndReceive - Message count: 2
+[INFO ] 2020-09-30 15:57:00.038 [main] MailSendReceiveTest - ------
+[INFO ] 2020-09-30 15:57:00.038 [main] MailSendReceiveTest - TEXT/PLAIN
+[DEBUG] 2020-09-30 15:57:00.038 [main] MailSendReceiveTest - The message sent: This is the message of the test
+[DEBUG] 2020-09-30 15:57:00.039 [main] MailSendReceiveTest - The message sent type: TEXT/PLAIN
+[INFO ] 2020-09-30 15:57:00.039 [main] MailSendReceiveTest - ------
+[INFO ] 2020-09-30 15:57:00.039 [main] MailSendReceiveTest - TEXT/HTML
+[INFO ] 2020-09-30 15:57:00.040 [main] MailSendReceiveTest - ---------------Check Null Receive Bean---------------
+[INFO ] 2020-09-30 15:57:01.209 [main] SendAndReceive - Email sent
+[WARN ] 2020-09-30 15:57:04.253 [main] SendAndReceive - Null: please enter a valid receive config bean
+[INFO ] 2020-09-30 15:57:04.254 [main] MailSendReceiveTest - ---------------Check Null Receive Bean Address---------------
+[WARN ] 2020-09-30 15:57:04.254 [main] SendAndReceive - Null: please enter a valid email address
+[INFO ] 2020-09-30 15:57:04.255 [main] MailSendReceiveTest - ---------------Check Invalid Send Bean Address---------------
+[WARN ] 2020-09-30 15:57:04.255 [main] SendAndReceive - Invalid send bean: invalidemail
+[INFO ] 2020-09-30 15:57:04.256 [main] MailSendReceiveTest - ---------------Check Invalid Receive Bean Address---------------
+[WARN ] 2020-09-30 15:57:04.256 [main] SendAndReceive - Invalid receive email address
+[INFO ] 2020-09-30 15:57:04.256 [main] MailSendReceiveTest - ---------------Check No Recipients---------------
+[WARN ] 2020-09-30 15:57:04.256 [main] SendAndReceive - Please enter at least one recipient
+[INFO ] 2020-09-30 15:57:04.257 [main] MailSendReceiveTest - ---------------Check Null CC List---------------
+[INFO ] 2020-09-30 15:57:04.257 [main] MailSendReceiveTest - ---------------Check Null Send Bean---------------
+[WARN ] 2020-09-30 15:57:04.258 [main] SendAndReceive - Null: please enter a valid send config bean
+[INFO ] 2020-09-30 15:57:04.258 [main] MailSendReceiveTest - ---------------Check If Mails Are Received From the Right Sender---------------
+[INFO ] 2020-09-30 15:57:05.606 [main] SendAndReceive - Email sent
+[INFO ] 2020-09-30 15:57:09.167 [main] SendAndReceive - Message count: 4
+[DEBUG] 2020-09-30 15:57:10.640 [main] MailSendReceiveTest - From email: xinjia.caoxin@gmail.com
+[DEBUG] 2020-09-30 15:57:10.641 [main] MailSendReceiveTest - Email Sent From Receiver: xinjia.caoxin@gmail.com
+[INFO ] 2020-09-30 15:57:10.644 [main] MailSendReceiveTest - ---------------Check If All Mails Received From One Account---------------
+[INFO ] 2020-09-30 15:57:11.874 [main] SendAndReceive - Email sent
+[INFO ] 2020-09-30 15:57:13.476 [main] SendAndReceive - Email sent
+[INFO ] 2020-09-30 15:57:14.745 [main] SendAndReceive - Email sent
+[INFO ] 2020-09-30 15:57:15.936 [main] SendAndReceive - Email sent
+[INFO ] 2020-09-30 15:57:17.158 [main] SendAndReceive - Email sent
+[INFO ] 2020-09-30 15:57:20.737 [main] SendAndReceive - Message count: 9
+[DEBUG] 2020-09-30 15:57:24.665 [main] MailSendReceiveTest - 5 mails received
+[INFO ] 2020-09-30 15:57:24.668 [main] MailSendReceiveTest - ---------------Check Received HTML messages---------------
+[INFO ] 2020-09-30 15:57:26.079 [main] SendAndReceive - Email sent
+[INFO ] 2020-09-30 15:57:26.123 [main] MailSendReceiveTest - ------
+[INFO ] 2020-09-30 15:57:26.124 [main] MailSendReceiveTest - text/plain
+[INFO ] 2020-09-30 15:57:26.124 [main] MailSendReceiveTest - ------
+[INFO ] 2020-09-30 15:57:26.124 [main] MailSendReceiveTest - text/html
+[DEBUG] 2020-09-30 15:57:26.125 [main] MailSendReceiveTest - The message sent: <html><META http-equiv=Content-Type content="text/html; charset=utf-8"><body><h1>HTML Message</h1><h2>Here is some text in the HTML message</h2></body></html>
+[DEBUG] 2020-09-30 15:57:26.126 [main] MailSendReceiveTest - The message sent type: text/html
+[INFO ] 2020-09-30 15:57:29.707 [main] SendAndReceive - Message count: 10
+[INFO ] 2020-09-30 15:57:30.584 [main] MailSendReceiveTest - ------
+[INFO ] 2020-09-30 15:57:30.585 [main] MailSendReceiveTest - TEXT/PLAIN
+[INFO ] 2020-09-30 15:57:30.585 [main] MailSendReceiveTest - ------
+[INFO ] 2020-09-30 15:57:30.586 [main] MailSendReceiveTest - TEXT/HTML
+[DEBUG] 2020-09-30 15:57:30.586 [main] MailSendReceiveTest - The message sent: <html><META http-equiv=Content-Type content="text/html; charset=utf-8"><body><h1>HTML Message</h1><h2>Here is some text in the HTML message</h2></body></html>
+[DEBUG] 2020-09-30 15:57:30.587 [main] MailSendReceiveTest - The message sent type: TEXT/HTML
+[INFO ] 2020-09-30 15:57:30.589 [main] MailSendReceiveTest - ---------------Check Received CC Recipients---------------
+[INFO ] 2020-09-30 15:57:31.855 [main] SendAndReceive - Email sent
+[INFO ] 2020-09-30 15:57:35.568 [main] SendAndReceive - Message count: 11
+[DEBUG] 2020-09-30 15:57:36.417 [main] MailSendReceiveTest - Expected 'CC' mails: [xinjia1.cao@gmail.com, xinjia2.cao@gmail.com]
+[DEBUG] 2020-09-30 15:57:36.417 [main] MailSendReceiveTest - Sent 'CC' mails: [xinjia1.cao@gmail.com, xinjia2.cao@gmail.com]
+[INFO ] 2020-09-30 15:57:36.418 [main] MailSendReceiveTest - ---------------Check Number Of Send Regular and Embedded Files---------------
+[INFO ] 2020-09-30 15:57:39.624 [main] SendAndReceive - Email sent
+[DEBUG] 2020-09-30 15:57:39.668 [main] MailSendReceiveTest - Sent files: 3
+[INFO ] 2020-09-30 15:57:39.669 [main] MailSendReceiveTest - Expected files: 3
+[INFO ] 2020-09-30 15:57:39.671 [main] MailSendReceiveTest - ---------------Check Send HTML Message---------------
+[INFO ] 2020-09-30 15:57:40.916 [main] SendAndReceive - Email sent
+[INFO ] 2020-09-30 15:57:40.959 [main] MailSendReceiveTest - ------
+[INFO ] 2020-09-30 15:57:40.959 [main] MailSendReceiveTest - text/plain
+[INFO ] 2020-09-30 15:57:40.959 [main] MailSendReceiveTest - ------
+[INFO ] 2020-09-30 15:57:40.960 [main] MailSendReceiveTest - text/html
+[DEBUG] 2020-09-30 15:57:40.960 [main] MailSendReceiveTest - The message sent: <html><META http-equiv=Content-Type content="text/html; charset=utf-8"><body><h1>HTML Message</h1><h2>Here is some text in the HTML message</h2></body></html>
+[DEBUG] 2020-09-30 15:57:40.961 [main] MailSendReceiveTest - The message sent type: text/html
+[DEBUG] 2020-09-30 15:57:40.962 [main] MailSendReceiveTest - Sent HTML message: <html><META http-equiv=Content-Type content="text/html; charset=utf-8"><body><h1>HTML Message</h1><h2>Here is some text in the HTML message</h2></body></html>
+[DEBUG] 2020-09-30 15:57:40.963 [main] MailSendReceiveTest - Expected HTML message: <html><META http-equiv=Content-Type content="text/html; charset=utf-8"><body><h1>HTML Message</h1><h2>Here is some text in the HTML message</h2></body></html>
+[INFO ] 2020-09-30 15:57:40.968 [main] MailSendReceiveTest - ---------------Check Received 'To' Recipients---------------
+[INFO ] 2020-09-30 15:57:42.132 [main] SendAndReceive - Email sent
+[INFO ] 2020-09-30 15:57:45.710 [main] SendAndReceive - Message count: 14
+[DEBUG] 2020-09-30 15:57:49.413 [main] MailSendReceiveTest - Expected 'To' mails: [xinjia1.cao@gmail.com, xinjia2.cao@gmail.com]
+[DEBUG] 2020-09-30 15:57:49.414 [main] MailSendReceiveTest - Sent 'To' mails: [xinjia1.cao@gmail.com, xinjia2.cao@gmail.com]
+[INFO ] 2020-09-30 15:57:49.417 [main] MailSendReceiveTest - ---------------Check If Sender Is The Send Bean---------------
+[INFO ] 2020-09-30 15:57:50.574 [main] SendAndReceive - Email sent
+[INFO ] 2020-09-30 15:57:50.617 [main] MailSendReceiveTest - ---------------Check Non-Existent Files---------------
+[WARN ] 2020-09-30 15:57:50.617 [main] MailSendReceiveTest - Can't find file: dsfvsddsc.png
+[INFO ] 2020-09-30 15:57:50.618 [main] MailSendReceiveTest - ---------------Check Null 'To' Recipient---------------
+[WARN ] 2020-09-30 15:57:50.619 [main] SendAndReceive - Null: Please enter a valid email address
+[INFO ] 2020-09-30 15:57:50.619 [main] MailSendReceiveTest - ---------------Check Received Subject---------------
+[INFO ] 2020-09-30 15:57:51.796 [main] SendAndReceive - Email sent
+[INFO ] 2020-09-30 15:57:55.521 [main] SendAndReceive - Message count: 16
+[DEBUG] 2020-09-30 15:57:57.078 [main] MailSendReceiveTest - subject sent: checkReceivedSubject
+[DEBUG] 2020-09-30 15:57:57.079 [main] MailSendReceiveTest - subject received: checkReceivedSubject
+[INFO ] 2020-09-30 15:57:57.082 [main] MailSendReceiveTest - ---------------Check Number Of Received Embedded And Regular Files---------------
+[INFO ] 2020-09-30 15:58:00.005 [main] SendAndReceive - Email sent
+[INFO ] 2020-09-30 15:58:03.800 [main] SendAndReceive - Message count: 17
+[DEBUG] 2020-09-30 15:58:05.770 [main] MailSendReceiveTest - sent files: 3
+[DEBUG] 2020-09-30 15:58:05.771 [main] MailSendReceiveTest - received files: 3
+[INFO ] 2020-09-30 15:58:05.773 [main] MailSendReceiveTest - ---------------Check Send BCC Recipients---------------
+[INFO ] 2020-09-30 15:58:07.828 [main] SendAndReceive - Email sent
+[DEBUG] 2020-09-30 15:58:07.871 [main] MailSendReceiveTest - Expected 'BCC' mails: [xinjia1.cao@gmail.com, xinjia2.cao@gmail.com]
+[DEBUG] 2020-09-30 15:58:07.871 [main] MailSendReceiveTest - Sent 'BCC' mails: [xinjia1.cao@gmail.com, xinjia2.cao@gmail.com]
+[INFO ] 2020-09-30 15:58:07.871 [main] MailSendReceiveTest - ---------------Check Send 'To' Recipients---------------
+[INFO ] 2020-09-30 15:58:09.108 [main] SendAndReceive - Email sent
+[DEBUG] 2020-09-30 15:58:09.150 [main] MailSendReceiveTest - Expected 'To' mails: [xinjia1.cao@gmail.com, xinjia2.cao@gmail.com, xinjia3.cao@gmail.com]
+[DEBUG] 2020-09-30 15:58:09.151 [main] MailSendReceiveTest - Sent 'To' mails: [xinjia1.cao@gmail.com, xinjia2.cao@gmail.com, xinjia3.cao@gmail.com]
+[INFO ] 2020-09-30 15:58:09.153 [main] MailSendReceiveTest - ---------------Check Received Embedded File Name---------------
+[INFO ] 2020-09-30 15:58:11.948 [main] SendAndReceive - Email sent
+[INFO ] 2020-09-30 15:58:15.670 [main] SendAndReceive - Message count: 20
+[DEBUG] 2020-09-30 15:58:18.221 [main] MailSendReceiveTest - expected file name: img1.png
+[DEBUG] 2020-09-30 15:58:18.222 [main] MailSendReceiveTest - received file name: img1.png
+[INFO ] 2020-09-30 15:58:18.225 [main] MailSendReceiveTest - ---------------Check Send Subject---------------
+[INFO ] 2020-09-30 15:58:46.463 [main] SendAndReceive - Email sent
+[DEBUG] 2020-09-30 15:58:46.504 [main] MailSendReceiveTest - Sent subject: checkSendSubject
+[DEBUG] 2020-09-30 15:58:46.504 [main] MailSendReceiveTest - Expected subject: checkSendSubject
+[INFO ] 2020-09-30 15:58:46.505 [main] MailSendReceiveTest - ---------------Check Received Regular File Name---------------
+[INFO ] 2020-09-30 15:58:48.114 [main] SendAndReceive - Email sent
+[INFO ] 2020-09-30 15:58:51.740 [main] SendAndReceive - Message count: 22
+[DEBUG] 2020-09-30 15:58:53.581 [main] MailSendReceiveTest - expected file name: img1.png
+[DEBUG] 2020-09-30 15:58:53.582 [main] MailSendReceiveTest - received file name: img1.png
+[INFO ] 2020-09-30 15:58:53.583 [main] MailSendReceiveTest - ---------------Check Send Message---------------
+[INFO ] 2020-09-30 15:58:54.738 [main] SendAndReceive - Email sent
+[INFO ] 2020-09-30 15:58:54.776 [main] MailSendReceiveTest - ------
+[INFO ] 2020-09-30 15:58:54.777 [main] MailSendReceiveTest - text/plain
+[DEBUG] 2020-09-30 15:58:54.777 [main] MailSendReceiveTest - The message sent: This is the message of the test
+[DEBUG] 2020-09-30 15:58:54.777 [main] MailSendReceiveTest - The message sent type: text/plain
+[INFO ] 2020-09-30 15:58:54.777 [main] MailSendReceiveTest - ------
+[INFO ] 2020-09-30 15:58:54.777 [main] MailSendReceiveTest - text/html
+[DEBUG] 2020-09-30 15:58:54.778 [main] MailSendReceiveTest - Sent Message: This is the message of the test
+[DEBUG] 2020-09-30 15:58:54.778 [main] MailSendReceiveTest - Expected message: This is the message of the test
+[INFO ] 2020-09-30 15:58:54.779 [main] MailSendReceiveTest - ---------------Check Send CC Recipients---------------
+[INFO ] 2020-09-30 15:58:56.364 [main] SendAndReceive - Email sent
+[DEBUG] 2020-09-30 15:58:56.405 [main] MailSendReceiveTest - Expected 'CC' mails: [xinjia1.cao@gmail.com, xinjia2.cao@gmail.com]
+[DEBUG] 2020-09-30 15:58:56.405 [main] MailSendReceiveTest - Sent 'CC' mails: [xinjia1.cao@gmail.com, xinjia2.cao@gmail.com]
+[INFO ] 2020-09-30 15:58:56.408 [main] MailSendReceiveTest - ---------------Check Invalid Email---------------
+[WARN ] 2020-09-30 15:58:56.408 [main] SendAndReceive - One or more send addresses are invalid.
+[INFO ] 2020-09-30 15:58:56.411 [main] MailSendReceiveTest - ---------------Check Null Send Bean Address---------------

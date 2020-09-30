@@ -489,66 +489,6 @@ public class MailSendReceiveTest {
     }
 
 
-    //Throws a NullPointerException when the subject is null.
-    //The user gets a warning and the email is not sent.
-    @Test(expected = NullPointerException.class)
-    public void checkNullSubject() throws NullToEmailException, NullToEmailAddressException, NullCCEmailException, NullCCEmailAddressException, NullBCCEmailException, NullBCCEmailAddressException {
-        log.info("---------------Check Null Subject---------------");
-        toRecipients.add("xinjia1.cao@gmail.com");
-        subject = null;
-        Email emailSend = mailFunction.sendMail(toRecipients, ccRecipients, bccRecipients, subject, msg, htmlMsg, regFiles, embedFiles);
-    }
-
-    //Throws a NullPointerException when the message is null.
-    //The user gets a warning and the email is not sent.
-    @Test(expected = NullPointerException.class)
-    public void checkNullMessage() throws NullToEmailException, NullToEmailAddressException, NullCCEmailException, NullCCEmailAddressException, NullBCCEmailException, NullBCCEmailAddressException {
-        log.info("---------------Check Null Message---------------");
-        toRecipients.add("xinjia1.cao@gmail.com");
-        msg = null;
-        Email emailSend = mailFunction.sendMail(toRecipients, ccRecipients, bccRecipients, subject, msg, htmlMsg, regFiles, embedFiles);
-    }
-
-    //Throws a NullPointerException when the HTML message is null.
-    //The user gets a warning and the email is not sent.
-    @Test(expected = NullPointerException.class)
-    public void checkNullHtmlMsg() throws NullToEmailException, NullToEmailAddressException, NullCCEmailException, NullCCEmailAddressException, NullBCCEmailException, NullBCCEmailAddressException {
-        log.info("---------------Check Null HTML Message---------------");
-        toRecipients.add("xinjia1.cao@gmail.com");
-        htmlMsg = null;
-        Email emailSend = mailFunction.sendMail(toRecipients, ccRecipients, bccRecipients, subject, msg, htmlMsg, regFiles, embedFiles);
-    }
-
-    //Throws a NullPointerException when the regular attachment is null.
-    //The user gets a warning and the email is not sent.
-    @Test(expected = NullPointerException.class)
-    public void checkNullRegularFile() throws NullToEmailException, NullToEmailAddressException, NullCCEmailException, NullCCEmailAddressException, NullBCCEmailException, NullBCCEmailAddressException {
-        log.info("---------------Check Null Regular Files--------------");
-        toRecipients.add("xinjia1.cao@gmail.com");
-        regFiles = null;
-        Email emailSend = mailFunction.sendMail(toRecipients, ccRecipients, bccRecipients, subject, msg, htmlMsg, regFiles, embedFiles);
-    }
-    
-    //Throws a NullPointerException when the regular attachment has a null file.
-    //The user gets a warning and the email is not sent.
-    @Test(expected = NullPointerException.class)
-    public void checkNullRegularFileInList() throws NullToEmailException, NullToEmailAddressException, NullCCEmailException, NullCCEmailAddressException, NullBCCEmailException, NullBCCEmailAddressException {
-        log.info("---------------Check Null Regular File In List--------------");
-        toRecipients.add("xinjia1.cao@gmail.com");
-        regFiles.add(null);
-        Email emailSend = mailFunction.sendMail(toRecipients, ccRecipients, bccRecipients, subject, msg, htmlMsg, regFiles, embedFiles);
-    }
-
-    //Throws a NullPointerException when the embedded attachment is null.
-    //The user gets a warning and the email is not sent.
-    @Test(expected = NullPointerException.class)
-    public void checkNullEmbeddedFile() throws NullToEmailException, NullToEmailAddressException, NullCCEmailException, NullCCEmailAddressException, NullBCCEmailException, NullBCCEmailAddressException {
-        log.info("---------------Check Null Embedded Files--------------");
-        toRecipients.add("xinjia1.cao@gmail.com");
-        embedFiles = null;
-        Email emailSend = mailFunction.sendMail(toRecipients, ccRecipients, bccRecipients, subject, msg, htmlMsg, regFiles, embedFiles);
-    }
-
     //Throws a MailException when the requested file cannot be found.
     //The user gets a warning, output the path and the email is not sent.
     @Test(expected = MailException.class)

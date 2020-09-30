@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.xinjia.test.sendreceive.MailSendReceiveTest" time="99.04" tests="36" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.xinjia.test.sendreceive.MailSendReceiveTest" time="130.319" tests="30" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="14"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -15,7 +15,7 @@
     <property name="user.country" value="CA"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.boot.library.path" value="C:\Program Files\AdoptOpenJDK\jdk-14.0.2.12-hotspot\bin"/>
-    <property name="sun.java.command" value="C:\Users\xinji\AppData\Local\Temp\surefire14110427101187115002\surefirebooter3682992137284390033.jar C:\Users\xinji\AppData\Local\Temp\surefire14110427101187115002 2020-09-30T14-53-17_174-jvmRun1 surefire4724392130975233301tmp surefire_07607735550589413662tmp"/>
+    <property name="sun.java.command" value="C:\Users\xinji\AppData\Local\Temp\surefire7842497157517896688\surefirebooter690751472156326890.jar C:\Users\xinji\AppData\Local\Temp\surefire7842497157517896688 2020-09-30T15-56-45_379-jvmRun1 surefire13795187520814577340tmp surefire_012976481682582423852tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="C:\dev\JAGPROJECT1\jagproject1\jagphase1\target\test-classes;C:\dev\JAGPROJECT1\jagproject1\jagphase1\target\classes;C:\devapp\.m2\repository\org\openjfx\javafx-controls\16-ea+1\javafx-controls-16-ea+1.jar;C:\devapp\.m2\repository\org\openjfx\javafx-controls\16-ea+1\javafx-controls-16-ea+1-win.jar;C:\devapp\.m2\repository\org\openjfx\javafx-graphics\16-ea+1\javafx-graphics-16-ea+1.jar;C:\devapp\.m2\repository\org\openjfx\javafx-graphics\16-ea+1\javafx-graphics-16-ea+1-win.jar;C:\devapp\.m2\repository\org\openjfx\javafx-base\16-ea+1\javafx-base-16-ea+1.jar;C:\devapp\.m2\repository\org\openjfx\javafx-base\16-ea+1\javafx-base-16-ea+1-win.jar;C:\devapp\.m2\repository\org\jodd\jodd-mail\5.1.6\jodd-mail-5.1.6.jar;C:\devapp\.m2\repository\org\jodd\jodd-core\5.1.6\jodd-core-5.1.6.jar;C:\devapp\.m2\repository\jakarta\mail\jakarta.mail-api\1.6.5\jakarta.mail-api-1.6.5.jar;C:\devapp\.m2\repository\com\sun\mail\jakarta.mail\1.6.5\jakarta.mail-1.6.5.jar;C:\devapp\.m2\repository\com\sun\activation\jakarta.activation\1.2.1\jakarta.activation-1.2.1.jar;C:\devapp\.m2\repository\javax\mail\javax.mail-api\1.6.2\javax.mail-api-1.6.2.jar;C:\devapp\.m2\repository\javax\activation\javax.activation-api\1.2.0\javax.activation-api-1.2.0.jar;C:\devapp\.m2\repository\org\slf4j\slf4j-api\1.7.30\slf4j-api-1.7.30.jar;C:\devapp\.m2\repository\org\apache\logging\log4j\log4j-slf4j-impl\2.13.3\log4j-slf4j-impl-2.13.3.jar;C:\devapp\.m2\repository\org\apache\logging\log4j\log4j-api\2.13.3\log4j-api-2.13.3.jar;C:\devapp\.m2\repository\org\apache\logging\log4j\log4j-core\2.13.3\log4j-core-2.13.3.jar;C:\devapp\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.6.2\junit-jupiter-engine-5.6.2.jar;C:\devapp\.m2\repository\org\apiguardian\apiguardian-api\1.1.0\apiguardian-api-1.1.0.jar;C:\devapp\.m2\repository\org\junit\platform\junit-platform-engine\1.6.2\junit-platform-engine-1.6.2.jar;C:\devapp\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\devapp\.m2\repository\org\junit\platform\junit-platform-commons\1.6.2\junit-platform-commons-1.6.2.jar;C:\devapp\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.6.2\junit-jupiter-api-5.6.2.jar;C:\devapp\.m2\repository\org\junit\vintage\junit-vintage-engine\5.6.2\junit-vintage-engine-5.6.2.jar;C:\devapp\.m2\repository\junit\junit\4.13\junit-4.13.jar;C:\devapp\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -30,7 +30,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\xinji\AppData\Local\Temp\surefire14110427101187115002\surefirebooter3682992137284390033.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\xinji\AppData\Local\Temp\surefire7842497157517896688\surefirebooter690751472156326890.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="14.0.2+12"/>
@@ -57,40 +57,34 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="58.0"/>
   </properties>
-  <testcase name="checkReceivedRegularFilesCount" classname="com.xinjia.test.sendreceive.MailSendReceiveTest" time="9.015"/>
-  <testcase name="checkReceivedPlainMsg" classname="com.xinjia.test.sendreceive.MailSendReceiveTest" time="6.004"/>
-  <testcase name="checkNullReceiveBean" classname="com.xinjia.test.sendreceive.MailSendReceiveTest" time="4.199"/>
-  <testcase name="checkNullReceiveBeanAddress" classname="com.xinjia.test.sendreceive.MailSendReceiveTest" time="0.002"/>
-  <testcase name="checkInvalidSendBeanAddress" classname="com.xinjia.test.sendreceive.MailSendReceiveTest" time="0.001"/>
+  <testcase name="checkReceivedRegularFilesCount" classname="com.xinjia.test.sendreceive.MailSendReceiveTest" time="7.75"/>
+  <testcase name="checkReceivedPlainMsg" classname="com.xinjia.test.sendreceive.MailSendReceiveTest" time="6.187"/>
+  <testcase name="checkNullReceiveBean" classname="com.xinjia.test.sendreceive.MailSendReceiveTest" time="4.214"/>
+  <testcase name="checkNullReceiveBeanAddress" classname="com.xinjia.test.sendreceive.MailSendReceiveTest" time="0.001"/>
+  <testcase name="checkInvalidSendBeanAddress" classname="com.xinjia.test.sendreceive.MailSendReceiveTest" time="0"/>
   <testcase name="checkInvalidReceiveBeanAddress" classname="com.xinjia.test.sendreceive.MailSendReceiveTest" time="0.001"/>
   <testcase name="checkNoRecipients" classname="com.xinjia.test.sendreceive.MailSendReceiveTest" time="0.001"/>
   <testcase name="checkNullCCList" classname="com.xinjia.test.sendreceive.MailSendReceiveTest" time="0"/>
   <testcase name="checkNullSendBean" classname="com.xinjia.test.sendreceive.MailSendReceiveTest" time="0.001"/>
-  <testcase name="checkNullSubject" classname="com.xinjia.test.sendreceive.MailSendReceiveTest" time="0.001"/>
-  <testcase name="checkMailReceivedFromRightSender" classname="com.xinjia.test.sendreceive.MailSendReceiveTest" time="6.455"/>
-  <testcase name="checkIfAllMailsReceived" classname="com.xinjia.test.sendreceive.MailSendReceiveTest" time="13.308"/>
-  <testcase name="checkReceivedHtmlMsg" classname="com.xinjia.test.sendreceive.MailSendReceiveTest" time="5.855"/>
-  <testcase name="checkReceivedCCRecipients" classname="com.xinjia.test.sendreceive.MailSendReceiveTest" time="5.616"/>
-  <testcase name="checkNullRegularFile" classname="com.xinjia.test.sendreceive.MailSendReceiveTest" time="0.001"/>
-  <testcase name="checkSendRegAndEmbeddedFilesCount" classname="com.xinjia.test.sendreceive.MailSendReceiveTest" time="2.682"/>
-  <testcase name="checkSendHtmlMsg" classname="com.xinjia.test.sendreceive.MailSendReceiveTest" time="1.203"/>
-  <testcase name="checkReceivedToRecipients" classname="com.xinjia.test.sendreceive.MailSendReceiveTest" time="8.143"/>
-  <testcase name="checkSenderFromBean" classname="com.xinjia.test.sendreceive.MailSendReceiveTest" time="1.162"/>
-  <testcase name="checkNullEmbeddedFile" classname="com.xinjia.test.sendreceive.MailSendReceiveTest" time="0.001"/>
+  <testcase name="checkMailReceivedFromRightSender" classname="com.xinjia.test.sendreceive.MailSendReceiveTest" time="6.385"/>
+  <testcase name="checkIfAllMailsReceived" classname="com.xinjia.test.sendreceive.MailSendReceiveTest" time="14.024"/>
+  <testcase name="checkReceivedHtmlMsg" classname="com.xinjia.test.sendreceive.MailSendReceiveTest" time="5.923"/>
+  <testcase name="checkReceivedCCRecipients" classname="com.xinjia.test.sendreceive.MailSendReceiveTest" time="5.828"/>
+  <testcase name="checkSendRegAndEmbeddedFilesCount" classname="com.xinjia.test.sendreceive.MailSendReceiveTest" time="3.253"/>
+  <testcase name="checkSendHtmlMsg" classname="com.xinjia.test.sendreceive.MailSendReceiveTest" time="1.299"/>
+  <testcase name="checkReceivedToRecipients" classname="com.xinjia.test.sendreceive.MailSendReceiveTest" time="8.446"/>
+  <testcase name="checkSenderFromBean" classname="com.xinjia.test.sendreceive.MailSendReceiveTest" time="1.2"/>
   <testcase name="checkNonExistentFiles" classname="com.xinjia.test.sendreceive.MailSendReceiveTest" time="0.001"/>
-  <testcase name="checkNullToRecipients" classname="com.xinjia.test.sendreceive.MailSendReceiveTest" time="0.002"/>
-  <testcase name="checkReceivedSubject" classname="com.xinjia.test.sendreceive.MailSendReceiveTest" time="6.255"/>
-  <testcase name="checkNullRegularFileInList" classname="com.xinjia.test.sendreceive.MailSendReceiveTest" time="0.001"/>
-  <testcase name="checkReceivedRegularAndEmbeddedFilesCount" classname="com.xinjia.test.sendreceive.MailSendReceiveTest" time="8.175"/>
-  <testcase name="checkSendBCCRecipients" classname="com.xinjia.test.sendreceive.MailSendReceiveTest" time="1.305"/>
-  <testcase name="checkSendToRecipients" classname="com.xinjia.test.sendreceive.MailSendReceiveTest" time="1.304"/>
-  <testcase name="checkReceivedEmbeddedFileName" classname="com.xinjia.test.sendreceive.MailSendReceiveTest" time="7.656"/>
-  <testcase name="checkSendSubject" classname="com.xinjia.test.sendreceive.MailSendReceiveTest" time="1.171"/>
-  <testcase name="checkReceivedRegularFileName" classname="com.xinjia.test.sendreceive.MailSendReceiveTest" time="6.991"/>
-  <testcase name="checkNullMessage" classname="com.xinjia.test.sendreceive.MailSendReceiveTest" time="0.001"/>
-  <testcase name="checkNullHtmlMsg" classname="com.xinjia.test.sendreceive.MailSendReceiveTest" time="0.001"/>
+  <testcase name="checkNullToRecipients" classname="com.xinjia.test.sendreceive.MailSendReceiveTest" time="0.001"/>
+  <testcase name="checkReceivedSubject" classname="com.xinjia.test.sendreceive.MailSendReceiveTest" time="6.463"/>
+  <testcase name="checkReceivedRegularAndEmbeddedFilesCount" classname="com.xinjia.test.sendreceive.MailSendReceiveTest" time="8.691"/>
+  <testcase name="checkSendBCCRecipients" classname="com.xinjia.test.sendreceive.MailSendReceiveTest" time="2.098"/>
+  <testcase name="checkSendToRecipients" classname="com.xinjia.test.sendreceive.MailSendReceiveTest" time="1.282"/>
+  <testcase name="checkReceivedEmbeddedFileName" classname="com.xinjia.test.sendreceive.MailSendReceiveTest" time="9.071"/>
+  <testcase name="checkSendSubject" classname="com.xinjia.test.sendreceive.MailSendReceiveTest" time="28.28"/>
+  <testcase name="checkReceivedRegularFileName" classname="com.xinjia.test.sendreceive.MailSendReceiveTest" time="7.078"/>
   <testcase name="checkSendMsg" classname="com.xinjia.test.sendreceive.MailSendReceiveTest" time="1.196"/>
-  <testcase name="checkSendCCRecipient" classname="com.xinjia.test.sendreceive.MailSendReceiveTest" time="1.321"/>
-  <testcase name="checkInvalidEmail" classname="com.xinjia.test.sendreceive.MailSendReceiveTest" time="0.001"/>
-  <testcase name="checkNullSendBeanAddress" classname="com.xinjia.test.sendreceive.MailSendReceiveTest" time="0.001"/>
+  <testcase name="checkSendCCRecipient" classname="com.xinjia.test.sendreceive.MailSendReceiveTest" time="1.629"/>
+  <testcase name="checkInvalidEmail" classname="com.xinjia.test.sendreceive.MailSendReceiveTest" time="0.002"/>
+  <testcase name="checkNullSendBeanAddress" classname="com.xinjia.test.sendreceive.MailSendReceiveTest" time="0.002"/>
 </testsuite>
