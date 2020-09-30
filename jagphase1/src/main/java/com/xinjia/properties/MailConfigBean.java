@@ -36,11 +36,11 @@ public class MailConfigBean {
         this.password = "";
         this.imapUrl = "";
         this.smtpUrl = "";
-        this.imapPort = 0;
-        this.smtpPort = 0;
+        this.imapPort = 993;
+        this.smtpPort = 465;
         this.dbUrl = "";
         this.dbName = "";
-        this.dbPort = 0;
+        this.dbPort = 3306;
         this.dbUsername = "";
         this.dbPassword = "";
         
@@ -57,6 +57,15 @@ public class MailConfigBean {
         this.host = host;
         this.userEmailAddress = userEmailAddress;
         this.password = password;
+        this.imapUrl = "";
+        this.smtpUrl = "";
+        this.imapPort = 0;
+        this.smtpPort = 0;
+        this.dbUrl = "";
+        this.dbName = "";
+        this.dbPort = 0;
+        this.dbUsername = "";
+        this.dbPassword = "";
     }
 
     /**

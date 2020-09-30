@@ -1,6 +1,12 @@
 package com.xinjia.test.sendreceive;
 
 import com.xinjia.business.SendAndReceive;
+import com.xinjia.exceptions.NullBCCEmailAddressException;
+import com.xinjia.exceptions.NullBCCEmailException;
+import com.xinjia.exceptions.NullCCEmailAddressException;
+import com.xinjia.exceptions.NullCCEmailException;
+import com.xinjia.exceptions.NullToEmailAddressException;
+import com.xinjia.exceptions.NullToEmailException;
 import com.xinjia.properties.MailConfigBean;
 import java.io.File;
 import java.util.ArrayList;
@@ -57,7 +63,7 @@ public class MailSendReceiveTest {
 
     //Checks if the email sent's sender is the same as the address in the send config bean
     @Test
-    public void checkSenderFromBean() {
+    public void checkSenderFromBean() throws NullToEmailException, NullToEmailAddressException, NullCCEmailException, NullCCEmailAddressException, NullBCCEmailException, NullBCCEmailAddressException {
         log.info("---------------Check If Sender Is The Send Bean---------------");
         
         toRecipients.add("xinjia1.cao@gmail.com");
@@ -69,7 +75,7 @@ public class MailSendReceiveTest {
 
     //Checks if the number of 'To' recipients of the email sent is the same as the number of recipients added
     @Test
-    public void checkSendToRecipients() {
+    public void checkSendToRecipients() throws NullToEmailException, NullToEmailAddressException, NullCCEmailException, NullCCEmailAddressException, NullBCCEmailException, NullBCCEmailAddressException {
         log.info("---------------Check Send 'To' Recipients---------------");
         
         toRecipients.add("xinjia1.cao@gmail.com");
@@ -85,7 +91,7 @@ public class MailSendReceiveTest {
 
     //Checks if the number of 'CC' recipients of the email sent is the same as the number of recipients added
     @Test
-    public void checkSendCCRecipient() {
+    public void checkSendCCRecipient() throws NullToEmailException, NullToEmailAddressException, NullCCEmailException, NullCCEmailAddressException, NullBCCEmailException, NullBCCEmailAddressException {
         log.info("---------------Check Send CC Recipients---------------");
         
         ccRecipients.add("xinjia1.cao@gmail.com");
@@ -100,7 +106,7 @@ public class MailSendReceiveTest {
 
     //Checks if the number of 'BCC' recipients of the email sent is the same as the number of recipients added
     @Test
-    public void checkSendBCCRecipients() {
+    public void checkSendBCCRecipients() throws NullToEmailException, NullToEmailAddressException, NullCCEmailException, NullCCEmailAddressException, NullBCCEmailException, NullBCCEmailAddressException {
         log.info("---------------Check Send BCC Recipients---------------");
 
         bccRecipients.add("xinjia1.cao@gmail.com");
@@ -115,7 +121,7 @@ public class MailSendReceiveTest {
 
     //Checks if the sent email's subject is the one received as input
     @Test
-    public void checkSendSubject() {
+    public void checkSendSubject() throws NullToEmailException, NullToEmailAddressException, NullCCEmailException, NullCCEmailAddressException, NullBCCEmailException, NullBCCEmailAddressException {
         log.info("---------------Check Send Subject---------------");
         
         toRecipients.add("xinjia1.cao@gmail.com");
@@ -129,7 +135,7 @@ public class MailSendReceiveTest {
 
     //Checks if the sent email's message is the one received as input
     @Test
-    public void checkSendMsg() {
+    public void checkSendMsg() throws NullToEmailException, NullToEmailAddressException, NullCCEmailException, NullCCEmailAddressException, NullBCCEmailException, NullBCCEmailAddressException {
         log.info("---------------Check Send Message---------------");
 
         toRecipients.add("xinjia1.cao@gmail.com");
@@ -145,7 +151,7 @@ public class MailSendReceiveTest {
 
     //Checks if the sent email's HTML message is the one received as input
     @Test
-    public void checkSendHtmlMsg() {
+    public void checkSendHtmlMsg() throws NullToEmailException, NullToEmailAddressException, NullCCEmailException, NullCCEmailAddressException, NullBCCEmailException, NullBCCEmailAddressException {
         log.info("---------------Check Send HTML Message---------------");
 
         toRecipients.add("xinjia1.cao@gmail.com");
@@ -165,7 +171,7 @@ public class MailSendReceiveTest {
 
     //Checks if the sent email's number of regular an embedded files is the same as the one received as input
     @Test
-    public void checkSendRegAndEmbeddedFilesCount() {
+    public void checkSendRegAndEmbeddedFilesCount() throws NullToEmailException, NullToEmailAddressException, NullCCEmailException, NullCCEmailAddressException, NullBCCEmailException, NullBCCEmailAddressException {
         log.info("---------------Check Number Of Send Regular and Embedded Files---------------");
 
         toRecipients.add("xinjia1.cao@gmail.com");
@@ -187,7 +193,7 @@ public class MailSendReceiveTest {
     
     //Sends 5 emails to one recipient and checks if all 5 emails have been received
     @Test
-    public void checkIfAllMailsReceived() {
+    public void checkIfAllMailsReceived() throws NullToEmailException, NullToEmailAddressException, NullCCEmailException, NullCCEmailAddressException, NullBCCEmailException, NullBCCEmailAddressException {
         log.info("---------------Check If All Mails Received From One Account---------------");
         
         toRecipients.add("xinjia1.cao@gmail.com");
@@ -206,7 +212,7 @@ public class MailSendReceiveTest {
 
     //Checks if the sender is the one who sent the email by looking at the sender from the received email
     @Test
-    public void checkMailReceivedFromRightSender() {
+    public void checkMailReceivedFromRightSender() throws NullToEmailException, NullToEmailAddressException, NullCCEmailException, NullCCEmailAddressException, NullBCCEmailException, NullBCCEmailAddressException {
         log.info("---------------Check If Mails Are Received From the Right Sender---------------");
         
         toRecipients.add("xinjia1.cao@gmail.com");
@@ -224,7 +230,7 @@ public class MailSendReceiveTest {
     
     //Checks if all 'To' recipients received the email sent
     @Test
-    public void checkReceivedToRecipients() {
+    public void checkReceivedToRecipients() throws NullToEmailException, NullToEmailAddressException, NullCCEmailException, NullCCEmailAddressException, NullBCCEmailException, NullBCCEmailAddressException {
         log.info("---------------Check Received 'To' Recipients---------------");
         
         toRecipients.add("xinjia1.cao@gmail.com");
@@ -242,7 +248,7 @@ public class MailSendReceiveTest {
 
     //Checks if all 'CC' recipients received the email sent
     @Test
-    public void checkReceivedCCRecipients() {
+    public void checkReceivedCCRecipients() throws NullToEmailException, NullToEmailAddressException, NullCCEmailException, NullCCEmailAddressException, NullBCCEmailException, NullBCCEmailAddressException {
         log.info("---------------Check Received CC Recipients---------------");
 
         ccRecipients.add("xinjia1.cao@gmail.com");
@@ -260,7 +266,7 @@ public class MailSendReceiveTest {
 
     //Checks if the sent email's subject is the same as the one received
     @Test
-    public void checkReceivedSubject() {
+    public void checkReceivedSubject() throws NullToEmailException, NullToEmailAddressException, NullCCEmailException, NullCCEmailAddressException, NullBCCEmailException, NullBCCEmailAddressException {
         log.info("---------------Check Received Subject---------------");
         
         toRecipients.add("xinjia1.cao@gmail.com");
@@ -279,7 +285,7 @@ public class MailSendReceiveTest {
 
     //Checks if the sent email's plain message is the same as the one received
     @Test
-    public void checkReceivedPlainMsg() {
+    public void checkReceivedPlainMsg() throws NullToEmailException, NullToEmailAddressException, NullCCEmailException, NullCCEmailAddressException, NullBCCEmailException, NullBCCEmailAddressException {
         log.info("---------------Check Received Plain Messages---------------");
         
         toRecipients.add("xinjia1.cao@gmail.com");
@@ -299,7 +305,7 @@ public class MailSendReceiveTest {
 
     //Checks if the sent email's HTML message is the same as the one received
     @Test
-    public void checkReceivedHtmlMsg() {
+    public void checkReceivedHtmlMsg() throws NullToEmailException, NullToEmailAddressException, NullCCEmailException, NullCCEmailAddressException, NullBCCEmailException, NullBCCEmailAddressException {
         log.info("---------------Check Received HTML messages---------------");
         
         toRecipients.add("xinjia1.cao@gmail.com");
@@ -324,7 +330,7 @@ public class MailSendReceiveTest {
 
     //Checks if the sent email's attached regular file's name is the same as the one received
     @Test
-    public void checkReceivedRegularFileName() {
+    public void checkReceivedRegularFileName() throws NullToEmailException, NullToEmailAddressException, NullCCEmailException, NullCCEmailAddressException, NullBCCEmailException, NullBCCEmailAddressException {
         log.info("---------------Check Received Regular File Name---------------");
         
         toRecipients.add("xinjia1.cao@gmail.com");
@@ -345,7 +351,7 @@ public class MailSendReceiveTest {
     
     //Checks if the sent email's number of attached regular files is the same as the one received
     @Test
-    public void checkReceivedRegularFilesCount() {
+    public void checkReceivedRegularFilesCount() throws NullToEmailException, NullToEmailAddressException, NullCCEmailException, NullCCEmailAddressException, NullBCCEmailException, NullBCCEmailAddressException {
         log.info("---------------Check Number Of Received Regular Files---------------");
         
         toRecipients.add("xinjia1.cao@gmail.com");
@@ -371,7 +377,7 @@ public class MailSendReceiveTest {
     
     //Checks if the sent email's attached embedded file's name is the same as the one received
     @Test
-    public void checkReceivedEmbeddedFileName() {
+    public void checkReceivedEmbeddedFileName() throws NullToEmailException, NullToEmailAddressException, NullCCEmailException, NullCCEmailAddressException, NullBCCEmailException, NullBCCEmailAddressException {
         log.info("---------------Check Received Embedded File Name---------------");
         
         toRecipients.add("xinjia1.cao@gmail.com");
@@ -393,7 +399,7 @@ public class MailSendReceiveTest {
 
     //Checks if the sent email's number of attached regular and embedded files is the same as the one received
     @Test
-    public void checkReceivedRegularAndEmbeddedFilesCount() {
+    public void checkReceivedRegularAndEmbeddedFilesCount() throws NullToEmailException, NullToEmailAddressException, NullCCEmailException, NullCCEmailAddressException, NullBCCEmailException, NullBCCEmailAddressException {
         log.info("---------------Check Number Of Received Embedded And Regular Files---------------");
         
         toRecipients.add("xinjia1.cao@gmail.com");
@@ -422,7 +428,7 @@ public class MailSendReceiveTest {
     //Throws a NullPointerException when the send config bean is null
     //The user gets a warning and the email is not sent.
     @Test(expected = NullPointerException.class)
-    public void checkNullSendBean() {
+    public void checkNullSendBean() throws NullToEmailException, NullToEmailAddressException, NullCCEmailException, NullCCEmailAddressException, NullBCCEmailException, NullBCCEmailAddressException {
         log.info("---------------Check Null Send Bean---------------");
         sendConfigBean = null;
         mailFunction = new SendAndReceive(sendConfigBean);
@@ -432,7 +438,7 @@ public class MailSendReceiveTest {
     //Throws a NullPointerException when the send config bean's address is null
     //The user gets a warning and the email is not sent.
     @Test(expected = NullPointerException.class)
-    public void checkNullSendBeanAddress() {
+    public void checkNullSendBeanAddress() throws NullToEmailException, NullToEmailAddressException, NullCCEmailException, NullCCEmailAddressException, NullBCCEmailException, NullBCCEmailAddressException {
         log.info("---------------Check Null Send Bean Address---------------");
         sendConfigBean.setUserEmailAddress(null);
         mailFunction = new SendAndReceive(sendConfigBean);
@@ -442,7 +448,7 @@ public class MailSendReceiveTest {
 
     //Throws a NullPointerException when the receive config bean is null
     @Test(expected = NullPointerException.class)
-    public void checkNullReceiveBean() {
+    public void checkNullReceiveBean() throws NullToEmailException, NullToEmailAddressException, NullCCEmailException, NullCCEmailAddressException, NullBCCEmailException, NullBCCEmailAddressException {
         log.info("---------------Check Null Receive Bean---------------");
         receiveConfigBean = null;
         toRecipients.add("xinjia1.cao@gmail.com");
@@ -462,21 +468,21 @@ public class MailSendReceiveTest {
 
     //Throws a NullPointerException when a list of recipient is null.
     //The user gets a warning and the email is not sent.
-    @Test(expected = NullPointerException.class)
-    public void checkNullRecipients() {
-        log.info("---------------Check Null Recipients---------------");
+    @Test(expected = NullCCEmailException.class)
+    public void checkNullCCList() throws NullToEmailException, NullToEmailAddressException, NullCCEmailException, NullCCEmailAddressException, NullBCCEmailException, NullBCCEmailAddressException {
+        log.info("---------------Check Null CC List---------------");
         ccRecipients = null;
         Email emailSend = mailFunction.sendMail(toRecipients, ccRecipients, bccRecipients, subject, msg, htmlMsg, regFiles, embedFiles);
     }
 
     //Throws a NullPointerException if one of the recipient addresses is null.
     //The user gets a warning and the email is not sent.
-    @Test(expected = NullPointerException.class)
-    public void checkNullToRecipients() {
+    @Test(expected = NullToEmailAddressException.class)
+    public void checkNullToRecipients() throws NullToEmailException, NullToEmailAddressException, NullCCEmailException, NullCCEmailAddressException, NullBCCEmailException, NullBCCEmailAddressException {
         log.info("---------------Check Null 'To' Recipient---------------");
         
         toRecipients.add("xinjia1.cao@gmail.com");
-        ccRecipients.add(null);
+        toRecipients.add(null);
         toRecipients.add("xinjia2.cao@gmail.com");
         subject = "checkNullToRecipients";
         Email emailSend = mailFunction.sendMail(toRecipients, ccRecipients, bccRecipients, subject, msg, htmlMsg, regFiles, embedFiles);
@@ -486,7 +492,7 @@ public class MailSendReceiveTest {
     //Throws a NullPointerException when the subject is null.
     //The user gets a warning and the email is not sent.
     @Test(expected = NullPointerException.class)
-    public void checkNullSubject() {
+    public void checkNullSubject() throws NullToEmailException, NullToEmailAddressException, NullCCEmailException, NullCCEmailAddressException, NullBCCEmailException, NullBCCEmailAddressException {
         log.info("---------------Check Null Subject---------------");
         toRecipients.add("xinjia1.cao@gmail.com");
         subject = null;
@@ -496,7 +502,7 @@ public class MailSendReceiveTest {
     //Throws a NullPointerException when the message is null.
     //The user gets a warning and the email is not sent.
     @Test(expected = NullPointerException.class)
-    public void checkNullMessage() {
+    public void checkNullMessage() throws NullToEmailException, NullToEmailAddressException, NullCCEmailException, NullCCEmailAddressException, NullBCCEmailException, NullBCCEmailAddressException {
         log.info("---------------Check Null Message---------------");
         toRecipients.add("xinjia1.cao@gmail.com");
         msg = null;
@@ -506,7 +512,7 @@ public class MailSendReceiveTest {
     //Throws a NullPointerException when the HTML message is null.
     //The user gets a warning and the email is not sent.
     @Test(expected = NullPointerException.class)
-    public void checkNullHtmlMsg() {
+    public void checkNullHtmlMsg() throws NullToEmailException, NullToEmailAddressException, NullCCEmailException, NullCCEmailAddressException, NullBCCEmailException, NullBCCEmailAddressException {
         log.info("---------------Check Null HTML Message---------------");
         toRecipients.add("xinjia1.cao@gmail.com");
         htmlMsg = null;
@@ -516,7 +522,7 @@ public class MailSendReceiveTest {
     //Throws a NullPointerException when the regular attachment is null.
     //The user gets a warning and the email is not sent.
     @Test(expected = NullPointerException.class)
-    public void checkNullRegularFile() {
+    public void checkNullRegularFile() throws NullToEmailException, NullToEmailAddressException, NullCCEmailException, NullCCEmailAddressException, NullBCCEmailException, NullBCCEmailAddressException {
         log.info("---------------Check Null Regular Files--------------");
         toRecipients.add("xinjia1.cao@gmail.com");
         regFiles = null;
@@ -526,7 +532,7 @@ public class MailSendReceiveTest {
     //Throws a NullPointerException when the regular attachment has a null file.
     //The user gets a warning and the email is not sent.
     @Test(expected = NullPointerException.class)
-    public void checkNullRegularFileInList() {
+    public void checkNullRegularFileInList() throws NullToEmailException, NullToEmailAddressException, NullCCEmailException, NullCCEmailAddressException, NullBCCEmailException, NullBCCEmailAddressException {
         log.info("---------------Check Null Regular File In List--------------");
         toRecipients.add("xinjia1.cao@gmail.com");
         regFiles.add(null);
@@ -536,7 +542,7 @@ public class MailSendReceiveTest {
     //Throws a NullPointerException when the embedded attachment is null.
     //The user gets a warning and the email is not sent.
     @Test(expected = NullPointerException.class)
-    public void checkNullEmbeddedFile() {
+    public void checkNullEmbeddedFile() throws NullToEmailException, NullToEmailAddressException, NullCCEmailException, NullCCEmailAddressException, NullBCCEmailException, NullBCCEmailAddressException {
         log.info("---------------Check Null Embedded Files--------------");
         toRecipients.add("xinjia1.cao@gmail.com");
         embedFiles = null;
@@ -546,7 +552,7 @@ public class MailSendReceiveTest {
     //Throws a MailException when the requested file cannot be found.
     //The user gets a warning, output the path and the email is not sent.
     @Test(expected = MailException.class)
-    public void checkNonExistentFiles() {
+    public void checkNonExistentFiles() throws NullToEmailException, NullToEmailAddressException, NullCCEmailException, NullCCEmailAddressException, NullBCCEmailException, NullBCCEmailAddressException {
 
         log.info("---------------Check Non-Existent Files---------------");
         toRecipients.add("xinjia1.cao@gmail.com");
@@ -562,7 +568,7 @@ public class MailSendReceiveTest {
     //Throws a MailException when there is no recipient.
     //The user gets a warning and the email is not sent.
     @Test(expected = MailException.class)
-    public void checkNoRecipients() {
+    public void checkNoRecipients() throws NullToEmailException, NullToEmailAddressException, NullCCEmailException, NullCCEmailAddressException, NullBCCEmailException, NullBCCEmailAddressException {
         log.info("---------------Check No Recipients---------------");
         Email emailSend = mailFunction.sendMail(toRecipients, ccRecipients, bccRecipients, subject, msg, htmlMsg, regFiles, embedFiles);
 
@@ -571,7 +577,7 @@ public class MailSendReceiveTest {
     //Throws a MailException when a recipient's email address is invalid.
     //The user gets a warning and the email is not sent.
     @Test(expected = MailException.class)
-    public void checkInvalidEmail() {
+    public void checkInvalidEmail() throws NullToEmailException, NullToEmailAddressException, NullCCEmailException, NullCCEmailAddressException, NullBCCEmailException, NullBCCEmailAddressException {
         log.info("---------------Check Invalid Email---------------");
         toRecipients.add("invalidemail");
         subject = "checkInvalidEmail";
@@ -582,7 +588,7 @@ public class MailSendReceiveTest {
     //Throws a MailException when the send config bean's address is invalid
     //The user gets a warning and the email is not sent.
     @Test(expected = MailException.class)
-    public void checkInvalidSendBeanAddress() {
+    public void checkInvalidSendBeanAddress() throws NullToEmailException, NullToEmailAddressException, NullCCEmailException, NullCCEmailAddressException, NullBCCEmailException, NullBCCEmailAddressException {
         log.info("---------------Check Invalid Send Bean Address---------------");
         sendConfigBean.setUserEmailAddress("invalidemail");
         mailFunction = new SendAndReceive(sendConfigBean);
