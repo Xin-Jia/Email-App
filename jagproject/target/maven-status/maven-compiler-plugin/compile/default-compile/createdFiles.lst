@@ -1,0 +1,12 @@
+com\xinjia\exceptions\NullCCEmailAddressException.class
+com\xinjia\exceptions\NullBCCEmailException.class
+com\xinjia\exceptions\NullBCCEmailAddressException.class
+com\xinjia\jdbc\beans\FolderData.class
+com\xinjia\jdbc\persistence\EmailDAOImpl.class
+com\xinjia\exceptions\NullCCEmailException.class
+com\xinjia\exceptions\NullToEmailAddressException.class
+com\xinjia\jdbc\beans\EmailData.class
+com\xinjia\business\SendAndReceive.class
+com\xinjia\exceptions\NullToEmailException.class
+com\xinjia\jdbc\persistence\EmailDAO.class
+com\xinjia\properties\MailConfigBean.class

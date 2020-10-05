@@ -1,8 +1,0 @@
-com\xinjia\exceptions\NullCCEmailAddressException.class
-com\xinjia\exceptions\NullCCEmailException.class
-com\xinjia\exceptions\NullToEmailAddressException.class
-com\xinjia\business\SendAndReceive.class
-com\xinjia\exceptions\NullBCCEmailException.class
-com\xinjia\exceptions\NullToEmailException.class
-com\xinjia\properties\MailConfigBean.class
-com\xinjia\exceptions\NullBCCEmailAddressException.class
