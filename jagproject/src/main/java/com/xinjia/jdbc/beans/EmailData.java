@@ -109,9 +109,9 @@ public class EmailData {
         if (this.folderId != other.folderId) {
             return false;
         }
-        if (!Objects.equals(this.receivedDate, other.receivedDate)) {
+        /*if (!Objects.equals(this.receivedDate, other.receivedDate)) {
             return false;
-        }
+        }*/
         if (!Objects.equals(this.email, other.email)) {
             return false;
         }

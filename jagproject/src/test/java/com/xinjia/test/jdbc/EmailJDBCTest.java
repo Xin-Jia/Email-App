@@ -63,7 +63,7 @@ public class EmailJDBCTest {
         EmailData mailData1 = new EmailData(1, 2, null, email);
         EmailDAO mailFunction = new EmailDAOImpl();
         EmailData mailData2 = mailFunction.findEmailById(1);
-        assertEquals(mailData1.email.toString(), mailData2.email.toString());
+        mailData1.equals(mailData2);
     }
     @Test
     public void testCreateEmail() throws SQLException {
@@ -82,7 +82,7 @@ public class EmailJDBCTest {
         EmailDAO mailFunction = new EmailDAOImpl();
         mailFunction.createEmail(email1);
         EmailData email2 = mailFunction.findEmailById(email1.getEmailId());
-        assertEquals(email1.email.toString(), email2.email.toString());
+        email1.equals(email2);
     }
 
     @Test
