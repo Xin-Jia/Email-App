@@ -27,7 +27,7 @@ CREATE TABLE Email(
     Message TEXT(3000),
     HtmlMessage TEXT(5000),
     PRIMARY KEY(EmailId),
-    CONSTRAINT fk_email_folder FOREIGN KEY (FolderId) REFERENCES Folder(FolderId)
+    CONSTRAINT fk_email_folder FOREIGN KEY (FolderId) REFERENCES Folder(FolderId) ON DELETE CASCADE
 );
 
 
@@ -46,7 +46,7 @@ CREATE TABLE Attachments(
     ContentId VARCHAR(255),
     FileContent MEDIUMBLOB,
     PRIMARY KEY (FileId),
-    CONSTRAINT fk_email_attachments FOREIGN KEY (EmailId) REFERENCES Email(EmailId)
+    CONSTRAINT fk_email_attachments FOREIGN KEY (EmailId) REFERENCES Email(EmailId) ON DELETE CASCADE
 );
 
 
@@ -54,8 +54,8 @@ CREATE TABLE EmailToAddress(
     EmailId INT NOT NULL,
     AddressId INT NOT NULL,
     RecipientType VARCHAR(3) NOT NULL DEFAULT '',
-    CONSTRAINT fk_email_id FOREIGN KEY (EmailId) REFERENCES Email(EmailId),
-    CONSTRAINT fk_addressid FOREIGN KEY (AddressId) REFERENCES Address(AddressId)
+    CONSTRAINT fk_email_id FOREIGN KEY (EmailId) REFERENCES Email(EmailId) ON DELETE CASCADE,
+    CONSTRAINT fk_addressid FOREIGN KEY (AddressId) REFERENCES Address(AddressId) ON DELETE CASCADE
 );
 
 

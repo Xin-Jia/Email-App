@@ -14246,3 +14246,1768 @@ BCC Recipients: []
 
 [INFO ] 2020-10-05 13:56:58.757 [main] EmailJDBCTest - ----------TEST FIND BY ID: 6----------
 [INFO ] 2020-10-05 13:56:58.799 [main] EmailDAOImpl - Found 1?: true
+[INFO ] 2020-10-05 18:25:20.863 [main] EmailJDBCTest - ----------TEST DELETE EMAIL----------
+[INFO ] 2020-10-05 18:25:21.045 [main] EmailDAOImpl - Number of rows deleted (should be 1): 1
+[INFO ] 2020-10-05 18:25:21.047 [main] EmailJDBCTest - ----------TEST FIND EMAILS BY SUBJECT----------
+[DEBUG] 2020-10-05 18:25:21.121 [main] EmailDAOImpl - Number of emails found with the substring: subject from: xinjia1.cao@gmail.com is: 2
+[INFO ] 2020-10-05 18:25:21.130 [main] EmailJDBCTest - 
+Email Id: 3
+Address: xinjia1.cao@gmail.com
+Date: 2020-10-05T18:25:21.067449100
+Subject: subject2
+Message: Sent Msg
+Attachments: 2
+To Recipients: [xinjia1.cao@gmail.com]
+CC Recipients: []
+BCC Recipients: [xinjia1.cao@gmail.com]
+
+[INFO ] 2020-10-05 18:25:21.131 [main] EmailJDBCTest - 
+Email Id: 4
+Address: xinjia1.cao@gmail.com
+Date: 2020-10-05T18:25:21.107950900
+Subject: subject2_2
+Message: Received Msg
+Attachments: 1
+To Recipients: [xinjia2.cao@gmail.com]
+CC Recipients: []
+BCC Recipients: []
+
+[INFO ] 2020-10-05 18:25:21.131 [main] EmailJDBCTest - ----------TEST UPDATE EMAIL----------
+[INFO ] 2020-10-05 18:25:21.162 [main] EmailDAOImpl - Number of attachments added: 1
+[INFO ] 2020-10-05 18:25:21.163 [main] EmailDAOImpl - Number of attachments added for update: 1
+[DEBUG] 2020-10-05 18:25:21.166 [main] EmailDAOImpl - The message sent: updated Msg
+[DEBUG] 2020-10-05 18:25:21.166 [main] EmailDAOImpl - The message sent type: text/plain
+[DEBUG] 2020-10-05 18:25:21.167 [main] EmailDAOImpl - The message sent: updated HTML Msg
+[DEBUG] 2020-10-05 18:25:21.167 [main] EmailDAOImpl - The message sent type: text/html
+[INFO ] 2020-10-05 18:25:21.176 [main] EmailDAOImpl - Address not in table -> create
+[INFO ] 2020-10-05 18:25:21.180 [main] EmailDAOImpl - Creating an address - Number of rows created: 1
+[INFO ] 2020-10-05 18:25:21.184 [main] EmailDAOImpl - Address not in table -> create
+[INFO ] 2020-10-05 18:25:21.188 [main] EmailDAOImpl - Creating an address - Number of rows created: 1
+[INFO ] 2020-10-05 18:25:21.192 [main] EmailDAOImpl - email To: updatedRecipient1@gmail.com
+[INFO ] 2020-10-05 18:25:21.196 [main] EmailDAOImpl - email BCC: updatedRecipient2@gmail.com
+[INFO ] 2020-10-05 18:25:21.203 [main] EmailDAOImpl - Number of recipients added: 2
+[INFO ] 2020-10-05 18:25:21.203 [main] EmailDAOImpl - Number of recipients added for update: 2
+[INFO ] 2020-10-05 18:25:21.203 [main] EmailDAOImpl - Total number of rows updated and added: 3
+[INFO ] 2020-10-05 18:25:21.204 [main] EmailJDBCTest - ----------TEST FIND ALL----------
+[INFO ] 2020-10-05 18:25:21.262 [main] EmailDAOImpl - Total number of all emails : 6
+[INFO ] 2020-10-05 18:25:21.263 [main] EmailJDBCTest - 
+Email Id: 1
+Address: xinjia.caoxin@gmail.com
+Date: 2020-10-05T18:25:21.207749200
+Subject: subject1
+Message: Inbox Msg
+Attachments: 3
+To Recipients: [xinjia.caoxin@gmail.com]
+CC Recipients: [xinjia2.cao@gmail.com]
+BCC Recipients: []
+
+[INFO ] 2020-10-05 18:25:21.263 [main] EmailJDBCTest - 
+Email Id: 2
+Address: xinjia.caoxin@gmail.com
+Date: 2020-10-05T18:25:21.216725400
+Subject: subject1_1
+Message: Inbox Msg
+Attachments: 1
+To Recipients: []
+CC Recipients: [xinjia3.cao@gmail.com]
+BCC Recipients: []
+
+[INFO ] 2020-10-05 18:25:21.263 [main] EmailJDBCTest - 
+Email Id: 3
+Address: xinjia1.cao@gmail.com
+Date: 2020-10-05T18:25:21.226699900
+Subject: subject2
+Message: Sent Msg
+Attachments: 3
+To Recipients: [xinjia1.cao@gmail.com]
+CC Recipients: []
+BCC Recipients: [xinjia1.cao@gmail.com]
+
+[INFO ] 2020-10-05 18:25:21.264 [main] EmailJDBCTest - 
+Email Id: 4
+Address: xinjia1.cao@gmail.com
+Date: 2020-10-05T18:25:21.235675700
+Subject: subject2_2
+Message: Received Msg
+Attachments: 2
+To Recipients: [xinjia2.cao@gmail.com]
+CC Recipients: []
+BCC Recipients: []
+
+[INFO ] 2020-10-05 18:25:21.264 [main] EmailJDBCTest - 
+Email Id: 6
+Address: xinjia3.cao@gmail.com
+Date: 2020-10-05T18:25:21.244651300
+Subject: subject_updated
+Message: updated Msg
+Attachments: 2
+To Recipients: [updatedRecipient1@gmail.com]
+CC Recipients: []
+BCC Recipients: [updatedRecipient2@gmail.com]
+
+[INFO ] 2020-10-05 18:25:21.264 [main] EmailJDBCTest - 
+Email Id: 7
+Address: xinjia3.cao@gmail.com
+Date: 2020-10-05T18:25:21.254623900
+Subject: subject_test
+Message: message_test
+Attachments: 1
+To Recipients: []
+CC Recipients: []
+BCC Recipients: []
+
+[DEBUG] 2020-10-05 18:25:21.269 [main] EmailJDBCTest - Number of rows: 6
+[INFO ] 2020-10-05 18:25:21.269 [main] EmailJDBCTest - ----------TEST CREATE EMAIL----------
+[DEBUG] 2020-10-05 18:25:21.273 [main] EmailJDBCTest - latest id: 6
+[DEBUG] 2020-10-05 18:25:21.276 [main] EmailDAOImpl - The message sent: test create email
+[DEBUG] 2020-10-05 18:25:21.276 [main] EmailDAOImpl - The message sent type: text/plain
+[DEBUG] 2020-10-05 18:25:21.276 [main] EmailDAOImpl - The message sent: test
+[DEBUG] 2020-10-05 18:25:21.276 [main] EmailDAOImpl - The message sent type: text/html
+[DEBUG] 2020-10-05 18:25:21.279 [main] EmailDAOImpl - New email ID is: 8
+[INFO ] 2020-10-05 18:25:21.282 [main] EmailDAOImpl - Address not in table -> create
+[INFO ] 2020-10-05 18:25:21.286 [main] EmailDAOImpl - Creating an address - Number of rows created: 1
+[INFO ] 2020-10-05 18:25:21.288 [main] EmailDAOImpl - Address not in table -> create
+[INFO ] 2020-10-05 18:25:21.292 [main] EmailDAOImpl - Creating an address - Number of rows created: 1
+[INFO ] 2020-10-05 18:25:21.297 [main] EmailDAOImpl - email To: xinjia345@gmail.com
+[INFO ] 2020-10-05 18:25:21.301 [main] EmailDAOImpl - email CC: xinjia1.cao@gmail.com
+[INFO ] 2020-10-05 18:25:21.304 [main] EmailDAOImpl - Number of recipients added: 2
+[INFO ] 2020-10-05 18:25:21.317 [main] EmailDAOImpl - Number of attachments added: 1
+[INFO ] 2020-10-05 18:25:21.331 [main] EmailDAOImpl - Found 8?: true
+[INFO ] 2020-10-05 18:25:21.331 [main] EmailJDBCTest - ----------TEST FIND SENT EMAILS----------
+[INFO ] 2020-10-05 18:25:21.341 [main] EmailJDBCTest - ----------TEST FIND REEIVED EMAILS (INBOX)----------
+[INFO ] 2020-10-05 18:25:21.342 [main] EmailJDBCTest - ----------TEST FIND BY ID: 6----------
+[INFO ] 2020-10-05 18:25:21.354 [main] EmailDAOImpl - Found 1?: true
+[INFO ] 2020-10-05 18:26:51.605 [main] EmailJDBCTest - ----------TEST DELETE EMAIL----------
+[INFO ] 2020-10-05 18:26:51.761 [main] EmailDAOImpl - Number of rows deleted (should be 1): 1
+[INFO ] 2020-10-05 18:26:51.762 [main] EmailJDBCTest - ----------TEST FIND EMAILS BY SUBJECT----------
+[DEBUG] 2020-10-05 18:26:51.825 [main] EmailDAOImpl - Number of emails found with the substring: subject from: xinjia1.cao@gmail.com is: 2
+[INFO ] 2020-10-05 18:26:51.839 [main] EmailJDBCTest - 
+Email Id: 3
+Address: xinjia1.cao@gmail.com
+Date: 2020-10-05T18:26:51.779287900
+Subject: subject2
+Message: Sent Msg
+Attachments: 2
+To Recipients: [xinjia1.cao@gmail.com]
+CC Recipients: []
+BCC Recipients: [xinjia1.cao@gmail.com]
+
+[INFO ] 2020-10-05 18:26:51.840 [main] EmailJDBCTest - 
+Email Id: 4
+Address: xinjia1.cao@gmail.com
+Date: 2020-10-05T18:26:51.809207300
+Subject: subject2_2
+Message: Received Msg
+Attachments: 1
+To Recipients: [xinjia2.cao@gmail.com]
+CC Recipients: []
+BCC Recipients: []
+
+[INFO ] 2020-10-05 18:26:51.840 [main] EmailJDBCTest - ----------TEST UPDATE EMAIL----------
+[INFO ] 2020-10-05 18:26:51.857 [main] EmailDAOImpl - Number of attachments added: 1
+[INFO ] 2020-10-05 18:26:51.857 [main] EmailDAOImpl - Number of attachments added for update: 1
+[DEBUG] 2020-10-05 18:26:51.873 [main] EmailDAOImpl - The message sent: updated Msg
+[DEBUG] 2020-10-05 18:26:51.873 [main] EmailDAOImpl - The message sent type: text/plain
+[DEBUG] 2020-10-05 18:26:51.874 [main] EmailDAOImpl - The message sent: updated HTML Msg
+[DEBUG] 2020-10-05 18:26:51.874 [main] EmailDAOImpl - The message sent type: text/html
+[INFO ] 2020-10-05 18:26:51.883 [main] EmailDAOImpl - Address not in table -> create
+[INFO ] 2020-10-05 18:26:51.889 [main] EmailDAOImpl - Creating an address - Number of rows created: 1
+[INFO ] 2020-10-05 18:26:51.893 [main] EmailDAOImpl - Address not in table -> create
+[INFO ] 2020-10-05 18:26:51.896 [main] EmailDAOImpl - Creating an address - Number of rows created: 1
+[INFO ] 2020-10-05 18:26:51.900 [main] EmailDAOImpl - email To: updatedRecipient1@gmail.com
+[INFO ] 2020-10-05 18:26:51.901 [main] EmailDAOImpl - email BCC: updatedRecipient2@gmail.com
+[INFO ] 2020-10-05 18:26:51.901 [main] EmailDAOImpl - Number of recipients added: 2
+[INFO ] 2020-10-05 18:26:51.901 [main] EmailDAOImpl - Number of recipients added for update: 2
+[INFO ] 2020-10-05 18:26:51.901 [main] EmailDAOImpl - Total number of rows updated and added: 3
+[INFO ] 2020-10-05 18:26:51.901 [main] EmailJDBCTest - ----------TEST FIND ALL----------
+[INFO ] 2020-10-05 18:26:51.963 [main] EmailDAOImpl - Total number of all emails : 6
+[INFO ] 2020-10-05 18:26:51.963 [main] EmailJDBCTest - 
+Email Id: 1
+Address: xinjia.caoxin@gmail.com
+Date: 2020-10-05T18:26:51.901448
+Subject: subject1
+Message: Inbox Msg
+Attachments: 3
+To Recipients: [xinjia.caoxin@gmail.com]
+CC Recipients: [xinjia2.cao@gmail.com]
+BCC Recipients: []
+
+[INFO ] 2020-10-05 18:26:51.969 [main] EmailJDBCTest - 
+Email Id: 2
+Address: xinjia.caoxin@gmail.com
+Date: 2020-10-05T18:26:51.917073300
+Subject: subject1_1
+Message: Inbox Msg
+Attachments: 1
+To Recipients: []
+CC Recipients: [xinjia3.cao@gmail.com]
+BCC Recipients: []
+
+[INFO ] 2020-10-05 18:26:51.969 [main] EmailJDBCTest - 
+Email Id: 3
+Address: xinjia1.cao@gmail.com
+Date: 2020-10-05T18:26:51.917073300
+Subject: subject2
+Message: Sent Msg
+Attachments: 3
+To Recipients: [xinjia1.cao@gmail.com]
+CC Recipients: []
+BCC Recipients: [xinjia1.cao@gmail.com]
+
+[INFO ] 2020-10-05 18:26:51.969 [main] EmailJDBCTest - 
+Email Id: 4
+Address: xinjia1.cao@gmail.com
+Date: 2020-10-05T18:26:51.932691800
+Subject: subject2_2
+Message: Received Msg
+Attachments: 2
+To Recipients: [xinjia2.cao@gmail.com]
+CC Recipients: []
+BCC Recipients: []
+
+[INFO ] 2020-10-05 18:26:51.969 [main] EmailJDBCTest - 
+Email Id: 6
+Address: xinjia3.cao@gmail.com
+Date: 2020-10-05T18:26:51.948313500
+Subject: subject_updated
+Message: updated Msg
+Attachments: 2
+To Recipients: [updatedRecipient1@gmail.com]
+CC Recipients: []
+BCC Recipients: [updatedRecipient2@gmail.com]
+
+[INFO ] 2020-10-05 18:26:51.970 [main] EmailJDBCTest - 
+Email Id: 7
+Address: xinjia3.cao@gmail.com
+Date: 2020-10-05T18:26:51.948313500
+Subject: subject_test
+Message: message_test
+Attachments: 1
+To Recipients: []
+CC Recipients: []
+BCC Recipients: []
+
+[DEBUG] 2020-10-05 18:26:51.971 [main] EmailJDBCTest - Number of rows: 6
+[INFO ] 2020-10-05 18:26:51.971 [main] EmailJDBCTest - ----------TEST CREATE EMAIL----------
+[DEBUG] 2020-10-05 18:26:51.971 [main] EmailJDBCTest - latest id: 6
+[DEBUG] 2020-10-05 18:26:51.971 [main] EmailDAOImpl - The message sent: test create email
+[DEBUG] 2020-10-05 18:26:51.971 [main] EmailDAOImpl - The message sent type: text/plain
+[DEBUG] 2020-10-05 18:26:51.971 [main] EmailDAOImpl - The message sent: test
+[DEBUG] 2020-10-05 18:26:51.971 [main] EmailDAOImpl - The message sent type: text/html
+[DEBUG] 2020-10-05 18:26:51.971 [main] EmailDAOImpl - New email ID is: 8
+[INFO ] 2020-10-05 18:26:51.986 [main] EmailDAOImpl - Address not in table -> create
+[INFO ] 2020-10-05 18:26:51.989 [main] EmailDAOImpl - Creating an address - Number of rows created: 1
+[INFO ] 2020-10-05 18:26:51.991 [main] EmailDAOImpl - Address not in table -> create
+[INFO ] 2020-10-05 18:26:51.996 [main] EmailDAOImpl - Creating an address - Number of rows created: 1
+[INFO ] 2020-10-05 18:26:52.000 [main] EmailDAOImpl - email To: xinjia345@gmail.com
+[INFO ] 2020-10-05 18:26:52.001 [main] EmailDAOImpl - email CC: xinjia1.cao@gmail.com
+[INFO ] 2020-10-05 18:26:52.001 [main] EmailDAOImpl - Number of recipients added: 2
+[INFO ] 2020-10-05 18:26:52.017 [main] EmailDAOImpl - Number of attachments added: 1
+[INFO ] 2020-10-05 18:26:52.043 [main] EmailDAOImpl - Found 8?: true
+[INFO ] 2020-10-05 18:26:52.044 [main] EmailJDBCTest - ----------TEST FIND SENT EMAILS----------
+[DEBUG] 2020-10-05 18:26:52.080 [main] EmailDAOImpl - Number of emails in Sent folder from: xinjia.caoxin@gmail.com is: 3
+[INFO ] 2020-10-05 18:26:52.081 [main] EmailJDBCTest - 
+Email Id: 1
+Address: xinjia.caoxin@gmail.com
+Date: 2020-10-05T18:26:52.049555
+Subject: subject1
+Message: Inbox Msg
+Attachments: 4
+To Recipients: [xinjia.caoxin@gmail.com]
+CC Recipients: [xinjia2.cao@gmail.com]
+BCC Recipients: []
+
+[INFO ] 2020-10-05 18:26:52.081 [main] EmailJDBCTest - 
+Email Id: 1
+Address: xinjia.caoxin@gmail.com
+Date: 2020-10-05T18:26:52.060524300
+Subject: subject1
+Message: Inbox Msg
+Attachments: 4
+To Recipients: [xinjia.caoxin@gmail.com]
+CC Recipients: [xinjia2.cao@gmail.com]
+BCC Recipients: []
+
+[INFO ] 2020-10-05 18:26:52.081 [main] EmailJDBCTest - 
+Email Id: 2
+Address: xinjia.caoxin@gmail.com
+Date: 2020-10-05T18:26:52.069500200
+Subject: subject1_1
+Message: Inbox Msg
+Attachments: 2
+To Recipients: []
+CC Recipients: [xinjia3.cao@gmail.com]
+BCC Recipients: []
+
+[INFO ] 2020-10-05 18:26:52.081 [main] EmailJDBCTest - ----------TEST FIND REEIVED EMAILS (INBOX)----------
+[DEBUG] 2020-10-05 18:26:52.081 [main] EmailDAOImpl - Number of emails in Inbox folder from: xinjia3.cao@gmail.com is: 0
+[INFO ] 2020-10-05 18:26:52.081 [main] EmailJDBCTest - ----------TEST FIND BY ID: 6----------
+[INFO ] 2020-10-05 18:26:52.097 [main] EmailDAOImpl - Found 1?: true
+[INFO ] 2020-10-05 18:30:38.020 [main] EmailJDBCTest - ----------TEST DELETE EMAIL----------
+[INFO ] 2020-10-05 18:30:38.166 [main] EmailDAOImpl - Number of rows deleted (should be 1): 1
+[INFO ] 2020-10-05 18:30:38.167 [main] EmailJDBCTest - ----------TEST FIND EMAILS BY SUBJECT----------
+[DEBUG] 2020-10-05 18:30:38.237 [main] EmailDAOImpl - Number of emails found with the substring: subject from: xinjia1.cao@gmail.com is: 2
+[INFO ] 2020-10-05 18:30:38.249 [main] EmailJDBCTest - 
+Email Id: 3
+Address: xinjia1.cao@gmail.com
+Date: 2020-10-05T18:30:38.186635600
+Subject: subject2
+Message: Sent Msg
+Attachments: 2
+To Recipients: [xinjia1.cao@gmail.com]
+CC Recipients: []
+BCC Recipients: [xinjia1.cao@gmail.com]
+
+[INFO ] 2020-10-05 18:30:38.250 [main] EmailJDBCTest - 
+Email Id: 4
+Address: xinjia1.cao@gmail.com
+Date: 2020-10-05T18:30:38.217518600
+Subject: subject2_2
+Message: Received Msg
+Attachments: 1
+To Recipients: [xinjia2.cao@gmail.com]
+CC Recipients: []
+BCC Recipients: []
+
+[INFO ] 2020-10-05 18:30:38.250 [main] EmailJDBCTest - ----------TEST UPDATE EMAIL----------
+[INFO ] 2020-10-05 18:30:38.281 [main] EmailDAOImpl - Number of attachments added: 1
+[INFO ] 2020-10-05 18:30:38.282 [main] EmailDAOImpl - Number of attachments added for update: 1
+[DEBUG] 2020-10-05 18:30:38.286 [main] EmailDAOImpl - The message sent: updated Msg
+[DEBUG] 2020-10-05 18:30:38.286 [main] EmailDAOImpl - The message sent type: text/plain
+[DEBUG] 2020-10-05 18:30:38.286 [main] EmailDAOImpl - The message sent: updated HTML Msg
+[DEBUG] 2020-10-05 18:30:38.287 [main] EmailDAOImpl - The message sent type: text/html
+[INFO ] 2020-10-05 18:30:38.295 [main] EmailDAOImpl - Address not in table -> create
+[INFO ] 2020-10-05 18:30:38.300 [main] EmailDAOImpl - Creating an address - Number of rows created: 1
+[INFO ] 2020-10-05 18:30:38.304 [main] EmailDAOImpl - Address not in table -> create
+[INFO ] 2020-10-05 18:30:38.308 [main] EmailDAOImpl - Creating an address - Number of rows created: 1
+[INFO ] 2020-10-05 18:30:38.312 [main] EmailDAOImpl - email To: updatedRecipient1@gmail.com
+[INFO ] 2020-10-05 18:30:38.318 [main] EmailDAOImpl - email BCC: updatedRecipient2@gmail.com
+[INFO ] 2020-10-05 18:30:38.323 [main] EmailDAOImpl - Number of recipients added: 2
+[INFO ] 2020-10-05 18:30:38.323 [main] EmailDAOImpl - Number of recipients added for update: 2
+[INFO ] 2020-10-05 18:30:38.323 [main] EmailDAOImpl - Total number of rows updated and added: 3
+[INFO ] 2020-10-05 18:30:38.324 [main] EmailJDBCTest - ----------TEST FIND ALL----------
+[INFO ] 2020-10-05 18:30:38.383 [main] EmailDAOImpl - Total number of all emails : 6
+[INFO ] 2020-10-05 18:30:38.384 [main] EmailJDBCTest - 
+Email Id: 1
+Address: xinjia.caoxin@gmail.com
+Date: 2020-10-05T18:30:38.327889
+Subject: subject1
+Message: Inbox Msg
+Attachments: 3
+To Recipients: [xinjia.caoxin@gmail.com]
+CC Recipients: [xinjia2.cao@gmail.com]
+BCC Recipients: []
+
+[INFO ] 2020-10-05 18:30:38.384 [main] EmailJDBCTest - 
+Email Id: 2
+Address: xinjia.caoxin@gmail.com
+Date: 2020-10-05T18:30:38.336893400
+Subject: subject1_1
+Message: Inbox Msg
+Attachments: 1
+To Recipients: []
+CC Recipients: [xinjia3.cao@gmail.com]
+BCC Recipients: []
+
+[INFO ] 2020-10-05 18:30:38.384 [main] EmailJDBCTest - 
+Email Id: 3
+Address: xinjia1.cao@gmail.com
+Date: 2020-10-05T18:30:38.345841200
+Subject: subject2
+Message: Sent Msg
+Attachments: 3
+To Recipients: [xinjia1.cao@gmail.com]
+CC Recipients: []
+BCC Recipients: [xinjia1.cao@gmail.com]
+
+[INFO ] 2020-10-05 18:30:38.384 [main] EmailJDBCTest - 
+Email Id: 4
+Address: xinjia1.cao@gmail.com
+Date: 2020-10-05T18:30:38.355814800
+Subject: subject2_2
+Message: Received Msg
+Attachments: 2
+To Recipients: [xinjia2.cao@gmail.com]
+CC Recipients: []
+BCC Recipients: []
+
+[INFO ] 2020-10-05 18:30:38.385 [main] EmailJDBCTest - 
+Email Id: 6
+Address: xinjia3.cao@gmail.com
+Date: 2020-10-05T18:30:38.366785500
+Subject: subject_updated
+Message: updated Msg
+Attachments: 2
+To Recipients: [updatedRecipient1@gmail.com]
+CC Recipients: []
+BCC Recipients: [updatedRecipient2@gmail.com]
+
+[INFO ] 2020-10-05 18:30:38.385 [main] EmailJDBCTest - 
+Email Id: 7
+Address: xinjia3.cao@gmail.com
+Date: 2020-10-05T18:30:38.375762100
+Subject: subject_test
+Message: message_test
+Attachments: 1
+To Recipients: []
+CC Recipients: []
+BCC Recipients: []
+
+[DEBUG] 2020-10-05 18:30:38.388 [main] EmailJDBCTest - Number of rows: 6
+[INFO ] 2020-10-05 18:30:38.389 [main] EmailJDBCTest - ----------TEST CREATE EMAIL----------
+[DEBUG] 2020-10-05 18:30:38.392 [main] EmailJDBCTest - latest id: 6
+[DEBUG] 2020-10-05 18:30:38.394 [main] EmailDAOImpl - The message sent: test create email
+[DEBUG] 2020-10-05 18:30:38.395 [main] EmailDAOImpl - The message sent type: text/plain
+[DEBUG] 2020-10-05 18:30:38.395 [main] EmailDAOImpl - The message sent: test
+[DEBUG] 2020-10-05 18:30:38.395 [main] EmailDAOImpl - The message sent type: text/html
+[DEBUG] 2020-10-05 18:30:38.397 [main] EmailDAOImpl - New email ID is: 8
+[INFO ] 2020-10-05 18:30:38.400 [main] EmailDAOImpl - Address not in table -> create
+[INFO ] 2020-10-05 18:30:38.403 [main] EmailDAOImpl - Creating an address - Number of rows created: 1
+[INFO ] 2020-10-05 18:30:38.406 [main] EmailDAOImpl - Address not in table -> create
+[INFO ] 2020-10-05 18:30:38.409 [main] EmailDAOImpl - Creating an address - Number of rows created: 1
+[INFO ] 2020-10-05 18:30:38.414 [main] EmailDAOImpl - email To: xinjia345@gmail.com
+[INFO ] 2020-10-05 18:30:38.418 [main] EmailDAOImpl - email CC: xinjia1.cao@gmail.com
+[INFO ] 2020-10-05 18:30:38.421 [main] EmailDAOImpl - Number of recipients added: 2
+[INFO ] 2020-10-05 18:30:38.436 [main] EmailDAOImpl - Number of attachments added: 1
+[INFO ] 2020-10-05 18:30:38.452 [main] EmailDAOImpl - Found 8?: true
+[INFO ] 2020-10-05 18:30:38.453 [main] EmailJDBCTest - ----------TEST FIND SENT EMAILS----------
+[DEBUG] 2020-10-05 18:30:38.479 [main] EmailDAOImpl - Number of emails in Sent folder from: xinjia.caoxin@gmail.com is: 3
+[INFO ] 2020-10-05 18:30:38.480 [main] EmailJDBCTest - 
+Email Id: 1
+Address: xinjia.caoxin@gmail.com
+Date: 2020-10-05T18:30:38.456936700
+Subject: subject1
+Message: Inbox Msg
+Attachments: 4
+To Recipients: [xinjia.caoxin@gmail.com]
+CC Recipients: [xinjia2.cao@gmail.com]
+BCC Recipients: []
+
+[INFO ] 2020-10-05 18:30:38.480 [main] EmailJDBCTest - 
+Email Id: 1
+Address: xinjia.caoxin@gmail.com
+Date: 2020-10-05T18:30:38.463918300
+Subject: subject1
+Message: Inbox Msg
+Attachments: 4
+To Recipients: [xinjia.caoxin@gmail.com]
+CC Recipients: [xinjia2.cao@gmail.com]
+BCC Recipients: []
+
+[INFO ] 2020-10-05 18:30:38.480 [main] EmailJDBCTest - 
+Email Id: 2
+Address: xinjia.caoxin@gmail.com
+Date: 2020-10-05T18:30:38.472893900
+Subject: subject1_1
+Message: Inbox Msg
+Attachments: 2
+To Recipients: []
+CC Recipients: [xinjia3.cao@gmail.com]
+BCC Recipients: []
+
+[INFO ] 2020-10-05 18:30:38.481 [main] EmailJDBCTest - ----------TEST FIND REEIVED EMAILS (INBOX)----------
+[DEBUG] 2020-10-05 18:30:38.483 [main] EmailDAOImpl - Number of emails in Inbox folder from: xinjia3.cao@gmail.com is: 0
+[INFO ] 2020-10-05 18:30:38.490 [main] EmailJDBCTest - ----------TEST FIND BY ID: 6----------
+[INFO ] 2020-10-05 18:30:38.500 [main] EmailDAOImpl - Found 1?: true
+[INFO ] 2020-10-05 18:32:06.861 [main] EmailJDBCTest - ----------TEST DELETE EMAIL----------
+[INFO ] 2020-10-05 18:32:07.014 [main] EmailDAOImpl - Number of rows deleted (should be 1): 1
+[INFO ] 2020-10-05 18:32:07.015 [main] EmailJDBCTest - ----------TEST FIND EMAILS BY SUBJECT----------
+[DEBUG] 2020-10-05 18:32:07.082 [main] EmailDAOImpl - Number of emails found with the substring: subject from: xinjia1.cao@gmail.com is: 2
+[INFO ] 2020-10-05 18:32:07.091 [main] EmailJDBCTest - 
+Email Id: 3
+Address: xinjia1.cao@gmail.com
+Date: 2020-10-05T18:32:07.033892300
+Subject: subject2
+Message: Sent Msg
+Attachments: 2
+To Recipients: [xinjia1.cao@gmail.com]
+CC Recipients: []
+BCC Recipients: [xinjia1.cao@gmail.com]
+
+[INFO ] 2020-10-05 18:32:07.092 [main] EmailJDBCTest - 
+Email Id: 4
+Address: xinjia1.cao@gmail.com
+Date: 2020-10-05T18:32:07.062812100
+Subject: subject2_2
+Message: Received Msg
+Attachments: 1
+To Recipients: [xinjia2.cao@gmail.com]
+CC Recipients: []
+BCC Recipients: []
+
+[INFO ] 2020-10-05 18:32:07.092 [main] EmailJDBCTest - ----------TEST UPDATE EMAIL----------
+[INFO ] 2020-10-05 18:32:07.120 [main] EmailDAOImpl - Number of attachments added: 1
+[INFO ] 2020-10-05 18:32:07.121 [main] EmailDAOImpl - Number of attachments added for update: 1
+[DEBUG] 2020-10-05 18:32:07.125 [main] EmailDAOImpl - The message sent: updated Msg
+[DEBUG] 2020-10-05 18:32:07.125 [main] EmailDAOImpl - The message sent type: text/plain
+[DEBUG] 2020-10-05 18:32:07.125 [main] EmailDAOImpl - The message sent: updated HTML Msg
+[DEBUG] 2020-10-05 18:32:07.125 [main] EmailDAOImpl - The message sent type: text/html
+[INFO ] 2020-10-05 18:32:07.134 [main] EmailDAOImpl - Address not in table -> create
+[INFO ] 2020-10-05 18:32:07.139 [main] EmailDAOImpl - Creating an address - Number of rows created: 1
+[INFO ] 2020-10-05 18:32:07.143 [main] EmailDAOImpl - Address not in table -> create
+[INFO ] 2020-10-05 18:32:07.148 [main] EmailDAOImpl - Creating an address - Number of rows created: 1
+[INFO ] 2020-10-05 18:32:07.151 [main] EmailDAOImpl - email To: updatedRecipient1@gmail.com
+[INFO ] 2020-10-05 18:32:07.156 [main] EmailDAOImpl - email BCC: updatedRecipient2@gmail.com
+[INFO ] 2020-10-05 18:32:07.161 [main] EmailDAOImpl - Number of recipients added: 2
+[INFO ] 2020-10-05 18:32:07.161 [main] EmailDAOImpl - Number of recipients added for update: 2
+[INFO ] 2020-10-05 18:32:07.161 [main] EmailDAOImpl - Total number of rows updated and added: 3
+[INFO ] 2020-10-05 18:32:07.162 [main] EmailJDBCTest - ----------TEST FIND ALL----------
+[INFO ] 2020-10-05 18:32:07.220 [main] EmailDAOImpl - Total number of all emails : 6
+[INFO ] 2020-10-05 18:32:07.221 [main] EmailJDBCTest - 
+Email Id: 1
+Address: xinjia.caoxin@gmail.com
+Date: 2020-10-05T18:32:07.165220700
+Subject: subject1
+Message: Inbox Msg
+Attachments: 3
+To Recipients: [xinjia.caoxin@gmail.com]
+CC Recipients: [xinjia2.cao@gmail.com]
+BCC Recipients: []
+
+[INFO ] 2020-10-05 18:32:07.222 [main] EmailJDBCTest - 
+Email Id: 2
+Address: xinjia.caoxin@gmail.com
+Date: 2020-10-05T18:32:07.173198800
+Subject: subject1_1
+Message: Inbox Msg
+Attachments: 1
+To Recipients: []
+CC Recipients: [xinjia3.cao@gmail.com]
+BCC Recipients: []
+
+[INFO ] 2020-10-05 18:32:07.222 [main] EmailJDBCTest - 
+Email Id: 3
+Address: xinjia1.cao@gmail.com
+Date: 2020-10-05T18:32:07.183171300
+Subject: subject2
+Message: Sent Msg
+Attachments: 3
+To Recipients: [xinjia1.cao@gmail.com]
+CC Recipients: []
+BCC Recipients: [xinjia1.cao@gmail.com]
+
+[INFO ] 2020-10-05 18:32:07.222 [main] EmailJDBCTest - 
+Email Id: 4
+Address: xinjia1.cao@gmail.com
+Date: 2020-10-05T18:32:07.192148900
+Subject: subject2_2
+Message: Received Msg
+Attachments: 2
+To Recipients: [xinjia2.cao@gmail.com]
+CC Recipients: []
+BCC Recipients: []
+
+[INFO ] 2020-10-05 18:32:07.222 [main] EmailJDBCTest - 
+Email Id: 6
+Address: xinjia3.cao@gmail.com
+Date: 2020-10-05T18:32:07.201124900
+Subject: subject_updated
+Message: updated Msg
+Attachments: 2
+To Recipients: [updatedRecipient1@gmail.com]
+CC Recipients: []
+BCC Recipients: [updatedRecipient2@gmail.com]
+
+[INFO ] 2020-10-05 18:32:07.223 [main] EmailJDBCTest - 
+Email Id: 7
+Address: xinjia3.cao@gmail.com
+Date: 2020-10-05T18:32:07.210100400
+Subject: subject_test
+Message: message_test
+Attachments: 1
+To Recipients: []
+CC Recipients: []
+BCC Recipients: []
+
+[DEBUG] 2020-10-05 18:32:07.227 [main] EmailJDBCTest - Number of rows: 6
+[INFO ] 2020-10-05 18:32:07.227 [main] EmailJDBCTest - ----------TEST CREATE EMAIL----------
+[DEBUG] 2020-10-05 18:32:07.231 [main] EmailJDBCTest - latest id: 6
+[DEBUG] 2020-10-05 18:32:07.233 [main] EmailDAOImpl - The message sent: test create email
+[DEBUG] 2020-10-05 18:32:07.234 [main] EmailDAOImpl - The message sent type: text/plain
+[DEBUG] 2020-10-05 18:32:07.234 [main] EmailDAOImpl - The message sent: test
+[DEBUG] 2020-10-05 18:32:07.234 [main] EmailDAOImpl - The message sent type: text/html
+[DEBUG] 2020-10-05 18:32:07.236 [main] EmailDAOImpl - New email ID is: 8
+[INFO ] 2020-10-05 18:32:07.240 [main] EmailDAOImpl - Address not in table -> create
+[INFO ] 2020-10-05 18:32:07.243 [main] EmailDAOImpl - Creating an address - Number of rows created: 1
+[INFO ] 2020-10-05 18:32:07.246 [main] EmailDAOImpl - Address not in table -> create
+[INFO ] 2020-10-05 18:32:07.249 [main] EmailDAOImpl - Creating an address - Number of rows created: 1
+[INFO ] 2020-10-05 18:32:07.254 [main] EmailDAOImpl - email To: xinjia345@gmail.com
+[INFO ] 2020-10-05 18:32:07.257 [main] EmailDAOImpl - email CC: xinjia1.cao@gmail.com
+[INFO ] 2020-10-05 18:32:07.261 [main] EmailDAOImpl - Number of recipients added: 2
+[INFO ] 2020-10-05 18:32:07.274 [main] EmailDAOImpl - Number of attachments added: 1
+[INFO ] 2020-10-05 18:32:07.285 [main] EmailDAOImpl - Found 8?: true
+[INFO ] 2020-10-05 18:32:07.285 [main] EmailJDBCTest - ----------TEST FIND SENT EMAILS----------
+[DEBUG] 2020-10-05 18:32:07.311 [main] EmailDAOImpl - Number of emails in Sent folder from: xinjia.caoxin@gmail.com is: 3
+[INFO ] 2020-10-05 18:32:07.312 [main] EmailJDBCTest - 
+Email Id: 1
+Address: xinjia.caoxin@gmail.com
+Date: 2020-10-05T18:32:07.289973700
+Subject: subject1
+Message: Inbox Msg
+Attachments: 4
+To Recipients: [xinjia.caoxin@gmail.com]
+CC Recipients: [xinjia2.cao@gmail.com]
+BCC Recipients: []
+
+[INFO ] 2020-10-05 18:32:07.312 [main] EmailJDBCTest - 
+Email Id: 1
+Address: xinjia.caoxin@gmail.com
+Date: 2020-10-05T18:32:07.296956300
+Subject: subject1
+Message: Inbox Msg
+Attachments: 4
+To Recipients: [xinjia.caoxin@gmail.com]
+CC Recipients: [xinjia2.cao@gmail.com]
+BCC Recipients: []
+
+[INFO ] 2020-10-05 18:32:07.312 [main] EmailJDBCTest - 
+Email Id: 2
+Address: xinjia.caoxin@gmail.com
+Date: 2020-10-05T18:32:07.303936800
+Subject: subject1_1
+Message: Inbox Msg
+Attachments: 2
+To Recipients: []
+CC Recipients: [xinjia3.cao@gmail.com]
+BCC Recipients: []
+
+[INFO ] 2020-10-05 18:32:07.313 [main] EmailJDBCTest - ----------TEST FIND REEIVED EMAILS (INBOX)----------
+[DEBUG] 2020-10-05 18:32:07.317 [main] EmailDAOImpl - Number of emails in Inbox folder from: xinjia3.cao@gmail.com is: 0
+[INFO ] 2020-10-05 18:32:07.325 [main] EmailJDBCTest - ----------TEST FIND BY ID: 6----------
+[INFO ] 2020-10-05 18:32:07.337 [main] EmailDAOImpl - Found 1?: true
+[INFO ] 2020-10-05 18:33:43.670 [main] EmailJDBCTest - ----------TEST DELETE EMAIL----------
+[INFO ] 2020-10-05 18:33:43.825 [main] EmailDAOImpl - Number of rows deleted (should be 1): 1
+[INFO ] 2020-10-05 18:33:43.827 [main] EmailJDBCTest - ----------TEST FIND EMAILS BY SUBJECT----------
+[DEBUG] 2020-10-05 18:33:43.891 [main] EmailDAOImpl - Number of emails found with the substring: subject from: xinjia1.cao@gmail.com is: 2
+[INFO ] 2020-10-05 18:33:43.903 [main] EmailJDBCTest - 
+Email Id: 3
+Address: xinjia1.cao@gmail.com
+Date: 2020-10-05T18:33:43.845381200
+Subject: subject2
+Message: Sent Msg
+Attachments: 2
+To Recipients: [xinjia1.cao@gmail.com]
+CC Recipients: []
+BCC Recipients: [xinjia1.cao@gmail.com]
+
+[INFO ] 2020-10-05 18:33:43.903 [main] EmailJDBCTest - 
+Email Id: 4
+Address: xinjia1.cao@gmail.com
+Date: 2020-10-05T18:33:43.874303800
+Subject: subject2_2
+Message: Received Msg
+Attachments: 1
+To Recipients: [xinjia2.cao@gmail.com]
+CC Recipients: []
+BCC Recipients: []
+
+[INFO ] 2020-10-05 18:33:43.903 [main] EmailJDBCTest - ----------TEST UPDATE EMAIL----------
+[INFO ] 2020-10-05 18:33:43.930 [main] EmailDAOImpl - Number of attachments added: 1
+[INFO ] 2020-10-05 18:33:43.930 [main] EmailDAOImpl - Number of attachments added for update: 1
+[DEBUG] 2020-10-05 18:33:43.934 [main] EmailDAOImpl - The message sent: updated Msg
+[DEBUG] 2020-10-05 18:33:43.934 [main] EmailDAOImpl - The message sent type: text/plain
+[DEBUG] 2020-10-05 18:33:43.934 [main] EmailDAOImpl - The message sent: updated HTML Msg
+[DEBUG] 2020-10-05 18:33:43.934 [main] EmailDAOImpl - The message sent type: text/html
+[INFO ] 2020-10-05 18:33:43.943 [main] EmailDAOImpl - Address not in table -> create
+[INFO ] 2020-10-05 18:33:43.949 [main] EmailDAOImpl - Creating an address - Number of rows created: 1
+[INFO ] 2020-10-05 18:33:43.952 [main] EmailDAOImpl - Address not in table -> create
+[INFO ] 2020-10-05 18:33:43.957 [main] EmailDAOImpl - Creating an address - Number of rows created: 1
+[INFO ] 2020-10-05 18:33:43.961 [main] EmailDAOImpl - email To: updatedRecipient1@gmail.com
+[INFO ] 2020-10-05 18:33:43.966 [main] EmailDAOImpl - email BCC: updatedRecipient2@gmail.com
+[INFO ] 2020-10-05 18:33:43.970 [main] EmailDAOImpl - Number of recipients added: 2
+[INFO ] 2020-10-05 18:33:43.971 [main] EmailDAOImpl - Number of recipients added for update: 2
+[INFO ] 2020-10-05 18:33:43.971 [main] EmailDAOImpl - Total number of rows updated and added: 3
+[INFO ] 2020-10-05 18:33:43.971 [main] EmailJDBCTest - ----------TEST FIND ALL----------
+[INFO ] 2020-10-05 18:33:44.033 [main] EmailDAOImpl - Total number of all emails : 6
+[INFO ] 2020-10-05 18:33:44.034 [main] EmailJDBCTest - 
+Email Id: 1
+Address: xinjia.caoxin@gmail.com
+Date: 2020-10-05T18:33:43.975035700
+Subject: subject1
+Message: Inbox Msg
+Attachments: 3
+To Recipients: [xinjia.caoxin@gmail.com]
+CC Recipients: [xinjia2.cao@gmail.com]
+BCC Recipients: []
+
+[INFO ] 2020-10-05 18:33:44.034 [main] EmailJDBCTest - 
+Email Id: 2
+Address: xinjia.caoxin@gmail.com
+Date: 2020-10-05T18:33:43.985008400
+Subject: subject1_1
+Message: Inbox Msg
+Attachments: 1
+To Recipients: []
+CC Recipients: [xinjia3.cao@gmail.com]
+BCC Recipients: []
+
+[INFO ] 2020-10-05 18:33:44.034 [main] EmailJDBCTest - 
+Email Id: 3
+Address: xinjia1.cao@gmail.com
+Date: 2020-10-05T18:33:43.993984100
+Subject: subject2
+Message: Sent Msg
+Attachments: 3
+To Recipients: [xinjia1.cao@gmail.com]
+CC Recipients: []
+BCC Recipients: [xinjia1.cao@gmail.com]
+
+[INFO ] 2020-10-05 18:33:44.034 [main] EmailJDBCTest - 
+Email Id: 4
+Address: xinjia1.cao@gmail.com
+Date: 2020-10-05T18:33:44.004954800
+Subject: subject2_2
+Message: Received Msg
+Attachments: 2
+To Recipients: [xinjia2.cao@gmail.com]
+CC Recipients: []
+BCC Recipients: []
+
+[INFO ] 2020-10-05 18:33:44.035 [main] EmailJDBCTest - 
+Email Id: 6
+Address: xinjia3.cao@gmail.com
+Date: 2020-10-05T18:33:44.015926100
+Subject: subject_updated
+Message: updated Msg
+Attachments: 2
+To Recipients: [updatedRecipient1@gmail.com]
+CC Recipients: []
+BCC Recipients: [updatedRecipient2@gmail.com]
+
+[INFO ] 2020-10-05 18:33:44.035 [main] EmailJDBCTest - 
+Email Id: 7
+Address: xinjia3.cao@gmail.com
+Date: 2020-10-05T18:33:44.025899900
+Subject: subject_test
+Message: message_test
+Attachments: 1
+To Recipients: []
+CC Recipients: []
+BCC Recipients: []
+
+[DEBUG] 2020-10-05 18:33:44.038 [main] EmailJDBCTest - Number of rows: 6
+[INFO ] 2020-10-05 18:33:44.039 [main] EmailJDBCTest - ----------TEST CREATE EMAIL----------
+[DEBUG] 2020-10-05 18:33:44.042 [main] EmailJDBCTest - latest id: 6
+[DEBUG] 2020-10-05 18:33:44.044 [main] EmailDAOImpl - The message sent: test create email
+[DEBUG] 2020-10-05 18:33:44.045 [main] EmailDAOImpl - The message sent type: text/plain
+[DEBUG] 2020-10-05 18:33:44.045 [main] EmailDAOImpl - The message sent: test
+[DEBUG] 2020-10-05 18:33:44.045 [main] EmailDAOImpl - The message sent type: text/html
+[DEBUG] 2020-10-05 18:33:44.047 [main] EmailDAOImpl - New email ID is: 8
+[INFO ] 2020-10-05 18:33:44.050 [main] EmailDAOImpl - Address not in table -> create
+[INFO ] 2020-10-05 18:33:44.054 [main] EmailDAOImpl - Creating an address - Number of rows created: 1
+[INFO ] 2020-10-05 18:33:44.057 [main] EmailDAOImpl - Address not in table -> create
+[INFO ] 2020-10-05 18:33:44.060 [main] EmailDAOImpl - Creating an address - Number of rows created: 1
+[INFO ] 2020-10-05 18:33:44.065 [main] EmailDAOImpl - email To: xinjia345@gmail.com
+[INFO ] 2020-10-05 18:33:44.069 [main] EmailDAOImpl - email CC: xinjia1.cao@gmail.com
+[INFO ] 2020-10-05 18:33:44.072 [main] EmailDAOImpl - Number of recipients added: 2
+[INFO ] 2020-10-05 18:33:44.085 [main] EmailDAOImpl - Number of attachments added: 1
+[INFO ] 2020-10-05 18:33:44.096 [main] EmailDAOImpl - Found 8?: true
+[INFO ] 2020-10-05 18:33:44.097 [main] EmailJDBCTest - ----------TEST FIND SENT EMAILS----------
+[DEBUG] 2020-10-05 18:33:44.121 [main] EmailDAOImpl - Number of emails in Sent folder from: xinjia.caoxin@gmail.com is: 3
+[INFO ] 2020-10-05 18:33:44.121 [main] EmailJDBCTest - 
+Email Id: 1
+Address: xinjia.caoxin@gmail.com
+Date: 2020-10-05T18:33:44.100295700
+Subject: subject1
+Message: Inbox Msg
+Attachments: 4
+To Recipients: [xinjia.caoxin@gmail.com]
+CC Recipients: [xinjia2.cao@gmail.com]
+BCC Recipients: []
+
+[INFO ] 2020-10-05 18:33:44.122 [main] EmailJDBCTest - 
+Email Id: 1
+Address: xinjia.caoxin@gmail.com
+Date: 2020-10-05T18:33:44.106279600
+Subject: subject1
+Message: Inbox Msg
+Attachments: 4
+To Recipients: [xinjia.caoxin@gmail.com]
+CC Recipients: [xinjia2.cao@gmail.com]
+BCC Recipients: []
+
+[INFO ] 2020-10-05 18:33:44.122 [main] EmailJDBCTest - 
+Email Id: 2
+Address: xinjia.caoxin@gmail.com
+Date: 2020-10-05T18:33:44.114258300
+Subject: subject1_1
+Message: Inbox Msg
+Attachments: 2
+To Recipients: []
+CC Recipients: [xinjia3.cao@gmail.com]
+BCC Recipients: []
+
+[INFO ] 2020-10-05 18:33:44.122 [main] EmailJDBCTest - ----------TEST FIND REEIVED EMAILS (INBOX)----------
+[DEBUG] 2020-10-05 18:33:44.125 [main] EmailDAOImpl - Number of emails in Inbox folder from: xinjia3.cao@gmail.com is: 0
+[INFO ] 2020-10-05 18:33:44.130 [main] EmailJDBCTest - ----------TEST FIND BY ID: 6----------
+[INFO ] 2020-10-05 18:33:44.140 [main] EmailDAOImpl - Found 1?: true
+[INFO ] 2020-10-05 18:53:35.943 [main] EmailJDBCTest - ----------TEST DELETE EMAIL----------
+[INFO ] 2020-10-05 18:53:36.089 [main] EmailDAOImpl - Number of rows deleted (should be 1): 0
+[INFO ] 2020-10-05 18:53:36.094 [main] EmailJDBCTest - ----------TEST FIND EMAILS BY SUBJECT----------
+[DEBUG] 2020-10-05 18:53:36.149 [main] EmailDAOImpl - Number of emails found with the substring: subject from: xinjia1.cao@gmail.com is: 2
+[INFO ] 2020-10-05 18:53:36.165 [main] EmailJDBCTest - 
+Email Id: 3
+Address: xinjia1.cao@gmail.com
+Date: 2020-10-05T18:53:36.103104500
+Subject: subject2
+Message: Sent Msg
+Attachments: 4
+To Recipients: [xinjia1.cao@gmail.com]
+CC Recipients: []
+BCC Recipients: [xinjia1.cao@gmail.com]
+
+[INFO ] 2020-10-05 18:53:36.165 [main] EmailJDBCTest - 
+Email Id: 4
+Address: xinjia1.cao@gmail.com
+Date: 2020-10-05T18:53:36.134347700
+Subject: subject2_2
+Message: Received Msg
+Attachments: 3
+To Recipients: [xinjia2.cao@gmail.com]
+CC Recipients: []
+BCC Recipients: []
+
+[INFO ] 2020-10-05 18:53:36.165 [main] EmailJDBCTest - ----------TEST UPDATE EMAIL----------
+[INFO ] 2020-10-05 18:53:36.181 [main] EmailDAOImpl - Number of attachments added: 1
+[INFO ] 2020-10-05 18:53:36.181 [main] EmailDAOImpl - Number of attachments added for update: 1
+[DEBUG] 2020-10-05 18:53:36.196 [main] EmailDAOImpl - The message sent: updated Msg
+[DEBUG] 2020-10-05 18:53:36.196 [main] EmailDAOImpl - The message sent type: text/plain
+[DEBUG] 2020-10-05 18:53:36.196 [main] EmailDAOImpl - The message sent: updated HTML Msg
+[DEBUG] 2020-10-05 18:53:36.196 [main] EmailDAOImpl - The message sent type: text/html
+[INFO ] 2020-10-05 18:53:36.212 [main] EmailDAOImpl - email To: updatedRecipient1@gmail.com
+[INFO ] 2020-10-05 18:53:36.212 [main] EmailDAOImpl - email BCC: updatedRecipient2@gmail.com
+[INFO ] 2020-10-05 18:53:36.212 [main] EmailDAOImpl - Number of recipients added: 2
+[INFO ] 2020-10-05 18:53:36.212 [main] EmailDAOImpl - Number of recipients added for update: 2
+[INFO ] 2020-10-05 18:53:36.212 [main] EmailDAOImpl - Total number of rows updated and added: 3
+[INFO ] 2020-10-05 18:53:36.212 [main] EmailJDBCTest - ----------TEST FIND ALL----------
+[INFO ] 2020-10-05 18:53:36.290 [main] EmailDAOImpl - Total number of all emails : 7
+[INFO ] 2020-10-05 18:53:36.290 [main] EmailJDBCTest - 
+Email Id: 1
+Address: xinjia.caoxin@gmail.com
+Date: 2020-10-05T18:53:36.228076100
+Subject: subject1
+Message: Inbox Msg
+Attachments: 4
+To Recipients: [xinjia.caoxin@gmail.com]
+CC Recipients: [xinjia2.cao@gmail.com]
+BCC Recipients: []
+
+[INFO ] 2020-10-05 18:53:36.290 [main] EmailJDBCTest - 
+Email Id: 2
+Address: xinjia.caoxin@gmail.com
+Date: 2020-10-05T18:53:36.228076100
+Subject: subject1_1
+Message: Inbox Msg
+Attachments: 2
+To Recipients: []
+CC Recipients: [xinjia3.cao@gmail.com]
+BCC Recipients: []
+
+[INFO ] 2020-10-05 18:53:36.290 [main] EmailJDBCTest - 
+Email Id: 3
+Address: xinjia1.cao@gmail.com
+Date: 2020-10-05T18:53:36.243697800
+Subject: subject2
+Message: Sent Msg
+Attachments: 4
+To Recipients: [xinjia1.cao@gmail.com]
+CC Recipients: []
+BCC Recipients: [xinjia1.cao@gmail.com]
+
+[INFO ] 2020-10-05 18:53:36.290 [main] EmailJDBCTest - 
+Email Id: 4
+Address: xinjia1.cao@gmail.com
+Date: 2020-10-05T18:53:36.259318
+Subject: subject2_2
+Message: Received Msg
+Attachments: 3
+To Recipients: [xinjia2.cao@gmail.com]
+CC Recipients: []
+BCC Recipients: []
+
+[INFO ] 2020-10-05 18:53:36.290 [main] EmailJDBCTest - 
+Email Id: 6
+Address: xinjia3.cao@gmail.com
+Date: 2020-10-05T18:53:36.259318
+Subject: subject_updated
+Message: updated Msg
+Attachments: 3
+To Recipients: [updatedRecipient1@gmail.com]
+CC Recipients: []
+BCC Recipients: [updatedRecipient2@gmail.com]
+
+[INFO ] 2020-10-05 18:53:36.290 [main] EmailJDBCTest - 
+Email Id: 7
+Address: xinjia3.cao@gmail.com
+Date: 2020-10-05T18:53:36.274940400
+Subject: subject_test
+Message: message_test
+Attachments: 2
+To Recipients: []
+CC Recipients: []
+BCC Recipients: []
+
+[INFO ] 2020-10-05 18:53:36.290 [main] EmailJDBCTest - 
+Email Id: 8
+Address: xinjia123@gmail.com
+Date: 2020-10-05T18:53:36.274940400
+Subject: sub
+Message: test create email
+Attachments: 2
+To Recipients: [xinjia345@gmail.com]
+CC Recipients: [xinjia1.cao@gmail.com]
+BCC Recipients: []
+
+[DEBUG] 2020-10-05 18:53:36.290 [main] EmailJDBCTest - Number of rows: 7
+[INFO ] 2020-10-05 18:53:36.290 [main] EmailJDBCTest - ----------TEST CREATE EMAIL----------
+[DEBUG] 2020-10-05 18:53:36.306 [main] EmailJDBCTest - latest id: 8
+[DEBUG] 2020-10-05 18:53:36.306 [main] EmailDAOImpl - The message sent: test create email
+[DEBUG] 2020-10-05 18:53:36.306 [main] EmailDAOImpl - The message sent type: text/plain
+[DEBUG] 2020-10-05 18:53:36.306 [main] EmailDAOImpl - The message sent: test
+[DEBUG] 2020-10-05 18:53:36.306 [main] EmailDAOImpl - The message sent type: text/html
+[DEBUG] 2020-10-05 18:53:36.306 [main] EmailDAOImpl - New email ID is: 9
+[INFO ] 2020-10-05 18:53:36.306 [main] EmailDAOImpl - email To: xinjia345@gmail.com
+[INFO ] 2020-10-05 18:53:36.321 [main] EmailDAOImpl - email CC: xinjia1.cao@gmail.com
+[INFO ] 2020-10-05 18:53:36.321 [main] EmailDAOImpl - Number of recipients added: 2
+[INFO ] 2020-10-05 18:53:36.337 [main] EmailDAOImpl - Number of attachments added: 1
+[INFO ] 2020-10-05 18:53:36.337 [main] EmailDAOImpl - Found 9?: true
+[INFO ] 2020-10-05 18:53:36.337 [main] EmailJDBCTest - ----------TEST FIND SENT EMAILS----------
+[DEBUG] 2020-10-05 18:53:36.368 [main] EmailDAOImpl - Number of emails sent from: xinjia.caoxin@gmail.com is: 3
+[INFO ] 2020-10-05 18:53:36.368 [main] EmailJDBCTest - 
+Email Id: 1
+Address: xinjia.caoxin@gmail.com
+Date: 2020-10-05T18:53:36.353047400
+Subject: subject1
+Message: Inbox Msg
+Attachments: 5
+To Recipients: [xinjia.caoxin@gmail.com]
+CC Recipients: [xinjia2.cao@gmail.com]
+BCC Recipients: []
+
+[INFO ] 2020-10-05 18:53:36.368 [main] EmailJDBCTest - 
+Email Id: 1
+Address: xinjia.caoxin@gmail.com
+Date: 2020-10-05T18:53:36.353047400
+Subject: subject1
+Message: Inbox Msg
+Attachments: 5
+To Recipients: [xinjia.caoxin@gmail.com]
+CC Recipients: [xinjia2.cao@gmail.com]
+BCC Recipients: []
+
+[INFO ] 2020-10-05 18:53:36.368 [main] EmailJDBCTest - 
+Email Id: 2
+Address: xinjia.caoxin@gmail.com
+Date: 2020-10-05T18:53:36.368668
+Subject: subject1_1
+Message: Inbox Msg
+Attachments: 3
+To Recipients: []
+CC Recipients: [xinjia3.cao@gmail.com]
+BCC Recipients: []
+
+[INFO ] 2020-10-05 18:53:36.368 [main] EmailJDBCTest - ----------TEST FIND BY ID: 6----------
+[INFO ] 2020-10-05 18:53:36.384 [main] EmailDAOImpl - Found 1?: true
+[INFO ] 2020-10-05 18:55:56.887 [main] EmailJDBCTest - ----------TEST DELETE EMAIL----------
+[INFO ] 2020-10-05 18:55:57.033 [main] EmailDAOImpl - Number of rows deleted (should be 1): 1
+[INFO ] 2020-10-05 18:55:57.034 [main] EmailJDBCTest - ----------TEST FIND EMAILS BY SUBJECT----------
+[DEBUG] 2020-10-05 18:55:57.091 [main] EmailDAOImpl - Number of emails found with the substring: subject from: xinjia1.cao@gmail.com is: 2
+[INFO ] 2020-10-05 18:55:57.107 [main] EmailJDBCTest - 
+Email Id: 3
+Address: xinjia1.cao@gmail.com
+Date: 2020-10-05T18:55:57.052549800
+Subject: subject2
+Message: Sent Msg
+Attachments: 2
+To Recipients: [xinjia1.cao@gmail.com]
+CC Recipients: []
+BCC Recipients: [xinjia1.cao@gmail.com]
+
+[INFO ] 2020-10-05 18:55:57.108 [main] EmailJDBCTest - 
+Email Id: 4
+Address: xinjia1.cao@gmail.com
+Date: 2020-10-05T18:55:57.080475200
+Subject: subject2_2
+Message: Received Msg
+Attachments: 1
+To Recipients: [xinjia2.cao@gmail.com]
+CC Recipients: []
+BCC Recipients: []
+
+[INFO ] 2020-10-05 18:55:57.108 [main] EmailJDBCTest - ----------TEST UPDATE EMAIL----------
+[INFO ] 2020-10-05 18:55:57.133 [main] EmailDAOImpl - Number of attachments added: 1
+[INFO ] 2020-10-05 18:55:57.134 [main] EmailDAOImpl - Number of attachments added for update: 1
+[DEBUG] 2020-10-05 18:55:57.138 [main] EmailDAOImpl - The message sent: updated Msg
+[DEBUG] 2020-10-05 18:55:57.138 [main] EmailDAOImpl - The message sent type: text/plain
+[DEBUG] 2020-10-05 18:55:57.138 [main] EmailDAOImpl - The message sent: updated HTML Msg
+[DEBUG] 2020-10-05 18:55:57.138 [main] EmailDAOImpl - The message sent type: text/html
+[INFO ] 2020-10-05 18:55:57.147 [main] EmailDAOImpl - Address not in table -> create
+[INFO ] 2020-10-05 18:55:57.152 [main] EmailDAOImpl - Creating an address - Number of rows created: 1
+[INFO ] 2020-10-05 18:55:57.155 [main] EmailDAOImpl - Address not in table -> create
+[INFO ] 2020-10-05 18:55:57.159 [main] EmailDAOImpl - Creating an address - Number of rows created: 1
+[INFO ] 2020-10-05 18:55:57.162 [main] EmailDAOImpl - email To: updatedRecipient1@gmail.com
+[INFO ] 2020-10-05 18:55:57.167 [main] EmailDAOImpl - email BCC: updatedRecipient2@gmail.com
+[INFO ] 2020-10-05 18:55:57.172 [main] EmailDAOImpl - Number of recipients added: 2
+[INFO ] 2020-10-05 18:55:57.172 [main] EmailDAOImpl - Number of recipients added for update: 2
+[INFO ] 2020-10-05 18:55:57.172 [main] EmailDAOImpl - Total number of rows updated and added: 3
+[INFO ] 2020-10-05 18:55:57.173 [main] EmailJDBCTest - ----------TEST FIND ALL----------
+[INFO ] 2020-10-05 18:55:57.231 [main] EmailDAOImpl - Total number of all emails : 6
+[INFO ] 2020-10-05 18:55:57.231 [main] EmailJDBCTest - 
+Email Id: 1
+Address: xinjia.caoxin@gmail.com
+Date: 2020-10-05T18:55:57.176264400
+Subject: subject1
+Message: Inbox Msg
+Attachments: 3
+To Recipients: [xinjia.caoxin@gmail.com]
+CC Recipients: [xinjia2.cao@gmail.com]
+BCC Recipients: []
+
+[INFO ] 2020-10-05 18:55:57.232 [main] EmailJDBCTest - 
+Email Id: 2
+Address: xinjia.caoxin@gmail.com
+Date: 2020-10-05T18:55:57.184242900
+Subject: subject1_1
+Message: Inbox Msg
+Attachments: 1
+To Recipients: []
+CC Recipients: [xinjia3.cao@gmail.com]
+BCC Recipients: []
+
+[INFO ] 2020-10-05 18:55:57.232 [main] EmailJDBCTest - 
+Email Id: 3
+Address: xinjia1.cao@gmail.com
+Date: 2020-10-05T18:55:57.194214800
+Subject: subject2
+Message: Sent Msg
+Attachments: 3
+To Recipients: [xinjia1.cao@gmail.com]
+CC Recipients: []
+BCC Recipients: [xinjia1.cao@gmail.com]
+
+[INFO ] 2020-10-05 18:55:57.232 [main] EmailJDBCTest - 
+Email Id: 4
+Address: xinjia1.cao@gmail.com
+Date: 2020-10-05T18:55:57.204190200
+Subject: subject2_2
+Message: Received Msg
+Attachments: 2
+To Recipients: [xinjia2.cao@gmail.com]
+CC Recipients: []
+BCC Recipients: []
+
+[INFO ] 2020-10-05 18:55:57.232 [main] EmailJDBCTest - 
+Email Id: 6
+Address: xinjia3.cao@gmail.com
+Date: 2020-10-05T18:55:57.212169100
+Subject: subject_updated
+Message: updated Msg
+Attachments: 2
+To Recipients: [updatedRecipient1@gmail.com]
+CC Recipients: []
+BCC Recipients: [updatedRecipient2@gmail.com]
+
+[INFO ] 2020-10-05 18:55:57.232 [main] EmailJDBCTest - 
+Email Id: 7
+Address: xinjia3.cao@gmail.com
+Date: 2020-10-05T18:55:57.222140300
+Subject: subject_test
+Message: message_test
+Attachments: 1
+To Recipients: []
+CC Recipients: []
+BCC Recipients: []
+
+[DEBUG] 2020-10-05 18:55:57.236 [main] EmailJDBCTest - Number of rows: 6
+[INFO ] 2020-10-05 18:55:57.236 [main] EmailJDBCTest - ----------TEST CREATE EMAIL----------
+[DEBUG] 2020-10-05 18:55:57.239 [main] EmailJDBCTest - latest id: 6
+[DEBUG] 2020-10-05 18:55:57.241 [main] EmailDAOImpl - The message sent: test create email
+[DEBUG] 2020-10-05 18:55:57.242 [main] EmailDAOImpl - The message sent type: text/plain
+[DEBUG] 2020-10-05 18:55:57.242 [main] EmailDAOImpl - The message sent: test
+[DEBUG] 2020-10-05 18:55:57.242 [main] EmailDAOImpl - The message sent type: text/html
+[DEBUG] 2020-10-05 18:55:57.244 [main] EmailDAOImpl - New email ID is: 8
+[INFO ] 2020-10-05 18:55:57.248 [main] EmailDAOImpl - Address not in table -> create
+[INFO ] 2020-10-05 18:55:57.252 [main] EmailDAOImpl - Creating an address - Number of rows created: 1
+[INFO ] 2020-10-05 18:55:57.255 [main] EmailDAOImpl - Address not in table -> create
+[INFO ] 2020-10-05 18:55:57.258 [main] EmailDAOImpl - Creating an address - Number of rows created: 1
+[INFO ] 2020-10-05 18:55:57.264 [main] EmailDAOImpl - email To: xinjia345@gmail.com
+[INFO ] 2020-10-05 18:55:57.267 [main] EmailDAOImpl - email CC: xinjia1.cao@gmail.com
+[INFO ] 2020-10-05 18:55:57.271 [main] EmailDAOImpl - Number of recipients added: 2
+[INFO ] 2020-10-05 18:55:57.285 [main] EmailDAOImpl - Number of attachments added: 1
+[INFO ] 2020-10-05 18:55:57.295 [main] EmailDAOImpl - Found 8?: true
+[INFO ] 2020-10-05 18:55:57.295 [main] EmailJDBCTest - ----------TEST FIND SENT EMAILS----------
+[DEBUG] 2020-10-05 18:55:57.327 [main] EmailDAOImpl - Number of emails sent from: xinjia.caoxin@gmail.com is: 3
+[INFO ] 2020-10-05 18:55:57.327 [main] EmailJDBCTest - 
+Email Id: 1
+Address: xinjia.caoxin@gmail.com
+Date: 2020-10-05T18:55:57.300569100
+Subject: subject1
+Message: Inbox Msg
+Attachments: 4
+To Recipients: [xinjia.caoxin@gmail.com]
+CC Recipients: [xinjia2.cao@gmail.com]
+BCC Recipients: []
+
+[INFO ] 2020-10-05 18:55:57.327 [main] EmailJDBCTest - 
+Email Id: 1
+Address: xinjia.caoxin@gmail.com
+Date: 2020-10-05T18:55:57.311963300
+Subject: subject1
+Message: Inbox Msg
+Attachments: 4
+To Recipients: [xinjia.caoxin@gmail.com]
+CC Recipients: [xinjia2.cao@gmail.com]
+BCC Recipients: []
+
+[INFO ] 2020-10-05 18:55:57.328 [main] EmailJDBCTest - 
+Email Id: 2
+Address: xinjia.caoxin@gmail.com
+Date: 2020-10-05T18:55:57.318961500
+Subject: subject1_1
+Message: Inbox Msg
+Attachments: 2
+To Recipients: []
+CC Recipients: [xinjia3.cao@gmail.com]
+BCC Recipients: []
+
+[INFO ] 2020-10-05 18:55:57.328 [main] EmailJDBCTest - ----------TEST FIND BY ID: 6----------
+[INFO ] 2020-10-05 18:55:57.337 [main] EmailDAOImpl - Found 1?: true
+[INFO ] 2020-10-06 15:10:23.047 [main] EmailJDBCTest - ----------TEST DELETE EMAIL----------
+[INFO ] 2020-10-06 15:10:23.220 [main] EmailDAOImpl - Number of rows deleted (should be 1): 1
+[INFO ] 2020-10-06 15:41:10.508 [main] EmailJDBCTest - ----------TEST DELETE EMAIL----------
+[INFO ] 2020-10-06 15:41:10.652 [main] EmailDAOImpl - Number of rows deleted (should be 1): 1
+[INFO ] 2020-10-06 15:41:10.653 [main] EmailJDBCTest - ----------TEST FIND EMAILS BY SUBJECT----------
+[DEBUG] 2020-10-06 15:41:10.735 [main] EmailDAOImpl - Number of emails found with the substring: subject from: xinjia1.cao@gmail.com is: 2
+[INFO ] 2020-10-06 15:41:10.747 [main] EmailJDBCTest - 
+Email Id: 3
+Address: xinjia1.cao@gmail.com
+Date: 2020-10-06T15:41:10.677678900
+Subject: subject2
+Message: Sent Msg
+Attachments: 2
+To Recipients: [xinjia1.cao@gmail.com]
+CC Recipients: []
+BCC Recipients: [xinjia1.cao@gmail.com]
+
+[INFO ] 2020-10-06 15:41:10.747 [main] EmailJDBCTest - 
+Email Id: 4
+Address: xinjia1.cao@gmail.com
+Date: 2020-10-06T15:41:10.711591100
+Subject: subject2_2
+Message: Received Msg
+Attachments: 1
+To Recipients: [xinjia2.cao@gmail.com]
+CC Recipients: []
+BCC Recipients: []
+
+[INFO ] 2020-10-06 15:41:10.748 [main] EmailJDBCTest - ----------TEST UPDATE EMAIL----------
+[INFO ] 2020-10-06 15:41:10.780 [main] EmailDAOImpl - Number of attachments added: 1
+[INFO ] 2020-10-06 15:41:10.781 [main] EmailDAOImpl - Number of attachments added for update: 1
+[DEBUG] 2020-10-06 15:41:10.785 [main] EmailDAOImpl - The message sent: updated Msg
+[DEBUG] 2020-10-06 15:41:10.785 [main] EmailDAOImpl - The message sent type: text/plain
+[DEBUG] 2020-10-06 15:41:10.785 [main] EmailDAOImpl - The message sent: updated HTML Msg
+[DEBUG] 2020-10-06 15:41:10.785 [main] EmailDAOImpl - The message sent type: text/html
+[INFO ] 2020-10-06 15:41:10.800 [main] EmailJDBCTest - ----------TEST FIND ALL----------
+[INFO ] 2020-10-06 15:41:10.868 [main] EmailDAOImpl - Total number of all emails : 6
+[INFO ] 2020-10-06 15:41:10.869 [main] EmailJDBCTest - 
+Email Id: 1
+Address: xinjia.caoxin@gmail.com
+Date: 2020-10-06T15:41:10.803345500
+Subject: subject1
+Message: Inbox Msg
+Attachments: 3
+To Recipients: [xinjia.caoxin@gmail.com]
+CC Recipients: [xinjia2.cao@gmail.com]
+BCC Recipients: []
+
+[INFO ] 2020-10-06 15:41:10.869 [main] EmailJDBCTest - 
+Email Id: 2
+Address: xinjia.caoxin@gmail.com
+Date: 2020-10-06T15:41:10.816312500
+Subject: subject1_1
+Message: Inbox Msg
+Attachments: 1
+To Recipients: []
+CC Recipients: [xinjia3.cao@gmail.com]
+BCC Recipients: []
+
+[INFO ] 2020-10-06 15:41:10.869 [main] EmailJDBCTest - 
+Email Id: 3
+Address: xinjia1.cao@gmail.com
+Date: 2020-10-06T15:41:10.828279200
+Subject: subject2
+Message: Sent Msg
+Attachments: 3
+To Recipients: [xinjia1.cao@gmail.com]
+CC Recipients: []
+BCC Recipients: [xinjia1.cao@gmail.com]
+
+[INFO ] 2020-10-06 15:41:10.869 [main] EmailJDBCTest - 
+Email Id: 4
+Address: xinjia1.cao@gmail.com
+Date: 2020-10-06T15:41:10.837254600
+Subject: subject2_2
+Message: Received Msg
+Attachments: 2
+To Recipients: [xinjia2.cao@gmail.com]
+CC Recipients: []
+BCC Recipients: []
+
+[INFO ] 2020-10-06 15:41:10.870 [main] EmailJDBCTest - 
+Email Id: 6
+Address: xinjia3.cao@gmail.com
+Date: 2020-10-06T15:41:10.847228300
+Subject: subject4
+Message: Draft Msg
+Attachments: 2
+To Recipients: []
+CC Recipients: []
+BCC Recipients: []
+
+[INFO ] 2020-10-06 15:41:10.870 [main] EmailJDBCTest - 
+Email Id: 7
+Address: xinjia3.cao@gmail.com
+Date: 2020-10-06T15:41:10.856205800
+Subject: subject_test
+Message: message_test
+Attachments: 1
+To Recipients: []
+CC Recipients: []
+BCC Recipients: []
+
+[DEBUG] 2020-10-06 15:41:10.873 [main] EmailJDBCTest - Number of rows: 6
+[INFO ] 2020-10-06 15:41:10.874 [main] EmailJDBCTest - ----------TEST CREATE EMAIL----------
+[DEBUG] 2020-10-06 15:41:10.878 [main] EmailJDBCTest - latest id: 6
+[DEBUG] 2020-10-06 15:41:10.881 [main] EmailDAOImpl - The message sent: test create email
+[DEBUG] 2020-10-06 15:41:10.881 [main] EmailDAOImpl - The message sent type: text/plain
+[DEBUG] 2020-10-06 15:41:10.881 [main] EmailDAOImpl - The message sent: test
+[DEBUG] 2020-10-06 15:41:10.882 [main] EmailDAOImpl - The message sent type: text/html
+[DEBUG] 2020-10-06 15:41:10.885 [main] EmailDAOImpl - New email ID is: 8
+[INFO ] 2020-10-06 15:41:10.888 [main] EmailDAOImpl - Address not in table -> create
+[INFO ] 2020-10-06 15:41:10.891 [main] EmailDAOImpl - Creating an address - Number of rows created: 1
+[INFO ] 2020-10-06 15:41:10.894 [main] EmailDAOImpl - Address not in table -> create
+[INFO ] 2020-10-06 15:41:10.899 [main] EmailDAOImpl - Creating an address - Number of rows created: 1
+[INFO ] 2020-10-06 15:41:10.905 [main] EmailDAOImpl - email To: xinjia345@gmail.com
+[INFO ] 2020-10-06 15:41:10.908 [main] EmailDAOImpl - email CC: xinjia1.cao@gmail.com
+[INFO ] 2020-10-06 15:41:10.912 [main] EmailDAOImpl - Number of recipients added: 2
+[INFO ] 2020-10-06 15:41:10.925 [main] EmailDAOImpl - Number of attachments added: 1
+[INFO ] 2020-10-06 15:41:10.937 [main] EmailDAOImpl - Found 8?: true
+[INFO ] 2020-10-06 15:41:10.937 [main] EmailJDBCTest - ----------TEST FIND SENT EMAILS----------
+[INFO ] 2020-10-06 15:41:10.947 [main] EmailJDBCTest - ----------TEST FIND REEIVED EMAILS (INBOX)----------
+[INFO ] 2020-10-06 15:41:10.955 [main] EmailJDBCTest - ----------TEST FIND BY ID: 6----------
+[INFO ] 2020-10-06 15:41:10.969 [main] EmailDAOImpl - Found 1?: true
+[INFO ] 2020-10-06 15:43:11.384 [main] EmailJDBCTest - ----------TEST DELETE EMAIL----------
+[INFO ] 2020-10-06 15:43:11.524 [main] EmailDAOImpl - Number of rows deleted (should be 1): 1
+[INFO ] 2020-10-06 15:43:11.525 [main] EmailJDBCTest - ----------TEST FIND EMAILS BY SUBJECT----------
+[DEBUG] 2020-10-06 15:43:11.597 [main] EmailDAOImpl - Number of emails found with the substring: subject from: xinjia1.cao@gmail.com is: 2
+[INFO ] 2020-10-06 15:43:11.609 [main] EmailJDBCTest - 
+Email Id: 3
+Address: xinjia1.cao@gmail.com
+Date: 2020-10-06T15:43:11.544300300
+Subject: subject2
+Message: Sent Msg
+Attachments: 2
+To Recipients: [xinjia1.cao@gmail.com]
+CC Recipients: []
+BCC Recipients: [xinjia1.cao@gmail.com]
+
+[INFO ] 2020-10-06 15:43:11.609 [main] EmailJDBCTest - 
+Email Id: 4
+Address: xinjia1.cao@gmail.com
+Date: 2020-10-06T15:43:11.578209500
+Subject: subject2_2
+Message: Received Msg
+Attachments: 1
+To Recipients: [xinjia2.cao@gmail.com]
+CC Recipients: []
+BCC Recipients: []
+
+[INFO ] 2020-10-06 15:43:11.610 [main] EmailJDBCTest - ----------TEST UPDATE EMAIL----------
+[INFO ] 2020-10-06 15:43:11.639 [main] EmailDAOImpl - Number of attachments added: 1
+[INFO ] 2020-10-06 15:43:11.640 [main] EmailDAOImpl - Number of attachments added for update: 1
+[DEBUG] 2020-10-06 15:43:11.644 [main] EmailDAOImpl - The message sent: updated Msg
+[DEBUG] 2020-10-06 15:43:11.645 [main] EmailDAOImpl - The message sent type: text/plain
+[DEBUG] 2020-10-06 15:43:11.645 [main] EmailDAOImpl - The message sent: updated HTML Msg
+[DEBUG] 2020-10-06 15:43:11.645 [main] EmailDAOImpl - The message sent type: text/html
+[INFO ] 2020-10-06 15:43:11.655 [main] EmailDAOImpl - Address not in table -> create
+[INFO ] 2020-10-06 15:43:11.659 [main] EmailDAOImpl - Creating an address - Number of rows created: 1
+[INFO ] 2020-10-06 15:43:11.664 [main] EmailDAOImpl - Address not in table -> create
+[INFO ] 2020-10-06 15:43:11.670 [main] EmailDAOImpl - Creating an address - Number of rows created: 1
+[INFO ] 2020-10-06 15:43:11.675 [main] EmailDAOImpl - email To: updatedRecipient1@gmail.com
+[INFO ] 2020-10-06 15:43:11.682 [main] EmailDAOImpl - email BCC: updatedRecipient2@gmail.com
+[INFO ] 2020-10-06 15:43:11.688 [main] EmailDAOImpl - Number of recipients added: 2
+[INFO ] 2020-10-06 15:43:11.688 [main] EmailDAOImpl - Number of recipients added for update: 2
+[INFO ] 2020-10-06 15:43:11.688 [main] EmailDAOImpl - Total number of rows updated and added: 3
+[INFO ] 2020-10-06 15:43:11.689 [main] EmailJDBCTest - ----------TEST FIND ALL----------
+[INFO ] 2020-10-06 15:43:11.762 [main] EmailDAOImpl - Total number of all emails : 6
+[INFO ] 2020-10-06 15:43:11.763 [main] EmailJDBCTest - 
+Email Id: 1
+Address: xinjia.caoxin@gmail.com
+Date: 2020-10-06T15:43:11.692903400
+Subject: subject1
+Message: Inbox Msg
+Attachments: 3
+To Recipients: [xinjia.caoxin@gmail.com]
+CC Recipients: [xinjia2.cao@gmail.com]
+BCC Recipients: []
+
+[INFO ] 2020-10-06 15:43:11.763 [main] EmailJDBCTest - 
+Email Id: 2
+Address: xinjia.caoxin@gmail.com
+Date: 2020-10-06T15:43:11.703873900
+Subject: subject1_1
+Message: Inbox Msg
+Attachments: 1
+To Recipients: []
+CC Recipients: [xinjia3.cao@gmail.com]
+BCC Recipients: []
+
+[INFO ] 2020-10-06 15:43:11.764 [main] EmailJDBCTest - 
+Email Id: 3
+Address: xinjia1.cao@gmail.com
+Date: 2020-10-06T15:43:11.714844800
+Subject: subject2
+Message: Sent Msg
+Attachments: 3
+To Recipients: [xinjia1.cao@gmail.com]
+CC Recipients: []
+BCC Recipients: [xinjia1.cao@gmail.com]
+
+[INFO ] 2020-10-06 15:43:11.764 [main] EmailJDBCTest - 
+Email Id: 4
+Address: xinjia1.cao@gmail.com
+Date: 2020-10-06T15:43:11.726812900
+Subject: subject2_2
+Message: Received Msg
+Attachments: 2
+To Recipients: [xinjia2.cao@gmail.com]
+CC Recipients: []
+BCC Recipients: []
+
+[INFO ] 2020-10-06 15:43:11.764 [main] EmailJDBCTest - 
+Email Id: 6
+Address: xinjia3.cao@gmail.com
+Date: 2020-10-06T15:43:11.737783700
+Subject: subject_updated
+Message: updated Msg
+Attachments: 2
+To Recipients: [updatedRecipient1@gmail.com]
+CC Recipients: []
+BCC Recipients: [updatedRecipient2@gmail.com]
+
+[INFO ] 2020-10-06 15:43:11.764 [main] EmailJDBCTest - 
+Email Id: 7
+Address: xinjia3.cao@gmail.com
+Date: 2020-10-06T15:43:11.748756200
+Subject: subject_test
+Message: message_test
+Attachments: 1
+To Recipients: []
+CC Recipients: []
+BCC Recipients: []
+
+[DEBUG] 2020-10-06 15:43:11.769 [main] EmailJDBCTest - Number of rows: 6
+[INFO ] 2020-10-06 15:43:11.769 [main] EmailJDBCTest - ----------TEST CREATE EMAIL----------
+[DEBUG] 2020-10-06 15:43:11.774 [main] EmailJDBCTest - latest id: 6
+[DEBUG] 2020-10-06 15:43:11.777 [main] EmailDAOImpl - The message sent: test create email
+[DEBUG] 2020-10-06 15:43:11.777 [main] EmailDAOImpl - The message sent type: text/plain
+[DEBUG] 2020-10-06 15:43:11.777 [main] EmailDAOImpl - The message sent: test
+[DEBUG] 2020-10-06 15:43:11.777 [main] EmailDAOImpl - The message sent type: text/html
+[DEBUG] 2020-10-06 15:43:11.779 [main] EmailDAOImpl - New email ID is: 8
+[INFO ] 2020-10-06 15:43:11.783 [main] EmailDAOImpl - Address not in table -> create
+[INFO ] 2020-10-06 15:43:11.786 [main] EmailDAOImpl - Creating an address - Number of rows created: 1
+[INFO ] 2020-10-06 15:43:11.789 [main] EmailDAOImpl - Address not in table -> create
+[INFO ] 2020-10-06 15:43:11.792 [main] EmailDAOImpl - Creating an address - Number of rows created: 1
+[INFO ] 2020-10-06 15:43:11.798 [main] EmailDAOImpl - email To: xinjia345@gmail.com
+[INFO ] 2020-10-06 15:43:11.802 [main] EmailDAOImpl - email CC: xinjia1.cao@gmail.com
+[INFO ] 2020-10-06 15:43:11.806 [main] EmailDAOImpl - Number of recipients added: 2
+[INFO ] 2020-10-06 15:43:11.818 [main] EmailDAOImpl - Number of attachments added: 1
+[INFO ] 2020-10-06 15:43:11.831 [main] EmailDAOImpl - Found 8?: true
+[INFO ] 2020-10-06 15:43:11.831 [main] EmailJDBCTest - ----------TEST FIND SENT EMAILS----------
+[DEBUG] 2020-10-06 15:43:11.860 [main] EmailDAOImpl - Number of emails in: Sent is: 3
+[INFO ] 2020-10-06 15:43:11.860 [main] EmailJDBCTest - 
+Email Id: 1
+Address: xinjia.caoxin@gmail.com
+Date: 2020-10-06T15:43:11.837516500
+Subject: subject1
+Message: Inbox Msg
+Attachments: 4
+To Recipients: [xinjia.caoxin@gmail.com]
+CC Recipients: [xinjia2.cao@gmail.com]
+BCC Recipients: []
+
+[INFO ] 2020-10-06 15:43:11.861 [main] EmailJDBCTest - 
+Email Id: 2
+Address: xinjia.caoxin@gmail.com
+Date: 2020-10-06T15:43:11.844498900
+Subject: subject1_1
+Message: Inbox Msg
+Attachments: 2
+To Recipients: []
+CC Recipients: [xinjia3.cao@gmail.com]
+BCC Recipients: []
+
+[INFO ] 2020-10-06 15:43:11.861 [main] EmailJDBCTest - 
+Email Id: 3
+Address: xinjia1.cao@gmail.com
+Date: 2020-10-06T15:43:11.851479100
+Subject: subject2
+Message: Sent Msg
+Attachments: 4
+To Recipients: [xinjia1.cao@gmail.com]
+CC Recipients: []
+BCC Recipients: [xinjia1.cao@gmail.com]
+
+[INFO ] 2020-10-06 15:43:11.866 [main] EmailJDBCTest - ----------TEST FIND REEIVED EMAILS (INBOX)----------
+[DEBUG] 2020-10-06 15:43:11.886 [main] EmailDAOImpl - Number of emails in: Inbox is: 2
+[INFO ] 2020-10-06 15:43:11.887 [main] EmailJDBCTest - 
+Email Id: 4
+Address: xinjia1.cao@gmail.com
+Date: 2020-10-06T15:43:11.871425600
+Subject: subject2_2
+Message: Received Msg
+Attachments: 3
+To Recipients: [xinjia2.cao@gmail.com]
+CC Recipients: []
+BCC Recipients: []
+
+[INFO ] 2020-10-06 15:43:11.887 [main] EmailJDBCTest - 
+Email Id: 7
+Address: xinjia3.cao@gmail.com
+Date: 2020-10-06T15:43:11.878444700
+Subject: subject_test
+Message: message_test
+Attachments: 2
+To Recipients: []
+CC Recipients: []
+BCC Recipients: []
+
+[INFO ] 2020-10-06 15:43:11.888 [main] EmailJDBCTest - ----------TEST FIND BY ID: 6----------
+[INFO ] 2020-10-06 15:43:11.900 [main] EmailDAOImpl - Found 1?: true
+[INFO ] 2020-10-06 15:44:17.782 [main] EmailJDBCTest - ----------TEST DELETE EMAIL----------
+[INFO ] 2020-10-06 15:44:17.926 [main] EmailDAOImpl - Number of rows deleted (should be 1): 1
+[INFO ] 2020-10-06 15:44:17.927 [main] EmailJDBCTest - ----------TEST FIND EMAILS BY SUBJECT----------
+[DEBUG] 2020-10-06 15:44:17.989 [main] EmailDAOImpl - Number of emails found with the substring: subject from: xinjia1.cao@gmail.com is: 2
+[INFO ] 2020-10-06 15:44:17.997 [main] EmailJDBCTest - 
+Email Id: 3
+Address: xinjia1.cao@gmail.com
+Date: 2020-10-06T15:44:17.945673200
+Subject: subject2
+Message: Sent Msg
+Attachments: 2
+To Recipients: [xinjia1.cao@gmail.com]
+CC Recipients: []
+BCC Recipients: [xinjia1.cao@gmail.com]
+
+[INFO ] 2020-10-06 15:44:17.998 [main] EmailJDBCTest - 
+Email Id: 4
+Address: xinjia1.cao@gmail.com
+Date: 2020-10-06T15:44:17.974597600
+Subject: subject2_2
+Message: Received Msg
+Attachments: 1
+To Recipients: [xinjia2.cao@gmail.com]
+CC Recipients: []
+BCC Recipients: []
+
+[INFO ] 2020-10-06 15:44:17.998 [main] EmailJDBCTest - ----------TEST UPDATE EMAIL----------
+[INFO ] 2020-10-06 15:44:18.024 [main] EmailDAOImpl - Number of attachments added: 1
+[INFO ] 2020-10-06 15:44:18.024 [main] EmailDAOImpl - Number of attachments added for update: 1
+[DEBUG] 2020-10-06 15:44:18.027 [main] EmailDAOImpl - The message sent: updated Msg
+[DEBUG] 2020-10-06 15:44:18.027 [main] EmailDAOImpl - The message sent type: text/plain
+[DEBUG] 2020-10-06 15:44:18.028 [main] EmailDAOImpl - The message sent: updated HTML Msg
+[DEBUG] 2020-10-06 15:44:18.028 [main] EmailDAOImpl - The message sent type: text/html
+[INFO ] 2020-10-06 15:44:18.036 [main] EmailDAOImpl - Address not in table -> create
+[INFO ] 2020-10-06 15:44:18.040 [main] EmailDAOImpl - Creating an address - Number of rows created: 1
+[INFO ] 2020-10-06 15:44:18.044 [main] EmailDAOImpl - Address not in table -> create
+[INFO ] 2020-10-06 15:44:18.048 [main] EmailDAOImpl - Creating an address - Number of rows created: 1
+[INFO ] 2020-10-06 15:44:18.051 [main] EmailDAOImpl - email To: updatedRecipient1@gmail.com
+[INFO ] 2020-10-06 15:44:18.056 [main] EmailDAOImpl - email BCC: updatedRecipient2@gmail.com
+[INFO ] 2020-10-06 15:44:18.060 [main] EmailDAOImpl - Number of recipients added: 2
+[INFO ] 2020-10-06 15:44:18.060 [main] EmailDAOImpl - Number of recipients added for update: 2
+[INFO ] 2020-10-06 15:44:18.060 [main] EmailDAOImpl - Total number of rows updated and added: 3
+[INFO ] 2020-10-06 15:44:18.061 [main] EmailJDBCTest - ----------TEST FIND ALL----------
+[INFO ] 2020-10-06 15:44:18.114 [main] EmailDAOImpl - Total number of all emails : 6
+[INFO ] 2020-10-06 15:44:18.114 [main] EmailJDBCTest - 
+Email Id: 1
+Address: xinjia.caoxin@gmail.com
+Date: 2020-10-06T15:44:18.064355500
+Subject: subject1
+Message: Inbox Msg
+Attachments: 3
+To Recipients: [xinjia.caoxin@gmail.com]
+CC Recipients: [xinjia2.cao@gmail.com]
+BCC Recipients: []
+
+[INFO ] 2020-10-06 15:44:18.114 [main] EmailJDBCTest - 
+Email Id: 2
+Address: xinjia.caoxin@gmail.com
+Date: 2020-10-06T15:44:18.072334400
+Subject: subject1_1
+Message: Inbox Msg
+Attachments: 1
+To Recipients: []
+CC Recipients: [xinjia3.cao@gmail.com]
+BCC Recipients: []
+
+[INFO ] 2020-10-06 15:44:18.115 [main] EmailJDBCTest - 
+Email Id: 3
+Address: xinjia1.cao@gmail.com
+Date: 2020-10-06T15:44:18.080313100
+Subject: subject2
+Message: Sent Msg
+Attachments: 3
+To Recipients: [xinjia1.cao@gmail.com]
+CC Recipients: []
+BCC Recipients: [xinjia1.cao@gmail.com]
+
+[INFO ] 2020-10-06 15:44:18.115 [main] EmailJDBCTest - 
+Email Id: 4
+Address: xinjia1.cao@gmail.com
+Date: 2020-10-06T15:44:18.089290200
+Subject: subject2_2
+Message: Received Msg
+Attachments: 2
+To Recipients: [xinjia2.cao@gmail.com]
+CC Recipients: []
+BCC Recipients: []
+
+[INFO ] 2020-10-06 15:44:18.115 [main] EmailJDBCTest - 
+Email Id: 6
+Address: xinjia3.cao@gmail.com
+Date: 2020-10-06T15:44:18.099262500
+Subject: subject_updated
+Message: updated Msg
+Attachments: 2
+To Recipients: [updatedRecipient1@gmail.com]
+CC Recipients: []
+BCC Recipients: [updatedRecipient2@gmail.com]
+
+[INFO ] 2020-10-06 15:44:18.115 [main] EmailJDBCTest - 
+Email Id: 7
+Address: xinjia3.cao@gmail.com
+Date: 2020-10-06T15:44:18.107241100
+Subject: subject_test
+Message: message_test
+Attachments: 1
+To Recipients: []
+CC Recipients: []
+BCC Recipients: []
+
+[DEBUG] 2020-10-06 15:44:18.118 [main] EmailJDBCTest - Number of rows: 6
+[INFO ] 2020-10-06 15:44:18.119 [main] EmailJDBCTest - ----------TEST CREATE EMAIL----------
+[DEBUG] 2020-10-06 15:44:18.122 [main] EmailJDBCTest - latest id: 6
+[DEBUG] 2020-10-06 15:44:18.124 [main] EmailDAOImpl - The message sent: test create email
+[DEBUG] 2020-10-06 15:44:18.125 [main] EmailDAOImpl - The message sent type: text/plain
+[DEBUG] 2020-10-06 15:44:18.125 [main] EmailDAOImpl - The message sent: test
+[DEBUG] 2020-10-06 15:44:18.125 [main] EmailDAOImpl - The message sent type: text/html
+[DEBUG] 2020-10-06 15:44:18.127 [main] EmailDAOImpl - New email ID is: 8
+[INFO ] 2020-10-06 15:44:18.129 [main] EmailDAOImpl - Address not in table -> create
+[INFO ] 2020-10-06 15:44:18.132 [main] EmailDAOImpl - Creating an address - Number of rows created: 1
+[INFO ] 2020-10-06 15:44:18.135 [main] EmailDAOImpl - Address not in table -> create
+[INFO ] 2020-10-06 15:44:18.138 [main] EmailDAOImpl - Creating an address - Number of rows created: 1
+[INFO ] 2020-10-06 15:44:18.142 [main] EmailDAOImpl - email To: xinjia345@gmail.com
+[INFO ] 2020-10-06 15:44:18.146 [main] EmailDAOImpl - email CC: xinjia1.cao@gmail.com
+[INFO ] 2020-10-06 15:44:18.149 [main] EmailDAOImpl - Number of recipients added: 2
+[INFO ] 2020-10-06 15:44:18.162 [main] EmailDAOImpl - Number of attachments added: 1
+[INFO ] 2020-10-06 15:44:18.174 [main] EmailDAOImpl - Found 8?: true
+[INFO ] 2020-10-06 15:44:18.174 [main] EmailJDBCTest - ----------TEST FIND SENT EMAILS----------
+[DEBUG] 2020-10-06 15:44:18.205 [main] EmailDAOImpl - Number of emails in: Sent is: 3
+[INFO ] 2020-10-06 15:44:18.206 [main] EmailJDBCTest - 
+Email Id: 1
+Address: xinjia.caoxin@gmail.com
+Date: 2020-10-06T15:44:18.179050900
+Subject: subject1
+Message: Inbox Msg
+Attachments: 4
+To Recipients: [xinjia.caoxin@gmail.com]
+CC Recipients: [xinjia2.cao@gmail.com]
+BCC Recipients: []
+
+[INFO ] 2020-10-06 15:44:18.206 [main] EmailJDBCTest - 
+Email Id: 2
+Address: xinjia.caoxin@gmail.com
+Date: 2020-10-06T15:44:18.187028800
+Subject: subject1_1
+Message: Inbox Msg
+Attachments: 2
+To Recipients: []
+CC Recipients: [xinjia3.cao@gmail.com]
+BCC Recipients: []
+
+[INFO ] 2020-10-06 15:44:18.206 [main] EmailJDBCTest - 
+Email Id: 3
+Address: xinjia1.cao@gmail.com
+Date: 2020-10-06T15:44:18.196004800
+Subject: subject2
+Message: Sent Msg
+Attachments: 4
+To Recipients: [xinjia1.cao@gmail.com]
+CC Recipients: []
+BCC Recipients: [xinjia1.cao@gmail.com]
+
+[INFO ] 2020-10-06 15:44:18.212 [main] EmailJDBCTest - ----------TEST FIND REEIVED EMAILS (INBOX)----------
+[DEBUG] 2020-10-06 15:44:18.233 [main] EmailDAOImpl - Number of emails in: Inbox is: 2
+[INFO ] 2020-10-06 15:44:18.234 [main] EmailJDBCTest - 
+Email Id: 4
+Address: xinjia1.cao@gmail.com
+Date: 2020-10-06T15:44:18.218943400
+Subject: subject2_2
+Message: Received Msg
+Attachments: 3
+To Recipients: [xinjia2.cao@gmail.com]
+CC Recipients: []
+BCC Recipients: []
+
+[INFO ] 2020-10-06 15:44:18.234 [main] EmailJDBCTest - 
+Email Id: 7
+Address: xinjia3.cao@gmail.com
+Date: 2020-10-06T15:44:18.225926500
+Subject: subject_test
+Message: message_test
+Attachments: 2
+To Recipients: []
+CC Recipients: []
+BCC Recipients: []
+
+[INFO ] 2020-10-06 15:44:18.235 [main] EmailJDBCTest - ----------TEST FIND BY ID: 6----------
+[INFO ] 2020-10-06 15:44:18.246 [main] EmailDAOImpl - Found 1?: true
+[INFO ] 2020-10-06 15:55:45.062 [main] EmailJDBCTest - ----------TEST FIND ALL ADDRESSES----------
+[INFO ] 2020-10-06 15:55:45.227 [main] EmailJDBCTest - ----------TEST FIND FOLDER NAMES----------
+[INFO ] 2020-10-06 15:56:20.494 [main] EmailJDBCTest - ----------TEST FIND ALL ADDRESSES----------
+[INFO ] 2020-10-06 15:56:20.647 [main] EmailJDBCTest - ----------TEST FIND FOLDER NAMES----------
+[INFO ] 2020-10-06 15:57:01.766 [main] EmailJDBCTest - ----------TEST FIND ALL ADDRESSES----------
+[INFO ] 2020-10-06 15:57:01.918 [main] EmailJDBCTest - ----------TEST FIND FOLDER NAMES----------
+[INFO ] 2020-10-06 16:24:25.901 [main] EmailJDBCTest - ----------TEST CREATE FOLDER----------
+[INFO ] 2020-10-06 16:24:26.065 [main] EmailDAOImpl - Folder created: Special
+[INFO ] 2020-10-06 16:24:26.067 [main] EmailJDBCTest - ----------TEST EMAIL FOLDER CHANGED----------
+[INFO ] 2020-10-06 16:53:21.406 [main] EmailJDBCTest - ----------TEST CREATE FOLDER----------
+[INFO ] 2020-10-06 16:53:21.565 [main] EmailJDBCTest - ----------TEST EMAIL FOLDER CHANGED----------
+[INFO ] 2020-10-06 16:54:28.630 [main] EmailJDBCTest - ----------TEST CREATE FOLDER----------
+[INFO ] 2020-10-06 16:54:28.822 [main] EmailDAOImpl - Folder created: Special
+[INFO ] 2020-10-06 16:54:28.824 [main] EmailJDBCTest - ----------TEST EMAIL FOLDER CHANGED----------
+[INFO ] 2020-10-06 16:55:48.324 [main] EmailJDBCTest - ----------TEST CREATE FOLDER----------
+[INFO ] 2020-10-06 16:55:48.486 [main] EmailDAOImpl - Folder created: Special
+[INFO ] 2020-10-06 16:55:48.488 [main] EmailJDBCTest - ----------TEST EMAIL FOLDER CHANGED----------
+[INFO ] 2020-10-06 16:59:02.405 [main] EmailJDBCTest - ----------TEST CREATE FOLDER----------
+[INFO ] 2020-10-06 16:59:02.565 [main] EmailDAOImpl - Folder created: Special
+[INFO ] 2020-10-06 16:59:02.567 [main] EmailJDBCTest - ----------TEST EMAIL FOLDER CHANGED----------
+[DEBUG] 2020-10-06 16:59:02.580 [main] EmailJDBCTest - latest id: 6
+[INFO ] 2020-10-06 17:01:19.028 [main] EmailJDBCTest - ----------TEST CREATE FOLDER----------
+[INFO ] 2020-10-06 17:01:19.187 [main] EmailDAOImpl - Folder created: Special
+[INFO ] 2020-10-06 17:01:19.189 [main] EmailJDBCTest - ----------TEST EMAIL FOLDER CHANGED----------
+[DEBUG] 2020-10-06 17:01:19.204 [main] EmailJDBCTest - latest id: 6
+[INFO ] 2020-10-06 17:01:19.211 [main] EmailDAOImpl - Folder id of folder Draft is: 3
+[INFO ] 2020-10-06 17:01:19.215 [main] EmailDAOImpl - Number of emails' folder changed (should be 1): 0
+[INFO ] 2020-10-06 17:12:32.439 [main] EmailJDBCTest - ----------TEST CREATE FOLDER----------
+[INFO ] 2020-10-06 17:12:32.602 [main] EmailDAOImpl - Folder created: Special
+[INFO ] 2020-10-06 17:12:32.603 [main] EmailJDBCTest - ----------TEST EMAIL FOLDER CHANGED----------
+[DEBUG] 2020-10-06 17:12:32.614 [main] EmailJDBCTest - latest id: 61
+[INFO ] 2020-10-06 17:13:23.087 [main] EmailJDBCTest - ----------TEST CREATE FOLDER----------
+[INFO ] 2020-10-06 17:13:23.252 [main] EmailJDBCTest - ----------TEST EMAIL FOLDER CHANGED----------
+[DEBUG] 2020-10-06 17:13:23.263 [main] EmailJDBCTest - latest id: 61
+[INFO ] 2020-10-06 17:13:50.413 [main] EmailJDBCTest - ----------TEST CREATE FOLDER----------
+[INFO ] 2020-10-06 17:13:50.572 [main] EmailDAOImpl - Folder created: Special
+[INFO ] 2020-10-06 17:13:50.574 [main] EmailJDBCTest - ----------TEST EMAIL FOLDER CHANGED----------
+[DEBUG] 2020-10-06 17:13:50.588 [main] EmailJDBCTest - latest id: 61
+[INFO ] 2020-10-06 17:18:17.778 [main] EmailJDBCTest - ----------TEST CREATE FOLDER----------
+[INFO ] 2020-10-06 17:18:17.936 [main] EmailDAOImpl - Folder created: Special
+[INFO ] 2020-10-06 17:18:17.938 [main] EmailJDBCTest - ----------TEST EMAIL FOLDER CHANGED----------
+[DEBUG] 2020-10-06 17:18:17.954 [main] EmailJDBCTest - latest id: 61
+[INFO ] 2020-10-06 17:19:30.885 [main] EmailJDBCTest - ----------TEST CREATE FOLDER----------
+[INFO ] 2020-10-06 17:19:31.046 [main] EmailDAOImpl - Folder created: Special
+[INFO ] 2020-10-06 17:19:31.047 [main] EmailJDBCTest - ----------TEST EMAIL FOLDER CHANGED----------
+[DEBUG] 2020-10-06 17:19:31.066 [main] EmailJDBCTest - latest id: 61
+[INFO ] 2020-10-06 17:20:41.333 [main] EmailJDBCTest - ----------TEST CREATE FOLDER----------
+[INFO ] 2020-10-06 17:20:41.490 [main] EmailDAOImpl - Folder created: Special
+[INFO ] 2020-10-06 17:20:41.491 [main] EmailJDBCTest - ----------TEST EMAIL FOLDER CHANGED----------
+[DEBUG] 2020-10-06 17:20:41.521 [main] EmailJDBCTest - latest id: 61
+[INFO ] 2020-10-06 17:22:21.532 [main] EmailJDBCTest - ----------TEST CREATE FOLDER----------
+[INFO ] 2020-10-06 17:22:21.689 [main] EmailDAOImpl - Folder created: Special
+[INFO ] 2020-10-06 17:22:21.690 [main] EmailJDBCTest - ----------TEST EMAIL FOLDER CHANGED----------
+[DEBUG] 2020-10-06 17:22:21.720 [main] EmailJDBCTest - latest id: 61
+[INFO ] 2020-10-06 17:23:45.476 [main] EmailJDBCTest - ----------TEST CREATE EMAIL----------
+[DEBUG] 2020-10-06 17:23:45.655 [main] EmailJDBCTest - latest id: 61
+[DEBUG] 2020-10-06 17:23:45.664 [main] EmailDAOImpl - The message sent: test create email
+[DEBUG] 2020-10-06 17:23:45.664 [main] EmailDAOImpl - The message sent type: text/plain
+[DEBUG] 2020-10-06 17:23:45.665 [main] EmailDAOImpl - The message sent: test
+[DEBUG] 2020-10-06 17:23:45.665 [main] EmailDAOImpl - The message sent type: text/html
+[DEBUG] 2020-10-06 17:23:45.668 [main] EmailDAOImpl - New email ID is: 8
+[INFO ] 2020-10-06 17:23:45.672 [main] EmailDAOImpl - Address not in table -> create
+[INFO ] 2020-10-06 17:23:45.677 [main] EmailDAOImpl - Creating an address - Number of rows created: 1
+[INFO ] 2020-10-06 17:23:45.682 [main] EmailDAOImpl - Address not in table -> create
+[INFO ] 2020-10-06 17:23:45.687 [main] EmailDAOImpl - Creating an address - Number of rows created: 1
+[INFO ] 2020-10-06 17:23:45.695 [main] EmailDAOImpl - email To: xinjia345@gmail.com
+[INFO ] 2020-10-06 17:23:45.700 [main] EmailDAOImpl - email CC: xinjia1.cao@gmail.com
+[INFO ] 2020-10-06 17:23:45.707 [main] EmailDAOImpl - Number of recipients added: 2
+[INFO ] 2020-10-06 17:23:45.736 [main] EmailDAOImpl - Number of attachments added: 1
+[INFO ] 2020-10-06 17:23:45.753 [main] EmailDAOImpl - Found 8?: true
+[INFO ] 2020-10-06 17:26:36.892 [main] EmailJDBCTest - ----------TEST EMAIL FOLDER CHANGED----------
+[DEBUG] 2020-10-06 17:26:37.068 [main] EmailJDBCTest - latest id: 7
+[DEBUG] 2020-10-06 17:26:37.077 [main] EmailDAOImpl - The message sent: test create email
+[DEBUG] 2020-10-06 17:26:37.077 [main] EmailDAOImpl - The message sent type: text/plain
+[DEBUG] 2020-10-06 17:26:37.077 [main] EmailDAOImpl - The message sent: test
+[DEBUG] 2020-10-06 17:26:37.077 [main] EmailDAOImpl - The message sent type: text/html
+[DEBUG] 2020-10-06 17:26:37.080 [main] EmailDAOImpl - New email ID is: 8
+[INFO ] 2020-10-06 17:26:37.085 [main] EmailDAOImpl - Address not in table -> create
+[INFO ] 2020-10-06 17:26:37.090 [main] EmailDAOImpl - Creating an address - Number of rows created: 1
+[INFO ] 2020-10-06 17:26:37.095 [main] EmailDAOImpl - Address not in table -> create
+[INFO ] 2020-10-06 17:26:37.101 [main] EmailDAOImpl - Creating an address - Number of rows created: 1
+[INFO ] 2020-10-06 17:26:37.113 [main] EmailDAOImpl - email To: xinjia345@gmail.com
+[INFO ] 2020-10-06 17:26:37.118 [main] EmailDAOImpl - email CC: xinjia1.cao@gmail.com
+[INFO ] 2020-10-06 17:26:37.125 [main] EmailDAOImpl - Number of recipients added: 2
+[INFO ] 2020-10-06 17:26:37.144 [main] EmailDAOImpl - Number of attachments added: 1
+[DEBUG] 2020-10-06 17:26:37.147 [main] EmailDAOImpl - The message sent: test create email
+[DEBUG] 2020-10-06 17:26:37.147 [main] EmailDAOImpl - The message sent type: text/plain
+[DEBUG] 2020-10-06 17:26:37.147 [main] EmailDAOImpl - The message sent: test
+[DEBUG] 2020-10-06 17:26:37.147 [main] EmailDAOImpl - The message sent type: text/html
+[DEBUG] 2020-10-06 17:26:37.148 [main] EmailDAOImpl - New email ID is: 9
+[INFO ] 2020-10-06 17:26:37.161 [main] EmailDAOImpl - email To: xinjia345@gmail.com
+[INFO ] 2020-10-06 17:26:37.165 [main] EmailDAOImpl - email CC: xinjia1.cao@gmail.com
+[INFO ] 2020-10-06 17:26:37.169 [main] EmailDAOImpl - Number of recipients added: 2
+[INFO ] 2020-10-06 17:26:37.179 [main] EmailDAOImpl - Number of attachments added: 1
+[INFO ] 2020-10-06 17:26:37.185 [main] EmailDAOImpl - Folder id of folder Inbox is: 1
+[INFO ] 2020-10-06 17:26:37.190 [main] EmailDAOImpl - Number of emails' folder changed (should be 1): 1
+[INFO ] 2020-10-06 17:29:31.594 [main] EmailJDBCTest - ----------TEST EMAIL FOLDER CHANGED----------
+[DEBUG] 2020-10-06 17:29:31.766 [main] EmailJDBCTest - latest id: 7
+[DEBUG] 2020-10-06 17:29:31.775 [main] EmailDAOImpl - The message sent: test create email
+[DEBUG] 2020-10-06 17:29:31.775 [main] EmailDAOImpl - The message sent type: text/plain
+[DEBUG] 2020-10-06 17:29:31.776 [main] EmailDAOImpl - The message sent: test
+[DEBUG] 2020-10-06 17:29:31.776 [main] EmailDAOImpl - The message sent type: text/html
+[DEBUG] 2020-10-06 17:29:31.779 [main] EmailDAOImpl - New email ID is: 8
+[INFO ] 2020-10-06 17:29:31.784 [main] EmailDAOImpl - Address not in table -> create
+[INFO ] 2020-10-06 17:29:31.789 [main] EmailDAOImpl - Creating an address - Number of rows created: 1
+[INFO ] 2020-10-06 17:29:31.794 [main] EmailDAOImpl - Address not in table -> create
+[INFO ] 2020-10-06 17:29:31.799 [main] EmailDAOImpl - Creating an address - Number of rows created: 1
+[INFO ] 2020-10-06 17:29:31.807 [main] EmailDAOImpl - email To: xinjia345@gmail.com
+[INFO ] 2020-10-06 17:29:31.814 [main] EmailDAOImpl - email CC: xinjia1.cao@gmail.com
+[INFO ] 2020-10-06 17:29:31.819 [main] EmailDAOImpl - Number of recipients added: 2
+[INFO ] 2020-10-06 17:29:31.837 [main] EmailDAOImpl - Number of attachments added: 1
+[DEBUG] 2020-10-06 17:29:31.840 [main] EmailDAOImpl - The message sent: test create email
+[DEBUG] 2020-10-06 17:29:31.840 [main] EmailDAOImpl - The message sent type: text/plain
+[DEBUG] 2020-10-06 17:29:31.841 [main] EmailDAOImpl - The message sent: test
+[DEBUG] 2020-10-06 17:29:31.841 [main] EmailDAOImpl - The message sent type: text/html
+[DEBUG] 2020-10-06 17:29:31.842 [main] EmailDAOImpl - New email ID is: 9
+[INFO ] 2020-10-06 17:29:31.855 [main] EmailDAOImpl - email To: xinjia345@gmail.com
+[INFO ] 2020-10-06 17:29:31.859 [main] EmailDAOImpl - email CC: xinjia1.cao@gmail.com
+[INFO ] 2020-10-06 17:29:31.864 [main] EmailDAOImpl - Number of recipients added: 2
+[INFO ] 2020-10-06 17:29:31.876 [main] EmailDAOImpl - Number of attachments added: 1
+[INFO ] 2020-10-06 17:29:31.880 [main] EmailDAOImpl - Folder id of folder Inbox is: 1
+[INFO ] 2020-10-06 17:29:31.885 [main] EmailDAOImpl - Number of emails' folder changed (should be 1): 1
+[INFO ] 2020-10-06 17:31:26.750 [main] EmailJDBCTest - ----------TEST EMAIL FOLDER CHANGED----------
+[DEBUG] 2020-10-06 17:31:26.925 [main] EmailJDBCTest - latest id: 7
+[DEBUG] 2020-10-06 17:31:26.935 [main] EmailDAOImpl - The message sent: test create email
+[DEBUG] 2020-10-06 17:31:26.935 [main] EmailDAOImpl - The message sent type: text/plain
+[DEBUG] 2020-10-06 17:31:26.936 [main] EmailDAOImpl - The message sent: test
+[DEBUG] 2020-10-06 17:31:26.936 [main] EmailDAOImpl - The message sent type: text/html
+[DEBUG] 2020-10-06 17:31:26.939 [main] EmailDAOImpl - New email ID is: 8
+[INFO ] 2020-10-06 17:31:26.945 [main] EmailDAOImpl - Address not in table -> create
+[INFO ] 2020-10-06 17:31:26.951 [main] EmailDAOImpl - Creating an address - Number of rows created: 1
+[INFO ] 2020-10-06 17:31:26.956 [main] EmailDAOImpl - Address not in table -> create
+[INFO ] 2020-10-06 17:31:26.961 [main] EmailDAOImpl - Creating an address - Number of rows created: 1
+[INFO ] 2020-10-06 17:31:26.969 [main] EmailDAOImpl - email To: xinjia345@gmail.com
+[INFO ] 2020-10-06 17:31:26.974 [main] EmailDAOImpl - email CC: xinjia1.cao@gmail.com
+[INFO ] 2020-10-06 17:31:26.979 [main] EmailDAOImpl - Number of recipients added: 2
+[INFO ] 2020-10-06 17:31:26.998 [main] EmailDAOImpl - Number of attachments added: 1
+[INFO ] 2020-10-06 17:31:27.003 [main] EmailDAOImpl - Folder id of folder Inbox is: 1
+[INFO ] 2020-10-06 17:31:27.007 [main] EmailDAOImpl - Number of emails' folder changed (should be 1): 1

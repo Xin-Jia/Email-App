@@ -1,5 +1,8 @@
 package com.xinjia.jdbc.persistence;
 
+import com.xinjia.exceptions.FolderAlreadyExistsException;
+import com.xinjia.exceptions.InvalidFolderNameException;
+import com.xinjia.exceptions.NotDraftFolderException;
 import com.xinjia.jdbc.beans.EmailData;
 import com.xinjia.jdbc.beans.FolderData;
 import java.sql.Connection;
@@ -252,9 +255,9 @@ public class EmailDAOImpl implements EmailDAO {
         try ( Connection connection = DriverManager.getConnection(URL, USER, PASSWORD);  PreparedStatement ps = connection.prepareStatement(createRecipientsQuery, Statement.RETURN_GENERATED_KEYS);) {
             rows += addInDBRecipients(mailData, ps, mailData.email.to(), "To");
             rows += addInDBRecipients(mailData, ps, mailData.email.cc(), "CC");
-            rows+= addInDBRecipients(mailData, ps, mailData.email.bcc(), "BCC");
+            rows += addInDBRecipients(mailData, ps, mailData.email.bcc(), "BCC");
         }
-        LOG.info("Number of recipients added: "+rows);
+        LOG.info("Number of recipients added: " + rows);
         return rows;
     }
 
@@ -262,7 +265,7 @@ public class EmailDAOImpl implements EmailDAO {
         int rows = 0;
         for (EmailAddress address : addresses) {
             ps.setInt(1, mailData.getEmailId());
-            LOG.info("email "+type+ ": " + address.getEmail());
+            LOG.info("email " + type + ": " + address.getEmail());
             ps.setInt(2, getAddressId(address.getEmail()));
             ps.setString(3, type);
             rows += ps.executeUpdate();
@@ -301,7 +304,7 @@ public class EmailDAOImpl implements EmailDAO {
                 rows += ps.executeUpdate();
             }
         }
-        LOG.info("Number of attachments added: "+rows);
+        LOG.info("Number of attachments added: " + rows);
         return rows;
     }
 
@@ -324,26 +327,28 @@ public class EmailDAOImpl implements EmailDAO {
     }
 
     @Override
-    public int updateEmail(EmailData mailData) throws SQLException {
+    public int updateEmailDraft(EmailData mailData) throws SQLException, NotDraftFolderException {
+        if (mailData.getFolderId() != 3) {
+            throw new NotDraftFolderException("Not a draft - cannot update email.");
+        }
         int rows = 0;
         rows += updateEmailAttachments(mailData);
-        
-        String updateQuery = "UPDATE EMAIL SET FOLDERID = ?, SUBJECT = ?, MESSAGE = ?, HTMLMESSAGE = ? WHERE EMAILID = ?";
-        
+
+        String updateQuery = "UPDATE EMAIL SET SUBJECT = ?, MESSAGE = ?, HTMLMESSAGE = ? WHERE EMAILID = ?";
+
         try ( Connection connection = DriverManager.getConnection(URL, USER, PASSWORD);  PreparedStatement ps = connection.prepareStatement(updateQuery);) {
-            ps.setInt(1, mailData.getFolderId());
-            ps.setString(2, mailData.email.subject());
+            ps.setString(1, mailData.email.subject());
             List<EmailMessage> sentMessages = mailData.email.messages();
             ArrayList<String> messages = retrieveMessageContent(sentMessages, "text/plain");
-            ps.setString(3, messages.get(0));
+            ps.setString(2, messages.get(0));
             messages = retrieveMessageContent(sentMessages, "text/html");
-            ps.setString(4, messages.get(0));
-            ps.setInt(5, mailData.getEmailId());
+            ps.setString(3, messages.get(0));
+            ps.setInt(4, mailData.getEmailId());
 
             rows = ps.executeUpdate();
         }
         rows += updateEmailRecipients(mailData);
-        LOG.info("Total number of rows updated and added: "+rows);
+        LOG.info("Total number of rows updated and added: " + rows);
         return rows;
     }
 
@@ -355,13 +360,13 @@ public class EmailDAOImpl implements EmailDAO {
             ps.setInt(1, mailData.getEmailId());
             ps.executeUpdate();
         }
-        
+
         rows += createAttachmentsField(mailData);
-        LOG.info("Number of attachments added for update: "+rows);
-       return rows;
+        LOG.info("Number of attachments added for update: " + rows);
+        return rows;
     }
-    
-    private int updateEmailRecipients(EmailData mailData) throws SQLException{
+
+    private int updateEmailRecipients(EmailData mailData) throws SQLException {
         String deleteToAddressQuery = "DELETE FROM EMAILTOADDRESS "
                 + "WHERE EMAILTOADDRESS.EMAILID = ?";
         int rows = 0;
@@ -375,9 +380,9 @@ public class EmailDAOImpl implements EmailDAO {
         findDBAddresses(toRecipients);
         findDBAddresses(ccRecipients);
         findDBAddresses(bccRecipients);
-        
+
         rows += createRecipientsField(mailData);
-        LOG.info("Number of recipients added for update: "+rows);
+        LOG.info("Number of recipients added for update: " + rows);
         return rows;
     }
 
@@ -385,21 +390,6 @@ public class EmailDAOImpl implements EmailDAO {
     public int deleteEmail(int id) throws SQLException {
         int result;
 
-        String deleteAttachmentsQuery = "DELETE FROM ATTACHMENTS "
-                + "WHERE ATTACHMENTS.EMAILID = ?";
-
-        try ( Connection connection = DriverManager.getConnection(URL, USER, PASSWORD);  PreparedStatement ps = connection.prepareStatement(deleteAttachmentsQuery);) {
-            ps.setInt(1, id);
-            ps.executeUpdate();
-        }
-
-        String deleteToAddressQuery = "DELETE FROM EMAILTOADDRESS "
-                + "WHERE EMAILTOADDRESS.EMAILID = ?";
-
-        try ( Connection connection = DriverManager.getConnection(URL, USER, PASSWORD);  PreparedStatement ps = connection.prepareStatement(deleteToAddressQuery);) {
-            ps.setInt(1, id);
-            ps.executeUpdate();
-        }
         String deleteEmailQuery = "DELETE FROM EMAIL "
                 + "WHERE EMAIL.EMAILID = ?";
 
@@ -433,45 +423,147 @@ public class EmailDAOImpl implements EmailDAO {
     }
 
     @Override
-    public ArrayList<EmailData> findEmailsByFolder(String address, String folder) throws SQLException {
+    public ArrayList<EmailData> findEmailsByFolder(String folderName) throws SQLException, InvalidFolderNameException {
+
+        if (!containsIgnoreCase(findFolderNames(), folderName)) {
+            throw new InvalidFolderNameException("The folder is not found");
+        }
+
         ArrayList<EmailData> emails = new ArrayList<>();
-        FolderData folderData = new FolderData();
-        String selectEmailsQuery = "SELECT EMAIL.EMAILID, EMAIL.FOLDERID, FROMADDRESS, SENTDATE, RECEIVEDATE, SUBJECT, MESSAGE, HTMLMESSAGE FROM EMAIL\n"
-                + "INNER JOIN FOLDER ON EMAIL.FOLDERID = FOLDER.FOLDERID\n"
-                + "INNER JOIN EMAILTOADDRESS ON EMAILTOADDRESS.EMAILID = EMAIL.EMAILID\n"
-                + "INNER JOIN ADDRESS ON EMAILTOADDRESS.ADDRESSID = ADDRESS.ADDRESSID\n"
-                + "WHERE EMAIL.FROMADDRESS = ? AND FOLDER.FOLDERNAME = ?";
+
+        String selectEmailsQuery = "SELECT EMAIL.EMAILID, EMAIL.FOLDERID, FROMADDRESS, SENTDATE, RECEIVEDATE, SUBJECT, MESSAGE, HTMLMESSAGE FROM EMAIL "
+                + "INNER JOIN FOLDER ON EMAIL.FOLDERID = FOLDER.FOLDERID "
+                + "WHERE FOLDER.FOLDERNAME = ?";
 
         try ( Connection connection = DriverManager.getConnection(URL, USER, PASSWORD);  PreparedStatement pStatement = connection.prepareStatement(selectEmailsQuery);) {
-            pStatement.setString(1, address);
-            pStatement.setString(2, folder);
+            pStatement.setString(1, folderName);
             try ( ResultSet resultSet = pStatement.executeQuery()) {
                 while (resultSet.next()) {
                     emails.add(createEmailData(resultSet));
                 }
             }
-            LOG.debug("Number of emails in " + folder + " folder from: " + address + " is: " + emails.size());
+            LOG.debug("Number of emails in: " + folderName + " is: " + emails.size());
             return emails;
         }
 
     }
 
+    private boolean containsIgnoreCase(List<String> folders, String name) {
+        for (String folderName : folders) {
+            if (folderName.equalsIgnoreCase(name)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     @Override
-    public ArrayList<EmailData> findEmailsBySubject(String address, String subject) throws SQLException {
+    public ArrayList<EmailData> findEmailsBySubject(String subject) throws SQLException {
         ArrayList<EmailData> emails = new ArrayList<>();
         String selectFromSubjectQuery = "SELECT EMAILID, FOLDERID, FROMADDRESS, SENTDATE, RECEIVEDATE, SUBJECT, MESSAGE, HTMLMESSAGE FROM EMAIL "
-                + "WHERE SUBJECT LIKE ? AND FROMADDRESS = ?";
+                + "WHERE SUBJECT LIKE ?";
         try ( Connection connection = DriverManager.getConnection(URL, USER, PASSWORD);  PreparedStatement pStatement = connection.prepareStatement(selectFromSubjectQuery);) {
             pStatement.setString(1, subject + "%");
-            pStatement.setString(2, address);
             try ( ResultSet resultSet = pStatement.executeQuery()) {
                 while (resultSet.next()) {
                     emails.add(createEmailData(resultSet));
                 }
             }
-            LOG.debug("Number of emails found with the substring: " + subject + " from: " + address + " is: " + emails.size());
+            LOG.debug("Number of emails found with the substring: " + subject + " is: " + emails.size());
             return emails;
         }
+    }
+
+    @Override
+    public int createFolder(String folderName) throws SQLException, FolderAlreadyExistsException {
+        if (containsIgnoreCase(findFolderNames(), folderName)) {
+            throw new FolderAlreadyExistsException("The given folder already exists");
+        }
+        int rows = 0;
+        String createFolderQuery = "INSERT INTO FOLDER(FOLDERNAME) VALUES(?)";
+        try ( Connection connection = DriverManager.getConnection(URL, USER, PASSWORD);  PreparedStatement ps = connection.prepareStatement(createFolderQuery, Statement.RETURN_GENERATED_KEYS);) {
+            ps.setString(1, folderName);
+            rows = ps.executeUpdate();
+        }
+        LOG.info("Folder created: " + folderName);
+        return rows;
+    }
+
+    @Override
+    public ArrayList<String> findFolderNames() throws SQLException {
+        ArrayList<String> folders = new ArrayList<>();
+
+        String selectFoldersQuery = "SELECT FOLDERNAME FROM FOLDER";
+        try ( Connection connection = DriverManager.getConnection(URL, USER, PASSWORD);  PreparedStatement pStatement = connection.prepareStatement(selectFoldersQuery);) {
+
+            try ( ResultSet resultSet = pStatement.executeQuery()) {
+                while (resultSet.next()) {
+                    folders.add(resultSet.getString("FolderName"));
+                }
+            }
+        }
+        return folders;
+    }
+
+    @Override
+    public ArrayList<String> findAllAddresses() throws SQLException {
+        ArrayList<String> addresses = new ArrayList<>();
+
+        String selectAddressesQuery = "SELECT EMAILADDRESS FROM ADDRESS";
+        try ( Connection connection = DriverManager.getConnection(URL, USER, PASSWORD);  PreparedStatement pStatement = connection.prepareStatement(selectAddressesQuery);) {
+            try ( ResultSet resultSet = pStatement.executeQuery()) {
+                while (resultSet.next()) {
+                    addresses.add(resultSet.getString("EmailAddress"));
+                }
+            }
+        }
+        return addresses;
+    }
+
+    @Override
+    public int updateEmailDraftAndSend() throws SQLException, NotDraftFolderException {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public int changeEmailFolder(EmailData mailData, String folderName) throws SQLException {
+        //No need to check if the folder name exists since only existing folders 
+        //will be on the GUI when trying to drag an email to another folder
+        int folderId = findFolderIdByName(folderName);
+        String updateFolderQuery = "UPDATE EMAIL SET FOLDERID = ? WHERE EMAILID = ?";
+        int rows = 0;
+        try ( Connection connection = DriverManager.getConnection(URL, USER, PASSWORD);  PreparedStatement ps = connection.prepareStatement(updateFolderQuery);) {
+            ps.setInt(1, folderId);
+            ps.setInt(2, mailData.getEmailId());
+            rows = ps.executeUpdate();
+        }
+        LOG.info("Number of emails' folder changed (should be 1): " + rows);
+        return rows;
+    }
+
+    private int findFolderIdByName(String name) throws SQLException {
+        int id = -1;
+        String selectFolderQuery = "SELECT FOLDERID FROM FOLDER WHERE FOLDERNAME = ?";
+        try ( Connection connection = DriverManager.getConnection(URL, USER, PASSWORD);  PreparedStatement pStatement = connection.prepareStatement(selectFolderQuery);) {
+            pStatement.setString(1,name);
+            try ( ResultSet resultSet = pStatement.executeQuery()) {
+                if (resultSet.next()) {
+                    id = resultSet.getInt("FolderId");
+                }
+            }
+        }
+        LOG.info("Folder id of folder "+name+" is: "+id);
+        return id;
+    }
+
+    @Override
+    public int updateFolderName(String folderName) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public int deleteFolder(String folderName) throws SQLException {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }
