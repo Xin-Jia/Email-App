@@ -68,14 +68,19 @@ INSERT INTO Email(FolderId, FromAddress, Subject, Message, HtmlMessage) VALUES
 (1, "xinjia1.cao@gmail.com","subject2_2", "Received Msg", ""),
 (2, "xinjia2.cao@gmail.com", "subject3", "Sent Msg", ""),
 (3,"xinjia3.cao@gmail.com","subject4", "Draft Msg", ""),
-(1,"xinjia3.cao@gmail.com","subject_test","message_test","html_test");
+(1,"xinjia3.cao@gmail.com","subject_test","message_test","html_test"),
+(1, "xinjia1.cao@gmail.com", "aliceSub","aliceMsg",""),
+(2, "xinjia2.cao@gmail.com", "bob Sub","bob Msg",""),
+(3, "alice123@gmail.com", "a draft", "draft msg", "draft html msg");
 
 INSERT INTO Address(EmailAddress) VALUES
 ("xinjia.caoxin@gmail.com"), 
 ("xinjia1.cao@gmail.com"), 
 ("xinjia2.cao@gmail.com"), 
 ("xinjia3.cao@gmail.com"), 
-("xinjia4.cao@gmail.com");
+("xinjia4.cao@gmail.com"),
+("alice123@gmail.com"),
+("bob123@gmail.com");
 
 INSERT INTO Attachments(FileName, EmailId) VALUES
 ("img1.png", 1),
@@ -83,7 +88,8 @@ INSERT INTO Attachments(FileName, EmailId) VALUES
 ("img3-embedded.png", 3),
 ("tree.png", 3),
 ("flower.png", 4),
-("dog-embedded.png", 5);
+("dog-embedded.png", 5),
+("img3.png", 10);
 
 INSERT INTO EmailToAddress(EmailId, AddressId,RecipientType) VALUES
 (1,1,"To"),
@@ -92,7 +98,11 @@ INSERT INTO EmailToAddress(EmailId, AddressId,RecipientType) VALUES
 (3,2,"To"),
 (3,2,"BCC"),
 (4,3,"To"),
-(5,4,"CC");
+(5,4,"CC"),
+(8,6,"To"),
+(8,3,"To"),
+(9,1,"To"),
+(9,7,"BCC");
 
 
 

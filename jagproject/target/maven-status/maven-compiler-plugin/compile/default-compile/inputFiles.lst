@@ -3,7 +3,6 @@ C:\dev\JAGPROJECT1\jagproject1\jagproject\src\main\java\com\xinjia\jdbc\persiste
 C:\dev\JAGPROJECT1\jagproject1\jagproject\src\main\java\com\xinjia\exceptions\NullCCEmailException.java
 C:\dev\JAGPROJECT1\jagproject1\jagproject\src\main\java\com\xinjia\exceptions\FolderAlreadyExistsException.java
 C:\dev\JAGPROJECT1\jagproject1\jagproject\src\main\java\com\xinjia\exceptions\NullCCEmailAddressException.java
-C:\dev\JAGPROJECT1\jagproject1\jagproject\src\main\java\com\xinjia\exceptions\NotDraftFolderException.java
 C:\dev\JAGPROJECT1\jagproject1\jagproject\src\main\java\com\xinjia\exceptions\NullBCCEmailAddressException.java
 C:\dev\JAGPROJECT1\jagproject1\jagproject\src\main\java\com\xinjia\jdbc\persistence\EmailDAO.java
 C:\dev\JAGPROJECT1\jagproject1\jagproject\src\main\java\com\xinjia\exceptions\NullBCCEmailException.java

@@ -18,11 +18,11 @@ public class MailConfigBean {
     private String password;
     private String imapUrl;
     private String smtpUrl;
-    private int imapPort;
-    private int smtpPort;
+    private String imapPort;
+    private String smtpPort;
     private String dbUrl;
     private String dbName;
-    private int dbPort;
+    private String dbPort;
     private String dbUsername;
     private String dbPassword;
         
@@ -36,11 +36,11 @@ public class MailConfigBean {
         this.password = "";
         this.imapUrl = "";
         this.smtpUrl = "";
-        this.imapPort = 993;
-        this.smtpPort = 465;
+        this.imapPort = "993";
+        this.smtpPort = "465";
         this.dbUrl = "";
         this.dbName = "";
-        this.dbPort = 3306;
+        this.dbPort = "3306";
         this.dbUsername = "";
         this.dbPassword = "";
         
@@ -53,118 +53,118 @@ public class MailConfigBean {
      * @param userEmailAddress
      * @param password
      */
-    public MailConfigBean(final String host, final String userEmailAddress, final String password) {
+    public MailConfigBean(final String host, final String userEmailAddress, 
+            final String password, final String imapUrl, final String smtpUrl, final String imapPort, final String smtpPort,
+            final String dbUrl, final String dbName, final String dbPort, final String dbUsername, final String dbPassword) {
         this.host = host;
         this.userEmailAddress = userEmailAddress;
         this.password = password;
-        this.imapUrl = "";
-        this.smtpUrl = "";
-        this.imapPort = 0;
-        this.smtpPort = 0;
-        this.dbUrl = "";
-        this.dbName = "";
-        this.dbPort = 0;
-        this.dbUsername = "";
-        this.dbPassword = "";
+        this.imapUrl = imapUrl;
+        this.smtpUrl = smtpUrl;
+        this.imapPort = imapPort;
+        this.smtpPort = smtpPort;
+        this.dbUrl = dbUrl;
+        this.dbName = dbName;
+        this.dbPort = dbPort;
+        this.dbUsername = dbUsername;
+        this.dbPassword = dbPassword;
     }
 
-    /**
-     * @return the host
-     */
-    public final String getHost() {
+    public String getHost() {
         return host;
     }
 
-    /**
-     * @param host the host to set
-     */
-    public final void setHost(final String host) {
+    public void setHost(String host) {
         this.host = host;
     }
 
-    /**
-     * @return the userEmailAddress
-     */
-    public final String getUserEmailAddress() {
+    public String getUserEmailAddress() {
         return userEmailAddress;
     }
 
-    /**
-     * @param userEmailAddress
-     */
-    public final void setUserEmailAddress(final String userEmailAddress) {
+    public void setUserEmailAddress(String userEmailAddress) {
         this.userEmailAddress = userEmailAddress;
     }
 
-    /**
-     * @return the password
-     */
-    public final String getPassword() {
+    public String getPassword() {
         return password;
     }
 
-    /**
-     * @param password the password to set
-     */
-    public final void setPassword(final String password) {
+    public void setPassword(String password) {
         this.password = password;
     }
-    
-    /**
-     * @return the imap url
-     */
-    public final String getImapUrl() {
+
+    public String getImapUrl() {
         return imapUrl;
     }
-    
-    /**
-     * @return the smtp url
-     */
-    public final String getSmtpUrl() {
+
+    public void setImapUrl(String imapUrl) {
+        this.imapUrl = imapUrl;
+    }
+
+    public String getSmtpUrl() {
         return smtpUrl;
     }
-    
-    /**
-     * @return the imap port
-     */
-    public final int getImapPort() {
+
+    public void setSmtpUrl(String smtpUrl) {
+        this.smtpUrl = smtpUrl;
+    }
+
+    public String getImapPort() {
         return imapPort;
     }
-    /**
-     * @return the smtp port
-     */
-    public final int getSmtpPort() {
+
+    public void setImapPort(String imapPort) {
+        this.imapPort = imapPort;
+    }
+
+    public String getSmtpPort() {
         return smtpPort;
     }
-    /**
-     * @return the database url
-     */
-    public final String getDbUrl() {
+
+    public void setSmtpPort(String smtpPort) {
+        this.smtpPort = smtpPort;
+    }
+
+    public String getDbUrl() {
         return dbUrl;
     }
-    /**
-     * @return the database name
-     */
-    public final String getDbName() {
+
+    public void setDbUrl(String dbUrl) {
+        this.dbUrl = dbUrl;
+    }
+
+    public String getDbName() {
         return dbName;
     }
-    /**
-     * @return the database port
-     */
-    public final int getDbPort() {
+
+    public void setDbName(String dbName) {
+        this.dbName = dbName;
+    }
+
+    public String getDbPort() {
         return dbPort;
     }
-    /**
-     * @return the database username
-     */
-    public final String getDbUsername() {
+
+    public void setDbPort(String dbPort) {
+        this.dbPort = dbPort;
+    }
+
+    public String getDbUsername() {
         return dbUsername;
     }
-    /**
-     * @return the database password
-     */
-    public final String getDbPassword() {
+
+    public void setDbUsername(String dbUsername) {
+        this.dbUsername = dbUsername;
+    }
+
+    public String getDbPassword() {
         return dbPassword;
+    }
+
+    public void setDbPassword(String dbPassword) {
+        this.dbPassword = dbPassword;
     }
 }
 
+    

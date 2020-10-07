@@ -73,7 +73,6 @@ public class EmailData {
                 + "Message: " + email.messages().get(0).getContent() + "\n"
                 //+ "HTML Message: " + email.messages().get(1) + "\n"
                 + "Attachments: " + email.attachments().size() + "\n"
-               // + "Embedded Attachments: " + Arrays.toString(email.attachments().toArray()) + "\n"
                 + "To Recipients: " + Arrays.toString(email.to()) + "\n"
                 + "CC Recipients: " + Arrays.toString(email.cc()) + "\n"
                 + "BCC Recipients: " + Arrays.toString(email.bcc())+ "\n";
@@ -87,7 +86,11 @@ public class EmailData {
         hash = 37 * hash + this.emailId;
         hash = 37 * hash + this.folderId;
         hash = 37 * hash + Objects.hashCode(this.receivedDate);
-        hash = 37 * hash + Objects.hashCode(this.email);
+        hash = 37 * hash + Objects.hashCode(this.email.attachments());
+        hash = 37 * hash + Objects.hashCode(this.email.from());
+        hash = 37 * hash + Objects.hashCode(this.email.to());
+        hash = 37 * hash + Objects.hashCode(this.email.cc());
+        hash = 37 * hash + Objects.hashCode(this.email.bcc());
         return hash;
     }
 
@@ -112,7 +115,16 @@ public class EmailData {
         /*if (!Objects.equals(this.receivedDate, other.receivedDate)) {
             return false;
         }*/
-        if (!Objects.equals(this.email, other.email)) {
+        if (this.email.attachments() != other.email.attachments()){
+            return false;
+        }
+        if (this.email.to() != other.email.to()){
+            return false;
+        }
+        if (this.email.cc() != other.email.cc()){
+            return false;
+        }
+        if (this.email.bcc() != other.email.bcc()){
             return false;
         }
         return true;
