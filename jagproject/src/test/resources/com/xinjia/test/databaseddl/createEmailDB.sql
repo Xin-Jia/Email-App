@@ -13,7 +13,7 @@ CREATE DATABASE EMAILAPP;
 USE EMAILAPP;
 
 DROP USER IF EXISTS userxj@localhost;
-CREATE USER userxj@'localhost' IDENTIFIED BY 'dawson';
+CREATE USER userxj@'localhost' IDENTIFIED BY 'dawson1';
 GRANT ALL ON EMAILAPP.* TO userxj@'localhost';
 
 FLUSH PRIVILEGES;

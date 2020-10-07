@@ -43,17 +43,14 @@ public class EmailJDBCTest {
     private final static Logger LOG = LoggerFactory.getLogger(EmailJDBCTest.class);
 
     private final static String URL = "jdbc:mysql://localhost:3306/EMAILAPP?characterEncoding=UTF-8&autoReconnect=true&zeroDateTimeBehavior=CONVERT_TO_NULL&useSSL=false&allowPublicKeyRetrieval=true&useTimezone=true&serverTimezone=UTC";
-    private final static String USER = "root";
-    private final static String PASSWORD = "dawson";
+    private final static String USER = "userxj";
+    private final static String PASSWORD = "dawson1";
 
     /*@Test
     public void testFindAll() throws SQLException{
         LOG.info("----------TEST FIND ALL----------");
         EmailDAO mailFunction = new EmailDAOImpl();
         List<EmailData> data = mailFunction.findAllEmails();
-        data.forEach(ed -> {
-            LOG.info(ed.toString());
-        });
         assertEquals(getNumberRows(), data.size());
     }
     
@@ -95,32 +92,23 @@ public class EmailJDBCTest {
         LOG.info("----------TEST FIND SENT EMAILS----------");
         EmailDAO mailFunction = new EmailDAOImpl();
         List<EmailData> data = mailFunction.findEmailsByFolder("Sent");
-        data.forEach(ed -> {
-            LOG.info(ed.toString());
-        });
         assertEquals(4, data.size());
     }
     
     @Test
     public void testFindReceivedEmails() throws SQLException, InvalidFolderException, InvalidFolderNameException{
-        LOG.info("----------TEST FIND REEIVED EMAILS (INBOX)----------");
+        LOG.info("----------TEST FIND RECEIVED EMAILS (INBOX)----------");
         EmailDAO mailFunction = new EmailDAOImpl();
         List<EmailData> data = mailFunction.findEmailsByFolder("Inbox");
-        data.forEach(ed -> {
-            LOG.info(ed.toString());
-        });
         assertEquals(2, data.size());
-    }
+    }*/
 
-    @Test
-    public void testFindEmailsBySubject() throws SQLException{
-        LOG.info("----------TEST FIND EMAILS BY SUBJECT----------");
+    /*@Test
+    public void testFindEmailsByTextSubString() throws SQLException{
+        LOG.info("----------TEST FIND EMAILS BY TEXT SUBSTRING----------");
         EmailDAO mailFunction = new EmailDAOImpl();
-        List<EmailData> data = mailFunction.findEmailsBySubject("subject");
-        data.forEach(ed -> {
-            LOG.info(ed.toString());
-        });
-        assertEquals(7, data.size());
+        List<EmailData> data = mailFunction.findEmailsByTextSubString("Msg");
+        assertEquals(6, data.size());
     }
     @Test
     public void testDeleteEmail() throws SQLException{
@@ -131,7 +119,7 @@ public class EmailJDBCTest {
     }
     
     @Test
-    public void testUpdateEmail() throws SQLException, NotDraftFolderException{
+    public void testUpdateEmail() throws SQLException{
         LOG.info("----------TEST UPDATE EMAIL----------");
         Email email = new Email();
         email.from("xinjia3@gmail.com");
@@ -176,7 +164,7 @@ public class EmailJDBCTest {
         EmailDAO mailFunction = new EmailDAOImpl();
         int rows = mailFunction.createFolder("Special");
         assertEquals(1, rows);
-    }*/
+    }
     
     @Test 
     public void testEmailFolderChanged() throws SQLException{
@@ -196,6 +184,21 @@ public class EmailJDBCTest {
         
         mailFunction.createEmail(mailData);
         int rows = mailFunction.changeEmailFolder(mailData, "Inbox");
+        assertEquals(1, rows);
+    }
+    
+    @Test
+    public void testUpdateFolderName() throws SQLException{
+    LOG.info("----------TEST UPDATE FOLDER NAME----------");
+        EmailDAO mailFunction = new EmailDAOImpl();
+        int rows = mailFunction.updateFolderName("Inbox", "Recipients");
+        assertEquals(1, rows);
+    }*/
+    @Test
+    public void testDeleteFolder() throws SQLException{
+        LOG.info("----------TEST DELETES FOLDER----------");
+        EmailDAO mailFunction = new EmailDAOImpl();
+        int rows = mailFunction.deleteFolder("Draft");
         assertEquals(1, rows);
     }
     

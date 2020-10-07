@@ -20,14 +20,14 @@ public interface EmailDAO {
     public ArrayList<EmailData> findAllEmails() throws SQLException;
     public EmailData findEmailById(int id) throws SQLException;
     public ArrayList<EmailData> findEmailsByFolder(String folderName) throws SQLException, InvalidFolderNameException;
-    public ArrayList<EmailData> findEmailsBySubject(String subject) throws SQLException;
+    public ArrayList<EmailData> findEmailsByTextSubString(String subString) throws SQLException;
     public ArrayList<String> findFolderNames() throws SQLException;
     public ArrayList<String> findAllAddresses() throws SQLException;
     
     public int updateEmailDraft(EmailData mailData) throws SQLException, NotDraftFolderException;
-    public int updateEmailDraftAndSend() throws SQLException, NotDraftFolderException;
+    public int updateEmailDraftAndSend(EmailData mailData) throws SQLException;
     public int changeEmailFolder(EmailData mailData, String folderName) throws SQLException;
-    public int updateFolderName(String folderName) throws SQLException;
+    public int updateFolderName(String toReplace, String newName) throws SQLException;
     
     public int deleteEmail(int id) throws SQLException;
     public int deleteFolder(String folderName) throws SQLException;
