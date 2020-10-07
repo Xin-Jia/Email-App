@@ -1,6 +1,3 @@
--- Author:  Xin Jia Cao
--- Created: Oct. 4, 2020
-
 USE EMAILAPP;
 SET FOREIGN_KEY_CHECKS = 0;
 DROP TABLE IF EXISTS Folder;

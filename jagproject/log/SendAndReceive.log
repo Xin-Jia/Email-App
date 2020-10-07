@@ -16102,3 +16102,218 @@ BCC Recipients: []
 
 [INFO ] 2020-10-06 19:57:29.024 [main] EmailJDBCTest - ----------TEST DELETES FOLDER----------
 [INFO ] 2020-10-06 19:57:29.353 [main] EmailDAOImpl - Number of rows deleted in folder (should be 1): 1
+[INFO ] 2020-10-07 12:31:52.451 [main] EmailJDBCTest - ----------TEST DELETES FOLDER----------
+[INFO ] 2020-10-07 13:27:12.014 [main] EmailJDBCTest - ----------TEST DELETES FOLDER----------
+[INFO ] 2020-10-07 13:27:29.700 [main] EmailJDBCTest - ----------TEST DELETES FOLDER----------
+[INFO ] 2020-10-07 13:27:29.847 [main] EmailDAOImpl - Number of rows deleted in folder (should be 1): 1
+[INFO ] 2020-10-07 13:29:01.245 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 13:29:01.254 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 13:29:01.255 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 13:29:01.256 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 13:29:01.257 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 13:29:01.258 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 13:29:01.258 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 13:29:01.259 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 13:29:01.260 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 13:29:01.261 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 13:29:01.261 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 13:29:01.262 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 13:29:01.263 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 13:29:01.263 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 13:29:01.264 [main] EmailJDBCTest - @AfterClass seeding
+[INFO ] 2020-10-07 13:29:01.264 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 13:31:37.491 [main] EmailJDBCTest - ----------TEST CREATE FOLDER----------
+[INFO ] 2020-10-07 13:31:37.681 [main] EmailDAOImpl - Folder created: Special
+[INFO ] 2020-10-07 13:31:37.683 [main] EmailJDBCTest - ----------TEST DELETE EMAIL----------
+[INFO ] 2020-10-07 13:31:37.688 [main] EmailDAOImpl - Number of rows deleted in email (should be 1): 1
+[INFO ] 2020-10-07 13:31:37.689 [main] EmailJDBCTest - ----------TEST UPDATE EMAIL----------
+[INFO ] 2020-10-07 13:31:37.754 [main] EmailDAOImpl - Number of attachments added: 1
+[INFO ] 2020-10-07 13:31:37.755 [main] EmailDAOImpl - Number of attachments added for update: 1
+[DEBUG] 2020-10-07 13:31:37.759 [main] EmailDAOImpl - The message sent: updated Msg
+[DEBUG] 2020-10-07 13:31:37.759 [main] EmailDAOImpl - The message sent type: text/plain
+[DEBUG] 2020-10-07 13:31:37.759 [main] EmailDAOImpl - The message sent: updated HTML Msg
+[DEBUG] 2020-10-07 13:31:37.759 [main] EmailDAOImpl - The message sent type: text/html
+[INFO ] 2020-10-07 13:31:37.774 [main] EmailDAOImpl - Address not in table -> create
+[INFO ] 2020-10-07 13:31:37.779 [main] EmailDAOImpl - Creating an address - Number of rows created (should be 1): 1
+[INFO ] 2020-10-07 13:31:37.783 [main] EmailDAOImpl - Address not in table -> create
+[INFO ] 2020-10-07 13:31:37.787 [main] EmailDAOImpl - Creating an address - Number of rows created (should be 1): 1
+[INFO ] 2020-10-07 13:31:37.791 [main] EmailDAOImpl - email To: updatedRecipient1@gmail.com
+[INFO ] 2020-10-07 13:31:37.796 [main] EmailDAOImpl - email BCC: updatedRecipient2@gmail.com
+[INFO ] 2020-10-07 13:31:37.802 [main] EmailDAOImpl - Number of recipients added: 2
+[INFO ] 2020-10-07 13:31:37.802 [main] EmailDAOImpl - Number of recipients added for update: 2
+[INFO ] 2020-10-07 13:31:37.802 [main] EmailDAOImpl - Total number of rows updated and added: 3
+[INFO ] 2020-10-07 13:31:37.803 [main] EmailJDBCTest - ----------TEST FIND ALL----------
+[INFO ] 2020-10-07 13:31:37.880 [main] EmailDAOImpl - Total number of all emails : 6
+[DEBUG] 2020-10-07 13:31:37.884 [main] EmailJDBCTest - Number of rows: 6
+[INFO ] 2020-10-07 13:31:37.884 [main] EmailJDBCTest - ----------TEST CREATE EMAIL----------
+[DEBUG] 2020-10-07 13:31:37.888 [main] EmailJDBCTest - latest id: 7
+[DEBUG] 2020-10-07 13:31:37.892 [main] EmailDAOImpl - The message sent: test create email
+[DEBUG] 2020-10-07 13:31:37.892 [main] EmailDAOImpl - The message sent type: text/plain
+[DEBUG] 2020-10-07 13:31:37.892 [main] EmailDAOImpl - The message sent: test
+[DEBUG] 2020-10-07 13:31:37.893 [main] EmailDAOImpl - The message sent type: text/html
+[DEBUG] 2020-10-07 13:31:37.895 [main] EmailDAOImpl - New email ID is: 8
+[INFO ] 2020-10-07 13:31:37.898 [main] EmailDAOImpl - Address not in table -> create
+[INFO ] 2020-10-07 13:31:37.902 [main] EmailDAOImpl - Creating an address - Number of rows created (should be 1): 1
+[INFO ] 2020-10-07 13:31:37.905 [main] EmailDAOImpl - Address not in table -> create
+[INFO ] 2020-10-07 13:31:37.909 [main] EmailDAOImpl - Creating an address - Number of rows created (should be 1): 1
+[INFO ] 2020-10-07 13:31:37.916 [main] EmailDAOImpl - email To: xinjia345@gmail.com
+[INFO ] 2020-10-07 13:31:37.921 [main] EmailDAOImpl - email CC: xinjia1.cao@gmail.com
+[INFO ] 2020-10-07 13:31:37.926 [main] EmailDAOImpl - Number of recipients added: 2
+[INFO ] 2020-10-07 13:31:37.941 [main] EmailDAOImpl - Number of attachments added: 1
+[INFO ] 2020-10-07 13:31:37.954 [main] EmailDAOImpl - Found 8?: true
+[INFO ] 2020-10-07 13:31:37.955 [main] EmailJDBCTest - ----------TEST FIND SENT EMAILS----------
+[DEBUG] 2020-10-07 13:31:37.998 [main] EmailDAOImpl - Number of emails in: Sent is: 3
+[INFO ] 2020-10-07 13:31:38.005 [main] EmailJDBCTest - ----------TEST FIND RECEIVED EMAILS (INBOX)----------
+[DEBUG] 2020-10-07 13:31:38.032 [main] EmailDAOImpl - Number of emails in: Inbox is: 2
+[INFO ] 2020-10-07 13:31:38.033 [main] EmailJDBCTest - ----------TEST DELETES FOLDER----------
+[INFO ] 2020-10-07 13:31:38.037 [main] EmailDAOImpl - Number of rows deleted in folder (should be 1): 1
+[INFO ] 2020-10-07 13:31:38.037 [main] EmailJDBCTest - ----------TEST FIND ALL ADDRESSES----------
+[INFO ] 2020-10-07 13:31:38.042 [main] EmailJDBCTest - ----------TEST EMAIL FOLDER CHANGED----------
+[DEBUG] 2020-10-07 13:31:38.045 [main] EmailJDBCTest - latest id: 4
+[DEBUG] 2020-10-07 13:31:38.047 [main] EmailDAOImpl - The message sent: test create email
+[DEBUG] 2020-10-07 13:31:38.048 [main] EmailDAOImpl - The message sent type: text/plain
+[DEBUG] 2020-10-07 13:31:38.048 [main] EmailDAOImpl - The message sent: test
+[DEBUG] 2020-10-07 13:31:38.048 [main] EmailDAOImpl - The message sent type: text/html
+[INFO ] 2020-10-07 13:31:38.056 [main] EmailJDBCTest - ----------TEST FIND BY ID: 2----------
+[INFO ] 2020-10-07 13:31:38.067 [main] EmailDAOImpl - Found 1?: true
+[INFO ] 2020-10-07 13:31:38.067 [main] EmailJDBCTest - ----------TEST UPDATE FOLDER NAME----------
+[INFO ] 2020-10-07 13:31:38.071 [main] EmailDAOImpl - Number of folder name changed (should be 1): 1
+[INFO ] 2020-10-07 13:31:38.072 [main] EmailDAOImpl - Changed folder: Inbox to: Recipients
+[INFO ] 2020-10-07 13:31:38.072 [main] EmailJDBCTest - ----------TEST FIND EMAILS BY TEXT SUBSTRING----------
+[INFO ] 2020-10-07 13:31:38.105 [main] EmailDAOImpl - Number of emails found with the substring: Msg is: 4
+[INFO ] 2020-10-07 13:31:38.106 [main] EmailJDBCTest - ----------TEST FIND FOLDER NAMES----------
+[INFO ] 2020-10-07 13:37:23.090 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 13:37:23.099 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 13:37:23.100 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 13:37:23.101 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 13:37:23.102 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 13:37:23.103 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 13:37:23.104 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 13:37:23.105 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 13:37:23.106 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 13:37:23.106 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 13:37:23.107 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 13:37:23.108 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 13:37:23.109 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 13:37:23.110 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 13:37:23.111 [main] EmailJDBCTest - @AfterClass seeding
+[INFO ] 2020-10-07 13:37:23.111 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 13:44:33.788 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 13:44:33.798 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 13:44:33.799 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 13:44:33.800 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 13:44:33.802 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 13:44:33.803 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 13:44:33.804 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 13:44:33.805 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 13:44:33.806 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 13:44:33.807 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 13:44:33.808 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 13:44:33.809 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 13:44:33.810 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 13:44:33.812 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 13:44:33.814 [main] EmailJDBCTest - @AfterClass seeding
+[INFO ] 2020-10-07 13:44:33.814 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 13:46:25.370 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 13:46:25.387 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 13:46:25.388 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 13:46:25.390 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 13:46:25.391 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 13:46:25.392 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 13:46:25.393 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 13:46:25.394 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 13:46:25.395 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 13:46:25.396 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 13:46:25.397 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 13:46:25.398 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 13:46:25.399 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 13:46:25.400 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 13:46:25.400 [main] EmailJDBCTest - @AfterClass seeding
+[INFO ] 2020-10-07 13:46:25.400 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 13:48:50.998 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 13:48:51.477 [main] EmailJDBCTest - ----------TEST CREATE FOLDER----------
+[INFO ] 2020-10-07 13:48:51.512 [main] EmailDAOImpl - Folder created: Special
+[INFO ] 2020-10-07 13:48:51.514 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 13:48:51.731 [main] EmailJDBCTest - ----------TEST DELETE EMAIL----------
+[INFO ] 2020-10-07 13:48:51.740 [main] EmailDAOImpl - Number of rows deleted in email (should be 1): 1
+[INFO ] 2020-10-07 13:48:51.741 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 13:48:51.968 [main] EmailJDBCTest - ----------TEST UPDATE EMAIL----------
+[INFO ] 2020-10-07 13:48:52.021 [main] EmailDAOImpl - Number of attachments added: 1
+[INFO ] 2020-10-07 13:48:52.022 [main] EmailDAOImpl - Number of attachments added for update: 1
+[DEBUG] 2020-10-07 13:48:52.027 [main] EmailDAOImpl - The message sent: updated Msg
+[DEBUG] 2020-10-07 13:48:52.028 [main] EmailDAOImpl - The message sent type: text/plain
+[DEBUG] 2020-10-07 13:48:52.028 [main] EmailDAOImpl - The message sent: updated HTML Msg
+[DEBUG] 2020-10-07 13:48:52.028 [main] EmailDAOImpl - The message sent type: text/html
+[INFO ] 2020-10-07 13:48:52.036 [main] EmailDAOImpl - Address not in table -> create
+[INFO ] 2020-10-07 13:48:52.041 [main] EmailDAOImpl - Creating an address - Number of rows created (should be 1): 1
+[INFO ] 2020-10-07 13:48:52.044 [main] EmailDAOImpl - Address not in table -> create
+[INFO ] 2020-10-07 13:48:52.049 [main] EmailDAOImpl - Creating an address - Number of rows created (should be 1): 1
+[INFO ] 2020-10-07 13:48:52.057 [main] EmailDAOImpl - email To: updatedRecipient1@gmail.com
+[INFO ] 2020-10-07 13:48:52.066 [main] EmailDAOImpl - email BCC: updatedRecipient2@gmail.com
+[INFO ] 2020-10-07 13:48:52.074 [main] EmailDAOImpl - Number of recipients added: 2
+[INFO ] 2020-10-07 13:48:52.074 [main] EmailDAOImpl - Number of recipients added for update: 2
+[INFO ] 2020-10-07 13:48:52.074 [main] EmailDAOImpl - Total number of rows updated and added: 3
+[INFO ] 2020-10-07 13:48:52.075 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 13:48:52.316 [main] EmailJDBCTest - ----------TEST FIND ALL----------
+[INFO ] 2020-10-07 13:48:52.414 [main] EmailDAOImpl - Total number of all emails : 7
+[DEBUG] 2020-10-07 13:48:52.420 [main] EmailJDBCTest - Number of rows: 7
+[INFO ] 2020-10-07 13:48:52.422 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 13:48:52.655 [main] EmailJDBCTest - ----------TEST CREATE EMAIL----------
+[DEBUG] 2020-10-07 13:48:52.658 [main] EmailJDBCTest - latest id: 7
+[DEBUG] 2020-10-07 13:48:52.661 [main] EmailDAOImpl - The message sent: test create email
+[DEBUG] 2020-10-07 13:48:52.661 [main] EmailDAOImpl - The message sent type: text/plain
+[DEBUG] 2020-10-07 13:48:52.661 [main] EmailDAOImpl - The message sent: test
+[DEBUG] 2020-10-07 13:48:52.661 [main] EmailDAOImpl - The message sent type: text/html
+[DEBUG] 2020-10-07 13:48:52.663 [main] EmailDAOImpl - New email ID is: 8
+[INFO ] 2020-10-07 13:48:52.666 [main] EmailDAOImpl - Address not in table -> create
+[INFO ] 2020-10-07 13:48:52.671 [main] EmailDAOImpl - Creating an address - Number of rows created (should be 1): 1
+[INFO ] 2020-10-07 13:48:52.676 [main] EmailDAOImpl - Address not in table -> create
+[INFO ] 2020-10-07 13:48:52.680 [main] EmailDAOImpl - Creating an address - Number of rows created (should be 1): 1
+[INFO ] 2020-10-07 13:48:52.685 [main] EmailDAOImpl - email To: xinjia345@gmail.com
+[INFO ] 2020-10-07 13:48:52.689 [main] EmailDAOImpl - email CC: xinjia1.cao@gmail.com
+[INFO ] 2020-10-07 13:48:52.695 [main] EmailDAOImpl - Number of recipients added: 2
+[INFO ] 2020-10-07 13:48:52.716 [main] EmailDAOImpl - Number of attachments added: 1
+[INFO ] 2020-10-07 13:48:52.730 [main] EmailDAOImpl - Found 8?: true
+[INFO ] 2020-10-07 13:48:52.730 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 13:48:52.951 [main] EmailJDBCTest - ----------TEST FIND SENT EMAILS----------
+[DEBUG] 2020-10-07 13:48:53.023 [main] EmailDAOImpl - Number of emails in: Sent is: 4
+[INFO ] 2020-10-07 13:48:53.024 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 13:48:53.346 [main] EmailJDBCTest - ----------TEST FIND RECEIVED EMAILS (INBOX)----------
+[DEBUG] 2020-10-07 13:48:53.378 [main] EmailDAOImpl - Number of emails in: Inbox is: 2
+[INFO ] 2020-10-07 13:48:53.379 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 13:48:53.691 [main] EmailJDBCTest - ----------TEST DELETES FOLDER----------
+[INFO ] 2020-10-07 13:48:53.697 [main] EmailDAOImpl - Number of rows deleted in folder (should be 1): 1
+[INFO ] 2020-10-07 13:48:53.698 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 13:48:53.984 [main] EmailJDBCTest - ----------TEST FIND ALL ADDRESSES----------
+[INFO ] 2020-10-07 13:48:53.988 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 13:48:54.207 [main] EmailJDBCTest - ----------TEST EMAIL FOLDER CHANGED----------
+[DEBUG] 2020-10-07 13:48:54.212 [main] EmailJDBCTest - latest id: 7
+[DEBUG] 2020-10-07 13:48:54.215 [main] EmailDAOImpl - The message sent: test create email
+[DEBUG] 2020-10-07 13:48:54.215 [main] EmailDAOImpl - The message sent type: text/plain
+[DEBUG] 2020-10-07 13:48:54.215 [main] EmailDAOImpl - The message sent: test
+[DEBUG] 2020-10-07 13:48:54.215 [main] EmailDAOImpl - The message sent type: text/html
+[DEBUG] 2020-10-07 13:48:54.217 [main] EmailDAOImpl - New email ID is: 8
+[INFO ] 2020-10-07 13:48:54.221 [main] EmailDAOImpl - Address not in table -> create
+[INFO ] 2020-10-07 13:48:54.228 [main] EmailDAOImpl - Creating an address - Number of rows created (should be 1): 1
+[INFO ] 2020-10-07 13:48:54.231 [main] EmailDAOImpl - Address not in table -> create
+[INFO ] 2020-10-07 13:48:54.234 [main] EmailDAOImpl - Creating an address - Number of rows created (should be 1): 1
+[INFO ] 2020-10-07 13:48:54.238 [main] EmailDAOImpl - email To: xinjia345@gmail.com
+[INFO ] 2020-10-07 13:48:54.242 [main] EmailDAOImpl - email CC: xinjia1.cao@gmail.com
+[INFO ] 2020-10-07 13:48:54.246 [main] EmailDAOImpl - Number of recipients added: 2
+[INFO ] 2020-10-07 13:48:54.257 [main] EmailDAOImpl - Number of attachments added: 1
+[INFO ] 2020-10-07 13:48:54.259 [main] EmailDAOImpl - Folder id of folder Inbox is: 1
+[INFO ] 2020-10-07 13:48:54.264 [main] EmailDAOImpl - Number of emails' folder changed (should be 1): 1
+[INFO ] 2020-10-07 13:48:54.264 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 13:48:54.490 [main] EmailJDBCTest - ----------TEST FIND BY ID: 2----------
+[INFO ] 2020-10-07 13:48:54.512 [main] EmailDAOImpl - Found 1?: true
+[INFO ] 2020-10-07 13:48:54.513 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 13:48:54.730 [main] EmailJDBCTest - ----------TEST UPDATE FOLDER NAME----------
+[INFO ] 2020-10-07 13:48:54.736 [main] EmailDAOImpl - Number of folder name changed (should be 1): 1
+[INFO ] 2020-10-07 13:48:54.736 [main] EmailDAOImpl - Changed folder: Inbox to: Recipients
+[INFO ] 2020-10-07 13:48:54.737 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 13:48:54.988 [main] EmailJDBCTest - ----------TEST FIND EMAILS BY TEXT SUBSTRING----------
+[INFO ] 2020-10-07 13:48:55.051 [main] EmailDAOImpl - Number of emails found with the substring: Msg is: 6
+[INFO ] 2020-10-07 13:48:55.052 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 13:48:55.264 [main] EmailJDBCTest - ----------TEST FIND FOLDER NAMES----------
+[INFO ] 2020-10-07 13:48:55.267 [main] EmailJDBCTest - @AfterClass seeding
+[INFO ] 2020-10-07 13:48:55.267 [main] EmailJDBCTest - @Before seeding

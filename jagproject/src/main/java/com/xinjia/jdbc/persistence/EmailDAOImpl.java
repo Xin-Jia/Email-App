@@ -30,7 +30,7 @@ public class EmailDAOImpl implements EmailDAO {
 
     private final static String URL = "jdbc:mysql://localhost:3306/EMAILAPP?characterEncoding=UTF-8&autoReconnect=true&zeroDateTimeBehavior=CONVERT_TO_NULL&useSSL=false&allowPublicKeyRetrieval=true&useTimezone=true&serverTimezone=UTC";
     private final static String USER = "userxj";
-    private final static String PASSWORD = "dawson1";
+    private final static String PASSWORD = "dawson2";
 
     /**
      * Retrieve all emails in the Email table and create an EmailData(bean) for each of them

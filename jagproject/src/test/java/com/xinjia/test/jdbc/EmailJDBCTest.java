@@ -44,9 +44,9 @@ public class EmailJDBCTest {
 
     private final static String URL = "jdbc:mysql://localhost:3306/EMAILAPP?characterEncoding=UTF-8&autoReconnect=true&zeroDateTimeBehavior=CONVERT_TO_NULL&useSSL=false&allowPublicKeyRetrieval=true&useTimezone=true&serverTimezone=UTC";
     private final static String USER = "userxj";
-    private final static String PASSWORD = "dawson1";
+    private final static String PASSWORD = "dawson2";
 
-    /*@Test
+    @Test
     public void testFindAll() throws SQLException{
         LOG.info("----------TEST FIND ALL----------");
         EmailDAO mailFunction = new EmailDAOImpl();
@@ -66,8 +66,8 @@ public class EmailJDBCTest {
         EmailDAO mailFunction = new EmailDAOImpl();
         EmailData mailData2 = mailFunction.findEmailById(1);
         mailData1.equals(mailData2);
-    }*/
-    /*@Test
+    }
+    @Test
     public void testCreateEmail() throws SQLException {
         LOG.info("----------TEST CREATE EMAIL----------");
         
@@ -85,9 +85,9 @@ public class EmailJDBCTest {
         mailFunction.createEmail(email1);
         EmailData email2 = mailFunction.findEmailById(email1.getEmailId());
         email1.equals(email2);
-    }*/
+    }
 
-    /*@Test
+    @Test
     public void testFindSentEmails() throws SQLException, InvalidFolderNameException{
         LOG.info("----------TEST FIND SENT EMAILS----------");
         EmailDAO mailFunction = new EmailDAOImpl();
@@ -96,14 +96,14 @@ public class EmailJDBCTest {
     }
     
     @Test
-    public void testFindReceivedEmails() throws SQLException, InvalidFolderException, InvalidFolderNameException{
+    public void testFindReceivedEmails() throws SQLException, InvalidFolderNameException{
         LOG.info("----------TEST FIND RECEIVED EMAILS (INBOX)----------");
         EmailDAO mailFunction = new EmailDAOImpl();
         List<EmailData> data = mailFunction.findEmailsByFolder("Inbox");
         assertEquals(2, data.size());
-    }*/
+    }
 
-    /*@Test
+    @Test
     public void testFindEmailsByTextSubString() throws SQLException{
         LOG.info("----------TEST FIND EMAILS BY TEXT SUBSTRING----------");
         EmailDAO mailFunction = new EmailDAOImpl();
@@ -119,7 +119,7 @@ public class EmailJDBCTest {
     }
     
     @Test
-    public void testUpdateEmail() throws SQLException{
+    public void testUpdateEmail() throws SQLException, NotDraftFolderException{
         LOG.info("----------TEST UPDATE EMAIL----------");
         Email email = new Email();
         email.from("xinjia3@gmail.com");
@@ -156,9 +156,9 @@ public class EmailJDBCTest {
         EmailDAO mailFunction = new EmailDAOImpl();
         ArrayList<String> dbAddresses = mailFunction.findAllAddresses();
         assertEquals(Arrays.asList(addresses), dbAddresses);
-    }*/
+    }
     
-    /*@Test
+    @Test
     public void testCreateFolder() throws SQLException, FolderAlreadyExistsException{
         LOG.info("----------TEST CREATE FOLDER----------");
         EmailDAO mailFunction = new EmailDAOImpl();
@@ -193,7 +193,7 @@ public class EmailJDBCTest {
         EmailDAO mailFunction = new EmailDAOImpl();
         int rows = mailFunction.updateFolderName("Inbox", "Recipients");
         assertEquals(1, rows);
-    }*/
+    }
     @Test
     public void testDeleteFolder() throws SQLException{
         LOG.info("----------TEST DELETES FOLDER----------");
@@ -237,11 +237,11 @@ public class EmailJDBCTest {
      * framework. It is instantiating the test class anonymously so that it can
      * execute its non-static seedDatabase routine.
      */
-    /*@AfterClass
+    @AfterClass
     public static void seedAfterTestCompleted() {
         LOG.info("@AfterClass seeding");
         new EmailJDBCTest().seedDatabase();
-    }*/
+    }
 
     /**
      * This routine recreates the database before every test. This makes sure
@@ -251,7 +251,7 @@ public class EmailJDBCTest {
      * This routine is courtesy of Bartosz Majsak, an Arquillian developer at
      * JBoss
      */
-    /*@Before
+    @Before
     public void seedDatabase() {
         LOG.info("@Before seeding");
 
@@ -299,5 +299,5 @@ public class EmailJDBCTest {
 
     private boolean isComment(final String line) {
         return line.startsWith("--") || line.startsWith("//") || line.startsWith("/*");
-    }*/
+    }
 }
