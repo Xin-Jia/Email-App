@@ -2,7 +2,6 @@
 package com.xinjia.jdbc.persistence;
 
 import com.xinjia.exceptions.FolderAlreadyExistsException;
-import com.xinjia.exceptions.InvalidFolderNameException;
 import com.xinjia.jdbc.beans.EmailData;
 import java.sql.SQLException;
 import java.util.ArrayList;

@@ -2,7 +2,6 @@
 package com.xinjia.test.jdbc;
 
 import com.xinjia.exceptions.FolderAlreadyExistsException;
-import com.xinjia.exceptions.InvalidFolderNameException;
 import com.xinjia.jdbc.beans.EmailData;
 import com.xinjia.jdbc.persistence.EmailDAOImpl;
 import com.xinjia.properties.MailConfigBean;
@@ -92,11 +91,11 @@ public class EmailJDBCTest {
         email.htmlMessage("test");
         email.embeddedAttachment(EmailAttachment.with().content("img1.png"));
         LocalDateTime date = LocalDateTime.now();
-        EmailData email1 = new EmailData(getLastId() + 1, 3, date, email);
+        EmailData mailData1 = new EmailData(getLastId() + 1, 3, date, email);
 
-        mailFunction.createEmail(email1);
-        EmailData email2 = mailFunction.findEmailById(email1.getEmailId());
-        email1.equals(email2);
+        mailFunction.createEmail(mailData1);
+        EmailData mailData2 = mailFunction.findEmailById(mailData1.getEmailId());
+        mailData1.equals(mailData2);
     }
 
     //Test to find all emails in the Sent folder

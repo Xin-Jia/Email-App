@@ -3,7 +3,6 @@ com\xinjia\exceptions\FolderAlreadyExistsException.class
 com\xinjia\exceptions\NullBCCEmailException.class
 com\xinjia\exceptions\NullBCCEmailAddressException.class
 com\xinjia\jdbc\beans\FolderData.class
-com\xinjia\exceptions\InvalidFolderNameException.class
 com\xinjia\jdbc\persistence\EmailDAOImpl.class
 com\xinjia\exceptions\NullCCEmailException.class
 com\xinjia\exceptions\NullToEmailAddressException.class

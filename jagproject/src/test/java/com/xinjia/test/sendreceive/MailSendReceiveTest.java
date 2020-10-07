@@ -21,6 +21,7 @@ import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import static org.junit.Assert.assertEquals;
+import org.junit.Ignore;
 
 /**
  * Unit test for sending and receiving emails.
@@ -30,6 +31,7 @@ import static org.junit.Assert.assertEquals;
  * To field excluding bcc and the address of the sender.
  * @author Xin Jia Cao
  */
+@Ignore
 public class MailSendReceiveTest {
 
     private final Logger log = LoggerFactory.getLogger(getClass().getName());
@@ -46,10 +48,10 @@ public class MailSendReceiveTest {
     private ArrayList<File> embedFiles;
 
     //Initialize all the fields required in an email before every unit test.
-    /*@Before
+    @Before
     public void initializeFields() {
-        sendConfigBean = new MailConfigBean("smtp.gmail.com", "xinjia.caoxin@gmail.com", "39499799");
-        receiveConfigBean = new MailConfigBean("imap.gmail.com", "xinjia1.cao@gmail.com", "3949979a");
+        sendConfigBean = new MailConfigBean("smtp.gmail.com", "xinjia.caoxin@gmail.com", "39499799", "", "", "", "", "", "", "", "", "");
+        receiveConfigBean = new MailConfigBean("imap.gmail.com", "xinjia1.cao@gmail.com", "3949979a", "", "", "", "", "", "", "", "", "");
         mailFunction = new SendAndReceive(sendConfigBean);
         toRecipients = new ArrayList<>();
         ccRecipients = new ArrayList<>();
@@ -552,7 +554,7 @@ public class MailSendReceiveTest {
      * @param format the format we need to check (plain text or html)
      * @return the message in the email (we would only get the first position of the list)
      */
-    /*private ArrayList<String> retrieveMessageContent(List<EmailMessage> messages, String format) {
+    private ArrayList<String> retrieveMessageContent(List<EmailMessage> messages, String format) {
         //it uses an ArrayList since members in a lambda cannot be changed
         ArrayList<String> msgToReturn = new ArrayList<>();
         messages.stream().map((mesg) -> {
@@ -581,5 +583,5 @@ public class MailSendReceiveTest {
         } catch (InterruptedException e) {
             log.error("Threaded sleep failed", e);
         }
-    }*/
+    }
 }

@@ -1,7 +1,6 @@
 package com.xinjia.jdbc.persistence;
 
 import com.xinjia.exceptions.FolderAlreadyExistsException;
-import com.xinjia.exceptions.InvalidFolderNameException;
 import com.xinjia.jdbc.beans.EmailData;
 import com.xinjia.properties.MailConfigBean;
 import java.sql.Connection;
@@ -503,8 +502,6 @@ public class EmailDAOImpl implements EmailDAO {
      * @param folderName the folder name we retrieve the emails from
      * @return ArrayList<EmailData> the custom Email beans from the given folder
      * @throws SQLException
-     * @throws InvalidFolderNameException thrown if the given folder name does
-     * not exist in the database
      */
     @Override
     public ArrayList<EmailData> findEmailsByFolder(String folderName) throws SQLException{
