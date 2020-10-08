@@ -1,3 +1,6 @@
+-- Xin Jia Cao
+-- DLL and DML statements for Address, Attachments, Email, EmailToAddress and Folder tables
+
 USE EMAILAPP;
 SET FOREIGN_KEY_CHECKS = 0;
 DROP TABLE IF EXISTS Folder;

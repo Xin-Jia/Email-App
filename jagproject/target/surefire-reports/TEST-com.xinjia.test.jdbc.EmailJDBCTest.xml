@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.xinjia.test.jdbc.EmailJDBCTest" time="5.247" tests="19" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.xinjia.test.jdbc.EmailJDBCTest" time="4.777" tests="19" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="14"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -15,7 +15,7 @@
     <property name="user.country" value="CA"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.boot.library.path" value="C:\Program Files\AdoptOpenJDK\jdk-14.0.2.12-hotspot\bin"/>
-    <property name="sun.java.command" value="C:\Users\xinji\AppData\Local\Temp\surefire1367945045108983782\surefirebooter6662000992710767896.jar C:\Users\xinji\AppData\Local\Temp\surefire1367945045108983782 2020-10-07T20-15-48_454-jvmRun1 surefire9189518926352395368tmp surefire_017630012526433779113tmp"/>
+    <property name="sun.java.command" value="C:\Users\xinji\AppData\Local\Temp\surefire7574149403143073810\surefirebooter4914118858930505462.jar C:\Users\xinji\AppData\Local\Temp\surefire7574149403143073810 2020-10-07T21-02-58_999-jvmRun1 surefire13993688801379002444tmp surefire_09136232728929782088tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="C:\dev\JAGPROJECT1\jagproject1\jagproject\target\test-classes;C:\dev\JAGPROJECT1\jagproject1\jagproject\target\classes;C:\devapp\.m2\repository\org\openjfx\javafx-controls\16-ea+1\javafx-controls-16-ea+1.jar;C:\devapp\.m2\repository\org\openjfx\javafx-controls\16-ea+1\javafx-controls-16-ea+1-win.jar;C:\devapp\.m2\repository\org\openjfx\javafx-graphics\16-ea+1\javafx-graphics-16-ea+1.jar;C:\devapp\.m2\repository\org\openjfx\javafx-graphics\16-ea+1\javafx-graphics-16-ea+1-win.jar;C:\devapp\.m2\repository\org\openjfx\javafx-base\16-ea+1\javafx-base-16-ea+1.jar;C:\devapp\.m2\repository\org\openjfx\javafx-base\16-ea+1\javafx-base-16-ea+1-win.jar;C:\devapp\.m2\repository\mysql\mysql-connector-java\8.0.21\mysql-connector-java-8.0.21.jar;C:\devapp\.m2\repository\com\google\protobuf\protobuf-java\3.11.4\protobuf-java-3.11.4.jar;C:\devapp\.m2\repository\org\jodd\jodd-mail\5.1.6\jodd-mail-5.1.6.jar;C:\devapp\.m2\repository\org\jodd\jodd-core\5.1.6\jodd-core-5.1.6.jar;C:\devapp\.m2\repository\jakarta\mail\jakarta.mail-api\1.6.5\jakarta.mail-api-1.6.5.jar;C:\devapp\.m2\repository\com\sun\mail\jakarta.mail\1.6.5\jakarta.mail-1.6.5.jar;C:\devapp\.m2\repository\com\sun\activation\jakarta.activation\1.2.1\jakarta.activation-1.2.1.jar;C:\devapp\.m2\repository\javax\mail\javax.mail-api\1.6.2\javax.mail-api-1.6.2.jar;C:\devapp\.m2\repository\javax\activation\javax.activation-api\1.2.0\javax.activation-api-1.2.0.jar;C:\devapp\.m2\repository\org\slf4j\slf4j-api\1.7.30\slf4j-api-1.7.30.jar;C:\devapp\.m2\repository\org\apache\logging\log4j\log4j-slf4j-impl\2.13.3\log4j-slf4j-impl-2.13.3.jar;C:\devapp\.m2\repository\org\apache\logging\log4j\log4j-api\2.13.3\log4j-api-2.13.3.jar;C:\devapp\.m2\repository\org\apache\logging\log4j\log4j-core\2.13.3\log4j-core-2.13.3.jar;C:\devapp\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.6.2\junit-jupiter-engine-5.6.2.jar;C:\devapp\.m2\repository\org\apiguardian\apiguardian-api\1.1.0\apiguardian-api-1.1.0.jar;C:\devapp\.m2\repository\org\junit\platform\junit-platform-engine\1.6.2\junit-platform-engine-1.6.2.jar;C:\devapp\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\devapp\.m2\repository\org\junit\platform\junit-platform-commons\1.6.2\junit-platform-commons-1.6.2.jar;C:\devapp\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.6.2\junit-jupiter-api-5.6.2.jar;C:\devapp\.m2\repository\org\junit\vintage\junit-vintage-engine\5.6.2\junit-vintage-engine-5.6.2.jar;C:\devapp\.m2\repository\junit\junit\4.13\junit-4.13.jar;C:\devapp\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -30,7 +30,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\xinji\AppData\Local\Temp\surefire1367945045108983782\surefirebooter6662000992710767896.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\xinji\AppData\Local\Temp\surefire7574149403143073810\surefirebooter4914118858930505462.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="14.0.2+12"/>
@@ -57,23 +57,23 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="58.0"/>
   </properties>
-  <testcase name="testCreateFolder" classname="com.xinjia.test.jdbc.EmailJDBCTest" time="0.7"/>
-  <testcase name="testDeleteEmail" classname="com.xinjia.test.jdbc.EmailJDBCTest" time="0.222"/>
-  <testcase name="testFindEmailsBySubject" classname="com.xinjia.test.jdbc.EmailJDBCTest" time="0.324"/>
-  <testcase name="testFindAll" classname="com.xinjia.test.jdbc.EmailJDBCTest" time="0.299"/>
-  <testcase name="testCreateEmail" classname="com.xinjia.test.jdbc.EmailJDBCTest" time="0.333"/>
+  <testcase name="testCreateFolder" classname="com.xinjia.test.jdbc.EmailJDBCTest" time="0.782"/>
+  <testcase name="testDeleteEmail" classname="com.xinjia.test.jdbc.EmailJDBCTest" time="0.19"/>
+  <testcase name="testFindEmailsBySubject" classname="com.xinjia.test.jdbc.EmailJDBCTest" time="0.28"/>
+  <testcase name="testFindAll" classname="com.xinjia.test.jdbc.EmailJDBCTest" time="0.266"/>
+  <testcase name="testCreateEmail" classname="com.xinjia.test.jdbc.EmailJDBCTest" time="0.292"/>
   <testcase name="testFindSentEmails" classname="com.xinjia.test.jdbc.EmailJDBCTest" time="0.248"/>
-  <testcase name="testFindReceivedEmails" classname="com.xinjia.test.jdbc.EmailJDBCTest" time="0.255"/>
-  <testcase name="testDeleteFolder" classname="com.xinjia.test.jdbc.EmailJDBCTest" time="0.206"/>
-  <testcase name="testUpdateDraftEmailAndSend" classname="com.xinjia.test.jdbc.EmailJDBCTest" time="0.208"/>
-  <testcase name="testInvalidCreateFolder" classname="com.xinjia.test.jdbc.EmailJDBCTest" time="0.222"/>
-  <testcase name="testUpdateDraftEmail" classname="com.xinjia.test.jdbc.EmailJDBCTest" time="0.235"/>
-  <testcase name="testFindAllAddresses" classname="com.xinjia.test.jdbc.EmailJDBCTest" time="0.174"/>
-  <testcase name="testEmailFolderChanged" classname="com.xinjia.test.jdbc.EmailJDBCTest" time="0.291"/>
-  <testcase name="testFindByID1" classname="com.xinjia.test.jdbc.EmailJDBCTest" time="0.251"/>
-  <testcase name="testFindDraftEmails" classname="com.xinjia.test.jdbc.EmailJDBCTest" time="0.205"/>
-  <testcase name="testUpdateFolderName" classname="com.xinjia.test.jdbc.EmailJDBCTest" time="0.209"/>
-  <testcase name="testFindFolderNames" classname="com.xinjia.test.jdbc.EmailJDBCTest" time="0.209"/>
-  <testcase name="testUpdateInvalidFolderName" classname="com.xinjia.test.jdbc.EmailJDBCTest" time="0.216"/>
-  <testcase name="testFindEmailsByRecipients" classname="com.xinjia.test.jdbc.EmailJDBCTest" time="0.248"/>
+  <testcase name="testFindReceivedEmails" classname="com.xinjia.test.jdbc.EmailJDBCTest" time="0.202"/>
+  <testcase name="testDeleteFolder" classname="com.xinjia.test.jdbc.EmailJDBCTest" time="0.158"/>
+  <testcase name="testUpdateDraftEmailAndSend" classname="com.xinjia.test.jdbc.EmailJDBCTest" time="0.213"/>
+  <testcase name="testInvalidCreateFolder" classname="com.xinjia.test.jdbc.EmailJDBCTest" time="0.179"/>
+  <testcase name="testUpdateDraftEmail" classname="com.xinjia.test.jdbc.EmailJDBCTest" time="0.237"/>
+  <testcase name="testFindAllAddresses" classname="com.xinjia.test.jdbc.EmailJDBCTest" time="0.175"/>
+  <testcase name="testEmailFolderChanged" classname="com.xinjia.test.jdbc.EmailJDBCTest" time="0.228"/>
+  <testcase name="testFindByID1" classname="com.xinjia.test.jdbc.EmailJDBCTest" time="0.184"/>
+  <testcase name="testFindDraftEmails" classname="com.xinjia.test.jdbc.EmailJDBCTest" time="0.193"/>
+  <testcase name="testUpdateFolderName" classname="com.xinjia.test.jdbc.EmailJDBCTest" time="0.188"/>
+  <testcase name="testFindFolderNames" classname="com.xinjia.test.jdbc.EmailJDBCTest" time="0.187"/>
+  <testcase name="testUpdateInvalidFolderName" classname="com.xinjia.test.jdbc.EmailJDBCTest" time="0.186"/>
+  <testcase name="testFindEmailsByRecipients" classname="com.xinjia.test.jdbc.EmailJDBCTest" time="0.198"/>
 </testsuite>

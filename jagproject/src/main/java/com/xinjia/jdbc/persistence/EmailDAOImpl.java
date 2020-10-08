@@ -20,7 +20,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- *
+ * CRUD implementation of Emails operations using JDBC.
+ * Opens a database and retrieve information (rows) in the Email, EmailToAddress, 
+ * Address, Attachments and Folder tables.
  * @author Xin Jia Cao
  */
 public class EmailDAOImpl implements EmailDAO {
@@ -31,7 +33,7 @@ public class EmailDAOImpl implements EmailDAO {
 
     /**
      * Constructor that initializes the MailConfigBean
-     * @param mailConfigBean 
+     * @param mailConfigBean the MailConfigBean
      */
     public EmailDAOImpl(MailConfigBean mailConfigBean) {
         configBean = mailConfigBean;
@@ -56,7 +58,7 @@ public class EmailDAOImpl implements EmailDAO {
             }
         }
 
-        LOG.info("Total number of all emails : " + data.size());
+        LOG.debug("Total number of emails : " + data.size());
         return data;
     }
 
@@ -84,7 +86,7 @@ public class EmailDAOImpl implements EmailDAO {
         insertEmailDataRegularAttachments(mailData, emailId, false);
         insertEmailDataRegularAttachments(mailData, emailId, true);
         findEmailDataRecipients(mailData, emailId);
-
+        LOG.info("Created custom Email bean");
         return mailData;
     }
 
@@ -256,6 +258,7 @@ public class EmailDAOImpl implements EmailDAO {
         checkIfInAddressTable(mailData);
         createRecipientsField(mailData);
         createAttachmentsField(mailData);
+        LOG.info("Email inserted in the database");
     }
 
     /**
@@ -271,17 +274,17 @@ public class EmailDAOImpl implements EmailDAO {
 
         switch (folderId) {
             case 1:
-                //set dates for send and received
+                //set dates for send and received (Inbox)
                 ps.setTimestamp(2, new Timestamp(mailData.email.sentDate().getTime()));
                 ps.setTimestamp(3, Timestamp.valueOf(mailData.getReceivedDate()));
                 break;
             case 2:
-                //set date for send only
+                //set date for send only (Sent)
                 ps.setTimestamp(2, new Timestamp(mailData.email.sentDate().getTime()));
                 ps.setTimestamp(3, null);
                 break;
             default:
-                //set dates to null if email is a draft
+                //set dates to null (Draft)
                 ps.setTimestamp(2, null);
                 ps.setTimestamp(3, null);
                 break;
@@ -343,12 +346,12 @@ public class EmailDAOImpl implements EmailDAO {
      */
     private void createDBAddress(String address) throws SQLException {
         String createAddressQuery = "INSERT INTO ADDRESS(EMAILADDRESS) VALUES (?)";
-        int rows;
+        int rows = 0;
         try ( Connection connection = DriverManager.getConnection(configBean.getDbUrl(), configBean.getDbUsername(), configBean.getDbPassword());  PreparedStatement ps = connection.prepareStatement(createAddressQuery, Statement.RETURN_GENERATED_KEYS);) {
             ps.setString(1, address);
             rows = ps.executeUpdate();
         }
-        LOG.info("Creating an address - Number of rows created (should be 1): " + rows);
+        LOG.debug("Creating an address - Number of rows created (should be 1): " + rows);
     }
 
     /**
@@ -367,7 +370,7 @@ public class EmailDAOImpl implements EmailDAO {
             rows += addInDBRecipients(mailData, ps, mailData.email.cc(), "CC");
             rows += addInDBRecipients(mailData, ps, mailData.email.bcc(), "BCC");
         }
-        LOG.info("Number of recipients added: " + rows);
+        LOG.debug("Number of recipients added: " + rows);
         return rows;
     }
 
@@ -386,7 +389,7 @@ public class EmailDAOImpl implements EmailDAO {
         int rows = 0;
         for (EmailAddress address : addresses) {
             ps.setInt(1, mailData.getEmailId());
-            LOG.info("email " + type + ": " + address.getEmail());
+            LOG.debug("email " + type + ": " + address.getEmail());
             ps.setInt(2, getAddressId(address.getEmail()));
             ps.setString(3, type);
             rows += ps.executeUpdate();
@@ -441,7 +444,7 @@ public class EmailDAOImpl implements EmailDAO {
                 rows += ps.executeUpdate();
             }
         }
-        LOG.info("Number of attachments added: " + rows);
+        LOG.debug("Number of attachments added: " + rows);
         return rows;
     }
 
@@ -493,7 +496,7 @@ public class EmailDAOImpl implements EmailDAO {
                 }
             }
         }
-        LOG.info("Email with id: " + id + "?: " + (mailData != null));
+        LOG.debug("Email with id: " + id + "?: " + (mailData != null));
         return mailData;
     }
 
@@ -565,7 +568,7 @@ public class EmailDAOImpl implements EmailDAO {
                     emails.add(createEmailData(resultSet));
                 }
             }
-            LOG.info(emails.size() == 0 ? "No emails found with subject substring: " + subString
+            LOG.debug(emails.size() == 0 ? "No emails found with subject substring: " + subString
                     : "Number of emails found with the substring: " + subString + " in Subject is: " + emails.size());
             return emails;
         }
@@ -593,7 +596,7 @@ public class EmailDAOImpl implements EmailDAO {
                     emails.add(createEmailData(resultSet));
                 }
             }
-            LOG.info(emails.size() == 0 ? "No emails found with recipient substring: " + subString
+            LOG.debug(emails.size() == 0 ? "No emails found with recipient substring: " + subString
                     : "Number of emails found with the substring: " + subString + " in Subject is: " + emails.size());
             return emails;
         }
@@ -670,7 +673,7 @@ public class EmailDAOImpl implements EmailDAO {
             rows += ps.executeUpdate();
         }
         rows += updateEmailRecipients(mailData);
-        LOG.info("Total number of rows updated and added: " + rows);
+        LOG.debug("Total number of rows updated and added: " + rows);
         return rows;
     }
 
@@ -685,7 +688,7 @@ public class EmailDAOImpl implements EmailDAO {
     public int updateEmailDraftAndSend(EmailData mailData) throws SQLException {
         int rows = updateEmailDraft(mailData);
         rows += changeEmailFolder(mailData, "Sent");
-        LOG.info("Total number of rows updated and added before sending: " + rows);
+        LOG.debug("Total number of rows updated and added before sending: " + rows);
         return rows;
     }
 
@@ -708,7 +711,7 @@ public class EmailDAOImpl implements EmailDAO {
         }
         //adds the new attachments
         rows += createAttachmentsField(mailData);
-        LOG.info("Number of attachments added for update: " + rows);
+        LOG.debug("Number of attachments added for update: " + rows);
         return rows;
     }
 
@@ -738,7 +741,7 @@ public class EmailDAOImpl implements EmailDAO {
         findDBAddresses(bccRecipients);
         //adds the new recipients
         rows += createRecipientsField(mailData);
-        LOG.info("Number of recipients added for update: " + rows);
+        LOG.debug("Number of recipients added for update: " + rows);
         return rows;
     }
 
@@ -790,7 +793,7 @@ public class EmailDAOImpl implements EmailDAO {
             ps.setInt(2, mailData.getEmailId());
             rows = ps.executeUpdate();
         }
-        LOG.info("Number of emails' folder changed (should be 1): " + rows);
+        LOG.debug("Number of emails' folder changed (should be 1): " + rows);
         return rows;
     }
 
@@ -812,7 +815,7 @@ public class EmailDAOImpl implements EmailDAO {
                 }
             }
         }
-        LOG.info("Folder id of folder " + name + " is: " + id);
+        LOG.debug("Folder id of folder " + name + " is: " + id);
         return id;
     }
 
@@ -842,7 +845,7 @@ public class EmailDAOImpl implements EmailDAO {
             ps.setString(2, toReplace);
             rows = ps.executeUpdate();
         }
-        LOG.info("Number of folder name changed (should be 1): " + rows);
+        LOG.debug("Number of folder name changed (should be 1): " + rows);
         LOG.info("Changed folder: " + toReplace + " to: " + newName);
         return rows;
     }
@@ -869,7 +872,7 @@ public class EmailDAOImpl implements EmailDAO {
             rows = ps.executeUpdate();
         }
 
-        LOG.info("Number of rows deleted in folder (should be 1): " + rows);
+        LOG.debug("Number of rows deleted in folder (should be 1): " + rows);
         return rows;
     }
 
@@ -893,7 +896,7 @@ public class EmailDAOImpl implements EmailDAO {
             rows = ps.executeUpdate();
         }
 
-        LOG.info("Number of rows deleted in email (should be 1): " + rows);
+        LOG.debug("Number of rows deleted in email (should be 1): " + rows);
         return rows;
     }
 

@@ -5,8 +5,8 @@ import java.util.Arrays;
 import java.util.Objects;
 import jodd.mail.Email;
 /**
- * Data bean for email Overrides toString to get the necessary information about
- * the email
+ * Data bean for email
+ * Overrides toString, hashCode and equals
  *
  * @author Xin Jia Cao
  */
@@ -62,23 +62,7 @@ public class EmailData {
         this.email = mail;
     }
 
-    
-
-    @Override
-    public String toString() {
-        String infos = "\n"+"Email Id: " + emailId + "\n"
-                + "Address: " + email.from() + "\n"
-                + "Date: " + receivedDate + "\n"
-                + "Subject: " + email.subject() + "\n"
-                + "Message: " + email.messages().get(0).getContent() + "\n"
-                //+ "HTML Message: " + email.messages().get(1) + "\n"
-                + "Attachments: " + email.attachments().size() + "\n"
-                + "To Recipients: " + Arrays.toString(email.to()) + "\n"
-                + "CC Recipients: " + Arrays.toString(email.cc()) + "\n"
-                + "BCC Recipients: " + Arrays.toString(email.bcc())+ "\n";
-
-        return infos;
-    }
+   
 
     @Override
     public int hashCode() {
@@ -87,6 +71,7 @@ public class EmailData {
         hash = 37 * hash + this.folderId;
         hash = 37 * hash + Objects.hashCode(this.receivedDate);
         hash = 37 * hash + Objects.hashCode(this.email.attachments());
+        hash = 37 * hash + Objects.hashCode(this.email.messages());
         hash = 37 * hash + Objects.hashCode(this.email.from());
         hash = 37 * hash + Objects.hashCode(this.email.to());
         hash = 37 * hash + Objects.hashCode(this.email.cc());
@@ -128,10 +113,30 @@ public class EmailData {
         if (this.email.bcc() != other.email.bcc()){
             return false;
         }
+        if (this.email.messages() != other.email.messages()){
+            return false;
+        }
         if(this.email.sentDate() != other.email.sentDate()){
             return false;
         }
         return true;
+    }
+    
+    
+    @Override
+    public String toString() {
+        String infos = "\n"+"Email Id: " + emailId + "\n"
+                + "Address: " + email.from() + "\n"
+                + "Date: " + receivedDate + "\n"
+                + "Subject: " + email.subject() + "\n"
+                + "Message: " + email.messages().get(0).getContent() + "\n"
+                + "HTML Message: " + email.messages().get(1) + "\n"
+                + "Attachments: " + email.attachments().size() + "\n"
+                + "To Recipients: " + Arrays.toString(email.to()) + "\n"
+                + "CC Recipients: " + Arrays.toString(email.cc()) + "\n"
+                + "BCC Recipients: " + Arrays.toString(email.bcc())+ "\n";
+
+        return infos;
     }
 
 }
