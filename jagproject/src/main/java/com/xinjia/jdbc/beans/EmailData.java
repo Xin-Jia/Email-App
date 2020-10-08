@@ -91,6 +91,7 @@ public class EmailData {
         hash = 37 * hash + Objects.hashCode(this.email.to());
         hash = 37 * hash + Objects.hashCode(this.email.cc());
         hash = 37 * hash + Objects.hashCode(this.email.bcc());
+        hash = 37 * hash + Objects.hashCode(this.email.sentDate());
         return hash;
     }
 
@@ -112,9 +113,9 @@ public class EmailData {
         if (this.folderId != other.folderId) {
             return false;
         }
-        /*if (!Objects.equals(this.receivedDate, other.receivedDate)) {
+        if (!Objects.equals(this.receivedDate, other.receivedDate)) {
             return false;
-        }*/
+        }
         if (this.email.attachments() != other.email.attachments()){
             return false;
         }
@@ -125,6 +126,9 @@ public class EmailData {
             return false;
         }
         if (this.email.bcc() != other.email.bcc()){
+            return false;
+        }
+        if(this.email.sentDate() != other.email.sentDate()){
             return false;
         }
         return true;

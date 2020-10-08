@@ -15,9 +15,13 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Timestamp;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
@@ -60,7 +64,7 @@ public class EmailJDBCTest {
     
     //Test to find an email by its ID
     @Test
-    public void testFindByID1() throws SQLException{
+    public void testFindByID1() throws SQLException, ParseException{
         LOG.info("----------TEST FIND BY ID 1----------");
         Email email = new Email();
         email.from("xinjia.caoxin@gmail.com");
@@ -71,6 +75,11 @@ public class EmailJDBCTest {
         email.attachment(EmailAttachment.with().content("img2.png"));
         email.to("xinjia.caoxin@gmail.com");
         email.cc("xinjia2.cao@gmail.com");
+        
+        //creates the respected sent date
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        Date sentDate = format.parse("2020-08-13 11:05:05");
+        email.sentDate(sentDate);
         EmailData mailData1 = new EmailData(1, 2, null, email);
 
         EmailData mailData2 = mailFunction.findEmailById(1);
@@ -79,7 +88,7 @@ public class EmailJDBCTest {
     
     //Test to create an email
     @Test
-    public void testCreateEmail() throws SQLException {
+    public void testCreateEmail() throws SQLException, ParseException {
         LOG.info("----------TEST CREATE EMAIL----------");
         
         Email email = new Email();
@@ -90,10 +99,17 @@ public class EmailJDBCTest {
         email.textMessage("test create email");
         email.htmlMessage("test");
         email.embeddedAttachment(EmailAttachment.with().content("img1.png"));
-        LocalDateTime date = LocalDateTime.now();
-        EmailData mailData1 = new EmailData(getLastId() + 1, 3, date, email);
+        //set the sent date of an email
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        Date sentDate = format.parse("2020-08-22 07:35:05");
+        email.sentDate(sentDate);
+        //set a received date of an email
+        LocalDateTime localDate = setReceivedDate("2020-08-22 07:35:10");
+        //folder with ID 1: Inbox, so needs a sent and received date
+        EmailData mailData1 = new EmailData(getLastId() + 1, 1, localDate, email);
 
         mailFunction.createEmail(mailData1);
+
         EmailData mailData2 = mailFunction.findEmailById(mailData1.getEmailId());
         mailData1.equals(mailData2);
     }
@@ -293,6 +309,15 @@ public class EmailJDBCTest {
         }
         LOG.debug("latest id: " + (latestId+1));
         return latestId + 1;
+    }
+    
+    //Helper to create the LocalDateTime of a received email
+    private LocalDateTime setReceivedDate(String dateAndTime) throws ParseException{
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        Date receivedDate = format.parse(dateAndTime);
+        Timestamp receiveStamp = new Timestamp(receivedDate.getTime());
+        LocalDateTime localDate = receiveStamp.toLocalDateTime();
+        return localDate;
     }
 
 

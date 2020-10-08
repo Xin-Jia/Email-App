@@ -229,7 +229,9 @@ public class EmailDAOImpl implements EmailDAO {
         //all length issues will be handled in the GUI so no need for exceptions here
         try ( Connection connection = DriverManager.getConnection(configBean.getDbUrl(), configBean.getDbUsername(), configBean.getDbPassword());  PreparedStatement ps = connection.prepareStatement(createQuery, Statement.RETURN_GENERATED_KEYS);) {
             ps.setString(1, mailData.email.from().toString());
+           
             createDateOnFolderId(mailData, ps, mailData.getFolderId());
+            
             ps.setString(4, mailData.email.subject());
             List<EmailMessage> sentMessages = mailData.email.messages();
             ArrayList<String> messages = retrieveMessageContent(sentMessages, "text/plain");
