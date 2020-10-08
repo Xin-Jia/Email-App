@@ -4,9 +4,9 @@ import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.util.Objects;
 import jodd.mail.Email;
+
 /**
- * Data bean for email
- * Overrides toString, hashCode and equals
+ * Data bean for email Overrides toString, hashCode and equals
  *
  * @author Xin Jia Cao
  */
@@ -38,7 +38,7 @@ public class EmailData {
     public void setEmailId(int id) {
         this.emailId = id;
     }
-    
+
     public int getFolderId() {
         return folderId;
     }
@@ -46,6 +46,7 @@ public class EmailData {
     public void setFolderId(int id) {
         this.folderId = id;
     }
+
     public LocalDateTime getReceivedDate() {
         return receivedDate;
     }
@@ -53,7 +54,7 @@ public class EmailData {
     public void setReceivedDate(LocalDateTime date) {
         this.receivedDate = date;
     }
-    
+
     public Email getEmail() {
         return email;
     }
@@ -61,8 +62,6 @@ public class EmailData {
     public void setEmail(Email mail) {
         this.email = mail;
     }
-
-   
 
     @Override
     public int hashCode() {
@@ -101,31 +100,30 @@ public class EmailData {
         if (!Objects.equals(this.receivedDate, other.receivedDate)) {
             return false;
         }
-        if (this.email.attachments() != other.email.attachments()){
+        if (this.email.attachments() != other.email.attachments()) {
             return false;
         }
-        if (this.email.to() != other.email.to()){
+        if (this.email.to() != other.email.to()) {
             return false;
         }
-        if (this.email.cc() != other.email.cc()){
+        if (this.email.cc() != other.email.cc()) {
             return false;
         }
-        if (this.email.bcc() != other.email.bcc()){
+        if (this.email.bcc() != other.email.bcc()) {
             return false;
         }
-        if (this.email.messages() != other.email.messages()){
+        if (this.email.messages() != other.email.messages()) {
             return false;
         }
-        if(this.email.sentDate() != other.email.sentDate()){
+        if (this.email.sentDate() != other.email.sentDate()) {
             return false;
         }
         return true;
     }
-    
-    
+
     @Override
     public String toString() {
-        String infos = "\n"+"Email Id: " + emailId + "\n"
+        String infos = "\n" + "Email Id: " + emailId + "\n"
                 + "Address: " + email.from() + "\n"
                 + "Date: " + receivedDate + "\n"
                 + "Subject: " + email.subject() + "\n"
@@ -134,7 +132,7 @@ public class EmailData {
                 + "Attachments: " + email.attachments().size() + "\n"
                 + "To Recipients: " + Arrays.toString(email.to()) + "\n"
                 + "CC Recipients: " + Arrays.toString(email.cc()) + "\n"
-                + "BCC Recipients: " + Arrays.toString(email.bcc())+ "\n";
+                + "BCC Recipients: " + Arrays.toString(email.bcc()) + "\n";
 
         return infos;
     }

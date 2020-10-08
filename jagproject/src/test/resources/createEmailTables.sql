@@ -65,16 +65,16 @@ INSERT INTO Folder(FolderName) VALUES
 ("Draft");
 
 INSERT INTO Email(FolderId, SentDate, ReceiveDate, FromAddress,  Subject, Message, HtmlMessage) VALUES
-(2, "2020-08-13 15:05:05",null,"xinjia.caoxin@gmail.com","subject1", "Inbox Msg", ""),
+(2, "2020-08-13 15:05:05",null,"xinjia.caoxin@gmail.com","subject1", "Inbox Msg", "<b>hello there<b>"),
 (2, "2020-08-14 04:48:12", null, "xinjia.caoxin@gmail.com","subject1_1", "Inbox Msg", ""),
-(2, "2020-09-21 20:36:30", null,"xinjia1.cao@gmail.com","subject2", "Sent Msg", ""),
+(2, "2020-09-21 20:36:30", null,"xinjia1.cao@gmail.com","subject2", "Sent Msg", "<b>have a nice day<b>"),
 (1, "2020-10-03 15:34:05", "2020-10-03 15:34:10","xinjia1.cao@gmail.com","subject2_2", "Received Msg", ""),
 (2, "2020-10-04 22:34:54", null,"xinjia2.cao@gmail.com", "subject3", "Sent Msg", ""),
 (3, null, null,"xinjia3.cao@gmail.com","subject4", "Draft Msg", ""),
-(1, "2020-10-04 15:45:07", "2020-10-03 15:05:05","xinjia3.cao@gmail.com","subject_test","message_test","html_test"),
+(1, "2020-10-04 15:45:07", "2020-10-03 15:05:05","xinjia3.cao@gmail.com","subject_test","message_test","<p>good luck!<p>"),
 (1, "2020-10-07 19:30:25", "2020-10-03 15:05:05","xinjia1.cao@gmail.com", "aliceSub","aliceMsg",""),
 (2, "2020-10-07 09:45:55", null,"xinjia2.cao@gmail.com", "bob Sub","bob Msg",""),
-(3, null, null,"alice123@gmail.com", "a draft", "draft msg", "draft html msg");
+(3, null, null,"alice123@gmail.com", "a draft", "draft msg", "<p>draft html msg<p>");
 
 INSERT INTO Address(EmailAddress) VALUES
 ("xinjia.caoxin@gmail.com"), 

@@ -2,12 +2,11 @@ C:\dev\JAGPROJECT1\jagproject1\jagproject\src\main\java\com\xinjia\jdbc\beans\Em
 C:\dev\JAGPROJECT1\jagproject1\jagproject\src\main\java\com\xinjia\jdbc\persistence\EmailDAOImpl.java
 C:\dev\JAGPROJECT1\jagproject1\jagproject\src\main\java\com\xinjia\exceptions\NullCCEmailException.java
 C:\dev\JAGPROJECT1\jagproject1\jagproject\src\main\java\com\xinjia\exceptions\FolderAlreadyExistsException.java
-C:\dev\JAGPROJECT1\jagproject1\jagproject\src\main\java\com\xinjia\exceptions\NullCCEmailAddressException.java
-C:\dev\JAGPROJECT1\jagproject1\jagproject\src\main\java\com\xinjia\exceptions\NullBCCEmailAddressException.java
-C:\dev\JAGPROJECT1\jagproject1\jagproject\src\main\java\com\xinjia\jdbc\persistence\EmailDAO.java
 C:\dev\JAGPROJECT1\jagproject1\jagproject\src\main\java\com\xinjia\exceptions\NullBCCEmailException.java
+C:\dev\JAGPROJECT1\jagproject1\jagproject\src\main\java\com\xinjia\exceptions\NullCCEmailAddressException.java
 C:\dev\JAGPROJECT1\jagproject1\jagproject\src\main\java\com\xinjia\properties\MailConfigBean.java
 C:\dev\JAGPROJECT1\jagproject1\jagproject\src\main\java\com\xinjia\business\SendAndReceive.java
+C:\dev\JAGPROJECT1\jagproject1\jagproject\src\main\java\com\xinjia\exceptions\NullBCCEmailAddressException.java
 C:\dev\JAGPROJECT1\jagproject1\jagproject\src\main\java\com\xinjia\exceptions\NullToEmailAddressException.java
 C:\dev\JAGPROJECT1\jagproject1\jagproject\src\main\java\com\xinjia\exceptions\NullToEmailException.java
-C:\dev\JAGPROJECT1\jagproject1\jagproject\src\main\java\com\xinjia\jdbc\beans\FolderData.java
+C:\dev\JAGPROJECT1\jagproject1\jagproject\src\main\java\com\xinjia\jdbc\persistence\EmailDAO.java

@@ -34,7 +34,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * Unit tests for Emails CRUD operations using JDBC
+ * Unit tests for Emails CRUD operations using JDBC NOTE : There are no delete
+ * and update options for the 3 main folders in the GUI so there are no
+ * exception test cases for these situations
  *
  * @author Xin Jia Cao
  */
@@ -65,7 +67,7 @@ public class EmailJDBCTest {
         email.cc("xinjia1.cao@gmail.com");
         email.subject("sub");
         email.textMessage("test create email");
-        email.htmlMessage("test");
+        email.htmlMessage("<b>test<b>");
         email.embeddedAttachment(EmailAttachment.with().content("img1.png"));
         //set the sent date of an email
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
@@ -116,7 +118,7 @@ public class EmailJDBCTest {
         email.from("xinjia.caoxin@gmail.com");
         email.subject("subject1");
         email.textMessage("Inbox Msg");
-        email.htmlMessage("");
+        email.htmlMessage("<b>hello there<b>");
         email.attachment(EmailAttachment.with().content("img1.png"));
         email.attachment(EmailAttachment.with().content("img2.png"));
         email.to("xinjia.caoxin@gmail.com");
@@ -157,6 +159,32 @@ public class EmailJDBCTest {
 
         List<EmailData> data = mailFunction.findEmailsByFolder("Draft");
         assertEquals(2, data.size());
+    }
+
+    //Test to find all emails in an empty custom folder
+    @Test
+    public void testFindEmptyCustomFolderEmails() throws SQLException, FolderAlreadyExistsException {
+        LOG.info("----------TEST FIND EMPTY CUSTOM FOLDER EMAILS----------");
+        mailFunction.createFolder("NewFolder");
+        List<EmailData> data = mailFunction.findEmailsByFolder("NewFolder");
+        assertEquals(0, data.size());
+    }
+
+    //Test to find all emails in a non-empty custom folder
+    @Test
+    public void testFindCustomFolderEmails() throws SQLException, FolderAlreadyExistsException {
+        LOG.info("----------TEST FIND CUSTOM FOLDER EMAILS----------");
+        mailFunction.createFolder("NewFolder");
+        Email email = new Email();
+        email.from("bob123@gmail.com");
+        email.to("alice123@gmail.com");
+        email.htmlMessage("<p>hello<p>");
+        //new folder created has an id of 4 since the last id is 3 for the Draft folder
+        EmailData mailData = new EmailData(getLastId() + 1, 4, null, email);
+        mailFunction.createEmail(mailData);
+        List<EmailData> data = mailFunction.findEmailsByFolder("NewFolder");
+        //only one email has been stored in the new folder
+        assertEquals(1, data.size());
     }
 
     //Test to find all emails that contains a given sub-string for the subject field
@@ -211,7 +239,7 @@ public class EmailJDBCTest {
         //third row updated
         email.subject("subject_updated");
         email.textMessage("updated Msg");
-        email.htmlMessage("updated HTML Msg");
+        email.htmlMessage("<b>updated HTML Msg<b>");
         //fourth row added
         email.attachment(EmailAttachment.with().content("img2.png"));
         EmailData mailData = new EmailData();
@@ -231,7 +259,7 @@ public class EmailJDBCTest {
         //first row updated
         mailData.email.subject("changed subject");
         mailData.email.textMessage("changed message");
-        mailData.email.htmlMessage("changed html message");
+        mailData.email.htmlMessage("<p>changed html message<p>");
         //second row added
         mailData.email.bcc("alice123@gmail.com");
         //third row changed (folder)
@@ -251,7 +279,7 @@ public class EmailJDBCTest {
         email.cc("xinjia1.cao@gmail.com");
         email.subject("sub");
         email.textMessage("test create email");
-        email.htmlMessage("test");
+        email.htmlMessage("<p>test<p>");
         email.embeddedAttachment(EmailAttachment.with().content("img1.png"));
         LocalDateTime date = LocalDateTime.now();
         EmailData mailData = new EmailData(getLastId() + 1, 3, date, email);
@@ -276,7 +304,7 @@ public class EmailJDBCTest {
     public void testUpdateInvalidFolderName() throws SQLException, FolderAlreadyExistsException {
         LOG.info("----------TEST UPDATE INVALID FOLDER NAME----------");
         mailFunction.createFolder("NewFolder");
-        //cannot change the folder NewFolder to a folder that cannot be changed (sent, inbox, draft) 
+        //cannot change the folder NewFolder to a folder that cannot be changed (sent, inbox, draft)
         //so it will throw an exception
         int rows = mailFunction.updateFolderName("NewFolder", "Inbox");
     }

@@ -20452,3 +20452,1296 @@ BCC Recipients: []
 [DEBUG] 2020-10-07 21:03:04.368 [main] EmailDAOImpl - Number of emails found with the substring: 123 in Subject is: 2
 [INFO ] 2020-10-07 21:03:04.369 [main] EmailJDBCTest - @AfterClass seeding
 [INFO ] 2020-10-07 21:03:04.369 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:37:08.704 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:37:09.066 [main] EmailJDBCTest - ----------TEST CREATE FOLDER----------
+[INFO ] 2020-10-07 21:37:09.083 [main] EmailDAOImpl - Folder created: Special
+[INFO ] 2020-10-07 21:37:09.084 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:37:09.283 [main] EmailJDBCTest - ----------TEST DELETE EMAIL----------
+[DEBUG] 2020-10-07 21:37:09.287 [main] EmailDAOImpl - Number of rows deleted in email (should be 1): 1
+[INFO ] 2020-10-07 21:37:09.288 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:37:09.479 [main] EmailJDBCTest - ----------TEST FIND EMAILS BY SUBJECT----------
+[INFO ] 2020-10-07 21:37:09.512 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:37:09.524 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:37:09.536 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:37:09.546 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:37:09.556 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:37:09.565 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:37:09.573 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:37:09.583 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:37:09.592 [main] EmailDAOImpl - Created custom Email bean
+[DEBUG] 2020-10-07 21:37:09.593 [main] EmailDAOImpl - Number of emails found with the substring: sub in Subject is: 9
+[INFO ] 2020-10-07 21:37:09.594 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:37:09.820 [main] EmailJDBCTest - ----------TEST FIND ALL----------
+[INFO ] 2020-10-07 21:37:09.832 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:37:09.841 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:37:09.849 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:37:09.858 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:37:09.867 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:37:09.875 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:37:09.883 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:37:09.891 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:37:09.899 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:37:09.907 [main] EmailDAOImpl - Created custom Email bean
+[DEBUG] 2020-10-07 21:37:09.907 [main] EmailDAOImpl - Total number of emails : 10
+[INFO ] 2020-10-07 21:37:09.907 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:37:10.112 [main] EmailJDBCTest - ----------TEST CREATE EMAIL----------
+[DEBUG] 2020-10-07 21:37:10.121 [main] EmailJDBCTest - latest id: 11
+[DEBUG] 2020-10-07 21:37:10.126 [main] EmailDAOImpl - The message sent: test create email
+[DEBUG] 2020-10-07 21:37:10.126 [main] EmailDAOImpl - The message sent type: text/plain
+[DEBUG] 2020-10-07 21:37:10.126 [main] EmailDAOImpl - The message sent: test
+[DEBUG] 2020-10-07 21:37:10.126 [main] EmailDAOImpl - The message sent type: text/html
+[DEBUG] 2020-10-07 21:37:10.129 [main] EmailDAOImpl - New email ID is: 11
+[INFO ] 2020-10-07 21:37:10.132 [main] EmailDAOImpl - Address not in table -> create
+[DEBUG] 2020-10-07 21:37:10.136 [main] EmailDAOImpl - Creating an address - Number of rows created (should be 1): 1
+[INFO ] 2020-10-07 21:37:10.139 [main] EmailDAOImpl - Address not in table -> create
+[DEBUG] 2020-10-07 21:37:10.143 [main] EmailDAOImpl - Creating an address - Number of rows created (should be 1): 1
+[DEBUG] 2020-10-07 21:37:10.148 [main] EmailDAOImpl - email To: xinjia345@gmail.com
+[DEBUG] 2020-10-07 21:37:10.152 [main] EmailDAOImpl - email CC: xinjia1.cao@gmail.com
+[DEBUG] 2020-10-07 21:37:10.157 [main] EmailDAOImpl - Number of recipients added: 2
+[DEBUG] 2020-10-07 21:37:10.177 [main] EmailDAOImpl - Number of attachments added: 1
+[INFO ] 2020-10-07 21:37:10.177 [main] EmailDAOImpl - Email inserted in the database
+[INFO ] 2020-10-07 21:37:10.190 [main] EmailDAOImpl - Created custom Email bean
+[DEBUG] 2020-10-07 21:37:10.190 [main] EmailDAOImpl - Email with id: 11?: true
+[INFO ] 2020-10-07 21:37:10.190 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:37:10.393 [main] EmailJDBCTest - ----------TEST FIND SENT EMAILS----------
+[INFO ] 2020-10-07 21:37:10.393 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:37:10.409 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:37:10.409 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:37:10.424 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:37:10.424 [main] EmailDAOImpl - Created custom Email bean
+[DEBUG] 2020-10-07 21:37:10.424 [main] EmailDAOImpl - Number of emails in: Sent is: 5
+[INFO ] 2020-10-07 21:37:10.424 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:37:10.662 [main] EmailJDBCTest - ----------TEST FIND RECEIVED EMAILS (INBOX)----------
+[INFO ] 2020-10-07 21:37:10.672 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:37:10.680 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:37:10.688 [main] EmailDAOImpl - Created custom Email bean
+[DEBUG] 2020-10-07 21:37:10.688 [main] EmailDAOImpl - Number of emails in: Inbox is: 3
+[INFO ] 2020-10-07 21:37:10.688 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:37:10.877 [main] EmailJDBCTest - ----------TEST DELETE FOLDER----------
+[DEBUG] 2020-10-07 21:37:10.880 [main] EmailDAOImpl - Number of rows deleted in folder (should be 1): 1
+[INFO ] 2020-10-07 21:37:10.880 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:37:11.074 [main] EmailJDBCTest - ----------TEST UPDATE DRAFT AND SEND----------
+[DEBUG] 2020-10-07 21:37:11.077 [main] EmailDAOImpl - Number of attachments added: 0
+[DEBUG] 2020-10-07 21:37:11.077 [main] EmailDAOImpl - Number of attachments added for update: 0
+[DEBUG] 2020-10-07 21:37:11.079 [main] EmailDAOImpl - The message sent: changed message
+[DEBUG] 2020-10-07 21:37:11.079 [main] EmailDAOImpl - The message sent type: text/plain
+[DEBUG] 2020-10-07 21:37:11.079 [main] EmailDAOImpl - The message sent: changed html message
+[DEBUG] 2020-10-07 21:37:11.079 [main] EmailDAOImpl - The message sent type: text/html
+[DEBUG] 2020-10-07 21:37:11.088 [main] EmailDAOImpl - email BCC: alice123@gmail.com
+[DEBUG] 2020-10-07 21:37:11.092 [main] EmailDAOImpl - Number of recipients added: 1
+[DEBUG] 2020-10-07 21:37:11.092 [main] EmailDAOImpl - Number of recipients added for update: 1
+[DEBUG] 2020-10-07 21:37:11.092 [main] EmailDAOImpl - Total number of rows updated and added: 2
+[DEBUG] 2020-10-07 21:37:11.095 [main] EmailDAOImpl - Folder id of folder Sent is: 2
+[DEBUG] 2020-10-07 21:37:11.098 [main] EmailDAOImpl - Number of emails' folder changed (should be 1): 1
+[DEBUG] 2020-10-07 21:37:11.098 [main] EmailDAOImpl - Total number of rows updated and added before sending: 3
+[INFO ] 2020-10-07 21:37:11.098 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:37:11.305 [main] EmailJDBCTest - ----------TEST INVALID CREATE FOLDER----------
+[INFO ] 2020-10-07 21:37:11.306 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:37:11.518 [main] EmailJDBCTest - ----------TEST UPDATE DRAFT----------
+[DEBUG] 2020-10-07 21:37:11.530 [main] EmailDAOImpl - Number of attachments added: 1
+[DEBUG] 2020-10-07 21:37:11.530 [main] EmailDAOImpl - Number of attachments added for update: 1
+[DEBUG] 2020-10-07 21:37:11.532 [main] EmailDAOImpl - The message sent: updated Msg
+[DEBUG] 2020-10-07 21:37:11.532 [main] EmailDAOImpl - The message sent type: text/plain
+[DEBUG] 2020-10-07 21:37:11.532 [main] EmailDAOImpl - The message sent: updated HTML Msg
+[DEBUG] 2020-10-07 21:37:11.533 [main] EmailDAOImpl - The message sent type: text/html
+[INFO ] 2020-10-07 21:37:11.539 [main] EmailDAOImpl - Address not in table -> create
+[DEBUG] 2020-10-07 21:37:11.542 [main] EmailDAOImpl - Creating an address - Number of rows created (should be 1): 1
+[INFO ] 2020-10-07 21:37:11.544 [main] EmailDAOImpl - Address not in table -> create
+[DEBUG] 2020-10-07 21:37:11.547 [main] EmailDAOImpl - Creating an address - Number of rows created (should be 1): 1
+[DEBUG] 2020-10-07 21:37:11.549 [main] EmailDAOImpl - email To: updatedRecipient1@gmail.com
+[DEBUG] 2020-10-07 21:37:11.552 [main] EmailDAOImpl - email BCC: updatedRecipient2@gmail.com
+[DEBUG] 2020-10-07 21:37:11.555 [main] EmailDAOImpl - Number of recipients added: 2
+[DEBUG] 2020-10-07 21:37:11.555 [main] EmailDAOImpl - Number of recipients added for update: 2
+[DEBUG] 2020-10-07 21:37:11.555 [main] EmailDAOImpl - Total number of rows updated and added: 4
+[INFO ] 2020-10-07 21:37:11.555 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:37:11.753 [main] EmailJDBCTest - ----------TEST FIND CUSTOM FOLDER EMAILS----------
+[INFO ] 2020-10-07 21:37:11.757 [main] EmailDAOImpl - Folder created: NewFolder
+[DEBUG] 2020-10-07 21:37:11.760 [main] EmailDAOImpl - Number of emails in: NewFolder is: 0
+[INFO ] 2020-10-07 21:37:11.760 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:37:11.914 [main] EmailJDBCTest - ----------TEST FIND ALL ADDRESSES----------
+[INFO ] 2020-10-07 21:37:11.917 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:37:12.099 [main] EmailJDBCTest - ----------TEST EMAIL FOLDER CHANGED----------
+[DEBUG] 2020-10-07 21:37:12.102 [main] EmailJDBCTest - latest id: 11
+[DEBUG] 2020-10-07 21:37:12.104 [main] EmailDAOImpl - The message sent: test create email
+[DEBUG] 2020-10-07 21:37:12.104 [main] EmailDAOImpl - The message sent type: text/plain
+[DEBUG] 2020-10-07 21:37:12.104 [main] EmailDAOImpl - The message sent: test
+[DEBUG] 2020-10-07 21:37:12.104 [main] EmailDAOImpl - The message sent type: text/html
+[DEBUG] 2020-10-07 21:37:12.105 [main] EmailDAOImpl - New email ID is: 11
+[INFO ] 2020-10-07 21:37:12.108 [main] EmailDAOImpl - Address not in table -> create
+[DEBUG] 2020-10-07 21:37:12.112 [main] EmailDAOImpl - Creating an address - Number of rows created (should be 1): 1
+[INFO ] 2020-10-07 21:37:12.114 [main] EmailDAOImpl - Address not in table -> create
+[DEBUG] 2020-10-07 21:37:12.118 [main] EmailDAOImpl - Creating an address - Number of rows created (should be 1): 1
+[DEBUG] 2020-10-07 21:37:12.123 [main] EmailDAOImpl - email To: xinjia345@gmail.com
+[DEBUG] 2020-10-07 21:37:12.127 [main] EmailDAOImpl - email CC: xinjia1.cao@gmail.com
+[DEBUG] 2020-10-07 21:37:12.131 [main] EmailDAOImpl - Number of recipients added: 2
+[DEBUG] 2020-10-07 21:37:12.139 [main] EmailDAOImpl - Number of attachments added: 1
+[INFO ] 2020-10-07 21:37:12.139 [main] EmailDAOImpl - Email inserted in the database
+[DEBUG] 2020-10-07 21:37:12.140 [main] EmailDAOImpl - Folder id of folder Inbox is: 1
+[DEBUG] 2020-10-07 21:37:12.144 [main] EmailDAOImpl - Number of emails' folder changed (should be 1): 1
+[INFO ] 2020-10-07 21:37:12.144 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:37:12.333 [main] EmailJDBCTest - ----------TEST FIND BY ID 1----------
+[INFO ] 2020-10-07 21:37:12.342 [main] EmailDAOImpl - Created custom Email bean
+[DEBUG] 2020-10-07 21:37:12.342 [main] EmailDAOImpl - Email with id: 1?: true
+[INFO ] 2020-10-07 21:37:12.343 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:37:12.529 [main] EmailJDBCTest - ----------TEST FIND DRAFT EMAILS----------
+[INFO ] 2020-10-07 21:37:12.539 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:37:12.547 [main] EmailDAOImpl - Created custom Email bean
+[DEBUG] 2020-10-07 21:37:12.547 [main] EmailDAOImpl - Number of emails in: Draft is: 2
+[INFO ] 2020-10-07 21:37:12.548 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:37:12.731 [main] EmailJDBCTest - ----------TEST UPDATE FOLDER NAME----------
+[INFO ] 2020-10-07 21:37:12.736 [main] EmailDAOImpl - Folder created: NewFolder
+[DEBUG] 2020-10-07 21:37:12.742 [main] EmailDAOImpl - Number of folder name changed (should be 1): 1
+[INFO ] 2020-10-07 21:37:12.742 [main] EmailDAOImpl - Changed folder: NewFolder to: Special
+[INFO ] 2020-10-07 21:37:12.743 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:37:12.909 [main] EmailJDBCTest - ----------TEST FIND FOLDER NAMES----------
+[INFO ] 2020-10-07 21:37:12.913 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:37:13.093 [main] EmailJDBCTest - ----------TEST UPDATE INVALID FOLDER NAME----------
+[INFO ] 2020-10-07 21:37:13.097 [main] EmailDAOImpl - Folder created: NewFolder
+[INFO ] 2020-10-07 21:37:13.099 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:37:13.270 [main] EmailJDBCTest - ----------TEST FIND EMAILS BY RECIPIENTS----------
+[INFO ] 2020-10-07 21:37:13.271 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:37:13.288 [main] EmailDAOImpl - Created custom Email bean
+[DEBUG] 2020-10-07 21:37:13.288 [main] EmailDAOImpl - Number of emails found with the substring: 123 in Subject is: 2
+[INFO ] 2020-10-07 21:37:13.289 [main] EmailJDBCTest - @AfterClass seeding
+[INFO ] 2020-10-07 21:37:13.289 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:42:34.235 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:42:34.598 [main] EmailJDBCTest - ----------TEST CREATE FOLDER----------
+[INFO ] 2020-10-07 21:42:34.614 [main] EmailDAOImpl - Folder created: Special
+[INFO ] 2020-10-07 21:42:34.614 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:42:34.793 [main] EmailJDBCTest - ----------TEST FIND EMPTY CUSTOM FOLDER EMAILS----------
+[INFO ] 2020-10-07 21:42:34.794 [main] EmailDAOImpl - Folder created: NewFolder
+[DEBUG] 2020-10-07 21:42:34.794 [main] EmailDAOImpl - Number of emails in: NewFolder is: 0
+[INFO ] 2020-10-07 21:42:34.794 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:42:34.970 [main] EmailJDBCTest - ----------TEST DELETE EMAIL----------
+[DEBUG] 2020-10-07 21:42:34.975 [main] EmailDAOImpl - Number of rows deleted in email (should be 1): 1
+[INFO ] 2020-10-07 21:42:34.976 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:42:35.195 [main] EmailJDBCTest - ----------TEST FIND EMAILS BY SUBJECT----------
+[INFO ] 2020-10-07 21:42:35.227 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:42:35.238 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:42:35.248 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:42:35.257 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:42:35.266 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:42:35.275 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:42:35.284 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:42:35.293 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:42:35.302 [main] EmailDAOImpl - Created custom Email bean
+[DEBUG] 2020-10-07 21:42:35.303 [main] EmailDAOImpl - Number of emails found with the substring: sub in Subject is: 9
+[INFO ] 2020-10-07 21:42:35.303 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:42:35.497 [main] EmailJDBCTest - ----------TEST FIND ALL----------
+[INFO ] 2020-10-07 21:42:35.510 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:42:35.519 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:42:35.529 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:42:35.538 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:42:35.547 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:42:35.554 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:42:35.562 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:42:35.570 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:42:35.579 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:42:35.588 [main] EmailDAOImpl - Created custom Email bean
+[DEBUG] 2020-10-07 21:42:35.588 [main] EmailDAOImpl - Total number of emails : 10
+[INFO ] 2020-10-07 21:42:35.589 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:42:35.779 [main] EmailJDBCTest - ----------TEST CREATE EMAIL----------
+[DEBUG] 2020-10-07 21:42:35.788 [main] EmailJDBCTest - latest id: 11
+[DEBUG] 2020-10-07 21:42:35.792 [main] EmailDAOImpl - The message sent: test create email
+[DEBUG] 2020-10-07 21:42:35.792 [main] EmailDAOImpl - The message sent type: text/plain
+[DEBUG] 2020-10-07 21:42:35.792 [main] EmailDAOImpl - The message sent: test
+[DEBUG] 2020-10-07 21:42:35.792 [main] EmailDAOImpl - The message sent type: text/html
+[DEBUG] 2020-10-07 21:42:35.795 [main] EmailDAOImpl - New email ID is: 11
+[INFO ] 2020-10-07 21:42:35.798 [main] EmailDAOImpl - Address not in table -> create
+[DEBUG] 2020-10-07 21:42:35.801 [main] EmailDAOImpl - Creating an address - Number of rows created (should be 1): 1
+[INFO ] 2020-10-07 21:42:35.804 [main] EmailDAOImpl - Address not in table -> create
+[DEBUG] 2020-10-07 21:42:35.808 [main] EmailDAOImpl - Creating an address - Number of rows created (should be 1): 1
+[DEBUG] 2020-10-07 21:42:35.814 [main] EmailDAOImpl - email To: xinjia345@gmail.com
+[DEBUG] 2020-10-07 21:42:35.818 [main] EmailDAOImpl - email CC: xinjia1.cao@gmail.com
+[DEBUG] 2020-10-07 21:42:35.824 [main] EmailDAOImpl - Number of recipients added: 2
+[DEBUG] 2020-10-07 21:42:35.851 [main] EmailDAOImpl - Number of attachments added: 1
+[INFO ] 2020-10-07 21:42:35.852 [main] EmailDAOImpl - Email inserted in the database
+[INFO ] 2020-10-07 21:42:35.867 [main] EmailDAOImpl - Created custom Email bean
+[DEBUG] 2020-10-07 21:42:35.869 [main] EmailDAOImpl - Email with id: 11?: true
+[INFO ] 2020-10-07 21:42:35.869 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:42:36.051 [main] EmailJDBCTest - ----------TEST FIND SENT EMAILS----------
+[INFO ] 2020-10-07 21:42:36.060 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:42:36.069 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:42:36.078 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:42:36.086 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:42:36.093 [main] EmailDAOImpl - Created custom Email bean
+[DEBUG] 2020-10-07 21:42:36.093 [main] EmailDAOImpl - Number of emails in: Sent is: 5
+[INFO ] 2020-10-07 21:42:36.094 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:42:36.284 [main] EmailJDBCTest - ----------TEST FIND RECEIVED EMAILS (INBOX)----------
+[INFO ] 2020-10-07 21:42:36.293 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:42:36.301 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:42:36.308 [main] EmailDAOImpl - Created custom Email bean
+[DEBUG] 2020-10-07 21:42:36.308 [main] EmailDAOImpl - Number of emails in: Inbox is: 3
+[INFO ] 2020-10-07 21:42:36.309 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:42:36.464 [main] EmailJDBCTest - ----------TEST DELETE FOLDER----------
+[DEBUG] 2020-10-07 21:42:36.467 [main] EmailDAOImpl - Number of rows deleted in folder (should be 1): 1
+[INFO ] 2020-10-07 21:42:36.468 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:42:36.656 [main] EmailJDBCTest - ----------TEST UPDATE DRAFT AND SEND----------
+[DEBUG] 2020-10-07 21:42:36.660 [main] EmailDAOImpl - Number of attachments added: 0
+[DEBUG] 2020-10-07 21:42:36.660 [main] EmailDAOImpl - Number of attachments added for update: 0
+[DEBUG] 2020-10-07 21:42:36.662 [main] EmailDAOImpl - The message sent: changed message
+[DEBUG] 2020-10-07 21:42:36.663 [main] EmailDAOImpl - The message sent type: text/plain
+[DEBUG] 2020-10-07 21:42:36.663 [main] EmailDAOImpl - The message sent: changed html message
+[DEBUG] 2020-10-07 21:42:36.663 [main] EmailDAOImpl - The message sent type: text/html
+[DEBUG] 2020-10-07 21:42:36.674 [main] EmailDAOImpl - email BCC: alice123@gmail.com
+[DEBUG] 2020-10-07 21:42:36.677 [main] EmailDAOImpl - Number of recipients added: 1
+[DEBUG] 2020-10-07 21:42:36.677 [main] EmailDAOImpl - Number of recipients added for update: 1
+[DEBUG] 2020-10-07 21:42:36.677 [main] EmailDAOImpl - Total number of rows updated and added: 2
+[DEBUG] 2020-10-07 21:42:36.680 [main] EmailDAOImpl - Folder id of folder Sent is: 2
+[DEBUG] 2020-10-07 21:42:36.682 [main] EmailDAOImpl - Number of emails' folder changed (should be 1): 1
+[DEBUG] 2020-10-07 21:42:36.683 [main] EmailDAOImpl - Total number of rows updated and added before sending: 3
+[INFO ] 2020-10-07 21:42:36.683 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:42:36.842 [main] EmailJDBCTest - ----------TEST INVALID CREATE FOLDER----------
+[INFO ] 2020-10-07 21:42:36.842 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:42:37.020 [main] EmailJDBCTest - ----------TEST UPDATE DRAFT----------
+[DEBUG] 2020-10-07 21:42:37.036 [main] EmailDAOImpl - Number of attachments added: 1
+[DEBUG] 2020-10-07 21:42:37.036 [main] EmailDAOImpl - Number of attachments added for update: 1
+[DEBUG] 2020-10-07 21:42:37.036 [main] EmailDAOImpl - The message sent: updated Msg
+[DEBUG] 2020-10-07 21:42:37.036 [main] EmailDAOImpl - The message sent type: text/plain
+[DEBUG] 2020-10-07 21:42:37.036 [main] EmailDAOImpl - The message sent: updated HTML Msg
+[DEBUG] 2020-10-07 21:42:37.036 [main] EmailDAOImpl - The message sent type: text/html
+[INFO ] 2020-10-07 21:42:37.036 [main] EmailDAOImpl - Address not in table -> create
+[DEBUG] 2020-10-07 21:42:37.036 [main] EmailDAOImpl - Creating an address - Number of rows created (should be 1): 1
+[INFO ] 2020-10-07 21:42:37.036 [main] EmailDAOImpl - Address not in table -> create
+[DEBUG] 2020-10-07 21:42:37.051 [main] EmailDAOImpl - Creating an address - Number of rows created (should be 1): 1
+[DEBUG] 2020-10-07 21:42:37.051 [main] EmailDAOImpl - email To: updatedRecipient1@gmail.com
+[DEBUG] 2020-10-07 21:42:37.051 [main] EmailDAOImpl - email BCC: updatedRecipient2@gmail.com
+[DEBUG] 2020-10-07 21:42:37.051 [main] EmailDAOImpl - Number of recipients added: 2
+[DEBUG] 2020-10-07 21:42:37.051 [main] EmailDAOImpl - Number of recipients added for update: 2
+[DEBUG] 2020-10-07 21:42:37.051 [main] EmailDAOImpl - Total number of rows updated and added: 4
+[INFO ] 2020-10-07 21:42:37.051 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:42:37.226 [main] EmailJDBCTest - ----------TEST FIND CUSTOM FOLDER EMAILS----------
+[INFO ] 2020-10-07 21:42:37.231 [main] EmailDAOImpl - Folder created: NewFolder
+[DEBUG] 2020-10-07 21:42:37.233 [main] EmailJDBCTest - latest id: 11
+[INFO ] 2020-10-07 21:42:37.240 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:42:37.422 [main] EmailJDBCTest - ----------TEST FIND ALL ADDRESSES----------
+[INFO ] 2020-10-07 21:42:37.425 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:42:37.619 [main] EmailJDBCTest - ----------TEST EMAIL FOLDER CHANGED----------
+[DEBUG] 2020-10-07 21:42:37.621 [main] EmailJDBCTest - latest id: 11
+[DEBUG] 2020-10-07 21:42:37.624 [main] EmailDAOImpl - The message sent: test create email
+[DEBUG] 2020-10-07 21:42:37.624 [main] EmailDAOImpl - The message sent type: text/plain
+[DEBUG] 2020-10-07 21:42:37.624 [main] EmailDAOImpl - The message sent: test
+[DEBUG] 2020-10-07 21:42:37.625 [main] EmailDAOImpl - The message sent type: text/html
+[DEBUG] 2020-10-07 21:42:37.625 [main] EmailDAOImpl - New email ID is: 11
+[INFO ] 2020-10-07 21:42:37.628 [main] EmailDAOImpl - Address not in table -> create
+[DEBUG] 2020-10-07 21:42:37.631 [main] EmailDAOImpl - Creating an address - Number of rows created (should be 1): 1
+[INFO ] 2020-10-07 21:42:37.633 [main] EmailDAOImpl - Address not in table -> create
+[DEBUG] 2020-10-07 21:42:37.636 [main] EmailDAOImpl - Creating an address - Number of rows created (should be 1): 1
+[DEBUG] 2020-10-07 21:42:37.640 [main] EmailDAOImpl - email To: xinjia345@gmail.com
+[DEBUG] 2020-10-07 21:42:37.644 [main] EmailDAOImpl - email CC: xinjia1.cao@gmail.com
+[DEBUG] 2020-10-07 21:42:37.647 [main] EmailDAOImpl - Number of recipients added: 2
+[DEBUG] 2020-10-07 21:42:37.655 [main] EmailDAOImpl - Number of attachments added: 1
+[INFO ] 2020-10-07 21:42:37.655 [main] EmailDAOImpl - Email inserted in the database
+[DEBUG] 2020-10-07 21:42:37.658 [main] EmailDAOImpl - Folder id of folder Inbox is: 1
+[DEBUG] 2020-10-07 21:42:37.661 [main] EmailDAOImpl - Number of emails' folder changed (should be 1): 1
+[INFO ] 2020-10-07 21:42:37.662 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:42:37.871 [main] EmailJDBCTest - ----------TEST FIND BY ID 1----------
+[INFO ] 2020-10-07 21:42:37.880 [main] EmailDAOImpl - Created custom Email bean
+[DEBUG] 2020-10-07 21:42:37.880 [main] EmailDAOImpl - Email with id: 1?: true
+[INFO ] 2020-10-07 21:42:37.881 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:42:38.088 [main] EmailJDBCTest - ----------TEST FIND DRAFT EMAILS----------
+[INFO ] 2020-10-07 21:42:38.088 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:42:38.103 [main] EmailDAOImpl - Created custom Email bean
+[DEBUG] 2020-10-07 21:42:38.103 [main] EmailDAOImpl - Number of emails in: Draft is: 2
+[INFO ] 2020-10-07 21:42:38.103 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:42:38.281 [main] EmailJDBCTest - ----------TEST UPDATE FOLDER NAME----------
+[INFO ] 2020-10-07 21:42:38.286 [main] EmailDAOImpl - Folder created: NewFolder
+[DEBUG] 2020-10-07 21:42:38.292 [main] EmailDAOImpl - Number of folder name changed (should be 1): 1
+[INFO ] 2020-10-07 21:42:38.292 [main] EmailDAOImpl - Changed folder: NewFolder to: Special
+[INFO ] 2020-10-07 21:42:38.293 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:42:38.476 [main] EmailJDBCTest - ----------TEST FIND FOLDER NAMES----------
+[INFO ] 2020-10-07 21:42:38.492 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:42:38.696 [main] EmailJDBCTest - ----------TEST UPDATE INVALID FOLDER NAME----------
+[INFO ] 2020-10-07 21:42:38.704 [main] EmailDAOImpl - Folder created: NewFolder
+[INFO ] 2020-10-07 21:42:38.707 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:42:38.891 [main] EmailJDBCTest - ----------TEST FIND EMAILS BY RECIPIENTS----------
+[INFO ] 2020-10-07 21:42:38.901 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:42:38.906 [main] EmailDAOImpl - Created custom Email bean
+[DEBUG] 2020-10-07 21:42:38.906 [main] EmailDAOImpl - Number of emails found with the substring: 123 in Subject is: 2
+[INFO ] 2020-10-07 21:42:38.906 [main] EmailJDBCTest - @AfterClass seeding
+[INFO ] 2020-10-07 21:42:38.906 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:43:31.620 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:43:31.926 [main] EmailJDBCTest - ----------TEST CREATE FOLDER----------
+[INFO ] 2020-10-07 21:43:31.942 [main] EmailDAOImpl - Folder created: Special
+[INFO ] 2020-10-07 21:43:31.942 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:43:32.125 [main] EmailJDBCTest - ----------TEST FIND EMPTY CUSTOM FOLDER EMAILS----------
+[INFO ] 2020-10-07 21:43:32.135 [main] EmailDAOImpl - Folder created: NewFolder
+[DEBUG] 2020-10-07 21:43:32.141 [main] EmailDAOImpl - Number of emails in: NewFolder is: 0
+[INFO ] 2020-10-07 21:43:32.142 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:43:32.286 [main] EmailJDBCTest - ----------TEST DELETE EMAIL----------
+[DEBUG] 2020-10-07 21:43:32.291 [main] EmailDAOImpl - Number of rows deleted in email (should be 1): 1
+[INFO ] 2020-10-07 21:43:32.291 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:43:32.434 [main] EmailJDBCTest - ----------TEST FIND EMAILS BY SUBJECT----------
+[INFO ] 2020-10-07 21:43:32.465 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:43:32.475 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:43:32.485 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:43:32.494 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:43:32.503 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:43:32.511 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:43:32.519 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:43:32.528 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:43:32.537 [main] EmailDAOImpl - Created custom Email bean
+[DEBUG] 2020-10-07 21:43:32.538 [main] EmailDAOImpl - Number of emails found with the substring: sub in Subject is: 9
+[INFO ] 2020-10-07 21:43:32.538 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:43:32.686 [main] EmailJDBCTest - ----------TEST FIND ALL----------
+[INFO ] 2020-10-07 21:43:32.698 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:43:32.707 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:43:32.715 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:43:32.724 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:43:32.731 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:43:32.740 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:43:32.748 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:43:32.755 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:43:32.762 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:43:32.770 [main] EmailDAOImpl - Created custom Email bean
+[DEBUG] 2020-10-07 21:43:32.771 [main] EmailDAOImpl - Total number of emails : 10
+[INFO ] 2020-10-07 21:43:32.771 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:43:32.943 [main] EmailJDBCTest - ----------TEST CREATE EMAIL----------
+[DEBUG] 2020-10-07 21:43:32.953 [main] EmailJDBCTest - latest id: 11
+[DEBUG] 2020-10-07 21:43:32.958 [main] EmailDAOImpl - The message sent: test create email
+[DEBUG] 2020-10-07 21:43:32.958 [main] EmailDAOImpl - The message sent type: text/plain
+[DEBUG] 2020-10-07 21:43:32.958 [main] EmailDAOImpl - The message sent: test
+[DEBUG] 2020-10-07 21:43:32.958 [main] EmailDAOImpl - The message sent type: text/html
+[DEBUG] 2020-10-07 21:43:32.960 [main] EmailDAOImpl - New email ID is: 11
+[INFO ] 2020-10-07 21:43:32.963 [main] EmailDAOImpl - Address not in table -> create
+[DEBUG] 2020-10-07 21:43:32.967 [main] EmailDAOImpl - Creating an address - Number of rows created (should be 1): 1
+[INFO ] 2020-10-07 21:43:32.970 [main] EmailDAOImpl - Address not in table -> create
+[DEBUG] 2020-10-07 21:43:32.974 [main] EmailDAOImpl - Creating an address - Number of rows created (should be 1): 1
+[DEBUG] 2020-10-07 21:43:32.979 [main] EmailDAOImpl - email To: xinjia345@gmail.com
+[DEBUG] 2020-10-07 21:43:32.983 [main] EmailDAOImpl - email CC: xinjia1.cao@gmail.com
+[DEBUG] 2020-10-07 21:43:32.987 [main] EmailDAOImpl - Number of recipients added: 2
+[DEBUG] 2020-10-07 21:43:33.006 [main] EmailDAOImpl - Number of attachments added: 1
+[INFO ] 2020-10-07 21:43:33.006 [main] EmailDAOImpl - Email inserted in the database
+[INFO ] 2020-10-07 21:43:33.016 [main] EmailDAOImpl - Created custom Email bean
+[DEBUG] 2020-10-07 21:43:33.018 [main] EmailDAOImpl - Email with id: 11?: true
+[INFO ] 2020-10-07 21:43:33.018 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:43:33.195 [main] EmailJDBCTest - ----------TEST FIND SENT EMAILS----------
+[INFO ] 2020-10-07 21:43:33.211 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:43:33.222 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:43:33.234 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:43:33.244 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:43:33.255 [main] EmailDAOImpl - Created custom Email bean
+[DEBUG] 2020-10-07 21:43:33.255 [main] EmailDAOImpl - Number of emails in: Sent is: 5
+[INFO ] 2020-10-07 21:43:33.256 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:43:33.419 [main] EmailJDBCTest - ----------TEST FIND RECEIVED EMAILS (INBOX)----------
+[INFO ] 2020-10-07 21:43:33.430 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:43:33.439 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:43:33.447 [main] EmailDAOImpl - Created custom Email bean
+[DEBUG] 2020-10-07 21:43:33.447 [main] EmailDAOImpl - Number of emails in: Inbox is: 3
+[INFO ] 2020-10-07 21:43:33.448 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:43:33.587 [main] EmailJDBCTest - ----------TEST DELETE FOLDER----------
+[DEBUG] 2020-10-07 21:43:33.591 [main] EmailDAOImpl - Number of rows deleted in folder (should be 1): 1
+[INFO ] 2020-10-07 21:43:33.592 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:43:33.752 [main] EmailJDBCTest - ----------TEST UPDATE DRAFT AND SEND----------
+[DEBUG] 2020-10-07 21:43:33.755 [main] EmailDAOImpl - Number of attachments added: 0
+[DEBUG] 2020-10-07 21:43:33.755 [main] EmailDAOImpl - Number of attachments added for update: 0
+[DEBUG] 2020-10-07 21:43:33.758 [main] EmailDAOImpl - The message sent: changed message
+[DEBUG] 2020-10-07 21:43:33.758 [main] EmailDAOImpl - The message sent type: text/plain
+[DEBUG] 2020-10-07 21:43:33.758 [main] EmailDAOImpl - The message sent: changed html message
+[DEBUG] 2020-10-07 21:43:33.758 [main] EmailDAOImpl - The message sent type: text/html
+[DEBUG] 2020-10-07 21:43:33.759 [main] EmailDAOImpl - email BCC: alice123@gmail.com
+[DEBUG] 2020-10-07 21:43:33.759 [main] EmailDAOImpl - Number of recipients added: 1
+[DEBUG] 2020-10-07 21:43:33.759 [main] EmailDAOImpl - Number of recipients added for update: 1
+[DEBUG] 2020-10-07 21:43:33.759 [main] EmailDAOImpl - Total number of rows updated and added: 2
+[DEBUG] 2020-10-07 21:43:33.759 [main] EmailDAOImpl - Folder id of folder Sent is: 2
+[DEBUG] 2020-10-07 21:43:33.774 [main] EmailDAOImpl - Number of emails' folder changed (should be 1): 1
+[DEBUG] 2020-10-07 21:43:33.774 [main] EmailDAOImpl - Total number of rows updated and added before sending: 3
+[INFO ] 2020-10-07 21:43:33.777 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:43:33.928 [main] EmailJDBCTest - ----------TEST INVALID CREATE FOLDER----------
+[INFO ] 2020-10-07 21:43:33.929 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:43:34.086 [main] EmailJDBCTest - ----------TEST UPDATE DRAFT----------
+[DEBUG] 2020-10-07 21:43:34.104 [main] EmailDAOImpl - Number of attachments added: 1
+[DEBUG] 2020-10-07 21:43:34.104 [main] EmailDAOImpl - Number of attachments added for update: 1
+[DEBUG] 2020-10-07 21:43:34.106 [main] EmailDAOImpl - The message sent: updated Msg
+[DEBUG] 2020-10-07 21:43:34.106 [main] EmailDAOImpl - The message sent type: text/plain
+[DEBUG] 2020-10-07 21:43:34.106 [main] EmailDAOImpl - The message sent: updated HTML Msg
+[DEBUG] 2020-10-07 21:43:34.106 [main] EmailDAOImpl - The message sent type: text/html
+[INFO ] 2020-10-07 21:43:34.112 [main] EmailDAOImpl - Address not in table -> create
+[DEBUG] 2020-10-07 21:43:34.115 [main] EmailDAOImpl - Creating an address - Number of rows created (should be 1): 1
+[INFO ] 2020-10-07 21:43:34.118 [main] EmailDAOImpl - Address not in table -> create
+[DEBUG] 2020-10-07 21:43:34.121 [main] EmailDAOImpl - Creating an address - Number of rows created (should be 1): 1
+[DEBUG] 2020-10-07 21:43:34.123 [main] EmailDAOImpl - email To: updatedRecipient1@gmail.com
+[DEBUG] 2020-10-07 21:43:34.126 [main] EmailDAOImpl - email BCC: updatedRecipient2@gmail.com
+[DEBUG] 2020-10-07 21:43:34.129 [main] EmailDAOImpl - Number of recipients added: 2
+[DEBUG] 2020-10-07 21:43:34.129 [main] EmailDAOImpl - Number of recipients added for update: 2
+[DEBUG] 2020-10-07 21:43:34.129 [main] EmailDAOImpl - Total number of rows updated and added: 4
+[INFO ] 2020-10-07 21:43:34.130 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:43:34.283 [main] EmailJDBCTest - ----------TEST FIND CUSTOM FOLDER EMAILS----------
+[INFO ] 2020-10-07 21:43:34.299 [main] EmailDAOImpl - Folder created: NewFolder
+[DEBUG] 2020-10-07 21:43:34.299 [main] EmailJDBCTest - latest id: 11
+[INFO ] 2020-10-07 21:43:34.314 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:43:34.586 [main] EmailJDBCTest - ----------TEST FIND ALL ADDRESSES----------
+[INFO ] 2020-10-07 21:43:34.590 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:43:34.833 [main] EmailJDBCTest - ----------TEST EMAIL FOLDER CHANGED----------
+[DEBUG] 2020-10-07 21:43:34.836 [main] EmailJDBCTest - latest id: 11
+[DEBUG] 2020-10-07 21:43:34.839 [main] EmailDAOImpl - The message sent: test create email
+[DEBUG] 2020-10-07 21:43:34.839 [main] EmailDAOImpl - The message sent type: text/plain
+[DEBUG] 2020-10-07 21:43:34.839 [main] EmailDAOImpl - The message sent: test
+[DEBUG] 2020-10-07 21:43:34.839 [main] EmailDAOImpl - The message sent type: text/html
+[DEBUG] 2020-10-07 21:43:34.840 [main] EmailDAOImpl - New email ID is: 11
+[INFO ] 2020-10-07 21:43:34.843 [main] EmailDAOImpl - Address not in table -> create
+[DEBUG] 2020-10-07 21:43:34.847 [main] EmailDAOImpl - Creating an address - Number of rows created (should be 1): 1
+[INFO ] 2020-10-07 21:43:34.848 [main] EmailDAOImpl - Address not in table -> create
+[DEBUG] 2020-10-07 21:43:34.848 [main] EmailDAOImpl - Creating an address - Number of rows created (should be 1): 1
+[DEBUG] 2020-10-07 21:43:34.848 [main] EmailDAOImpl - email To: xinjia345@gmail.com
+[DEBUG] 2020-10-07 21:43:34.848 [main] EmailDAOImpl - email CC: xinjia1.cao@gmail.com
+[DEBUG] 2020-10-07 21:43:34.848 [main] EmailDAOImpl - Number of recipients added: 2
+[DEBUG] 2020-10-07 21:43:34.864 [main] EmailDAOImpl - Number of attachments added: 1
+[INFO ] 2020-10-07 21:43:34.864 [main] EmailDAOImpl - Email inserted in the database
+[DEBUG] 2020-10-07 21:43:34.874 [main] EmailDAOImpl - Folder id of folder Inbox is: 1
+[DEBUG] 2020-10-07 21:43:34.877 [main] EmailDAOImpl - Number of emails' folder changed (should be 1): 1
+[INFO ] 2020-10-07 21:43:34.878 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:43:35.121 [main] EmailJDBCTest - ----------TEST FIND BY ID 1----------
+[INFO ] 2020-10-07 21:43:35.130 [main] EmailDAOImpl - Created custom Email bean
+[DEBUG] 2020-10-07 21:43:35.130 [main] EmailDAOImpl - Email with id: 1?: true
+[INFO ] 2020-10-07 21:43:35.131 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:43:35.273 [main] EmailJDBCTest - ----------TEST FIND DRAFT EMAILS----------
+[INFO ] 2020-10-07 21:43:35.273 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:43:35.288 [main] EmailDAOImpl - Created custom Email bean
+[DEBUG] 2020-10-07 21:43:35.288 [main] EmailDAOImpl - Number of emails in: Draft is: 2
+[INFO ] 2020-10-07 21:43:35.288 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:43:35.431 [main] EmailJDBCTest - ----------TEST UPDATE FOLDER NAME----------
+[INFO ] 2020-10-07 21:43:35.445 [main] EmailDAOImpl - Folder created: NewFolder
+[DEBUG] 2020-10-07 21:43:35.445 [main] EmailDAOImpl - Number of folder name changed (should be 1): 1
+[INFO ] 2020-10-07 21:43:35.445 [main] EmailDAOImpl - Changed folder: NewFolder to: Special
+[INFO ] 2020-10-07 21:43:35.445 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:43:35.630 [main] EmailJDBCTest - ----------TEST FIND FOLDER NAMES----------
+[INFO ] 2020-10-07 21:43:35.632 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:43:35.804 [main] EmailJDBCTest - ----------TEST UPDATE INVALID FOLDER NAME----------
+[INFO ] 2020-10-07 21:43:35.809 [main] EmailDAOImpl - Folder created: NewFolder
+[INFO ] 2020-10-07 21:43:35.812 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:43:35.992 [main] EmailJDBCTest - ----------TEST FIND EMAILS BY RECIPIENTS----------
+[INFO ] 2020-10-07 21:43:36.008 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:43:36.015 [main] EmailDAOImpl - Created custom Email bean
+[DEBUG] 2020-10-07 21:43:36.016 [main] EmailDAOImpl - Number of emails found with the substring: 123 in Subject is: 2
+[INFO ] 2020-10-07 21:43:36.016 [main] EmailJDBCTest - @AfterClass seeding
+[INFO ] 2020-10-07 21:43:36.016 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:46:05.531 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:46:05.837 [main] EmailJDBCTest - ----------TEST CREATE FOLDER----------
+[INFO ] 2020-10-07 21:46:05.855 [main] EmailDAOImpl - Folder created: Special
+[INFO ] 2020-10-07 21:46:05.856 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:46:06.030 [main] EmailJDBCTest - ----------TEST FIND EMPTY CUSTOM FOLDER EMAILS----------
+[INFO ] 2020-10-07 21:46:06.040 [main] EmailDAOImpl - Folder created: NewFolder
+[DEBUG] 2020-10-07 21:46:06.050 [main] EmailDAOImpl - Number of emails in: NewFolder is: 0
+[INFO ] 2020-10-07 21:46:06.052 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:46:06.202 [main] EmailJDBCTest - ----------TEST DELETE EMAIL----------
+[DEBUG] 2020-10-07 21:46:06.207 [main] EmailDAOImpl - Number of rows deleted in email (should be 1): 1
+[INFO ] 2020-10-07 21:46:06.207 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:46:06.366 [main] EmailJDBCTest - ----------TEST FIND EMAILS BY SUBJECT----------
+[INFO ] 2020-10-07 21:46:06.398 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:46:06.410 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:46:06.420 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:46:06.429 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:46:06.439 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:46:06.448 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:46:06.457 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:46:06.466 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:46:06.475 [main] EmailDAOImpl - Created custom Email bean
+[DEBUG] 2020-10-07 21:46:06.475 [main] EmailDAOImpl - Number of emails found with the substring: sub in Subject is: 9
+[INFO ] 2020-10-07 21:46:06.476 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:46:06.665 [main] EmailJDBCTest - ----------TEST FIND ALL----------
+[INFO ] 2020-10-07 21:46:06.677 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:46:06.678 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:46:06.694 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:46:06.694 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:46:06.709 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:46:06.709 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:46:06.725 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:46:06.725 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:46:06.747 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:46:06.757 [main] EmailDAOImpl - Created custom Email bean
+[DEBUG] 2020-10-07 21:46:06.758 [main] EmailDAOImpl - Total number of emails : 10
+[INFO ] 2020-10-07 21:46:06.758 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:46:06.940 [main] EmailJDBCTest - ----------TEST CREATE EMAIL----------
+[DEBUG] 2020-10-07 21:46:06.949 [main] EmailJDBCTest - latest id: 11
+[INFO ] 2020-10-07 21:46:06.953 [main] EmailDAOImpl - created dates
+[DEBUG] 2020-10-07 21:46:06.954 [main] EmailDAOImpl - The message sent: test create email
+[DEBUG] 2020-10-07 21:46:06.955 [main] EmailDAOImpl - The message sent type: text/plain
+[INFO ] 2020-10-07 21:46:06.955 [main] EmailDAOImpl - created plain msg
+[DEBUG] 2020-10-07 21:46:06.955 [main] EmailDAOImpl - The message sent: test
+[DEBUG] 2020-10-07 21:46:06.955 [main] EmailDAOImpl - The message sent type: text/html
+[DEBUG] 2020-10-07 21:46:06.957 [main] EmailDAOImpl - New email ID is: 11
+[INFO ] 2020-10-07 21:46:06.960 [main] EmailDAOImpl - Address not in table -> create
+[DEBUG] 2020-10-07 21:46:06.964 [main] EmailDAOImpl - Creating an address - Number of rows created (should be 1): 1
+[INFO ] 2020-10-07 21:46:06.967 [main] EmailDAOImpl - Address not in table -> create
+[DEBUG] 2020-10-07 21:46:06.971 [main] EmailDAOImpl - Creating an address - Number of rows created (should be 1): 1
+[DEBUG] 2020-10-07 21:46:06.977 [main] EmailDAOImpl - email To: xinjia345@gmail.com
+[DEBUG] 2020-10-07 21:46:06.982 [main] EmailDAOImpl - email CC: xinjia1.cao@gmail.com
+[DEBUG] 2020-10-07 21:46:06.986 [main] EmailDAOImpl - Number of recipients added: 2
+[DEBUG] 2020-10-07 21:46:07.005 [main] EmailDAOImpl - Number of attachments added: 1
+[INFO ] 2020-10-07 21:46:07.005 [main] EmailDAOImpl - Email inserted in the database
+[INFO ] 2020-10-07 21:46:07.016 [main] EmailDAOImpl - Created custom Email bean
+[DEBUG] 2020-10-07 21:46:07.018 [main] EmailDAOImpl - Email with id: 11?: true
+[INFO ] 2020-10-07 21:46:07.018 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:46:07.190 [main] EmailJDBCTest - ----------TEST FIND SENT EMAILS----------
+[INFO ] 2020-10-07 21:46:07.203 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:46:07.214 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:46:07.225 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:46:07.233 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:46:07.241 [main] EmailDAOImpl - Created custom Email bean
+[DEBUG] 2020-10-07 21:46:07.241 [main] EmailDAOImpl - Number of emails in: Sent is: 5
+[INFO ] 2020-10-07 21:46:07.241 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:46:07.425 [main] EmailJDBCTest - ----------TEST FIND RECEIVED EMAILS (INBOX)----------
+[INFO ] 2020-10-07 21:46:07.434 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:46:07.442 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:46:07.449 [main] EmailDAOImpl - Created custom Email bean
+[DEBUG] 2020-10-07 21:46:07.450 [main] EmailDAOImpl - Number of emails in: Inbox is: 3
+[INFO ] 2020-10-07 21:46:07.450 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:46:07.617 [main] EmailJDBCTest - ----------TEST DELETE FOLDER----------
+[DEBUG] 2020-10-07 21:46:07.620 [main] EmailDAOImpl - Number of rows deleted in folder (should be 1): 1
+[INFO ] 2020-10-07 21:46:07.620 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:46:07.774 [main] EmailJDBCTest - ----------TEST UPDATE DRAFT AND SEND----------
+[DEBUG] 2020-10-07 21:46:07.777 [main] EmailDAOImpl - Number of attachments added: 0
+[DEBUG] 2020-10-07 21:46:07.777 [main] EmailDAOImpl - Number of attachments added for update: 0
+[DEBUG] 2020-10-07 21:46:07.779 [main] EmailDAOImpl - The message sent: changed message
+[DEBUG] 2020-10-07 21:46:07.779 [main] EmailDAOImpl - The message sent type: text/plain
+[DEBUG] 2020-10-07 21:46:07.780 [main] EmailDAOImpl - The message sent: changed html message
+[DEBUG] 2020-10-07 21:46:07.780 [main] EmailDAOImpl - The message sent type: text/html
+[DEBUG] 2020-10-07 21:46:07.788 [main] EmailDAOImpl - email BCC: alice123@gmail.com
+[DEBUG] 2020-10-07 21:46:07.796 [main] EmailDAOImpl - Number of recipients added: 1
+[DEBUG] 2020-10-07 21:46:07.797 [main] EmailDAOImpl - Number of recipients added for update: 1
+[DEBUG] 2020-10-07 21:46:07.797 [main] EmailDAOImpl - Total number of rows updated and added: 2
+[DEBUG] 2020-10-07 21:46:07.800 [main] EmailDAOImpl - Folder id of folder Sent is: 2
+[DEBUG] 2020-10-07 21:46:07.803 [main] EmailDAOImpl - Number of emails' folder changed (should be 1): 1
+[DEBUG] 2020-10-07 21:46:07.803 [main] EmailDAOImpl - Total number of rows updated and added before sending: 3
+[INFO ] 2020-10-07 21:46:07.803 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:46:07.990 [main] EmailJDBCTest - ----------TEST INVALID CREATE FOLDER----------
+[INFO ] 2020-10-07 21:46:07.992 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:46:08.142 [main] EmailJDBCTest - ----------TEST UPDATE DRAFT----------
+[DEBUG] 2020-10-07 21:46:08.152 [main] EmailDAOImpl - Number of attachments added: 1
+[DEBUG] 2020-10-07 21:46:08.152 [main] EmailDAOImpl - Number of attachments added for update: 1
+[DEBUG] 2020-10-07 21:46:08.154 [main] EmailDAOImpl - The message sent: updated Msg
+[DEBUG] 2020-10-07 21:46:08.154 [main] EmailDAOImpl - The message sent type: text/plain
+[DEBUG] 2020-10-07 21:46:08.154 [main] EmailDAOImpl - The message sent: updated HTML Msg
+[DEBUG] 2020-10-07 21:46:08.154 [main] EmailDAOImpl - The message sent type: text/html
+[INFO ] 2020-10-07 21:46:08.160 [main] EmailDAOImpl - Address not in table -> create
+[DEBUG] 2020-10-07 21:46:08.163 [main] EmailDAOImpl - Creating an address - Number of rows created (should be 1): 1
+[INFO ] 2020-10-07 21:46:08.166 [main] EmailDAOImpl - Address not in table -> create
+[DEBUG] 2020-10-07 21:46:08.168 [main] EmailDAOImpl - Creating an address - Number of rows created (should be 1): 1
+[DEBUG] 2020-10-07 21:46:08.171 [main] EmailDAOImpl - email To: updatedRecipient1@gmail.com
+[DEBUG] 2020-10-07 21:46:08.174 [main] EmailDAOImpl - email BCC: updatedRecipient2@gmail.com
+[DEBUG] 2020-10-07 21:46:08.177 [main] EmailDAOImpl - Number of recipients added: 2
+[DEBUG] 2020-10-07 21:46:08.177 [main] EmailDAOImpl - Number of recipients added for update: 2
+[DEBUG] 2020-10-07 21:46:08.177 [main] EmailDAOImpl - Total number of rows updated and added: 4
+[INFO ] 2020-10-07 21:46:08.178 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:46:08.379 [main] EmailJDBCTest - ----------TEST FIND CUSTOM FOLDER EMAILS----------
+[INFO ] 2020-10-07 21:46:08.379 [main] EmailDAOImpl - Folder created: NewFolder
+[DEBUG] 2020-10-07 21:46:08.379 [main] EmailJDBCTest - latest id: 11
+[INFO ] 2020-10-07 21:46:08.379 [main] EmailDAOImpl - created dates
+[INFO ] 2020-10-07 21:46:08.379 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:46:08.618 [main] EmailJDBCTest - ----------TEST FIND ALL ADDRESSES----------
+[INFO ] 2020-10-07 21:46:08.619 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:46:08.827 [main] EmailJDBCTest - ----------TEST EMAIL FOLDER CHANGED----------
+[DEBUG] 2020-10-07 21:46:08.832 [main] EmailJDBCTest - latest id: 11
+[INFO ] 2020-10-07 21:46:08.835 [main] EmailDAOImpl - created dates
+[DEBUG] 2020-10-07 21:46:08.835 [main] EmailDAOImpl - The message sent: test create email
+[DEBUG] 2020-10-07 21:46:08.835 [main] EmailDAOImpl - The message sent type: text/plain
+[INFO ] 2020-10-07 21:46:08.835 [main] EmailDAOImpl - created plain msg
+[DEBUG] 2020-10-07 21:46:08.835 [main] EmailDAOImpl - The message sent: test
+[DEBUG] 2020-10-07 21:46:08.835 [main] EmailDAOImpl - The message sent type: text/html
+[DEBUG] 2020-10-07 21:46:08.837 [main] EmailDAOImpl - New email ID is: 11
+[INFO ] 2020-10-07 21:46:08.840 [main] EmailDAOImpl - Address not in table -> create
+[DEBUG] 2020-10-07 21:46:08.844 [main] EmailDAOImpl - Creating an address - Number of rows created (should be 1): 1
+[INFO ] 2020-10-07 21:46:08.846 [main] EmailDAOImpl - Address not in table -> create
+[DEBUG] 2020-10-07 21:46:08.850 [main] EmailDAOImpl - Creating an address - Number of rows created (should be 1): 1
+[DEBUG] 2020-10-07 21:46:08.855 [main] EmailDAOImpl - email To: xinjia345@gmail.com
+[DEBUG] 2020-10-07 21:46:08.858 [main] EmailDAOImpl - email CC: xinjia1.cao@gmail.com
+[DEBUG] 2020-10-07 21:46:08.862 [main] EmailDAOImpl - Number of recipients added: 2
+[DEBUG] 2020-10-07 21:46:08.869 [main] EmailDAOImpl - Number of attachments added: 1
+[INFO ] 2020-10-07 21:46:08.870 [main] EmailDAOImpl - Email inserted in the database
+[DEBUG] 2020-10-07 21:46:08.872 [main] EmailDAOImpl - Folder id of folder Inbox is: 1
+[DEBUG] 2020-10-07 21:46:08.876 [main] EmailDAOImpl - Number of emails' folder changed (should be 1): 1
+[INFO ] 2020-10-07 21:46:08.877 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:46:09.121 [main] EmailJDBCTest - ----------TEST FIND BY ID 1----------
+[INFO ] 2020-10-07 21:46:09.130 [main] EmailDAOImpl - Created custom Email bean
+[DEBUG] 2020-10-07 21:46:09.130 [main] EmailDAOImpl - Email with id: 1?: true
+[INFO ] 2020-10-07 21:46:09.131 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:46:09.360 [main] EmailJDBCTest - ----------TEST FIND DRAFT EMAILS----------
+[INFO ] 2020-10-07 21:46:09.371 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:46:09.379 [main] EmailDAOImpl - Created custom Email bean
+[DEBUG] 2020-10-07 21:46:09.379 [main] EmailDAOImpl - Number of emails in: Draft is: 2
+[INFO ] 2020-10-07 21:46:09.379 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:46:09.539 [main] EmailJDBCTest - ----------TEST UPDATE FOLDER NAME----------
+[INFO ] 2020-10-07 21:46:09.544 [main] EmailDAOImpl - Folder created: NewFolder
+[DEBUG] 2020-10-07 21:46:09.550 [main] EmailDAOImpl - Number of folder name changed (should be 1): 1
+[INFO ] 2020-10-07 21:46:09.551 [main] EmailDAOImpl - Changed folder: NewFolder to: Special
+[INFO ] 2020-10-07 21:46:09.551 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:46:09.735 [main] EmailJDBCTest - ----------TEST FIND FOLDER NAMES----------
+[INFO ] 2020-10-07 21:46:09.737 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:46:09.927 [main] EmailJDBCTest - ----------TEST UPDATE INVALID FOLDER NAME----------
+[INFO ] 2020-10-07 21:46:09.932 [main] EmailDAOImpl - Folder created: NewFolder
+[INFO ] 2020-10-07 21:46:09.934 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:46:10.101 [main] EmailJDBCTest - ----------TEST FIND EMAILS BY RECIPIENTS----------
+[INFO ] 2020-10-07 21:46:10.114 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:46:10.122 [main] EmailDAOImpl - Created custom Email bean
+[DEBUG] 2020-10-07 21:46:10.122 [main] EmailDAOImpl - Number of emails found with the substring: 123 in Subject is: 2
+[INFO ] 2020-10-07 21:46:10.124 [main] EmailJDBCTest - @AfterClass seeding
+[INFO ] 2020-10-07 21:46:10.124 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:49:07.632 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:49:07.977 [main] EmailJDBCTest - ----------TEST CREATE FOLDER----------
+[INFO ] 2020-10-07 21:49:07.994 [main] EmailDAOImpl - Folder created: Special
+[INFO ] 2020-10-07 21:49:07.999 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:49:08.172 [main] EmailJDBCTest - ----------TEST FIND EMPTY CUSTOM FOLDER EMAILS----------
+[INFO ] 2020-10-07 21:49:08.179 [main] EmailDAOImpl - Folder created: NewFolder
+[DEBUG] 2020-10-07 21:49:08.179 [main] EmailDAOImpl - Number of emails in: NewFolder is: 0
+[INFO ] 2020-10-07 21:49:08.179 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:49:08.369 [main] EmailJDBCTest - ----------TEST DELETE EMAIL----------
+[DEBUG] 2020-10-07 21:49:08.373 [main] EmailDAOImpl - Number of rows deleted in email (should be 1): 1
+[INFO ] 2020-10-07 21:49:08.373 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:49:08.538 [main] EmailJDBCTest - ----------TEST FIND EMAILS BY SUBJECT----------
+[INFO ] 2020-10-07 21:49:08.569 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:49:08.580 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:49:08.590 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:49:08.599 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:49:08.607 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:49:08.615 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:49:08.624 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:49:08.632 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:49:08.641 [main] EmailDAOImpl - Created custom Email bean
+[DEBUG] 2020-10-07 21:49:08.641 [main] EmailDAOImpl - Number of emails found with the substring: sub in Subject is: 9
+[INFO ] 2020-10-07 21:49:08.642 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:49:08.816 [main] EmailJDBCTest - ----------TEST FIND ALL----------
+[INFO ] 2020-10-07 21:49:08.827 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:49:08.836 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:49:08.845 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:49:08.854 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:49:08.862 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:49:08.870 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:49:08.879 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:49:08.887 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:49:08.894 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:49:08.902 [main] EmailDAOImpl - Created custom Email bean
+[DEBUG] 2020-10-07 21:49:08.902 [main] EmailDAOImpl - Total number of emails : 10
+[INFO ] 2020-10-07 21:49:08.903 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:49:09.089 [main] EmailJDBCTest - ----------TEST CREATE EMAIL----------
+[DEBUG] 2020-10-07 21:49:09.089 [main] EmailJDBCTest - latest id: 11
+[DEBUG] 2020-10-07 21:49:09.089 [main] EmailDAOImpl - The message sent: test create email
+[DEBUG] 2020-10-07 21:49:09.089 [main] EmailDAOImpl - The message sent type: text/plain
+[DEBUG] 2020-10-07 21:49:09.089 [main] EmailDAOImpl - The message sent: test
+[DEBUG] 2020-10-07 21:49:09.089 [main] EmailDAOImpl - The message sent type: text/html
+[DEBUG] 2020-10-07 21:49:09.105 [main] EmailDAOImpl - New email ID is: 11
+[INFO ] 2020-10-07 21:49:09.105 [main] EmailDAOImpl - Address not in table -> create
+[DEBUG] 2020-10-07 21:49:09.105 [main] EmailDAOImpl - Creating an address - Number of rows created (should be 1): 1
+[INFO ] 2020-10-07 21:49:09.105 [main] EmailDAOImpl - Address not in table -> create
+[DEBUG] 2020-10-07 21:49:09.105 [main] EmailDAOImpl - Creating an address - Number of rows created (should be 1): 1
+[DEBUG] 2020-10-07 21:49:09.126 [main] EmailDAOImpl - email To: xinjia345@gmail.com
+[DEBUG] 2020-10-07 21:49:09.132 [main] EmailDAOImpl - email CC: xinjia1.cao@gmail.com
+[DEBUG] 2020-10-07 21:49:09.137 [main] EmailDAOImpl - Number of recipients added: 2
+[DEBUG] 2020-10-07 21:49:09.155 [main] EmailDAOImpl - Number of attachments added: 1
+[INFO ] 2020-10-07 21:49:09.155 [main] EmailDAOImpl - Email inserted in the database
+[INFO ] 2020-10-07 21:49:09.171 [main] EmailDAOImpl - Created custom Email bean
+[DEBUG] 2020-10-07 21:49:09.171 [main] EmailDAOImpl - Email with id: 11?: true
+[INFO ] 2020-10-07 21:49:09.171 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:49:09.358 [main] EmailJDBCTest - ----------TEST FIND SENT EMAILS----------
+[INFO ] 2020-10-07 21:49:09.374 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:49:09.374 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:49:09.390 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:49:09.390 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:49:09.408 [main] EmailDAOImpl - Created custom Email bean
+[DEBUG] 2020-10-07 21:49:09.409 [main] EmailDAOImpl - Number of emails in: Sent is: 5
+[INFO ] 2020-10-07 21:49:09.409 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:49:09.581 [main] EmailJDBCTest - ----------TEST FIND RECEIVED EMAILS (INBOX)----------
+[INFO ] 2020-10-07 21:49:09.590 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:49:09.590 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:49:09.606 [main] EmailDAOImpl - Created custom Email bean
+[DEBUG] 2020-10-07 21:49:09.606 [main] EmailDAOImpl - Number of emails in: Inbox is: 3
+[INFO ] 2020-10-07 21:49:09.606 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:49:09.796 [main] EmailJDBCTest - ----------TEST DELETE FOLDER----------
+[DEBUG] 2020-10-07 21:49:09.800 [main] EmailDAOImpl - Number of rows deleted in folder (should be 1): 1
+[INFO ] 2020-10-07 21:49:09.800 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:49:09.993 [main] EmailJDBCTest - ----------TEST UPDATE DRAFT AND SEND----------
+[DEBUG] 2020-10-07 21:49:09.996 [main] EmailDAOImpl - Number of attachments added: 0
+[DEBUG] 2020-10-07 21:49:09.996 [main] EmailDAOImpl - Number of attachments added for update: 0
+[DEBUG] 2020-10-07 21:49:09.998 [main] EmailDAOImpl - The message sent: changed message
+[DEBUG] 2020-10-07 21:49:09.999 [main] EmailDAOImpl - The message sent type: text/plain
+[DEBUG] 2020-10-07 21:49:09.999 [main] EmailDAOImpl - The message sent: changed html message
+[DEBUG] 2020-10-07 21:49:09.999 [main] EmailDAOImpl - The message sent type: text/html
+[DEBUG] 2020-10-07 21:49:10.007 [main] EmailDAOImpl - email BCC: alice123@gmail.com
+[DEBUG] 2020-10-07 21:49:10.011 [main] EmailDAOImpl - Number of recipients added: 1
+[DEBUG] 2020-10-07 21:49:10.011 [main] EmailDAOImpl - Number of recipients added for update: 1
+[DEBUG] 2020-10-07 21:49:10.011 [main] EmailDAOImpl - Total number of rows updated and added: 2
+[DEBUG] 2020-10-07 21:49:10.014 [main] EmailDAOImpl - Folder id of folder Sent is: 2
+[DEBUG] 2020-10-07 21:49:10.016 [main] EmailDAOImpl - Number of emails' folder changed (should be 1): 1
+[DEBUG] 2020-10-07 21:49:10.017 [main] EmailDAOImpl - Total number of rows updated and added before sending: 3
+[INFO ] 2020-10-07 21:49:10.017 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:49:10.203 [main] EmailJDBCTest - ----------TEST INVALID CREATE FOLDER----------
+[INFO ] 2020-10-07 21:49:10.213 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:49:10.410 [main] EmailJDBCTest - ----------TEST UPDATE DRAFT----------
+[DEBUG] 2020-10-07 21:49:10.421 [main] EmailDAOImpl - Number of attachments added: 1
+[DEBUG] 2020-10-07 21:49:10.422 [main] EmailDAOImpl - Number of attachments added for update: 1
+[DEBUG] 2020-10-07 21:49:10.423 [main] EmailDAOImpl - The message sent: updated Msg
+[DEBUG] 2020-10-07 21:49:10.423 [main] EmailDAOImpl - The message sent type: text/plain
+[DEBUG] 2020-10-07 21:49:10.424 [main] EmailDAOImpl - The message sent: updated HTML Msg
+[DEBUG] 2020-10-07 21:49:10.424 [main] EmailDAOImpl - The message sent type: text/html
+[INFO ] 2020-10-07 21:49:10.430 [main] EmailDAOImpl - Address not in table -> create
+[DEBUG] 2020-10-07 21:49:10.434 [main] EmailDAOImpl - Creating an address - Number of rows created (should be 1): 1
+[INFO ] 2020-10-07 21:49:10.437 [main] EmailDAOImpl - Address not in table -> create
+[DEBUG] 2020-10-07 21:49:10.440 [main] EmailDAOImpl - Creating an address - Number of rows created (should be 1): 1
+[DEBUG] 2020-10-07 21:49:10.442 [main] EmailDAOImpl - email To: updatedRecipient1@gmail.com
+[DEBUG] 2020-10-07 21:49:10.447 [main] EmailDAOImpl - email BCC: updatedRecipient2@gmail.com
+[DEBUG] 2020-10-07 21:49:10.451 [main] EmailDAOImpl - Number of recipients added: 2
+[DEBUG] 2020-10-07 21:49:10.451 [main] EmailDAOImpl - Number of recipients added for update: 2
+[DEBUG] 2020-10-07 21:49:10.451 [main] EmailDAOImpl - Total number of rows updated and added: 4
+[INFO ] 2020-10-07 21:49:10.451 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:49:10.645 [main] EmailJDBCTest - ----------TEST FIND CUSTOM FOLDER EMAILS----------
+[INFO ] 2020-10-07 21:49:10.651 [main] EmailDAOImpl - Folder created: NewFolder
+[DEBUG] 2020-10-07 21:49:10.653 [main] EmailJDBCTest - latest id: 11
+[INFO ] 2020-10-07 21:49:10.666 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:49:10.857 [main] EmailJDBCTest - ----------TEST FIND ALL ADDRESSES----------
+[INFO ] 2020-10-07 21:49:10.860 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:49:11.067 [main] EmailJDBCTest - ----------TEST EMAIL FOLDER CHANGED----------
+[DEBUG] 2020-10-07 21:49:11.070 [main] EmailJDBCTest - latest id: 11
+[DEBUG] 2020-10-07 21:49:11.072 [main] EmailDAOImpl - The message sent: test create email
+[DEBUG] 2020-10-07 21:49:11.072 [main] EmailDAOImpl - The message sent type: text/plain
+[DEBUG] 2020-10-07 21:49:11.072 [main] EmailDAOImpl - The message sent: test
+[DEBUG] 2020-10-07 21:49:11.072 [main] EmailDAOImpl - The message sent type: text/html
+[DEBUG] 2020-10-07 21:49:11.074 [main] EmailDAOImpl - New email ID is: 11
+[INFO ] 2020-10-07 21:49:11.076 [main] EmailDAOImpl - Address not in table -> create
+[DEBUG] 2020-10-07 21:49:11.080 [main] EmailDAOImpl - Creating an address - Number of rows created (should be 1): 1
+[INFO ] 2020-10-07 21:49:11.083 [main] EmailDAOImpl - Address not in table -> create
+[DEBUG] 2020-10-07 21:49:11.085 [main] EmailDAOImpl - Creating an address - Number of rows created (should be 1): 1
+[DEBUG] 2020-10-07 21:49:11.090 [main] EmailDAOImpl - email To: xinjia345@gmail.com
+[DEBUG] 2020-10-07 21:49:11.093 [main] EmailDAOImpl - email CC: xinjia1.cao@gmail.com
+[DEBUG] 2020-10-07 21:49:11.097 [main] EmailDAOImpl - Number of recipients added: 2
+[DEBUG] 2020-10-07 21:49:11.106 [main] EmailDAOImpl - Number of attachments added: 1
+[INFO ] 2020-10-07 21:49:11.106 [main] EmailDAOImpl - Email inserted in the database
+[DEBUG] 2020-10-07 21:49:11.108 [main] EmailDAOImpl - Folder id of folder Inbox is: 1
+[DEBUG] 2020-10-07 21:49:11.112 [main] EmailDAOImpl - Number of emails' folder changed (should be 1): 1
+[INFO ] 2020-10-07 21:49:11.114 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:49:11.298 [main] EmailJDBCTest - ----------TEST FIND BY ID 1----------
+[INFO ] 2020-10-07 21:49:11.307 [main] EmailDAOImpl - Created custom Email bean
+[DEBUG] 2020-10-07 21:49:11.307 [main] EmailDAOImpl - Email with id: 1?: true
+[INFO ] 2020-10-07 21:49:11.307 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:49:11.481 [main] EmailJDBCTest - ----------TEST FIND DRAFT EMAILS----------
+[INFO ] 2020-10-07 21:49:11.490 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:49:11.498 [main] EmailDAOImpl - Created custom Email bean
+[DEBUG] 2020-10-07 21:49:11.498 [main] EmailDAOImpl - Number of emails in: Draft is: 2
+[INFO ] 2020-10-07 21:49:11.498 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:49:11.688 [main] EmailJDBCTest - ----------TEST UPDATE FOLDER NAME----------
+[INFO ] 2020-10-07 21:49:11.692 [main] EmailDAOImpl - Folder created: NewFolder
+[DEBUG] 2020-10-07 21:49:11.697 [main] EmailDAOImpl - Number of folder name changed (should be 1): 1
+[INFO ] 2020-10-07 21:49:11.697 [main] EmailDAOImpl - Changed folder: NewFolder to: Special
+[INFO ] 2020-10-07 21:49:11.698 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:49:11.913 [main] EmailJDBCTest - ----------TEST FIND FOLDER NAMES----------
+[INFO ] 2020-10-07 21:49:11.915 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:49:12.122 [main] EmailJDBCTest - ----------TEST UPDATE INVALID FOLDER NAME----------
+[INFO ] 2020-10-07 21:49:12.131 [main] EmailDAOImpl - Folder created: NewFolder
+[INFO ] 2020-10-07 21:49:12.134 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:49:12.326 [main] EmailJDBCTest - ----------TEST FIND EMAILS BY RECIPIENTS----------
+[INFO ] 2020-10-07 21:49:12.339 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:49:12.347 [main] EmailDAOImpl - Created custom Email bean
+[DEBUG] 2020-10-07 21:49:12.348 [main] EmailDAOImpl - Number of emails found with the substring: 123 in Subject is: 2
+[INFO ] 2020-10-07 21:49:12.348 [main] EmailJDBCTest - @AfterClass seeding
+[INFO ] 2020-10-07 21:49:12.348 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:50:58.005 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:50:58.365 [main] EmailJDBCTest - ----------TEST CREATE FOLDER----------
+[INFO ] 2020-10-07 21:50:58.384 [main] EmailDAOImpl - Folder created: Special
+[INFO ] 2020-10-07 21:50:58.385 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:50:58.606 [main] EmailJDBCTest - ----------TEST FIND EMPTY CUSTOM FOLDER EMAILS----------
+[INFO ] 2020-10-07 21:50:58.616 [main] EmailDAOImpl - Folder created: NewFolder
+[DEBUG] 2020-10-07 21:50:58.621 [main] EmailDAOImpl - Number of emails in: NewFolder is: 0
+[INFO ] 2020-10-07 21:50:58.622 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:50:58.812 [main] EmailJDBCTest - ----------TEST DELETE EMAIL----------
+[DEBUG] 2020-10-07 21:50:58.817 [main] EmailDAOImpl - Number of rows deleted in email (should be 1): 1
+[INFO ] 2020-10-07 21:50:58.817 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:50:59.023 [main] EmailJDBCTest - ----------TEST FIND EMAILS BY SUBJECT----------
+[INFO ] 2020-10-07 21:50:59.055 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:50:59.065 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:50:59.075 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:50:59.084 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:50:59.093 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:50:59.103 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:50:59.112 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:50:59.121 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:50:59.130 [main] EmailDAOImpl - Created custom Email bean
+[DEBUG] 2020-10-07 21:50:59.130 [main] EmailDAOImpl - Number of emails found with the substring: sub in Subject is: 9
+[INFO ] 2020-10-07 21:50:59.131 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:50:59.329 [main] EmailJDBCTest - ----------TEST FIND ALL----------
+[INFO ] 2020-10-07 21:50:59.340 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:50:59.350 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:50:59.359 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:50:59.368 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:50:59.376 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:50:59.384 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:50:59.392 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:50:59.401 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:50:59.410 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:50:59.418 [main] EmailDAOImpl - Created custom Email bean
+[DEBUG] 2020-10-07 21:50:59.418 [main] EmailDAOImpl - Total number of emails : 10
+[INFO ] 2020-10-07 21:50:59.419 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:50:59.609 [main] EmailJDBCTest - ----------TEST CREATE EMAIL----------
+[DEBUG] 2020-10-07 21:50:59.620 [main] EmailJDBCTest - latest id: 11
+[DEBUG] 2020-10-07 21:50:59.626 [main] EmailDAOImpl - The message sent: test create email
+[DEBUG] 2020-10-07 21:50:59.626 [main] EmailDAOImpl - The message sent type: text/plain
+[DEBUG] 2020-10-07 21:50:59.626 [main] EmailDAOImpl - The message sent: test
+[DEBUG] 2020-10-07 21:50:59.626 [main] EmailDAOImpl - The message sent type: text/html
+[DEBUG] 2020-10-07 21:50:59.629 [main] EmailDAOImpl - New email ID is: 11
+[INFO ] 2020-10-07 21:50:59.632 [main] EmailDAOImpl - Address not in table -> create
+[DEBUG] 2020-10-07 21:50:59.636 [main] EmailDAOImpl - Creating an address - Number of rows created (should be 1): 1
+[INFO ] 2020-10-07 21:50:59.639 [main] EmailDAOImpl - Address not in table -> create
+[DEBUG] 2020-10-07 21:50:59.643 [main] EmailDAOImpl - Creating an address - Number of rows created (should be 1): 1
+[DEBUG] 2020-10-07 21:50:59.650 [main] EmailDAOImpl - email To: xinjia345@gmail.com
+[DEBUG] 2020-10-07 21:50:59.655 [main] EmailDAOImpl - email CC: xinjia1.cao@gmail.com
+[DEBUG] 2020-10-07 21:50:59.659 [main] EmailDAOImpl - Number of recipients added: 2
+[DEBUG] 2020-10-07 21:50:59.680 [main] EmailDAOImpl - Number of attachments added: 1
+[INFO ] 2020-10-07 21:50:59.680 [main] EmailDAOImpl - Email inserted in the database
+[INFO ] 2020-10-07 21:50:59.692 [main] EmailDAOImpl - Created custom Email bean
+[DEBUG] 2020-10-07 21:50:59.693 [main] EmailDAOImpl - Email with id: 11?: true
+[INFO ] 2020-10-07 21:50:59.694 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:50:59.893 [main] EmailJDBCTest - ----------TEST FIND SENT EMAILS----------
+[INFO ] 2020-10-07 21:50:59.909 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:50:59.909 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:50:59.924 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:50:59.924 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:50:59.940 [main] EmailDAOImpl - Created custom Email bean
+[DEBUG] 2020-10-07 21:50:59.940 [main] EmailDAOImpl - Number of emails in: Sent is: 5
+[INFO ] 2020-10-07 21:50:59.940 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:51:00.130 [main] EmailJDBCTest - ----------TEST FIND RECEIVED EMAILS (INBOX)----------
+[INFO ] 2020-10-07 21:51:00.140 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:51:00.148 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:51:00.157 [main] EmailDAOImpl - Created custom Email bean
+[DEBUG] 2020-10-07 21:51:00.157 [main] EmailDAOImpl - Number of emails in: Inbox is: 3
+[INFO ] 2020-10-07 21:51:00.158 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:51:00.325 [main] EmailJDBCTest - ----------TEST DELETE FOLDER----------
+[DEBUG] 2020-10-07 21:51:00.328 [main] EmailDAOImpl - Number of rows deleted in folder (should be 1): 1
+[INFO ] 2020-10-07 21:51:00.328 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:51:00.501 [main] EmailJDBCTest - ----------TEST UPDATE DRAFT AND SEND----------
+[DEBUG] 2020-10-07 21:51:00.504 [main] EmailDAOImpl - Number of attachments added: 0
+[DEBUG] 2020-10-07 21:51:00.504 [main] EmailDAOImpl - Number of attachments added for update: 0
+[DEBUG] 2020-10-07 21:51:00.506 [main] EmailDAOImpl - The message sent: changed message
+[DEBUG] 2020-10-07 21:51:00.506 [main] EmailDAOImpl - The message sent type: text/plain
+[DEBUG] 2020-10-07 21:51:00.506 [main] EmailDAOImpl - The message sent: changed html message
+[DEBUG] 2020-10-07 21:51:00.506 [main] EmailDAOImpl - The message sent type: text/html
+[DEBUG] 2020-10-07 21:51:00.516 [main] EmailDAOImpl - email BCC: alice123@gmail.com
+[DEBUG] 2020-10-07 21:51:00.519 [main] EmailDAOImpl - Number of recipients added: 1
+[DEBUG] 2020-10-07 21:51:00.520 [main] EmailDAOImpl - Number of recipients added for update: 1
+[DEBUG] 2020-10-07 21:51:00.520 [main] EmailDAOImpl - Total number of rows updated and added: 2
+[DEBUG] 2020-10-07 21:51:00.522 [main] EmailDAOImpl - Folder id of folder Sent is: 2
+[DEBUG] 2020-10-07 21:51:00.525 [main] EmailDAOImpl - Number of emails' folder changed (should be 1): 1
+[DEBUG] 2020-10-07 21:51:00.525 [main] EmailDAOImpl - Total number of rows updated and added before sending: 3
+[INFO ] 2020-10-07 21:51:00.525 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:51:00.708 [main] EmailJDBCTest - ----------TEST INVALID CREATE FOLDER----------
+[INFO ] 2020-10-07 21:51:00.711 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:51:00.868 [main] EmailJDBCTest - ----------TEST UPDATE DRAFT----------
+[DEBUG] 2020-10-07 21:51:00.879 [main] EmailDAOImpl - Number of attachments added: 1
+[DEBUG] 2020-10-07 21:51:00.879 [main] EmailDAOImpl - Number of attachments added for update: 1
+[DEBUG] 2020-10-07 21:51:00.881 [main] EmailDAOImpl - The message sent: updated Msg
+[DEBUG] 2020-10-07 21:51:00.881 [main] EmailDAOImpl - The message sent type: text/plain
+[DEBUG] 2020-10-07 21:51:00.881 [main] EmailDAOImpl - The message sent: updated HTML Msg
+[DEBUG] 2020-10-07 21:51:00.881 [main] EmailDAOImpl - The message sent type: text/html
+[INFO ] 2020-10-07 21:51:00.886 [main] EmailDAOImpl - Address not in table -> create
+[DEBUG] 2020-10-07 21:51:00.889 [main] EmailDAOImpl - Creating an address - Number of rows created (should be 1): 1
+[INFO ] 2020-10-07 21:51:00.891 [main] EmailDAOImpl - Address not in table -> create
+[DEBUG] 2020-10-07 21:51:00.894 [main] EmailDAOImpl - Creating an address - Number of rows created (should be 1): 1
+[DEBUG] 2020-10-07 21:51:00.896 [main] EmailDAOImpl - email To: updatedRecipient1@gmail.com
+[DEBUG] 2020-10-07 21:51:00.899 [main] EmailDAOImpl - email BCC: updatedRecipient2@gmail.com
+[DEBUG] 2020-10-07 21:51:00.902 [main] EmailDAOImpl - Number of recipients added: 2
+[DEBUG] 2020-10-07 21:51:00.902 [main] EmailDAOImpl - Number of recipients added for update: 2
+[DEBUG] 2020-10-07 21:51:00.902 [main] EmailDAOImpl - Total number of rows updated and added: 4
+[INFO ] 2020-10-07 21:51:00.903 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:51:01.073 [main] EmailJDBCTest - ----------TEST FIND CUSTOM FOLDER EMAILS----------
+[INFO ] 2020-10-07 21:51:01.078 [main] EmailDAOImpl - Folder created: NewFolder
+[DEBUG] 2020-10-07 21:51:01.082 [main] EmailJDBCTest - latest id: 11
+[DEBUG] 2020-10-07 21:51:01.084 [main] EmailDAOImpl - New email ID is: 11
+[DEBUG] 2020-10-07 21:51:01.090 [main] EmailDAOImpl - email To: alice123@gmail.com
+[DEBUG] 2020-10-07 21:51:01.091 [main] EmailDAOImpl - Number of recipients added: 1
+[DEBUG] 2020-10-07 21:51:01.091 [main] EmailDAOImpl - Number of attachments added: 0
+[INFO ] 2020-10-07 21:51:01.091 [main] EmailDAOImpl - Email inserted in the database
+[INFO ] 2020-10-07 21:51:01.091 [main] EmailDAOImpl - Created custom Email bean
+[DEBUG] 2020-10-07 21:51:01.091 [main] EmailDAOImpl - Number of emails in: NewFolder is: 1
+[INFO ] 2020-10-07 21:51:01.091 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:51:01.279 [main] EmailJDBCTest - ----------TEST FIND ALL ADDRESSES----------
+[INFO ] 2020-10-07 21:51:01.283 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:51:01.455 [main] EmailJDBCTest - ----------TEST EMAIL FOLDER CHANGED----------
+[DEBUG] 2020-10-07 21:51:01.458 [main] EmailJDBCTest - latest id: 11
+[DEBUG] 2020-10-07 21:51:01.460 [main] EmailDAOImpl - The message sent: test create email
+[DEBUG] 2020-10-07 21:51:01.460 [main] EmailDAOImpl - The message sent type: text/plain
+[DEBUG] 2020-10-07 21:51:01.460 [main] EmailDAOImpl - The message sent: test
+[DEBUG] 2020-10-07 21:51:01.460 [main] EmailDAOImpl - The message sent type: text/html
+[DEBUG] 2020-10-07 21:51:01.461 [main] EmailDAOImpl - New email ID is: 11
+[INFO ] 2020-10-07 21:51:01.464 [main] EmailDAOImpl - Address not in table -> create
+[DEBUG] 2020-10-07 21:51:01.467 [main] EmailDAOImpl - Creating an address - Number of rows created (should be 1): 1
+[INFO ] 2020-10-07 21:51:01.469 [main] EmailDAOImpl - Address not in table -> create
+[DEBUG] 2020-10-07 21:51:01.472 [main] EmailDAOImpl - Creating an address - Number of rows created (should be 1): 1
+[DEBUG] 2020-10-07 21:51:01.476 [main] EmailDAOImpl - email To: xinjia345@gmail.com
+[DEBUG] 2020-10-07 21:51:01.479 [main] EmailDAOImpl - email CC: xinjia1.cao@gmail.com
+[DEBUG] 2020-10-07 21:51:01.482 [main] EmailDAOImpl - Number of recipients added: 2
+[DEBUG] 2020-10-07 21:51:01.492 [main] EmailDAOImpl - Number of attachments added: 1
+[INFO ] 2020-10-07 21:51:01.492 [main] EmailDAOImpl - Email inserted in the database
+[DEBUG] 2020-10-07 21:51:01.495 [main] EmailDAOImpl - Folder id of folder Inbox is: 1
+[DEBUG] 2020-10-07 21:51:01.501 [main] EmailDAOImpl - Number of emails' folder changed (should be 1): 1
+[INFO ] 2020-10-07 21:51:01.502 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:51:01.696 [main] EmailJDBCTest - ----------TEST FIND BY ID 1----------
+[INFO ] 2020-10-07 21:51:01.709 [main] EmailDAOImpl - Created custom Email bean
+[DEBUG] 2020-10-07 21:51:01.709 [main] EmailDAOImpl - Email with id: 1?: true
+[INFO ] 2020-10-07 21:51:01.711 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:51:01.934 [main] EmailJDBCTest - ----------TEST FIND DRAFT EMAILS----------
+[INFO ] 2020-10-07 21:51:01.944 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:51:01.952 [main] EmailDAOImpl - Created custom Email bean
+[DEBUG] 2020-10-07 21:51:01.952 [main] EmailDAOImpl - Number of emails in: Draft is: 2
+[INFO ] 2020-10-07 21:51:01.953 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:51:02.158 [main] EmailJDBCTest - ----------TEST UPDATE FOLDER NAME----------
+[INFO ] 2020-10-07 21:51:02.164 [main] EmailDAOImpl - Folder created: NewFolder
+[DEBUG] 2020-10-07 21:51:02.169 [main] EmailDAOImpl - Number of folder name changed (should be 1): 1
+[INFO ] 2020-10-07 21:51:02.169 [main] EmailDAOImpl - Changed folder: NewFolder to: Special
+[INFO ] 2020-10-07 21:51:02.170 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:51:02.376 [main] EmailJDBCTest - ----------TEST FIND FOLDER NAMES----------
+[INFO ] 2020-10-07 21:51:02.380 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:51:02.582 [main] EmailJDBCTest - ----------TEST UPDATE INVALID FOLDER NAME----------
+[INFO ] 2020-10-07 21:51:02.588 [main] EmailDAOImpl - Folder created: NewFolder
+[INFO ] 2020-10-07 21:51:02.591 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:51:02.765 [main] EmailJDBCTest - ----------TEST FIND EMAILS BY RECIPIENTS----------
+[INFO ] 2020-10-07 21:51:02.774 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 21:51:02.781 [main] EmailDAOImpl - Created custom Email bean
+[DEBUG] 2020-10-07 21:51:02.781 [main] EmailDAOImpl - Number of emails found with the substring: 123 in Subject is: 2
+[INFO ] 2020-10-07 21:51:02.782 [main] EmailJDBCTest - @AfterClass seeding
+[INFO ] 2020-10-07 21:51:02.782 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:52:30.926 [main] EmailJDBCTest - ----------TEST FIND CUSTOM FOLDER EMAILS----------
+[INFO ] 2020-10-07 21:52:31.081 [main] EmailDAOImpl - Folder created: NewFolder
+[DEBUG] 2020-10-07 21:52:31.092 [main] EmailJDBCTest - latest id: 11
+[INFO ] 2020-10-07 21:52:31.103 [main] EmailJDBCTest - @AfterClass seeding
+[INFO ] 2020-10-07 21:52:31.103 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 21:57:03.146 [main] EmailJDBCTest - ----------TEST FIND CUSTOM FOLDER EMAILS----------
+[INFO ] 2020-10-07 21:57:03.308 [main] EmailDAOImpl - Folder created: NewFolder
+[DEBUG] 2020-10-07 21:57:03.320 [main] EmailJDBCTest - latest id: 11
+[DEBUG] 2020-10-07 21:57:03.321 [main] EmailDAOImpl - The message sent: <p>hello<p>
+[DEBUG] 2020-10-07 21:57:03.321 [main] EmailDAOImpl - The message sent type: text/html
+[DEBUG] 2020-10-07 21:57:03.321 [main] EmailDAOImpl - New email ID is: 11
+[DEBUG] 2020-10-07 21:57:03.341 [main] EmailDAOImpl - email To: alice123@gmail.com
+[DEBUG] 2020-10-07 21:57:03.346 [main] EmailDAOImpl - Number of recipients added: 1
+[DEBUG] 2020-10-07 21:57:03.347 [main] EmailDAOImpl - Number of attachments added: 0
+[INFO ] 2020-10-07 21:57:03.347 [main] EmailDAOImpl - Email inserted in the database
+[INFO ] 2020-10-07 21:57:03.369 [main] EmailDAOImpl - Created custom Email bean
+[DEBUG] 2020-10-07 21:57:03.371 [main] EmailDAOImpl - Number of emails in: NewFolder is: 1
+[INFO ] 2020-10-07 21:57:03.373 [main] EmailJDBCTest - @AfterClass seeding
+[INFO ] 2020-10-07 21:57:03.373 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 22:00:21.059 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 22:00:21.432 [main] EmailJDBCTest - ----------TEST CREATE FOLDER----------
+[INFO ] 2020-10-07 22:00:21.451 [main] EmailDAOImpl - Folder created: Special
+[INFO ] 2020-10-07 22:00:21.452 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 22:00:21.662 [main] EmailJDBCTest - ----------TEST FIND EMPTY CUSTOM FOLDER EMAILS----------
+[INFO ] 2020-10-07 22:00:21.669 [main] EmailDAOImpl - Folder created: NewFolder
+[DEBUG] 2020-10-07 22:00:21.674 [main] EmailDAOImpl - Number of emails in: NewFolder is: 0
+[INFO ] 2020-10-07 22:00:21.675 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 22:00:21.861 [main] EmailJDBCTest - ----------TEST DELETE EMAIL----------
+[DEBUG] 2020-10-07 22:00:21.866 [main] EmailDAOImpl - Number of rows deleted in email (should be 1): 1
+[INFO ] 2020-10-07 22:00:21.866 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 22:00:22.095 [main] EmailJDBCTest - ----------TEST FIND EMAILS BY SUBJECT----------
+[INFO ] 2020-10-07 22:00:22.132 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 22:00:22.132 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 22:00:22.147 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 22:00:22.147 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 22:00:22.166 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 22:00:22.166 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 22:00:22.182 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 22:00:22.182 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 22:00:22.197 [main] EmailDAOImpl - Created custom Email bean
+[DEBUG] 2020-10-07 22:00:22.197 [main] EmailDAOImpl - Number of emails found with the substring: sub in Subject is: 9
+[INFO ] 2020-10-07 22:00:22.206 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 22:00:22.392 [main] EmailJDBCTest - ----------TEST FIND ALL----------
+[INFO ] 2020-10-07 22:00:22.407 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 22:00:22.423 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 22:00:22.432 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 22:00:22.440 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 22:00:22.448 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 22:00:22.456 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 22:00:22.464 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 22:00:22.472 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 22:00:22.480 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 22:00:22.487 [main] EmailDAOImpl - Created custom Email bean
+[DEBUG] 2020-10-07 22:00:22.488 [main] EmailDAOImpl - Total number of emails : 10
+[INFO ] 2020-10-07 22:00:22.488 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 22:00:22.670 [main] EmailJDBCTest - ----------TEST CREATE EMAIL----------
+[DEBUG] 2020-10-07 22:00:22.681 [main] EmailJDBCTest - latest id: 11
+[DEBUG] 2020-10-07 22:00:22.686 [main] EmailDAOImpl - The message sent: test create email
+[DEBUG] 2020-10-07 22:00:22.687 [main] EmailDAOImpl - The message sent type: text/plain
+[DEBUG] 2020-10-07 22:00:22.687 [main] EmailDAOImpl - The message sent: test
+[DEBUG] 2020-10-07 22:00:22.687 [main] EmailDAOImpl - The message sent type: text/html
+[DEBUG] 2020-10-07 22:00:22.689 [main] EmailDAOImpl - New email ID is: 11
+[INFO ] 2020-10-07 22:00:22.693 [main] EmailDAOImpl - Address not in table -> create
+[DEBUG] 2020-10-07 22:00:22.696 [main] EmailDAOImpl - Creating an address - Number of rows created (should be 1): 1
+[INFO ] 2020-10-07 22:00:22.699 [main] EmailDAOImpl - Address not in table -> create
+[DEBUG] 2020-10-07 22:00:22.703 [main] EmailDAOImpl - Creating an address - Number of rows created (should be 1): 1
+[DEBUG] 2020-10-07 22:00:22.710 [main] EmailDAOImpl - email To: xinjia345@gmail.com
+[DEBUG] 2020-10-07 22:00:22.715 [main] EmailDAOImpl - email CC: xinjia1.cao@gmail.com
+[DEBUG] 2020-10-07 22:00:22.719 [main] EmailDAOImpl - Number of recipients added: 2
+[DEBUG] 2020-10-07 22:00:22.739 [main] EmailDAOImpl - Number of attachments added: 1
+[INFO ] 2020-10-07 22:00:22.739 [main] EmailDAOImpl - Email inserted in the database
+[INFO ] 2020-10-07 22:00:22.752 [main] EmailDAOImpl - Created custom Email bean
+[DEBUG] 2020-10-07 22:00:22.753 [main] EmailDAOImpl - Email with id: 11?: true
+[INFO ] 2020-10-07 22:00:22.754 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 22:00:22.938 [main] EmailJDBCTest - ----------TEST FIND SENT EMAILS----------
+[INFO ] 2020-10-07 22:00:22.949 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 22:00:22.958 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 22:00:22.967 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 22:00:22.976 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 22:00:22.985 [main] EmailDAOImpl - Created custom Email bean
+[DEBUG] 2020-10-07 22:00:22.985 [main] EmailDAOImpl - Number of emails in: Sent is: 5
+[INFO ] 2020-10-07 22:00:22.986 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 22:00:23.166 [main] EmailJDBCTest - ----------TEST FIND RECEIVED EMAILS (INBOX)----------
+[INFO ] 2020-10-07 22:00:23.176 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 22:00:23.184 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 22:00:23.193 [main] EmailDAOImpl - Created custom Email bean
+[DEBUG] 2020-10-07 22:00:23.193 [main] EmailDAOImpl - Number of emails in: Inbox is: 3
+[INFO ] 2020-10-07 22:00:23.194 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 22:00:23.417 [main] EmailJDBCTest - ----------TEST DELETE FOLDER----------
+[DEBUG] 2020-10-07 22:00:23.421 [main] EmailDAOImpl - Number of rows deleted in folder (should be 1): 1
+[INFO ] 2020-10-07 22:00:23.421 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 22:00:23.712 [main] EmailJDBCTest - ----------TEST UPDATE DRAFT AND SEND----------
+[DEBUG] 2020-10-07 22:00:23.716 [main] EmailDAOImpl - Number of attachments added: 0
+[DEBUG] 2020-10-07 22:00:23.717 [main] EmailDAOImpl - Number of attachments added for update: 0
+[DEBUG] 2020-10-07 22:00:23.719 [main] EmailDAOImpl - The message sent: changed message
+[DEBUG] 2020-10-07 22:00:23.719 [main] EmailDAOImpl - The message sent type: text/plain
+[DEBUG] 2020-10-07 22:00:23.719 [main] EmailDAOImpl - The message sent: changed html message
+[DEBUG] 2020-10-07 22:00:23.719 [main] EmailDAOImpl - The message sent type: text/html
+[DEBUG] 2020-10-07 22:00:23.727 [main] EmailDAOImpl - email BCC: alice123@gmail.com
+[DEBUG] 2020-10-07 22:00:23.731 [main] EmailDAOImpl - Number of recipients added: 1
+[DEBUG] 2020-10-07 22:00:23.732 [main] EmailDAOImpl - Number of recipients added for update: 1
+[DEBUG] 2020-10-07 22:00:23.732 [main] EmailDAOImpl - Total number of rows updated and added: 2
+[DEBUG] 2020-10-07 22:00:23.735 [main] EmailDAOImpl - Folder id of folder Sent is: 2
+[DEBUG] 2020-10-07 22:00:23.737 [main] EmailDAOImpl - Number of emails' folder changed (should be 1): 1
+[DEBUG] 2020-10-07 22:00:23.737 [main] EmailDAOImpl - Total number of rows updated and added before sending: 3
+[INFO ] 2020-10-07 22:00:23.738 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 22:00:24.016 [main] EmailJDBCTest - ----------TEST INVALID CREATE FOLDER----------
+[INFO ] 2020-10-07 22:00:24.018 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 22:00:24.259 [main] EmailJDBCTest - ----------TEST UPDATE DRAFT----------
+[DEBUG] 2020-10-07 22:00:24.279 [main] EmailDAOImpl - Number of attachments added: 1
+[DEBUG] 2020-10-07 22:00:24.279 [main] EmailDAOImpl - Number of attachments added for update: 1
+[DEBUG] 2020-10-07 22:00:24.281 [main] EmailDAOImpl - The message sent: updated Msg
+[DEBUG] 2020-10-07 22:00:24.281 [main] EmailDAOImpl - The message sent type: text/plain
+[DEBUG] 2020-10-07 22:00:24.281 [main] EmailDAOImpl - The message sent: updated HTML Msg
+[DEBUG] 2020-10-07 22:00:24.281 [main] EmailDAOImpl - The message sent type: text/html
+[INFO ] 2020-10-07 22:00:24.283 [main] EmailDAOImpl - Address not in table -> create
+[DEBUG] 2020-10-07 22:00:24.283 [main] EmailDAOImpl - Creating an address - Number of rows created (should be 1): 1
+[INFO ] 2020-10-07 22:00:24.283 [main] EmailDAOImpl - Address not in table -> create
+[DEBUG] 2020-10-07 22:00:24.283 [main] EmailDAOImpl - Creating an address - Number of rows created (should be 1): 1
+[DEBUG] 2020-10-07 22:00:24.298 [main] EmailDAOImpl - email To: updatedRecipient1@gmail.com
+[DEBUG] 2020-10-07 22:00:24.303 [main] EmailDAOImpl - email BCC: updatedRecipient2@gmail.com
+[DEBUG] 2020-10-07 22:00:24.307 [main] EmailDAOImpl - Number of recipients added: 2
+[DEBUG] 2020-10-07 22:00:24.307 [main] EmailDAOImpl - Number of recipients added for update: 2
+[DEBUG] 2020-10-07 22:00:24.307 [main] EmailDAOImpl - Total number of rows updated and added: 4
+[INFO ] 2020-10-07 22:00:24.307 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 22:00:24.655 [main] EmailJDBCTest - ----------TEST FIND CUSTOM FOLDER EMAILS----------
+[INFO ] 2020-10-07 22:00:24.659 [main] EmailDAOImpl - Folder created: NewFolder
+[DEBUG] 2020-10-07 22:00:24.663 [main] EmailJDBCTest - latest id: 11
+[DEBUG] 2020-10-07 22:00:24.663 [main] EmailDAOImpl - The message sent: <p>hello<p>
+[DEBUG] 2020-10-07 22:00:24.663 [main] EmailDAOImpl - The message sent type: text/html
+[DEBUG] 2020-10-07 22:00:24.663 [main] EmailDAOImpl - New email ID is: 11
+[DEBUG] 2020-10-07 22:00:24.663 [main] EmailDAOImpl - email To: alice123@gmail.com
+[DEBUG] 2020-10-07 22:00:24.663 [main] EmailDAOImpl - Number of recipients added: 1
+[DEBUG] 2020-10-07 22:00:24.663 [main] EmailDAOImpl - Number of attachments added: 0
+[INFO ] 2020-10-07 22:00:24.663 [main] EmailDAOImpl - Email inserted in the database
+[INFO ] 2020-10-07 22:00:24.679 [main] EmailDAOImpl - Created custom Email bean
+[DEBUG] 2020-10-07 22:00:24.679 [main] EmailDAOImpl - Number of emails in: NewFolder is: 1
+[INFO ] 2020-10-07 22:00:24.679 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 22:00:24.924 [main] EmailJDBCTest - ----------TEST FIND ALL ADDRESSES----------
+[INFO ] 2020-10-07 22:00:24.928 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 22:00:25.184 [main] EmailJDBCTest - ----------TEST EMAIL FOLDER CHANGED----------
+[DEBUG] 2020-10-07 22:00:25.187 [main] EmailJDBCTest - latest id: 11
+[DEBUG] 2020-10-07 22:00:25.189 [main] EmailDAOImpl - The message sent: test create email
+[DEBUG] 2020-10-07 22:00:25.189 [main] EmailDAOImpl - The message sent type: text/plain
+[DEBUG] 2020-10-07 22:00:25.189 [main] EmailDAOImpl - The message sent: test
+[DEBUG] 2020-10-07 22:00:25.189 [main] EmailDAOImpl - The message sent type: text/html
+[DEBUG] 2020-10-07 22:00:25.190 [main] EmailDAOImpl - New email ID is: 11
+[INFO ] 2020-10-07 22:00:25.193 [main] EmailDAOImpl - Address not in table -> create
+[DEBUG] 2020-10-07 22:00:25.196 [main] EmailDAOImpl - Creating an address - Number of rows created (should be 1): 1
+[INFO ] 2020-10-07 22:00:25.199 [main] EmailDAOImpl - Address not in table -> create
+[DEBUG] 2020-10-07 22:00:25.203 [main] EmailDAOImpl - Creating an address - Number of rows created (should be 1): 1
+[DEBUG] 2020-10-07 22:00:25.207 [main] EmailDAOImpl - email To: xinjia345@gmail.com
+[DEBUG] 2020-10-07 22:00:25.217 [main] EmailDAOImpl - email CC: xinjia1.cao@gmail.com
+[DEBUG] 2020-10-07 22:00:25.221 [main] EmailDAOImpl - Number of recipients added: 2
+[DEBUG] 2020-10-07 22:00:25.230 [main] EmailDAOImpl - Number of attachments added: 1
+[INFO ] 2020-10-07 22:00:25.230 [main] EmailDAOImpl - Email inserted in the database
+[DEBUG] 2020-10-07 22:00:25.233 [main] EmailDAOImpl - Folder id of folder Inbox is: 1
+[DEBUG] 2020-10-07 22:00:25.236 [main] EmailDAOImpl - Number of emails' folder changed (should be 1): 1
+[INFO ] 2020-10-07 22:00:25.237 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 22:00:25.510 [main] EmailJDBCTest - ----------TEST FIND BY ID 1----------
+[INFO ] 2020-10-07 22:00:25.555 [main] EmailDAOImpl - Created custom Email bean
+[DEBUG] 2020-10-07 22:00:25.555 [main] EmailDAOImpl - Email with id: 1?: true
+[INFO ] 2020-10-07 22:00:25.555 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 22:00:25.798 [main] EmailJDBCTest - ----------TEST FIND DRAFT EMAILS----------
+[INFO ] 2020-10-07 22:00:25.807 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 22:00:25.814 [main] EmailDAOImpl - Created custom Email bean
+[DEBUG] 2020-10-07 22:00:25.815 [main] EmailDAOImpl - Number of emails in: Draft is: 2
+[INFO ] 2020-10-07 22:00:25.815 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 22:00:26.063 [main] EmailJDBCTest - ----------TEST UPDATE FOLDER NAME----------
+[INFO ] 2020-10-07 22:00:26.067 [main] EmailDAOImpl - Folder created: NewFolder
+[DEBUG] 2020-10-07 22:00:26.072 [main] EmailDAOImpl - Number of folder name changed (should be 1): 1
+[INFO ] 2020-10-07 22:00:26.072 [main] EmailDAOImpl - Changed folder: NewFolder to: Special
+[INFO ] 2020-10-07 22:00:26.073 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 22:00:26.243 [main] EmailJDBCTest - ----------TEST FIND FOLDER NAMES----------
+[INFO ] 2020-10-07 22:00:26.259 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 22:00:26.446 [main] EmailJDBCTest - ----------TEST UPDATE INVALID FOLDER NAME----------
+[INFO ] 2020-10-07 22:00:26.453 [main] EmailDAOImpl - Folder created: NewFolder
+[INFO ] 2020-10-07 22:00:26.454 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 22:00:26.626 [main] EmailJDBCTest - ----------TEST FIND EMAILS BY RECIPIENTS----------
+[INFO ] 2020-10-07 22:00:26.635 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 22:00:26.642 [main] EmailDAOImpl - Created custom Email bean
+[DEBUG] 2020-10-07 22:00:26.643 [main] EmailDAOImpl - Number of emails found with the substring: 123 in Subject is: 2
+[INFO ] 2020-10-07 22:00:26.643 [main] EmailJDBCTest - @AfterClass seeding
+[INFO ] 2020-10-07 22:00:26.643 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 22:03:33.158 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 22:03:33.525 [main] EmailJDBCTest - ----------TEST CREATE FOLDER----------
+[INFO ] 2020-10-07 22:03:33.549 [main] EmailDAOImpl - Folder created: Special
+[INFO ] 2020-10-07 22:03:33.550 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 22:03:33.723 [main] EmailJDBCTest - ----------TEST FIND EMPTY CUSTOM FOLDER EMAILS----------
+[INFO ] 2020-10-07 22:03:33.740 [main] EmailDAOImpl - Folder created: NewFolder
+[DEBUG] 2020-10-07 22:03:33.740 [main] EmailDAOImpl - Number of emails in: NewFolder is: 0
+[INFO ] 2020-10-07 22:03:33.740 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 22:03:33.896 [main] EmailJDBCTest - ----------TEST DELETE EMAIL----------
+[DEBUG] 2020-10-07 22:03:33.915 [main] EmailDAOImpl - Number of rows deleted in email (should be 1): 1
+[INFO ] 2020-10-07 22:03:33.916 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 22:03:34.079 [main] EmailJDBCTest - ----------TEST FIND EMAILS BY SUBJECT----------
+[INFO ] 2020-10-07 22:03:34.110 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 22:03:34.121 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 22:03:34.132 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 22:03:34.142 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 22:03:34.151 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 22:03:34.161 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 22:03:34.170 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 22:03:34.179 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 22:03:34.188 [main] EmailDAOImpl - Created custom Email bean
+[DEBUG] 2020-10-07 22:03:34.188 [main] EmailDAOImpl - Number of emails found with the substring: sub in Subject is: 9
+[INFO ] 2020-10-07 22:03:34.189 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 22:03:34.348 [main] EmailJDBCTest - ----------TEST FIND ALL----------
+[INFO ] 2020-10-07 22:03:34.348 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 22:03:34.364 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 22:03:34.380 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 22:03:34.380 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 22:03:34.395 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 22:03:34.395 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 22:03:34.411 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 22:03:34.411 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 22:03:34.426 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 22:03:34.426 [main] EmailDAOImpl - Created custom Email bean
+[DEBUG] 2020-10-07 22:03:34.442 [main] EmailDAOImpl - Total number of emails : 10
+[INFO ] 2020-10-07 22:03:34.442 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 22:03:34.627 [main] EmailJDBCTest - ----------TEST CREATE EMAIL----------
+[DEBUG] 2020-10-07 22:03:34.636 [main] EmailJDBCTest - latest id: 11
+[DEBUG] 2020-10-07 22:03:34.641 [main] EmailDAOImpl - The message sent: test create email
+[DEBUG] 2020-10-07 22:03:34.642 [main] EmailDAOImpl - The message sent type: text/plain
+[DEBUG] 2020-10-07 22:03:34.642 [main] EmailDAOImpl - The message sent: <b>test<b>
+[DEBUG] 2020-10-07 22:03:34.642 [main] EmailDAOImpl - The message sent type: text/html
+[DEBUG] 2020-10-07 22:03:34.644 [main] EmailDAOImpl - New email ID is: 11
+[INFO ] 2020-10-07 22:03:34.647 [main] EmailDAOImpl - Address not in table -> create
+[DEBUG] 2020-10-07 22:03:34.651 [main] EmailDAOImpl - Creating an address - Number of rows created (should be 1): 1
+[INFO ] 2020-10-07 22:03:34.654 [main] EmailDAOImpl - Address not in table -> create
+[DEBUG] 2020-10-07 22:03:34.658 [main] EmailDAOImpl - Creating an address - Number of rows created (should be 1): 1
+[DEBUG] 2020-10-07 22:03:34.663 [main] EmailDAOImpl - email To: xinjia345@gmail.com
+[DEBUG] 2020-10-07 22:03:34.668 [main] EmailDAOImpl - email CC: xinjia1.cao@gmail.com
+[DEBUG] 2020-10-07 22:03:34.672 [main] EmailDAOImpl - Number of recipients added: 2
+[DEBUG] 2020-10-07 22:03:34.692 [main] EmailDAOImpl - Number of attachments added: 1
+[INFO ] 2020-10-07 22:03:34.692 [main] EmailDAOImpl - Email inserted in the database
+[INFO ] 2020-10-07 22:03:34.704 [main] EmailDAOImpl - Created custom Email bean
+[DEBUG] 2020-10-07 22:03:34.706 [main] EmailDAOImpl - Email with id: 11?: true
+[INFO ] 2020-10-07 22:03:34.706 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 22:03:34.948 [main] EmailJDBCTest - ----------TEST FIND SENT EMAILS----------
+[INFO ] 2020-10-07 22:03:34.959 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 22:03:34.967 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 22:03:34.974 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 22:03:34.982 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 22:03:34.990 [main] EmailDAOImpl - Created custom Email bean
+[DEBUG] 2020-10-07 22:03:34.990 [main] EmailDAOImpl - Number of emails in: Sent is: 5
+[INFO ] 2020-10-07 22:03:34.990 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 22:03:35.190 [main] EmailJDBCTest - ----------TEST FIND RECEIVED EMAILS (INBOX)----------
+[INFO ] 2020-10-07 22:03:35.200 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 22:03:35.207 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 22:03:35.215 [main] EmailDAOImpl - Created custom Email bean
+[DEBUG] 2020-10-07 22:03:35.215 [main] EmailDAOImpl - Number of emails in: Inbox is: 3
+[INFO ] 2020-10-07 22:03:35.216 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 22:03:35.386 [main] EmailJDBCTest - ----------TEST DELETE FOLDER----------
+[DEBUG] 2020-10-07 22:03:35.386 [main] EmailDAOImpl - Number of rows deleted in folder (should be 1): 1
+[INFO ] 2020-10-07 22:03:35.386 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 22:03:35.559 [main] EmailJDBCTest - ----------TEST UPDATE DRAFT AND SEND----------
+[DEBUG] 2020-10-07 22:03:35.575 [main] EmailDAOImpl - Number of attachments added: 0
+[DEBUG] 2020-10-07 22:03:35.575 [main] EmailDAOImpl - Number of attachments added for update: 0
+[DEBUG] 2020-10-07 22:03:35.575 [main] EmailDAOImpl - The message sent: changed message
+[DEBUG] 2020-10-07 22:03:35.575 [main] EmailDAOImpl - The message sent type: text/plain
+[DEBUG] 2020-10-07 22:03:35.575 [main] EmailDAOImpl - The message sent: <p>changed html message<p>
+[DEBUG] 2020-10-07 22:03:35.575 [main] EmailDAOImpl - The message sent type: text/html
+[DEBUG] 2020-10-07 22:03:35.590 [main] EmailDAOImpl - email BCC: alice123@gmail.com
+[DEBUG] 2020-10-07 22:03:35.590 [main] EmailDAOImpl - Number of recipients added: 1
+[DEBUG] 2020-10-07 22:03:35.590 [main] EmailDAOImpl - Number of recipients added for update: 1
+[DEBUG] 2020-10-07 22:03:35.590 [main] EmailDAOImpl - Total number of rows updated and added: 2
+[DEBUG] 2020-10-07 22:03:35.590 [main] EmailDAOImpl - Folder id of folder Sent is: 2
+[DEBUG] 2020-10-07 22:03:35.590 [main] EmailDAOImpl - Number of emails' folder changed (should be 1): 1
+[DEBUG] 2020-10-07 22:03:35.590 [main] EmailDAOImpl - Total number of rows updated and added before sending: 3
+[INFO ] 2020-10-07 22:03:35.590 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 22:03:35.782 [main] EmailJDBCTest - ----------TEST INVALID CREATE FOLDER----------
+[INFO ] 2020-10-07 22:03:35.790 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 22:03:35.951 [main] EmailJDBCTest - ----------TEST UPDATE DRAFT----------
+[DEBUG] 2020-10-07 22:03:35.972 [main] EmailDAOImpl - Number of attachments added: 1
+[DEBUG] 2020-10-07 22:03:35.972 [main] EmailDAOImpl - Number of attachments added for update: 1
+[DEBUG] 2020-10-07 22:03:35.974 [main] EmailDAOImpl - The message sent: updated Msg
+[DEBUG] 2020-10-07 22:03:35.974 [main] EmailDAOImpl - The message sent type: text/plain
+[DEBUG] 2020-10-07 22:03:35.974 [main] EmailDAOImpl - The message sent: <b>updated HTML Msg<b>
+[DEBUG] 2020-10-07 22:03:35.974 [main] EmailDAOImpl - The message sent type: text/html
+[INFO ] 2020-10-07 22:03:35.979 [main] EmailDAOImpl - Address not in table -> create
+[DEBUG] 2020-10-07 22:03:35.982 [main] EmailDAOImpl - Creating an address - Number of rows created (should be 1): 1
+[INFO ] 2020-10-07 22:03:35.984 [main] EmailDAOImpl - Address not in table -> create
+[DEBUG] 2020-10-07 22:03:35.986 [main] EmailDAOImpl - Creating an address - Number of rows created (should be 1): 1
+[DEBUG] 2020-10-07 22:03:35.988 [main] EmailDAOImpl - email To: updatedRecipient1@gmail.com
+[DEBUG] 2020-10-07 22:03:35.991 [main] EmailDAOImpl - email BCC: updatedRecipient2@gmail.com
+[DEBUG] 2020-10-07 22:03:35.994 [main] EmailDAOImpl - Number of recipients added: 2
+[DEBUG] 2020-10-07 22:03:35.994 [main] EmailDAOImpl - Number of recipients added for update: 2
+[DEBUG] 2020-10-07 22:03:35.994 [main] EmailDAOImpl - Total number of rows updated and added: 4
+[INFO ] 2020-10-07 22:03:35.994 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 22:03:36.187 [main] EmailJDBCTest - ----------TEST FIND CUSTOM FOLDER EMAILS----------
+[INFO ] 2020-10-07 22:03:36.192 [main] EmailDAOImpl - Folder created: NewFolder
+[DEBUG] 2020-10-07 22:03:36.194 [main] EmailJDBCTest - latest id: 11
+[DEBUG] 2020-10-07 22:03:36.196 [main] EmailDAOImpl - The message sent: <p>hello<p>
+[DEBUG] 2020-10-07 22:03:36.197 [main] EmailDAOImpl - The message sent type: text/html
+[DEBUG] 2020-10-07 22:03:36.198 [main] EmailDAOImpl - New email ID is: 11
+[DEBUG] 2020-10-07 22:03:36.203 [main] EmailDAOImpl - email To: alice123@gmail.com
+[DEBUG] 2020-10-07 22:03:36.206 [main] EmailDAOImpl - Number of recipients added: 1
+[DEBUG] 2020-10-07 22:03:36.207 [main] EmailDAOImpl - Number of attachments added: 0
+[INFO ] 2020-10-07 22:03:36.207 [main] EmailDAOImpl - Email inserted in the database
+[INFO ] 2020-10-07 22:03:36.216 [main] EmailDAOImpl - Created custom Email bean
+[DEBUG] 2020-10-07 22:03:36.216 [main] EmailDAOImpl - Number of emails in: NewFolder is: 1
+[INFO ] 2020-10-07 22:03:36.217 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 22:03:36.375 [main] EmailJDBCTest - ----------TEST FIND ALL ADDRESSES----------
+[INFO ] 2020-10-07 22:03:36.379 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 22:03:36.565 [main] EmailJDBCTest - ----------TEST EMAIL FOLDER CHANGED----------
+[DEBUG] 2020-10-07 22:03:36.568 [main] EmailJDBCTest - latest id: 11
+[DEBUG] 2020-10-07 22:03:36.570 [main] EmailDAOImpl - The message sent: test create email
+[DEBUG] 2020-10-07 22:03:36.570 [main] EmailDAOImpl - The message sent type: text/plain
+[DEBUG] 2020-10-07 22:03:36.570 [main] EmailDAOImpl - The message sent: <p>test<p>
+[DEBUG] 2020-10-07 22:03:36.570 [main] EmailDAOImpl - The message sent type: text/html
+[DEBUG] 2020-10-07 22:03:36.572 [main] EmailDAOImpl - New email ID is: 11
+[INFO ] 2020-10-07 22:03:36.572 [main] EmailDAOImpl - Address not in table -> create
+[DEBUG] 2020-10-07 22:03:36.572 [main] EmailDAOImpl - Creating an address - Number of rows created (should be 1): 1
+[INFO ] 2020-10-07 22:03:36.572 [main] EmailDAOImpl - Address not in table -> create
+[DEBUG] 2020-10-07 22:03:36.572 [main] EmailDAOImpl - Creating an address - Number of rows created (should be 1): 1
+[DEBUG] 2020-10-07 22:03:36.587 [main] EmailDAOImpl - email To: xinjia345@gmail.com
+[DEBUG] 2020-10-07 22:03:36.591 [main] EmailDAOImpl - email CC: xinjia1.cao@gmail.com
+[DEBUG] 2020-10-07 22:03:36.595 [main] EmailDAOImpl - Number of recipients added: 2
+[DEBUG] 2020-10-07 22:03:36.603 [main] EmailDAOImpl - Number of attachments added: 1
+[INFO ] 2020-10-07 22:03:36.603 [main] EmailDAOImpl - Email inserted in the database
+[DEBUG] 2020-10-07 22:03:36.605 [main] EmailDAOImpl - Folder id of folder Inbox is: 1
+[DEBUG] 2020-10-07 22:03:36.608 [main] EmailDAOImpl - Number of emails' folder changed (should be 1): 1
+[INFO ] 2020-10-07 22:03:36.609 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 22:03:36.800 [main] EmailJDBCTest - ----------TEST FIND BY ID 1----------
+[INFO ] 2020-10-07 22:03:36.811 [main] EmailDAOImpl - Created custom Email bean
+[DEBUG] 2020-10-07 22:03:36.811 [main] EmailDAOImpl - Email with id: 1?: true
+[INFO ] 2020-10-07 22:03:36.812 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 22:03:36.997 [main] EmailJDBCTest - ----------TEST FIND DRAFT EMAILS----------
+[INFO ] 2020-10-07 22:03:37.007 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 22:03:37.015 [main] EmailDAOImpl - Created custom Email bean
+[DEBUG] 2020-10-07 22:03:37.015 [main] EmailDAOImpl - Number of emails in: Draft is: 2
+[INFO ] 2020-10-07 22:03:37.015 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 22:03:37.358 [main] EmailJDBCTest - ----------TEST UPDATE FOLDER NAME----------
+[INFO ] 2020-10-07 22:03:37.362 [main] EmailDAOImpl - Folder created: NewFolder
+[DEBUG] 2020-10-07 22:03:37.367 [main] EmailDAOImpl - Number of folder name changed (should be 1): 1
+[INFO ] 2020-10-07 22:03:37.367 [main] EmailDAOImpl - Changed folder: NewFolder to: Special
+[INFO ] 2020-10-07 22:03:37.368 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 22:03:37.560 [main] EmailJDBCTest - ----------TEST FIND FOLDER NAMES----------
+[INFO ] 2020-10-07 22:03:37.563 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 22:03:37.736 [main] EmailJDBCTest - ----------TEST UPDATE INVALID FOLDER NAME----------
+[INFO ] 2020-10-07 22:03:37.741 [main] EmailDAOImpl - Folder created: NewFolder
+[INFO ] 2020-10-07 22:03:37.744 [main] EmailJDBCTest - @Before seeding
+[INFO ] 2020-10-07 22:03:37.936 [main] EmailJDBCTest - ----------TEST FIND EMAILS BY RECIPIENTS----------
+[INFO ] 2020-10-07 22:03:37.945 [main] EmailDAOImpl - Created custom Email bean
+[INFO ] 2020-10-07 22:03:37.952 [main] EmailDAOImpl - Created custom Email bean
+[DEBUG] 2020-10-07 22:03:37.953 [main] EmailDAOImpl - Number of emails found with the substring: 123 in Subject is: 2
+[INFO ] 2020-10-07 22:03:37.953 [main] EmailJDBCTest - @AfterClass seeding
+[INFO ] 2020-10-07 22:03:37.953 [main] EmailJDBCTest - @Before seeding

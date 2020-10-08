@@ -20,9 +20,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * CRUD implementation of Emails operations using JDBC.
- * Opens a database and retrieve information (rows) in the Email, EmailToAddress, 
- * Address, Attachments and Folder tables.
+ * CRUD implementation of Emails operations using JDBC. Opens a database and
+ * retrieve information (rows) in the Email, EmailToAddress, Address,
+ * Attachments and Folder tables.
+ *
  * @author Xin Jia Cao
  */
 public class EmailDAOImpl implements EmailDAO {
@@ -33,6 +34,7 @@ public class EmailDAOImpl implements EmailDAO {
 
     /**
      * Constructor that initializes the MailConfigBean
+     *
      * @param mailConfigBean the MailConfigBean
      */
     public EmailDAOImpl(MailConfigBean mailConfigBean) {
@@ -231,19 +233,34 @@ public class EmailDAOImpl implements EmailDAO {
         //all length issues will be handled in the GUI so no need for exceptions here
         try ( Connection connection = DriverManager.getConnection(configBean.getDbUrl(), configBean.getDbUsername(), configBean.getDbPassword());  PreparedStatement ps = connection.prepareStatement(createQuery, Statement.RETURN_GENERATED_KEYS);) {
             ps.setString(1, mailData.email.from().toString());
-           
             createDateOnFolderId(mailData, ps, mailData.getFolderId());
-            
-            ps.setString(4, mailData.email.subject());
+            if (mailData.email.subject() != null) {
+                ps.setString(4, mailData.email.subject());
+            } else {
+                ps.setString(4, "");
+            }
+            //retrieve plain and html messages
             List<EmailMessage> sentMessages = mailData.email.messages();
-            ArrayList<String> messages = retrieveMessageContent(sentMessages, "text/plain");
-            ps.setString(5, messages.get(0));
+            if (!mailData.email.messages().isEmpty()) {
+                ArrayList<String> messages = retrieveMessageContent(sentMessages, "text/plain");
+                if (messages.isEmpty()) {
+                    ps.setString(5, "");
+                } else {
+                    ps.setString(5, messages.get(0));
+                }
+                messages = retrieveMessageContent(sentMessages, "text/html");
+                if (messages.isEmpty()) {
+                    ps.setString(6, "");
+                } else {
+                    ps.setString(6, messages.get(0));
+                }
 
-            messages = retrieveMessageContent(sentMessages, "text/html");
-            ps.setString(6, messages.get(0));
+            } else {
+                ps.setString(5, "");
+                ps.setString(6, "");
+            }
             ps.setInt(7, mailData.getFolderId());
             ps.executeUpdate();
-
             //set the custom bean's emailId to its new value
             try ( ResultSet rs = ps.getGeneratedKeys();) {
                 int recordNum = -1;
@@ -284,7 +301,7 @@ public class EmailDAOImpl implements EmailDAO {
                 ps.setTimestamp(3, null);
                 break;
             default:
-                //set dates to null (Draft)
+                //set dates to null (Draft or custom folders)
                 ps.setTimestamp(2, null);
                 ps.setTimestamp(3, null);
                 break;
@@ -502,14 +519,15 @@ public class EmailDAOImpl implements EmailDAO {
 
     /**
      * Finds all emails by the folder name and creates a custom Email bean for
-     * each of them. No need to check if the folder exists or not because it will be handled in the GUI.
+     * each of them. No need to check if the folder exists or not because it
+     * will be handled in the GUI.
      *
      * @param folderName the folder name we retrieve the emails from
      * @return ArrayList<EmailData> the custom Email beans from the given folder
      * @throws SQLException
      */
     @Override
-    public ArrayList<EmailData> findEmailsByFolder(String folderName) throws SQLException{
+    public ArrayList<EmailData> findEmailsByFolder(String folderName) throws SQLException {
 
         ArrayList<EmailData> emails = new ArrayList<>();
 
@@ -552,7 +570,8 @@ public class EmailDAOImpl implements EmailDAO {
      * field and creates a custom Email bean for each of them
      *
      * @param subString the sub-string
-     * @return ArrayList<EmailData> the list of custom Email beans that contain the sub-string
+     * @return ArrayList<EmailData> the list of custom Email beans that contain
+     * the sub-string
      * @throws SQLException
      */
     @Override
@@ -575,11 +594,13 @@ public class EmailDAOImpl implements EmailDAO {
     }
 
     /**
-     * Finds all emails that contains a sub-string in the recipients
-     * field and creates a custom Email bean for each of them
-     * @param subString the sub-string 
-     * @return ArrayList<EmailData> the list of custom Email beans that contain the sub-string
-     * @throws SQLException 
+     * Finds all emails that contains a sub-string in the recipients field and
+     * creates a custom Email bean for each of them
+     *
+     * @param subString the sub-string
+     * @return ArrayList<EmailData> the list of custom Email beans that contain
+     * the sub-string
+     * @throws SQLException
      */
     @Override
     public ArrayList<EmailData> findEmailsByRecipients(String subString) throws SQLException {
@@ -604,7 +625,7 @@ public class EmailDAOImpl implements EmailDAO {
 
     /**
      * Retrieves all folder names in the Folder table
-     * 
+     *
      * @return ArrayList<String> the list of folder names
      * @throws SQLException
      */
@@ -681,7 +702,8 @@ public class EmailDAOImpl implements EmailDAO {
      * Updates an email draft and sends it
      *
      * @param mailData the custom Email bean
-     * @return an int representing the number of operations done (update and change folder - should be 2)
+     * @return an int representing the number of operations done (update and
+     * change folder - should be 2)
      * @throws SQLException
      */
     @Override
@@ -834,10 +856,10 @@ public class EmailDAOImpl implements EmailDAO {
         //because it will be handled in the GUI (no change options for them).
         //Exception is thrown if the user tries to update a custom folder name to one of the 
         //original folder names (where the newName is sent, inbox or draft).
-        if(containsIgnoreCase(findFolderNames(), newName)){
+        if (containsIgnoreCase(findFolderNames(), newName)) {
             throw new FolderAlreadyExistsException("The folder already exists");
         }
-        
+
         String updateFolderQuery = "UPDATE FOLDER SET FOLDERNAME = ? WHERE FOLDERNAME = ?";
         int rows = 0;
         try ( Connection connection = DriverManager.getConnection(configBean.getDbUrl(), configBean.getDbUsername(), configBean.getDbPassword());  PreparedStatement ps = connection.prepareStatement(updateFolderQuery);) {
