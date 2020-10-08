@@ -255,7 +255,7 @@ public class EmailJDBCTest {
     public void testUpdateDraftEmailAndSend() throws SQLException {
         LOG.info("----------TEST UPDATE DRAFT AND SEND----------");
         EmailData mailData = new EmailData();
-        mailData.setEmailId(1);
+        mailData.setEmailId(6);
         //first row updated
         mailData.email.subject("changed subject");
         mailData.email.textMessage("changed message");
@@ -263,9 +263,10 @@ public class EmailJDBCTest {
         //second row added
         mailData.email.bcc("alice123@gmail.com");
         //third row changed (folder)
+        //fourth row changed (sent date)
         int rows = mailFunction.updateEmailDraftAndSend(mailData);
-        //not counting deletion, total of rows updated/added: 3
-        assertEquals(3, rows);
+        //not counting deletion, total of rows updated/added: 4
+        assertEquals(4, rows);
     }
 
     //Test to change an email's folder
@@ -282,9 +283,11 @@ public class EmailJDBCTest {
         email.htmlMessage("<p>test<p>");
         email.embeddedAttachment(EmailAttachment.with().content("img1.png"));
         LocalDateTime date = LocalDateTime.now();
+        //set the original email to the Draft folder
         EmailData mailData = new EmailData(getLastId() + 1, 3, date, email);
 
         mailFunction.createEmail(mailData);
+        //put the email in the Inbox folder
         int rows = mailFunction.changeEmailFolder(mailData, "Inbox");
         assertEquals(1, rows);
     }

@@ -10,6 +10,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -709,8 +710,39 @@ public class EmailDAOImpl implements EmailDAO {
     @Override
     public int updateEmailDraftAndSend(EmailData mailData) throws SQLException {
         int rows = updateEmailDraft(mailData);
-        rows += changeEmailFolder(mailData, "Sent");
+        rows += changeEmailDraftToSent(mailData);
         LOG.debug("Total number of rows updated and added before sending: " + rows);
+        return rows;
+    }
+
+    /**
+     * Changes the draft email folder to Sent and changes the Sent date to the
+     * current date and time
+     *
+     * @param mailData the custom Email bean
+     * @return an int representing the number of rows updated and added
+     * @throws SQLException
+     */
+    private int changeEmailDraftToSent(EmailData mailData) throws SQLException {
+        //change the Draft folder to Sent
+        int folderId = findFolderIdByName("Sent");
+        String updateFolderQuery = "UPDATE EMAIL SET FOLDERID = ? WHERE EMAILID = ?";
+        int rows = 0;
+        try ( Connection connection = DriverManager.getConnection(configBean.getDbUrl(), configBean.getDbUsername(), configBean.getDbPassword());  PreparedStatement ps = connection.prepareStatement(updateFolderQuery);) {
+            ps.setInt(1, folderId);
+            ps.setInt(2, mailData.getEmailId());
+            rows += ps.executeUpdate();
+        }
+        //Set the current Sent date 
+        String updateDateQuery = "UPDATE EMAIL SET SENTDATE = ? WHERE EMAILID = ?";
+        try ( Connection connection = DriverManager.getConnection(configBean.getDbUrl(), configBean.getDbUsername(), configBean.getDbPassword());  PreparedStatement ps = connection.prepareStatement(updateDateQuery);) {
+            Date date = new Date();
+            Timestamp tsp = new Timestamp(date.getTime());
+
+            ps.setTimestamp(1, tsp);
+            ps.setInt(2, mailData.getEmailId());
+            rows += ps.executeUpdate();
+        }
         return rows;
     }
 
