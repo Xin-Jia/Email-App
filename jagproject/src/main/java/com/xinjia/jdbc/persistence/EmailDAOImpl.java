@@ -10,7 +10,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.Timestamp;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -557,11 +556,9 @@ public class EmailDAOImpl implements EmailDAO {
      * @return true if the given folder name is in the list and false otherwise
      */
     private boolean containsIgnoreCase(List<String> folders, String name) {
-        for (String folderName : folders) {
-            //equal operation that ignores case sensivity
-            if (folderName.equalsIgnoreCase(name)) {
-                return true;
-            }
+        //equal operation that ignores case sensivity
+        if (folders.stream().anyMatch(folderName -> (folderName.equalsIgnoreCase(name)))) {
+            return true;
         }
         return false;
     }
@@ -588,7 +585,7 @@ public class EmailDAOImpl implements EmailDAO {
                     emails.add(createEmailData(resultSet));
                 }
             }
-            LOG.debug(emails.size() == 0 ? "No emails found with subject substring: " + subString
+            LOG.debug(emails.isEmpty() ? "No emails found with subject substring: " + subString
                     : "Number of emails found with the substring: " + subString + " in Subject is: " + emails.size());
             return emails;
         }
@@ -618,7 +615,7 @@ public class EmailDAOImpl implements EmailDAO {
                     emails.add(createEmailData(resultSet));
                 }
             }
-            LOG.debug(emails.size() == 0 ? "No emails found with recipient substring: " + subString
+            LOG.debug(emails.isEmpty() ? "No emails found with recipient substring: " + subString
                     : "Number of emails found with the substring: " + subString + " in Subject is: " + emails.size());
             return emails;
         }

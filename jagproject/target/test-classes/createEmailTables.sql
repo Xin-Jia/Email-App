@@ -1,5 +1,5 @@
 -- Xin Jia Cao
--- DLL and DML statements for Address, Attachments, Email, EmailToAddress and Folder tables
+-- DDL and DML statements for Address, Attachments, Email, EmailToAddress and Folder tables
 
 USE EMAILAPP;
 SET FOREIGN_KEY_CHECKS = 0;
