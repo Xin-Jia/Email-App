@@ -359,6 +359,7 @@ public class EmailJDBCTest {
      * called just once when the test class is finished with by the JUnit
      * framework. It is instantiating the test class anonymously so that it can
      * execute its non-static seedDatabase routine.
+     * (courtesy to Ken Fogel for the comment)
      */
     @AfterClass
     public static void seedAfterTestCompleted() {
@@ -375,6 +376,7 @@ public class EmailJDBCTest {
      *
      * This routine is courtesy of Bartosz Majsak, an Arquillian developer at
      * JBoss
+     * (courtesy to Ken Fogel for the comment)
      */
     public void seedDatabase() {
         LOG.info("@Before seeding");
