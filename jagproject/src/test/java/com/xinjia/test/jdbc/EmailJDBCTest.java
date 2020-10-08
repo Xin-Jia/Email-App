@@ -34,10 +34,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * Unit tests for Emails CRUD operations using JDBC NOTE : There are no delete
- * and update options for the 3 main folders in the GUI so there are no
+ * Unit tests for Emails CRUD operations using JDBC 
+ * NOTE : There are no delete and update options for the 3 main folders in the GUI so there are no
  * exception test cases for these situations
- *
+ * There will also not have a drag option for Draft emails so no exception would be thrown
  * @author Xin Jia Cao
  */
 public class EmailJDBCTest {

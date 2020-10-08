@@ -836,6 +836,7 @@ public class EmailDAOImpl implements EmailDAO {
     public int changeEmailFolder(EmailData mailData, String folderName) throws SQLException {
         //No need to check if the folder name exists since only existing folders 
         //will be on the GUI when trying to drag an email to another folder
+        //Also no need to check if it is a Draft since the drag option for it will be disabled in the GUI
         int folderId = findFolderIdByName(folderName);
         String updateFolderQuery = "UPDATE EMAIL SET FOLDERID = ? WHERE EMAILID = ?";
         int rows = 0;
