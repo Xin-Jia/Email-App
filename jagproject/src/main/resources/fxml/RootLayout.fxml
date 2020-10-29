@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="539.0" prefWidth="792.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.xinjia.presentation.rootcontroller.RootLayoutSplitController">
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+            <Menu mnemonicParsing="false" text="Mail">
+              <items>
+                  <MenuItem mnemonicParsing="false" text="Save Attachment" />
+                <MenuItem mnemonicParsing="false" text="Add Attachment" />
+              </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Folder">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#addFolder" text="Add Folder" />
+                  <MenuItem mnemonicParsing="false" onAction="#deleteFolder" text="Delete Folder" />
+              </items>
+            </Menu>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#displayAbout" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <center>
+      <SplitPane dividerPositions="0.22151898734177214" prefHeight="160.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+        <items>
+            <BorderPane fx:id="folderTreeView" />
+            <BorderPane>
+               <center>
+                  <SplitPane dividerPositions="0.36666666666666664" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" BorderPane.alignment="CENTER">
+                    <items>
+                        <BorderPane fx:id="emailTableView" />
+                        <BorderPane fx:id="formAndHtml" prefHeight="294.0" prefWidth="598.0" />
+                    </items>
+                  </SplitPane>
+               </center>
+            </BorderPane>
+        </items>
+      </SplitPane>
+   </center>
+</BorderPane>

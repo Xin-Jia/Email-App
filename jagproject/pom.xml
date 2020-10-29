@@ -9,7 +9,7 @@
     by placing the tag name in ${...} ex. ${mainClass} -->
     <properties>
         <!-- class that has the main method -->
-        <!--<mainClass>${project.groupId}.${project.artifactId}.App</mainClass>-->
+        <mainClass>${project.groupId}.presentation.MainEmailApp</mainClass>
         <skipTests>false</skipTests>
     </properties>
     
@@ -33,11 +33,11 @@
             <artifactId>javafx-controls</artifactId>
             <version>16-ea+1</version>
         </dependency>
-<!--        <dependency>
+        <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-fxml</artifactId>
             <version>16-ea+1</version>
-        </dependency>-->
+        </dependency>
 <!--        <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-web</artifactId>
@@ -104,9 +104,15 @@
             <version>3.6.0</version>
             <type>jar</type>
         </dependency>-->
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-web</artifactId>
+            <version>16-ea+1</version>
+            <type>jar</type>
+        </dependency>
     </dependencies>
-    <build>
+<!--    <build>
 	<defaultGoal>clean test</defaultGoal>
-    </build>
+    </build>-->
     <name>gmailapp</name>
 </project>

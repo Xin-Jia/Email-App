@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.xinjia.presentation.tablecontroller.TableLayoutController">
+   <children>
+      <TableView fx:id="emailDataTable" onDragDetected="#onDragDetected" prefHeight="506.0" prefWidth="613.0">
+        <columns>
+          <TableColumn fx:id="fromColumn" prefWidth="75.0" text="From" />
+          <TableColumn fx:id="subjectColumn" prefWidth="75.0" text="Subject" />
+            <TableColumn fx:id="dateColumn" prefWidth="75.0" text="Date" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

@@ -29,6 +29,7 @@ import jodd.mail.EmailAttachment;
 import org.junit.AfterClass;
 import static org.junit.Assert.assertEquals;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -40,6 +41,7 @@ import org.slf4j.LoggerFactory;
  * There will also not have a drag option for Draft emails so no exception would be thrown
  * @author Xin Jia Cao
  */
+@Ignore
 public class EmailJDBCTest {
 
     private final static Logger LOG = LoggerFactory.getLogger(EmailJDBCTest.class);
