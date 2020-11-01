@@ -3,7 +3,6 @@ package com.xinjia.presentation.treecontroller;
 import com.xinjia.presentation.tablecontroller.TableLayoutController;
 import com.xinjia.properties.propertybean.FolderData;
 import com.xinjia.sampledata.fakedata.SampleData;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;

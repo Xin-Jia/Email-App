@@ -47,7 +47,7 @@ public class FormAndHTMLLayoutController {
      * the FXML loading process.
      */
     @FXML
-    void initialize() {
+    private void initialize() {
         assert toHBox != null : "fx:id=\"toHBox\" was not injected: check your FXML file 'FormHTMLLayout.fxml'.";
         assert ccHBox != null : "fx:id=\"ccHBox\" was not injected: check your FXML file 'FormHTMLLayout.fxml'.";
         assert subjectField != null : "fx:id=\"subjectField\" was not injected: check your FXML file 'FormHTMLLayout.fxml'.";
@@ -63,7 +63,7 @@ public class FormAndHTMLLayoutController {
      * @param event The ActionEvent (button clicked)
      */
     @FXML
-    void addToTextField(ActionEvent event) {
+    private void addToTextField(ActionEvent event) {
         toHBox.getChildren().add(new TextField());
     }
 
@@ -75,7 +75,7 @@ public class FormAndHTMLLayoutController {
      * @param event The ActionEvent (button clicked)
      */
     @FXML
-    void addCCTextField(ActionEvent event) {
+    private void addCCTextField(ActionEvent event) {
         ccHBox.getChildren().add(new TextField());
     }
 
@@ -87,7 +87,7 @@ public class FormAndHTMLLayoutController {
      * @param event The ActionEvent (button clicked)
      */
     @FXML
-    void addBCCTextField(ActionEvent event) {
+    private void addBCCTextField(ActionEvent event) {
         bccHBox.getChildren().add(new TextField());
     }
 
@@ -110,6 +110,22 @@ public class FormAndHTMLLayoutController {
 
         sb.append("</body></html>");
         htmlEditor.setHtmlText(sb.toString());
+    }
+    
+    /**
+     * Put the newly created email to the draft folder
+     */
+    @FXML
+    private void saveEmail(){
+        //TODO: Put the email in the Draft folder
+    }
+    
+    /**
+     * Put the newly created email to the sent folder
+     */
+    @FXML
+    private void sendEmail(){
+        //TODO: Put the email in the Sent folder
     }
 
 }
