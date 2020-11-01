@@ -9,7 +9,9 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
 /**
- *
+ * JavaFX Email bean that contains an id, a from field, a subject and a date
+ * Overrides toString, hashCode and equals
+ * 
  * @author Xin Jia Cao
  */
 public class EmailData {
@@ -18,13 +20,24 @@ public class EmailData {
     private StringProperty subject;
     private StringProperty date;
     
+    /**
+     * Non-default constructor that initializes the id, from, subject and date
+     * There is no property for Date so we convert it into a StringProperty
+     * @param id
+     * @param from
+     * @param subject
+     * @param date 
+     */
     public EmailData(final int id, final String from, final String subject, final LocalDateTime date) {
         this.id = new SimpleIntegerProperty(id);
         this.from = new SimpleStringProperty(from);
         this.subject = new SimpleStringProperty(subject);
         this.date = new SimpleStringProperty(date.toString());
     }
-     
+    
+    /**
+     * Default constructor 
+     */
     public EmailData(){
         this(-1, "", "", null);
     }

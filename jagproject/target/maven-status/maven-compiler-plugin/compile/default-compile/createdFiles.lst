@@ -1,8 +1,10 @@
 com\xinjia\presentation\treecontroller\TreeLayoutController$1$1.class
+com\xinjia\presentation\rootcontroller\HelpWebViewController.class
 com\xinjia\presentation\mailconfigcontroller\PropertiesFormController.class
 com\xinjia\sampledata\fakedata\SampleData.class
 com\xinjia\presentation\tablecontroller\TableLayoutController.class
 com\xinjia\exceptions\NullBCCEmailException.class
+com\xinjia\presentation\rootcontroller\FolderPopUpController.class
 com\xinjia\properties\propertybean\propertiesmanager\MailConfigPropertiesManager.class
 com\xinjia\properties\propertybean\FormData.class
 com\xinjia\presentation\rootcontroller\RootLayoutSplitController.class
@@ -25,5 +27,4 @@ com\xinjia\exceptions\NullToEmailAddressException.class
 com\xinjia\jdbc\beans\EmailData.class
 com\xinjia\business\SendAndReceive.class
 com\xinjia\presentation\MainEmailApp.class
-com\xinjia\presentation\rootcontroller\RootLayoutSplitController$1.class
 com\xinjia\properties\MailConfigBean.class

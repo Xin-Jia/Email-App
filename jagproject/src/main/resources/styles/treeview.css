@@ -1,0 +1,22 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Oct. 29, 2020, 5:33:21 p.m.
+    Author     : Xin Jia Cao
+*/
+.tree-cell:selected {
+    -fx-font-weight: bold ;
+    -fx-background-color: #8BCFFC;
+}
+.tree-cell:hover {
+  -fx-background-color: #E9E9E9;
+}
+.tree-cell:filled:focused:selected:hover {
+    -fx-background-color: #8BCFFC;
+    -fx-background-insets: 0, 0 0 1 0;
+    -fx-text-fill: -fx-text-inner-color;
+}
+

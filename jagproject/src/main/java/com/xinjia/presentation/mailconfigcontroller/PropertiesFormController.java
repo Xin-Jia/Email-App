@@ -1,36 +1,36 @@
 package com.xinjia.presentation.mailconfigcontroller;
 
-import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.beans.binding.Bindings;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 import com.xinjia.properties.propertybean.MailConfigPropertyBean;
 import com.xinjia.properties.propertybean.propertiesmanager.MailConfigPropertiesManager;
 import java.io.IOException;
-import java.util.Locale;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.control.Button;
+import javafx.scene.Node;
+import javafx.scene.control.Alert;
+import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * Controller for the Mail Config Form. Allow a user to save properties or
+ * cancel (close) the form. After filling the form, the properties are saved to
+ * the mail config properties file. Internationalization is used to display the
+ * form in english or in french.
+ *
+ * @author Xin Jia Cao
+ */
 public class PropertiesFormController {
 
-    // Real programmers use logging, not System.out.println
     private final static Logger LOG = LoggerFactory.getLogger(MailConfigPropertiesManager.class);
 
     private MailConfigPropertyBean propertyBean;
-    private MailConfigPropertiesManager propertiesManger;
+    private MailConfigPropertiesManager propertiesManager;
 
     @FXML // ResourceBundle that was given to the FXMLLoader
     private ResourceBundle resources;
-
-    @FXML // URL location of the FXML file that was given to the FXMLLoader
-    private URL location;
 
     @FXML // fx:id="userNameField"
     private TextField userNameField; // Value injected by FXMLLoader
@@ -68,51 +68,118 @@ public class PropertiesFormController {
     @FXML // fx:id="mysqlPasswordField"
     private TextField mysqlPasswordField; // Value injected by FXMLLoader
 
-    @FXML
-    void pressCancel(ActionEvent event) {
+    @FXML // fx:id="mailConfigGrid"
+    private GridPane mailConfigGrid; // Value injected by FXMLLoader
 
+    
+    /**
+     * Called by the FXMLLoader when initialization is complete. When the FXML
+     * is loaded, if a control is not present, an exception is thrown and quits
+     * the FXML loading process. Set up the properties.
+     *
+     * @throws IOException
+     */
+    @FXML
+    void initialize() throws IOException {
+        LOG.info("Mail Config Form Loaded");
+
+        assert mailConfigGrid != null : "fx:id=\"mailConfigGrid\" was not injected: check your FXML file 'MailConfigPropertiesForm.fxml'.";
+        assert userNameField != null : "fx:id=\"userNameField\" was not injected: check your FXML file 'MailConfigPropertiesForm.fxml'.";
+        assert emailAddressField != null : "fx:id=\"emailAddressField\" was not injected: check your FXML file 'MailConfigPropertiesForm.fxml'.";
+        assert mailPasswordField != null : "fx:id=\"mailPasswordField\" was not injected: check your FXML file 'MailConfigPropertiesForm.fxml'.";
+        assert imapURLField != null : "fx:id=\"imapURLField\" was not injected: check your FXML file 'MailConfigPropertiesForm.fxml'.";
+        assert smtpURLField != null : "fx:id=\"smtpURLField\" was not injected: check your FXML file 'MailConfigPropertiesForm.fxml'.";
+        assert imapPortField != null : "fx:id=\"imapPortField\" was not injected: check your FXML file 'MailConfigPropertiesForm.fxml'.";
+        assert smtpPortField != null : "fx:id=\"smtpPortField\" was not injected: check your FXML file 'MailConfigPropertiesForm.fxml'.";
+        assert mysqlURLField != null : "fx:id=\"mysqlURLField\" was not injected: check your FXML file 'MailConfigPropertiesForm.fxml'.";
+        assert mysqlDatabaseField != null : "fx:id=\"mysqlDatabaseField\" was not injected: check your FXML file 'MailConfigPropertiesForm.fxml'.";
+        assert mysqlPortField != null : "fx:id=\"mysqlPortField\" was not injected: check your FXML file 'MailConfigPropertiesForm.fxml'.";
+        assert mysqlUserField != null : "fx:id=\"mysqlUserField\" was not injected: check your FXML file 'MailConfigPropertiesForm.fxml'.";
+        assert mysqlPasswordField != null : "fx:id=\"mysqlPasswordField\" was not injected: check your FXML file 'MailConfigPropertiesForm.fxml'.";
+
+        setupProperties();
+    }
+    
+    /**
+     * Event handler for the Cancel button. Get the current stage and close it
+     * without saving any fields.
+     */
+    @FXML
+    void pressCancel() throws IOException {
+        Stage formStage = (Stage) userNameField.getScene().getWindow();
+        formStage.close();
     }
 
+    /**
+     * Event handler for the Save button. Check if all the fields are filled in
+     * the form. If they are, write/update the properties and close the stage.
+     *
+     * @throws IOException
+     */
     @FXML
-    void pressSave(ActionEvent event) throws IOException {
-        propertiesManger.writeTextProperties("", "MailConfig", propertyBean);
-
-        Button saveBtn = (Button)event.getSource();
-        Stage stage = (Stage) saveBtn.getScene().getWindow();
-        Locale currentLocale = new Locale("en", "CA");
-        stage.setTitle(ResourceBundle.getBundle("MessagesBundle", currentLocale).getString("mailTitle"));
-        Parent root = FXMLLoader.load(getClass().getResource("/fxml/RootLayout.fxml"));
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+    void pressSave() throws IOException {
+        boolean isAllFilled = areFieldsNotEmpty();
+        if (isAllFilled) {
+            propertiesManager.writeTextProperties("", "MailConfig", propertyBean);
+            Stage stage = (Stage) userNameField.getScene().getWindow();
+            stage.close();
+        }
     }
 
-    public void setupProperties(MailConfigPropertiesManager pm, MailConfigPropertyBean pb) {
-        this.propertiesManger = pm;
-        this.propertyBean = pb;
+    /**
+     * Check whether or not all fields are filled in the form. If at least one
+     * field is empty, an alert pops up asking the user to fill everything.
+     *
+     * @return true if everything is filled and false otherwise.
+     */
+    private boolean areFieldsNotEmpty() {
+        boolean isAllFilled = true;
+        for (Node n : mailConfigGrid.getChildren()) {
+            if (n instanceof TextField) {
+                if (((TextField) n).getText() == null || ((TextField) n).getText().trim().isEmpty()) {
+                    displayEmptyFieldError();
+                    isAllFilled = false;
+                    break;
+                }
+            }
+        }
+        LOG.debug("Are all fields filled? " + isAllFilled);
+        return isAllFilled;
+    }
+
+    /**
+     * Display an alert dialog if at least of the fields is empty when the user
+     * clicks on Save.
+     */
+    private void displayEmptyFieldError() {
+        Alert dialog = new Alert(Alert.AlertType.ERROR);
+        dialog.setTitle(resources.getString("errorTitle"));
+        dialog.setHeaderText(resources.getString("emptyFieldHeader"));
+        dialog.setContentText(resources.getString("errorEmptyField"));
+        dialog.show();
+    }
+
+    /**
+     * Set up the properties Manager and the property bean when the FXML is
+     * loaded. The mail config properties saved are displayed in the form. Bind
+     * the JavaFX TextFields inputs to the property bean.
+     *
+     * @throws IOException
+     */
+    public void setupProperties() throws IOException {
+        propertiesManager = new MailConfigPropertiesManager();
+        propertyBean = new MailConfigPropertyBean();
+        propertiesManager.loadTextProperties(propertyBean, "", "MailConfig");
+
+        //bind the TextFields input to the property bean
         doBindings();
     }
 
-    @FXML // This method is called by the FXMLLoader when initialization is complete
-    void initialize() {
-        assert userNameField != null : "fx:id=\"userNameField\" was not injected: check your FXML file 'PropertiesForm.fxml'.";
-        assert emailAddressField != null : "fx:id=\"emailAddressField\" was not injected: check your FXML file 'PropertiesForm.fxml'.";
-        assert mailPasswordField != null : "fx:id=\"mailPasswordField\" was not injected: check your FXML file 'PropertiesForm.fxml'.";
-        assert imapURLField != null : "fx:id=\"imapURLField\" was not injected: check your FXML file 'PropertiesForm.fxml'.";
-        assert smtpURLField != null : "fx:id=\"smtpURLField\" was not injected: check your FXML file 'PropertiesForm.fxml'.";
-        assert imapPortField != null : "fx:id=\"imapPortField\" was not injected: check your FXML file 'PropertiesForm.fxml'.";
-        assert smtpPortField != null : "fx:id=\"smtpPortField\" was not injected: check your FXML file 'PropertiesForm.fxml'.";
-        assert mysqlURLField != null : "fx:id=\"mysqlURLField\" was not injected: check your FXML file 'PropertiesForm.fxml'.";
-        assert mysqlDatabaseField != null : "fx:id=\"mysqlDatabaseField\" was not injected: check your FXML file 'PropertiesForm.fxml'.";
-        assert mysqlPortField != null : "fx:id=\"mysqlPortField\" was not injected: check your FXML file 'PropertiesForm.fxml'.";
-        assert mysqlUserField != null : "fx:id=\"mysqlUserField\" was not injected: check your FXML file 'PropertiesForm.fxml'.";
-        assert mysqlPasswordField != null : "fx:id=\"mysqlPasswordField\" was not injected: check your FXML file 'PropertiesForm.fxml'.";
-
-        //propertyBean = new MailConfigPropertyBean();
-    }
-
+    /**
+     * Bind the TextFields input from the form to the property bean so that
+     * whenever one of them changes, the other changes also.
+     */
     private void doBindings() {
-        LOG.debug("PropertyBean :" + (propertyBean == null));
         Bindings.bindBidirectional(userNameField.textProperty(), propertyBean.userNameProperty());
         Bindings.bindBidirectional(emailAddressField.textProperty(), propertyBean.emailAddressProperty());
         Bindings.bindBidirectional(mailPasswordField.textProperty(), propertyBean.mailPasswordProperty());
@@ -125,6 +192,5 @@ public class PropertiesFormController {
         Bindings.bindBidirectional(mysqlPortField.textProperty(), propertyBean.mysqlPortProperty());
         Bindings.bindBidirectional(mysqlUserField.textProperty(), propertyBean.mysqlUserProperty());
         Bindings.bindBidirectional(mysqlPasswordField.textProperty(), propertyBean.mysqlPasswordProperty());
-
     }
 }

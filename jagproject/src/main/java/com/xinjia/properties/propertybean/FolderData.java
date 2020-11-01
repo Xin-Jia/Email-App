@@ -8,7 +8,9 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
 /**
- *
+ * JavaFX Folder bean that contains an id and a folder name
+ * Overrides toString, hashCode and equals
+ * 
  * @author Xin Jia Cao
  */
 public class FolderData {
@@ -16,9 +18,21 @@ public class FolderData {
     private IntegerProperty id;
     private StringProperty folderName;
 
+    /**
+     * Non-default constructor that initializes the id and the folder name
+     * @param id
+     * @param folderName 
+     */
     public FolderData(final int id, final String folderName) {
         this.id = new SimpleIntegerProperty(id);
         this.folderName = new SimpleStringProperty(folderName);
+    }
+    
+    /**
+     * Default constructor
+     */
+    public FolderData(){
+        this(-1,"");
     }
 
     public int getId() {
@@ -44,9 +58,7 @@ public class FolderData {
     public StringProperty folderNameProperty() {
         return folderName;
     }
-    public FolderData(){
-        this(-1, "");
-    }
+
 
     @Override
     public int hashCode() {

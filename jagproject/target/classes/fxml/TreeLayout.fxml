@@ -3,9 +3,8 @@
 <?import javafx.scene.control.TreeView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
 <AnchorPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.xinjia.presentation.treecontroller.TreeLayoutController">
    <children>
-      <TreeView fx:id="folderTree" prefHeight="573.0" prefWidth="409.0" />
+      <TreeView fx:id="folderTree" prefHeight="573.0" prefWidth="409.0" stylesheets="@../styles/treeview.css" />
    </children>
 </AnchorPane>

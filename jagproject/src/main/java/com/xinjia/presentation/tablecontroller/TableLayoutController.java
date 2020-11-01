@@ -1,36 +1,32 @@
 package com.xinjia.presentation.tablecontroller;
 
-/**
- * Sample Skeleton for 'TableLayout.fxml' Controller Class
- */
+import com.xinjia.presentation.formhtml.FormAndHTMLLayoutController;
 import com.xinjia.properties.propertybean.EmailData;
+import com.xinjia.properties.propertybean.MailConfigPropertyBean;
+import com.xinjia.properties.propertybean.propertiesmanager.MailConfigPropertiesManager;
 import com.xinjia.sampledata.fakedata.SampleData;
-import java.net.URL;
-import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.ResourceBundle;
+import java.io.IOException;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableRow;
 import javafx.scene.control.TableView;
 import javafx.scene.input.ClipboardContent;
 import javafx.scene.input.Dragboard;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.input.TransferMode;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.BorderPane;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * Controller for the TableLayout. Contain a drag event and display emails based
+ * on the selected folder. An Email info is displayed in the HTML editor when a
+ * row is selected. Internationalization is used to display the column names.
+ *
+ * @author Xin Jia Cao
+ */
 public class TableLayoutController {
-
-    @FXML // ResourceBundle that was given to the FXMLLoader
-    private ResourceBundle resources;
-
-    @FXML // URL location of the FXML file that was given to the FXMLLoader
-    private URL location;
 
     @FXML // fx:id="fromColumn"
     private TableColumn<EmailData, String> fromColumn; // Value injected by FXMLLoader
@@ -44,43 +40,123 @@ public class TableLayoutController {
     @FXML
     private TableView<EmailData> emailDataTable;
 
-
     private final static Logger LOG = LoggerFactory.getLogger(TableLayoutController.class);
-    private EmailData emailData;
+    private EmailData emailDataDragged;
     private ObservableList<EmailData> inboxEmails;
     private ObservableList<EmailData> sentEmails;
     private ObservableList<EmailData> draftEmails;
-    private List<ObservableList<EmailData>> otherEmails;
+    private MailConfigPropertyBean propertyBean;
+    private FormAndHTMLLayoutController editorController;
 
+    /**
+     * Called by the FXMLLoader when initialization is complete. When the FXML
+     * is loaded, if a control is not present, an exception is thrown and quits
+     * the FXML loading process. Retrieve the mail config properties to get the
+     * email address of the user. Instantiate a SampleData to fill each
+     * ObservableList (inbox, sent, draft) of EmailData. Set the Cell factory
+     * and Row factory, and adjust the columns width.
+     *
+     * @throws IOException
+     */
     @FXML
-    public void initialize() {
+    public void initialize() throws IOException {
 
-        SampleData sd = new SampleData();
-        inboxEmails = sd.getSampleInboxEmailData();
-        sentEmails = sd.getSampleSentEmailData();
-        draftEmails = sd.getSampleDraftEmailData();
-        otherEmails = new ArrayList<>();
-        // Connects the property in the FishData object to the column in the
-        // table
+        assert emailDataTable != null : "fx:id=\"emailDataTable\" was not injected: check your FXML file 'TableLayout.fxml'.";
+        assert fromColumn != null : "fx:id=\"fromColumn\" was not injected: check your FXML file 'TableLayout.fxml'.";
+        assert subjectColumn != null : "fx:id=\"subjectColumn\" was not injected: check your FXML file 'TableLayout.fxml'.";
+        assert dateColumn != null : "fx:id=\"dateColumn\" was not injected: check your FXML file 'TableLayout.fxml'.";
+
+        retrieveMailConfig();
+        //Instantiate the fake data class and populate each ObservableList
+        SampleData fakeData = new SampleData(propertyBean);
+        inboxEmails = fakeData.getSampleInboxEmailData();
+        sentEmails = fakeData.getSampleSentEmailData();
+        draftEmails = fakeData.getSampleDraftEmailData();
+
+        setCellFactory();
+        setRowFactory();
+        adjustColumnWidths();
+    }
+
+    
+    /**
+     * Called when the app is being initialized. Set the items in the table to
+     * be the emails in the inbox folder.
+     */
+    public void displayTheTable() {
+        emailDataTable.setItems(inboxEmails);
+    }
+    
+    /**
+     * Set the Cell Factory for each column. Connects the property in the
+     * EmailData object to the column in the table
+     */
+    private void setCellFactory() {
         fromColumn.setCellValueFactory(cellData -> cellData.getValue()
                 .fromProperty());
         subjectColumn.setCellValueFactory(cellData -> cellData.getValue()
                 .subjectProperty());
         dateColumn.setCellValueFactory(cellData -> cellData.getValue()
                 .dateProperty());
-
-        adjustColumnWidths();
-
     }
 
+    /**
+     * Set the Row Factory for the TableView so we can retrieve the EmailData
+     * object from a selected row. When a row is selected in the table, it
+     * displays the object infos in the HTML editor.
+     */
+    private void setRowFactory() {
+        emailDataTable.setRowFactory(tv -> {
+            TableRow<EmailData> row = new TableRow<>();
+            row.setOnMouseClicked(event -> {
+                if (!row.isEmpty()) {
+                    EmailData clickedRow = row.getItem();
+                    editorController.writeToEditorEmailData(clickedRow);
+                }
+            });
+            return row;
+        });
+    }
+
+    /**
+     * Retrieve the mail config properties so we can display the user's email
+     * address in the From column.
+     *
+     * @throws IOException
+     */
+    private void retrieveMailConfig() throws IOException {
+        MailConfigPropertiesManager propertiesManager = new MailConfigPropertiesManager();
+        propertyBean = new MailConfigPropertyBean();
+        propertiesManager.loadTextProperties(propertyBean, "", "MailConfig");
+    }
+
+    /**
+     * Set the FormAndHTMLLayoutController passed so we can display an EmailData
+     * infos in the HTML editor.
+     *
+     * @param editorController the FormAndHTMLLayoutController
+     */
+    public void setEditorController(FormAndHTMLLayoutController editorController) {
+        this.editorController = editorController;
+    }
+
+    /**
+     * Event handler for when a drag is being detected. Allow a row in the table
+     * to be dragged and put a string in the dragboard. Update the emailData to
+     * be the newly dragged EmailData so when dropped, we can add it to the new
+     * folder and delete it from the folder being dragged from.
+     *
+     * @param event
+     */
     @FXML
     public void onDragDetected(MouseEvent event) {
-        LOG.debug("onDragDetected");
-        emailData = emailDataTable.getSelectionModel().getSelectedItem();
+        LOG.info("onDragDetected");
+
+        emailDataDragged = emailDataTable.getSelectionModel().getSelectedItem();
         /* allow any transfer mode */
         Dragboard db = emailDataTable.startDragAndDrop(TransferMode.ANY);
 
-        /* put a string on dragboard */
+        /* put the selected EmailData string on the dragboard */
         ClipboardContent content = new ClipboardContent();
         content.putString(emailDataTable.getSelectionModel().getSelectedItem().toString());
         db.setContent(content);
@@ -88,82 +164,87 @@ public class TableLayoutController {
         event.consume();
     }
 
+    /**
+     * Adjust the columns widths so they can fill the table properly
+     */
     private void adjustColumnWidths() {
         // Get the current width of the table
         double width = emailDataTable.getPrefWidth();
         // Set width of each column
-        fromColumn.setPrefWidth(width * .30);
-        subjectColumn.setPrefWidth(width * .25);
-        dateColumn.setPrefWidth(width * .25);
+        fromColumn.setPrefWidth(width * .33);
+        subjectColumn.setPrefWidth(width * .33);
+        dateColumn.setPrefWidth(width * .28);
     }
 
-    public TableView<EmailData> getEmailDataTable() {
-        return emailDataTable;
-    }
+
 
     /**
-     * The table displays the fish data
+     * Display rows of EmailData based on the selected folder.
      *
-     * @throws SQLException
+     * @param folder The selected folder's name
      */
-    public void displayTheTable() throws SQLException {
-        // Add observable list data to the table
-
-        emailDataTable.setItems(inboxEmails);
-    }
-
-    public void removeRow(EmailData mailData) {
-        emailDataTable.getItems().remove(mailData);
-    }
-
-    /*public void addFolderRecords(String folderName) {
-        ObservableList<EmailData> list = FXCollections.observableArrayList();
-        list.add(new EmailData(1, "", "", folderName));
-        otherEmails.add(list);
-    }*/
-
     public void displayEmailsBasedOnFolder(String folder) {
 
         switch (folder) {
-            case "Inbox" -> emailDataTable.setItems(inboxEmails);
-            case "Sent" -> emailDataTable.setItems(sentEmails);
-            case "Draft" -> emailDataTable.setItems(draftEmails);
+            case "Inbox" ->
+                emailDataTable.setItems(inboxEmails);
+            case "Sent" ->
+                emailDataTable.setItems(sentEmails);
+            case "Draft" ->
+                emailDataTable.setItems(draftEmails);
             default -> {
+                //ALWAYS EMPTY, NEED TO CHANGE IN PHASE 4
                 ObservableList<EmailData> list = FXCollections.observableArrayList();
                 emailDataTable.setItems(list);
 
-        }
-    }
-    }
-
-    public void addEmail(String folderName) {
-        //emailData.setFolderName(folderName);
-        checkIfInFolder(inboxEmails);
-        checkIfInFolder(sentEmails);
-        checkIfInFolder(draftEmails);
-        checkIfInCustomFolders();
-        switch (folderName) {
-            case "Inbox" -> inboxEmails.add(emailData);
-            case "Sent" -> sentEmails.add(emailData);
-            case "Draft" -> draftEmails.add(emailData);
-            default -> {
-                //TODO
-                
-            } 
-        }
-    }
-
-    private void checkIfInFolder(ObservableList<EmailData> mails) {
-        if (mails.contains(emailData)) {
-            mails.remove(emailData);
-        }
-    }
-
-    private void checkIfInCustomFolders() {
-        for (ObservableList<EmailData> item : otherEmails) {
-            if (item.contains(emailData)) {
-                item.remove(emailData);
             }
         }
     }
+
+    /**
+     * First remove the dragged email from the original folder and then add the
+     * dragged EmailData to the dropped folder.
+     *
+     * @param folderName
+     */
+    public void addEmailRow(String folderName) {
+
+        deleteEmailWhenDropped();
+        // TODO: INSERT SELECTED EMAIL TO THE DROPPED FOLDER
+        switch (folderName) {
+            case "Inbox" ->
+                inboxEmails.add(emailDataDragged);
+            case "Sent" ->
+                sentEmails.add(emailDataDragged);
+            case "Draft" ->
+                draftEmails.add(emailDataDragged);
+            default -> {
+                //TODO: INSERT TO CUSTOM FOLDERS
+
+            }
+        }
+    }
+
+    /**
+     * Check in each ObservableList if they contain the email dropped.
+     * Delete the email dropped from its original folder.
+     */
+    private void deleteEmailWhenDropped() {
+        checkIfInFolder(inboxEmails);
+        checkIfInFolder(sentEmails);
+        checkIfInFolder(draftEmails);
+    }
+
+    /**
+     * If the ObservableList contains the EmailData dropped, delete it.
+     * Will be updated automatically in the TableView. (Row will be removed)
+     * @param mails
+     */
+    private void checkIfInFolder(ObservableList<EmailData> mails) {
+        //TODO: REMOVE SELECTED EMAIL DRAGGED FROM THE SOURCE FOLDER
+        if (mails.contains(emailDataDragged)) {
+            mails.remove(emailDataDragged);
+        }
+    }
+
 }

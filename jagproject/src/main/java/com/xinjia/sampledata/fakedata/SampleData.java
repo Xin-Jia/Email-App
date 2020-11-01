@@ -8,9 +8,8 @@ package com.xinjia.sampledata.fakedata;
 import com.xinjia.properties.propertybean.EmailData;
 import com.xinjia.properties.propertybean.FolderData;
 import com.xinjia.properties.propertybean.FormData;
+import com.xinjia.properties.propertybean.MailConfigPropertyBean;
 import java.time.LocalDateTime;
-import java.util.Locale;
-import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
@@ -19,6 +18,15 @@ import javafx.collections.ObservableList;
  * @author Xin Jia Cao
  */
 public class SampleData {
+    
+    private MailConfigPropertyBean mailBean;
+    public SampleData(MailConfigPropertyBean mailBean){
+        this.mailBean = mailBean;
+    }
+    public SampleData(){
+        this(new MailConfigPropertyBean());
+    }
+            
     
     public ObservableList<FolderData> getSampleFolderData(){
         ObservableList<FolderData> folders = FXCollections.observableArrayList();
@@ -35,26 +43,20 @@ public class SampleData {
     }
     
     public ObservableList<EmailData> getSampleSentEmailData(){
-        Locale currentLocale = new Locale("en", "CA");
-        String myEmail = ResourceBundle.getBundle("MailConfig", currentLocale).getString("emailAddress");
         ObservableList<EmailData> emails = FXCollections.observableArrayList();
-        emails.addAll(new EmailData(1, myEmail, "Breakfast", date), new EmailData(2, myEmail, "Game Project", date), new EmailData(3, myEmail, "Subject 3", date));
+        emails.addAll(new EmailData(1, mailBean.getEmailAddress(), "Breakfast", date), new EmailData(2, mailBean.getEmailAddress(), "Game Project", date), new EmailData(3, mailBean.getEmailAddress(), "Subject 3", date));
         return emails;
     }
     
     public ObservableList<EmailData> getSampleDraftEmailData(){
-        Locale currentLocale = new Locale("en", "CA");
-        String myEmail = ResourceBundle.getBundle("MailConfig", currentLocale).getString("emailAddress");
         ObservableList<EmailData> emails = FXCollections.observableArrayList();
-        emails.addAll(new EmailData(1, myEmail, "Draft 1", date), new EmailData(2, myEmail, "Draft 2", date), new EmailData(3, myEmail, "Draft 3", date));
+        emails.addAll(new EmailData(1, mailBean.getEmailAddress(), "Draft 1", date), new EmailData(2, mailBean.getEmailAddress(), "Draft 2", date), new EmailData(3, mailBean.getEmailAddress(), "Draft 3", date));
         return emails;
     }
     
     public ObservableList<EmailData> getSampleOtherEmailData(){
-        Locale currentLocale = new Locale("en", "CA");
-        String myEmail = ResourceBundle.getBundle("MailConfig", currentLocale).getString("emailAddress");
         ObservableList<EmailData> emails = FXCollections.observableArrayList();
-        emails.addAll(new EmailData(1, myEmail, "Other 1", date), new EmailData(2, myEmail, "Other 2", date), new EmailData(3, myEmail, "Other 3", date));
+        emails.addAll(new EmailData(1, mailBean.getEmailAddress(), "Other 1", date), new EmailData(2, mailBean.getEmailAddress(), "Other 2", date), new EmailData(3, mailBean.getEmailAddress(), "Other 3", date));
         return emails;
     }
     

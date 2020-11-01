@@ -6,11 +6,11 @@
 
 <AnchorPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.xinjia.presentation.tablecontroller.TableLayoutController">
    <children>
-      <TableView fx:id="emailDataTable" onDragDetected="#onDragDetected" prefHeight="506.0" prefWidth="613.0">
+      <TableView fx:id="emailDataTable" onDragDetected="#onDragDetected" prefHeight="506.0" prefWidth="680.0" stylesheets="@../styles/tableview.css">
         <columns>
-          <TableColumn fx:id="fromColumn" prefWidth="75.0" text="From" />
-          <TableColumn fx:id="subjectColumn" prefWidth="75.0" text="Subject" />
-            <TableColumn fx:id="dateColumn" prefWidth="75.0" text="Date" />
+          <TableColumn fx:id="fromColumn" prefWidth="75.0" text="%from" />
+          <TableColumn fx:id="subjectColumn" prefWidth="75.0" text="%subject" />
+            <TableColumn fx:id="dateColumn" prefWidth="75.0" text="%date" />
         </columns>
       </TableView>
    </children>

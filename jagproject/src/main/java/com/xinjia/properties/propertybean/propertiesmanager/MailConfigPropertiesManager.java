@@ -14,14 +14,14 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * Example of a class to manage properties
+ * Class that manages the properties of a MailConfigPropertyBean
+ * Read the mail config properties file to set the propertyBean's properties
+ * Write to the mail config properties file to save the properties
  *
  * @author Xin Jia Cao
- *
  */
 public class MailConfigPropertiesManager {
 
-    // Real programmers use logging, not System.out.println
     private final static Logger LOG = LoggerFactory.getLogger(MailConfigPropertiesManager.class);
     
     /**
@@ -61,6 +61,7 @@ public class MailConfigPropertiesManager {
 
             found = true;
         }
+        LOG.info("Finished reading MailConfig properties file");
         return found;
     }
 
@@ -96,6 +97,6 @@ public class MailConfigPropertiesManager {
         try ( OutputStream propFileStream = newOutputStream(txtFile)) {
             prop.store(propFileStream, "SMTP Properties");
         }
-      
+      LOG.info("Finished writing to MailConfig properties file");
     }
 }

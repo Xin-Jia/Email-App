@@ -6,35 +6,31 @@
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.layout.BorderPane?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="539.0" prefWidth="792.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.xinjia.presentation.rootcontroller.RootLayoutSplitController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="573.0" prefWidth="819.0" stylesheets="@../styles/splitpane.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.xinjia.presentation.rootcontroller.RootLayoutSplitController">
    <top>
       <MenuBar BorderPane.alignment="CENTER">
         <menus>
             <Menu mnemonicParsing="false" text="Mail">
               <items>
-                  <MenuItem mnemonicParsing="false" text="Save Attachment" />
-                <MenuItem mnemonicParsing="false" text="Add Attachment" />
+                  <MenuItem mnemonicParsing="false" onAction="#saveAttachment" text="%saveAttachment" />
+                <MenuItem mnemonicParsing="false" onAction="#addAttachment" text="%addAttachment" />
+                  <MenuItem mnemonicParsing="false" onAction="#deleteSelectedEmail" text="%deleteSelectedEmail" />
               </items>
             </Menu>
-            <Menu mnemonicParsing="false" text="Folder">
+            <Menu mnemonicParsing="false" text="%folder">
               <items>
-                <MenuItem mnemonicParsing="false" onAction="#addFolder" text="Add Folder" />
-                  <MenuItem mnemonicParsing="false" onAction="#deleteFolder" text="Delete Folder" />
+                <MenuItem mnemonicParsing="false" onAction="#addFolder" text="%addFolder" />
+                  <MenuItem mnemonicParsing="false" onAction="#deleteFolder" text="%delFolder" />
               </items>
             </Menu>
-          <Menu mnemonicParsing="false" text="File">
+          <Menu mnemonicParsing="false" text="%edit">
             <items>
-              <MenuItem mnemonicParsing="false" text="Close" />
+              <MenuItem mnemonicParsing="false" onAction="#editMailConfig" text="%editConfig" />
             </items>
           </Menu>
-          <Menu mnemonicParsing="false" text="Edit">
+          <Menu mnemonicParsing="false" text="%help">
             <items>
-              <MenuItem mnemonicParsing="false" text="Delete" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Help">
-            <items>
-              <MenuItem mnemonicParsing="false" onAction="#displayAbout" text="About" />
+              <MenuItem mnemonicParsing="false" onAction="#displayHelp" text="%about" />
             </items>
           </Menu>
         </menus>

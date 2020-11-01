@@ -3,6 +3,7 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
@@ -12,127 +13,125 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.web.HTMLEditor?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.xinjia.presentation.formhtml.FormAndHTMLLayoutController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="571.0" prefWidth="618.0" stylesheets="@../styles/htmlform.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.xinjia.presentation.formhtml.FormAndHTMLLayoutController">
    <top>
-      <GridPane prefHeight="104.0" prefWidth="600.0" vgap="5.0" BorderPane.alignment="CENTER">
+      <GridPane prefHeight="167.0" prefWidth="618.0">
         <columnConstraints>
-          <ColumnConstraints hgrow="SOMETIMES" maxWidth="295.33331298828125" minWidth="10.0" prefWidth="61.33330154418945" />
-          <ColumnConstraints hgrow="SOMETIMES" maxWidth="538.6666984558105" minWidth="10.0" prefWidth="538.6666984558105" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="295.33331298828125" minWidth="10.0" prefWidth="61.333333333333336" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="295.33331298828125" minWidth="10.0" prefWidth="27.000000000000007" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="538.6666984558105" minWidth="10.0" prefWidth="530.3333333333334" />
         </columnConstraints>
         <rowConstraints>
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="55.333333333333336" minHeight="10.0" prefHeight="39.000005086263016" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="56.6666685740153" minHeight="10.0" prefHeight="38.99999491373698" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="62.00001017252603" minHeight="9.0" prefHeight="39.33333079020183" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="51.33335876464844" minHeight="10.0" prefHeight="42.0000025431315" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Label contentDisplay="CENTER" text="To:">
-               <padding>
-                  <Insets left="10.0" />
-               </padding>
+            <Label text="%to">
                <font>
                   <Font name="Arial Bold" size="11.0" />
                </font>
-            </Label>
-            <Label text="CC:" GridPane.rowIndex="1">
-               <padding>
-                  <Insets left="10.0" />
-               </padding>
-               <font>
-                  <Font name="Arial Bold" size="11.0" />
-               </font>
-            </Label>
-            <Label text="BCC:" GridPane.rowIndex="2">
                <GridPane.margin>
-                  <Insets left="10.0" />
+                  <Insets left="30.0" />
+               </GridPane.margin>
+            </Label>
+            <Label text="CC" GridPane.rowIndex="1">
+               <font>
+                  <Font name="Arial Bold" size="11.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets left="30.0" />
+               </GridPane.margin>
+            </Label>
+            <Label text="BCC" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets left="30.0" />
                </GridPane.margin>
                <font>
                   <Font name="Berlin Sans FB" size="12.0" />
                </font>
             </Label>
-            <Label prefHeight="14.0" prefWidth="48.0" text="Subject:" GridPane.rowIndex="3">
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="14.0" prefWidth="61.0" text="%subject" textAlignment="CENTER" GridPane.columnSpan="2" GridPane.rowIndex="3">
                <GridPane.margin>
-                  <Insets left="10.0" />
+                  <Insets left="18.0" />
                </GridPane.margin>
                <font>
                   <Font name="Arial Bold" size="11.0" />
                </font>
             </Label>
-            <HBox fx:id="toHbox" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1">
+            <ScrollPane prefHeight="41.0" prefWidth="521.0" vbarPolicy="NEVER" GridPane.columnIndex="2">
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+               <content>
+                  <HBox fx:id="toHBox" alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" prefHeight="34.0">
+                     <children>
+                        <TextField HBox.hgrow="NEVER" />
+                     </children>
+                  </HBox>
+               </content>
+            </ScrollPane>
+            <ScrollPane vbarPolicy="NEVER" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <content>
+                  <HBox fx:id="ccHBox" alignment="CENTER_LEFT" prefHeight="33.0">
+                     <children>
+                        <TextField HBox.hgrow="NEVER" />
+                     </children>
+                  </HBox>
+               </content>
+            </ScrollPane>
+            <HBox alignment="CENTER_LEFT" prefHeight="37.0" prefWidth="525.0" GridPane.columnIndex="2" GridPane.rowIndex="3">
                <children>
-                  <TextField fx:id="toTextField" minHeight="-Infinity" prefHeight="20.0" prefWidth="149.0">
-                     <HBox.margin>
-                        <Insets />
-                     </HBox.margin>
-                  </TextField>
-                  <Button minHeight="-Infinity" mnemonicParsing="false" prefHeight="20.0" text="+">
-                     <HBox.margin>
-                        <Insets left="5.0" />
-                     </HBox.margin>
-                     <font>
-                        <Font name="Arial Black" size="9.0" />
-                     </font>
-                  </Button>
-               </children></HBox>
-            <HBox fx:id="ccHbox" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
-               <children>
-                  <TextField fx:id="ccTextField" minHeight="-Infinity" prefHeight="20.0" prefWidth="149.0">
-                     <HBox.margin>
-                        <Insets />
-                     </HBox.margin>
-                  </TextField>
-                  <Button minHeight="-Infinity" mnemonicParsing="false" prefHeight="20.0" text="+">
-                     <font>
-                        <Font name="Arial Black" size="9.0" />
-                     </font>
-                     <HBox.margin>
-                        <Insets left="5.0" />
-                     </HBox.margin>
-                  </Button>
-               </children></HBox>
-            <HBox fx:id="bccHbox" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
-               <children>
-                  <TextField fx:id="bccTextField" minHeight="-Infinity" prefHeight="20.0">
-                     <HBox.margin>
-                        <Insets />
-                     </HBox.margin>
-                  </TextField>
-                  <Button minHeight="-Infinity" mnemonicParsing="false" prefHeight="20.0" text="+">
-                     <font>
-                        <Font name="Arial Black" size="9.0" />
-                     </font>
-                     <HBox.margin>
-                        <Insets left="5.0" />
-                     </HBox.margin>
-                  </Button>
-               </children></HBox>
-            <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
-               <children>
-                  <TextField fx:id="subjectField" minHeight="-Infinity" prefHeight="20.0" prefWidth="182.0">
+                  <TextField fx:id="subjectField" prefHeight="20.0" prefWidth="182.0">
                      <HBox.margin>
                         <Insets top="5.0" />
                      </HBox.margin>
                   </TextField>
-                  <Button mnemonicParsing="false" text="Save">
+                  <Button mnemonicParsing="false" text="%saveButton">
                      <HBox.margin>
-                        <Insets left="240.0" />
+                        <Insets left="200.0" />
                      </HBox.margin>
                   </Button>
-                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" text="Send" textAlignment="CENTER">
+                  <Button alignment="CENTER" mnemonicParsing="false" text="%send">
                      <HBox.margin>
-                        <Insets bottom="5.0" left="10.0" />
+                        <Insets left="10.0" />
                      </HBox.margin>
                   </Button>
                </children>
             </HBox>
+            <Button alignment="CENTER" contentDisplay="CENTER" minHeight="-Infinity" mnemonicParsing="false" onAction="#addCCTextField" prefHeight="20.0" text="+" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <font>
+                  <Font name="Arial Black" size="9.0" />
+               </font>
+            </Button>
+            <Button alignment="CENTER" contentDisplay="CENTER" minHeight="-Infinity" mnemonicParsing="false" onAction="#addToTextField" prefHeight="20.0" text="+" textAlignment="CENTER" GridPane.columnIndex="1">
+               <font>
+                  <Font name="Arial Black" size="9.0" />
+               </font>
+            </Button>
+            <Button alignment="CENTER" contentDisplay="CENTER" minHeight="-Infinity" mnemonicParsing="false" onAction="#addBCCTextField" prefHeight="20.0" text="+" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <font>
+                  <Font name="Arial Black" size="9.0" />
+               </font>
+            </Button>
+            <ScrollPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
+               <content>
+                  <HBox fx:id="bccHBox" alignment="CENTER_LEFT" prefHeight="34.0">
+                     <children>
+                        <TextField HBox.hgrow="NEVER" />
+                     </children>
+                  </HBox>
+               </content>
+            </ScrollPane>
          </children>
          <BorderPane.margin>
-            <Insets top="5.0" />
+            <Insets top="7.0" />
          </BorderPane.margin>
       </GridPane>
    </top>
    <center>
-      <HTMLEditor fx:id="htmlEditor" htmlText="&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body contenteditable=&quot;true&quot;&gt;&lt;/body&gt;&lt;/html&gt;" prefHeight="200.0" prefWidth="506.0" BorderPane.alignment="CENTER">
+      <HTMLEditor fx:id="htmlEditor" htmlText="&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body contenteditable=&quot;true&quot;&gt;&lt;/body&gt;&lt;/html&gt;" prefHeight="264.0" prefWidth="608.0" BorderPane.alignment="CENTER">
          <BorderPane.margin>
             <Insets top="5.0" />
          </BorderPane.margin></HTMLEditor>

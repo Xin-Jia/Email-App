@@ -6,8 +6,9 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
 /**
- * JavaFX Bean for JAG Properties
- *
+ * JavaFX Bean for JAG/Mail config Properties
+ * Overrides toString, hashCode and equals
+ * 
  * @author Xin Jia Cao
  */
 public class MailConfigPropertyBean {
@@ -25,6 +26,21 @@ public class MailConfigPropertyBean {
     private StringProperty mysqlUser;
     private StringProperty mysqlPassword;
 
+    /**
+     * Non-default constructor that initializes all the fields
+     * @param userName
+     * @param emailAddress
+     * @param mailPassword
+     * @param imapURL
+     * @param smtpURL
+     * @param imapPort
+     * @param smtpPort
+     * @param mysqlURL
+     * @param mysqlDatabase
+     * @param mysqlPort
+     * @param mysqlUser
+     * @param mysqlPassword 
+     */
     public MailConfigPropertyBean(String userName, String emailAddress, String mailPassword,
             String imapURL, String smtpURL, String imapPort,
             String smtpPort, String mysqlURL, String mysqlDatabase,
@@ -43,6 +59,9 @@ public class MailConfigPropertyBean {
         this.mysqlPassword = new SimpleStringProperty(mysqlPassword);
     }
 
+    /**
+     * Default constructor
+     */
     public MailConfigPropertyBean() {
         this("", "", "", "", "", "", "", "", "", "", "", "");
     }

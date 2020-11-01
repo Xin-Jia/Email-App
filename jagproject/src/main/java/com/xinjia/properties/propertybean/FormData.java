@@ -6,7 +6,9 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
 /**
- *
+ * JavaFX Form bean that contains a to, cc, bcc and subject 
+ * Overrides toString, hashCode and equals
+ * 
  * @author Xin Jia Cao
  */
 public class FormData {
@@ -15,6 +17,13 @@ public class FormData {
     private StringProperty bcc;
     private StringProperty subject;
     
+    /**
+     * Non-default constructor that initializes to, cc, bcc and subject
+     * @param to
+     * @param cc
+     * @param bcc
+     * @param subject 
+     */
     public FormData(final String to, final String cc, final String bcc, final String subject) {
         this.to = new SimpleStringProperty(to);
         this.cc = new SimpleStringProperty(cc);
@@ -22,6 +31,9 @@ public class FormData {
         this.subject = new SimpleStringProperty(subject);
     }
      
+    /**
+     * Default constructor
+     */
     public FormData(){
         this("", "", "", "");
     }
