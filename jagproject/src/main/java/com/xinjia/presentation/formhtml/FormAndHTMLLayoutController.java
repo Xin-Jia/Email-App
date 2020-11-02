@@ -64,9 +64,12 @@ public class FormAndHTMLLayoutController {
     @FXML
     private void initialize() {
         assert toHBox != null : "fx:id=\"toHBox\" was not injected: check your FXML file 'FormHTMLLayout.fxml'.";
+        assert toTxtField != null : "fx:id=\"toTxtField\" was not injected: check your FXML file 'FormHTMLLayout.fxml'.";
         assert ccHBox != null : "fx:id=\"ccHBox\" was not injected: check your FXML file 'FormHTMLLayout.fxml'.";
+        assert ccTxtField != null : "fx:id=\"ccTxtField\" was not injected: check your FXML file 'FormHTMLLayout.fxml'.";
         assert subjectField != null : "fx:id=\"subjectField\" was not injected: check your FXML file 'FormHTMLLayout.fxml'.";
         assert bccHBox != null : "fx:id=\"bccHBox\" was not injected: check your FXML file 'FormHTMLLayout.fxml'.";
+        assert bccTxtField != null : "fx:id=\"bccTxtField\" was not injected: check your FXML file 'FormHTMLLayout.fxml'.";
         assert htmlEditor != null : "fx:id=\"htmlEditor\" was not injected: check your FXML file 'FormHTMLLayout.fxml'.";
     }
     
