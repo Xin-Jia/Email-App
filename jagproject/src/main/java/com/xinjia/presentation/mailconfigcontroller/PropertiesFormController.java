@@ -4,7 +4,7 @@ import java.util.ResourceBundle;
 import javafx.beans.binding.Bindings;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
-import com.xinjia.properties.propertybean.MailConfigPropertyBean;
+import com.xinjia.properties.MailConfigBean;
 import com.xinjia.properties.propertybean.propertiesmanager.MailConfigPropertiesManager;
 import java.io.IOException;
 import javafx.scene.Node;
@@ -26,7 +26,7 @@ public class PropertiesFormController {
 
     private final static Logger LOG = LoggerFactory.getLogger(MailConfigPropertiesManager.class);
 
-    private MailConfigPropertyBean propertyBean;
+    private MailConfigBean propertyBean;
     private MailConfigPropertiesManager propertiesManager;
 
     @FXML // ResourceBundle that was given to the FXMLLoader
@@ -168,7 +168,7 @@ public class PropertiesFormController {
      */
     public void setupProperties() throws IOException {
         propertiesManager = new MailConfigPropertiesManager();
-        propertyBean = new MailConfigPropertyBean();
+        propertyBean = new MailConfigBean();
         propertiesManager.loadTextProperties(propertyBean, "", "MailConfig");
 
         //bind the TextFields input to the property bean

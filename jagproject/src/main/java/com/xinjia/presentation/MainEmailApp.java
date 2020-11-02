@@ -2,7 +2,7 @@ package com.xinjia.presentation;
 
 import com.xinjia.presentation.mailconfigcontroller.PropertiesFormController;
 import com.xinjia.presentation.rootcontroller.RootLayoutSplitController;
-import com.xinjia.properties.propertybean.MailConfigPropertyBean;
+import com.xinjia.properties.MailConfigBean;
 import com.xinjia.properties.propertybean.propertiesmanager.MailConfigPropertiesManager;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -34,7 +34,7 @@ import javafx.scene.layout.GridPane;
 public class MainEmailApp extends Application {
 
     private Stage primaryStage;
-    private MailConfigPropertyBean propertyBean;
+    private MailConfigBean propertyBean;
     private final Locale currentLocale;
     private final static Logger LOG = LoggerFactory.getLogger(MainEmailApp.class);
 
@@ -46,8 +46,8 @@ public class MainEmailApp extends Application {
         //Left-out comments so we can test internationalization quicker
 
         //currentLocale = Locale.getDefault();
-        //currentLocale = new Locale("fr", "CA");
-        currentLocale = new Locale("en", "CA");
+        currentLocale = new Locale("fr", "CA");
+        //currentLocale = new Locale("en", "CA");
         // currentLocale = Locale.CANADA;
         // currentLocale = Locale.CANADA_FRENCH;
         LOG.debug("Locale = " + currentLocale);
@@ -141,7 +141,7 @@ public class MainEmailApp extends Application {
      */
     private void retrieveMailConfig() throws IOException {
         MailConfigPropertiesManager propertiesManager = new MailConfigPropertiesManager();
-        propertyBean = new MailConfigPropertyBean();
+        propertyBean = new MailConfigBean();
         //read the mail config properties file and set the property bean fields accordingly
         propertiesManager.loadTextProperties(propertyBean, "", "MailConfig");
     }

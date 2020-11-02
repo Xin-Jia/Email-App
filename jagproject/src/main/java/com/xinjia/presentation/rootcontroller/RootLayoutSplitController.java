@@ -5,7 +5,7 @@ import com.xinjia.presentation.formhtml.FormAndHTMLLayoutController;
 import com.xinjia.presentation.mailconfigcontroller.PropertiesFormController;
 import com.xinjia.presentation.tablecontroller.TableLayoutController;
 import com.xinjia.presentation.treecontroller.TreeLayoutController;
-import com.xinjia.properties.propertybean.MailConfigPropertyBean;
+import com.xinjia.properties.MailConfigBean;
 import com.xinjia.properties.propertybean.propertiesmanager.MailConfigPropertiesManager;
 import java.io.File;
 import java.io.IOException;
@@ -255,7 +255,7 @@ public class RootLayoutSplitController {
      */
     private void retrieveMailConfig() throws IOException {
         MailConfigPropertiesManager pm = new MailConfigPropertiesManager();
-        MailConfigPropertyBean configPropertyBean = new MailConfigPropertyBean();
+        MailConfigBean configPropertyBean = new MailConfigBean();
         pm.loadTextProperties(configPropertyBean, "", "MailConfig");
     }
 

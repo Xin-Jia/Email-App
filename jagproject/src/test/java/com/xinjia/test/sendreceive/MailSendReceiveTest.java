@@ -72,7 +72,7 @@ public class MailSendReceiveTest {
         subject = "checkSenderFromBean";
         Email emailSend = mailFunction.sendMail(toRecipients, ccRecipients, bccRecipients, subject, msg, htmlMsg, regFiles, embedFiles);
         
-        assertEquals(sendConfigBean.getUserEmailAddress(), emailSend.from().toString());
+        assertEquals(sendConfigBean.getEmailAddress(), emailSend.from().toString());
     }
 
     //Checks if the number of 'To' recipients of the email sent is the same as the number of recipients added
@@ -442,7 +442,7 @@ public class MailSendReceiveTest {
     @Test(expected = NullPointerException.class)
     public void checkNullSendBeanAddress() throws NullToEmailException, NullToEmailAddressException, NullCCEmailException, NullCCEmailAddressException, NullBCCEmailException, NullBCCEmailAddressException {
         log.info("---------------Check Null Send Bean Address---------------");
-        sendConfigBean.setUserEmailAddress(null);
+        sendConfigBean.setEmailAddress(null);
         mailFunction = new SendAndReceive(sendConfigBean);
         Email emailSend = mailFunction.sendMail(toRecipients, ccRecipients, bccRecipients, subject, msg, htmlMsg, regFiles, embedFiles);
 
@@ -464,7 +464,7 @@ public class MailSendReceiveTest {
     @Test(expected = NullPointerException.class)
     public void checkNullReceiveBeanAddress() {
         log.info("---------------Check Null Receive Bean Address---------------");
-        receiveConfigBean.setUserEmailAddress(null);
+        receiveConfigBean.setEmailAddress(null);
         ReceivedEmail[] receivedMails = mailFunction.receiveMail(receiveConfigBean);
     }
 
@@ -532,7 +532,7 @@ public class MailSendReceiveTest {
     @Test(expected = MailException.class)
     public void checkInvalidSendBeanAddress() throws NullToEmailException, NullToEmailAddressException, NullCCEmailException, NullCCEmailAddressException, NullBCCEmailException, NullBCCEmailAddressException {
         log.info("---------------Check Invalid Send Bean Address---------------");
-        sendConfigBean.setUserEmailAddress("invalidemail");
+        sendConfigBean.setEmailAddress("invalidemail");
         mailFunction = new SendAndReceive(sendConfigBean);
         toRecipients.add("xinjia1.cao@gmail.com");
 
@@ -543,7 +543,7 @@ public class MailSendReceiveTest {
     @Test(expected = MailException.class)
     public void checkInvalidReceiveBeanAddress() {
         log.info("---------------Check Invalid Receive Bean Address---------------");
-        receiveConfigBean.setUserEmailAddress("invalidemail");
+        receiveConfigBean.setEmailAddress("invalidemail");
 
         ReceivedEmail[] receivedMails = mailFunction.receiveMail(receiveConfigBean);
     }

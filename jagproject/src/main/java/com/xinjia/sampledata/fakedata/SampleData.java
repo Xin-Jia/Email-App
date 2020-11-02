@@ -8,7 +8,7 @@ package com.xinjia.sampledata.fakedata;
 import com.xinjia.properties.propertybean.EmailData;
 import com.xinjia.properties.propertybean.FolderData;
 import com.xinjia.properties.propertybean.FormData;
-import com.xinjia.properties.propertybean.MailConfigPropertyBean;
+import com.xinjia.properties.MailConfigBean;
 import java.time.LocalDateTime;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -20,20 +20,20 @@ import javafx.collections.ObservableList;
  */
 public class SampleData {
     
-    private MailConfigPropertyBean mailBean;
+    private MailConfigBean mailBean;
     
     /**
      * Non-default constructor that initializes a MailConfigPropertyBean
      * @param mailBean The MailConfigPropertyBean
      */
-    public SampleData(MailConfigPropertyBean mailBean){
+    public SampleData(MailConfigBean mailBean){
         this.mailBean = mailBean;
     }
     /**
      * Default constructor 
      */
     public SampleData(){
-        this(new MailConfigPropertyBean());
+        this(new MailConfigBean());
     }
             
     /**

@@ -1,170 +1,304 @@
 
 package com.xinjia.properties;
 
+import java.util.Objects;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
+
 /**
- * Class to contain the information for an email account. This is sufficient for
- * this project but will need more fields if you wish the program to work with
- * mail systems other than GMail. This should be stored in properties file. If
- * you are feeling adventurous you can look into how you might encrypt the
- * password as it will be in a simple text file.
- *
+ * JavaFX Bean for JAG/Mail config Properties
+ * Overrides toString, hashCode and equals
+ * 
  * @author Xin Jia Cao
- *
  */
+
 public class MailConfigBean {
 
-    private String host;
-    private String userEmailAddress;
-    private String password;
-    private String imapUrl;
-    private String smtpUrl;
-    private String imapPort;
-    private String smtpPort;
-    private String dbUrl;
-    private String dbName;
-    private String dbPort;
-    private String dbUsername;
-    private String dbPassword;
-        
+    private StringProperty userName;
+    private StringProperty emailAddress;
+    private StringProperty mailPassword;
+    private StringProperty imapURL;
+    private StringProperty smtpURL;
+    private StringProperty imapPort;
+    private StringProperty smtpPort;
+    private StringProperty mysqlURL;
+    private StringProperty mysqlDatabase;
+    private StringProperty mysqlPort;
+    private StringProperty mysqlUser;
+    private StringProperty mysqlPassword;
 
     /**
-     * Default Constructor
+     * Non-default constructor that initializes all the fields
+     * @param userName
+     * @param emailAddress
+     * @param mailPassword
+     * @param imapURL
+     * @param smtpURL
+     * @param imapPort
+     * @param smtpPort
+     * @param mysqlURL
+     * @param mysqlDatabase
+     * @param mysqlPort
+     * @param mysqlUser
+     * @param mysqlPassword 
+     */
+    public MailConfigBean(String userName, String emailAddress, String mailPassword,
+            String imapURL, String smtpURL, String imapPort,
+            String smtpPort, String mysqlURL, String mysqlDatabase,
+            String mysqlPort, String mysqlUser, String mysqlPassword) {
+        this.userName = new SimpleStringProperty(userName);
+        this.emailAddress = new SimpleStringProperty(emailAddress);
+        this.mailPassword = new SimpleStringProperty(mailPassword);
+        this.imapURL = new SimpleStringProperty(imapURL);
+        this.smtpURL = new SimpleStringProperty(smtpURL);
+        this.imapPort = new SimpleStringProperty(imapPort);
+        this.smtpPort = new SimpleStringProperty(smtpPort);
+        this.mysqlURL = new SimpleStringProperty(mysqlURL);
+        this.mysqlDatabase = new SimpleStringProperty(mysqlDatabase);
+        this.mysqlPort = new SimpleStringProperty(mysqlPort);
+        this.mysqlUser = new SimpleStringProperty(mysqlUser);
+        this.mysqlPassword = new SimpleStringProperty(mysqlPassword);
+    }
+
+    /**
+     * Default constructor
      */
     public MailConfigBean() {
-        this.host = "";
-        this.userEmailAddress = "";
-        this.password = "";
-        this.imapUrl = "";
-        this.smtpUrl = "";
-        this.imapPort = "993";
-        this.smtpPort = "465";
-        this.dbUrl = "";
-        this.dbName = "";
-        this.dbPort = "3306";
-        this.dbUsername = "";
-        this.dbPassword = "";
-        
+        this("", "", "", "", "", "993", "465", "", "", "3306", "", "");
     }
 
-    /**
-     * Non-default constructor
-     * 
-     * @param host
-     * @param userEmailAddress
-     * @param password
-     */
-    public MailConfigBean(final String host, final String userEmailAddress, 
-            final String password, final String imapUrl, final String smtpUrl, final String imapPort, final String smtpPort,
-            final String dbUrl, final String dbName, final String dbPort, final String dbUsername, final String dbPassword) {
-        this.host = host;
-        this.userEmailAddress = userEmailAddress;
-        this.password = password;
-        this.imapUrl = imapUrl;
-        this.smtpUrl = smtpUrl;
-        this.imapPort = imapPort;
-        this.smtpPort = smtpPort;
-        this.dbUrl = dbUrl;
-        this.dbName = dbName;
-        this.dbPort = dbPort;
-        this.dbUsername = dbUsername;
-        this.dbPassword = dbPassword;
+    public String getUserName() {
+        return userName.get();
     }
 
-    public String getHost() {
-        return host;
+    public void setUserName(String userName) {
+        this.userName.set(userName);
     }
 
-    public void setHost(String host) {
-        this.host = host;
+    public StringProperty userNameProperty() {
+        return userName;
     }
 
-    public String getUserEmailAddress() {
-        return userEmailAddress;
+    public String getEmailAddress() {
+        return emailAddress.get();
     }
 
-    public void setUserEmailAddress(String userEmailAddress) {
-        this.userEmailAddress = userEmailAddress;
+    public void setEmailAddress(String emailAddress) {
+        this.emailAddress.set(emailAddress);
     }
 
-    public String getPassword() {
-        return password;
+    public StringProperty emailAddressProperty() {
+        return emailAddress;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public String getMailPassword() {
+        return mailPassword.get();
     }
 
-    public String getImapUrl() {
-        return imapUrl;
+    public void setMailPassword(String mailPassword) {
+        this.mailPassword.set(mailPassword);
     }
 
-    public void setImapUrl(String imapUrl) {
-        this.imapUrl = imapUrl;
+    public StringProperty mailPasswordProperty() {
+        return mailPassword;
     }
 
-    public String getSmtpUrl() {
-        return smtpUrl;
+    public String getImapURL() {
+        return imapURL.get();
     }
 
-    public void setSmtpUrl(String smtpUrl) {
-        this.smtpUrl = smtpUrl;
+    public void setImapURL(String imapURL) {
+        this.imapURL.set(imapURL);
+    }
+
+    public StringProperty imapURLProperty() {
+        return imapURL;
+    }
+
+    public String getSmtpURL() {
+        return smtpURL.get();
+    }
+
+    public void setSmtpURL(String smtpURL) {
+        this.smtpURL.set(smtpURL);
+    }
+
+    public StringProperty smtpURLProperty() {
+        return smtpURL;
     }
 
     public String getImapPort() {
-        return imapPort;
+        return imapPort.get();
     }
 
     public void setImapPort(String imapPort) {
-        this.imapPort = imapPort;
+        this.imapPort.set(imapPort);
+    }
+
+    public StringProperty imapPortProperty() {
+        return imapPort;
     }
 
     public String getSmtpPort() {
-        return smtpPort;
+        return smtpPort.get();
     }
 
     public void setSmtpPort(String smtpPort) {
-        this.smtpPort = smtpPort;
+        this.smtpPort.set(smtpPort);
     }
 
-    public String getDbUrl() {
-        return dbUrl;
+    public StringProperty smtpPortProperty() {
+        return smtpPort;
     }
 
-    public void setDbUrl(String dbUrl) {
-        this.dbUrl = dbUrl;
+    public String getMysqlURL() {
+        return mysqlURL.get();
     }
 
-    public String getDbName() {
-        return dbName;
+    public void setMysqlURL(String mysqlURL) {
+        this.mysqlURL.set(mysqlURL);
     }
 
-    public void setDbName(String dbName) {
-        this.dbName = dbName;
+    public StringProperty mysqlURLProperty() {
+        return mysqlURL;
     }
 
-    public String getDbPort() {
-        return dbPort;
+    public String getMysqlDatabase() {
+        return mysqlDatabase.get();
     }
 
-    public void setDbPort(String dbPort) {
-        this.dbPort = dbPort;
+    public void setMysqlDatabase(String mysqlDatabase) {
+        this.mysqlDatabase.set(mysqlDatabase);
     }
 
-    public String getDbUsername() {
-        return dbUsername;
+    public StringProperty mysqlDatabaseProperty() {
+        return mysqlDatabase;
     }
 
-    public void setDbUsername(String dbUsername) {
-        this.dbUsername = dbUsername;
+    public String getMysqlPort() {
+        return mysqlPort.get();
     }
 
-    public String getDbPassword() {
-        return dbPassword;
+    public void setMysqlPort(String mysqlPort) {
+        this.mysqlPort.set(mysqlPort);
     }
 
-    public void setDbPassword(String dbPassword) {
-        this.dbPassword = dbPassword;
+    public StringProperty mysqlPortProperty() {
+        return mysqlPort;
+    }
+
+    public String getMysqlUser() {
+        return mysqlUser.get();
+    }
+
+    public void setMysqlUser(String mysqlUser) {
+        this.mysqlUser.set(mysqlUser);
+    }
+
+    public StringProperty mysqlUserProperty() {
+        return mysqlUser;
+    }
+
+    public String getMysqlPassword() {
+        return mysqlPassword.get();
+    }
+
+    public void setMysqlPassword(String mysqlPassword) {
+        this.mysqlPassword.set(mysqlPassword);
+    }
+
+    public StringProperty mysqlPasswordProperty() {
+        return mysqlPassword;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        hash = 29 * hash + Objects.hashCode(this.userName);
+        hash = 29 * hash + Objects.hashCode(this.emailAddress);
+        hash = 29 * hash + Objects.hashCode(this.mailPassword);
+        hash = 29 * hash + Objects.hashCode(this.imapURL);
+        hash = 29 * hash + Objects.hashCode(this.smtpURL);
+        hash = 29 * hash + Objects.hashCode(this.imapPort);
+        hash = 29 * hash + Objects.hashCode(this.smtpPort);
+        hash = 29 * hash + Objects.hashCode(this.mysqlURL);
+        hash = 29 * hash + Objects.hashCode(this.mysqlDatabase);
+        hash = 29 * hash + Objects.hashCode(this.mysqlPort);
+        hash = 29 * hash + Objects.hashCode(this.mysqlUser);
+        hash = 29 * hash + Objects.hashCode(this.mysqlPassword);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final MailConfigBean other = (MailConfigBean) obj;
+        if (!Objects.equals(this.userName, other.userName)) {
+            return false;
+        }
+        if (!Objects.equals(this.emailAddress, other.emailAddress)) {
+            return false;
+        }
+        if (!Objects.equals(this.mailPassword, other.mailPassword)) {
+            return false;
+        }
+        if (!Objects.equals(this.imapURL, other.imapURL)) {
+            return false;
+        }
+        if (!Objects.equals(this.smtpURL, other.smtpURL)) {
+            return false;
+        }
+        if (!Objects.equals(this.imapPort, other.imapPort)) {
+            return false;
+        }
+        if (!Objects.equals(this.smtpPort, other.smtpPort)) {
+            return false;
+        }
+        if (!Objects.equals(this.mysqlURL, other.mysqlURL)) {
+            return false;
+        }
+        if (!Objects.equals(this.mysqlDatabase, other.mysqlDatabase)) {
+            return false;
+        }
+        if (!Objects.equals(this.mysqlPort, other.mysqlPort)) {
+            return false;
+        }
+        if (!Objects.equals(this.mysqlUser, other.mysqlUser)) {
+            return false;
+        }
+        if (!Objects.equals(this.mysqlPassword, other.mysqlPassword)) {
+            return false;
+        }
+        return true;
+    }
+
+    
+    
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("PropertyBean{userName=").append(userName);
+        sb.append(", emailAddress=").append(emailAddress);
+        sb.append(", mailPassword=").append(mailPassword);
+        sb.append(", imapURL=").append(imapURL);
+        sb.append(", smtpURL=").append(smtpURL);
+        sb.append(", imapPort=").append(imapPort);
+        sb.append(", smtpPort=").append(smtpPort);
+        sb.append(", mysqlURL=").append(mysqlURL);
+        sb.append(", mysqlDatabase=").append(mysqlDatabase);
+        sb.append(", mysqlPort=").append(mysqlPort);
+        sb.append(", mysqlUser=").append(mysqlUser);
+        sb.append(", mysqlPassword=").append(mysqlPassword);
+        sb.append('}');
+        return sb.toString();
     }
 }
 
-    

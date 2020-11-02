@@ -72,11 +72,11 @@ public class SendAndReceive {
 
         Email email = null;
 
-        if (checkEmail(mailConfBean.getUserEmailAddress())) {
+        if (checkEmail(mailConfBean.getEmailAddress())) {
             email = Email.create()
-                    .from(mailConfBean.getUserEmailAddress());
+                    .from(mailConfBean.getEmailAddress());
         } else {
-            LOG.warn("Invalid send bean: " + mailConfBean.getUserEmailAddress());
+            LOG.warn("Invalid send bean: " + mailConfBean.getEmailAddress());
             throw new MailException("Invalid email");
         }
 
@@ -149,8 +149,8 @@ public class SendAndReceive {
         if (checkToEmails(toRecipients) && checkCCEmails(ccRecipients) && checkBCCEmails(bccRecipients)) {
             SmtpServer smtpServer = MailServer.create()
                     .ssl(true)
-                    .host(mailConfBean.getHost())
-                    .auth(mailConfBean.getUserEmailAddress(), mailConfBean.getPassword())
+                    .host(mailConfBean.getSmtpURL())
+                    .auth(mailConfBean.getEmailAddress(), mailConfBean.getMailPassword())
                     //.debugMode(true)
                     .buildSmtpMailServer();
 
@@ -189,13 +189,13 @@ public class SendAndReceive {
             LOG.warn("Null: please enter a valid receive config bean");
             throw new NullPointerException();
         } else {
-            if (checkEmail(mail.getUserEmailAddress())) {
+            if (checkEmail(mail.getEmailAddress())) {
 
                 // Create an IMAP server that does not display debug info
                 ImapServer imapServer = MailServer.create()
-                        .host(mail.getHost())
+                        .host(mail.getImapURL())
                         .ssl(true)
-                        .auth(mail.getUserEmailAddress(), mail.getPassword())
+                        .auth(mail.getEmailAddress(), mail.getMailPassword())
                         .buildImapMailServer();
 
                 try ( ReceiveMailSession session = imapServer.createSession()) {

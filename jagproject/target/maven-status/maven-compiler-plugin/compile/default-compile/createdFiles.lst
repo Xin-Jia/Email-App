@@ -20,7 +20,6 @@ com\xinjia\presentation\treecontroller\TreeLayoutController$1.class
 com\xinjia\properties\propertybean\HtmlData.class
 com\xinjia\presentation\formhtml\FormAndHTMLLayoutController.class
 com\xinjia\properties\propertybean\FolderData.class
-com\xinjia\properties\propertybean\MailConfigPropertyBean.class
 com\xinjia\jdbc\persistence\EmailDAOImpl.class
 com\xinjia\exceptions\NullCCEmailException.class
 com\xinjia\exceptions\NullToEmailAddressException.class

@@ -1,6 +1,6 @@
 
 package com.xinjia.properties.propertybean.propertiesmanager;
-import com.xinjia.properties.propertybean.MailConfigPropertyBean;
+import com.xinjia.properties.MailConfigBean;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -33,7 +33,7 @@ public class MailConfigPropertiesManager {
      * @return
      * @throws java.io.IOException
      */
-    public final boolean loadTextProperties(final MailConfigPropertyBean propertyBean, final String path, final String propFileName) throws IOException {
+    public final boolean loadTextProperties(final MailConfigBean propertyBean, final String path, final String propFileName) throws IOException {
 
         boolean found = false;
         Properties prop = new Properties();
@@ -73,7 +73,7 @@ public class MailConfigPropertiesManager {
      * @param propertyBean The bean to store into the properties
      * @throws IOException
      */
-    public final void writeTextProperties(final String path, final String propFileName, final MailConfigPropertyBean propertyBean) throws IOException {
+    public final void writeTextProperties(final String path, final String propFileName, final MailConfigBean propertyBean) throws IOException {
 
         Properties prop = new Properties();
 

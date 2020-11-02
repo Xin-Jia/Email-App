@@ -335,7 +335,7 @@ public class EmailJDBCTest {
     private int getLastId() throws SQLException {
         String selectLastIdQuery = "SELECT EMAILID FROM EMAIL";
         int latestId = -1;
-        try ( Connection connection = DriverManager.getConnection(configBean.getDbUrl(), configBean.getDbUsername(), configBean.getDbPassword());  PreparedStatement pStatement = connection.prepareStatement(selectLastIdQuery);) {
+        try ( Connection connection = DriverManager.getConnection(configBean.getMysqlURL(), configBean.getMysqlUser(), configBean.getMysqlPassword());  PreparedStatement pStatement = connection.prepareStatement(selectLastIdQuery);) {
             try ( ResultSet resultSet = pStatement.executeQuery()) {
                 while (resultSet.next()) {
                     latestId = resultSet.getInt("EmailId");
@@ -385,7 +385,7 @@ public class EmailJDBCTest {
 
         final String seedDataScript = loadAsString("createEmailTables.sql");
 
-        try ( Connection connection = DriverManager.getConnection(configBean.getDbUrl(), configBean.getDbUsername(), configBean.getDbPassword());) {
+        try ( Connection connection = DriverManager.getConnection(configBean.getMysqlURL(), configBean.getMysqlUser(), configBean.getMysqlPassword());) {
             for (String statement : splitStatements(new StringReader(seedDataScript), ";")) {
                 connection.prepareStatement(statement).execute();
             }

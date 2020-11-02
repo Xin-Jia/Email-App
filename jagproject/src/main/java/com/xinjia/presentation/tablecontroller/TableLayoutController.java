@@ -2,7 +2,7 @@ package com.xinjia.presentation.tablecontroller;
 
 import com.xinjia.presentation.formhtml.FormAndHTMLLayoutController;
 import com.xinjia.properties.propertybean.EmailData;
-import com.xinjia.properties.propertybean.MailConfigPropertyBean;
+import com.xinjia.properties.MailConfigBean;
 import com.xinjia.properties.propertybean.propertiesmanager.MailConfigPropertiesManager;
 import com.xinjia.sampledata.fakedata.SampleData;
 import java.io.IOException;
@@ -45,7 +45,7 @@ public class TableLayoutController {
     private ObservableList<EmailData> inboxEmails;
     private ObservableList<EmailData> sentEmails;
     private ObservableList<EmailData> draftEmails;
-    private MailConfigPropertyBean propertyBean;
+    private MailConfigBean propertyBean;
     private FormAndHTMLLayoutController editorController;
 
     /**
@@ -126,7 +126,7 @@ public class TableLayoutController {
      */
     private void retrieveMailConfig() throws IOException {
         MailConfigPropertiesManager propertiesManager = new MailConfigPropertiesManager();
-        propertyBean = new MailConfigPropertyBean();
+        propertyBean = new MailConfigBean();
         propertiesManager.loadTextProperties(propertyBean, "", "MailConfig");
     }
 
