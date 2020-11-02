@@ -1,6 +1,11 @@
 package com.xinjia.presentation.formhtml;
 
+import com.xinjia.properties.MailConfigBean;
 import com.xinjia.properties.propertybean.EmailData;
+import com.xinjia.properties.propertybean.FormData;
+import com.xinjia.properties.propertybean.propertiesmanager.MailConfigPropertiesManager;
+import com.xinjia.sampledata.fakedata.SampleData;
+import java.io.IOException;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -20,23 +25,33 @@ import org.slf4j.LoggerFactory;
  */
 public class FormAndHTMLLayoutController {
 
-    @FXML // ResourceBundle that was given to the FXMLLoader
+     @FXML // ResourceBundle that was given to the FXMLLoader
     private ResourceBundle resources;
-
-    @FXML // fx:id="subjectField"
-    private TextField subjectField; // Value injected by FXMLLoader
-
-    @FXML // fx:id="htmlEditor"
-    private HTMLEditor htmlEditor; // Value injected by FXMLLoader
 
     @FXML // fx:id="toHBox"
     private HBox toHBox; // Value injected by FXMLLoader
 
+    @FXML // fx:id="toTxtField"
+    private TextField toTxtField; // Value injected by FXMLLoader
+
     @FXML // fx:id="ccHBox"
     private HBox ccHBox; // Value injected by FXMLLoader
 
+    @FXML // fx:id="ccTxtField"
+    private TextField ccTxtField; // Value injected by FXMLLoader
+
+    @FXML // fx:id="subjectField"
+    private TextField subjectField; // Value injected by FXMLLoader
+
     @FXML // fx:id="bccHBox"
     private HBox bccHBox; // Value injected by FXMLLoader
+
+    @FXML // fx:id="bccTxtField"
+    private TextField bccTxtField; // Value injected by FXMLLoader
+
+    @FXML // fx:id="htmlEditor"
+    private HTMLEditor htmlEditor; // Value injected by FXMLLoader
+
 
     private final static Logger LOG = LoggerFactory.getLogger(FormAndHTMLLayoutController.class);
 
@@ -112,6 +127,53 @@ public class FormAndHTMLLayoutController {
         htmlEditor.setHtmlText(sb.toString());
     }
     
+    /**
+     * Display recipients and subject based on the Email ID in the Form container
+     * as well as the sample HTML message from the fake data class.
+     * @param emailData
+     * @param propertyBean 
+     */
+    public void displayFormAndMessage(EmailData emailData, SampleData fakeData){
+        FormData form = new FormData();
+        switch(emailData.getId()){
+            case 1 -> form = fakeData.getSampleFromData1();
+            case 2 -> form = fakeData.getSampleFromData2();
+            case 3 -> form = fakeData.getSampleFromData3();
+            case 4 -> form = fakeData.getSampleFromData4();
+            case 5 -> form = fakeData.getSampleFromData5();
+            case 6 -> form = fakeData.getSampleFromData6();
+            case 7 -> form = fakeData.getSampleFromData7();
+            case 8 -> form = fakeData.getSampleFromData8();
+            case 9 -> form = fakeData.getSampleFromData9();
+        }
+        putValuesInNodes(form.getTo(), form.getCc(), form.getBcc(), form.getSubject());
+        displayMessage(fakeData);
+    }
+    
+    /**
+     * Display the sample HTML message in the HTML editor.
+     * The message is the same for all emails (because it is only used for displaying/testing)
+     * @param sampleData 
+     */
+    public void displayMessage(SampleData sampleData){
+        htmlEditor.setHtmlText(htmlEditor.getHtmlText()+"<br>"+sampleData.getSampleHtmlData().getMessage());
+    }
+    
+    /**
+     * Set the text to each TextField to its corresponding string
+     * @param to
+     * @param cc
+     * @param bcc
+     * @param subject 
+     */
+    private void putValuesInNodes(String to, String cc, String bcc, String subject){
+        toTxtField.setText(to);
+        ccTxtField.setText(cc);
+        bccTxtField.setText(bcc);
+        subjectField.setText(subject);
+    }
+    
+
     /**
      * Put the newly created email to the draft folder
      */

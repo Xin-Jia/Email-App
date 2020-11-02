@@ -46,8 +46,8 @@ public class MainEmailApp extends Application {
         //Left-out comments so we can test internationalization quicker
 
         //currentLocale = Locale.getDefault();
-        currentLocale = new Locale("fr", "CA");
-        //currentLocale = new Locale("en", "CA");
+        //currentLocale = new Locale("fr", "CA");
+        currentLocale = new Locale("en", "CA");
         // currentLocale = Locale.CANADA;
         // currentLocale = Locale.CANADA_FRENCH;
         LOG.debug("Locale = " + currentLocale);
@@ -57,12 +57,13 @@ public class MainEmailApp extends Application {
 
     /**
      * Instantiate the primary stage with the Root (or email app) scene if the
-     * properties file exists and all fields are filled. If not, it creates a
-     * new stage to display the Mail Config Form. If the user fills all the
-     * fields and save them, the Root scene will appear. If the user clicks on
-     * Cancel or the x button, the stage closes and nothing is saved.
+     * properties file exists and all fields are filled.If not, it creates a new
+     * stage to display the Mail Config Form. If the user fills all the fields
+     * and save them, the Root scene will appear. If the user clicks on Cancel
+     * or the x button, the stage closes and nothing is saved.
      *
      * @param primaryStage The primary stage
+     * @throws java.io.IOException
      */
     @Override
     public void start(Stage primaryStage) throws IOException {

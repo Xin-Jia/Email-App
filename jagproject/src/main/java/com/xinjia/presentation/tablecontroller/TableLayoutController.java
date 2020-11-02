@@ -47,6 +47,7 @@ public class TableLayoutController {
     private ObservableList<EmailData> draftEmails;
     private MailConfigBean propertyBean;
     private FormAndHTMLLayoutController editorController;
+    private String selectedFolder;
 
     /**
      * Called by the FXMLLoader when initialization is complete. When the FXML
@@ -74,11 +75,10 @@ public class TableLayoutController {
         draftEmails = fakeData.getSampleDraftEmailData();
 
         setCellFactory();
-        setRowFactory();
+        setRowFactory(fakeData);
         adjustColumnWidths();
     }
 
-    
     /**
      * Called when the app is being initialized. Set the items in the table to
      * be the emails in the inbox folder.
@@ -86,7 +86,7 @@ public class TableLayoutController {
     public void displayTheTable() {
         emailDataTable.setItems(inboxEmails);
     }
-    
+
     /**
      * Set the Cell Factory for each column. Connects the property in the
      * EmailData object to the column in the table
@@ -103,15 +103,16 @@ public class TableLayoutController {
     /**
      * Set the Row Factory for the TableView so we can retrieve the EmailData
      * object from a selected row. When a row is selected in the table, it
-     * displays the object infos in the HTML editor.
+     * displays the object infos in the HTML editor as well as its recipients and subject.
      */
-    private void setRowFactory() {
+    private void setRowFactory(SampleData fakeData) {
         emailDataTable.setRowFactory(tv -> {
             TableRow<EmailData> row = new TableRow<>();
             row.setOnMouseClicked(event -> {
                 if (!row.isEmpty()) {
                     EmailData clickedRow = row.getItem();
                     editorController.writeToEditorEmailData(clickedRow);
+                    editorController.displayFormAndMessage(clickedRow, fakeData);
                 }
             });
             return row;
@@ -176,15 +177,13 @@ public class TableLayoutController {
         dateColumn.setPrefWidth(width * .28);
     }
 
-
-
     /**
      * Display rows of EmailData based on the selected folder.
      *
      * @param folder The selected folder's name
      */
     public void displayEmailsBasedOnFolder(String folder) {
-
+        selectedFolder = folder;
         switch (folder) {
             case "Inbox" ->
                 emailDataTable.setItems(inboxEmails);
@@ -226,8 +225,8 @@ public class TableLayoutController {
     }
 
     /**
-     * Check in each ObservableList if they contain the email dropped.
-     * Delete the email dropped from its original folder.
+     * Check in each ObservableList if they contain the email dropped. Delete
+     * the email dropped from its original folder.
      */
     private void deleteEmailWhenDropped() {
         checkIfInFolder(inboxEmails);
@@ -236,8 +235,9 @@ public class TableLayoutController {
     }
 
     /**
-     * If the ObservableList contains the EmailData dropped, delete it.
-     * Will be updated automatically in the TableView. (Row will be removed)
+     * If the ObservableList contains the EmailData dropped, delete it. Will be
+     * updated automatically in the TableView. (Row will be removed)
+     *
      * @param mails
      */
     private void checkIfInFolder(ObservableList<EmailData> mails) {

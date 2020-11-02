@@ -26424,3 +26424,276 @@ Caused by: java.lang.NullPointerException
 [INFO ] 2020-11-01 20:31:43.929 [JavaFX Application Thread] FormAndHTMLLayoutController - Writing to HTML Editor
 [INFO ] 2020-11-01 20:31:53.408 [JavaFX Application Thread] FolderPopUpController - Creating folder
 [INFO ] 2020-11-01 20:31:54.697 [JavaFX Application Thread] MainEmailApp - Stage is closing
+[DEBUG] 2020-11-01 21:34:02.830 [JavaFX Application Thread] MainEmailApp - Locale = fr_CA
+[INFO ] 2020-11-01 21:34:02.846 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[INFO ] 2020-11-01 21:34:02.847 [JavaFX Application Thread] MainEmailApp - Are properties non-empty & file exists? false
+[INFO ] 2020-11-01 21:34:02.847 [JavaFX Application Thread] MainEmailApp - Creating Mail Config Scene
+[INFO ] 2020-11-01 21:34:03.025 [JavaFX Application Thread] MailConfigPropertiesManager - Mail Config Form Loaded
+[INFO ] 2020-11-01 21:34:03.026 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[DEBUG] 2020-11-01 21:34:14.576 [JavaFX Application Thread] MailConfigPropertiesManager - Are all fields filled? true
+[INFO ] 2020-11-01 21:34:14.708 [JavaFX Application Thread] MailConfigPropertiesManager - Finished writing to MailConfig properties file
+[INFO ] 2020-11-01 21:34:14.722 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[INFO ] 2020-11-01 21:34:14.723 [JavaFX Application Thread] MainEmailApp - Are properties non-empty & file exists? true
+[INFO ] 2020-11-01 21:34:14.725 [JavaFX Application Thread] MainEmailApp - Creating Root/Email App Scene
+[INFO ] 2020-11-01 21:34:15.509 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[INFO ] 2020-11-01 21:34:18.418 [JavaFX Application Thread] TreeLayoutController - Folder selected: FolderData{id=IntegerProperty [value: 1], folderName=StringProperty [value: Inbox]}
+[INFO ] 2020-11-01 21:34:20.636 [JavaFX Application Thread] TreeLayoutController - Folder selected: FolderData{id=IntegerProperty [value: 2], folderName=StringProperty [value: Sent]}
+[INFO ] 2020-11-01 21:34:21.242 [JavaFX Application Thread] TreeLayoutController - Folder selected: FolderData{id=IntegerProperty [value: 3], folderName=StringProperty [value: Draft]}
+[INFO ] 2020-11-01 21:34:21.938 [JavaFX Application Thread] TreeLayoutController - Folder selected: FolderData{id=IntegerProperty [value: 1], folderName=StringProperty [value: Inbox]}
+[INFO ] 2020-11-01 21:34:23.871 [JavaFX Application Thread] TreeLayoutController - Folder selected: FolderData{id=IntegerProperty [value: 2], folderName=StringProperty [value: Sent]}
+[INFO ] 2020-11-01 21:34:28.779 [JavaFX Application Thread] TreeLayoutController - Folder selected: FolderData{id=IntegerProperty [value: 1], folderName=StringProperty [value: Inbox]}
+[INFO ] 2020-11-01 21:34:30.908 [JavaFX Application Thread] TreeLayoutController - Folder selected: FolderData{id=IntegerProperty [value: 3], folderName=StringProperty [value: Draft]}
+[INFO ] 2020-11-01 21:34:31.347 [JavaFX Application Thread] TreeLayoutController - Folder selected: FolderData{id=IntegerProperty [value: 2], folderName=StringProperty [value: Sent]}
+[INFO ] 2020-11-01 21:34:32.139 [JavaFX Application Thread] TreeLayoutController - Folder selected: FolderData{id=IntegerProperty [value: 1], folderName=StringProperty [value: Inbox]}
+[INFO ] 2020-11-01 21:34:34.974 [JavaFX Application Thread] FormAndHTMLLayoutController - Writing to HTML Editor
+[INFO ] 2020-11-01 21:34:40.022 [JavaFX Application Thread] FormAndHTMLLayoutController - Writing to HTML Editor
+[INFO ] 2020-11-01 21:34:50.871 [JavaFX Application Thread] TreeLayoutController - Folder selected: FolderData{id=IntegerProperty [value: 2], folderName=StringProperty [value: Sent]}
+[INFO ] 2020-11-01 21:34:56.414 [JavaFX Application Thread] FormAndHTMLLayoutController - Writing to HTML Editor
+[INFO ] 2020-11-01 21:34:57.630 [JavaFX Application Thread] FormAndHTMLLayoutController - Writing to HTML Editor
+[INFO ] 2020-11-01 21:34:58.598 [JavaFX Application Thread] FormAndHTMLLayoutController - Writing to HTML Editor
+[INFO ] 2020-11-01 21:34:59.359 [JavaFX Application Thread] TreeLayoutController - Folder selected: FolderData{id=IntegerProperty [value: 3], folderName=StringProperty [value: Draft]}
+[INFO ] 2020-11-01 21:34:59.974 [JavaFX Application Thread] FormAndHTMLLayoutController - Writing to HTML Editor
+[INFO ] 2020-11-01 21:35:00.415 [JavaFX Application Thread] FormAndHTMLLayoutController - Writing to HTML Editor
+[INFO ] 2020-11-01 21:35:00.997 [JavaFX Application Thread] FormAndHTMLLayoutController - Writing to HTML Editor
+[INFO ] 2020-11-01 21:35:15.471 [JavaFX Application Thread] MainEmailApp - Stage is closing
+[DEBUG] 2020-11-01 21:36:43.951 [JavaFX Application Thread] MainEmailApp - Locale = fr_CA
+[INFO ] 2020-11-01 21:36:43.969 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[INFO ] 2020-11-01 21:36:43.969 [JavaFX Application Thread] MainEmailApp - Are properties non-empty & file exists? true
+[INFO ] 2020-11-01 21:36:43.970 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[INFO ] 2020-11-01 21:36:43.970 [JavaFX Application Thread] MainEmailApp - Are properties non-empty & file exists? true
+[INFO ] 2020-11-01 21:36:43.970 [JavaFX Application Thread] MainEmailApp - Creating Root/Email App Scene
+[INFO ] 2020-11-01 21:36:44.943 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[INFO ] 2020-11-01 21:36:47.722 [JavaFX Application Thread] TreeLayoutController - Folder selected: FolderData{id=IntegerProperty [value: 2], folderName=StringProperty [value: Sent]}
+[INFO ] 2020-11-01 21:36:48.176 [JavaFX Application Thread] TreeLayoutController - Folder selected: FolderData{id=IntegerProperty [value: 3], folderName=StringProperty [value: Draft]}
+[INFO ] 2020-11-01 21:36:48.755 [JavaFX Application Thread] TreeLayoutController - Folder selected: FolderData{id=IntegerProperty [value: 1], folderName=StringProperty [value: Inbox]}
+[INFO ] 2020-11-01 21:36:50.046 [JavaFX Application Thread] FormAndHTMLLayoutController - Writing to HTML Editor
+[INFO ] 2020-11-01 21:36:52.054 [JavaFX Application Thread] FormAndHTMLLayoutController - Writing to HTML Editor
+[INFO ] 2020-11-01 21:36:53.230 [JavaFX Application Thread] FormAndHTMLLayoutController - Writing to HTML Editor
+[INFO ] 2020-11-01 21:36:54.539 [JavaFX Application Thread] TreeLayoutController - Folder selected: FolderData{id=IntegerProperty [value: 3], folderName=StringProperty [value: Draft]}
+[INFO ] 2020-11-01 21:36:58.175 [JavaFX Application Thread] TreeLayoutController - Folder selected: FolderData{id=IntegerProperty [value: 2], folderName=StringProperty [value: Sent]}
+[INFO ] 2020-11-01 21:37:00.485 [JavaFX Application Thread] FormAndHTMLLayoutController - Writing to HTML Editor
+[INFO ] 2020-11-01 21:37:01.821 [JavaFX Application Thread] FormAndHTMLLayoutController - Writing to HTML Editor
+[INFO ] 2020-11-01 21:37:02.614 [JavaFX Application Thread] FormAndHTMLLayoutController - Writing to HTML Editor
+[INFO ] 2020-11-01 21:37:17.530 [JavaFX Application Thread] TreeLayoutController - Folder selected: FolderData{id=IntegerProperty [value: 3], folderName=StringProperty [value: Draft]}
+[INFO ] 2020-11-01 21:37:18.238 [JavaFX Application Thread] FormAndHTMLLayoutController - Writing to HTML Editor
+[INFO ] 2020-11-01 21:37:18.997 [JavaFX Application Thread] FormAndHTMLLayoutController - Writing to HTML Editor
+[INFO ] 2020-11-01 21:37:19.750 [JavaFX Application Thread] FormAndHTMLLayoutController - Writing to HTML Editor
+[INFO ] 2020-11-01 21:37:20.788 [JavaFX Application Thread] TreeLayoutController - Folder selected: FolderData{id=IntegerProperty [value: 1], folderName=StringProperty [value: Inbox]}
+[INFO ] 2020-11-01 21:37:21.653 [JavaFX Application Thread] FormAndHTMLLayoutController - Writing to HTML Editor
+[INFO ] 2020-11-01 21:37:22.294 [JavaFX Application Thread] FormAndHTMLLayoutController - Writing to HTML Editor
+[INFO ] 2020-11-01 21:37:25.047 [JavaFX Application Thread] FormAndHTMLLayoutController - Writing to HTML Editor
+[INFO ] 2020-11-01 21:37:29.078 [JavaFX Application Thread] FormAndHTMLLayoutController - Writing to HTML Editor
+[INFO ] 2020-11-01 21:37:32.534 [JavaFX Application Thread] FormAndHTMLLayoutController - Writing to HTML Editor
+[INFO ] 2020-11-01 21:37:42.868 [JavaFX Application Thread] TreeLayoutController - Folder selected: FolderData{id=IntegerProperty [value: 2], folderName=StringProperty [value: Sent]}
+[INFO ] 2020-11-01 21:37:43.868 [JavaFX Application Thread] FormAndHTMLLayoutController - Writing to HTML Editor
+[INFO ] 2020-11-01 21:37:44.566 [JavaFX Application Thread] FormAndHTMLLayoutController - Writing to HTML Editor
+[INFO ] 2020-11-01 21:37:45.110 [JavaFX Application Thread] FormAndHTMLLayoutController - Writing to HTML Editor
+[INFO ] 2020-11-01 21:37:46.195 [JavaFX Application Thread] TreeLayoutController - Folder selected: FolderData{id=IntegerProperty [value: 1], folderName=StringProperty [value: Inbox]}
+[INFO ] 2020-11-01 21:37:47.214 [JavaFX Application Thread] FormAndHTMLLayoutController - Writing to HTML Editor
+[INFO ] 2020-11-01 21:37:48.478 [JavaFX Application Thread] FormAndHTMLLayoutController - Writing to HTML Editor
+[INFO ] 2020-11-01 21:37:56.494 [JavaFX Application Thread] FormAndHTMLLayoutController - Writing to HTML Editor
+[INFO ] 2020-11-01 21:38:03.844 [JavaFX Application Thread] TreeLayoutController - Folder selected: FolderData{id=IntegerProperty [value: 2], folderName=StringProperty [value: Sent]}
+[INFO ] 2020-11-01 21:38:04.462 [JavaFX Application Thread] FormAndHTMLLayoutController - Writing to HTML Editor
+[INFO ] 2020-11-01 21:38:05.134 [JavaFX Application Thread] FormAndHTMLLayoutController - Writing to HTML Editor
+[INFO ] 2020-11-01 21:38:06.254 [JavaFX Application Thread] FormAndHTMLLayoutController - Writing to HTML Editor
+[INFO ] 2020-11-01 21:38:15.085 [JavaFX Application Thread] TreeLayoutController - Folder selected: FolderData{id=IntegerProperty [value: 1], folderName=StringProperty [value: Inbox]}
+[INFO ] 2020-11-01 21:38:15.798 [JavaFX Application Thread] FormAndHTMLLayoutController - Writing to HTML Editor
+[INFO ] 2020-11-01 21:38:16.685 [JavaFX Application Thread] FormAndHTMLLayoutController - Writing to HTML Editor
+[INFO ] 2020-11-01 21:38:17.830 [JavaFX Application Thread] FormAndHTMLLayoutController - Writing to HTML Editor
+[INFO ] 2020-11-01 21:38:19.766 [JavaFX Application Thread] FormAndHTMLLayoutController - Writing to HTML Editor
+[INFO ] 2020-11-01 21:38:22.636 [JavaFX Application Thread] MainEmailApp - Stage is closing
+[DEBUG] 2020-11-01 21:43:25.092 [JavaFX Application Thread] MainEmailApp - Locale = fr_CA
+[INFO ] 2020-11-01 21:43:25.109 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[INFO ] 2020-11-01 21:43:25.110 [JavaFX Application Thread] MainEmailApp - Are properties non-empty & file exists? true
+[INFO ] 2020-11-01 21:43:25.111 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[INFO ] 2020-11-01 21:43:25.111 [JavaFX Application Thread] MainEmailApp - Are properties non-empty & file exists? true
+[INFO ] 2020-11-01 21:43:25.111 [JavaFX Application Thread] MainEmailApp - Creating Root/Email App Scene
+[INFO ] 2020-11-01 21:43:26.076 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[INFO ] 2020-11-01 21:43:28.981 [JavaFX Application Thread] FormAndHTMLLayoutController - Writing to HTML Editor
+[INFO ] 2020-11-01 21:43:31.438 [JavaFX Application Thread] FormAndHTMLLayoutController - Writing to HTML Editor
+[INFO ] 2020-11-01 21:43:32.252 [JavaFX Application Thread] FormAndHTMLLayoutController - Writing to HTML Editor
+[INFO ] 2020-11-01 21:43:34.850 [JavaFX Application Thread] TreeLayoutController - Folder selected: FolderData{id=IntegerProperty [value: 1], folderName=StringProperty [value: Inbox]}
+[INFO ] 2020-11-01 21:43:36.950 [JavaFX Application Thread] FormAndHTMLLayoutController - Writing to HTML Editor
+[INFO ] 2020-11-01 21:43:37.853 [JavaFX Application Thread] FormAndHTMLLayoutController - Writing to HTML Editor
+[INFO ] 2020-11-01 21:43:38.798 [JavaFX Application Thread] FormAndHTMLLayoutController - Writing to HTML Editor
+[INFO ] 2020-11-01 21:43:39.917 [JavaFX Application Thread] FormAndHTMLLayoutController - Writing to HTML Editor
+[INFO ] 2020-11-01 21:43:42.790 [JavaFX Application Thread] FormAndHTMLLayoutController - Writing to HTML Editor
+[INFO ] 2020-11-01 21:43:44.774 [JavaFX Application Thread] FormAndHTMLLayoutController - Writing to HTML Editor
+[INFO ] 2020-11-01 21:43:47.598 [JavaFX Application Thread] FormAndHTMLLayoutController - Writing to HTML Editor
+[INFO ] 2020-11-01 21:43:48.364 [JavaFX Application Thread] FormAndHTMLLayoutController - Writing to HTML Editor
+[INFO ] 2020-11-01 21:43:49.897 [JavaFX Application Thread] MailConfigPropertiesManager - Mail Config Form Loaded
+[INFO ] 2020-11-01 21:43:49.898 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[INFO ] 2020-11-01 21:43:49.899 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[INFO ] 2020-11-01 21:44:02.046 [JavaFX Application Thread] MainEmailApp - Stage is closing
+[DEBUG] 2020-11-01 21:46:08.564 [JavaFX Application Thread] MainEmailApp - Locale = fr_CA
+[INFO ] 2020-11-01 21:46:08.581 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[INFO ] 2020-11-01 21:46:08.582 [JavaFX Application Thread] MainEmailApp - Are properties non-empty & file exists? true
+[INFO ] 2020-11-01 21:46:08.583 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[INFO ] 2020-11-01 21:46:08.583 [JavaFX Application Thread] MainEmailApp - Are properties non-empty & file exists? true
+[INFO ] 2020-11-01 21:46:08.583 [JavaFX Application Thread] MainEmailApp - Creating Root/Email App Scene
+[INFO ] 2020-11-01 21:46:09.545 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[INFO ] 2020-11-01 21:46:12.342 [JavaFX Application Thread] TreeLayoutController - Folder selected: FolderData{id=IntegerProperty [value: 2], folderName=StringProperty [value: Sent]}
+[INFO ] 2020-11-01 21:46:13.071 [JavaFX Application Thread] TreeLayoutController - Folder selected: FolderData{id=IntegerProperty [value: 1], folderName=StringProperty [value: Inbox]}
+[INFO ] 2020-11-01 21:46:13.973 [JavaFX Application Thread] FormAndHTMLLayoutController - Writing to HTML Editor
+[INFO ] 2020-11-01 21:46:15.565 [JavaFX Application Thread] FormAndHTMLLayoutController - Writing to HTML Editor
+[INFO ] 2020-11-01 21:46:16.380 [JavaFX Application Thread] FormAndHTMLLayoutController - Writing to HTML Editor
+[INFO ] 2020-11-01 21:46:18.078 [JavaFX Application Thread] TreeLayoutController - Folder selected: FolderData{id=IntegerProperty [value: 2], folderName=StringProperty [value: Sent]}
+[INFO ] 2020-11-01 21:46:18.733 [JavaFX Application Thread] FormAndHTMLLayoutController - Writing to HTML Editor
+[INFO ] 2020-11-01 21:46:19.388 [JavaFX Application Thread] FormAndHTMLLayoutController - Writing to HTML Editor
+[INFO ] 2020-11-01 21:46:19.901 [JavaFX Application Thread] FormAndHTMLLayoutController - Writing to HTML Editor
+[INFO ] 2020-11-01 21:46:21.649 [JavaFX Application Thread] TreeLayoutController - Folder selected: FolderData{id=IntegerProperty [value: 3], folderName=StringProperty [value: Draft]}
+[INFO ] 2020-11-01 21:46:22.476 [JavaFX Application Thread] TreeLayoutController - Folder selected: FolderData{id=IntegerProperty [value: 2], folderName=StringProperty [value: Sent]}
+[INFO ] 2020-11-01 21:46:23.324 [JavaFX Application Thread] TreeLayoutController - Folder selected: FolderData{id=IntegerProperty [value: 1], folderName=StringProperty [value: Inbox]}
+[INFO ] 2020-11-01 21:46:28.332 [JavaFX Application Thread] FormAndHTMLLayoutController - Writing to HTML Editor
+[INFO ] 2020-11-01 21:46:28.964 [JavaFX Application Thread] FormAndHTMLLayoutController - Writing to HTML Editor
+[INFO ] 2020-11-01 21:46:30.013 [JavaFX Application Thread] FormAndHTMLLayoutController - Writing to HTML Editor
+[INFO ] 2020-11-01 21:46:39.439 [JavaFX Application Thread] MainEmailApp - Stage is closing
+[DEBUG] 2020-11-01 21:47:42.888 [JavaFX Application Thread] MainEmailApp - Locale = fr_CA
+[INFO ] 2020-11-01 21:47:42.905 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[INFO ] 2020-11-01 21:47:42.906 [JavaFX Application Thread] MainEmailApp - Are properties non-empty & file exists? true
+[INFO ] 2020-11-01 21:47:42.906 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[INFO ] 2020-11-01 21:47:42.907 [JavaFX Application Thread] MainEmailApp - Are properties non-empty & file exists? true
+[INFO ] 2020-11-01 21:47:42.907 [JavaFX Application Thread] MainEmailApp - Creating Root/Email App Scene
+[INFO ] 2020-11-01 21:47:43.869 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[INFO ] 2020-11-01 21:47:50.005 [JavaFX Application Thread] TreeLayoutController - Folder selected: FolderData{id=IntegerProperty [value: 1], folderName=StringProperty [value: Inbox]}
+[INFO ] 2020-11-01 21:47:50.721 [JavaFX Application Thread] TreeLayoutController - Folder selected: FolderData{id=IntegerProperty [value: 2], folderName=StringProperty [value: Sent]}
+[INFO ] 2020-11-01 21:47:51.278 [JavaFX Application Thread] TreeLayoutController - Folder selected: FolderData{id=IntegerProperty [value: 3], folderName=StringProperty [value: Draft]}
+[INFO ] 2020-11-01 21:47:52.060 [JavaFX Application Thread] TreeLayoutController - Folder selected: FolderData{id=IntegerProperty [value: 1], folderName=StringProperty [value: Inbox]}
+[INFO ] 2020-11-01 21:47:53.093 [JavaFX Application Thread] FormAndHTMLLayoutController - Writing to HTML Editor
+[INFO ] 2020-11-01 21:47:54.981 [JavaFX Application Thread] FormAndHTMLLayoutController - Writing to HTML Editor
+[INFO ] 2020-11-01 21:47:55.836 [JavaFX Application Thread] FormAndHTMLLayoutController - Writing to HTML Editor
+[INFO ] 2020-11-01 21:47:56.531 [JavaFX Application Thread] TreeLayoutController - Folder selected: FolderData{id=IntegerProperty [value: 2], folderName=StringProperty [value: Sent]}
+[INFO ] 2020-11-01 21:47:57.277 [JavaFX Application Thread] FormAndHTMLLayoutController - Writing to HTML Editor
+[INFO ] 2020-11-01 21:47:57.980 [JavaFX Application Thread] FormAndHTMLLayoutController - Writing to HTML Editor
+[INFO ] 2020-11-01 21:47:58.677 [JavaFX Application Thread] FormAndHTMLLayoutController - Writing to HTML Editor
+[INFO ] 2020-11-01 21:47:59.287 [JavaFX Application Thread] TreeLayoutController - Folder selected: FolderData{id=IntegerProperty [value: 3], folderName=StringProperty [value: Draft]}
+[INFO ] 2020-11-01 21:47:59.804 [JavaFX Application Thread] FormAndHTMLLayoutController - Writing to HTML Editor
+[INFO ] 2020-11-01 21:48:00.181 [JavaFX Application Thread] FormAndHTMLLayoutController - Writing to HTML Editor
+[INFO ] 2020-11-01 21:48:00.973 [JavaFX Application Thread] FormAndHTMLLayoutController - Writing to HTML Editor
+[INFO ] 2020-11-01 21:48:03.469 [JavaFX Application Thread] MainEmailApp - Stage is closing
+[DEBUG] 2020-11-01 21:56:16.828 [JavaFX Application Thread] MainEmailApp - Locale = fr_CA
+[INFO ] 2020-11-01 21:56:16.845 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[INFO ] 2020-11-01 21:56:16.846 [JavaFX Application Thread] MainEmailApp - Are properties non-empty & file exists? true
+[INFO ] 2020-11-01 21:56:16.846 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[INFO ] 2020-11-01 21:56:16.847 [JavaFX Application Thread] MainEmailApp - Are properties non-empty & file exists? true
+[INFO ] 2020-11-01 21:56:16.847 [JavaFX Application Thread] MainEmailApp - Creating Root/Email App Scene
+[INFO ] 2020-11-01 21:56:17.809 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[INFO ] 2020-11-01 21:56:20.795 [JavaFX Application Thread] FormAndHTMLLayoutController - Writing to HTML Editor
+[INFO ] 2020-11-01 21:56:22.580 [JavaFX Application Thread] FormAndHTMLLayoutController - Writing to HTML Editor
+[INFO ] 2020-11-01 21:56:24.004 [JavaFX Application Thread] FormAndHTMLLayoutController - Writing to HTML Editor
+[INFO ] 2020-11-01 21:56:25.989 [JavaFX Application Thread] TreeLayoutController - Folder selected: FolderData{id=IntegerProperty [value: 2], folderName=StringProperty [value: Sent]}
+[INFO ] 2020-11-01 21:56:27.043 [JavaFX Application Thread] FormAndHTMLLayoutController - Writing to HTML Editor
+[INFO ] 2020-11-01 21:56:28.652 [JavaFX Application Thread] FormAndHTMLLayoutController - Writing to HTML Editor
+[INFO ] 2020-11-01 21:56:29.851 [JavaFX Application Thread] FormAndHTMLLayoutController - Writing to HTML Editor
+[INFO ] 2020-11-01 21:56:31.984 [JavaFX Application Thread] TreeLayoutController - Folder selected: FolderData{id=IntegerProperty [value: 3], folderName=StringProperty [value: Draft]}
+[INFO ] 2020-11-01 21:56:32.858 [JavaFX Application Thread] FormAndHTMLLayoutController - Writing to HTML Editor
+[INFO ] 2020-11-01 21:56:33.804 [JavaFX Application Thread] FormAndHTMLLayoutController - Writing to HTML Editor
+[INFO ] 2020-11-01 21:56:35.867 [JavaFX Application Thread] FormAndHTMLLayoutController - Writing to HTML Editor
+[INFO ] 2020-11-01 21:56:46.225 [JavaFX Application Thread] MainEmailApp - Stage is closing
+[DEBUG] 2020-11-01 22:05:06.274 [JavaFX Application Thread] MainEmailApp - Locale = fr_CA
+[INFO ] 2020-11-01 22:05:06.292 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[INFO ] 2020-11-01 22:05:06.293 [JavaFX Application Thread] MainEmailApp - Are properties non-empty & file exists? true
+[INFO ] 2020-11-01 22:05:06.293 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[INFO ] 2020-11-01 22:05:06.293 [JavaFX Application Thread] MainEmailApp - Are properties non-empty & file exists? true
+[INFO ] 2020-11-01 22:05:06.294 [JavaFX Application Thread] MainEmailApp - Creating Root/Email App Scene
+[INFO ] 2020-11-01 22:05:07.266 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[INFO ] 2020-11-01 22:05:10.169 [JavaFX Application Thread] FormAndHTMLLayoutController - Writing to HTML Editor
+[INFO ] 2020-11-01 22:05:12.027 [JavaFX Application Thread] FormAndHTMLLayoutController - Writing to HTML Editor
+[INFO ] 2020-11-01 22:05:12.961 [JavaFX Application Thread] FormAndHTMLLayoutController - Writing to HTML Editor
+[INFO ] 2020-11-01 22:05:13.872 [JavaFX Application Thread] TreeLayoutController - Folder selected: FolderData{id=IntegerProperty [value: 3], folderName=StringProperty [value: Draft]}
+[INFO ] 2020-11-01 22:05:14.254 [JavaFX Application Thread] TreeLayoutController - Folder selected: FolderData{id=IntegerProperty [value: 2], folderName=StringProperty [value: Sent]}
+[INFO ] 2020-11-01 22:05:15.173 [JavaFX Application Thread] TreeLayoutController - Folder selected: FolderData{id=IntegerProperty [value: 1], folderName=StringProperty [value: Inbox]}
+[INFO ] 2020-11-01 22:05:20.021 [JavaFX Application Thread] MainEmailApp - Stage is closing
+[DEBUG] 2020-11-01 22:08:32.130 [JavaFX Application Thread] MainEmailApp - Locale = fr_CA
+[INFO ] 2020-11-01 22:08:32.147 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[INFO ] 2020-11-01 22:08:32.148 [JavaFX Application Thread] MainEmailApp - Are properties non-empty & file exists? true
+[INFO ] 2020-11-01 22:08:32.148 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[INFO ] 2020-11-01 22:08:32.149 [JavaFX Application Thread] MainEmailApp - Are properties non-empty & file exists? true
+[INFO ] 2020-11-01 22:08:32.149 [JavaFX Application Thread] MainEmailApp - Creating Root/Email App Scene
+[INFO ] 2020-11-01 22:08:33.113 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[INFO ] 2020-11-01 22:08:35.674 [JavaFX Application Thread] FormAndHTMLLayoutController - Writing to HTML Editor
+[INFO ] 2020-11-01 22:08:42.274 [JavaFX Application Thread] FormAndHTMLLayoutController - Writing to HTML Editor
+[INFO ] 2020-11-01 22:08:43.274 [JavaFX Application Thread] FormAndHTMLLayoutController - Writing to HTML Editor
+[INFO ] 2020-11-01 22:08:43.930 [JavaFX Application Thread] TreeLayoutController - Folder selected: FolderData{id=IntegerProperty [value: 2], folderName=StringProperty [value: Sent]}
+[INFO ] 2020-11-01 22:08:44.384 [JavaFX Application Thread] TreeLayoutController - Folder selected: FolderData{id=IntegerProperty [value: 3], folderName=StringProperty [value: Draft]}
+[INFO ] 2020-11-01 22:08:45.129 [JavaFX Application Thread] FormAndHTMLLayoutController - Writing to HTML Editor
+[INFO ] 2020-11-01 22:08:45.561 [JavaFX Application Thread] FormAndHTMLLayoutController - Writing to HTML Editor
+[INFO ] 2020-11-01 22:08:46.009 [JavaFX Application Thread] FormAndHTMLLayoutController - Writing to HTML Editor
+[INFO ] 2020-11-01 22:08:46.684 [JavaFX Application Thread] TreeLayoutController - Folder selected: FolderData{id=IntegerProperty [value: 1], folderName=StringProperty [value: Inbox]}
+[INFO ] 2020-11-01 22:08:47.258 [JavaFX Application Thread] FormAndHTMLLayoutController - Writing to HTML Editor
+[INFO ] 2020-11-01 22:08:47.898 [JavaFX Application Thread] FormAndHTMLLayoutController - Writing to HTML Editor
+[INFO ] 2020-11-01 22:08:48.538 [JavaFX Application Thread] FormAndHTMLLayoutController - Writing to HTML Editor
+[INFO ] 2020-11-01 22:08:50.011 [JavaFX Application Thread] MainEmailApp - Stage is closing
+[DEBUG] 2020-11-01 22:11:48.735 [JavaFX Application Thread] MainEmailApp - Locale = fr_CA
+[INFO ] 2020-11-01 22:11:48.752 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[INFO ] 2020-11-01 22:11:48.753 [JavaFX Application Thread] MainEmailApp - Are properties non-empty & file exists? true
+[INFO ] 2020-11-01 22:11:48.753 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[INFO ] 2020-11-01 22:11:48.753 [JavaFX Application Thread] MainEmailApp - Are properties non-empty & file exists? true
+[INFO ] 2020-11-01 22:11:48.754 [JavaFX Application Thread] MainEmailApp - Creating Root/Email App Scene
+[INFO ] 2020-11-01 22:11:49.720 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[INFO ] 2020-11-01 22:11:52.224 [JavaFX Application Thread] FormAndHTMLLayoutController - Writing to HTML Editor
+[INFO ] 2020-11-01 22:12:02.569 [JavaFX Application Thread] FormAndHTMLLayoutController - Writing to HTML Editor
+[INFO ] 2020-11-01 22:12:03.633 [JavaFX Application Thread] FormAndHTMLLayoutController - Writing to HTML Editor
+[INFO ] 2020-11-01 22:12:04.695 [JavaFX Application Thread] TreeLayoutController - Folder selected: FolderData{id=IntegerProperty [value: 2], folderName=StringProperty [value: Sent]}
+[INFO ] 2020-11-01 22:12:07.368 [JavaFX Application Thread] FormAndHTMLLayoutController - Writing to HTML Editor
+[INFO ] 2020-11-01 22:12:08.105 [JavaFX Application Thread] FormAndHTMLLayoutController - Writing to HTML Editor
+[INFO ] 2020-11-01 22:12:09.073 [JavaFX Application Thread] FormAndHTMLLayoutController - Writing to HTML Editor
+[INFO ] 2020-11-01 22:12:09.896 [JavaFX Application Thread] TreeLayoutController - Folder selected: FolderData{id=IntegerProperty [value: 3], folderName=StringProperty [value: Draft]}
+[INFO ] 2020-11-01 22:12:10.640 [JavaFX Application Thread] FormAndHTMLLayoutController - Writing to HTML Editor
+[INFO ] 2020-11-01 22:12:11.105 [JavaFX Application Thread] FormAndHTMLLayoutController - Writing to HTML Editor
+[INFO ] 2020-11-01 22:12:13.177 [JavaFX Application Thread] FormAndHTMLLayoutController - Writing to HTML Editor
+[INFO ] 2020-11-01 22:12:15.016 [JavaFX Application Thread] TreeLayoutController - Folder selected: FolderData{id=IntegerProperty [value: 1], folderName=StringProperty [value: Inbox]}
+[INFO ] 2020-11-01 22:12:17.868 [JavaFX Application Thread] MainEmailApp - Stage is closing
+[DEBUG] 2020-11-01 22:13:10.227 [JavaFX Application Thread] MainEmailApp - Locale = fr_CA
+[INFO ] 2020-11-01 22:13:10.242 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[INFO ] 2020-11-01 22:13:10.243 [JavaFX Application Thread] MainEmailApp - Are properties non-empty & file exists? false
+[INFO ] 2020-11-01 22:13:10.243 [JavaFX Application Thread] MainEmailApp - Creating Mail Config Scene
+[INFO ] 2020-11-01 22:13:10.428 [JavaFX Application Thread] MailConfigPropertiesManager - Mail Config Form Loaded
+[INFO ] 2020-11-01 22:13:10.429 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[DEBUG] 2020-11-01 22:13:21.337 [JavaFX Application Thread] MailConfigPropertiesManager - Are all fields filled? true
+[INFO ] 2020-11-01 22:13:21.464 [JavaFX Application Thread] MailConfigPropertiesManager - Finished writing to MailConfig properties file
+[INFO ] 2020-11-01 22:13:21.485 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[INFO ] 2020-11-01 22:13:21.486 [JavaFX Application Thread] MainEmailApp - Are properties non-empty & file exists? true
+[INFO ] 2020-11-01 22:13:21.487 [JavaFX Application Thread] MainEmailApp - Creating Root/Email App Scene
+[INFO ] 2020-11-01 22:13:22.265 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[INFO ] 2020-11-01 22:13:24.127 [JavaFX Application Thread] FormAndHTMLLayoutController - Writing to HTML Editor
+[INFO ] 2020-11-01 22:13:35.769 [JavaFX Application Thread] FormAndHTMLLayoutController - Writing to HTML Editor
+[INFO ] 2020-11-01 22:13:37.142 [JavaFX Application Thread] TreeLayoutController - Folder selected: FolderData{id=IntegerProperty [value: 3], folderName=StringProperty [value: Draft]}
+[INFO ] 2020-11-01 22:13:38.113 [JavaFX Application Thread] FormAndHTMLLayoutController - Writing to HTML Editor
+[INFO ] 2020-11-01 22:13:44.856 [JavaFX Application Thread] TreeLayoutController - Folder selected: FolderData{id=IntegerProperty [value: 1], folderName=StringProperty [value: Inbox]}
+[INFO ] 2020-11-01 22:13:47.521 [JavaFX Application Thread] FormAndHTMLLayoutController - Writing to HTML Editor
+[INFO ] 2020-11-01 22:13:48.242 [JavaFX Application Thread] FormAndHTMLLayoutController - Writing to HTML Editor
+[INFO ] 2020-11-01 22:13:49.730 [JavaFX Application Thread] FormAndHTMLLayoutController - Writing to HTML Editor
+[INFO ] 2020-11-01 22:13:56.033 [JavaFX Application Thread] FolderPopUpController - Creating folder
+[INFO ] 2020-11-01 22:13:56.582 [JavaFX Application Thread] TreeLayoutController - Folder selected: FolderData{id=IntegerProperty [value: 1], folderName=StringProperty [value: okok]}
+[INFO ] 2020-11-01 22:13:57.126 [JavaFX Application Thread] TreeLayoutController - Folder selected: FolderData{id=IntegerProperty [value: 3], folderName=StringProperty [value: Draft]}
+[INFO ] 2020-11-01 22:13:59.030 [JavaFX Application Thread] TreeLayoutController - Folder selected: FolderData{id=IntegerProperty [value: 1], folderName=StringProperty [value: okok]}
+[INFO ] 2020-11-01 22:13:59.823 [JavaFX Application Thread] TreeLayoutController - Folder selected: FolderData{id=IntegerProperty [value: 2], folderName=StringProperty [value: Sent]}
+[INFO ] 2020-11-01 22:14:12.270 [JavaFX Application Thread] TreeLayoutController - Folder selected: FolderData{id=IntegerProperty [value: 1], folderName=StringProperty [value: Inbox]}
+[INFO ] 2020-11-01 22:14:12.961 [JavaFX Application Thread] FormAndHTMLLayoutController - Writing to HTML Editor
+[INFO ] 2020-11-01 22:14:13.521 [JavaFX Application Thread] FormAndHTMLLayoutController - Writing to HTML Editor
+[INFO ] 2020-11-01 22:14:14.625 [JavaFX Application Thread] FormAndHTMLLayoutController - Writing to HTML Editor
+[INFO ] 2020-11-01 22:14:16.075 [JavaFX Application Thread] MainEmailApp - Stage is closing
+[DEBUG] 2020-11-01 22:18:02.495 [JavaFX Application Thread] MainEmailApp - Locale = en_CA
+[INFO ] 2020-11-01 22:18:02.512 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[INFO ] 2020-11-01 22:18:02.513 [JavaFX Application Thread] MainEmailApp - Are properties non-empty & file exists? true
+[INFO ] 2020-11-01 22:18:02.513 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[INFO ] 2020-11-01 22:18:02.514 [JavaFX Application Thread] MainEmailApp - Are properties non-empty & file exists? true
+[INFO ] 2020-11-01 22:18:02.514 [JavaFX Application Thread] MainEmailApp - Creating Root/Email App Scene
+[INFO ] 2020-11-01 22:18:03.484 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[INFO ] 2020-11-01 22:18:06.279 [JavaFX Application Thread] TreeLayoutController - Folder selected: FolderData{id=IntegerProperty [value: 2], folderName=StringProperty [value: Sent]}
+[INFO ] 2020-11-01 22:18:06.782 [JavaFX Application Thread] TreeLayoutController - Folder selected: FolderData{id=IntegerProperty [value: 3], folderName=StringProperty [value: Draft]}
+[INFO ] 2020-11-01 22:18:07.349 [JavaFX Application Thread] TreeLayoutController - Folder selected: FolderData{id=IntegerProperty [value: 1], folderName=StringProperty [value: Inbox]}
+[INFO ] 2020-11-01 22:18:07.984 [JavaFX Application Thread] FormAndHTMLLayoutController - Writing to HTML Editor
+[INFO ] 2020-11-01 22:18:13.449 [JavaFX Application Thread] FormAndHTMLLayoutController - Writing to HTML Editor
+[INFO ] 2020-11-01 22:18:15.904 [JavaFX Application Thread] FormAndHTMLLayoutController - Writing to HTML Editor
+[INFO ] 2020-11-01 22:18:16.619 [JavaFX Application Thread] TreeLayoutController - Folder selected: FolderData{id=IntegerProperty [value: 2], folderName=StringProperty [value: Sent]}
+[INFO ] 2020-11-01 22:18:18.056 [JavaFX Application Thread] FormAndHTMLLayoutController - Writing to HTML Editor
+[INFO ] 2020-11-01 22:18:18.945 [JavaFX Application Thread] FormAndHTMLLayoutController - Writing to HTML Editor
+[INFO ] 2020-11-01 22:18:19.769 [JavaFX Application Thread] FormAndHTMLLayoutController - Writing to HTML Editor
+[INFO ] 2020-11-01 22:18:20.564 [JavaFX Application Thread] TreeLayoutController - Folder selected: FolderData{id=IntegerProperty [value: 3], folderName=StringProperty [value: Draft]}
+[INFO ] 2020-11-01 22:18:21.352 [JavaFX Application Thread] FormAndHTMLLayoutController - Writing to HTML Editor
+[INFO ] 2020-11-01 22:18:21.768 [JavaFX Application Thread] FormAndHTMLLayoutController - Writing to HTML Editor
+[INFO ] 2020-11-01 22:18:22.280 [JavaFX Application Thread] FormAndHTMLLayoutController - Writing to HTML Editor
+[INFO ] 2020-11-01 22:18:28.275 [JavaFX Application Thread] HelpWebViewController - Displaying WebView
+[INFO ] 2020-11-01 22:18:43.775 [JavaFX Application Thread] MainEmailApp - Stage is closing

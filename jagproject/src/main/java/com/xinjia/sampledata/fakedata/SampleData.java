@@ -9,6 +9,7 @@ import com.xinjia.properties.propertybean.EmailData;
 import com.xinjia.properties.propertybean.FolderData;
 import com.xinjia.properties.propertybean.FormData;
 import com.xinjia.properties.MailConfigBean;
+import com.xinjia.properties.propertybean.HtmlData;
 import java.time.LocalDateTime;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -35,7 +36,7 @@ public class SampleData {
     public SampleData(){
         this(new MailConfigBean());
     }
-            
+    
     /**
      * Creates an ObservableList of FolderData and populate it with sample values
      * @return The ObservableList<FolderData>
@@ -64,7 +65,7 @@ public class SampleData {
     public ObservableList<EmailData> getSampleSentEmailData(){
         LocalDateTime date = LocalDateTime.now();
         ObservableList<EmailData> emails = FXCollections.observableArrayList();
-        emails.addAll(new EmailData(1, mailBean.getEmailAddress(), "Breakfast", date), new EmailData(2, mailBean.getEmailAddress(), "Game Project", date), new EmailData(3, mailBean.getEmailAddress(), "Subject 3", date));
+        emails.addAll(new EmailData(4, mailBean.getEmailAddress(), "Breakfast", date), new EmailData(5, mailBean.getEmailAddress(), "Game Project", date), new EmailData(6, mailBean.getEmailAddress(), "Subject 3", date));
         return emails;
     }
     
@@ -75,8 +76,58 @@ public class SampleData {
     public ObservableList<EmailData> getSampleDraftEmailData(){
         LocalDateTime date = LocalDateTime.now();
         ObservableList<EmailData> emails = FXCollections.observableArrayList();
-        emails.addAll(new EmailData(1, mailBean.getEmailAddress(), "Draft 1", date), new EmailData(2, mailBean.getEmailAddress(), "Draft 2", date), new EmailData(3, mailBean.getEmailAddress(), "Draft 3", date));
+        emails.addAll(new EmailData(7, mailBean.getEmailAddress(), "Draft 1", date), new EmailData(8, mailBean.getEmailAddress(), "Draft 2", date), new EmailData(9, mailBean.getEmailAddress(), "Draft 3", date));
         return emails;
     }
+    
+    //SAMPLE FORMDATA FOR INBOX EMAILS
+    public FormData getSampleFromData1(){
+        FormData form = new FormData(mailBean.getEmailAddress(), "", "carole@yahoo.com", "Meeting Tomorrow");
+        return form;
+    }
+    public FormData getSampleFromData2(){
+        FormData form = new FormData(mailBean.getEmailAddress(), "hola@gmail.com", "", "Fixed a bug");
+        return form;
+    }
+    public FormData getSampleFromData3(){
+        FormData form = new FormData("koala@gmail.com", mailBean.getEmailAddress(), "ryd7@gmail.com", "Project due");
+        return form;
+    }
+    
+    //SAMPLE FORMDATA FOR SENT EMAILS
+    public FormData getSampleFromData4(){
+        FormData form = new FormData("sdsaasd@gmail.com", "", "", "Happy Birthday");
+        return form;
+    }
+    public FormData getSampleFromData5(){
+        FormData form = new FormData("sdsaasd@gmail.com", "", "", "Happy Birthday");
+        return form;
+    }
+    public FormData getSampleFromData6(){
+        FormData form = new FormData("", "maisha@hotmail.com", "", "Travel");
+        return form;
+    }
+    
+    //SAMPLE FORMDATA FOR DRAFT EMAILS
+    public FormData getSampleFromData7(){
+        FormData form = new FormData("hola@gmail.com", "jumbo45@gmail.com", "", "Getting back");
+        return form;
+    }
+    public FormData getSampleFromData8(){
+        FormData form = new FormData("teacher3@gmail.com", "", "", "Essay");
+        return form;
+    }
+    public FormData getSampleFromData9(){
+        FormData form = new FormData("pierce@gmail.com", "maisha@hotmail.com", "", "Essay2");
+        return form;
+    }
+    
+    //SAMPLE HTMLDATA FOR ALL EMAILS
+    public HtmlData getSampleHtmlData(){
+        HtmlData htmlData = new HtmlData("<h4>A sample message for every emails<h4>");
+        return htmlData;
+    }
+    
+    
 
 }

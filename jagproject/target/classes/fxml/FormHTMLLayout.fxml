@@ -67,7 +67,7 @@
                <content>
                   <HBox fx:id="toHBox" alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" prefHeight="34.0">
                      <children>
-                        <TextField HBox.hgrow="NEVER" />
+                        <TextField fx:id="toTxtField" HBox.hgrow="NEVER" />
                      </children>
                   </HBox>
                </content>
@@ -76,7 +76,7 @@
                <content>
                   <HBox fx:id="ccHBox" alignment="CENTER_LEFT" prefHeight="33.0">
                      <children>
-                        <TextField HBox.hgrow="NEVER" />
+                        <TextField fx:id="ccTxtField" HBox.hgrow="NEVER" />
                      </children>
                   </HBox>
                </content>
@@ -119,7 +119,7 @@
                <content>
                   <HBox fx:id="bccHBox" alignment="CENTER_LEFT" prefHeight="34.0">
                      <children>
-                        <TextField HBox.hgrow="NEVER" />
+                        <TextField fx:id="bccTxtField" HBox.hgrow="NEVER" />
                      </children>
                   </HBox>
                </content>
