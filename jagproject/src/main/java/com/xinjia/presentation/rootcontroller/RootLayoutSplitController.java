@@ -1,5 +1,7 @@
 package com.xinjia.presentation.rootcontroller;
 
+import com.xinjia.jdbc.persistence.EmailDAO;
+import com.xinjia.jdbc.persistence.EmailDAOImpl;
 import com.xinjia.presentation.MainEmailApp;
 import com.xinjia.presentation.formhtml.FormAndHTMLLayoutController;
 import com.xinjia.presentation.mailconfigcontroller.PropertiesFormController;
@@ -9,6 +11,7 @@ import com.xinjia.properties.MailConfigBean;
 import com.xinjia.properties.propertybean.propertiesmanager.MailConfigPropertiesManager;
 import java.io.File;
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -48,9 +51,32 @@ public class RootLayoutSplitController {
     private TreeLayoutController treeController;
     private TableLayoutController tableController;
     private FormAndHTMLLayoutController formHtmlController;
-    private FolderPopUpController folderPopUpController;
+    private MailConfigBean configBean;
+    //private CreateFolderController folderPopUpController;
+    private EmailDAO emailDAO;
 
     private final static Logger LOG = LoggerFactory.getLogger(RootLayoutSplitController.class);
+
+    /*public RootLayoutSplitController() {
+        String dbUrl = "jdbc:mysql://localhost:3306/EMAILAPP?characterEncoding=UTF-8&autoReconnect=true&zeroDateTimeBehavior=CONVERT_TO_NULL&useSSL=false&allowPublicKeyRetrieval=true&useTimezone=true&serverTimezone=UTC";
+        MailConfigBean configBean = new MailConfigBean("", "", "", "", "", "", "", dbUrl, "EMAILAPP", "3306", "userxj", "dawson2");
+        emailDAO = new EmailDAOImpl(configBean);
+    }*/
+    
+    public void setMailConfigBean(MailConfigBean configBean) throws SQLException{
+        this.configBean = configBean;
+        emailDAO = new EmailDAOImpl(configBean);
+        
+        //Initialize all three controllers 
+        initTreeViewLayout();
+        initFormAndEditorLayout();
+        initTableViewLayout();
+
+        // Tell the tree about the table
+        setTableControllerToTree();
+        treeController.displayTree();
+        tableController.displayTheTable();
+    }
 
     //TODO: Default constructor that initializes an EmailDAO
     /**
@@ -60,22 +86,14 @@ public class RootLayoutSplitController {
      * controllers and display each of them.
      */
     @FXML
-    private void initialize() {
+    private void initialize(){
 
         assert folderTreeView != null : "fx:id=\"folderTreeView\" was not injected: check your FXML file 'RootLayout.fxml'.";
         assert emailTableView != null : "fx:id=\"emailTableView\" was not injected: check your FXML file 'RootLayout.fxml'.";
         assert formAndHtml != null : "fx:id=\"formAndHtml\" was not injected: check your FXML file 'RootLayout.fxml'.";
 
-        //Initialize all three controllers 
-        initTreeViewLayout();
-        initFormAndEditorLayout();
-        initTableViewLayout();
+        
 
-        // Tell the tree about the table
-        setTableControllerToTree();
-
-        treeController.displayTree();
-        tableController.displayTheTable();
     }
 
     /**
@@ -97,7 +115,9 @@ public class RootLayoutSplitController {
             loader.setLocation(RootLayoutSplitController.class
                     .getResource("/fxml/TreeLayout.fxml"));
             AnchorPane treeView = (AnchorPane) loader.load();
+
             treeController = loader.getController();
+            treeController.setEmailDAO(emailDAO);
             //Add the AnchorPane of the TreeLayout to the BorderPane of the RootLayout
             folderTreeView.getChildren().add(treeView);
         } catch (IOException ex) {
@@ -121,7 +141,7 @@ public class RootLayoutSplitController {
 
             // Give the controller the data object.
             tableController = loader.getController();
-
+            tableController.setEmailDAO(emailDAO);
             //Set the FormAndHTMLLayoutController to the TableLayoutController 
             //so we can display infos in an EmailData in the Editor when a row is selected
             tableController.setEditorController(formHtmlController);
@@ -146,6 +166,7 @@ public class RootLayoutSplitController {
             BorderPane htmlView = (BorderPane) loader.load();
 
             formHtmlController = loader.getController();
+            formHtmlController.setEmailDAO(emailDAO);
             //Add the BorderPane of the FormHTMLLayout to the BorderPane of the RootLayout
             formAndHtml.getChildren().add(htmlView);
         } catch (IOException ex) {
@@ -166,10 +187,9 @@ public class RootLayoutSplitController {
             loader.setLocation(RootLayoutSplitController.class
                     .getResource("/fxml/CreateFolderPopUp.fxml"));
             VBox createFolderBox = (VBox) loader.load();
-            folderPopUpController = loader.getController();
+            CreateFolderController folderPopUpController = loader.getController();
             //Set the TreeLayoutController to the folderPopUpController so a folder can be added in the tree
             folderPopUpController.setTreeController(treeController);
-
             Scene scene = new Scene(createFolderBox);
             Stage stage = new Stage();
             stage.getIcons().add(new Image("/images/folder.png"));
@@ -187,8 +207,39 @@ public class RootLayoutSplitController {
      * deleted).
      */
     @FXML
-    private void deleteFolder() {
+    private void deleteFolder() throws SQLException {
         treeController.deleteCustomFolder();
+    }
+
+    /**
+     * Called when the user press on the Rename Folder MenuItem. Call the
+     * treeController so it can rename the selected folder (if it can be
+     * renamed).
+     */
+    @FXML
+    private void renameFolder() throws SQLException {
+        if (treeController.checkCanSelectedFolderBeRenamed()) {
+            try {
+                FXMLLoader loader = new FXMLLoader();
+                loader.setResources(resources);
+                loader.setLocation(RootLayoutSplitController.class
+                        .getResource("/fxml/RenameFolderPopUp.fxml"));
+                VBox renameFolderBox = (VBox) loader.load();
+                RenameFolderController folderPopUpController = loader.getController();
+                //Set the TreeLayoutController to the folderPopUpController so a folder can be renamed
+                folderPopUpController.setTreeController(treeController);
+                //folderPopUpController.setEmailDAO(emailDAO);
+
+                Scene scene = new Scene(renameFolderBox);
+                Stage stage = new Stage();
+                stage.getIcons().add(new Image("/images/folder.png"));
+                stage.setTitle(resources.getString("renameFolder"));
+                stage.setScene(scene);
+                stage.show();
+            } catch (IOException ex) {
+                LOG.error("Error displaying folder Pop up", ex);
+            }
+        }
     }
 
     /**
@@ -277,17 +328,23 @@ public class RootLayoutSplitController {
         FileChooser fileChooser = new FileChooser();
         File file = fileChooser.showOpenDialog(stage);
         if (file != null) {
+            formHtmlController.displayAttachment(file.getName());
             LOG.info("Absolute Path: " + file.getAbsolutePath());
         }
-        //TODO: add an attachment to an email
     }
 
     /**
      * Called when the user press the Delete Selected Email MenuItem
+     * Delete an email and its row in the TableView
      */
     @FXML
-    private void deleteSelectedEmail() {
-        //TODO: delete selected email from the corresponding folder
+    private void deleteSelectedEmail() throws SQLException {
+        tableController.deleteEmailRow();
+    }
+    
+    @FXML
+    private void createNewEmail(){
+        formHtmlController.emptyAllFields();
     }
 
 }

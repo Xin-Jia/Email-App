@@ -6,9 +6,9 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="169.0" prefWidth="308.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.xinjia.presentation.rootcontroller.CreateFolderController">
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="169.0" prefWidth="308.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.xinjia.presentation.rootcontroller.RenameFolderController">
    <children>
-      <Label alignment="CENTER" contentDisplay="CENTER" text="%enterFolderName">
+      <Label alignment="CENTER" contentDisplay="CENTER" text="%enterNewFolderName">
          <padding>
             <Insets bottom="20.0" />
          </padding>
@@ -18,6 +18,6 @@
             <Insets bottom="20.0" />
          </VBox.margin>
       </TextField>
-      <Button fx:id="createBtn" mnemonicParsing="false" onAction="#createFolder" text="%create" />
+      <Button fx:id="renameBtn" mnemonicParsing="false" onAction="#renameFolder" text="%rename" />
    </children>
 </VBox>

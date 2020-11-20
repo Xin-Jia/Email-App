@@ -11,6 +11,7 @@
           <TableColumn fx:id="fromColumn" prefWidth="75.0" text="%from" />
           <TableColumn fx:id="subjectColumn" prefWidth="75.0" text="%subject" />
             <TableColumn fx:id="dateColumn" prefWidth="75.0" text="%date" />
+            <TableColumn fx:id="toColumn" prefWidth="75.0" text="%to" />
         </columns>
       </TableView>
    </children>

@@ -6,7 +6,7 @@
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.layout.BorderPane?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="573.0" prefWidth="819.0" stylesheets="@../styles/splitpane.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.xinjia.presentation.rootcontroller.RootLayoutSplitController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="573.0" prefWidth="881.0" stylesheets="@../styles/splitpane.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.xinjia.presentation.rootcontroller.RootLayoutSplitController">
    <top>
       <MenuBar BorderPane.alignment="CENTER">
         <menus>
@@ -15,12 +15,14 @@
                   <MenuItem mnemonicParsing="false" onAction="#saveAttachment" text="%saveAttachment" />
                 <MenuItem mnemonicParsing="false" onAction="#addAttachment" text="%addAttachment" />
                   <MenuItem mnemonicParsing="false" onAction="#deleteSelectedEmail" text="%deleteSelectedEmail" />
+                  <MenuItem mnemonicParsing="false" onAction="#createNewEmail" text="%newEmail" />
               </items>
             </Menu>
             <Menu mnemonicParsing="false" text="%folder">
               <items>
                 <MenuItem mnemonicParsing="false" onAction="#addFolder" text="%addFolder" />
                   <MenuItem mnemonicParsing="false" onAction="#deleteFolder" text="%delFolder" />
+                  <MenuItem mnemonicParsing="false" onAction="#renameFolder" text="%renameFolder" />
               </items>
             </Menu>
           <Menu mnemonicParsing="false" text="%edit">

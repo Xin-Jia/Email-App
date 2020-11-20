@@ -14,6 +14,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import static java.nio.file.Paths.get;
+import java.sql.SQLException;
 import java.util.Locale;
 import java.util.ResourceBundle;
 import static javafx.application.Application.launch;
@@ -46,8 +47,8 @@ public class MainEmailApp extends Application {
         //Left-out comments so we can test internationalization quicker
 
         //currentLocale = Locale.getDefault();
-        //currentLocale = new Locale("fr", "CA");
-        currentLocale = new Locale("en", "CA");
+        currentLocale = new Locale("fr", "CA");
+        //currentLocale = new Locale("en", "CA");
         // currentLocale = Locale.CANADA;
         // currentLocale = Locale.CANADA_FRENCH;
         LOG.debug("Locale = " + currentLocale);
@@ -66,7 +67,7 @@ public class MainEmailApp extends Application {
      * @throws java.io.IOException
      */
     @Override
-    public void start(Stage primaryStage) throws IOException {
+    public void start(Stage primaryStage) throws IOException, SQLException {
         this.primaryStage = primaryStage;
         retrieveMailConfig();
 
@@ -90,7 +91,7 @@ public class MainEmailApp extends Application {
      *
      * @throws IOException
      */
-    private void createEmailAppScene() throws IOException {
+    private void createEmailAppScene() throws IOException, SQLException {
         LOG.info("Creating Root/Email App Scene");
 
         FXMLLoader loader = new FXMLLoader();
@@ -99,6 +100,7 @@ public class MainEmailApp extends Application {
 
         Parent root = (BorderPane) loader.load();
         RootLayoutSplitController emailAppController = loader.getController();
+        emailAppController.setMailConfigBean(propertyBean);
         Scene scene = new Scene(root);
 
         this.primaryStage.setScene(scene);

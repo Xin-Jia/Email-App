@@ -1,7 +1,10 @@
 package com.xinjia.presentation.rootcontroller;
 
+import com.xinjia.exceptions.FolderAlreadyExistsException;
+import com.xinjia.jdbc.persistence.EmailDAO;
 import com.xinjia.presentation.treecontroller.TreeLayoutController;
 import java.io.IOException;
+import java.sql.SQLException;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
@@ -16,7 +19,7 @@ import org.slf4j.LoggerFactory;
  *
  * @author Xin Jia Cao
  */
-public class FolderPopUpController {
+public class CreateFolderController {
 
     @FXML // fx:id="folderName"
     private TextField folderName; // Value injected by FXMLLoader
@@ -25,7 +28,7 @@ public class FolderPopUpController {
     private Button createBtn; // Value injected by FXMLLoader
 
     private TreeLayoutController treeController;
-    private final static Logger LOG = LoggerFactory.getLogger(FolderPopUpController.class);
+    private final static Logger LOG = LoggerFactory.getLogger(CreateFolderController.class);
 
     /**
      * Called by the FXMLLoader when initialization is complete. When the FXML
@@ -46,11 +49,13 @@ public class FolderPopUpController {
      * @throws IOException
      */
     @FXML
-    void createFolder() throws IOException {
+    void createFolder() throws IOException, SQLException, FolderAlreadyExistsException {
         LOG.info("Creating folder");
         Stage stage = (Stage) createBtn.getScene().getWindow();
+        String createdFolderName = folderName.getText();
+        
+        treeController.addCustomFolder(createdFolderName);
         stage.close();
-        treeController.addCustomFolder(folderName.getText());
     }
 
     /**

@@ -1,11 +1,15 @@
 package com.xinjia.presentation.treecontroller;
 
+import com.xinjia.exceptions.FolderAlreadyExistsException;
+import com.xinjia.jdbc.persistence.EmailDAO;
+import com.xinjia.jdbc.persistence.EmailDAOImpl;
 import com.xinjia.presentation.tablecontroller.TableLayoutController;
 import com.xinjia.properties.propertybean.FolderData;
-import com.xinjia.sampledata.fakedata.SampleData;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
 import javafx.collections.ObservableList;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -27,28 +31,29 @@ public class TreeLayoutController {
 
     @FXML // fx:id="folderTree"
     private TreeView<FolderData> folderTree; // Value injected by FXMLLoader
-    
+
     private TableLayoutController tableController;
     private ObservableList<FolderData> foldersList;
+    private EmailDAO emailDAO;
 
     private final static Logger LOG = LoggerFactory.getLogger(TreeLayoutController.class);
 
     /**
      * Called by the FXMLLoader when initialization is complete. When the FXML
      * is loaded, if a control is not present, an exception is thrown and quits
-     * the FXML loading process. Instantiate the SampleData class to get the sample folders and initialize the TreeView.
+     * the FXML loading process. Instantiate the SampleData class to get the
+     * sample folders and initialize the TreeView.
      */
     @FXML
-    private void initialize() {
+    private void initialize() throws SQLException {
         assert folderTree != null : "fx:id=\"folderTree\" was not injected: check your FXML file 'TreeLayout.fxml'.";
-        //Instantiate the fake data class with the default constructor because we don't need the MailConfig property yet
-        SampleData sd = new SampleData();
-        foldersList = sd.getSampleFolderData();
         initializeTree();
     }
 
     /**
-     * Set the TableLayoutController so we can use it to display emails based on the selected folder
+     * Set the TableLayoutController so we can use it to display emails based on
+     * the selected folder
+     *
      * @param tableController The TableLayoutController
      */
     public void setTableController(TableLayoutController tableController) {
@@ -56,11 +61,17 @@ public class TreeLayoutController {
 
     }
 
+    public void setEmailDAO(EmailDAO emailDAO) {
+        this.emailDAO = emailDAO;
+    }
+
     /**
-     * Initialize the TreeView.
-     * Add event handlers for drag over and drag dropped.
+     * Initialize the TreeView.Add event handlers for drag over and drag
+     * dropped.
+     *
+     * @throws java.sql.SQLException
      */
-    public void initializeTree() {
+    public void initializeTree() throws SQLException {
         FolderData rootFolder = new FolderData();
         rootFolder.setFolderName(resources.getString("folder"));
         folderTree.setRoot(new TreeItem<>(rootFolder));
@@ -70,34 +81,51 @@ public class TreeLayoutController {
             protected void updateItem(FolderData item, boolean empty) {
                 super.updateItem(item, empty);
                 if (item != null) {
-                    setText(item.getFolderName());
+                    //convert the folder names if needed (locale is french)
+                    setText(internationalize(item.getFolderName()));
                     setGraphic(getTreeItem().getGraphic());
-                    this.setOnDragOver(new EventHandler<DragEvent>() {
-                        @Override
-                        public void handle(DragEvent dragEvent) {
-                            onDragOver(dragEvent);
-                        }
-                    });
-                    this.setOnDragDropped(new EventHandler<DragEvent>() {
-                        @Override
-                        public void handle(DragEvent dragEvent) {
-                            onDragDropped(dragEvent);
-                        }
-                    });
+                    if (item.getId() != 3) {
+                        this.setOnDragOver(new EventHandler<DragEvent>() {
+                            @Override
+                            public void handle(DragEvent dragEvent) {
+                                onDragOver(dragEvent);
+                            }
+                        });
+                        this.setOnDragDropped(new EventHandler<DragEvent>() {
+                            @Override
+                            public void handle(DragEvent dragEvent) {
+                                try {
+                                    onDragDropped(dragEvent);
+                                } catch (SQLException ex) {
+                                    LOG.error("Exception occured when dropping");
+                                }
+                            }
+                        });
+                    }
                 } else {
-                    setText("");
+                    setText(null);
                     setGraphic(null);
                 }
             }
         });
     }
 
-    /**
-     * Populate the TreeView based on the ObservableList of FolderData.
-     * Display an icon next to the folders name.
-     */
-    public void displayTree() {
+    private String internationalize(String name) {
+        if (name.equals("Inbox") || name.equals("Draft") || name.equals("Sent")) {
+            return resources.getString(name.toLowerCase());
+        }
+        return name;
+    }
 
+    /**
+     * Populate the TreeView based on the ObservableList of FolderData.Display
+     * an icon next to the folders name.
+     *
+     * @throws java.sql.SQLException
+     */
+    public void displayTree() throws SQLException {
+
+        foldersList = emailDAO.findFolders();
         // Build an item for each folder and add it to the TreeView
         if (foldersList != null) {
             foldersList.stream().map((fd) -> new TreeItem<>(fd)).map((item) -> {
@@ -115,40 +143,48 @@ public class TreeLayoutController {
         // Listen for selection changes and show the folder's emails in the TableView when
         // changed.
         folderTree.getSelectionModel().selectedItemProperty()
-                .addListener((observable, oldValue, newValue) -> showEmailDetailsTree(newValue));
+                .addListener((observable, oldValue, newValue) -> {
+                    try {
+                        showEmailDetailsTree(newValue);
+                    } catch (SQLException ex) {
+                        LOG.error("Exception occured when selecting a tree cell", ex);
+                    }
+                });
     }
 
     /**
-     * Called whenever the selection changes.
-     * Use the TableLayoutController to display emails based on the selected folder.
+     * Called whenever the selection changes. Use the TableLayoutController to
+     * display emails based on the selected folder.
+     *
      * @param folderData The TreeItem<FolderData>
      */
-    private void showEmailDetailsTree(TreeItem<FolderData> folderData) {
+    private void showEmailDetailsTree(TreeItem<FolderData> folderData) throws SQLException {
         String folderName = folderData.getValue().getFolderName();
 
         tableController.displayEmailsBasedOnFolder(folderName);
-        LOG.info("Folder selected: " + folderData.getValue());
     }
 
     /**
-     * Called in FolderPopUpController when the Create button is pressed.
-     * Check if the given folder name is valid first.
-     * Add a folder to the TreeView.
-     * @param folderName 
+     * Called in FolderPopUpController when the Create button is pressed.Check
+     * if the given folder name is valid first.Add a folder to the TreeView.
+     *
+     * @param folderName
+     * @throws java.sql.SQLException
+     * @throws com.xinjia.exceptions.FolderAlreadyExistsException
      */
-    public void addCustomFolder(String folderName) {
+    public void addCustomFolder(String folderName) throws SQLException, FolderAlreadyExistsException {
         //Get the list of folder names currently in the ObservableList of FolderData
         List<String> folderNames = getFolderNames();
         //Check if the folder name is empty
-        if (folderName.equals("")){
+        if (folderName.equals("")) {
             displayFolderError(resources.getString("emptyFolderNameHeader"), resources.getString("errorEmptyFolderNameText"));
-        } 
-        //Check if the folder name already exists
-        else if(folderNames.contains(folderName.toLowerCase())) {
+        } //Check if the folder name already exists
+        else if (folderNames.contains(folderName.toLowerCase())) {
             displayFolderError(resources.getString("invalidFolderNameHeader"), resources.getString("errorFolderNameText"));
         } else {
-            //TODO: INSERT CREATED FOLDER IN THE FOLDER TABLE
-            FolderData newFolder = new FolderData(1, folderName);
+            emailDAO.createFolder(folderName);
+            int folderId = ((EmailDAOImpl) emailDAO).findFolderIdByName(folderName);
+            FolderData newFolder = new FolderData(folderId, folderName);
             foldersList.add(newFolder);
             TreeItem<FolderData> folder = new TreeItem<>(newFolder);
             folder.setGraphic(new ImageView(getClass().getResource("/images/folder.png").toExternalForm()));
@@ -156,47 +192,99 @@ public class TreeLayoutController {
         }
     }
 
+    public boolean checkCanSelectedFolderBeRenamed() {
+        TreeItem<FolderData> selectedFolder = folderTree.getSelectionModel().getSelectedItem();
+        if (checkIfFolderSelected(selectedFolder)) {
+            int folderId = selectedFolder.getValue().getId();
+            //Check if the selected folder is one of the default folders
+            boolean isDefaultFolders = (folderId == 1 || folderId == 2 || folderId == 3);
+            if (isDefaultFolders) {
+                displayFolderError(resources.getString("cannotRenameFolderHeader"), resources.getString("errorRenameText"));
+                return false;
+            }
+        } else {
+            return false;
+        }
+        return true;
+    }
+
+    public void renameCustomFolder(String newFolderName) throws SQLException, FolderAlreadyExistsException {
+        List<String> folderNames = getFolderNames();
+        TreeItem<FolderData> selectedFolder = folderTree.getSelectionModel().getSelectedItem();
+        String folderName = selectedFolder.getValue().getFolderName();
+        //Check if the folder name is empty
+        if (newFolderName.equals("")) {
+            displayFolderError(resources.getString("emptyFolderNameHeader"), resources.getString("errorEmptyFolderNameText"));
+        } //Check if the folder name already exists
+        else if (folderNames.contains(newFolderName.toLowerCase())) {
+            displayFolderError(resources.getString("invalidFolderNameHeader"), resources.getString("errorFolderNameText"));
+        } else {
+
+            //update the new folder name in the tree
+            folderTree.getSelectionModel().getSelectedItem().getValue().setFolderName(newFolderName);
+            //update the new folder name in the database
+            emailDAO.updateFolderName(folderName, newFolderName);
+        }
+
+    }
+
+    private boolean checkIfFolderSelected(TreeItem<FolderData> selectedFolder) {
+        if (selectedFolder == null) {
+            displayFolderError(resources.getString("noFolderSelectedHeader"), resources.getString("errorSelectText"));
+            return false;
+        }
+        return true;
+
+    }
+
     /**
      * Get the folder names currently in the ObservableList of FolderData
+     *
      * @return the list of folder names
      */
     private List<String> getFolderNames() {
         List<String> folderNames = new ArrayList<>();
-        for (FolderData folder : foldersList) {
+        foldersList.forEach(folder -> {
             folderNames.add(folder.getFolderName().toLowerCase());
-        }
+        });
         return folderNames;
     }
 
     /**
      * Delete a custom folder (not Sent, Inbox or Draft)
+     *
+     * @throws java.sql.SQLException
      */
-    public void deleteCustomFolder() {
+    public void deleteCustomFolder() throws SQLException {
         TreeItem<FolderData> selectedFolder = folderTree.getSelectionModel().getSelectedItem();
         //Check if a folder has been selected
         if (selectedFolder == null) {
             displayFolderError(resources.getString("noFolderSelectedHeader"), resources.getString("errorSelectText"));
         } else {
-            String folderName = selectedFolder.getValue().getFolderName();
+            int folderId = selectedFolder.getValue().getId();
             //Check if the selected folder is one of the default folders
-            boolean isDefaultFolders = folderName.equalsIgnoreCase("inbox") || folderName.equalsIgnoreCase("sent") || folderName.equalsIgnoreCase("draft");
+            boolean isDefaultFolders = (folderId == 1 || folderId == 2 || folderId == 3);
             if (isDefaultFolders) {
                 displayFolderError(resources.getString("cannotDelFolderHeader"), resources.getString("errorDelText"));
 
             } else {
                 //remove the selected folder from the TreeView
                 folderTree.getRoot().getChildren().remove(selectedFolder);
+                //delete the folder in the database
+                String folderName = selectedFolder.getValue().getFolderName();
+                emailDAO.deleteFolder(folderName);
             }
         }
     }
 
     /**
-     * Display an alert dialog with the given header text and content text when an error occured when trying
-     * to create or delete a folder.
+     * Display an alert dialog with the given header text and content text when
+     * an error occured when trying to create, rename or delete a folder.
+     *
      * @param header The header text
      * @param content The content text
      */
-    private void displayFolderError(String header, String content){
+    private void displayFolderError(String header, String content) {
         Alert dialog = new Alert(Alert.AlertType.ERROR);
         dialog.setTitle(resources.getString("errorTitle"));
         dialog.setHeaderText(header);
@@ -206,6 +294,7 @@ public class TreeLayoutController {
 
     /**
      * Event handler when something is being dragged over a TreeCell
+     *
      * @param event The DragEvent
      */
     private void onDragOver(DragEvent event) {
@@ -219,25 +308,27 @@ public class TreeLayoutController {
         event.consume();
     }
 
-
     /**
      * Event handler when something is being dropped into a TreeCell
+     *
      * @param event The DragEvent
      */
-    private void onDragDropped(DragEvent event) {
+    private void onDragDropped(DragEvent event) throws SQLException {
         LOG.info("onDragDropped");
-        
+
         Dragboard db = event.getDragboard();
         boolean success = false;
         if (db.hasString()) {
-            TreeCell item = (TreeCell) event.getSource();
+            TreeCell<FolderData> item = (TreeCell) event.getSource();
+            int folderId = item.getTreeItem().getValue().getId();
             //add the EmailData dragged to the new folder 
-            tableController.addEmailRow(item.getText());
+            tableController.changeEmailFolder(folderId);
             success = true;
         }
         //let the source know whether the string was successfully transferred
         // and used
         event.setDropCompleted(success);
         event.consume();
+
     }
 }

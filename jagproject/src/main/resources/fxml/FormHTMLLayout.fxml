@@ -5,6 +5,8 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
@@ -13,19 +15,21 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.web.HTMLEditor?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="571.0" prefWidth="618.0" stylesheets="@../styles/htmlform.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.xinjia.presentation.formhtml.FormAndHTMLLayoutController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="571.0" prefWidth="680.0" stylesheets="@../styles/htmlform.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.xinjia.presentation.formhtml.FormAndHTMLLayoutController">
    <top>
       <GridPane prefHeight="167.0" prefWidth="618.0">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" maxWidth="295.33331298828125" minWidth="10.0" prefWidth="61.333333333333336" />
-          <ColumnConstraints hgrow="SOMETIMES" maxWidth="295.33331298828125" minWidth="10.0" prefWidth="27.000000000000007" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="538.6666984558105" minWidth="10.0" prefWidth="530.3333333333334" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="295.33331298828125" minWidth="10.0" prefWidth="45.00000000000001" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="603.9999491373698" minWidth="10.0" prefWidth="529.000020345052" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="538.6666984558105" minWidth="10.0" prefWidth="37.66664632161462" />
         </columnConstraints>
         <rowConstraints>
             <RowConstraints maxHeight="55.333333333333336" minHeight="10.0" prefHeight="39.000005086263016" vgrow="SOMETIMES" />
           <RowConstraints maxHeight="56.6666685740153" minHeight="10.0" prefHeight="38.99999491373698" vgrow="SOMETIMES" />
           <RowConstraints maxHeight="62.00001017252603" minHeight="9.0" prefHeight="39.33333079020183" vgrow="SOMETIMES" />
           <RowConstraints maxHeight="51.33335876464844" minHeight="10.0" prefHeight="42.0000025431315" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="51.33335876464844" minHeight="10.0" prefHeight="42.0000025431315" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
             <Label text="%to">
@@ -65,20 +69,12 @@
                   <Insets />
                </GridPane.margin>
                <content>
-                  <HBox fx:id="toHBox" alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" prefHeight="34.0">
-                     <children>
-                        <TextField fx:id="toTxtField" HBox.hgrow="NEVER" />
-                     </children>
-                  </HBox>
+                  <HBox fx:id="toHBox" alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" prefHeight="34.0" />
                </content>
             </ScrollPane>
             <ScrollPane vbarPolicy="NEVER" GridPane.columnIndex="2" GridPane.rowIndex="1">
                <content>
-                  <HBox fx:id="ccHBox" alignment="CENTER_LEFT" prefHeight="33.0">
-                     <children>
-                        <TextField fx:id="ccTxtField" HBox.hgrow="NEVER" />
-                     </children>
-                  </HBox>
+                  <HBox fx:id="ccHBox" alignment="CENTER_LEFT" prefHeight="33.0" />
                </content>
             </ScrollPane>
             <HBox alignment="CENTER_LEFT" prefHeight="37.0" prefWidth="525.0" GridPane.columnIndex="2" GridPane.rowIndex="3">
@@ -88,16 +84,6 @@
                         <Insets top="5.0" />
                      </HBox.margin>
                   </TextField>
-                  <Button mnemonicParsing="false" onAction="#saveEmail" text="%saveButton">
-                     <HBox.margin>
-                        <Insets left="200.0" />
-                     </HBox.margin>
-                  </Button>
-                  <Button alignment="CENTER" mnemonicParsing="false" onAction="#sendEmail" text="%send">
-                     <HBox.margin>
-                        <Insets left="10.0" />
-                     </HBox.margin>
-                  </Button>
                </children>
             </HBox>
             <Button alignment="CENTER" contentDisplay="CENTER" minHeight="-Infinity" mnemonicParsing="false" onAction="#addCCTextField" prefHeight="20.0" text="+" GridPane.columnIndex="1" GridPane.rowIndex="1">
@@ -117,13 +103,43 @@
             </Button>
             <ScrollPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
                <content>
-                  <HBox fx:id="bccHBox" alignment="CENTER_LEFT" prefHeight="34.0">
-                     <children>
-                        <TextField fx:id="bccTxtField" HBox.hgrow="NEVER" />
-                     </children>
-                  </HBox>
+                  <HBox fx:id="bccHBox" alignment="CENTER_LEFT" prefHeight="34.0" />
                </content>
             </ScrollPane>
+            <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnSpan="3" GridPane.rowIndex="4">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#saveEmail" prefHeight="25.0" prefWidth="162.0" text="%saveButton">
+                     <HBox.margin>
+                        <Insets left="10.0" top="5.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button alignment="CENTER" mnemonicParsing="false" onAction="#sendEmail" prefHeight="25.0" prefWidth="160.0" text="%send">
+                     <HBox.margin>
+                        <Insets left="10.0" top="5.0" />
+                     </HBox.margin>
+                  </Button>
+                  <ScrollPane prefHeight="36.0" prefWidth="479.0">
+                     <content>
+                        <HBox fx:id="attachmentsHBox" alignment="CENTER" prefHeight="34.0">
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                        </HBox>
+                     </content>
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </ScrollPane>
+               </children>
+            </HBox>
+            <ImageView fx:id="clearIcon" fitHeight="35.0" fitWidth="39.0" onMouseClicked="#clearAttachments" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="3" GridPane.rowIndex="4">
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+               <image>
+                  <Image url="@../images/clearIcon.png" />
+               </image>
+            </ImageView>
          </children>
          <BorderPane.margin>
             <Insets top="7.0" />

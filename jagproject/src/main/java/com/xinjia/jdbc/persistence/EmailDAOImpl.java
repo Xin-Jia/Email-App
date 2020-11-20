@@ -3,6 +3,8 @@ package com.xinjia.jdbc.persistence;
 import com.xinjia.exceptions.FolderAlreadyExistsException;
 import com.xinjia.jdbc.beans.EmailData;
 import com.xinjia.properties.MailConfigBean;
+import com.xinjia.properties.propertybean.EmailFXData;
+import com.xinjia.properties.propertybean.FolderData;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -11,8 +13,13 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.Timestamp;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javax.activation.DataSource;
+import jodd.mail.Email;
 import jodd.mail.EmailAddress;
 import jodd.mail.EmailAttachment;
 import jodd.mail.EmailMessage;
@@ -30,7 +37,7 @@ public class EmailDAOImpl implements EmailDAO {
 
     private final static Logger LOG = LoggerFactory.getLogger(EmailDAOImpl.class);
 
-    MailConfigBean configBean;
+    private MailConfigBean configBean;
 
     /**
      * Constructor that initializes the MailConfigBean
@@ -41,6 +48,10 @@ public class EmailDAOImpl implements EmailDAO {
         configBean = mailConfigBean;
     }
 
+    public MailConfigBean getMailConfigBean() {
+        return configBean;
+    }
+
     /**
      * Retrieve all emails in the Email table and create an EmailData(bean) for
      * each of them
@@ -49,7 +60,7 @@ public class EmailDAOImpl implements EmailDAO {
      * @throws SQLException
      */
     @Override
-    public ArrayList<EmailData> findAllEmails() throws SQLException {
+    public ObservableList<EmailFXData> findAllEmails() throws SQLException {
 
         ArrayList<EmailData> data = new ArrayList<>();
         String selectQuery = "SELECT EMAILID, FOLDERID, FROMADDRESS, SENTDATE, RECEIVEDATE, SUBJECT, MESSAGE, HTMLMESSAGE FROM EMAIL";
@@ -61,7 +72,66 @@ public class EmailDAOImpl implements EmailDAO {
         }
 
         LOG.debug("Total number of emails : " + data.size());
-        return data;
+        //convert to JavaFX bean
+        ObservableList<EmailFXData> observableData = convertToJavaFXBean(data);
+        return observableData;
+    }
+
+    private ObservableList<EmailFXData> convertToJavaFXBean(ArrayList<EmailData> emails) {
+        ObservableList<EmailFXData> observableData = FXCollections.observableArrayList();
+
+        for (EmailData email : emails) {
+            observableData.add(convertToSingleJavaFXBean(email));
+        }
+        return observableData;
+    }
+
+    private EmailFXData convertToSingleJavaFXBean(EmailData email) {
+
+        ObservableList<String> to = FXCollections.observableArrayList();
+        ObservableList<String> cc = FXCollections.observableArrayList();
+        ObservableList<String> bcc = FXCollections.observableArrayList();
+        Email joddEmail = email.getEmail();
+        String txtMsg = "";
+        String htmlMsg = "";
+        List<EmailMessage> messages = joddEmail.messages();
+        List<byte[]> attachmentsByteList = new ArrayList<>();
+        List<EmailAttachment<? extends DataSource>> attachments = joddEmail.attachments();
+        LOG.info("attachments: "+attachments.toString());
+        if (!attachments.isEmpty()) {
+            for (EmailAttachment ea : attachments) {
+                int size = ea.getSize();
+                LOG.info("filename: "+ea.getName()+" size:"+size);
+                //LOG.info("byte array: "+Arrays.toString(ea.toByteArray()));
+                if (size != -1) {
+                    attachmentsByteList.add(ea.toByteArray());
+                }
+            }
+        }
+        if (!email.getEmail().messages().isEmpty()) {
+            ArrayList<String> messagesString = retrieveMessageContent(messages, "text/plain");
+            if (!messages.isEmpty()) {
+                txtMsg = messagesString.get(0);
+            }
+
+            messagesString = retrieveMessageContent(messages, "text/html");
+            if (!messages.isEmpty()) {
+                htmlMsg = messagesString.get(0);
+            }
+        }
+        for (EmailAddress address : email.getEmail().to()) {
+            to.add(address.getEmail());
+        }
+        for (EmailAddress address : email.getEmail().cc()) {
+            cc.add(address.getEmail());
+        }
+        for (EmailAddress address : email.getEmail().bcc()) {
+            bcc.add(address.getEmail());
+        }
+
+        EmailFXData observableData = new EmailFXData(email.getEmailId(), email.getFolderId(), email.getReceivedDate(), joddEmail.from().getEmail(), joddEmail.subject(), to, cc, bcc, txtMsg, htmlMsg, attachmentsByteList);
+
+        return observableData;
     }
 
     /**
@@ -88,7 +158,6 @@ public class EmailDAOImpl implements EmailDAO {
         insertEmailDataRegularAttachments(mailData, emailId, false);
         insertEmailDataRegularAttachments(mailData, emailId, true);
         findEmailDataRecipients(mailData, emailId);
-        LOG.info("Created custom Email bean");
         return mailData;
     }
 
@@ -500,7 +569,7 @@ public class EmailDAOImpl implements EmailDAO {
      * @throws SQLException
      */
     @Override
-    public EmailData findEmailById(int id) throws SQLException {
+    public EmailFXData findEmailById(int id) throws SQLException {
         EmailData mailData = new EmailData();
         String selectQuery = "SELECT EMAILID, FOLDERID, FROMADDRESS, SENTDATE, RECEIVEDATE, SUBJECT, MESSAGE, HTMLMESSAGE FROM EMAIL WHERE EMAILID = ?";
 
@@ -514,7 +583,10 @@ public class EmailDAOImpl implements EmailDAO {
             }
         }
         LOG.debug("Email with id: " + id + "?: " + (mailData != null));
-        return mailData;
+
+        //convert to JavaFX bean
+        EmailFXData observableData = convertToSingleJavaFXBean(mailData);
+        return observableData;
     }
 
     /**
@@ -527,7 +599,7 @@ public class EmailDAOImpl implements EmailDAO {
      * @throws SQLException
      */
     @Override
-    public ArrayList<EmailData> findEmailsByFolder(String folderName) throws SQLException {
+    public ObservableList<EmailFXData> findEmailsByFolder(String folderName) throws SQLException {
 
         ArrayList<EmailData> emails = new ArrayList<>();
 
@@ -543,8 +615,11 @@ public class EmailDAOImpl implements EmailDAO {
                 }
             }
             LOG.debug("Number of emails in: " + folderName + " is: " + emails.size());
-            return emails;
+
         }
+        //convert to JavaFX bean
+        ObservableList<EmailFXData> observableData = convertToJavaFXBean(emails);
+        return observableData;
 
     }
 
@@ -573,7 +648,7 @@ public class EmailDAOImpl implements EmailDAO {
      * @throws SQLException
      */
     @Override
-    public ArrayList<EmailData> findEmailsBySubject(String subString) throws SQLException {
+    public ObservableList<EmailFXData> findEmailsBySubject(String subString) throws SQLException {
         ArrayList<EmailData> emails = new ArrayList<>();
         String selectSubStringQuery = "SELECT EMAILID, FOLDERID, FROMADDRESS, SENTDATE, RECEIVEDATE, SUBJECT, MESSAGE, HTMLMESSAGE FROM EMAIL "
                 + "WHERE SUBJECT LIKE ?";
@@ -587,8 +662,10 @@ public class EmailDAOImpl implements EmailDAO {
             }
             LOG.debug(emails.isEmpty() ? "No emails found with subject substring: " + subString
                     : "Number of emails found with the substring: " + subString + " in Subject is: " + emails.size());
-            return emails;
         }
+        //convert to JavaFX bean
+        ObservableList<EmailFXData> observableData = convertToJavaFXBean(emails);
+        return observableData;
     }
 
     /**
@@ -601,7 +678,7 @@ public class EmailDAOImpl implements EmailDAO {
      * @throws SQLException
      */
     @Override
-    public ArrayList<EmailData> findEmailsByRecipients(String subString) throws SQLException {
+    public ObservableList<EmailFXData> findEmailsByRecipients(String subString) throws SQLException {
         ArrayList<EmailData> emails = new ArrayList<>();
         String selectSubStringQuery = "SELECT EMAIL.EMAILID, FOLDERID, FROMADDRESS, SENTDATE, RECEIVEDATE, SUBJECT, MESSAGE, HTMLMESSAGE FROM EMAIL "
                 + "INNER JOIN EMAILTOADDRESS ON EMAIL.EMAILID = EMAILTOADDRESS.EMAILID "
@@ -617,8 +694,10 @@ public class EmailDAOImpl implements EmailDAO {
             }
             LOG.debug(emails.isEmpty() ? "No emails found with recipient substring: " + subString
                     : "Number of emails found with the substring: " + subString + " in Subject is: " + emails.size());
-            return emails;
         }
+        //convert to JavaFX bean
+        ObservableList<EmailFXData> observableData = convertToJavaFXBean(emails);
+        return observableData;
     }
 
     /**
@@ -628,8 +707,9 @@ public class EmailDAOImpl implements EmailDAO {
      * @throws SQLException
      */
     @Override
-    public ArrayList<String> findFolderNames() throws SQLException {
-        ArrayList<String> folders = new ArrayList<>();
+    public ObservableList<String> findFolderNames() throws SQLException {
+        ObservableList<String> folders = FXCollections
+                .observableArrayList();
 
         String selectFoldersQuery = "SELECT FOLDERNAME FROM FOLDER";
         try ( Connection connection = DriverManager.getConnection(configBean.getMysqlURL(), configBean.getMysqlUser(), configBean.getMysqlPassword());  PreparedStatement pStatement = connection.prepareStatement(selectFoldersQuery);) {
@@ -643,6 +723,24 @@ public class EmailDAOImpl implements EmailDAO {
         return folders;
     }
 
+    @Override
+    public ObservableList<FolderData> findFolders() throws SQLException {
+        ObservableList<FolderData> folders = FXCollections
+                .observableArrayList();
+
+        String selectFoldersQuery = "SELECT FOLDERID, FOLDERNAME FROM FOLDER";
+        try ( Connection connection = DriverManager.getConnection(configBean.getMysqlURL(), configBean.getMysqlUser(), configBean.getMysqlPassword());  PreparedStatement pStatement = connection.prepareStatement(selectFoldersQuery);) {
+
+            try ( ResultSet resultSet = pStatement.executeQuery()) {
+                while (resultSet.next()) {
+                    FolderData folder = new FolderData(resultSet.getInt("FolderId"), resultSet.getString("FolderName"));
+                    folders.add(folder);
+                }
+            }
+        }
+        return folders;
+    }
+
     /**
      * Retrieves all email addresses in the Address table
      *
@@ -650,7 +748,7 @@ public class EmailDAOImpl implements EmailDAO {
      * @throws SQLException
      */
     @Override
-    public ArrayList<String> findAllAddresses() throws SQLException {
+    public ObservableList<String> findAllAddresses() throws SQLException {
         ArrayList<String> addresses = new ArrayList<>();
 
         String selectAddressesQuery = "SELECT EMAILADDRESS FROM ADDRESS";
@@ -661,7 +759,7 @@ public class EmailDAOImpl implements EmailDAO {
                 }
             }
         }
-        return addresses;
+        return (ObservableList) addresses;
     }
 
     /**
@@ -814,8 +912,6 @@ public class EmailDAOImpl implements EmailDAO {
             return mesg;
         }).forEachOrdered((mesg) -> {
             if (mesg.getMimeType().equalsIgnoreCase(format)) {
-                LOG.debug("The message sent: " + mesg.getContent());
-                LOG.debug("The message sent type: " + mesg.getMimeType());
                 msgToReturn.add(mesg.getContent());
             }
 
@@ -827,22 +923,22 @@ public class EmailDAOImpl implements EmailDAO {
      * Changes an email's current folder to another folder
      *
      * @param mailData the custom Email bean
-     * @param folderName the given folder to be changed to
+     * @param folderId the given folder Id be changed to
      * @return an int representing the number of emails that has its folder
      * changed (should be 1)
      * @throws SQLException
      */
     @Override
-    public int changeEmailFolder(EmailData mailData, String folderName) throws SQLException {
+    public int changeEmailFolder(EmailFXData mailData, int folderId) throws SQLException {
         //No need to check if the folder name exists since only existing folders 
         //will be on the GUI when trying to drag an email to another folder
         //Also no need to check if it is a Draft since the drag option for it will be disabled in the GUI
-        int folderId = findFolderIdByName(folderName);
+
         String updateFolderQuery = "UPDATE EMAIL SET FOLDERID = ? WHERE EMAILID = ?";
         int rows = 0;
         try ( Connection connection = DriverManager.getConnection(configBean.getMysqlURL(), configBean.getMysqlUser(), configBean.getMysqlPassword());  PreparedStatement ps = connection.prepareStatement(updateFolderQuery);) {
             ps.setInt(1, folderId);
-            ps.setInt(2, mailData.getEmailId());
+            ps.setInt(2, mailData.getId());
             rows = ps.executeUpdate();
         }
         LOG.debug("Number of emails' folder changed (should be 1): " + rows);
@@ -856,7 +952,7 @@ public class EmailDAOImpl implements EmailDAO {
      * @return the folder id
      * @throws SQLException
      */
-    private int findFolderIdByName(String name) throws SQLException {
+    public int findFolderIdByName(String name) throws SQLException {
         int id = -1;
         String selectFolderQuery = "SELECT FOLDERID FROM FOLDER WHERE FOLDERNAME = ?";
         try ( Connection connection = DriverManager.getConnection(configBean.getMysqlURL(), configBean.getMysqlUser(), configBean.getMysqlPassword());  PreparedStatement pStatement = connection.prepareStatement(selectFolderQuery);) {
