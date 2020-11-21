@@ -125,7 +125,9 @@ public class TableLayoutController {
                 if (!row.isEmpty()) {
                     clickedRow = row.getItem();
                     editorController.writeToEditorEmailData(clickedRow);
-                    editorController.displayFormAndMessage(clickedRow);
+                    editorController.displayEmailRecipientsAndAttachments(clickedRow);
+                    //enable save and send buttons
+                    editorController.enableButtons(row.getItem().getFolderId());
                 }
             });
             return row;
@@ -209,7 +211,7 @@ public class TableLayoutController {
      */
     public void changeEmailFolder(int folderId) throws SQLException {
 
-        emailDAO.changeEmailFolder(emailDataDragged, folderId);
+        emailDAO.changeEmailFolder(emailDataDragged.getId(), folderId);
         emailsToDisplay.remove(emailDataDragged);
     }
 

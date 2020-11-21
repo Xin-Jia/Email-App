@@ -15,13 +15,13 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.web.HTMLEditor?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="571.0" prefWidth="680.0" stylesheets="@../styles/htmlform.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.xinjia.presentation.formhtml.FormAndHTMLLayoutController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="593.0" prefWidth="890.0" stylesheets="@../styles/htmlform.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.xinjia.presentation.formhtml.FormAndHTMLLayoutController">
    <top>
       <GridPane prefHeight="167.0" prefWidth="618.0">
         <columnConstraints>
-          <ColumnConstraints hgrow="SOMETIMES" maxWidth="295.33331298828125" minWidth="10.0" prefWidth="61.333333333333336" />
-          <ColumnConstraints hgrow="SOMETIMES" maxWidth="295.33331298828125" minWidth="10.0" prefWidth="45.00000000000001" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="603.9999491373698" minWidth="10.0" prefWidth="529.000020345052" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="295.33331298828125" minWidth="10.0" prefWidth="58.666666666666664" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="295.33331298828125" minWidth="0.0" prefWidth="26.33332316080729" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="789.3333409627279" minWidth="10.0" prefWidth="768.3333435058594" />
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="538.6666984558105" minWidth="10.0" prefWidth="37.66664632161462" />
         </columnConstraints>
         <rowConstraints>
@@ -56,7 +56,7 @@
                   <Font name="Berlin Sans FB" size="12.0" />
                </font>
             </Label>
-            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="14.0" prefWidth="61.0" text="%subject" textAlignment="CENTER" GridPane.columnSpan="2" GridPane.rowIndex="3">
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="25.0" prefWidth="59.0" text="%subject" textAlignment="CENTER" GridPane.columnSpan="2" GridPane.rowIndex="3">
                <GridPane.margin>
                   <Insets left="18.0" />
                </GridPane.margin>
@@ -64,7 +64,7 @@
                   <Font name="Arial Bold" size="11.0" />
                </font>
             </Label>
-            <ScrollPane prefHeight="41.0" prefWidth="521.0" vbarPolicy="NEVER" GridPane.columnIndex="2">
+            <ScrollPane prefHeight="41.0" prefWidth="521.0" GridPane.columnIndex="2">
                <GridPane.margin>
                   <Insets />
                </GridPane.margin>
@@ -72,7 +72,7 @@
                   <HBox fx:id="toHBox" alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" prefHeight="34.0" />
                </content>
             </ScrollPane>
-            <ScrollPane vbarPolicy="NEVER" GridPane.columnIndex="2" GridPane.rowIndex="1">
+            <ScrollPane GridPane.columnIndex="2" GridPane.rowIndex="1">
                <content>
                   <HBox fx:id="ccHBox" alignment="CENTER_LEFT" prefHeight="33.0" />
                </content>
@@ -108,12 +108,12 @@
             </ScrollPane>
             <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnSpan="3" GridPane.rowIndex="4">
                <children>
-                  <Button mnemonicParsing="false" onAction="#saveEmail" prefHeight="25.0" prefWidth="162.0" text="%saveButton">
+                  <Button fx:id="saveBtn" mnemonicParsing="false" onAction="#saveEmail" prefHeight="25.0" prefWidth="162.0" text="%saveButton">
                      <HBox.margin>
                         <Insets left="10.0" top="5.0" />
                      </HBox.margin>
                   </Button>
-                  <Button alignment="CENTER" mnemonicParsing="false" onAction="#sendEmail" prefHeight="25.0" prefWidth="160.0" text="%send">
+                  <Button fx:id="sendBtn" alignment="CENTER" mnemonicParsing="false" onAction="#sendEmail" prefHeight="25.0" prefWidth="160.0" text="%send">
                      <HBox.margin>
                         <Insets left="10.0" top="5.0" />
                      </HBox.margin>

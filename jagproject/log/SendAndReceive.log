@@ -31524,3 +31524,575 @@ Caused by: java.lang.ClassNotFoundException: com.xinjia.presentation.rootcontrol
 [INFO ] 2020-11-20 13:11:53.249 [JavaFX Application Thread] EmailDAOImpl - filename: flower.png size:-1
 [INFO ] 2020-11-20 13:11:57.707 [JavaFX Application Thread] CreateFolderController - Creating folder
 [INFO ] 2020-11-20 13:11:59.768 [JavaFX Application Thread] MainEmailApp - Stage is closing
+[DEBUG] 2020-11-20 13:59:56.589 [JavaFX Application Thread] MainEmailApp - Locale = fr_CA
+[INFO ] 2020-11-20 13:59:56.653 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[INFO ] 2020-11-20 13:59:56.655 [JavaFX Application Thread] MainEmailApp - Are properties non-empty & file exists? true
+[INFO ] 2020-11-20 13:59:56.656 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[INFO ] 2020-11-20 13:59:56.658 [JavaFX Application Thread] MainEmailApp - Are properties non-empty & file exists? true
+[INFO ] 2020-11-20 13:59:56.658 [JavaFX Application Thread] MainEmailApp - Creating Root/Email App Scene
+[INFO ] 2020-11-20 13:59:58.089 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[DEBUG] 2020-11-20 13:59:58.551 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Inbox is: 2
+[INFO ] 2020-11-20 13:59:58.552 [JavaFX Application Thread] EmailDAOImpl - attachments: [jodd.mail.EmailAttachment@529ed034, jodd.mail.EmailAttachment@2beaf961]
+[INFO ] 2020-11-20 13:59:58.552 [JavaFX Application Thread] EmailDAOImpl - filename: img3-embedded.png size:-1
+[INFO ] 2020-11-20 13:59:58.553 [JavaFX Application Thread] EmailDAOImpl - filename: tree.png size:-1
+[INFO ] 2020-11-20 13:59:58.559 [JavaFX Application Thread] EmailDAOImpl - attachments: [jodd.mail.EmailAttachment@7c038bbd]
+[INFO ] 2020-11-20 13:59:58.559 [JavaFX Application Thread] EmailDAOImpl - filename: flower.png size:-1
+[DEBUG] 2020-11-20 14:00:10.717 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Sent is: 3
+[INFO ] 2020-11-20 14:00:10.718 [JavaFX Application Thread] EmailDAOImpl - attachments: [jodd.mail.EmailAttachment@5835b42, jodd.mail.EmailAttachment@3aaab902]
+[INFO ] 2020-11-20 14:00:10.719 [JavaFX Application Thread] EmailDAOImpl - filename: img1.png size:-1
+[INFO ] 2020-11-20 14:00:10.719 [JavaFX Application Thread] EmailDAOImpl - filename: img2.png size:-1
+[INFO ] 2020-11-20 14:00:10.720 [JavaFX Application Thread] EmailDAOImpl - attachments: []
+[INFO ] 2020-11-20 14:00:10.720 [JavaFX Application Thread] EmailDAOImpl - attachments: []
+[DEBUG] 2020-11-20 14:00:14.984 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Draft is: 1
+[INFO ] 2020-11-20 14:00:14.985 [JavaFX Application Thread] EmailDAOImpl - attachments: [jodd.mail.EmailAttachment@433f3323]
+[INFO ] 2020-11-20 14:00:14.985 [JavaFX Application Thread] EmailDAOImpl - filename: dog-embedded.png size:-1
+[INFO ] 2020-11-20 14:00:21.817 [JavaFX Application Thread] MainEmailApp - Stage is closing
+[DEBUG] 2020-11-20 14:01:13.730 [JavaFX Application Thread] MainEmailApp - Locale = fr_CA
+[INFO ] 2020-11-20 14:01:13.787 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[INFO ] 2020-11-20 14:01:13.789 [JavaFX Application Thread] MainEmailApp - Are properties non-empty & file exists? true
+[INFO ] 2020-11-20 14:01:13.790 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[INFO ] 2020-11-20 14:01:13.791 [JavaFX Application Thread] MainEmailApp - Are properties non-empty & file exists? true
+[INFO ] 2020-11-20 14:01:13.792 [JavaFX Application Thread] MainEmailApp - Creating Root/Email App Scene
+[INFO ] 2020-11-20 14:01:15.189 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[DEBUG] 2020-11-20 14:01:15.560 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Inbox is: 2
+[INFO ] 2020-11-20 14:01:15.560 [JavaFX Application Thread] EmailDAOImpl - attachments: [jodd.mail.EmailAttachment@529ed034, jodd.mail.EmailAttachment@2beaf961]
+[INFO ] 2020-11-20 14:01:15.567 [JavaFX Application Thread] EmailDAOImpl - attachments: [jodd.mail.EmailAttachment@7c038bbd]
+[DEBUG] 2020-11-20 14:01:18.582 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Draft is: 1
+[INFO ] 2020-11-20 14:01:18.582 [JavaFX Application Thread] EmailDAOImpl - attachments: [jodd.mail.EmailAttachment@c94d0fa]
+[DEBUG] 2020-11-20 14:01:19.047 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Sent is: 3
+[INFO ] 2020-11-20 14:01:19.047 [JavaFX Application Thread] EmailDAOImpl - attachments: [jodd.mail.EmailAttachment@52b767c4, jodd.mail.EmailAttachment@747937ec]
+[INFO ] 2020-11-20 14:01:19.048 [JavaFX Application Thread] EmailDAOImpl - attachments: []
+[INFO ] 2020-11-20 14:01:19.048 [JavaFX Application Thread] EmailDAOImpl - attachments: []
+[INFO ] 2020-11-20 14:01:33.890 [JavaFX Application Thread] MainEmailApp - Stage is closing
+[DEBUG] 2020-11-20 14:08:00.852 [JavaFX Application Thread] MainEmailApp - Locale = fr_CA
+[INFO ] 2020-11-20 14:08:00.912 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[INFO ] 2020-11-20 14:08:00.913 [JavaFX Application Thread] MainEmailApp - Are properties non-empty & file exists? true
+[INFO ] 2020-11-20 14:08:00.914 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[INFO ] 2020-11-20 14:08:00.915 [JavaFX Application Thread] MainEmailApp - Are properties non-empty & file exists? true
+[INFO ] 2020-11-20 14:08:00.916 [JavaFX Application Thread] MainEmailApp - Creating Root/Email App Scene
+[INFO ] 2020-11-20 14:08:02.419 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[DEBUG] 2020-11-20 14:08:02.730 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Inbox is: 2
+[INFO ] 2020-11-20 14:08:02.731 [JavaFX Application Thread] EmailDAOImpl - attachments: [jodd.mail.EmailAttachment@529ed034, jodd.mail.EmailAttachment@2beaf961]
+[INFO ] 2020-11-20 14:08:02.739 [JavaFX Application Thread] EmailDAOImpl - attachments: [jodd.mail.EmailAttachment@7c038bbd]
+[DEBUG] 2020-11-20 14:08:12.808 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Sent is: 3
+[INFO ] 2020-11-20 14:08:12.808 [JavaFX Application Thread] EmailDAOImpl - attachments: [jodd.mail.EmailAttachment@11f8896e, jodd.mail.EmailAttachment@376105b7]
+[INFO ] 2020-11-20 14:08:12.809 [JavaFX Application Thread] EmailDAOImpl - attachments: []
+[INFO ] 2020-11-20 14:08:12.809 [JavaFX Application Thread] EmailDAOImpl - attachments: []
+[DEBUG] 2020-11-20 14:08:15.013 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Inbox is: 2
+[INFO ] 2020-11-20 14:08:15.013 [JavaFX Application Thread] EmailDAOImpl - attachments: [jodd.mail.EmailAttachment@30cc8b29, jodd.mail.EmailAttachment@2e137b2b]
+[INFO ] 2020-11-20 14:08:15.014 [JavaFX Application Thread] EmailDAOImpl - attachments: [jodd.mail.EmailAttachment@7c466c0b]
+[DEBUG] 2020-11-20 14:08:15.443 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Draft is: 1
+[INFO ] 2020-11-20 14:08:15.444 [JavaFX Application Thread] EmailDAOImpl - attachments: [jodd.mail.EmailAttachment@652eb0ac]
+[DEBUG] 2020-11-20 14:08:15.826 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Trash is: 0
+[DEBUG] 2020-11-20 14:08:16.225 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Other is: 1
+[INFO ] 2020-11-20 14:08:16.227 [JavaFX Application Thread] EmailDAOImpl - attachments: [jodd.mail.EmailAttachment@65e1cef9]
+[DEBUG] 2020-11-20 14:08:20.221 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Inbox is: 2
+[INFO ] 2020-11-20 14:08:20.222 [JavaFX Application Thread] EmailDAOImpl - attachments: [jodd.mail.EmailAttachment@5b75762f, jodd.mail.EmailAttachment@58027489]
+[INFO ] 2020-11-20 14:08:20.223 [JavaFX Application Thread] EmailDAOImpl - attachments: [jodd.mail.EmailAttachment@1698bce3]
+[INFO ] 2020-11-20 14:08:22.558 [JavaFX Application Thread] MainEmailApp - Stage is closing
+[DEBUG] 2020-11-20 14:20:45.470 [JavaFX Application Thread] MainEmailApp - Locale = fr_CA
+[INFO ] 2020-11-20 14:20:45.489 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[INFO ] 2020-11-20 14:20:45.490 [JavaFX Application Thread] MainEmailApp - Are properties non-empty & file exists? true
+[INFO ] 2020-11-20 14:20:45.490 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[INFO ] 2020-11-20 14:20:45.491 [JavaFX Application Thread] MainEmailApp - Are properties non-empty & file exists? true
+[INFO ] 2020-11-20 14:20:45.491 [JavaFX Application Thread] MainEmailApp - Creating Root/Email App Scene
+[INFO ] 2020-11-20 14:20:46.645 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[DEBUG] 2020-11-20 14:20:46.877 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Inbox is: 2
+[INFO ] 2020-11-20 14:20:46.877 [JavaFX Application Thread] EmailDAOImpl - attachments: [jodd.mail.EmailAttachment@2beaf961, jodd.mail.EmailAttachment@187ff54f]
+[INFO ] 2020-11-20 14:20:46.881 [JavaFX Application Thread] EmailDAOImpl - attachments: [jodd.mail.EmailAttachment@316ee1ec]
+[DEBUG] 2020-11-20 14:20:50.053 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Sent is: 3
+[INFO ] 2020-11-20 14:20:50.053 [JavaFX Application Thread] EmailDAOImpl - attachments: [jodd.mail.EmailAttachment@52b767c4, jodd.mail.EmailAttachment@747937ec]
+[INFO ] 2020-11-20 14:20:50.053 [JavaFX Application Thread] EmailDAOImpl - attachments: []
+[INFO ] 2020-11-20 14:20:50.053 [JavaFX Application Thread] EmailDAOImpl - attachments: []
+[INFO ] 2020-11-20 14:20:58.919 [JavaFX Application Thread] MailConfigPropertiesManager - Mail Config Form Loaded
+[INFO ] 2020-11-20 14:20:58.920 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[INFO ] 2020-11-20 14:20:58.921 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[INFO ] 2020-11-20 14:21:50.809 [JavaFX Application Thread] FormAndHTMLLayoutController - MAIL CONFIG BEAN ADDRESS: xinjia.caoxin@gmail.com
+[INFO ] 2020-11-20 14:21:50.809 [JavaFX Application Thread] FormAndHTMLLayoutController - MAIL CONFIG BEAN PWD: 39499799
+[INFO ] 2020-11-20 14:21:57.771 [JavaFX Application Thread] SendAndReceive - Email sent
+[INFO ] 2020-11-20 14:27:08.690 [JavaFX Application Thread] MainEmailApp - Stage is closing
+[DEBUG] 2020-11-20 14:27:23.144 [JavaFX Application Thread] MainEmailApp - Locale = fr_CA
+[INFO ] 2020-11-20 14:27:23.161 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[INFO ] 2020-11-20 14:27:23.162 [JavaFX Application Thread] MainEmailApp - Are properties non-empty & file exists? true
+[INFO ] 2020-11-20 14:27:23.162 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[INFO ] 2020-11-20 14:27:23.162 [JavaFX Application Thread] MainEmailApp - Are properties non-empty & file exists? true
+[INFO ] 2020-11-20 14:27:23.163 [JavaFX Application Thread] MainEmailApp - Creating Root/Email App Scene
+[INFO ] 2020-11-20 14:27:24.201 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[DEBUG] 2020-11-20 14:27:24.429 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Inbox is: 2
+[INFO ] 2020-11-20 14:27:24.430 [JavaFX Application Thread] EmailDAOImpl - attachments: [jodd.mail.EmailAttachment@8cee9de, jodd.mail.EmailAttachment@a92f7d5]
+[INFO ] 2020-11-20 14:27:24.433 [JavaFX Application Thread] EmailDAOImpl - attachments: [jodd.mail.EmailAttachment@3a5876bf]
+[DEBUG] 2020-11-20 14:27:27.242 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Sent is: 3
+[INFO ] 2020-11-20 14:27:27.242 [JavaFX Application Thread] EmailDAOImpl - attachments: [jodd.mail.EmailAttachment@4c92e565, jodd.mail.EmailAttachment@6669076a]
+[INFO ] 2020-11-20 14:27:27.242 [JavaFX Application Thread] EmailDAOImpl - attachments: []
+[INFO ] 2020-11-20 14:27:27.242 [JavaFX Application Thread] EmailDAOImpl - attachments: []
+[DEBUG] 2020-11-20 14:27:59.308 [JavaFX Application Thread] MainEmailApp - Locale = fr_CA
+[INFO ] 2020-11-20 14:27:59.328 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[INFO ] 2020-11-20 14:27:59.329 [JavaFX Application Thread] MainEmailApp - Are properties non-empty & file exists? true
+[INFO ] 2020-11-20 14:27:59.330 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[INFO ] 2020-11-20 14:27:59.330 [JavaFX Application Thread] MainEmailApp - Are properties non-empty & file exists? true
+[INFO ] 2020-11-20 14:27:59.330 [JavaFX Application Thread] MainEmailApp - Creating Root/Email App Scene
+[INFO ] 2020-11-20 14:28:00.570 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[DEBUG] 2020-11-20 14:28:01.092 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Inbox is: 2
+[INFO ] 2020-11-20 14:28:01.093 [JavaFX Application Thread] EmailDAOImpl - attachments: [jodd.mail.EmailAttachment@2beaf961, jodd.mail.EmailAttachment@187ff54f]
+[INFO ] 2020-11-20 14:28:01.099 [JavaFX Application Thread] EmailDAOImpl - attachments: [jodd.mail.EmailAttachment@316ee1ec]
+[DEBUG] 2020-11-20 14:28:07.423 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Trash is: 0
+[DEBUG] 2020-11-20 14:28:07.928 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Draft is: 1
+[INFO ] 2020-11-20 14:28:07.928 [JavaFX Application Thread] EmailDAOImpl - attachments: [jodd.mail.EmailAttachment@6e48e8a9]
+[DEBUG] 2020-11-20 14:28:08.237 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Sent is: 3
+[INFO ] 2020-11-20 14:28:08.237 [JavaFX Application Thread] EmailDAOImpl - attachments: [jodd.mail.EmailAttachment@2d6a5e, jodd.mail.EmailAttachment@2ad05b34]
+[INFO ] 2020-11-20 14:28:08.237 [JavaFX Application Thread] EmailDAOImpl - attachments: []
+[INFO ] 2020-11-20 14:28:08.237 [JavaFX Application Thread] EmailDAOImpl - attachments: []
+[INFO ] 2020-11-20 14:28:41.432 [JavaFX Application Thread] FormAndHTMLLayoutController - MAIL CONFIG BEAN ADDRESS: xinjia.caoxin@gmail.com
+[INFO ] 2020-11-20 14:28:41.433 [JavaFX Application Thread] FormAndHTMLLayoutController - MAIL CONFIG BEAN PWD: 39499799
+[INFO ] 2020-11-20 14:28:47.795 [JavaFX Application Thread] SendAndReceive - Email sent
+[DEBUG] 2020-11-20 14:28:47.855 [JavaFX Application Thread] EmailDAOImpl - New email ID is: 11
+[DEBUG] 2020-11-20 14:28:47.865 [JavaFX Application Thread] EmailDAOImpl - email To: xinjia1.cao@gmail.com
+[DEBUG] 2020-11-20 14:28:47.872 [JavaFX Application Thread] EmailDAOImpl - Number of recipients added: 1
+[DEBUG] 2020-11-20 14:28:47.872 [JavaFX Application Thread] EmailDAOImpl - Number of attachments added: 0
+[INFO ] 2020-11-20 14:28:47.872 [JavaFX Application Thread] EmailDAOImpl - Email inserted in the database
+[DEBUG] 2020-11-20 14:28:56.735 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Draft is: 1
+[INFO ] 2020-11-20 14:28:56.736 [JavaFX Application Thread] EmailDAOImpl - attachments: [jodd.mail.EmailAttachment@1e3d6557]
+[DEBUG] 2020-11-20 14:28:57.519 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Sent is: 4
+[INFO ] 2020-11-20 14:28:57.519 [JavaFX Application Thread] EmailDAOImpl - attachments: [jodd.mail.EmailAttachment@40678896, jodd.mail.EmailAttachment@2c062266]
+[INFO ] 2020-11-20 14:28:57.519 [JavaFX Application Thread] EmailDAOImpl - attachments: []
+[INFO ] 2020-11-20 14:28:57.519 [JavaFX Application Thread] EmailDAOImpl - attachments: []
+[INFO ] 2020-11-20 14:28:57.519 [JavaFX Application Thread] EmailDAOImpl - attachments: []
+[DEBUG] 2020-11-20 14:29:03.154 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Inbox is: 2
+[INFO ] 2020-11-20 14:29:03.155 [JavaFX Application Thread] EmailDAOImpl - attachments: [jodd.mail.EmailAttachment@40f97205, jodd.mail.EmailAttachment@35abcef]
+[INFO ] 2020-11-20 14:29:03.155 [JavaFX Application Thread] EmailDAOImpl - attachments: [jodd.mail.EmailAttachment@76af7388]
+[DEBUG] 2020-11-20 14:29:03.819 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Sent is: 4
+[INFO ] 2020-11-20 14:29:03.820 [JavaFX Application Thread] EmailDAOImpl - attachments: [jodd.mail.EmailAttachment@67ee1d45, jodd.mail.EmailAttachment@1e722172]
+[INFO ] 2020-11-20 14:29:03.820 [JavaFX Application Thread] EmailDAOImpl - attachments: []
+[INFO ] 2020-11-20 14:29:03.820 [JavaFX Application Thread] EmailDAOImpl - attachments: []
+[INFO ] 2020-11-20 14:29:03.820 [JavaFX Application Thread] EmailDAOImpl - attachments: []
+[DEBUG] 2020-11-20 14:29:25.241 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Draft is: 1
+[INFO ] 2020-11-20 14:29:25.242 [JavaFX Application Thread] EmailDAOImpl - attachments: [jodd.mail.EmailAttachment@5f28b8bd]
+[DEBUG] 2020-11-20 14:29:27.872 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Inbox is: 2
+[INFO ] 2020-11-20 14:29:27.872 [JavaFX Application Thread] EmailDAOImpl - attachments: [jodd.mail.EmailAttachment@53cf75f8, jodd.mail.EmailAttachment@47a9c89e]
+[INFO ] 2020-11-20 14:29:27.872 [JavaFX Application Thread] EmailDAOImpl - attachments: [jodd.mail.EmailAttachment@4fca592d]
+[DEBUG] 2020-11-20 14:29:29.164 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Draft is: 1
+[INFO ] 2020-11-20 14:29:29.164 [JavaFX Application Thread] EmailDAOImpl - attachments: [jodd.mail.EmailAttachment@a9d2e02]
+[DEBUG] 2020-11-20 14:29:36.425 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Trash is: 0
+[DEBUG] 2020-11-20 14:29:37.188 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Other is: 1
+[INFO ] 2020-11-20 14:29:37.189 [JavaFX Application Thread] EmailDAOImpl - attachments: [jodd.mail.EmailAttachment@c76ac16]
+[INFO ] 2020-11-20 14:29:45.835 [JavaFX Application Thread] MainEmailApp - Stage is closing
+[DEBUG] 2020-11-20 14:30:11.044 [JavaFX Application Thread] MainEmailApp - Locale = fr_CA
+[INFO ] 2020-11-20 14:30:11.062 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[INFO ] 2020-11-20 14:30:11.062 [JavaFX Application Thread] MainEmailApp - Are properties non-empty & file exists? true
+[INFO ] 2020-11-20 14:30:11.063 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[INFO ] 2020-11-20 14:30:11.063 [JavaFX Application Thread] MainEmailApp - Are properties non-empty & file exists? true
+[INFO ] 2020-11-20 14:30:11.063 [JavaFX Application Thread] MainEmailApp - Creating Root/Email App Scene
+[INFO ] 2020-11-20 14:30:12.108 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[DEBUG] 2020-11-20 14:30:12.350 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Inbox is: 2
+[INFO ] 2020-11-20 14:30:12.351 [JavaFX Application Thread] EmailDAOImpl - attachments: [jodd.mail.EmailAttachment@2beaf961, jodd.mail.EmailAttachment@187ff54f]
+[INFO ] 2020-11-20 14:30:12.354 [JavaFX Application Thread] EmailDAOImpl - attachments: [jodd.mail.EmailAttachment@316ee1ec]
+[DEBUG] 2020-11-20 14:30:15.762 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Sent is: 4
+[INFO ] 2020-11-20 14:30:15.763 [JavaFX Application Thread] EmailDAOImpl - attachments: [jodd.mail.EmailAttachment@6f1aac53, jodd.mail.EmailAttachment@3b9b795c]
+[INFO ] 2020-11-20 14:30:15.763 [JavaFX Application Thread] EmailDAOImpl - attachments: []
+[INFO ] 2020-11-20 14:30:15.763 [JavaFX Application Thread] EmailDAOImpl - attachments: []
+[INFO ] 2020-11-20 14:30:15.763 [JavaFX Application Thread] EmailDAOImpl - attachments: []
+[DEBUG] 2020-11-20 14:30:40.194 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Draft is: 1
+[INFO ] 2020-11-20 14:30:40.194 [JavaFX Application Thread] EmailDAOImpl - attachments: [jodd.mail.EmailAttachment@680289a6]
+[DEBUG] 2020-11-20 14:30:41.424 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Inbox is: 2
+[INFO ] 2020-11-20 14:30:41.424 [JavaFX Application Thread] EmailDAOImpl - attachments: [jodd.mail.EmailAttachment@316998a, jodd.mail.EmailAttachment@4efc560a]
+[INFO ] 2020-11-20 14:30:41.424 [JavaFX Application Thread] EmailDAOImpl - attachments: [jodd.mail.EmailAttachment@6c3fd969]
+[DEBUG] 2020-11-20 14:30:47.878 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Sent is: 4
+[INFO ] 2020-11-20 14:30:47.878 [JavaFX Application Thread] EmailDAOImpl - attachments: [jodd.mail.EmailAttachment@e0af756, jodd.mail.EmailAttachment@73808122]
+[INFO ] 2020-11-20 14:30:47.878 [JavaFX Application Thread] EmailDAOImpl - attachments: []
+[INFO ] 2020-11-20 14:30:47.878 [JavaFX Application Thread] EmailDAOImpl - attachments: []
+[INFO ] 2020-11-20 14:30:47.878 [JavaFX Application Thread] EmailDAOImpl - attachments: []
+[DEBUG] 2020-11-20 14:30:49.410 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Draft is: 1
+[INFO ] 2020-11-20 14:30:49.410 [JavaFX Application Thread] EmailDAOImpl - attachments: [jodd.mail.EmailAttachment@62e24484]
+[DEBUG] 2020-11-20 15:23:19.926 [JavaFX Application Thread] MainEmailApp - Locale = fr_CA
+[INFO ] 2020-11-20 15:23:19.972 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[INFO ] 2020-11-20 15:23:19.973 [JavaFX Application Thread] MainEmailApp - Are properties non-empty & file exists? true
+[INFO ] 2020-11-20 15:23:19.975 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[INFO ] 2020-11-20 15:23:19.975 [JavaFX Application Thread] MainEmailApp - Are properties non-empty & file exists? true
+[INFO ] 2020-11-20 15:23:19.975 [JavaFX Application Thread] MainEmailApp - Creating Root/Email App Scene
+[INFO ] 2020-11-20 15:23:21.445 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[DEBUG] 2020-11-20 15:23:21.855 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Inbox is: 2
+[DEBUG] 2020-11-20 15:23:27.764 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Inbox is: 2
+[DEBUG] 2020-11-20 15:23:28.589 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Sent is: 4
+[DEBUG] 2020-11-20 15:23:50.787 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Draft is: 1
+[DEBUG] 2020-11-20 15:23:53.145 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Trash is: 0
+[DEBUG] 2020-11-20 15:23:53.948 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Other is: 1
+[DEBUG] 2020-11-20 15:23:55.530 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Draft is: 1
+[DEBUG] 2020-11-20 15:24:14.519 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Sent is: 4
+[DEBUG] 2020-11-20 15:24:16.551 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Draft is: 1
+[INFO ] 2020-11-20 15:26:27.838 [JavaFX Application Thread] MailConfigPropertiesManager - Mail Config Form Loaded
+[INFO ] 2020-11-20 15:26:27.840 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[INFO ] 2020-11-20 15:26:27.841 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[INFO ] 2020-11-20 15:30:38.228 [JavaFX Application Thread] MainEmailApp - Stage is closing
+[DEBUG] 2020-11-20 15:31:22.193 [JavaFX Application Thread] MainEmailApp - Locale = fr_CA
+[INFO ] 2020-11-20 15:31:22.229 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[INFO ] 2020-11-20 15:31:22.230 [JavaFX Application Thread] MainEmailApp - Are properties non-empty & file exists? true
+[INFO ] 2020-11-20 15:31:22.231 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[INFO ] 2020-11-20 15:31:22.231 [JavaFX Application Thread] MainEmailApp - Are properties non-empty & file exists? true
+[INFO ] 2020-11-20 15:31:22.232 [JavaFX Application Thread] MainEmailApp - Creating Root/Email App Scene
+[INFO ] 2020-11-20 15:31:23.680 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[DEBUG] 2020-11-20 15:31:24.012 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Inbox is: 2
+[DEBUG] 2020-11-20 15:31:27.876 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Draft is: 1
+[DEBUG] 2020-11-20 15:31:28.855 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Sent is: 4
+[DEBUG] 2020-11-20 15:31:30.636 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Inbox is: 2
+[DEBUG] 2020-11-20 15:31:31.866 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Draft is: 1
+[DEBUG] 2020-11-20 15:32:30.077 [JavaFX Application Thread] EmailDAOImpl - New email ID is: 12
+[DEBUG] 2020-11-20 15:32:30.118 [JavaFX Application Thread] EmailDAOImpl - email To: xinjia1.cao@gmail.com
+[DEBUG] 2020-11-20 15:32:30.132 [JavaFX Application Thread] EmailDAOImpl - email To: xinjia2.cao@gmail.com
+[DEBUG] 2020-11-20 15:32:30.149 [JavaFX Application Thread] EmailDAOImpl - Number of recipients added: 2
+[DEBUG] 2020-11-20 15:32:30.149 [JavaFX Application Thread] EmailDAOImpl - Number of attachments added: 0
+[INFO ] 2020-11-20 15:32:30.150 [JavaFX Application Thread] EmailDAOImpl - Email inserted in the database
+[DEBUG] 2020-11-20 15:32:37.602 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Sent is: 4
+[DEBUG] 2020-11-20 15:32:38.727 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Draft is: 2
+[INFO ] 2020-11-20 15:33:15.581 [JavaFX Application Thread] MainEmailApp - Stage is closing
+[DEBUG] 2020-11-20 15:37:48.887 [JavaFX Application Thread] MainEmailApp - Locale = fr_CA
+[INFO ] 2020-11-20 15:37:48.932 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[INFO ] 2020-11-20 15:37:48.933 [JavaFX Application Thread] MainEmailApp - Are properties non-empty & file exists? true
+[INFO ] 2020-11-20 15:37:48.935 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[INFO ] 2020-11-20 15:37:48.936 [JavaFX Application Thread] MainEmailApp - Are properties non-empty & file exists? true
+[INFO ] 2020-11-20 15:37:48.937 [JavaFX Application Thread] MainEmailApp - Creating Root/Email App Scene
+[INFO ] 2020-11-20 15:37:50.350 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[DEBUG] 2020-11-20 15:37:50.681 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Inbox is: 2
+[DEBUG] 2020-11-20 15:38:27.563 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Inbox is: 2
+[DEBUG] 2020-11-20 15:38:31.247 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Sent is: 4
+[INFO ] 2020-11-20 15:38:35.131 [JavaFX Application Thread] MainEmailApp - Stage is closing
+[DEBUG] 2020-11-20 15:40:48.869 [JavaFX Application Thread] MainEmailApp - Locale = fr_CA
+[INFO ] 2020-11-20 15:40:48.929 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[INFO ] 2020-11-20 15:40:48.930 [JavaFX Application Thread] MainEmailApp - Are properties non-empty & file exists? true
+[INFO ] 2020-11-20 15:40:48.932 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[INFO ] 2020-11-20 15:40:48.932 [JavaFX Application Thread] MainEmailApp - Are properties non-empty & file exists? true
+[INFO ] 2020-11-20 15:40:48.933 [JavaFX Application Thread] MainEmailApp - Creating Root/Email App Scene
+[INFO ] 2020-11-20 15:40:50.195 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[DEBUG] 2020-11-20 15:40:50.564 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Inbox is: 2
+[INFO ] 2020-11-20 15:41:14.971 [JavaFX Application Thread] MainEmailApp - Stage is closing
+[DEBUG] 2020-11-20 15:43:42.560 [JavaFX Application Thread] MainEmailApp - Locale = fr_CA
+[INFO ] 2020-11-20 15:43:42.626 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[INFO ] 2020-11-20 15:43:42.628 [JavaFX Application Thread] MainEmailApp - Are properties non-empty & file exists? true
+[INFO ] 2020-11-20 15:43:42.629 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[INFO ] 2020-11-20 15:43:42.630 [JavaFX Application Thread] MainEmailApp - Are properties non-empty & file exists? true
+[INFO ] 2020-11-20 15:43:42.631 [JavaFX Application Thread] MainEmailApp - Creating Root/Email App Scene
+[INFO ] 2020-11-20 15:43:44.187 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[DEBUG] 2020-11-20 15:43:44.509 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Inbox is: 2
+[INFO ] 2020-11-20 15:43:48.890 [JavaFX Application Thread] MainEmailApp - Stage is closing
+[DEBUG] 2020-11-20 15:44:23.671 [JavaFX Application Thread] MainEmailApp - Locale = fr_CA
+[INFO ] 2020-11-20 15:44:23.716 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[INFO ] 2020-11-20 15:44:23.717 [JavaFX Application Thread] MainEmailApp - Are properties non-empty & file exists? true
+[INFO ] 2020-11-20 15:44:23.718 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[INFO ] 2020-11-20 15:44:23.718 [JavaFX Application Thread] MainEmailApp - Are properties non-empty & file exists? true
+[INFO ] 2020-11-20 15:44:23.719 [JavaFX Application Thread] MainEmailApp - Creating Root/Email App Scene
+[INFO ] 2020-11-20 15:44:25.183 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[DEBUG] 2020-11-20 15:44:25.572 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Inbox is: 2
+[INFO ] 2020-11-20 15:44:40.255 [JavaFX Application Thread] MainEmailApp - Stage is closing
+[DEBUG] 2020-11-20 15:46:51.408 [JavaFX Application Thread] MainEmailApp - Locale = fr_CA
+[INFO ] 2020-11-20 15:46:51.453 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[INFO ] 2020-11-20 15:46:51.454 [JavaFX Application Thread] MainEmailApp - Are properties non-empty & file exists? true
+[INFO ] 2020-11-20 15:46:51.455 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[INFO ] 2020-11-20 15:46:51.456 [JavaFX Application Thread] MainEmailApp - Are properties non-empty & file exists? true
+[INFO ] 2020-11-20 15:46:51.456 [JavaFX Application Thread] MainEmailApp - Creating Root/Email App Scene
+[INFO ] 2020-11-20 15:46:52.953 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[DEBUG] 2020-11-20 15:46:53.367 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Inbox is: 2
+[DEBUG] 2020-11-20 15:47:51.814 [JavaFX Application Thread] MainEmailApp - Locale = fr_CA
+[INFO ] 2020-11-20 15:47:51.854 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[INFO ] 2020-11-20 15:47:51.855 [JavaFX Application Thread] MainEmailApp - Are properties non-empty & file exists? true
+[INFO ] 2020-11-20 15:47:51.856 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[INFO ] 2020-11-20 15:47:51.857 [JavaFX Application Thread] MainEmailApp - Are properties non-empty & file exists? true
+[INFO ] 2020-11-20 15:47:51.857 [JavaFX Application Thread] MainEmailApp - Creating Root/Email App Scene
+[INFO ] 2020-11-20 15:47:53.469 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[DEBUG] 2020-11-20 15:47:53.809 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Inbox is: 2
+[DEBUG] 2020-11-20 15:48:40.019 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Draft is: 2
+[DEBUG] 2020-11-20 15:48:43.576 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Inbox is: 2
+[DEBUG] 2020-11-20 15:48:44.390 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Sent is: 4
+[DEBUG] 2020-11-20 15:48:51.231 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Draft is: 2
+[DEBUG] 2020-11-20 15:49:38.636 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Trash is: 0
+[DEBUG] 2020-11-20 15:49:39.450 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Other is: 1
+[DEBUG] 2020-11-20 15:49:40.372 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Draft is: 2
+[INFO ] 2020-11-20 15:49:54.890 [JavaFX Application Thread] MainEmailApp - Stage is closing
+[DEBUG] 2020-11-20 15:50:29.850 [JavaFX Application Thread] MainEmailApp - Locale = fr_CA
+[INFO ] 2020-11-20 15:50:29.915 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[INFO ] 2020-11-20 15:50:29.917 [JavaFX Application Thread] MainEmailApp - Are properties non-empty & file exists? true
+[INFO ] 2020-11-20 15:50:29.918 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[INFO ] 2020-11-20 15:50:29.919 [JavaFX Application Thread] MainEmailApp - Are properties non-empty & file exists? true
+[INFO ] 2020-11-20 15:50:29.920 [JavaFX Application Thread] MainEmailApp - Creating Root/Email App Scene
+[INFO ] 2020-11-20 15:50:31.460 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[DEBUG] 2020-11-20 15:50:31.854 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Inbox is: 2
+[INFO ] 2020-11-20 15:51:09.373 [JavaFX Application Thread] MainEmailApp - Stage is closing
+[DEBUG] 2020-11-20 15:54:57.340 [JavaFX Application Thread] MainEmailApp - Locale = fr_CA
+[INFO ] 2020-11-20 15:54:57.401 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[INFO ] 2020-11-20 15:54:57.402 [JavaFX Application Thread] MainEmailApp - Are properties non-empty & file exists? true
+[INFO ] 2020-11-20 15:54:57.404 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[INFO ] 2020-11-20 15:54:57.405 [JavaFX Application Thread] MainEmailApp - Are properties non-empty & file exists? true
+[INFO ] 2020-11-20 15:54:57.405 [JavaFX Application Thread] MainEmailApp - Creating Root/Email App Scene
+[INFO ] 2020-11-20 15:54:58.764 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[DEBUG] 2020-11-20 15:54:59.074 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Inbox is: 2
+[DEBUG] 2020-11-20 15:55:05.633 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Sent is: 4
+[DEBUG] 2020-11-20 15:55:07.723 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Inbox is: 2
+[DEBUG] 2020-11-20 15:55:09.384 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Draft is: 2
+[DEBUG] 2020-11-20 15:55:10.400 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Trash is: 0
+[DEBUG] 2020-11-20 16:08:02.287 [JavaFX Application Thread] MainEmailApp - Locale = fr_CA
+[INFO ] 2020-11-20 16:08:02.314 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[INFO ] 2020-11-20 16:08:02.315 [JavaFX Application Thread] MainEmailApp - Are properties non-empty & file exists? true
+[INFO ] 2020-11-20 16:08:02.316 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[INFO ] 2020-11-20 16:08:02.316 [JavaFX Application Thread] MainEmailApp - Are properties non-empty & file exists? true
+[INFO ] 2020-11-20 16:08:02.316 [JavaFX Application Thread] MainEmailApp - Creating Root/Email App Scene
+[INFO ] 2020-11-20 16:08:03.780 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[DEBUG] 2020-11-20 16:08:04.147 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Inbox is: 2
+[DEBUG] 2020-11-20 16:08:22.613 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Sent is: 4
+[DEBUG] 2020-11-20 16:08:23.893 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Draft is: 2
+[DEBUG] 2020-11-20 16:08:34.114 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Sent is: 4
+[DEBUG] 2020-11-20 16:08:35.144 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Inbox is: 2
+[DEBUG] 2020-11-20 16:08:36.617 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Trash is: 0
+[DEBUG] 2020-11-20 16:08:37.316 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Other is: 1
+[DEBUG] 2020-11-20 16:08:38.382 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Draft is: 2
+[DEBUG] 2020-11-20 16:08:44.311 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Sent is: 4
+[INFO ] 2020-11-20 16:08:55.259 [JavaFX Application Thread] TableLayoutController - onDragDetected
+[INFO ] 2020-11-20 16:08:56.411 [JavaFX Application Thread] TreeLayoutController - onDragDropped
+[DEBUG] 2020-11-20 16:08:56.440 [JavaFX Application Thread] EmailDAOImpl - Number of emails' folder changed (should be 1): 1
+[DEBUG] 2020-11-20 16:08:57.622 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Other is: 2
+[INFO ] 2020-11-20 16:09:00.295 [JavaFX Application Thread] TableLayoutController - onDragDetected
+[INFO ] 2020-11-20 16:09:02.847 [JavaFX Application Thread] TreeLayoutController - onDragDropped
+[DEBUG] 2020-11-20 16:09:02.874 [JavaFX Application Thread] EmailDAOImpl - Number of emails' folder changed (should be 1): 1
+[DEBUG] 2020-11-20 16:09:04.262 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Sent is: 4
+[DEBUG] 2020-11-20 16:09:06.743 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Draft is: 2
+[INFO ] 2020-11-20 16:09:09.105 [JavaFX Application Thread] MainEmailApp - Stage is closing
+[DEBUG] 2020-11-20 16:21:50.926 [JavaFX Application Thread] MainEmailApp - Locale = fr_CA
+[INFO ] 2020-11-20 16:21:50.984 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[INFO ] 2020-11-20 16:21:50.985 [JavaFX Application Thread] MainEmailApp - Are properties non-empty & file exists? true
+[INFO ] 2020-11-20 16:21:50.986 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[INFO ] 2020-11-20 16:21:50.987 [JavaFX Application Thread] MainEmailApp - Are properties non-empty & file exists? true
+[INFO ] 2020-11-20 16:21:50.988 [JavaFX Application Thread] MainEmailApp - Creating Root/Email App Scene
+[INFO ] 2020-11-20 16:21:52.562 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[DEBUG] 2020-11-20 16:21:52.870 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Inbox is: 2
+[DEBUG] 2020-11-20 16:22:02.135 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Sent is: 4
+[DEBUG] 2020-11-20 16:22:08.672 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Draft is: 2
+[DEBUG] 2020-11-20 16:22:26.534 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Sent is: 4
+[DEBUG] 2020-11-20 16:22:27.416 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Inbox is: 2
+[INFO ] 2020-11-20 16:22:42.681 [JavaFX Application Thread] MainEmailApp - Stage is closing
+[DEBUG] 2020-11-20 17:21:22.920 [JavaFX Application Thread] MainEmailApp - Locale = fr_CA
+[INFO ] 2020-11-20 17:21:22.938 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[INFO ] 2020-11-20 17:21:22.938 [JavaFX Application Thread] MainEmailApp - Are properties non-empty & file exists? true
+[INFO ] 2020-11-20 17:21:22.939 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[INFO ] 2020-11-20 17:21:22.939 [JavaFX Application Thread] MainEmailApp - Are properties non-empty & file exists? true
+[INFO ] 2020-11-20 17:21:22.939 [JavaFX Application Thread] MainEmailApp - Creating Root/Email App Scene
+[INFO ] 2020-11-20 17:21:23.952 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[DEBUG] 2020-11-20 17:21:24.179 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Inbox is: 2
+[DEBUG] 2020-11-20 17:21:28.102 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Inbox is: 2
+[DEBUG] 2020-11-20 17:21:31.755 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Sent is: 4
+[DEBUG] 2020-11-20 17:21:32.614 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Draft is: 2
+[DEBUG] 2020-11-20 17:21:37.996 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Trash is: 0
+[DEBUG] 2020-11-20 17:21:38.838 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Other is: 1
+[DEBUG] 2020-11-20 17:21:39.977 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Draft is: 2
+[INFO ] 2020-11-20 17:21:43.723 [JavaFX Application Thread] MainEmailApp - Stage is closing
+[DEBUG] 2020-11-20 17:22:20.678 [JavaFX Application Thread] MainEmailApp - Locale = fr_CA
+[INFO ] 2020-11-20 17:22:20.696 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[INFO ] 2020-11-20 17:22:20.696 [JavaFX Application Thread] MainEmailApp - Are properties non-empty & file exists? true
+[INFO ] 2020-11-20 17:22:20.697 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[INFO ] 2020-11-20 17:22:20.697 [JavaFX Application Thread] MainEmailApp - Are properties non-empty & file exists? true
+[INFO ] 2020-11-20 17:22:20.697 [JavaFX Application Thread] MainEmailApp - Creating Root/Email App Scene
+[INFO ] 2020-11-20 17:22:21.690 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[DEBUG] 2020-11-20 17:22:21.917 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Inbox is: 2
+[DEBUG] 2020-11-20 17:22:36.760 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Inbox is: 2
+[DEBUG] 2020-11-20 17:22:37.408 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Sent is: 4
+[DEBUG] 2020-11-20 17:22:37.950 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Draft is: 2
+[DEBUG] 2020-11-20 17:22:39.622 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Trash is: 0
+[DEBUG] 2020-11-20 17:22:40.563 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Other is: 1
+[DEBUG] 2020-11-20 17:22:41.552 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Draft is: 2
+[DEBUG] 2020-11-20 17:22:42.635 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Sent is: 4
+[DEBUG] 2020-11-20 17:22:43.240 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Inbox is: 2
+[DEBUG] 2020-11-20 17:27:52.527 [JavaFX Application Thread] MainEmailApp - Locale = fr_CA
+[INFO ] 2020-11-20 17:27:52.544 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[INFO ] 2020-11-20 17:27:52.544 [JavaFX Application Thread] MainEmailApp - Are properties non-empty & file exists? true
+[INFO ] 2020-11-20 17:27:52.545 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[INFO ] 2020-11-20 17:27:52.545 [JavaFX Application Thread] MainEmailApp - Are properties non-empty & file exists? true
+[INFO ] 2020-11-20 17:27:52.545 [JavaFX Application Thread] MainEmailApp - Creating Root/Email App Scene
+[INFO ] 2020-11-20 17:27:53.541 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[DEBUG] 2020-11-20 17:27:53.770 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Inbox is: 2
+[INFO ] 2020-11-20 17:28:07.516 [JavaFX Application Thread] RootLayoutSplitController - Absolute Path: C:\Users\xinji\OneDrive\Images\meirl2.jpg
+[DEBUG] 2020-11-20 17:28:13.713 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Draft is: 2
+[DEBUG] 2020-11-20 17:28:14.158 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Sent is: 4
+[DEBUG] 2020-11-20 17:28:16.418 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Trash is: 0
+[DEBUG] 2020-11-20 17:28:18.129 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Draft is: 2
+[DEBUG] 2020-11-20 17:28:34.941 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Sent is: 4
+[DEBUG] 2020-11-20 17:28:40.786 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Draft is: 2
+[INFO ] 2020-11-20 17:28:54.649 [JavaFX Application Thread] MainEmailApp - Stage is closing
+[DEBUG] 2020-11-20 17:31:53.856 [JavaFX Application Thread] MainEmailApp - Locale = fr_CA
+[INFO ] 2020-11-20 17:31:53.874 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[INFO ] 2020-11-20 17:31:53.874 [JavaFX Application Thread] MainEmailApp - Are properties non-empty & file exists? true
+[INFO ] 2020-11-20 17:31:53.875 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[INFO ] 2020-11-20 17:31:53.875 [JavaFX Application Thread] MainEmailApp - Are properties non-empty & file exists? true
+[INFO ] 2020-11-20 17:31:53.875 [JavaFX Application Thread] MainEmailApp - Creating Root/Email App Scene
+[INFO ] 2020-11-20 17:31:54.857 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[DEBUG] 2020-11-20 17:31:55.087 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Inbox is: 2
+[DEBUG] 2020-11-20 17:31:57.805 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Inbox is: 2
+[DEBUG] 2020-11-20 17:31:58.602 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Sent is: 4
+[DEBUG] 2020-11-20 17:31:59.119 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Draft is: 2
+[DEBUG] 2020-11-20 17:32:00.002 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Trash is: 0
+[DEBUG] 2020-11-20 17:32:00.592 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Other is: 1
+[DEBUG] 2020-11-20 17:32:01.163 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Draft is: 2
+[DEBUG] 2020-11-20 17:32:05.877 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Sent is: 4
+[DEBUG] 2020-11-20 17:32:15.842 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Trash is: 0
+[DEBUG] 2020-11-20 17:32:17.100 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Draft is: 2
+[DEBUG] 2020-11-20 17:32:17.733 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Sent is: 4
+[DEBUG] 2020-11-20 17:32:24.916 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Inbox is: 2
+[INFO ] 2020-11-20 17:32:27.378 [JavaFX Application Thread] MainEmailApp - Stage is closing
+[DEBUG] 2020-11-20 18:04:23.869 [JavaFX Application Thread] MainEmailApp - Locale = fr_CA
+[INFO ] 2020-11-20 18:04:23.887 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[INFO ] 2020-11-20 18:04:23.887 [JavaFX Application Thread] MainEmailApp - Are properties non-empty & file exists? true
+[INFO ] 2020-11-20 18:04:23.888 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[INFO ] 2020-11-20 18:04:23.888 [JavaFX Application Thread] MainEmailApp - Are properties non-empty & file exists? true
+[INFO ] 2020-11-20 18:04:23.888 [JavaFX Application Thread] MainEmailApp - Creating Root/Email App Scene
+[INFO ] 2020-11-20 18:04:24.916 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[DEBUG] 2020-11-20 18:04:25.200 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Inbox is: 2
+[DEBUG] 2020-11-20 18:04:33.060 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Sent is: 4
+[DEBUG] 2020-11-20 18:05:10.585 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Trash is: 0
+[DEBUG] 2020-11-20 18:05:11.113 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Other is: 1
+[DEBUG] 2020-11-20 18:05:11.513 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Draft is: 2
+[DEBUG] 2020-11-20 18:05:12.116 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Sent is: 4
+[DEBUG] 2020-11-20 18:05:12.828 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Inbox is: 2
+[DEBUG] 2020-11-20 18:05:13.653 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Sent is: 4
+[DEBUG] 2020-11-20 18:05:14.202 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Draft is: 2
+[DEBUG] 2020-11-20 18:05:14.764 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Trash is: 0
+[DEBUG] 2020-11-20 18:05:15.268 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Other is: 1
+[DEBUG] 2020-11-20 18:05:18.426 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Trash is: 0
+[DEBUG] 2020-11-20 18:05:19.342 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Draft is: 2
+[INFO ] 2020-11-20 18:06:23.442 [JavaFX Application Thread] MainEmailApp - Stage is closing
+[DEBUG] 2020-11-20 18:06:57.782 [JavaFX Application Thread] MainEmailApp - Locale = fr_CA
+[INFO ] 2020-11-20 18:06:57.799 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[INFO ] 2020-11-20 18:06:57.800 [JavaFX Application Thread] MainEmailApp - Are properties non-empty & file exists? true
+[INFO ] 2020-11-20 18:06:57.800 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[INFO ] 2020-11-20 18:06:57.800 [JavaFX Application Thread] MainEmailApp - Are properties non-empty & file exists? true
+[INFO ] 2020-11-20 18:06:57.801 [JavaFX Application Thread] MainEmailApp - Creating Root/Email App Scene
+[INFO ] 2020-11-20 18:06:58.806 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[DEBUG] 2020-11-20 18:06:59.028 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Inbox is: 2
+[DEBUG] 2020-11-20 18:07:02.362 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Trash is: 0
+[DEBUG] 2020-11-20 18:07:02.835 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Draft is: 2
+[INFO ] 2020-11-20 18:07:09.686 [JavaFX Application Thread] MainEmailApp - Stage is closing
+[DEBUG] 2020-11-20 18:07:39.353 [JavaFX Application Thread] MainEmailApp - Locale = fr_CA
+[INFO ] 2020-11-20 18:07:39.372 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[INFO ] 2020-11-20 18:07:39.372 [JavaFX Application Thread] MainEmailApp - Are properties non-empty & file exists? true
+[INFO ] 2020-11-20 18:07:39.373 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[INFO ] 2020-11-20 18:07:39.373 [JavaFX Application Thread] MainEmailApp - Are properties non-empty & file exists? true
+[INFO ] 2020-11-20 18:07:39.373 [JavaFX Application Thread] MainEmailApp - Creating Root/Email App Scene
+[INFO ] 2020-11-20 18:07:40.447 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[DEBUG] 2020-11-20 18:07:40.672 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Inbox is: 2
+[INFO ] 2020-11-20 18:07:51.582 [JavaFX Application Thread] MainEmailApp - Stage is closing
+[DEBUG] 2020-11-20 18:08:17.394 [JavaFX Application Thread] MainEmailApp - Locale = fr_CA
+[INFO ] 2020-11-20 18:08:17.411 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[INFO ] 2020-11-20 18:08:17.412 [JavaFX Application Thread] MainEmailApp - Are properties non-empty & file exists? true
+[INFO ] 2020-11-20 18:08:17.412 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[INFO ] 2020-11-20 18:08:17.412 [JavaFX Application Thread] MainEmailApp - Are properties non-empty & file exists? true
+[INFO ] 2020-11-20 18:08:17.413 [JavaFX Application Thread] MainEmailApp - Creating Root/Email App Scene
+[INFO ] 2020-11-20 18:08:18.438 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[DEBUG] 2020-11-20 18:08:18.693 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Inbox is: 2
+[DEBUG] 2020-11-20 18:14:05.650 [JavaFX Application Thread] MainEmailApp - Locale = fr_CA
+[INFO ] 2020-11-20 18:14:05.667 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[INFO ] 2020-11-20 18:14:05.667 [JavaFX Application Thread] MainEmailApp - Are properties non-empty & file exists? true
+[INFO ] 2020-11-20 18:14:05.667 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[INFO ] 2020-11-20 18:14:05.668 [JavaFX Application Thread] MainEmailApp - Are properties non-empty & file exists? true
+[INFO ] 2020-11-20 18:14:05.668 [JavaFX Application Thread] MainEmailApp - Creating Root/Email App Scene
+[INFO ] 2020-11-20 18:14:06.662 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[DEBUG] 2020-11-20 18:14:06.885 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Inbox is: 2
+[DEBUG] 2020-11-20 18:14:12.351 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Sent is: 4
+[DEBUG] 2020-11-20 18:14:14.256 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Draft is: 2
+[INFO ] 2020-11-20 18:14:37.184 [JavaFX Application Thread] RootLayoutSplitController - Absolute Path: C:\Users\xinji\OneDrive\Images\meirl2.jpg
+[INFO ] 2020-11-20 18:15:15.226 [JavaFX Application Thread] RootLayoutSplitController - Absolute Path: C:\Users\xinji\OneDrive\Images\Capture.PNG
+[INFO ] 2020-11-20 18:15:19.899 [JavaFX Application Thread] MainEmailApp - Stage is closing
+[DEBUG] 2020-11-20 18:26:12.161 [JavaFX Application Thread] MainEmailApp - Locale = fr_CA
+[INFO ] 2020-11-20 18:26:12.179 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[INFO ] 2020-11-20 18:26:12.180 [JavaFX Application Thread] MainEmailApp - Are properties non-empty & file exists? true
+[INFO ] 2020-11-20 18:26:12.181 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[INFO ] 2020-11-20 18:26:12.181 [JavaFX Application Thread] MainEmailApp - Are properties non-empty & file exists? true
+[INFO ] 2020-11-20 18:26:12.181 [JavaFX Application Thread] MainEmailApp - Creating Root/Email App Scene
+[INFO ] 2020-11-20 18:26:13.153 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[DEBUG] 2020-11-20 18:26:13.394 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Inbox is: 2
+[INFO ] 2020-11-20 18:27:37.776 [JavaFX Application Thread] FormAndHTMLLayoutController - MAIL CONFIG BEAN ADDRESS: xinjia.caoxin@gmail.com
+[INFO ] 2020-11-20 18:27:37.777 [JavaFX Application Thread] FormAndHTMLLayoutController - MAIL CONFIG BEAN PWD: 39499799
+[INFO ] 2020-11-20 18:27:44.420 [JavaFX Application Thread] SendAndReceive - Email sent
+[DEBUG] 2020-11-20 18:27:44.500 [JavaFX Application Thread] EmailDAOImpl - New email ID is: 13
+[DEBUG] 2020-11-20 18:27:44.522 [JavaFX Application Thread] EmailDAOImpl - email To: xinjia.caoxin@gmail.com
+[DEBUG] 2020-11-20 18:27:44.530 [JavaFX Application Thread] EmailDAOImpl - Number of recipients added: 1
+[DEBUG] 2020-11-20 18:27:44.530 [JavaFX Application Thread] EmailDAOImpl - Number of attachments added: 0
+[INFO ] 2020-11-20 18:27:44.530 [JavaFX Application Thread] EmailDAOImpl - Email inserted in the database
+[DEBUG] 2020-11-20 18:27:49.741 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Draft is: 2
+[DEBUG] 2020-11-20 18:27:50.455 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Sent is: 5
+[DEBUG] 2020-11-20 18:28:38.483 [JavaFX Application Thread] EmailDAOImpl - Number of rows deleted in email (should be 1): 1
+[DEBUG] 2020-11-20 18:28:40.084 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Inbox is: 2
+[DEBUG] 2020-11-20 18:28:40.695 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Sent is: 4
+[DEBUG] 2020-11-20 18:28:41.362 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Draft is: 2
+[DEBUG] 2020-11-20 18:28:42.199 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Sent is: 4
+[DEBUG] 2020-11-20 18:28:44.618 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Trash is: 0
+[DEBUG] 2020-11-20 18:28:45.189 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Draft is: 2
+[DEBUG] 2020-11-20 18:28:46.674 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Inbox is: 2
+[DEBUG] 2020-11-20 18:28:47.132 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Sent is: 4
+[INFO ] 2020-11-20 18:30:02.751 [JavaFX Application Thread] MainEmailApp - Stage is closing
+[DEBUG] 2020-11-20 18:30:14.697 [JavaFX Application Thread] MainEmailApp - Locale = fr_CA
+[INFO ] 2020-11-20 18:30:14.715 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[INFO ] 2020-11-20 18:30:14.715 [JavaFX Application Thread] MainEmailApp - Are properties non-empty & file exists? true
+[INFO ] 2020-11-20 18:30:14.716 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[INFO ] 2020-11-20 18:30:14.716 [JavaFX Application Thread] MainEmailApp - Are properties non-empty & file exists? true
+[INFO ] 2020-11-20 18:30:14.716 [JavaFX Application Thread] MainEmailApp - Creating Root/Email App Scene
+[INFO ] 2020-11-20 18:30:15.709 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[DEBUG] 2020-11-20 18:30:15.930 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Inbox is: 2
+[INFO ] 2020-11-20 18:30:35.943 [JavaFX Application Thread] FormAndHTMLLayoutController - MAIL CONFIG BEAN ADDRESS: xinjia.caoxin@gmail.com
+[INFO ] 2020-11-20 18:30:35.943 [JavaFX Application Thread] FormAndHTMLLayoutController - MAIL CONFIG BEAN PWD: 39499799
+[WARN ] 2020-11-20 18:30:35.955 [JavaFX Application Thread] SendAndReceive - One or more send addresses are invalid.
+[INFO ] 2020-11-20 18:31:38.062 [JavaFX Application Thread] MainEmailApp - Stage is closing
+[DEBUG] 2020-11-20 18:50:56.416 [JavaFX Application Thread] MainEmailApp - Locale = fr_CA
+[INFO ] 2020-11-20 18:50:56.434 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[INFO ] 2020-11-20 18:50:56.434 [JavaFX Application Thread] MainEmailApp - Are properties non-empty & file exists? true
+[INFO ] 2020-11-20 18:50:56.435 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[INFO ] 2020-11-20 18:50:56.435 [JavaFX Application Thread] MainEmailApp - Are properties non-empty & file exists? true
+[INFO ] 2020-11-20 18:50:56.435 [JavaFX Application Thread] MainEmailApp - Creating Root/Email App Scene
+[INFO ] 2020-11-20 18:50:57.418 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[DEBUG] 2020-11-20 18:50:57.657 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Inbox is: 2
+[INFO ] 2020-11-20 18:51:17.417 [JavaFX Application Thread] MainEmailApp - Stage is closing
+[DEBUG] 2020-11-20 18:52:08.712 [JavaFX Application Thread] MainEmailApp - Locale = fr_CA
+[INFO ] 2020-11-20 18:52:08.730 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[INFO ] 2020-11-20 18:52:08.731 [JavaFX Application Thread] MainEmailApp - Are properties non-empty & file exists? true
+[INFO ] 2020-11-20 18:52:08.732 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[INFO ] 2020-11-20 18:52:08.732 [JavaFX Application Thread] MainEmailApp - Are properties non-empty & file exists? true
+[INFO ] 2020-11-20 18:52:08.732 [JavaFX Application Thread] MainEmailApp - Creating Root/Email App Scene
+[INFO ] 2020-11-20 18:52:09.729 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[DEBUG] 2020-11-20 18:52:09.968 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Inbox is: 2
+[DEBUG] 2020-11-20 18:52:27.028 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Sent is: 4
+[DEBUG] 2020-11-20 18:52:30.686 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Draft is: 2
+[DEBUG] 2020-11-20 18:52:35.371 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Sent is: 4
+[INFO ] 2020-11-20 18:53:32.532 [JavaFX Application Thread] FormAndHTMLLayoutController - MAIL CONFIG BEAN ADDRESS: xinjia.caoxin@gmail.com
+[INFO ] 2020-11-20 18:53:32.532 [JavaFX Application Thread] FormAndHTMLLayoutController - MAIL CONFIG BEAN PWD: 39499799
+[INFO ] 2020-11-20 18:53:32.582 [JavaFX Application Thread] FormAndHTMLLayoutController - <html dir="ltr"><head><title></title></head><body style="margin: 0px" contenteditable="true"><img style="-webkit-user-select: none; display: block; margin: auto; cursor: zoom-in;" src="file:///C:/dev/JAGPROJECT1/jagproject1/jagproject/img2.png" width="342" height="342"></body></html>
+[INFO ] 2020-11-20 18:53:46.347 [JavaFX Application Thread] FormAndHTMLLayoutController - MAIL CONFIG BEAN ADDRESS: xinjia.caoxin@gmail.com
+[INFO ] 2020-11-20 18:53:46.348 [JavaFX Application Thread] FormAndHTMLLayoutController - MAIL CONFIG BEAN PWD: 39499799
+[INFO ] 2020-11-20 18:53:52.478 [JavaFX Application Thread] SendAndReceive - Email sent
+[DEBUG] 2020-11-20 18:53:52.531 [JavaFX Application Thread] EmailDAOImpl - New email ID is: 14
+[INFO ] 2020-11-20 18:53:52.537 [JavaFX Application Thread] EmailDAOImpl - Address not in table -> create
+[DEBUG] 2020-11-20 18:53:52.543 [JavaFX Application Thread] EmailDAOImpl - Creating an address - Number of rows created (should be 1): 1
+[DEBUG] 2020-11-20 18:53:52.546 [JavaFX Application Thread] EmailDAOImpl - email To: kojosd9e8pp@gmail.com
+[DEBUG] 2020-11-20 18:53:52.551 [JavaFX Application Thread] EmailDAOImpl - Number of recipients added: 1
+[DEBUG] 2020-11-20 18:53:52.551 [JavaFX Application Thread] EmailDAOImpl - Number of attachments added: 0
+[INFO ] 2020-11-20 18:53:52.551 [JavaFX Application Thread] EmailDAOImpl - Email inserted in the database
+[INFO ] 2020-11-20 18:53:52.551 [JavaFX Application Thread] FormAndHTMLLayoutController - <html dir="ltr"><head><title></title></head><body style="margin: 0px" contenteditable="true"><img style="-webkit-user-select: none; display: block; margin: auto; cursor: zoom-in;" src="file:///C:/dev/JAGPROJECT1/jagproject1/jagproject/img2.png" width="342" height="342"></body></html>
+[INFO ] 2020-11-20 18:54:43.537 [JavaFX Application Thread] MainEmailApp - Stage is closing
+[DEBUG] 2020-11-20 18:55:49.000 [JavaFX Application Thread] MainEmailApp - Locale = fr_CA
+[INFO ] 2020-11-20 18:55:49.017 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[INFO ] 2020-11-20 18:55:49.018 [JavaFX Application Thread] MainEmailApp - Are properties non-empty & file exists? true
+[INFO ] 2020-11-20 18:55:49.019 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[INFO ] 2020-11-20 18:55:49.019 [JavaFX Application Thread] MainEmailApp - Are properties non-empty & file exists? true
+[INFO ] 2020-11-20 18:55:49.019 [JavaFX Application Thread] MainEmailApp - Creating Root/Email App Scene
+[INFO ] 2020-11-20 18:55:50.005 [JavaFX Application Thread] MailConfigPropertiesManager - Finished reading MailConfig properties file
+[DEBUG] 2020-11-20 18:55:50.229 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Inbox is: 2
+[DEBUG] 2020-11-20 18:55:54.075 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Sent is: 5
+[DEBUG] 2020-11-20 18:56:10.317 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Draft is: 2
+[DEBUG] 2020-11-20 18:56:12.934 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Inbox is: 2
+[DEBUG] 2020-11-20 18:56:15.964 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Sent is: 5
+[DEBUG] 2020-11-20 18:56:16.907 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Trash is: 0
+[DEBUG] 2020-11-20 18:56:17.437 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Draft is: 2
+[DEBUG] 2020-11-20 18:56:21.933 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Trash is: 0
+[DEBUG] 2020-11-20 18:56:22.705 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Other is: 1
+[DEBUG] 2020-11-20 18:56:23.186 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Trash is: 0
+[DEBUG] 2020-11-20 18:56:24.587 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Other is: 1
+[DEBUG] 2020-11-20 18:56:26.993 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Draft is: 2
+[DEBUG] 2020-11-20 18:56:36.693 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Sent is: 5
+[DEBUG] 2020-11-20 18:56:46.255 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Trash is: 0
+[DEBUG] 2020-11-20 18:56:46.757 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Other is: 1
+[DEBUG] 2020-11-20 18:56:47.172 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Draft is: 2
+[DEBUG] 2020-11-20 18:56:47.624 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Sent is: 5
+[DEBUG] 2020-11-20 18:56:50.206 [JavaFX Application Thread] EmailDAOImpl - Number of emails in: Draft is: 2
+[INFO ] 2020-11-20 18:58:13.429 [JavaFX Application Thread] MainEmailApp - Stage is closing

@@ -68,7 +68,7 @@ public class SendAndReceive {
      * @throws MailException when the bean's email address is invalid or when
      * all recipients are empty
      */
-    private Email createMail(ArrayList<String> toRecipients, ArrayList<String> ccRecipients, ArrayList<String> bccRecipients, String subject, String msg, String htmlMsg, ArrayList<File> regFiles, ArrayList<File> embedFiles) {
+    public Email createMail(ArrayList<String> toRecipients, ArrayList<String> ccRecipients, ArrayList<String> bccRecipients, String subject, String msg, String htmlMsg, ArrayList<File> regFiles, ArrayList<File> embedFiles) {
 
         Email email = null;
 
@@ -86,11 +86,12 @@ public class SendAndReceive {
         }
 
         if (!toRecipients.isEmpty()) {
-            for (String mailTo : toRecipients) {
+            /*for (String mailTo : toRecipients) {
                 if (mailTo != null) {
                     email.to(mailTo);
                 }
-            }
+            }*/
+             email.to(toRecipients.toArray(new String[0]));
         }
         if (!ccRecipients.isEmpty()) {
             email.cc(ccRecipients.toArray(new String[0]));

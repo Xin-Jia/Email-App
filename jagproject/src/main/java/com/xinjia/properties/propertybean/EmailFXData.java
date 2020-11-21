@@ -29,7 +29,7 @@ public class EmailFXData {
     private ListProperty bcc;
     private StringProperty textMsg;
     private StringProperty htmlMsg;
-    private List<byte[]> attachments;
+    private List<String> attachments;
     
     /**
      * 
@@ -44,7 +44,7 @@ public class EmailFXData {
      * @param textMsg
      * @param htmlMsg 
      */
-    public EmailFXData(final int id, final int folderId, final LocalDateTime date, final String from, final String subject, final ObservableList<String> to, final ObservableList<String> cc, final ObservableList<String> bcc, final String textMsg, final String htmlMsg, final List<byte[]> attachments) {
+    public EmailFXData(final int id, final int folderId, final LocalDateTime date, final String from, final String subject, final ObservableList<String> to, final ObservableList<String> cc, final ObservableList<String> bcc, final String textMsg, final String htmlMsg, final List<String> attachments) {
         this.id = id;
         this.folderId = folderId;
         this.from = new SimpleStringProperty(from);
@@ -177,11 +177,11 @@ public class EmailFXData {
         return htmlMsg;
     }
     
-    public List<byte[]> getAttachments(){
+    public List<String> getAttachments(){
         return attachments;
     }
     
-    public void setAttachments(List<byte[]> attachments){
+    public void setAttachments(List<String> attachments){
         this.attachments = attachments;
     }
 

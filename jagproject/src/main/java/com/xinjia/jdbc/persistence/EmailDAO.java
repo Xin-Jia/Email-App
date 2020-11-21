@@ -28,7 +28,7 @@ public interface EmailDAO {
     
     public int updateEmailDraft(EmailData mailData) throws SQLException;
     public int updateEmailDraftAndSend(EmailData mailData) throws SQLException;
-    public int changeEmailFolder(EmailFXData mailData, int folderId) throws SQLException;
+    public int changeEmailFolder(int emailId, int folderId) throws SQLException;
     public int updateFolderName(String toReplace, String newName) throws SQLException, FolderAlreadyExistsException;
     
     public int deleteEmail(int id) throws SQLException;

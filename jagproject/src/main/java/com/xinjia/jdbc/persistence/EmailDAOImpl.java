@@ -13,7 +13,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.Timestamp;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 import javafx.collections.FXCollections;
@@ -95,17 +94,15 @@ public class EmailDAOImpl implements EmailDAO {
         String txtMsg = "";
         String htmlMsg = "";
         List<EmailMessage> messages = joddEmail.messages();
-        List<byte[]> attachmentsByteList = new ArrayList<>();
+        List<String> attachmentsList = new ArrayList<>();
         List<EmailAttachment<? extends DataSource>> attachments = joddEmail.attachments();
-        LOG.info("attachments: "+attachments.toString());
         if (!attachments.isEmpty()) {
             for (EmailAttachment ea : attachments) {
-                int size = ea.getSize();
-                LOG.info("filename: "+ea.getName()+" size:"+size);
+                //int size = ea.getSize();
                 //LOG.info("byte array: "+Arrays.toString(ea.toByteArray()));
-                if (size != -1) {
-                    attachmentsByteList.add(ea.toByteArray());
-                }
+                //if (size != -1) {
+                    attachmentsList.add(ea.getName());
+                //}
             }
         }
         if (!email.getEmail().messages().isEmpty()) {
@@ -129,7 +126,7 @@ public class EmailDAOImpl implements EmailDAO {
             bcc.add(address.getEmail());
         }
 
-        EmailFXData observableData = new EmailFXData(email.getEmailId(), email.getFolderId(), email.getReceivedDate(), joddEmail.from().getEmail(), joddEmail.subject(), to, cc, bcc, txtMsg, htmlMsg, attachmentsByteList);
+        EmailFXData observableData = new EmailFXData(email.getEmailId(), email.getFolderId(), email.getReceivedDate(), joddEmail.from().getEmail(), joddEmail.subject(), to, cc, bcc, txtMsg, htmlMsg, attachmentsList);
 
         return observableData;
     }
@@ -922,14 +919,14 @@ public class EmailDAOImpl implements EmailDAO {
     /**
      * Changes an email's current folder to another folder
      *
-     * @param mailData the custom Email bean
+     * @param emailId the email ID 
      * @param folderId the given folder Id be changed to
      * @return an int representing the number of emails that has its folder
      * changed (should be 1)
      * @throws SQLException
      */
     @Override
-    public int changeEmailFolder(EmailFXData mailData, int folderId) throws SQLException {
+    public int changeEmailFolder(int emailId, int folderId) throws SQLException {
         //No need to check if the folder name exists since only existing folders 
         //will be on the GUI when trying to drag an email to another folder
         //Also no need to check if it is a Draft since the drag option for it will be disabled in the GUI
@@ -938,7 +935,7 @@ public class EmailDAOImpl implements EmailDAO {
         int rows = 0;
         try ( Connection connection = DriverManager.getConnection(configBean.getMysqlURL(), configBean.getMysqlUser(), configBean.getMysqlPassword());  PreparedStatement ps = connection.prepareStatement(updateFolderQuery);) {
             ps.setInt(1, folderId);
-            ps.setInt(2, mailData.getId());
+            ps.setInt(2, emailId);
             rows = ps.executeUpdate();
         }
         LOG.debug("Number of emails' folder changed (should be 1): " + rows);

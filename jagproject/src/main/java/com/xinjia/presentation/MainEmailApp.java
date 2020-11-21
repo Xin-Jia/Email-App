@@ -106,6 +106,7 @@ public class MainEmailApp extends Application {
         this.primaryStage.setScene(scene);
         this.primaryStage.setTitle(ResourceBundle.getBundle("MessagesBundle", currentLocale).getString("mailTitle"));
         this.primaryStage.getIcons().add(new Image("/images/emailIcon.png"));
+        this.primaryStage.setMaximized(true);
         this.primaryStage.show();
     }
 

@@ -51,8 +51,6 @@ public class RootLayoutSplitController {
     private TreeLayoutController treeController;
     private TableLayoutController tableController;
     private FormAndHTMLLayoutController formHtmlController;
-    private MailConfigBean configBean;
-    //private CreateFolderController folderPopUpController;
     private EmailDAO emailDAO;
 
     private final static Logger LOG = LoggerFactory.getLogger(RootLayoutSplitController.class);
@@ -64,12 +62,12 @@ public class RootLayoutSplitController {
     }*/
     
     public void setMailConfigBean(MailConfigBean configBean) throws SQLException{
-        this.configBean = configBean;
+
         emailDAO = new EmailDAOImpl(configBean);
         
         //Initialize all three controllers 
-        initTreeViewLayout();
         initFormAndEditorLayout();
+        initTreeViewLayout();
         initTableViewLayout();
 
         // Tell the tree about the table
@@ -328,7 +326,7 @@ public class RootLayoutSplitController {
         FileChooser fileChooser = new FileChooser();
         File file = fileChooser.showOpenDialog(stage);
         if (file != null) {
-            formHtmlController.displayAttachment(file.getName());
+            formHtmlController.addAttachment(file.getName());
             LOG.info("Absolute Path: " + file.getAbsolutePath());
         }
     }
@@ -345,6 +343,8 @@ public class RootLayoutSplitController {
     @FXML
     private void createNewEmail(){
         formHtmlController.emptyAllFields();
+        //3 to enable the buttons 
+        formHtmlController.enableButtons(3);
     }
 
 }
