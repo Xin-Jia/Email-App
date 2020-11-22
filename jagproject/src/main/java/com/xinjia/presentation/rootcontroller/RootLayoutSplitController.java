@@ -1,5 +1,7 @@
 package com.xinjia.presentation.rootcontroller;
 
+import com.xinjia.business.SendAndReceive;
+import com.xinjia.jdbc.beans.EmailData;
 import com.xinjia.jdbc.persistence.EmailDAO;
 import com.xinjia.jdbc.persistence.EmailDAOImpl;
 import com.xinjia.presentation.MainEmailApp;
@@ -11,12 +13,23 @@ import com.xinjia.properties.MailConfigBean;
 import com.xinjia.properties.propertybean.propertiesmanager.MailConfigPropertiesManager;
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.StandardCopyOption;
 import java.sql.SQLException;
+import java.sql.Timestamp;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
@@ -24,6 +37,12 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import javax.activation.DataSource;
+import jodd.mail.Email;
+import jodd.mail.EmailAddress;
+import jodd.mail.EmailAttachment;
+import jodd.mail.EmailMessage;
+import jodd.mail.ReceivedEmail;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -48,6 +67,12 @@ public class RootLayoutSplitController {
     @FXML // fx:id="formAndHtml"
     private BorderPane formAndHtml; // Value injected by FXMLLoader
 
+    @FXML // fx:id="comboBox"
+    private ComboBox<String> comboBox; // Value injected by FXMLLoader
+
+    @FXML // fx:id="searchEmailsTextField"
+    private TextField searchEmailsTextField; // Value injected by FXMLLoader
+
     private TreeLayoutController treeController;
     private TableLayoutController tableController;
     private FormAndHTMLLayoutController formHtmlController;
@@ -55,25 +80,22 @@ public class RootLayoutSplitController {
 
     private final static Logger LOG = LoggerFactory.getLogger(RootLayoutSplitController.class);
 
-    /*public RootLayoutSplitController() {
-        String dbUrl = "jdbc:mysql://localhost:3306/EMAILAPP?characterEncoding=UTF-8&autoReconnect=true&zeroDateTimeBehavior=CONVERT_TO_NULL&useSSL=false&allowPublicKeyRetrieval=true&useTimezone=true&serverTimezone=UTC";
-        MailConfigBean configBean = new MailConfigBean("", "", "", "", "", "", "", dbUrl, "EMAILAPP", "3306", "userxj", "dawson2");
-        emailDAO = new EmailDAOImpl(configBean);
-    }*/
-    
-    public void setMailConfigBean(MailConfigBean configBean) throws SQLException{
+    public void setMailConfigBean(MailConfigBean configBean) throws SQLException {
 
         emailDAO = new EmailDAOImpl(configBean);
-        
+
         //Initialize all three controllers 
         initFormAndEditorLayout();
         initTreeViewLayout();
         initTableViewLayout();
 
+        reloadInbox();
+
         // Tell the tree about the table
         setTableControllerToTree();
         treeController.displayTree();
         tableController.displayTheTable();
+
     }
 
     //TODO: Default constructor that initializes an EmailDAO
@@ -84,14 +106,14 @@ public class RootLayoutSplitController {
      * controllers and display each of them.
      */
     @FXML
-    private void initialize(){
-
+    private void initialize() {
+        assert comboBox != null : "fx:id=\"comboBox\" was not injected: check your FXML file 'RootLayout.fxml'.";
+        assert searchEmailsTextField != null : "fx:id=\"searchEmailsTextField\" was not injected: check your FXML file 'RootLayout.fxml'.";
         assert folderTreeView != null : "fx:id=\"folderTreeView\" was not injected: check your FXML file 'RootLayout.fxml'.";
         assert emailTableView != null : "fx:id=\"emailTableView\" was not injected: check your FXML file 'RootLayout.fxml'.";
         assert formAndHtml != null : "fx:id=\"formAndHtml\" was not injected: check your FXML file 'RootLayout.fxml'.";
-
-        
-
+        comboBox.getItems().addAll("Recipients", "Subject");
+        comboBox.getSelectionModel().select("Subject");
     }
 
     /**
@@ -165,11 +187,73 @@ public class RootLayoutSplitController {
 
             formHtmlController = loader.getController();
             formHtmlController.setEmailDAO(emailDAO);
+            //set the root controller so the form can access the reloading methods for the Inbox
+            formHtmlController.setRootController(this);
             //Add the BorderPane of the FormHTMLLayout to the BorderPane of the RootLayout
             formAndHtml.getChildren().add(htmlView);
         } catch (IOException ex) {
             LOG.error("Error loading file in initFormAndEditorLayout()", ex);
         }
+    }
+
+    private void insertReceivedEmail(ReceivedEmail receivedEmail) throws SQLException {
+        LOG.info("INSERTING RECEIVED EMAILS");
+        EmailData emailBean = new EmailData();
+        //int emailId, int folderId, LocalDateTime receivedDate, Email email
+        //set the folder to the Inbox folder
+        emailBean.setFolderId(1);
+        Date date = receivedEmail.receivedDate();
+        Timestamp timeStamp = new Timestamp(date.getTime());
+        LocalDateTime localDateTime = timeStamp.toLocalDateTime();
+        emailBean.setReceivedDate(localDateTime);
+        
+        Email email = new Email();
+        for(EmailAttachment ea : receivedEmail.attachments()){
+            if(ea.isEmbedded() && ea.getContentId() != null){
+                email.embeddedAttachment(ea);
+            }
+            else{
+                email.attachment(ea);
+            }
+            LOG.info("IS EMBEDDED??? "+ea.isEmbedded());
+            LOG.info("CONTENT ID: "+ ea.getContentId());
+            
+        }
+        email.from(receivedEmail.from().getEmail());
+        email.subject(receivedEmail.subject());
+        email.sentDate(receivedEmail.sentDate());
+       // email.attachments(receivedEmail.attachments());
+
+        for(EmailAttachment ea : email.attachments()){
+            LOG.info("IS EMBEDDED??? - email "+ea.isEmbedded());
+            LOG.info("CONTENT ID: - email "+ ea.getContentId());
+        }
+
+        for (EmailAddress ea : receivedEmail.to()) {
+            email.to(ea);
+        }
+        for (EmailAddress ea : receivedEmail.cc()) {
+            email.cc(ea);
+        }
+
+        List<EmailMessage> messages = receivedEmail.messages();
+
+        if (!messages.isEmpty()) {
+            ArrayList<String> messagesString = ((EmailDAOImpl) emailDAO).retrieveMessageContent(messages, "text/plain");
+            if (!messages.isEmpty()) {
+                LOG.info("TEXT MSG NOT EMPTY");
+                email.textMessage(messagesString.get(0));
+            }
+
+            messagesString = ((EmailDAOImpl) emailDAO).retrieveMessageContent(messages, "text/html");
+            if (!messages.isEmpty()) {
+                LOG.info("HTML MSG NOT EMPTY");
+                email.htmlMessage(messagesString.get(0));
+            }
+        }
+
+        emailBean.setEmail(email);
+        emailDAO.createEmail(emailBean);
     }
 
     /**
@@ -321,30 +405,73 @@ public class RootLayoutSplitController {
      * displays the absolute path of the selected file.
      */
     @FXML
-    private void addAttachment() {
+    private void addAttachment() throws IOException {
         Stage stage = (Stage) formAndHtml.getScene().getWindow();
         FileChooser fileChooser = new FileChooser();
         File file = fileChooser.showOpenDialog(stage);
         if (file != null) {
-            formHtmlController.addAttachment(file.getName());
+            moveFileToRoot(file);
             LOG.info("Absolute Path: " + file.getAbsolutePath());
+            formHtmlController.addAttachment(file.getName());
         }
     }
 
+    private void moveFileToRoot(File file) throws IOException {
+        Files.copy(file.toPath(),
+                (new File(file.getName())).toPath(),
+                StandardCopyOption.REPLACE_EXISTING);
+
+    }
+
     /**
-     * Called when the user press the Delete Selected Email MenuItem
-     * Delete an email and its row in the TableView
+     * Called when the user press the Delete Selected Email MenuItem Delete an
+     * email and its row in the TableView
      */
     @FXML
     private void deleteSelectedEmail() throws SQLException {
         tableController.deleteEmailRow();
     }
-    
+
     @FXML
-    private void createNewEmail(){
+    private void createNewEmail() {
         formHtmlController.emptyAllFields();
-        //3 to enable the buttons 
-        formHtmlController.enableButtons(3);
+        //enable the buttons 
+        formHtmlController.enableButtons(true);
+    }
+
+    @FXML
+    public void reloadInbox() throws SQLException {
+        SendAndReceive emailOperations = new SendAndReceive(((EmailDAOImpl) emailDAO).getMailConfigBean());
+        ReceivedEmail[] receivedEmails = emailOperations.receiveMail(((EmailDAOImpl) emailDAO).getMailConfigBean());
+        if (receivedEmails.length != 0) {
+            for (ReceivedEmail email : receivedEmails) {
+                insertReceivedEmail(email);
+            }
+
+        }
+    }
+
+    @FXML
+    void searchEmails(ActionEvent event) throws SQLException {
+        if (searchEmailsTextField.getText().trim().isEmpty()) {
+            Alert dialog = new Alert(Alert.AlertType.ERROR);
+            dialog.setTitle(resources.getString("errorTitle"));
+            dialog.setHeaderText(resources.getString("emptyTextFieldHeader"));
+            dialog.setContentText(resources.getString("emptyTextFieldText"));
+            dialog.show();
+        }
+        else{
+            String value = comboBox.getSelectionModel().getSelectedItem();
+            switch(value){
+                case "Subject":
+                    tableController.displayEmailsBySearchValue(emailDAO.findEmailsBySubject(searchEmailsTextField.getText()));
+                    break;
+                case "Recipients":
+                     tableController.displayEmailsBySearchValue(emailDAO.findEmailsByRecipients(searchEmailsTextField.getText()));
+                    break;
+            }
+
+        }
     }
 
 }

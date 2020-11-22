@@ -1,50 +1,90 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
 <BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="618.0" prefWidth="928.0" stylesheets="@../styles/splitpane.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.xinjia.presentation.rootcontroller.RootLayoutSplitController">
    <top>
-      <MenuBar BorderPane.alignment="CENTER">
-        <menus>
-            <Menu mnemonicParsing="false" text="Mail">
-              <items>
-                  <MenuItem mnemonicParsing="false" onAction="#saveAttachment" text="%saveAttachment" />
-                <MenuItem mnemonicParsing="false" onAction="#addAttachment" text="%addAttachment" />
-                  <MenuItem mnemonicParsing="false" onAction="#deleteSelectedEmail" text="%deleteSelectedEmail" />
-                  <MenuItem mnemonicParsing="false" onAction="#createNewEmail" text="%newEmail" />
-              </items>
-            </Menu>
-            <Menu mnemonicParsing="false" text="%folder">
-              <items>
-                <MenuItem mnemonicParsing="false" onAction="#addFolder" text="%addFolder" />
-                  <MenuItem mnemonicParsing="false" onAction="#deleteFolder" text="%delFolder" />
-                  <MenuItem mnemonicParsing="false" onAction="#renameFolder" text="%renameFolder" />
-              </items>
-            </Menu>
-          <Menu mnemonicParsing="false" text="%edit">
-            <items>
-              <MenuItem mnemonicParsing="false" onAction="#editMailConfig" text="%editConfig" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="%help">
-            <items>
-              <MenuItem mnemonicParsing="false" onAction="#displayHelp" text="%about" />
-            </items>
-          </Menu>
-        </menus>
-      </MenuBar>
+      <VBox prefHeight="59.0" prefWidth="928.0" BorderPane.alignment="CENTER">
+         <children>
+            <MenuBar>
+              <menus>
+                  <Menu mnemonicParsing="false" text="Mail">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#saveAttachment" text="%saveAttachment" />
+                      <MenuItem mnemonicParsing="false" onAction="#addAttachment" text="%addAttachment" />
+                        <MenuItem mnemonicParsing="false" onAction="#deleteSelectedEmail" text="%deleteSelectedEmail" />
+                        <MenuItem mnemonicParsing="false" onAction="#createNewEmail" text="%newEmail" />
+                        <MenuItem mnemonicParsing="false" onAction="#reloadInbox" text="%reload" />
+                    </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="%folder">
+                    <items>
+                      <MenuItem mnemonicParsing="false" onAction="#addFolder" text="%addFolder" />
+                        <MenuItem mnemonicParsing="false" onAction="#deleteFolder" text="%delFolder" />
+                        <MenuItem mnemonicParsing="false" onAction="#renameFolder" text="%renameFolder" />
+                    </items>
+                  </Menu>
+                <Menu mnemonicParsing="false" text="%edit">
+                  <items>
+                    <MenuItem mnemonicParsing="false" onAction="#editMailConfig" text="%editConfig" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="%help">
+                  <items>
+                    <MenuItem mnemonicParsing="false" onAction="#displayHelp" text="%about" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+            <HBox alignment="CENTER" prefHeight="52.0" prefWidth="928.0">
+               <children>
+                  <Label alignment="CENTER" prefHeight="27.0" prefWidth="109.0" text="%searchEmails">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <ComboBox fx:id="comboBox" prefWidth="150.0">
+                     <HBox.margin>
+                        <Insets left="5.0" />
+                     </HBox.margin>
+                  </ComboBox>
+                  <TextField fx:id="searchEmailsTextField">
+                     <HBox.margin>
+                        <Insets left="5.0" />
+                     </HBox.margin>
+                  </TextField>
+                  <Button mnemonicParsing="false" onAction="#searchEmails" text="Search">
+                     <HBox.margin>
+                        <Insets left="5.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
    </top>
    <center>
-      <SplitPane dividerPositions="0.22151898734177214" prefHeight="160.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+      <SplitPane dividerPositions="0.22151898734177214" prefHeight="160.0" prefWidth="200.0">
         <items>
             <BorderPane fx:id="folderTreeView" />
             <BorderPane>
                <center>
-                  <SplitPane dividerPositions="0.36666666666666664" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" BorderPane.alignment="CENTER">
+                  <SplitPane dividerPositions="0.36666666666666664" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0">
                     <items>
                         <BorderPane fx:id="emailTableView" />
                         <BorderPane fx:id="formAndHtml" prefHeight="294.0" prefWidth="598.0" />

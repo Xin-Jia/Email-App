@@ -86,17 +86,17 @@
                   </TextField>
                </children>
             </HBox>
-            <Button alignment="CENTER" contentDisplay="CENTER" minHeight="-Infinity" mnemonicParsing="false" onAction="#addCCTextField" prefHeight="20.0" text="+" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <Button fx:id="addCCBtn" alignment="CENTER" contentDisplay="CENTER" minHeight="-Infinity" mnemonicParsing="false" onAction="#addCCTextField" prefHeight="20.0" text="+" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <font>
                   <Font name="Arial Black" size="9.0" />
                </font>
             </Button>
-            <Button alignment="CENTER" contentDisplay="CENTER" minHeight="-Infinity" mnemonicParsing="false" onAction="#addToTextField" prefHeight="20.0" text="+" textAlignment="CENTER" GridPane.columnIndex="1">
+            <Button fx:id="addToBtn" alignment="CENTER" contentDisplay="CENTER" minHeight="-Infinity" mnemonicParsing="false" onAction="#addToTextField" prefHeight="20.0" text="+" textAlignment="CENTER" GridPane.columnIndex="1">
                <font>
                   <Font name="Arial Black" size="9.0" />
                </font>
             </Button>
-            <Button alignment="CENTER" contentDisplay="CENTER" minHeight="-Infinity" mnemonicParsing="false" onAction="#addBCCTextField" prefHeight="20.0" text="+" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <Button fx:id="addBCCBtn" alignment="CENTER" contentDisplay="CENTER" minHeight="-Infinity" mnemonicParsing="false" onAction="#addBCCTextField" prefHeight="20.0" text="+" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <font>
                   <Font name="Arial Black" size="9.0" />
                </font>

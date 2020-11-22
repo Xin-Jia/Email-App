@@ -5,6 +5,7 @@ import com.xinjia.jdbc.beans.EmailData;
 import com.xinjia.properties.MailConfigBean;
 import com.xinjia.properties.propertybean.EmailFXData;
 import com.xinjia.properties.propertybean.FolderData;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -13,6 +14,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.Timestamp;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 import javafx.collections.FXCollections;
@@ -22,6 +24,7 @@ import jodd.mail.Email;
 import jodd.mail.EmailAddress;
 import jodd.mail.EmailAttachment;
 import jodd.mail.EmailMessage;
+import jodd.mail.MailException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -79,9 +82,9 @@ public class EmailDAOImpl implements EmailDAO {
     private ObservableList<EmailFXData> convertToJavaFXBean(ArrayList<EmailData> emails) {
         ObservableList<EmailFXData> observableData = FXCollections.observableArrayList();
 
-        for (EmailData email : emails) {
+        emails.forEach(email -> {
             observableData.add(convertToSingleJavaFXBean(email));
-        }
+        });
         return observableData;
     }
 
@@ -93,19 +96,36 @@ public class EmailDAOImpl implements EmailDAO {
         Email joddEmail = email.getEmail();
         String txtMsg = "";
         String htmlMsg = "";
-        List<EmailMessage> messages = joddEmail.messages();
-        List<String> attachmentsList = new ArrayList<>();
+        LOG.info("EMAIL SUBJECT: " + joddEmail.subject());
+        LOG.info("EMAIL ATTS: "+joddEmail.attachments());
+        List<String> regAttachmentsList = new ArrayList<>();
+        List<byte[]> regAttachmentsBytes = new ArrayList<>();
+        List<String> embedAttachmentsList = new ArrayList<>();
+        List<byte[]> embedAttachmentsBytes = new ArrayList<>();
         List<EmailAttachment<? extends DataSource>> attachments = joddEmail.attachments();
         if (!attachments.isEmpty()) {
             for (EmailAttachment ea : attachments) {
-                //int size = ea.getSize();
-                //LOG.info("byte array: "+Arrays.toString(ea.toByteArray()));
-                //if (size != -1) {
-                    attachmentsList.add(ea.getName());
-                //}
+                LOG.info(ea.getName());
+                LOG.info("Embedded?: " + ea.isEmbedded());
+                //byte[] hasBytes = ea.toByteArray();
+                try {
+                    if (ea.isEmbedded() && (ea.toByteArray() != null || ea.toByteArray().length != 0)) {
+                        LOG.info("ADDING EMBEDDED ATTACHMENTS TO FX BEAN: "+email.getEmail());
+                        embedAttachmentsList.add(ea.getName());
+                        embedAttachmentsBytes.add(ea.toByteArray());
+                    }
+                    else if(!ea.isEmbedded() && (ea.toByteArray() != null || ea.toByteArray().length != 0)){
+                        LOG.info("ADDING REGULAR ATTACHMENTS TO FX BEAN: "+email.getEmail());
+                        regAttachmentsList.add(ea.getName());
+                        regAttachmentsBytes.add(ea.toByteArray());
+                    }
+                } catch (MailException e) {
+                    LOG.error("BYTE ARRAY NULL");
+                }
             }
         }
-        if (!email.getEmail().messages().isEmpty()) {
+        List<EmailMessage> messages = joddEmail.messages();
+        if (!messages.isEmpty()) {
             ArrayList<String> messagesString = retrieveMessageContent(messages, "text/plain");
             if (!messages.isEmpty()) {
                 txtMsg = messagesString.get(0);
@@ -126,7 +146,8 @@ public class EmailDAOImpl implements EmailDAO {
             bcc.add(address.getEmail());
         }
 
-        EmailFXData observableData = new EmailFXData(email.getEmailId(), email.getFolderId(), email.getReceivedDate(), joddEmail.from().getEmail(), joddEmail.subject(), to, cc, bcc, txtMsg, htmlMsg, attachmentsList);
+        EmailFXData observableData = new EmailFXData(email.getEmailId(), email.getFolderId(), email.getReceivedDate(), 
+                joddEmail.from().getEmail(), joddEmail.subject(), to, cc, bcc, txtMsg, htmlMsg, regAttachmentsList, regAttachmentsBytes, embedAttachmentsList, embedAttachmentsBytes);
 
         return observableData;
     }
@@ -152,8 +173,8 @@ public class EmailDAOImpl implements EmailDAO {
         mailData.email.textMessage(resultSet.getString("Message"));
         mailData.email.htmlMessage(resultSet.getString("HtmlMessage"));
 
-        insertEmailDataRegularAttachments(mailData, emailId, false);
-        insertEmailDataRegularAttachments(mailData, emailId, true);
+        insertEmailDataAttachments(mailData, emailId, false);
+        insertEmailDataAttachments(mailData, emailId, true);
         findEmailDataRecipients(mailData, emailId);
         return mailData;
     }
@@ -196,18 +217,18 @@ public class EmailDAOImpl implements EmailDAO {
      * not
      * @throws SQLException
      */
-    private void insertEmailDataRegularAttachments(EmailData mailData, int emailId, boolean isEmbedded) throws SQLException {
+    private void insertEmailDataAttachments(EmailData mailData, int emailId, boolean isEmbedded) throws SQLException {
 
         String constraint = "";
         if (isEmbedded) {
-            constraint = "NOT NULL OR ATTACHMENTS.CONTENTID != ''";
+            constraint = "NOT NULL OR ATTACHMENTS.CONTENTID != '')";
         } else {
-            constraint = "NULL OR ATTACHMENTS.CONTENTID = ''";
+            constraint = "NULL OR ATTACHMENTS.CONTENTID = '')";
         }
 
         String selectAttachmentQuery = "SELECT ATTACHMENTS.FILECONTENT, ATTACHMENTS.FILENAME, ATTACHMENTS.CONTENTID FROM ATTACHMENTS "
                 + "INNER JOIN EMAIL ON ATTACHMENTS.EMAILID = EMAIL.EMAILID "
-                + "WHERE EMAIL.EMAILID = ? AND ATTACHMENTS.CONTENTID IS " + constraint;
+                + "WHERE EMAIL.EMAILID = ? AND (ATTACHMENTS.CONTENTID IS " + constraint;
 
         try ( Connection connection = DriverManager.getConnection(configBean.getMysqlURL(), configBean.getMysqlUser(), configBean.getMysqlPassword());  PreparedStatement pStatement = connection.prepareStatement(selectAttachmentQuery);) {
             pStatement.setInt(1, emailId);
@@ -336,6 +357,11 @@ public class EmailDAOImpl implements EmailDAO {
                 mailData.setEmailId(recordNum);
                 LOG.debug("New email ID is: " + recordNum);
             }
+        }
+        
+        for(EmailAttachment ea : mailData.email.attachments()){
+            LOG.info("IS EMBEDDED??? - maildata"+ea.isEmbedded());
+            LOG.info("CONTENT ID: - maildata"+ ea.getContentId());
         }
 
         checkIfInAddressTable(mailData);
@@ -518,11 +544,13 @@ public class EmailDAOImpl implements EmailDAO {
                 ps.setString(2, atts.getName());
                 //if attachment is embedded, set the contentId and if not, set it empty
                 if (atts.isEmbedded()) {
+
                     ps.setString(3, atts.getContentId());
                 } else {
                     ps.setString(3, "");
                 }
                 //insert the file content as a byte[]
+                LOG.info("BYTE ARRAY: " + Arrays.toString(atts.toByteArray()));
                 ps.setBytes(4, atts.toByteArray());
                 rows += ps.executeUpdate();
             }
@@ -614,8 +642,12 @@ public class EmailDAOImpl implements EmailDAO {
             LOG.debug("Number of emails in: " + folderName + " is: " + emails.size());
 
         }
+        for(EmailData data : emails){
+            LOG.info("attachment in EmailData : "+data.email.attachments());
+        }
         //convert to JavaFX bean
         ObservableList<EmailFXData> observableData = convertToJavaFXBean(emails);
+        
         return observableData;
 
     }
@@ -898,7 +930,7 @@ public class EmailDAOImpl implements EmailDAO {
      * @param format the format/type of the message
      * @return ArrayList<String> the appropriate message
      */
-    private ArrayList<String> retrieveMessageContent(List<EmailMessage> messages, String format) {
+    public ArrayList<String> retrieveMessageContent(List<EmailMessage> messages, String format) {
         //it uses an ArrayList since members in a lambda cannot be changed
         ArrayList<String> msgToReturn = new ArrayList<>();
         messages.stream().map((mesg) -> {
@@ -919,7 +951,7 @@ public class EmailDAOImpl implements EmailDAO {
     /**
      * Changes an email's current folder to another folder
      *
-     * @param emailId the email ID 
+     * @param emailId the email ID
      * @param folderId the given folder Id be changed to
      * @return an int representing the number of emails that has its folder
      * changed (should be 1)

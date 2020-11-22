@@ -9,14 +9,12 @@ C:\dev\JAGPROJECT1\jagproject1\jagproject\src\main\java\com\xinjia\properties\pr
 C:\dev\JAGPROJECT1\jagproject1\jagproject\src\main\java\com\xinjia\presentation\rootcontroller\CreateFolderController.java
 C:\dev\JAGPROJECT1\jagproject1\jagproject\src\main\java\com\xinjia\business\SendAndReceive.java
 C:\dev\JAGPROJECT1\jagproject1\jagproject\src\main\java\com\xinjia\exceptions\NullToEmailAddressException.java
-C:\dev\JAGPROJECT1\jagproject1\jagproject\src\main\java\com\xinjia\properties\propertybean\FormData.java
 C:\dev\JAGPROJECT1\jagproject1\jagproject\src\main\java\com\xinjia\presentation\rootcontroller\RenameFolderController.java
 C:\dev\JAGPROJECT1\jagproject1\jagproject\src\main\java\com\xinjia\jdbc\persistence\EmailDAOImpl.java
 C:\dev\JAGPROJECT1\jagproject1\jagproject\src\main\java\com\xinjia\exceptions\NullCCEmailException.java
 C:\dev\JAGPROJECT1\jagproject1\jagproject\src\main\java\com\xinjia\presentation\rootcontroller\HelpWebViewController.java
 C:\dev\JAGPROJECT1\jagproject1\jagproject\src\main\java\com\xinjia\exceptions\FolderAlreadyExistsException.java
 C:\dev\JAGPROJECT1\jagproject1\jagproject\src\main\java\com\xinjia\presentation\rootcontroller\RootLayoutSplitController.java
-C:\dev\JAGPROJECT1\jagproject1\jagproject\src\main\java\com\xinjia\properties\propertybean\HtmlData.java
 C:\dev\JAGPROJECT1\jagproject1\jagproject\src\main\java\com\xinjia\properties\propertybean\propertiesmanager\MailConfigPropertiesManager.java
 C:\dev\JAGPROJECT1\jagproject1\jagproject\src\main\java\com\xinjia\presentation\MainEmailApp.java
 C:\dev\JAGPROJECT1\jagproject1\jagproject\src\main\java\com\xinjia\exceptions\NullBCCEmailException.java

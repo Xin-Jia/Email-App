@@ -6,7 +6,6 @@ com\xinjia\exceptions\NullBCCEmailException.class
 com\xinjia\properties\propertybean\propertiesmanager\MailConfigPropertiesManager.class
 com\xinjia\presentation\rootcontroller\RenameFolderController.class
 com\xinjia\presentation\rootcontroller\CreateFolderController.class
-com\xinjia\properties\propertybean\FormData.class
 com\xinjia\presentation\rootcontroller\RootLayoutSplitController.class
 com\xinjia\exceptions\NullToEmailException.class
 com\xinjia\jdbc\persistence\EmailDAO.class
@@ -17,7 +16,6 @@ com\xinjia\presentation\treecontroller\TreeLayoutController$1$2.class
 com\xinjia\exceptions\FolderAlreadyExistsException.class
 com\xinjia\exceptions\NullBCCEmailAddressException.class
 com\xinjia\presentation\treecontroller\TreeLayoutController$1.class
-com\xinjia\properties\propertybean\HtmlData.class
 com\xinjia\presentation\formhtml\FormAndHTMLLayoutController.class
 com\xinjia\properties\propertybean\FolderData.class
 com\xinjia\jdbc\persistence\EmailDAOImpl.class

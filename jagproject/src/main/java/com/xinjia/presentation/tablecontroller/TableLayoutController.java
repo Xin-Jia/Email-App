@@ -6,9 +6,14 @@ import com.xinjia.presentation.formhtml.FormAndHTMLLayoutController;
 import com.xinjia.properties.propertybean.EmailFXData;
 import com.xinjia.properties.MailConfigBean;
 import com.xinjia.properties.propertybean.propertiesmanager.MailConfigPropertiesManager;
+import java.awt.image.BufferedImage;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.File;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -20,6 +25,7 @@ import javafx.scene.input.ClipboardContent;
 import javafx.scene.input.Dragboard;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.input.TransferMode;
+import javax.imageio.ImageIO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -43,8 +49,8 @@ public class TableLayoutController {
 
     @FXML // fx:id="dateColumn"
     private TableColumn<EmailFXData, String> dateColumn; // Value injected by FXMLLoader
-    
-     @FXML // fx:id="toColumn"
+
+    @FXML // fx:id="toColumn"
     private TableColumn<EmailFXData, String> toColumn; // Value injected by FXMLLoader
 
     @FXML
@@ -124,14 +130,36 @@ public class TableLayoutController {
             row.setOnMouseClicked(event -> {
                 if (!row.isEmpty()) {
                     clickedRow = row.getItem();
-                    editorController.writeToEditorEmailData(clickedRow);
+                    
                     editorController.displayEmailRecipientsAndAttachments(clickedRow);
                     //enable save and send buttons
-                    editorController.enableButtons(row.getItem().getFolderId());
+                    if(row.getItem().getFolderId() == 3){
+                        editorController.enableButtons(true);
+                    }
+                    else{
+                         editorController.enableButtons(false);
+                    }
+                    try {
+                        saveFileToDisk();
+                        editorController.writeToEditorEmailData(clickedRow);
+                    } catch (IOException ex) {
+                        LOG.error("Error saving file to disk");
+                    }
+
                 }
             });
             return row;
         });
+    }
+
+    private void saveFileToDisk() throws IOException {
+        LOG.info("attachments size: "+clickedRow.getEmbedAttachmentsBytes().size());
+        for (int i = 0; i < clickedRow.getEmbedAttachmentsBytes().size(); i++) {
+            BufferedImage img = ImageIO.read(new ByteArrayInputStream(clickedRow.getEmbedAttachmentsBytes().get(i)));
+            LOG.info("SAVING SELECTED EMAIL FILES TO DISK: "+clickedRow.getEmbedAttachments().get(i));
+            File file = new File(clickedRow.getEmbedAttachments().get(i));
+            ImageIO.write(img, "png", file);
+        }
     }
 
     /**
@@ -238,6 +266,11 @@ public class TableLayoutController {
         dialog.setHeaderText(header);
         dialog.setContentText(content);
         dialog.show();
+    }
+    
+    public void displayEmailsBySearchValue(ObservableList<EmailFXData> emailsToDisplay){
+        this.emailsToDisplay = emailsToDisplay;
+        emailDataTable.setItems(this.emailsToDisplay);
     }
 
 }
