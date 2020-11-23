@@ -208,38 +208,12 @@ public class RootLayoutSplitController {
         emailBean.setReceivedDate(localDateTime);
         
         Email email = new Email();
-        for(EmailAttachment ea : receivedEmail.attachments()){
-            if(ea.isEmbedded() && ea.getContentId() != null){
-                email.embeddedAttachment(ea);
-            }
-            else{
-                email.attachment(ea);
-            }
-            LOG.info("IS EMBEDDED??? "+ea.isEmbedded());
-            LOG.info("CONTENT ID: "+ ea.getContentId());
-            
-        }
-        email.from(receivedEmail.from().getEmail());
-        email.subject(receivedEmail.subject());
-        email.sentDate(receivedEmail.sentDate());
-       // email.attachments(receivedEmail.attachments());
-
-        for(EmailAttachment ea : email.attachments()){
-            LOG.info("IS EMBEDDED??? - email "+ea.isEmbedded());
-            LOG.info("CONTENT ID: - email "+ ea.getContentId());
-        }
-
-        for (EmailAddress ea : receivedEmail.to()) {
-            email.to(ea);
-        }
-        for (EmailAddress ea : receivedEmail.cc()) {
-            email.cc(ea);
-        }
-
+        
         List<EmailMessage> messages = receivedEmail.messages();
-
+  
+        ArrayList<String> messagesString = ((EmailDAOImpl) emailDAO).retrieveMessageContent(messages, "text/plain");
         if (!messages.isEmpty()) {
-            ArrayList<String> messagesString = ((EmailDAOImpl) emailDAO).retrieveMessageContent(messages, "text/plain");
+            
             if (!messages.isEmpty()) {
                 LOG.info("TEXT MSG NOT EMPTY");
                 email.textMessage(messagesString.get(0));
@@ -248,9 +222,46 @@ public class RootLayoutSplitController {
             messagesString = ((EmailDAOImpl) emailDAO).retrieveMessageContent(messages, "text/html");
             if (!messages.isEmpty()) {
                 LOG.info("HTML MSG NOT EMPTY");
+                LOG.info(messagesString.get(0));
                 email.htmlMessage(messagesString.get(0));
             }
         }
+        LOG.info("ATTACHMENT SIZE IN RECEIVED EMAIL: "+receivedEmail.attachments().size());
+        for(int i = 0; i< receivedEmail.attachments().size(); i++){
+            if(receivedEmail.attachments().get(i).isEmbedded() && receivedEmail.attachments().get(i).getContentId() != null){
+                LOG.info("QUERY: "+"img src=\"cid:"+receivedEmail.attachments().get(i).getContentId().replaceAll("[<>]", ""));
+                if(!receivedEmail.attachments().get(i).getContentId().equals("") && messagesString.get(0).contains("img src=\"cid:"+receivedEmail.attachments().get(i).getContentId().replaceAll("[<>]", ""))){
+                    LOG.info("it is embedded");
+                    email.embeddedAttachment(receivedEmail.attachments().get(i));
+                }
+                else{
+                LOG.info("it is NOT embedded");
+                email.attachment(receivedEmail.attachments().get(i));
+            }
+                
+            }
+            else{
+                LOG.info("it is NOT embedded, contentId is null");
+                email.attachment(receivedEmail.attachments().get(i));
+            }
+            LOG.info("IS EMBEDDED??? "+receivedEmail.attachments().get(i).isEmbedded());
+            LOG.info("CONTENT ID: "+ receivedEmail.attachments().get(i).getContentId());
+            
+        }
+        LOG.info("ATTACHMENT SIZE IN NEW RECEIVED EMAIL: "+email.attachments().size());
+        email.from(receivedEmail.from().getEmail());
+        email.subject(receivedEmail.subject());
+        email.sentDate(receivedEmail.sentDate());
+       // email.attachments(receivedEmail.attachments());
+
+
+        for (EmailAddress ea : receivedEmail.to()) {
+            email.to(ea);
+        }
+        for (EmailAddress ea : receivedEmail.cc()) {
+            email.cc(ea);
+        }
+
 
         emailBean.setEmail(email);
         emailDAO.createEmail(emailBean);

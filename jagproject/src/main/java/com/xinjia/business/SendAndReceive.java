@@ -9,6 +9,8 @@ import com.xinjia.exceptions.NullToEmailException;
 import com.xinjia.properties.MailConfigBean;
 import java.io.File;
 import java.util.ArrayList;
+import java.util.List;
+import javax.activation.DataSource;
 import javax.mail.Flags;
 import jodd.mail.Email;
 import jodd.mail.EmailAttachment;
@@ -191,7 +193,7 @@ public class SendAndReceive {
             throw new NullPointerException();
         } else {
             if (checkEmail(mail.getEmailAddress())) {
-
+                 
                 // Create an IMAP server that does not display debug info
                 ImapServer imapServer = MailServer.create()
                         .host(mail.getImapURL())

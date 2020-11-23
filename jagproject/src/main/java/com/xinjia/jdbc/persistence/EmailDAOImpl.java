@@ -97,36 +97,16 @@ public class EmailDAOImpl implements EmailDAO {
         String txtMsg = "";
         String htmlMsg = "";
         LOG.info("EMAIL SUBJECT: " + joddEmail.subject());
-        LOG.info("EMAIL ATTS: "+joddEmail.attachments());
+        LOG.info("EMAIL ATTS: " + joddEmail.attachments());
         List<String> regAttachmentsList = new ArrayList<>();
         List<byte[]> regAttachmentsBytes = new ArrayList<>();
         List<String> embedAttachmentsList = new ArrayList<>();
         List<byte[]> embedAttachmentsBytes = new ArrayList<>();
-        List<EmailAttachment<? extends DataSource>> attachments = joddEmail.attachments();
-        if (!attachments.isEmpty()) {
-            for (EmailAttachment ea : attachments) {
-                LOG.info(ea.getName());
-                LOG.info("Embedded?: " + ea.isEmbedded());
-                //byte[] hasBytes = ea.toByteArray();
-                try {
-                    if (ea.isEmbedded() && (ea.toByteArray() != null || ea.toByteArray().length != 0)) {
-                        LOG.info("ADDING EMBEDDED ATTACHMENTS TO FX BEAN: "+email.getEmail());
-                        embedAttachmentsList.add(ea.getName());
-                        embedAttachmentsBytes.add(ea.toByteArray());
-                    }
-                    else if(!ea.isEmbedded() && (ea.toByteArray() != null || ea.toByteArray().length != 0)){
-                        LOG.info("ADDING REGULAR ATTACHMENTS TO FX BEAN: "+email.getEmail());
-                        regAttachmentsList.add(ea.getName());
-                        regAttachmentsBytes.add(ea.toByteArray());
-                    }
-                } catch (MailException e) {
-                    LOG.error("BYTE ARRAY NULL");
-                }
-            }
-        }
+
         List<EmailMessage> messages = joddEmail.messages();
+        ArrayList<String> messagesString = retrieveMessageContent(messages, "text/plain");
         if (!messages.isEmpty()) {
-            ArrayList<String> messagesString = retrieveMessageContent(messages, "text/plain");
+
             if (!messages.isEmpty()) {
                 txtMsg = messagesString.get(0);
             }
@@ -136,6 +116,38 @@ public class EmailDAOImpl implements EmailDAO {
                 htmlMsg = messagesString.get(0);
             }
         }
+
+        List<EmailAttachment<? extends DataSource>> attachments = joddEmail.attachments();
+        LOG.info("ATTACHMENT SIZE IN DAO: " + attachments.size());
+        if (!attachments.isEmpty()) {
+            for (EmailAttachment ea : attachments) {
+                LOG.info(ea.getName());
+                LOG.info("Embedded?: " + ea.isEmbedded());
+                try {
+                    if (ea.isEmbedded() && (ea.toByteArray() != null || ea.toByteArray().length != 0)) {
+                        if (!ea.getContentId().equals("") && messagesString.get(0).contains("img src=\"cid:" + ea.getContentId().replaceAll("[<>]", ""))) {
+                            LOG.info("ADDING EMBEDDED ATTACHMENTS TO FX BEAN: " + email.getEmail());
+                            LOG.info("CONTENT ID IS: "+ea.getContentId());
+                            embedAttachmentsList.add(ea.getName());
+                            embedAttachmentsBytes.add(ea.toByteArray());
+                        }
+                        else{
+                            LOG.info("ADDING REGULAR ATTACHMENTS TO FX BEAN: " + email.getEmail());
+                            regAttachmentsList.add(ea.getName());
+                            regAttachmentsBytes.add(ea.toByteArray());
+                        }
+
+                    } else if (!ea.isEmbedded() && (ea.toByteArray() != null || ea.toByteArray().length != 0)) {
+                        LOG.info("ADDING REGULAR ATTACHMENTS TO FX BEAN: " + email.getEmail());
+                        regAttachmentsList.add(ea.getName());
+                        regAttachmentsBytes.add(ea.toByteArray());
+                    }
+                } catch (MailException e) {
+                    LOG.error("BYTE ARRAY NULL");
+                }
+            }
+        }
+
         for (EmailAddress address : email.getEmail().to()) {
             to.add(address.getEmail());
         }
@@ -146,7 +158,7 @@ public class EmailDAOImpl implements EmailDAO {
             bcc.add(address.getEmail());
         }
 
-        EmailFXData observableData = new EmailFXData(email.getEmailId(), email.getFolderId(), email.getReceivedDate(), 
+        EmailFXData observableData = new EmailFXData(email.getEmailId(), email.getFolderId(), email.getReceivedDate(),
                 joddEmail.from().getEmail(), joddEmail.subject(), to, cc, bcc, txtMsg, htmlMsg, regAttachmentsList, regAttachmentsBytes, embedAttachmentsList, embedAttachmentsBytes);
 
         return observableData;
@@ -221,14 +233,14 @@ public class EmailDAOImpl implements EmailDAO {
 
         String constraint = "";
         if (isEmbedded) {
-            constraint = "NOT NULL OR ATTACHMENTS.CONTENTID != '')";
+            constraint = "!= '')";
         } else {
-            constraint = "NULL OR ATTACHMENTS.CONTENTID = '')";
+            constraint = "= '')";
         }
 
         String selectAttachmentQuery = "SELECT ATTACHMENTS.FILECONTENT, ATTACHMENTS.FILENAME, ATTACHMENTS.CONTENTID FROM ATTACHMENTS "
                 + "INNER JOIN EMAIL ON ATTACHMENTS.EMAILID = EMAIL.EMAILID "
-                + "WHERE EMAIL.EMAILID = ? AND (ATTACHMENTS.CONTENTID IS " + constraint;
+                + "WHERE EMAIL.EMAILID = ? AND (ATTACHMENTS.CONTENTID " + constraint;
 
         try ( Connection connection = DriverManager.getConnection(configBean.getMysqlURL(), configBean.getMysqlUser(), configBean.getMysqlPassword());  PreparedStatement pStatement = connection.prepareStatement(selectAttachmentQuery);) {
             pStatement.setInt(1, emailId);
@@ -358,10 +370,10 @@ public class EmailDAOImpl implements EmailDAO {
                 LOG.debug("New email ID is: " + recordNum);
             }
         }
-        
-        for(EmailAttachment ea : mailData.email.attachments()){
-            LOG.info("IS EMBEDDED??? - maildata"+ea.isEmbedded());
-            LOG.info("CONTENT ID: - maildata"+ ea.getContentId());
+
+        for (EmailAttachment ea : mailData.email.attachments()) {
+            LOG.info("IS EMBEDDED??? - maildata" + ea.isEmbedded());
+            LOG.info("CONTENT ID: - maildata" + ea.getContentId());
         }
 
         checkIfInAddressTable(mailData);
@@ -642,12 +654,12 @@ public class EmailDAOImpl implements EmailDAO {
             LOG.debug("Number of emails in: " + folderName + " is: " + emails.size());
 
         }
-        for(EmailData data : emails){
-            LOG.info("attachment in EmailData : "+data.email.attachments());
+        for (EmailData data : emails) {
+            LOG.info("attachment in EmailData : " + data.email.attachments());
         }
         //convert to JavaFX bean
         ObservableList<EmailFXData> observableData = convertToJavaFXBean(emails);
-        
+
         return observableData;
 
     }

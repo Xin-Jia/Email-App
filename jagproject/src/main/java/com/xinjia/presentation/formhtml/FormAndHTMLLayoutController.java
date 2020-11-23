@@ -195,6 +195,7 @@ public class FormAndHTMLLayoutController {
         attachmentsHBox.getChildren().clear();
         clearIcon.setVisible(false);
         putValuesInNodes(emailData.getTo(), emailData.getCC(), emailData.getBCC(), emailData.getSubject());
+        LOG.info("LENGTH OF REGULAR ATTS: "+emailData.getRegAttachments().size());
         for (String filename : emailData.getRegAttachments()) {
             displayAttachment(filename);
         }
