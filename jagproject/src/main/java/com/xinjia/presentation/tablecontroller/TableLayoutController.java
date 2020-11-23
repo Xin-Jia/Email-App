@@ -130,14 +130,13 @@ public class TableLayoutController {
             row.setOnMouseClicked(event -> {
                 if (!row.isEmpty()) {
                     clickedRow = row.getItem();
-                    
+
                     editorController.displayEmailRecipientsAndAttachments(clickedRow);
                     //enable save and send buttons
-                    if(row.getItem().getFolderId() == 3){
+                    if (row.getItem().getFolderId() == 3) {
                         editorController.enableButtons(true);
-                    }
-                    else{
-                         editorController.enableButtons(false);
+                    } else {
+                        editorController.enableButtons(false);
                     }
                     try {
                         saveFileToDisk();
@@ -153,10 +152,10 @@ public class TableLayoutController {
     }
 
     private void saveFileToDisk() throws IOException {
-        LOG.info("attachments size: "+clickedRow.getEmbedAttachmentsBytes().size());
+        LOG.info("attachments size: " + clickedRow.getEmbedAttachmentsBytes().size());
         for (int i = 0; i < clickedRow.getEmbedAttachmentsBytes().size(); i++) {
             BufferedImage img = ImageIO.read(new ByteArrayInputStream(clickedRow.getEmbedAttachmentsBytes().get(i)));
-            LOG.info("SAVING SELECTED EMAIL FILES TO DISK: "+clickedRow.getEmbedAttachments().get(i));
+            LOG.info("SAVING SELECTED EMAIL FILES TO DISK: " + clickedRow.getEmbedAttachments().get(i));
             File file = new File(clickedRow.getEmbedAttachments().get(i));
             ImageIO.write(img, "png", file);
         }
@@ -198,14 +197,16 @@ public class TableLayoutController {
 
         emailDataDragged = emailDataTable.getSelectionModel().getSelectedItem();
         /* allow any transfer mode */
-        Dragboard db = emailDataTable.startDragAndDrop(TransferMode.ANY);
+        if (emailDataDragged.getFolderId() != 3) {
+            Dragboard db = emailDataTable.startDragAndDrop(TransferMode.ANY);
 
-        /* put the selected EmailFXData string on the dragboard */
-        ClipboardContent content = new ClipboardContent();
-        content.putString(emailDataTable.getSelectionModel().getSelectedItem().toString());
-        db.setContent(content);
+            /* put the selected EmailFXData string on the dragboard */
+            ClipboardContent content = new ClipboardContent();
+            content.putString(emailDataTable.getSelectionModel().getSelectedItem().toString());
+            db.setContent(content);
 
-        event.consume();
+            event.consume();
+        }
     }
 
     /**
@@ -267,13 +268,13 @@ public class TableLayoutController {
         dialog.setContentText(content);
         dialog.show();
     }
-    
-    public void displayEmailsBySearchValue(ObservableList<EmailFXData> emailsToDisplay){
+
+    public void displayEmailsBySearchValue(ObservableList<EmailFXData> emailsToDisplay) {
         this.emailsToDisplay = emailsToDisplay;
         emailDataTable.setItems(this.emailsToDisplay);
     }
-    
-    public void unselectRow(){
+
+    public void unselectRow() {
         emailDataTable.getSelectionModel().clearSelection();
     }
 }

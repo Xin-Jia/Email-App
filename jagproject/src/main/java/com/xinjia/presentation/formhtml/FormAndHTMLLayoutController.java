@@ -183,8 +183,8 @@ public class FormAndHTMLLayoutController {
         StringBuilder sb = new StringBuilder();
         sb.append("<html><body contenteditable='false'>");
 
-        sb.append(clickedEmailBean.getTextMsg()).append("</br>");
-        //sb.append(clickedEmailBean.getHtmlMsg()).append("</br>");
+        //sb.append(clickedEmailBean.getTextMsg()).append("</br>");
+        sb.append(clickedEmailBean.getHtmlMsg()).append("</br>");
 
         LOG.info("LENGTH OF EMBEDDED ATTS: " + clickedEmailBean.getEmbedAttachments().size());
         for (int i = 0; i < clickedEmailBean.getEmbedAttachments().size(); i++) {
@@ -245,24 +245,47 @@ public class FormAndHTMLLayoutController {
      */
     @FXML
     private void saveEmail() throws SQLException {
-        if (clickedEmailBean != null && clickedEmailBean.getFolderId() == 3) {
-            LOG.info("SAVING A DRAFT");
-            EmailData mailData = createEmailCustomBean();
-            emailDAO.updateEmailDraft(mailData);
-        } else {
-            ArrayList<String> toRecipients = getRecipients(toHBox);
-            ArrayList<String> ccRecipients = getRecipients(ccHBox);
-            ArrayList<String> bccRecipients = getRecipients(bccHBox);
-            if (toRecipients.isEmpty() && ccRecipients.isEmpty() && bccRecipients.isEmpty()) {
-                displayEmailError(resources.getString("noRecipientsHeader"), resources.getString("noRecipientsText"));
-            } else {
-                LOG.info("SAVING NOT A DRAFT");
-                EmailData mailData = createEmailCustomBean();
+        if (checkRecipientsNotEmpty()) {
+            if (checkValidRecipients()) {
+                if (clickedEmailBean != null && clickedEmailBean.getFolderId() == 3) {
+                    LOG.info("SAVING A DRAFT");
+                    EmailData mailData = createEmailCustomBean();
+                    emailDAO.updateEmailDraft(mailData);
 
-                //put email in the draft folder
-                putEmailInDatabase(mailData, 3);
+                } else {
+                    LOG.info("SAVING NOT A DRAFT");
+                    EmailData mailData = createEmailCustomBean();
+                    //put email in the draft folder
+                    putEmailInDatabase(mailData, 3);
+
+                }
             }
         }
+    }
+
+    private boolean checkValidRecipients() {
+        ArrayList<String> toRecipients = getRecipients(toHBox);
+        ArrayList<String> ccRecipients = getRecipients(ccHBox);
+        ArrayList<String> bccRecipients = getRecipients(bccHBox);
+        if (checkAreAddressesValid(toRecipients) && checkAreAddressesValid(ccRecipients) && checkAreAddressesValid(bccRecipients)) {
+            return true;
+        } else {
+            displayEmailError(resources.getString("invalidRecipientsHeader"), resources.getString("invalidRecipientsText"));
+
+            return false;
+        }
+    }
+
+    private boolean checkRecipientsNotEmpty() {
+        ArrayList<String> toRecipients = getRecipients(toHBox);
+        ArrayList<String> ccRecipients = getRecipients(ccHBox);
+        ArrayList<String> bccRecipients = getRecipients(bccHBox);
+
+        if (toRecipients.isEmpty() && ccRecipients.isEmpty() && bccRecipients.isEmpty()) {
+            displayEmailError(resources.getString("noRecipientsHeader"), resources.getString("noRecipientsText"));
+            return false;
+        }
+        return true;
     }
 
     private EmailData createEmailCustomBean() throws SQLException {
@@ -296,11 +319,9 @@ public class FormAndHTMLLayoutController {
         ArrayList<String> toRecipients = getRecipients(toHBox);
         ArrayList<String> ccRecipients = getRecipients(ccHBox);
         ArrayList<String> bccRecipients = getRecipients(bccHBox);
-        if (toRecipients.isEmpty() && ccRecipients.isEmpty() && bccRecipients.isEmpty()) {
-            displayEmailError(resources.getString("noRecipientsHeader"), resources.getString("noRecipientsText"));
-        } else {
-            if (checkAreAddressesValid(toRecipients) && checkAreAddressesValid(ccRecipients) && checkAreAddressesValid(bccRecipients)) {
-                Email emailSent = emailOperations.sendMail(toRecipients, ccRecipients, bccRecipients, subjectField.getText(), "", htmlMsg, regFiles, new ArrayList<>());
+        if (checkRecipientsNotEmpty()) {
+            if (checkValidRecipients()) {
+                Email emailSent = emailOperations.sendMail(toRecipients, ccRecipients, bccRecipients, subjectField.getText(), htmlMsg, htmlMsg, regFiles, new ArrayList<>());
                 EmailData mailData = createEmailCustomBean();
                 if (clickedEmailBean != null && clickedEmailBean.getFolderId() == 3) {
 
@@ -309,8 +330,6 @@ public class FormAndHTMLLayoutController {
                     putEmailInDatabase(mailData, 2);
                     //rootController.reloadInbox();
                 }
-            } else {
-                displayEmailError(resources.getString("invalidRecipientsHeader"), resources.getString("invalidRecipientsText"));
             }
 
         }
@@ -326,7 +345,6 @@ public class FormAndHTMLLayoutController {
     }
 
     private void putEmailInDatabase(EmailData emailData, int folderId) throws SQLException {
-
         if (folderId == 2) {
             emailData.email.sentDate(new Date());
         }
@@ -405,7 +423,7 @@ public class FormAndHTMLLayoutController {
         clearIcon.setVisible(false);
         htmlEditor.setHtmlText("");
         downloadIcon.setVisible(false);
-
+        clickedEmailBean = null;
     }
 
     /**
