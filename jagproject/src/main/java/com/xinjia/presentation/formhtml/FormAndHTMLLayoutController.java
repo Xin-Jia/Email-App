@@ -12,7 +12,10 @@ import com.xinjia.jdbc.persistence.EmailDAO;
 import com.xinjia.jdbc.persistence.EmailDAOImpl;
 import com.xinjia.presentation.rootcontroller.RootLayoutSplitController;
 import com.xinjia.properties.propertybean.EmailFXData;
+import java.awt.image.BufferedImage;
+import java.io.ByteArrayInputStream;
 import java.io.File;
+import java.io.IOException;
 import java.sql.SQLException;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -31,6 +34,10 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.web.HTMLEditor;
+import javafx.stage.DirectoryChooser;
+import javafx.stage.FileChooser;
+import javafx.stage.Stage;
+import javax.imageio.ImageIO;
 import jodd.mail.Email;
 import jodd.mail.EmailAttachment;
 import jodd.mail.RFC2822AddressParser;
@@ -87,8 +94,11 @@ public class FormAndHTMLLayoutController {
     @FXML // fx:id="addBCCBtn"
     private Button addBCCBtn; // Value injected by FXMLLoader
 
+    @FXML // fx:id="downloadIcon"
+    private ImageView downloadIcon; // Value injected by FXMLLoader
+
     private EmailDAO emailDAO;
-    private EmailFXData emailBean;
+    private EmailFXData clickedEmailBean;
     private SendAndReceive emailOperations;
     private RootLayoutSplitController rootController;
 
@@ -113,6 +123,7 @@ public class FormAndHTMLLayoutController {
         assert attachmentsHBox != null : "fx:id=\"attachmentsHBox\" was not injected: check your FXML file 'FormHTMLLayout.fxml'.";
         assert clearIcon != null : "fx:id=\"clearIcon\" was not injected: check your FXML file 'FormHTMLLayout.fxml'.";
         assert htmlEditor != null : "fx:id=\"htmlEditor\" was not injected: check your FXML file 'FormHTMLLayout.fxml'.";
+        assert downloadIcon != null : "fx:id=\"downloadIcon\" was not injected: check your FXML file 'FormHTMLLayout.fxml'.";
 
     }
 
@@ -167,17 +178,17 @@ public class FormAndHTMLLayoutController {
      *
      * @param emailData
      */
-    public void writeToEditorEmailData(EmailFXData emailData) {
+    public void writeToEditorEmailData() {
 
         StringBuilder sb = new StringBuilder();
         sb.append("<html><body contenteditable='false'>");
 
-        //sb.append(emailData.getTextMsg()).append("</br>");
-        sb.append(emailData.getHtmlMsg()).append("</br>");
+        sb.append(clickedEmailBean.getTextMsg()).append("</br>");
+        //sb.append(clickedEmailBean.getHtmlMsg()).append("</br>");
 
-        LOG.info("LENGTH OF EMBEDDED ATTS: "+emailData.getEmbedAttachments().size());
-        for (int i = 0; i < emailData.getEmbedAttachments().size(); i++) {
-            File file = new File(emailData.getEmbedAttachments().get(i));
+        LOG.info("LENGTH OF EMBEDDED ATTS: " + clickedEmailBean.getEmbedAttachments().size());
+        for (int i = 0; i < clickedEmailBean.getEmbedAttachments().size(); i++) {
+            File file = new File(clickedEmailBean.getEmbedAttachments().get(i));
             sb.append("<img src=' ").append(file.toURI()).append("'/>");
         }
         sb.append("</body></html>");
@@ -191,11 +202,11 @@ public class FormAndHTMLLayoutController {
      * @param emailData
      */
     public void displayEmailRecipientsAndAttachments(EmailFXData emailData) {
-        emailBean = emailData;
+        clickedEmailBean = emailData;
         attachmentsHBox.getChildren().clear();
         clearIcon.setVisible(false);
         putValuesInNodes(emailData.getTo(), emailData.getCC(), emailData.getBCC(), emailData.getSubject());
-        LOG.info("LENGTH OF REGULAR ATTS: "+emailData.getRegAttachments().size());
+        LOG.info("LENGTH OF REGULAR ATTS: " + emailData.getRegAttachments().size());
         for (String filename : emailData.getRegAttachments()) {
             displayAttachment(filename);
         }
@@ -234,24 +245,31 @@ public class FormAndHTMLLayoutController {
      */
     @FXML
     private void saveEmail() throws SQLException {
-        if (emailBean != null && emailBean.getFolderId() == 3) {
+        if (clickedEmailBean != null && clickedEmailBean.getFolderId() == 3) {
             LOG.info("SAVING A DRAFT");
             EmailData mailData = createEmailCustomBean();
             emailDAO.updateEmailDraft(mailData);
         } else {
-            LOG.info("SAVING NOT A DRAFT");
-            EmailData mailData = createEmailCustomBean();
+            ArrayList<String> toRecipients = getRecipients(toHBox);
+            ArrayList<String> ccRecipients = getRecipients(ccHBox);
+            ArrayList<String> bccRecipients = getRecipients(bccHBox);
+            if (toRecipients.isEmpty() && ccRecipients.isEmpty() && bccRecipients.isEmpty()) {
+                displayEmailError(resources.getString("noRecipientsHeader"), resources.getString("noRecipientsText"));
+            } else {
+                LOG.info("SAVING NOT A DRAFT");
+                EmailData mailData = createEmailCustomBean();
 
-            //put email in the draft folder
-            putEmailInDatabase(mailData, 3);
+                //put email in the draft folder
+                putEmailInDatabase(mailData, 3);
+            }
         }
     }
 
     private EmailData createEmailCustomBean() throws SQLException {
         emailOperations = new SendAndReceive(((EmailDAOImpl) emailDAO).getMailConfigBean());
         EmailData mailData = new EmailData();
-        if (emailBean != null) {
-            mailData.setEmailId(emailBean.getId());
+        if (clickedEmailBean != null) {
+            mailData.setEmailId(clickedEmailBean.getId());
         }
         mailData.setFolderId(3);
 
@@ -261,7 +279,7 @@ public class FormAndHTMLLayoutController {
         ArrayList<String> toRecipients = getRecipients(toHBox);
         ArrayList<String> ccRecipients = getRecipients(ccHBox);
         ArrayList<String> bccRecipients = getRecipients(bccHBox);
-        Email joddEmail = emailOperations.createMail(toRecipients, ccRecipients, bccRecipients, subjectField.getText(), "", htmlMsg, regFiles, new ArrayList<>());
+        Email joddEmail = emailOperations.createMail(toRecipients, ccRecipients, bccRecipients, subjectField.getText(), htmlMsg, htmlMsg, regFiles, new ArrayList<>());
         mailData.setEmail(joddEmail);
         return mailData;
     }
@@ -284,7 +302,7 @@ public class FormAndHTMLLayoutController {
             if (checkAreAddressesValid(toRecipients) && checkAreAddressesValid(ccRecipients) && checkAreAddressesValid(bccRecipients)) {
                 Email emailSent = emailOperations.sendMail(toRecipients, ccRecipients, bccRecipients, subjectField.getText(), "", htmlMsg, regFiles, new ArrayList<>());
                 EmailData mailData = createEmailCustomBean();
-                if (emailBean != null && emailBean.getFolderId() == 3) {
+                if (clickedEmailBean != null && clickedEmailBean.getFolderId() == 3) {
 
                     emailDAO.updateEmailDraftAndSend(mailData);
                 } else {
@@ -309,7 +327,7 @@ public class FormAndHTMLLayoutController {
 
     private void putEmailInDatabase(EmailData emailData, int folderId) throws SQLException {
 
-        if(folderId == 2){
+        if (folderId == 2) {
             emailData.email.sentDate(new Date());
         }
         emailData.setFolderId(folderId);
@@ -352,8 +370,28 @@ public class FormAndHTMLLayoutController {
 
     @FXML
     void clearAttachments(MouseEvent event) {
+        ArrayList<File> files = getAttachments();
+        files.forEach(file -> {
+            file.delete();
+        });
         attachmentsHBox.getChildren().clear();
         clearIcon.setVisible(false);
+    }
+
+    @FXML
+    void downloadAttachments(MouseEvent event) throws IOException {
+        Stage stage = (Stage) htmlEditor.getScene().getWindow();
+        DirectoryChooser dirChooser = new DirectoryChooser();
+        File selectedDirectory = dirChooser.showDialog(stage);
+
+        if (selectedDirectory != null) {
+            for (int i = 0; i < clickedEmailBean.getRegAttachmentsBytes().size(); i++) {
+                BufferedImage img = ImageIO.read(new ByteArrayInputStream(clickedEmailBean.getRegAttachmentsBytes().get(i)));
+                LOG.info("SAVING SELECTED EMAIL FILES TO DISK: " + clickedEmailBean.getRegAttachments().get(i));
+                File file = new File(selectedDirectory.getAbsolutePath() + "/" + clickedEmailBean.getRegAttachments().get(i));
+                ImageIO.write(img, "png", file);
+            }
+        }
     }
 
     public void emptyAllFields() {
@@ -366,6 +404,7 @@ public class FormAndHTMLLayoutController {
         attachmentsHBox.getChildren().clear();
         clearIcon.setVisible(false);
         htmlEditor.setHtmlText("");
+        downloadIcon.setVisible(false);
 
     }
 
@@ -387,10 +426,23 @@ public class FormAndHTMLLayoutController {
     public void enableButtons(boolean isVisible) {
         saveBtn.setVisible(isVisible);
         sendBtn.setVisible(isVisible);
-        clearIcon.setVisible(isVisible);
         addToBtn.setVisible(isVisible);
         addCCBtn.setVisible(isVisible);
         addBCCBtn.setVisible(isVisible);
+        if (!isVisible) {
+            if (!attachmentsHBox.getChildren().isEmpty()) {
+                downloadIcon.setVisible(true);
+            } else {
+                downloadIcon.setVisible(false);
+            }
+        } else {
+            if (!attachmentsHBox.getChildren().isEmpty()) {
+                clearIcon.setVisible(true);
+            } else {
+                clearIcon.setVisible(false);
+            }
+            downloadIcon.setVisible(false);
+        }
     }
 
 }

@@ -141,7 +141,7 @@ public class TableLayoutController {
                     }
                     try {
                         saveFileToDisk();
-                        editorController.writeToEditorEmailData(clickedRow);
+                        editorController.writeToEditorEmailData();
                     } catch (IOException ex) {
                         LOG.error("Error saving file to disk");
                     }
@@ -272,5 +272,8 @@ public class TableLayoutController {
         this.emailsToDisplay = emailsToDisplay;
         emailDataTable.setItems(this.emailsToDisplay);
     }
-
+    
+    public void unselectRow(){
+        emailDataTable.getSelectionModel().clearSelection();
+    }
 }

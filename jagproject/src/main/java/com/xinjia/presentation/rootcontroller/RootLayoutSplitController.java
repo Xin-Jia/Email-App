@@ -206,14 +206,14 @@ public class RootLayoutSplitController {
         Timestamp timeStamp = new Timestamp(date.getTime());
         LocalDateTime localDateTime = timeStamp.toLocalDateTime();
         emailBean.setReceivedDate(localDateTime);
-        
+
         Email email = new Email();
-        
+
         List<EmailMessage> messages = receivedEmail.messages();
-  
+
         ArrayList<String> messagesString = ((EmailDAOImpl) emailDAO).retrieveMessageContent(messages, "text/plain");
         if (!messages.isEmpty()) {
-            
+
             if (!messages.isEmpty()) {
                 LOG.info("TEXT MSG NOT EMPTY");
                 email.textMessage(messagesString.get(0));
@@ -226,34 +226,28 @@ public class RootLayoutSplitController {
                 email.htmlMessage(messagesString.get(0));
             }
         }
-        LOG.info("ATTACHMENT SIZE IN RECEIVED EMAIL: "+receivedEmail.attachments().size());
-        for(int i = 0; i< receivedEmail.attachments().size(); i++){
-            if(receivedEmail.attachments().get(i).isEmbedded() && receivedEmail.attachments().get(i).getContentId() != null){
-                LOG.info("QUERY: "+"img src=\"cid:"+receivedEmail.attachments().get(i).getContentId().replaceAll("[<>]", ""));
-                if(!receivedEmail.attachments().get(i).getContentId().equals("") && messagesString.get(0).contains("img src=\"cid:"+receivedEmail.attachments().get(i).getContentId().replaceAll("[<>]", ""))){
+        LOG.info("ATTACHMENT SIZE IN RECEIVED EMAIL: " + receivedEmail.attachments().size());
+        for (int i = 0; i < receivedEmail.attachments().size(); i++) {
+            EmailAttachment attachment = receivedEmail.attachments().get(i);
+            if (attachment.isEmbedded() && attachment.getContentId() != null) {
+                if (!attachment.getContentId().equals("") && messagesString.get(0).contains("img src=\"cid:" + attachment.getContentId().replaceAll("[<>]", ""))) {
                     LOG.info("it is embedded");
-                    email.embeddedAttachment(receivedEmail.attachments().get(i));
+                    email.embeddedAttachment(attachment);
+                } else {
+                    LOG.info("it is NOT embedded");
+                    email.attachment(attachment);
                 }
-                else{
-                LOG.info("it is NOT embedded");
-                email.attachment(receivedEmail.attachments().get(i));
-            }
-                
-            }
-            else{
+            } else {
                 LOG.info("it is NOT embedded, contentId is null");
-                email.attachment(receivedEmail.attachments().get(i));
+                email.attachment(attachment);
             }
-            LOG.info("IS EMBEDDED??? "+receivedEmail.attachments().get(i).isEmbedded());
-            LOG.info("CONTENT ID: "+ receivedEmail.attachments().get(i).getContentId());
-            
+
         }
-        LOG.info("ATTACHMENT SIZE IN NEW RECEIVED EMAIL: "+email.attachments().size());
+        LOG.info("ATTACHMENT SIZE IN NEW RECEIVED EMAIL: " + email.attachments().size());
         email.from(receivedEmail.from().getEmail());
         email.subject(receivedEmail.subject());
         email.sentDate(receivedEmail.sentDate());
-       // email.attachments(receivedEmail.attachments());
-
+        // email.attachments(receivedEmail.attachments());
 
         for (EmailAddress ea : receivedEmail.to()) {
             email.to(ea);
@@ -261,7 +255,6 @@ public class RootLayoutSplitController {
         for (EmailAddress ea : receivedEmail.cc()) {
             email.cc(ea);
         }
-
 
         emailBean.setEmail(email);
         emailDAO.createEmail(emailBean);
@@ -448,6 +441,7 @@ public class RootLayoutSplitController {
         formHtmlController.emptyAllFields();
         //enable the buttons 
         formHtmlController.enableButtons(true);
+        tableController.unselectRow();
     }
 
     @FXML
@@ -470,15 +464,14 @@ public class RootLayoutSplitController {
             dialog.setHeaderText(resources.getString("emptyTextFieldHeader"));
             dialog.setContentText(resources.getString("emptyTextFieldText"));
             dialog.show();
-        }
-        else{
+        } else {
             String value = comboBox.getSelectionModel().getSelectedItem();
-            switch(value){
+            switch (value) {
                 case "Subject":
                     tableController.displayEmailsBySearchValue(emailDAO.findEmailsBySubject(searchEmailsTextField.getText()));
                     break;
                 case "Recipients":
-                     tableController.displayEmailsBySearchValue(emailDAO.findEmailsByRecipients(searchEmailsTextField.getText()));
+                    tableController.displayEmailsBySearchValue(emailDAO.findEmailsByRecipients(searchEmailsTextField.getText()));
                     break;
             }
 

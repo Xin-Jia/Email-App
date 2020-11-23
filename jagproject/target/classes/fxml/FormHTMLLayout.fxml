@@ -84,6 +84,26 @@
                         <Insets top="5.0" />
                      </HBox.margin>
                   </TextField>
+                  <ImageView fx:id="downloadIcon" fitHeight="37.0" fitWidth="37.0" onMouseClicked="#downloadAttachments" pickOnBounds="true" preserveRatio="true" visible="false">
+                     <image>
+                        <Image url="@../images/downloadIcon.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <ScrollPane prefHeight="37.0" prefWidth="519.0">
+                     <content>
+                        <HBox fx:id="attachmentsHBox" alignment="CENTER" prefHeight="34.0">
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                        </HBox>
+                     </content>
+                     <HBox.margin>
+                        <Insets left="7.0" />
+                     </HBox.margin>
+                  </ScrollPane>
                </children>
             </HBox>
             <Button fx:id="addCCBtn" alignment="CENTER" contentDisplay="CENTER" minHeight="-Infinity" mnemonicParsing="false" onAction="#addCCTextField" prefHeight="20.0" text="+" GridPane.columnIndex="1" GridPane.rowIndex="1">
@@ -118,21 +138,9 @@
                         <Insets left="10.0" top="5.0" />
                      </HBox.margin>
                   </Button>
-                  <ScrollPane prefHeight="36.0" prefWidth="479.0">
-                     <content>
-                        <HBox fx:id="attachmentsHBox" alignment="CENTER" prefHeight="34.0">
-                           <padding>
-                              <Insets left="10.0" />
-                           </padding>
-                        </HBox>
-                     </content>
-                     <HBox.margin>
-                        <Insets left="10.0" />
-                     </HBox.margin>
-                  </ScrollPane>
                </children>
             </HBox>
-            <ImageView fx:id="clearIcon" fitHeight="35.0" fitWidth="39.0" onMouseClicked="#clearAttachments" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="3" GridPane.rowIndex="4">
+            <ImageView fx:id="clearIcon" fitHeight="35.0" fitWidth="39.0" onMouseClicked="#clearAttachments" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="3" GridPane.rowIndex="3">
                <GridPane.margin>
                   <Insets />
                </GridPane.margin>
