@@ -80,11 +80,12 @@ public class RootLayoutSplitController {
     private final static Logger LOG = LoggerFactory.getLogger(RootLayoutSplitController.class);
 
     /**
-     * Initialize the emailDAO with the given mail config bean.
-     * Initialize all three controllers and display them.
-     * Retrieve the new received emails and store them in the database.
+     * Initialize the emailDAO with the given mail config bean. Initialize all
+     * three controllers and display them. Retrieve the new received emails and
+     * store them in the database.
+     *
      * @param configBean
-     * @throws SQLException 
+     * @throws SQLException
      */
     public void initializeRoot(MailConfigBean configBean) throws SQLException {
 
@@ -116,8 +117,8 @@ public class RootLayoutSplitController {
         assert folderTreeView != null : "fx:id=\"folderTreeView\" was not injected: check your FXML file 'RootLayout.fxml'.";
         assert emailTableView != null : "fx:id=\"emailTableView\" was not injected: check your FXML file 'RootLayout.fxml'.";
         assert formAndHtml != null : "fx:id=\"formAndHtml\" was not injected: check your FXML file 'RootLayout.fxml'.";
-        comboBox.getItems().addAll("Recipients", "Subject");
-        comboBox.getSelectionModel().select("Subject");
+        comboBox.getItems().addAll(resources.getString("subject"), resources.getString("address"));
+        comboBox.getSelectionModel().select(resources.getString("subject"));
     }
 
     /**
@@ -199,9 +200,11 @@ public class RootLayoutSplitController {
     }
 
     /**
-     * Create a new custom email bean and insert the given ReceivedEmail to the database.
+     * Create a new custom email bean and insert the given ReceivedEmail to the
+     * database.
+     *
      * @param receivedEmail the ReceivedEmail
-     * @throws SQLException 
+     * @throws SQLException
      */
     private void insertReceivedEmail(ReceivedEmail receivedEmail) throws SQLException {
         LOG.info("INSERTING RECEIVED EMAILS");
@@ -216,7 +219,7 @@ public class RootLayoutSplitController {
         emailBean.setReceivedDate(localDateTime);
 
         Email email = new Email();
-        
+
         List<EmailMessage> messages = receivedEmail.messages();
         //get the text messages of the receivedEmail
         ArrayList<String> messagesString = ((EmailDAOImpl) emailDAO).retrieveMessageContent(messages, "text/plain");
@@ -395,10 +398,9 @@ public class RootLayoutSplitController {
         pm.loadTextProperties(configPropertyBean, "", "MailConfig");
     }
 
-
     /**
-     * Called when the user press the Delete Selected Email MenuItem. 
-     * Delete an email and its row in the TableView
+     * Called when the user press the Delete Selected Email MenuItem. Delete an
+     * email and its row in the TableView
      */
     @FXML
     private void deleteSelectedEmail() throws SQLException {
@@ -406,9 +408,10 @@ public class RootLayoutSplitController {
     }
 
     /**
-     * Called when the user press the New Email MenuItem.
-     * Empty the form and enable the buttons to allow the user to save/send the email.
-     * @throws SQLException 
+     * Called when the user press the New Email MenuItem. Empty the form and
+     * enable the buttons to allow the user to save/send the email.
+     *
+     * @throws SQLException
      */
     @FXML
     private void createNewEmail() throws SQLException {
@@ -419,7 +422,8 @@ public class RootLayoutSplitController {
 
     /**
      * Retrieve all received emails from the mail config email address
-     * @throws SQLException 
+     *
+     * @throws SQLException
      */
     @FXML
     public void reloadInbox() throws SQLException {
@@ -434,10 +438,11 @@ public class RootLayoutSplitController {
     }
 
     /**
-     * Called when the Search button is pressed.
-     * Find all emails based on the chosen item in the comboBox and on the given value in the TextField.
+     * Called when the Search button is pressed. Find all emails based on the
+     * chosen item in the comboBox and on the given value in the TextField.
+     *
      * @param event
-     * @throws SQLException 
+     * @throws SQLException
      */
     @FXML
     void searchEmails(ActionEvent event) throws SQLException {
@@ -450,16 +455,21 @@ public class RootLayoutSplitController {
             dialog.show();
         } else {
             String value = comboBox.getSelectionModel().getSelectedItem();
-            switch (value) {
-                case "Subject" -> tableController.displayEmailsBySearchValue(convertToJavaFXBean(emailDAO.findEmailsBySubject(searchEmailsTextField.getText())));
-                case "Recipients" -> tableController.displayEmailsBySearchValue(convertToJavaFXBean(emailDAO.findEmailsByRecipients(searchEmailsTextField.getText())));
+
+            if (value.equals(resources.getString("subject"))) {
+                ArrayList<EmailData> emails = emailDAO.findEmailsBySubject(searchEmailsTextField.getText());
+                tableController.displayEmailsBySearchValue(convertToJavaFXBean(emails));
+            } else if (value.equals(resources.getString("address"))) {
+                ArrayList<EmailData> emails = emailDAO.findEmailsByRecipients(searchEmailsTextField.getText());
+                tableController.displayEmailsBySearchValue(convertToJavaFXBean(emails));
             }
 
         }
     }
-    
+
     /**
      * Make a JavaFX email bean for each custom email bean.
+     *
      * @param emails
      * @return an ObservableList<EmailFXData> that represent the JavaFX beans
      */
@@ -474,6 +484,7 @@ public class RootLayoutSplitController {
 
     /**
      * Convert a custom email bean to a JavaFX email bean.
+     *
      * @param email the custom bean to be converted
      * @return the JavaFX bean EmailFXData
      */
@@ -491,14 +502,14 @@ public class RootLayoutSplitController {
         List<byte[]> embedAttachmentsBytes = new ArrayList<>();
 
         List<EmailMessage> messages = joddEmail.messages();
-        ArrayList<String> messagesString = ((EmailDAOImpl)emailDAO).retrieveMessageContent(messages, "text/plain");
+        ArrayList<String> messagesString = ((EmailDAOImpl) emailDAO).retrieveMessageContent(messages, "text/plain");
         if (!messages.isEmpty()) {
 
             if (!messages.isEmpty()) {
                 txtMsg = messagesString.get(0);
             }
 
-            messagesString = ((EmailDAOImpl)emailDAO).retrieveMessageContent(messages, "text/html");
+            messagesString = ((EmailDAOImpl) emailDAO).retrieveMessageContent(messages, "text/html");
             if (!messages.isEmpty()) {
                 htmlMsg = messagesString.get(0);
             }
@@ -512,8 +523,7 @@ public class RootLayoutSplitController {
                         if (!ea.getContentId().equals("") && messagesString.get(0).contains("img src=\"cid:" + ea.getContentId().replaceAll("[<>]", ""))) {
                             embedAttachmentsList.add(ea.getName());
                             embedAttachmentsBytes.add(ea.toByteArray());
-                        }
-                        else{
+                        } else {
                             regAttachmentsList.add(ea.getName());
                             regAttachmentsBytes.add(ea.toByteArray());
                         }
@@ -543,6 +553,5 @@ public class RootLayoutSplitController {
 
         return observableData;
     }
-
 
 }

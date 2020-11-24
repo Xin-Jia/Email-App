@@ -13,8 +13,8 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 /**
- * JavaFX Email bean that contains an id, a from field, a subject and a date
- * Overrides toString, hashCode and equals
+ * JavaFX custom Email bean that contains an id, a from field, a subject and a date.
+ * Overrides toString, hashCode and equals.
  * 
  * @author Xin Jia Cao
  */

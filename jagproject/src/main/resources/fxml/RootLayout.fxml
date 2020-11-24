@@ -20,7 +20,7 @@
          <children>
             <MenuBar>
               <menus>
-                  <Menu mnemonicParsing="false" text="Mail">
+                  <Menu mnemonicParsing="false" text="%mail">
                     <items>
                         <MenuItem mnemonicParsing="false" onAction="#deleteSelectedEmail" text="%deleteSelectedEmail" />
                         <MenuItem mnemonicParsing="false" onAction="#createNewEmail" text="%newEmail" />
@@ -66,7 +66,7 @@
                         <Insets left="5.0" />
                      </HBox.margin>
                   </TextField>
-                  <Button mnemonicParsing="false" onAction="#searchEmails" text="Search">
+                  <Button mnemonicParsing="false" onAction="#searchEmails" text="%search">
                      <HBox.margin>
                         <Insets left="5.0" />
                      </HBox.margin>

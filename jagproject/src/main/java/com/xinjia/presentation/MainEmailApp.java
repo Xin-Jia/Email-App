@@ -47,8 +47,8 @@ public class MainEmailApp extends Application {
         //Left-out comments so we can test internationalization quicker
 
         //currentLocale = Locale.getDefault();
-        currentLocale = new Locale("fr", "CA");
-        //currentLocale = new Locale("en", "CA");
+        //currentLocale = new Locale("fr", "CA");
+        currentLocale = new Locale("en", "CA");
         // currentLocale = Locale.CANADA;
         // currentLocale = Locale.CANADA_FRENCH;
         LOG.debug("Locale = " + currentLocale);
