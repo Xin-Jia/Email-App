@@ -5,7 +5,7 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
 /**
- * JavaFX Bean for JAG/Mail config Properties Overrides toString, hashCode and
+ * JavaFX Bean for JAG/Mail config Properties. Overrides toString, hashCode and
  * equals
  *
  * @author Xin Jia Cao

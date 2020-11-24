@@ -36,7 +36,7 @@ public class EmailFXData {
     
     
     /**
-     * 
+     * Non-default constructor that initializes all the fields
      * @param id
      * @param folderId
      * @param date

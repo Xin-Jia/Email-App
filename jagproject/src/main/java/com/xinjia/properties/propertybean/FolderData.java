@@ -7,7 +7,7 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
 /**
- * JavaFX Folder bean that contains an id and a folder name Overrides toString,
+ * JavaFX Folder bean that contains an id and a folder name. Overrides toString,
  * hashCode and equals
  *
  * @author Xin Jia Cao
