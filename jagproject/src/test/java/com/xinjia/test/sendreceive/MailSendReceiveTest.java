@@ -50,8 +50,8 @@ public class MailSendReceiveTest {
     //Initialize all the fields required in an email before every unit test.
     @Before
     public void initializeFields() {
-        sendConfigBean = new MailConfigBean("smtp.gmail.com", "xinjia.caoxin@gmail.com", "39499799", "", "", "", "", "", "", "", "", "");
-        receiveConfigBean = new MailConfigBean("imap.gmail.com", "xinjia1.cao@gmail.com", "3949979a", "", "", "", "", "", "", "", "", "");
+        sendConfigBean = new MailConfigBean("", "xinjia.caoxin@gmail.com", "39499799", "", "smtp.gmail.com", "", "", "", "", "", "", "");
+        receiveConfigBean = new MailConfigBean("", "xinjia1.cao@gmail.com", "3949979a", "imap.gmail.com", "", "", "", "", "", "", "", "");
         mailFunction = new SendAndReceive(sendConfigBean);
         toRecipients = new ArrayList<>();
         ccRecipients = new ArrayList<>();

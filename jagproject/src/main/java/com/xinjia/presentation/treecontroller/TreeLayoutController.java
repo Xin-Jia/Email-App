@@ -147,6 +147,7 @@ public class TreeLayoutController {
                 .addListener((observable, oldValue, newValue) -> {
                     try {
                         showEmailDetailsTree(newValue);
+                        tableController.unselectRow();
                     } catch (SQLException ex) {
                         LOG.error("Exception occured when selecting a tree cell", ex);
                     }

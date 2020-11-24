@@ -1,5 +1,6 @@
 package com.xinjia.presentation.tablecontroller;
 
+import com.xinjia.jdbc.beans.EmailData;
 import com.xinjia.jdbc.persistence.EmailDAO;
 import com.xinjia.jdbc.persistence.EmailDAOImpl;
 import com.xinjia.presentation.formhtml.FormAndHTMLLayoutController;
@@ -12,6 +13,8 @@ import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import javafx.collections.FXCollections;
@@ -25,7 +28,13 @@ import javafx.scene.input.ClipboardContent;
 import javafx.scene.input.Dragboard;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.input.TransferMode;
+import javax.activation.DataSource;
 import javax.imageio.ImageIO;
+import jodd.mail.Email;
+import jodd.mail.EmailAddress;
+import jodd.mail.EmailAttachment;
+import jodd.mail.EmailMessage;
+import jodd.mail.MailException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -134,9 +143,9 @@ public class TableLayoutController {
                     editorController.displayEmailRecipientsAndAttachments(clickedRow);
                     //enable save and send buttons
                     if (row.getItem().getFolderId() == 3) {
-                        editorController.enableButtons(true);
+                        editorController.disableButtons(false);
                     } else {
-                        editorController.enableButtons(false);
+                        editorController.disableButtons(true);
                     }
                     try {
                         saveFileToDisk();
@@ -228,8 +237,93 @@ public class TableLayoutController {
      * @param folder The selected folder's name
      */
     public void displayEmailsBasedOnFolder(String folder) throws SQLException {
-        emailsToDisplay = emailDAO.findEmailsByFolder(folder);
+        emailsToDisplay = convertToJavaFXBean(emailDAO.findEmailsByFolder(folder));
         emailDataTable.setItems(emailsToDisplay);
+    }
+    
+    private ObservableList<EmailFXData> convertToJavaFXBean(ArrayList<EmailData> emails) {
+        ObservableList<EmailFXData> observableData = FXCollections.observableArrayList();
+
+        emails.forEach(email -> {
+            observableData.add(convertToSingleJavaFXBean(email));
+        });
+        return observableData;
+    }
+
+    private EmailFXData convertToSingleJavaFXBean(EmailData email) {
+
+        ObservableList<String> to = FXCollections.observableArrayList();
+        ObservableList<String> cc = FXCollections.observableArrayList();
+        ObservableList<String> bcc = FXCollections.observableArrayList();
+        Email joddEmail = email.getEmail();
+        String txtMsg = "";
+        String htmlMsg = "";
+        LOG.info("EMAIL SUBJECT: " + joddEmail.subject());
+        LOG.info("EMAIL ATTS: " + joddEmail.attachments());
+        List<String> regAttachmentsList = new ArrayList<>();
+        List<byte[]> regAttachmentsBytes = new ArrayList<>();
+        List<String> embedAttachmentsList = new ArrayList<>();
+        List<byte[]> embedAttachmentsBytes = new ArrayList<>();
+
+        List<EmailMessage> messages = joddEmail.messages();
+        ArrayList<String> messagesString = ((EmailDAOImpl)emailDAO).retrieveMessageContent(messages, "text/plain");
+        if (!messages.isEmpty()) {
+
+            if (!messages.isEmpty()) {
+                txtMsg = messagesString.get(0);
+            }
+
+            messagesString = ((EmailDAOImpl)emailDAO).retrieveMessageContent(messages, "text/html");
+            if (!messages.isEmpty()) {
+                htmlMsg = messagesString.get(0);
+            }
+        }
+
+        List<EmailAttachment<? extends DataSource>> attachments = joddEmail.attachments();
+        LOG.info("ATTACHMENT SIZE IN DAO: " + attachments.size());
+        if (!attachments.isEmpty()) {
+            for (EmailAttachment ea : attachments) {
+                LOG.info(ea.getName());
+                LOG.info("Embedded?: " + ea.isEmbedded());
+                try {
+                    if (ea.isEmbedded() && (ea.toByteArray() != null || ea.toByteArray().length != 0)) {
+                        if (!ea.getContentId().equals("") && messagesString.get(0).contains("img src=\"cid:" + ea.getContentId().replaceAll("[<>]", ""))) {
+                            LOG.info("ADDING EMBEDDED ATTACHMENTS TO FX BEAN: " + email.getEmail());
+                            LOG.info("CONTENT ID IS: "+ea.getContentId());
+                            embedAttachmentsList.add(ea.getName());
+                            embedAttachmentsBytes.add(ea.toByteArray());
+                        }
+                        else{
+                            LOG.info("ADDING REGULAR ATTACHMENTS TO FX BEAN: " + email.getEmail());
+                            regAttachmentsList.add(ea.getName());
+                            regAttachmentsBytes.add(ea.toByteArray());
+                        }
+
+                    } else if (!ea.isEmbedded() && (ea.toByteArray() != null || ea.toByteArray().length != 0)) {
+                        LOG.info("ADDING REGULAR ATTACHMENTS TO FX BEAN: " + email.getEmail());
+                        regAttachmentsList.add(ea.getName());
+                        regAttachmentsBytes.add(ea.toByteArray());
+                    }
+                } catch (MailException e) {
+                    LOG.error("BYTE ARRAY NULL");
+                }
+            }
+        }
+
+        for (EmailAddress address : email.getEmail().to()) {
+            to.add(address.getEmail());
+        }
+        for (EmailAddress address : email.getEmail().cc()) {
+            cc.add(address.getEmail());
+        }
+        for (EmailAddress address : email.getEmail().bcc()) {
+            bcc.add(address.getEmail());
+        }
+
+        EmailFXData observableData = new EmailFXData(email.getEmailId(), email.getFolderId(), email.getReceivedDate(),
+                joddEmail.from().getEmail(), joddEmail.subject(), to, cc, bcc, txtMsg, htmlMsg, regAttachmentsList, regAttachmentsBytes, embedAttachmentsList, embedAttachmentsBytes);
+
+        return observableData;
     }
 
     /**
@@ -276,5 +370,6 @@ public class TableLayoutController {
 
     public void unselectRow() {
         emailDataTable.getSelectionModel().clearSelection();
+        clickedRow = null;
     }
 }

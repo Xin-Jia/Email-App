@@ -41,7 +41,7 @@ import org.slf4j.LoggerFactory;
  * There will also not have a drag option for Draft emails so no exception would be thrown
  * @author Xin Jia Cao
  */
-/*@Ignore
+@Ignore
 public class EmailJDBCTest {
 
     private final static Logger LOG = LoggerFactory.getLogger(EmailJDBCTest.class);
@@ -290,7 +290,7 @@ public class EmailJDBCTest {
 
         mailFunction.createEmail(mailData);
         //put the email in the Inbox folder
-        int rows = mailFunction.changeEmailFolder(mailData, "Inbox");
+        int rows = mailFunction.changeEmailFolder(mailData.getEmailId(), 1);
         assertEquals(1, rows);
     }
 
@@ -363,7 +363,7 @@ public class EmailJDBCTest {
      * execute its non-static seedDatabase routine.
      * (courtesy to Ken Fogel for the comment)
      */
-    /*@AfterClass
+    @AfterClass
     public static void seedAfterTestCompleted() {
         LOG.info("@AfterClass seeding");
         String dbUrl = "jdbc:mysql://localhost:3306/EMAILAPP?characterEncoding=UTF-8&autoReconnect=true&zeroDateTimeBehavior=CONVERT_TO_NULL&useSSL=false&allowPublicKeyRetrieval=true&useTimezone=true&serverTimezone=UTC";
@@ -380,7 +380,7 @@ public class EmailJDBCTest {
      * JBoss
      * (courtesy to Ken Fogel for the comment)
      */
-    /*public void seedDatabase() {
+    public void seedDatabase() {
         LOG.info("@Before seeding");
 
         final String seedDataScript = loadAsString("createEmailTables.sql");
@@ -428,4 +428,4 @@ public class EmailJDBCTest {
     private boolean isComment(final String line) {
         return line.startsWith("--") || line.startsWith("//") || line.startsWith("/*");
     }
-}*/
+}

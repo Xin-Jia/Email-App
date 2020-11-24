@@ -17,7 +17,6 @@ import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.IOException;
 import java.sql.SQLException;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.ResourceBundle;
@@ -35,13 +34,10 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.web.HTMLEditor;
 import javafx.stage.DirectoryChooser;
-import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javax.imageio.ImageIO;
 import jodd.mail.Email;
-import jodd.mail.EmailAttachment;
 import jodd.mail.RFC2822AddressParser;
-import jodd.mail.ReceivedEmail;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -97,10 +93,15 @@ public class FormAndHTMLLayoutController {
     @FXML // fx:id="downloadIcon"
     private ImageView downloadIcon; // Value injected by FXMLLoader
 
+    @FXML // fx:id="replyBtn"
+    private Button replyBtn; // Value injected by FXMLLoader
+
     private EmailDAO emailDAO;
     private EmailFXData clickedEmailBean;
     private SendAndReceive emailOperations;
     private RootLayoutSplitController rootController;
+    private static final int DRAFT_ID = 3;
+    private static final int SENT_ID = 2;
 
     private final static Logger LOG = LoggerFactory.getLogger(FormAndHTMLLayoutController.class);
 
@@ -124,15 +125,17 @@ public class FormAndHTMLLayoutController {
         assert clearIcon != null : "fx:id=\"clearIcon\" was not injected: check your FXML file 'FormHTMLLayout.fxml'.";
         assert htmlEditor != null : "fx:id=\"htmlEditor\" was not injected: check your FXML file 'FormHTMLLayout.fxml'.";
         assert downloadIcon != null : "fx:id=\"downloadIcon\" was not injected: check your FXML file 'FormHTMLLayout.fxml'.";
+        assert replyBtn != null : "fx:id=\"replyBtn\" was not injected: check your FXML file 'FormHTMLLayout.fxml'.";
 
     }
 
+    /**
+     * Set the EmailDAO
+     *
+     * @param emailDAO
+     */
     public void setEmailDAO(EmailDAO emailDAO) {
         this.emailDAO = emailDAO;
-    }
-
-    public void setRootController(RootLayoutSplitController controller) {
-        this.rootController = controller;
     }
 
     /**
@@ -247,7 +250,7 @@ public class FormAndHTMLLayoutController {
     private void saveEmail() throws SQLException {
         if (checkRecipientsNotEmpty()) {
             if (checkValidRecipients()) {
-                if (clickedEmailBean != null && clickedEmailBean.getFolderId() == 3) {
+                if (clickedEmailBean != null && clickedEmailBean.getFolderId() == DRAFT_ID) {
                     LOG.info("SAVING A DRAFT");
                     EmailData mailData = createEmailCustomBean();
                     emailDAO.updateEmailDraft(mailData);
@@ -256,7 +259,7 @@ public class FormAndHTMLLayoutController {
                     LOG.info("SAVING NOT A DRAFT");
                     EmailData mailData = createEmailCustomBean();
                     //put email in the draft folder
-                    putEmailInDatabase(mailData, 3);
+                    putEmailInDatabase(mailData, DRAFT_ID);
 
                 }
             }
@@ -294,7 +297,7 @@ public class FormAndHTMLLayoutController {
         if (clickedEmailBean != null) {
             mailData.setEmailId(clickedEmailBean.getId());
         }
-        mailData.setFolderId(3);
+        mailData.setFolderId(DRAFT_ID);
 
         String htmlMsg = htmlEditor.getHtmlText();
         ArrayList<File> regFiles = getAttachments();
@@ -323,16 +326,50 @@ public class FormAndHTMLLayoutController {
             if (checkValidRecipients()) {
                 Email emailSent = emailOperations.sendMail(toRecipients, ccRecipients, bccRecipients, subjectField.getText(), htmlMsg, htmlMsg, regFiles, new ArrayList<>());
                 EmailData mailData = createEmailCustomBean();
-                if (clickedEmailBean != null && clickedEmailBean.getFolderId() == 3) {
+                if (clickedEmailBean != null && clickedEmailBean.getFolderId() == DRAFT_ID) {
 
                     emailDAO.updateEmailDraftAndSend(mailData);
                 } else {
-                    putEmailInDatabase(mailData, 2);
-                    //rootController.reloadInbox();
+                    putEmailInDatabase(mailData, SENT_ID);
                 }
             }
 
         }
+    }
+
+    @FXML
+    private void replyEmail() {
+        //remove all TextFields in the HBoxs
+        toHBox.getChildren().clear();
+        ccHBox.getChildren().clear();
+        bccHBox.getChildren().clear();
+        clearIcon.setVisible(false);
+        downloadIcon.setVisible(false);
+
+        toHBox.getChildren().add(new TextField(clickedEmailBean.getFrom()));
+        for (String to : clickedEmailBean.getTo()) {
+            if (!to.equals(((EmailDAOImpl) emailDAO).getMailConfigBean().getEmailAddress())) {
+                toHBox.getChildren().add(new TextField(to));
+            }
+        }
+        for (String cc : clickedEmailBean.getCC()) {
+            if (!cc.equals(((EmailDAOImpl) emailDAO).getMailConfigBean().getEmailAddress())) {
+                ccHBox.getChildren().add(new TextField(cc));
+            }
+        }
+        for (String bcc : clickedEmailBean.getBCC()) {
+            if (!bcc.equals(((EmailDAOImpl) emailDAO).getMailConfigBean().getEmailAddress())) {
+                bccHBox.getChildren().add(new TextField(bcc));
+            }
+        }
+
+        if(!attachmentsHBox.getChildren().isEmpty()){
+            clearIcon.setVisible(true);
+        }
+        htmlEditor.setHtmlText("</br>---------------------------------------</br>"+htmlEditor.getHtmlText());
+        saveBtn.setDisable(false);
+        sendBtn.setDisable(false);
+        clickedEmailBean = null;
     }
 
     private boolean checkAreAddressesValid(ArrayList<String> addresses) {
@@ -345,7 +382,7 @@ public class FormAndHTMLLayoutController {
     }
 
     private void putEmailInDatabase(EmailData emailData, int folderId) throws SQLException {
-        if (folderId == 2) {
+        if (folderId == SENT_ID) {
             emailData.email.sentDate(new Date());
         }
         emailData.setFolderId(folderId);
@@ -427,8 +464,7 @@ public class FormAndHTMLLayoutController {
     }
 
     /**
-     * Display an alert dialog with the given header text and content text when
-     * an error occured when the recipients are empty.
+     * Display an alert dialog with the given header text and content text
      *
      * @param header The header text
      * @param content The content text
@@ -441,18 +477,19 @@ public class FormAndHTMLLayoutController {
         dialog.show();
     }
 
-    public void enableButtons(boolean isVisible) {
-        saveBtn.setVisible(isVisible);
-        sendBtn.setVisible(isVisible);
-        addToBtn.setVisible(isVisible);
-        addCCBtn.setVisible(isVisible);
-        addBCCBtn.setVisible(isVisible);
-        if (!isVisible) {
+    public void disableButtons(boolean isEnabled) {
+        saveBtn.setDisable(isEnabled);
+        sendBtn.setDisable(isEnabled);
+        addToBtn.setDisable(isEnabled);
+        addCCBtn.setDisable(isEnabled);
+        addBCCBtn.setDisable(isEnabled);
+        if (isEnabled) {
             if (!attachmentsHBox.getChildren().isEmpty()) {
                 downloadIcon.setVisible(true);
             } else {
                 downloadIcon.setVisible(false);
             }
+            replyBtn.setDisable(false);
         } else {
             if (!attachmentsHBox.getChildren().isEmpty()) {
                 clearIcon.setVisible(true);
@@ -460,6 +497,7 @@ public class FormAndHTMLLayoutController {
                 clearIcon.setVisible(false);
             }
             downloadIcon.setVisible(false);
+            replyBtn.setDisable(true);
         }
     }
 

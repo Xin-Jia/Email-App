@@ -138,6 +138,11 @@
                         <Insets left="10.0" top="5.0" />
                      </HBox.margin>
                   </Button>
+                  <Button fx:id="replyBtn" disable="true" mnemonicParsing="false" onAction="#replyEmail" text="%reply">
+                     <HBox.margin>
+                        <Insets left="10.0" top="5.0" />
+                     </HBox.margin>
+                  </Button>
                </children>
             </HBox>
             <ImageView fx:id="clearIcon" fitHeight="35.0" fitWidth="39.0" onMouseClicked="#clearAttachments" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="3" GridPane.rowIndex="3">
