@@ -16,6 +16,8 @@ import java.awt.image.BufferedImage;
 import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.StandardCopyOption;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Date;
@@ -34,6 +36,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.web.HTMLEditor;
 import javafx.stage.DirectoryChooser;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javax.imageio.ImageIO;
 import jodd.mail.Email;
@@ -95,6 +98,9 @@ public class FormAndHTMLLayoutController {
 
     @FXML // fx:id="replyBtn"
     private Button replyBtn; // Value injected by FXMLLoader
+    
+    @FXML // fx:id="attachmentBtn"
+    private Button attachmentBtn; // Value injected by FXMLLoader
 
     private EmailDAO emailDAO;
     private EmailFXData clickedEmailBean;
@@ -182,20 +188,37 @@ public class FormAndHTMLLayoutController {
      * @param emailData
      */
     public void writeToEditorEmailData() {
-
-        StringBuilder sb = new StringBuilder();
-        sb.append("<html><body contenteditable='false'>");
+        displayEmailMessages();
+        displayEmailEmbeddedImages();
+    }
+    
+    private void displayEmailMessages(){
+        StringBuilder builder = new StringBuilder();
+        builder.append("<html><body contenteditable='false'>");
 
         //sb.append(clickedEmailBean.getTextMsg()).append("</br>");
-        sb.append(clickedEmailBean.getHtmlMsg()).append("</br>");
-
+        builder.append(clickedEmailBean.getHtmlMsg()).append("</br>");
+        builder.append("</body></html>");
+        htmlEditor.setHtmlText(builder.toString());
+    }
+    
+    private void displayEmailEmbeddedImages(){
+        StringBuilder builder = new StringBuilder();
+        //remove the img tags in the html message
+        String[] parts = htmlEditor.getHtmlText().replaceAll("\\<img.*?\\>", "toreplace").split("toreplace");
+        builder.append(parts[0]);
+        int count = 1;
         LOG.info("LENGTH OF EMBEDDED ATTS: " + clickedEmailBean.getEmbedAttachments().size());
         for (int i = 0; i < clickedEmailBean.getEmbedAttachments().size(); i++) {
             File file = new File(clickedEmailBean.getEmbedAttachments().get(i));
-            sb.append("<img src=' ").append(file.toURI()).append("'/>");
+            builder.append("<img src=' ").append(file.toURI()).append("'/>");
+            if(count < parts.length){
+                builder.append(parts[count]);
+                count++;
+            }
         }
-        sb.append("</body></html>");
-        htmlEditor.setHtmlText(sb.toString());
+       
+        htmlEditor.setHtmlText(builder.toString());
     }
 
     /**
@@ -345,6 +368,7 @@ public class FormAndHTMLLayoutController {
         bccHBox.getChildren().clear();
         clearIcon.setVisible(false);
         downloadIcon.setVisible(false);
+        attachmentBtn.setDisable(false);
 
         toHBox.getChildren().add(new TextField(clickedEmailBean.getFrom()));
         for (String to : clickedEmailBean.getTo()) {
@@ -483,6 +507,7 @@ public class FormAndHTMLLayoutController {
         addToBtn.setDisable(isEnabled);
         addCCBtn.setDisable(isEnabled);
         addBCCBtn.setDisable(isEnabled);
+        //if true, it is not a draft
         if (isEnabled) {
             if (!attachmentsHBox.getChildren().isEmpty()) {
                 downloadIcon.setVisible(true);
@@ -490,7 +515,9 @@ public class FormAndHTMLLayoutController {
                 downloadIcon.setVisible(false);
             }
             replyBtn.setDisable(false);
+            attachmentBtn.setDisable(true);
         } else {
+            //it is a draft
             if (!attachmentsHBox.getChildren().isEmpty()) {
                 clearIcon.setVisible(true);
             } else {
@@ -498,7 +525,27 @@ public class FormAndHTMLLayoutController {
             }
             downloadIcon.setVisible(false);
             replyBtn.setDisable(true);
+            attachmentBtn.setDisable(false);
         }
+    }
+    
+    @FXML
+    private void addAttachmentToEmail() throws IOException{
+        Stage stage = (Stage) attachmentBtn.getScene().getWindow();
+        FileChooser fileChooser = new FileChooser();
+        File file = fileChooser.showOpenDialog(stage);
+        if (file != null) {
+            moveFileToRoot(file);
+            LOG.info("Absolute Path: " + file.getAbsolutePath());
+            addAttachment(file.getName());
+        }
+    }
+    
+    private void moveFileToRoot(File file) throws IOException {
+        Files.copy(file.toPath(),
+                (new File(file.getName())).toPath(),
+                StandardCopyOption.REPLACE_EXISTING);
+
     }
 
 }

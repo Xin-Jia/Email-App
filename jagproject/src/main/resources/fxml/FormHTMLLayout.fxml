@@ -84,15 +84,23 @@
                         <Insets top="5.0" />
                      </HBox.margin>
                   </TextField>
-                  <ImageView fx:id="downloadIcon" fitHeight="37.0" fitWidth="37.0" onMouseClicked="#downloadAttachments" pickOnBounds="true" preserveRatio="true" visible="false">
-                     <image>
-                        <Image url="@../images/downloadIcon.png" />
-                     </image>
+                  <ImageView fitHeight="26.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
                      <HBox.margin>
-                        <Insets left="20.0" />
+                        <Insets left="15.0" top="5.0" />
                      </HBox.margin>
+                     <image>
+                        <Image url="@../images/attachment.jpg" />
+                     </image>
                   </ImageView>
-                  <ScrollPane prefHeight="37.0" prefWidth="519.0">
+                  <Button fx:id="attachmentBtn" mnemonicParsing="false" onAction="#addAttachmentToEmail" text="+">
+                     <font>
+                        <Font name="Arial Black" size="9.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="5.0" />
+                     </HBox.margin>
+                  </Button>
+                  <ScrollPane prefHeight="37.0" prefWidth="465.0">
                      <content>
                         <HBox fx:id="attachmentsHBox" alignment="CENTER" prefHeight="34.0">
                            <padding>
@@ -104,6 +112,14 @@
                         <Insets left="7.0" />
                      </HBox.margin>
                   </ScrollPane>
+                  <ImageView fx:id="downloadIcon" fitHeight="37.0" fitWidth="37.0" onMouseClicked="#downloadAttachments" pickOnBounds="true" preserveRatio="true" visible="false">
+                     <image>
+                        <Image url="@../images/downloadIcon.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets left="5.0" />
+                     </HBox.margin>
+                  </ImageView>
                </children>
             </HBox>
             <Button fx:id="addCCBtn" alignment="CENTER" contentDisplay="CENTER" minHeight="-Infinity" mnemonicParsing="false" onAction="#addCCTextField" prefHeight="20.0" text="+" GridPane.columnIndex="1" GridPane.rowIndex="1">

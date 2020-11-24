@@ -400,29 +400,6 @@ public class RootLayoutSplitController {
 
 
     /**
-     * Called when the user press the Add Attachment MenuItem. For now, it only
-     * displays the absolute path of the selected file.
-     */
-    @FXML
-    private void addAttachment() throws IOException {
-        Stage stage = (Stage) formAndHtml.getScene().getWindow();
-        FileChooser fileChooser = new FileChooser();
-        File file = fileChooser.showOpenDialog(stage);
-        if (file != null) {
-            moveFileToRoot(file);
-            LOG.info("Absolute Path: " + file.getAbsolutePath());
-            formHtmlController.addAttachment(file.getName());
-        }
-    }
-
-    private void moveFileToRoot(File file) throws IOException {
-        Files.copy(file.toPath(),
-                (new File(file.getName())).toPath(),
-                StandardCopyOption.REPLACE_EXISTING);
-
-    }
-
-    /**
      * Called when the user press the Delete Selected Email MenuItem Delete an
      * email and its row in the TableView
      */
@@ -490,8 +467,6 @@ public class RootLayoutSplitController {
         Email joddEmail = email.getEmail();
         String txtMsg = "";
         String htmlMsg = "";
-        LOG.info("EMAIL SUBJECT: " + joddEmail.subject());
-        LOG.info("EMAIL ATTS: " + joddEmail.attachments());
         List<String> regAttachmentsList = new ArrayList<>();
         List<byte[]> regAttachmentsBytes = new ArrayList<>();
         List<String> embedAttachmentsList = new ArrayList<>();
@@ -512,27 +487,20 @@ public class RootLayoutSplitController {
         }
 
         List<EmailAttachment<? extends DataSource>> attachments = joddEmail.attachments();
-        LOG.info("ATTACHMENT SIZE IN DAO: " + attachments.size());
         if (!attachments.isEmpty()) {
             for (EmailAttachment ea : attachments) {
-                LOG.info(ea.getName());
-                LOG.info("Embedded?: " + ea.isEmbedded());
                 try {
                     if (ea.isEmbedded() && (ea.toByteArray() != null || ea.toByteArray().length != 0)) {
                         if (!ea.getContentId().equals("") && messagesString.get(0).contains("img src=\"cid:" + ea.getContentId().replaceAll("[<>]", ""))) {
-                            LOG.info("ADDING EMBEDDED ATTACHMENTS TO FX BEAN: " + email.getEmail());
-                            LOG.info("CONTENT ID IS: "+ea.getContentId());
                             embedAttachmentsList.add(ea.getName());
                             embedAttachmentsBytes.add(ea.toByteArray());
                         }
                         else{
-                            LOG.info("ADDING REGULAR ATTACHMENTS TO FX BEAN: " + email.getEmail());
                             regAttachmentsList.add(ea.getName());
                             regAttachmentsBytes.add(ea.toByteArray());
                         }
 
                     } else if (!ea.isEmbedded() && (ea.toByteArray() != null || ea.toByteArray().length != 0)) {
-                        LOG.info("ADDING REGULAR ATTACHMENTS TO FX BEAN: " + email.getEmail());
                         regAttachmentsList.add(ea.getName());
                         regAttachmentsBytes.add(ea.toByteArray());
                     }

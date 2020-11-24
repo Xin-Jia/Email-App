@@ -161,7 +161,6 @@ public class TableLayoutController {
     }
 
     private void saveFileToDisk() throws IOException {
-        LOG.info("attachments size: " + clickedRow.getEmbedAttachmentsBytes().size());
         for (int i = 0; i < clickedRow.getEmbedAttachmentsBytes().size(); i++) {
             BufferedImage img = ImageIO.read(new ByteArrayInputStream(clickedRow.getEmbedAttachmentsBytes().get(i)));
             LOG.info("SAVING SELECTED EMAIL FILES TO DISK: " + clickedRow.getEmbedAttachments().get(i));
@@ -258,8 +257,7 @@ public class TableLayoutController {
         Email joddEmail = email.getEmail();
         String txtMsg = "";
         String htmlMsg = "";
-        LOG.info("EMAIL SUBJECT: " + joddEmail.subject());
-        LOG.info("EMAIL ATTS: " + joddEmail.attachments());
+
         List<String> regAttachmentsList = new ArrayList<>();
         List<byte[]> regAttachmentsBytes = new ArrayList<>();
         List<String> embedAttachmentsList = new ArrayList<>();
@@ -280,27 +278,21 @@ public class TableLayoutController {
         }
 
         List<EmailAttachment<? extends DataSource>> attachments = joddEmail.attachments();
-        LOG.info("ATTACHMENT SIZE IN DAO: " + attachments.size());
         if (!attachments.isEmpty()) {
             for (EmailAttachment ea : attachments) {
-                LOG.info(ea.getName());
-                LOG.info("Embedded?: " + ea.isEmbedded());
+
                 try {
                     if (ea.isEmbedded() && (ea.toByteArray() != null || ea.toByteArray().length != 0)) {
                         if (!ea.getContentId().equals("") && messagesString.get(0).contains("img src=\"cid:" + ea.getContentId().replaceAll("[<>]", ""))) {
-                            LOG.info("ADDING EMBEDDED ATTACHMENTS TO FX BEAN: " + email.getEmail());
-                            LOG.info("CONTENT ID IS: "+ea.getContentId());
                             embedAttachmentsList.add(ea.getName());
                             embedAttachmentsBytes.add(ea.toByteArray());
                         }
                         else{
-                            LOG.info("ADDING REGULAR ATTACHMENTS TO FX BEAN: " + email.getEmail());
                             regAttachmentsList.add(ea.getName());
                             regAttachmentsBytes.add(ea.toByteArray());
                         }
 
                     } else if (!ea.isEmbedded() && (ea.toByteArray() != null || ea.toByteArray().length != 0)) {
-                        LOG.info("ADDING REGULAR ATTACHMENTS TO FX BEAN: " + email.getEmail());
                         regAttachmentsList.add(ea.getName());
                         regAttachmentsBytes.add(ea.toByteArray());
                     }

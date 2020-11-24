@@ -22,7 +22,6 @@
               <menus>
                   <Menu mnemonicParsing="false" text="Mail">
                     <items>
-                      <MenuItem mnemonicParsing="false" onAction="#addAttachment" text="%addAttachment" />
                         <MenuItem mnemonicParsing="false" onAction="#deleteSelectedEmail" text="%deleteSelectedEmail" />
                         <MenuItem mnemonicParsing="false" onAction="#createNewEmail" text="%newEmail" />
                         <MenuItem mnemonicParsing="false" onAction="#reloadInbox" text="%reload" />
