@@ -1,7 +1,6 @@
 package com.xinjia.presentation.rootcontroller;
 
 import com.xinjia.exceptions.FolderAlreadyExistsException;
-import com.xinjia.jdbc.persistence.EmailDAO;
 import com.xinjia.presentation.treecontroller.TreeLayoutController;
 import java.io.IOException;
 import java.sql.SQLException;

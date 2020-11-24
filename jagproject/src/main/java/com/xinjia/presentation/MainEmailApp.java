@@ -99,7 +99,7 @@ public class MainEmailApp extends Application {
 
         Parent root = (BorderPane) loader.load();
         RootLayoutSplitController emailAppController = loader.getController();
-        emailAppController.setMailConfigBean(propertyBean);
+        emailAppController.initializeRoot(propertyBean);
         Scene scene = new Scene(root);
 
         this.primaryStage.setScene(scene);

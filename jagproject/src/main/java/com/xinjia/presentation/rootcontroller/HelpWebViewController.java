@@ -20,7 +20,7 @@ public class HelpWebViewController {
     /**
      * Called by the FXMLLoader when initialization is complete. When the FXML
      * is loaded, if a control is not present, an exception is thrown and quits
-     * the FXML loading process. Set up the properties.
+     * the FXML loading process. Load the HTML file to be displayed.
      */
     @FXML
     void initialize() {

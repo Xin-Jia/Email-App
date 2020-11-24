@@ -2,11 +2,8 @@
 package com.xinjia.presentation.rootcontroller;
 
 import com.xinjia.exceptions.FolderAlreadyExistsException;
-import com.xinjia.jdbc.persistence.EmailDAO;
 import com.xinjia.presentation.treecontroller.TreeLayoutController;
-import java.net.URL;
 import java.sql.SQLException;
-import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -15,13 +12,13 @@ import javafx.stage.Stage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * Controller for the RenameFolderPopUp. Contains the event handler for the
+ * Rename button when the user wants to rename a folder. Also set the
+ * TreeLayoutController to be used to rename the folder in the TreeView.
+ * @author Xin Jia Cao
+ */
 public class RenameFolderController {
-
-    @FXML // ResourceBundle that was given to the FXMLLoader
-    private ResourceBundle resources;
-
-    @FXML // URL location of the FXML file that was given to the FXMLLoader
-    private URL location;
 
     @FXML // fx:id="folderName"
     private TextField folderName; // Value injected by FXMLLoader

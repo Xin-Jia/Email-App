@@ -1,4 +1,3 @@
-
 package com.xinjia.properties;
 
 import java.util.Objects;
@@ -6,12 +5,11 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
 /**
- * JavaFX Bean for JAG/Mail config Properties
- * Overrides toString, hashCode and equals
- * 
+ * JavaFX Bean for JAG/Mail config Properties Overrides toString, hashCode and
+ * equals
+ *
  * @author Xin Jia Cao
  */
-
 public class MailConfigBean {
 
     private StringProperty userName;
@@ -29,6 +27,7 @@ public class MailConfigBean {
 
     /**
      * Non-default constructor that initializes all the fields
+     *
      * @param userName
      * @param emailAddress
      * @param mailPassword
@@ -40,7 +39,7 @@ public class MailConfigBean {
      * @param mysqlDatabase
      * @param mysqlPort
      * @param mysqlUser
-     * @param mysqlPassword 
+     * @param mysqlPassword
      */
     public MailConfigBean(String userName, String emailAddress, String mailPassword,
             String imapURL, String smtpURL, String imapPort,
@@ -280,8 +279,6 @@ public class MailConfigBean {
         return true;
     }
 
-    
-    
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -301,4 +298,3 @@ public class MailConfigBean {
         return sb.toString();
     }
 }
-

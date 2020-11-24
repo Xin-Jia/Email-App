@@ -34,6 +34,7 @@ public class EmailDAOImpl implements EmailDAO {
     private final static Logger LOG = LoggerFactory.getLogger(EmailDAOImpl.class);
 
     private MailConfigBean configBean;
+    private String url;
 
     /**
      * Constructor that initializes the MailConfigBean
@@ -42,6 +43,13 @@ public class EmailDAOImpl implements EmailDAO {
      */
     public EmailDAOImpl(MailConfigBean mailConfigBean) {
         configBean = mailConfigBean;
+        url = "jdbc:mysql://"
+                + configBean.getMysqlURL()
+                + ":"
+                + configBean.getMysqlPort()
+                + "/"
+                + configBean.getMysqlDatabase()
+                + "?characterEncoding=UTF-8&autoReconnect=true&zeroDateTimeBehavior=CONVERT_TO_NULL&useSSL=false&allowPublicKeyRetrieval=true&useTimezone=true&serverTimezone=UTC";
     }
 
     /**
@@ -65,7 +73,7 @@ public class EmailDAOImpl implements EmailDAO {
         ArrayList<EmailData> data = new ArrayList<>();
         String selectQuery = "SELECT EMAILID, FOLDERID, FROMADDRESS, SENTDATE, RECEIVEDATE, SUBJECT, MESSAGE, HTMLMESSAGE FROM EMAIL";
 
-        try ( Connection connection = DriverManager.getConnection(configBean.getMysqlURL(), configBean.getMysqlUser(), configBean.getMysqlPassword());  PreparedStatement pStatement = connection.prepareStatement(selectQuery);  ResultSet resultSet = pStatement.executeQuery()) {
+        try ( Connection connection = DriverManager.getConnection(url, configBean.getMysqlUser(), configBean.getMysqlPassword());  PreparedStatement pStatement = connection.prepareStatement(selectQuery);  ResultSet resultSet = pStatement.executeQuery()) {
             while (resultSet.next()) {
                 data.add(createEmailData(resultSet));
             }
@@ -155,7 +163,7 @@ public class EmailDAOImpl implements EmailDAO {
                 + "INNER JOIN EMAIL ON ATTACHMENTS.EMAILID = EMAIL.EMAILID "
                 + "WHERE EMAIL.EMAILID = ? AND (ATTACHMENTS.CONTENTID " + constraint;
 
-        try ( Connection connection = DriverManager.getConnection(configBean.getMysqlURL(), configBean.getMysqlUser(), configBean.getMysqlPassword());  PreparedStatement pStatement = connection.prepareStatement(selectAttachmentQuery);) {
+        try ( Connection connection = DriverManager.getConnection(url, configBean.getMysqlUser(), configBean.getMysqlPassword());  PreparedStatement pStatement = connection.prepareStatement(selectAttachmentQuery);) {
             pStatement.setInt(1, emailId);
             try ( ResultSet resultSet = pStatement.executeQuery()) {
                 while (resultSet.next()) {
@@ -185,7 +193,7 @@ public class EmailDAOImpl implements EmailDAO {
                 + "INNER JOIN ADDRESS ON EMAILTOADDRESS.ADDRESSID = ADDRESS.ADDRESSID "
                 + "WHERE EMAIL.EMAILID = ?";
 
-        try ( Connection connection = DriverManager.getConnection(configBean.getMysqlURL(), configBean.getMysqlUser(), configBean.getMysqlPassword());  PreparedStatement pStatement = connection.prepareStatement(selectRecipientQuery);) {
+        try ( Connection connection = DriverManager.getConnection(url, configBean.getMysqlUser(), configBean.getMysqlPassword());  PreparedStatement pStatement = connection.prepareStatement(selectRecipientQuery);) {
             pStatement.setInt(1, emailId);
             try ( ResultSet resultSet = pStatement.executeQuery()) {
                 while (resultSet.next()) {
@@ -243,7 +251,7 @@ public class EmailDAOImpl implements EmailDAO {
         String createQuery = "INSERT INTO EMAIL(FROMADDRESS, SENTDATE, RECEIVEDATE, SUBJECT, MESSAGE, HTMLMESSAGE, FOLDERID) VALUES (?,?,?,?,?,?,?)";
 
         //all length issues will be handled in the GUI so no need for exceptions here
-        try ( Connection connection = DriverManager.getConnection(configBean.getMysqlURL(), configBean.getMysqlUser(), configBean.getMysqlPassword());  PreparedStatement ps = connection.prepareStatement(createQuery, Statement.RETURN_GENERATED_KEYS);) {
+        try ( Connection connection = DriverManager.getConnection(url, configBean.getMysqlUser(), configBean.getMysqlPassword());  PreparedStatement ps = connection.prepareStatement(createQuery, Statement.RETURN_GENERATED_KEYS);) {
             ps.setString(1, mailData.email.from().toString());
             createDateOnFolderId(mailData, ps, mailData.getFolderId());
             if (mailData.email.subject() != null) {
@@ -354,7 +362,7 @@ public class EmailDAOImpl implements EmailDAO {
 
         String selectAllAddressQuery = "SELECT EMAILADDRESS FROM ADDRESS WHERE EMAILADDRESS = ?";
         for (EmailAddress mail : addresses) {
-            try ( Connection connection = DriverManager.getConnection(configBean.getMysqlURL(), configBean.getMysqlUser(), configBean.getMysqlPassword());  PreparedStatement pStatement = connection.prepareStatement(selectAllAddressQuery);) {
+            try ( Connection connection = DriverManager.getConnection(url, configBean.getMysqlUser(), configBean.getMysqlPassword());  PreparedStatement pStatement = connection.prepareStatement(selectAllAddressQuery);) {
                 pStatement.setString(1, mail.getEmail());
                 try ( ResultSet resultSet = pStatement.executeQuery()) {
                     if (!resultSet.next()) {
@@ -376,7 +384,7 @@ public class EmailDAOImpl implements EmailDAO {
     private void createDBAddress(String address) throws SQLException {
         String createAddressQuery = "INSERT INTO ADDRESS(EMAILADDRESS) VALUES (?)";
         int rows = 0;
-        try ( Connection connection = DriverManager.getConnection(configBean.getMysqlURL(), configBean.getMysqlUser(), configBean.getMysqlPassword());  PreparedStatement ps = connection.prepareStatement(createAddressQuery, Statement.RETURN_GENERATED_KEYS);) {
+        try ( Connection connection = DriverManager.getConnection(url, configBean.getMysqlUser(), configBean.getMysqlPassword());  PreparedStatement ps = connection.prepareStatement(createAddressQuery, Statement.RETURN_GENERATED_KEYS);) {
             ps.setString(1, address);
             rows = ps.executeUpdate();
         }
@@ -394,7 +402,7 @@ public class EmailDAOImpl implements EmailDAO {
     private int createRecipientsField(EmailData mailData) throws SQLException {
         String createRecipientsQuery = "INSERT INTO EMAILTOADDRESS(EMAILID, ADDRESSID, RECIPIENTTYPE) VALUES (?,?,?)";
         int rows = 0;
-        try ( Connection connection = DriverManager.getConnection(configBean.getMysqlURL(), configBean.getMysqlUser(), configBean.getMysqlPassword());  PreparedStatement ps = connection.prepareStatement(createRecipientsQuery, Statement.RETURN_GENERATED_KEYS);) {
+        try ( Connection connection = DriverManager.getConnection(url, configBean.getMysqlUser(), configBean.getMysqlPassword());  PreparedStatement ps = connection.prepareStatement(createRecipientsQuery, Statement.RETURN_GENERATED_KEYS);) {
             rows += addInDBRecipients(mailData, ps, mailData.email.to(), "To");
             rows += addInDBRecipients(mailData, ps, mailData.email.cc(), "CC");
             rows += addInDBRecipients(mailData, ps, mailData.email.bcc(), "BCC");
@@ -436,7 +444,7 @@ public class EmailDAOImpl implements EmailDAO {
     private int getAddressId(String address) throws SQLException {
         int addressId = -1;
         String selectQuery = "SELECT ADDRESSID FROM ADDRESS WHERE EMAILADDRESS = ?";
-        try ( Connection connection = DriverManager.getConnection(configBean.getMysqlURL(), configBean.getMysqlUser(), configBean.getMysqlPassword());  PreparedStatement pStatement = connection.prepareStatement(selectQuery);) {
+        try ( Connection connection = DriverManager.getConnection(url, configBean.getMysqlUser(), configBean.getMysqlPassword());  PreparedStatement pStatement = connection.prepareStatement(selectQuery);) {
             pStatement.setString(1, address);
             try ( ResultSet resultSet = pStatement.executeQuery()) {
                 if (resultSet.next()) {
@@ -459,7 +467,7 @@ public class EmailDAOImpl implements EmailDAO {
         String createAttachmentQuery = "INSERT INTO ATTACHMENTS(EMAILID, FILENAME, CONTENTID, FILECONTENT) VALUES(?,?,?,?)";
         int rows = 0;
         for (EmailAttachment atts : mailData.email.attachments()) {
-            try ( Connection connection = DriverManager.getConnection(configBean.getMysqlURL(), configBean.getMysqlUser(), configBean.getMysqlPassword());  PreparedStatement ps = connection.prepareStatement(createAttachmentQuery, Statement.RETURN_GENERATED_KEYS);) {
+            try ( Connection connection = DriverManager.getConnection(url, configBean.getMysqlUser(), configBean.getMysqlPassword());  PreparedStatement ps = connection.prepareStatement(createAttachmentQuery, Statement.RETURN_GENERATED_KEYS);) {
                 ps.setInt(1, mailData.getEmailId());
                 ps.setString(2, atts.getName());
                 //if attachment is embedded, set the contentId and if not, set it empty
@@ -496,7 +504,7 @@ public class EmailDAOImpl implements EmailDAO {
         }
         int rows = 0;
         String createFolderQuery = "INSERT INTO FOLDER(FOLDERNAME) VALUES(?)";
-        try ( Connection connection = DriverManager.getConnection(configBean.getMysqlURL(), configBean.getMysqlUser(), configBean.getMysqlPassword());  PreparedStatement ps = connection.prepareStatement(createFolderQuery, Statement.RETURN_GENERATED_KEYS);) {
+        try ( Connection connection = DriverManager.getConnection(url, configBean.getMysqlUser(), configBean.getMysqlPassword());  PreparedStatement ps = connection.prepareStatement(createFolderQuery, Statement.RETURN_GENERATED_KEYS);) {
             ps.setString(1, folderName);
             rows = ps.executeUpdate();
         }
@@ -517,7 +525,7 @@ public class EmailDAOImpl implements EmailDAO {
         EmailData mailData = new EmailData();
         String selectQuery = "SELECT EMAILID, FOLDERID, FROMADDRESS, SENTDATE, RECEIVEDATE, SUBJECT, MESSAGE, HTMLMESSAGE FROM EMAIL WHERE EMAILID = ?";
 
-        try ( Connection connection = DriverManager.getConnection(configBean.getMysqlURL(), configBean.getMysqlUser(), configBean.getMysqlPassword());  PreparedStatement pStatement = connection.prepareStatement(selectQuery);) {
+        try ( Connection connection = DriverManager.getConnection(url, configBean.getMysqlUser(), configBean.getMysqlPassword());  PreparedStatement pStatement = connection.prepareStatement(selectQuery);) {
             pStatement.setInt(1, id);
 
             try ( ResultSet resultSet = pStatement.executeQuery()) {
@@ -549,7 +557,7 @@ public class EmailDAOImpl implements EmailDAO {
                 + "INNER JOIN FOLDER ON EMAIL.FOLDERID = FOLDER.FOLDERID "
                 + "WHERE FOLDER.FOLDERNAME = ?";
 
-        try ( Connection connection = DriverManager.getConnection(configBean.getMysqlURL(), configBean.getMysqlUser(), configBean.getMysqlPassword());  PreparedStatement pStatement = connection.prepareStatement(selectEmailsQuery);) {
+        try ( Connection connection = DriverManager.getConnection(url, configBean.getMysqlUser(), configBean.getMysqlPassword());  PreparedStatement pStatement = connection.prepareStatement(selectEmailsQuery);) {
             pStatement.setString(1, folderName);
             try ( ResultSet resultSet = pStatement.executeQuery()) {
                 while (resultSet.next()) {
@@ -591,7 +599,7 @@ public class EmailDAOImpl implements EmailDAO {
         ArrayList<EmailData> emails = new ArrayList<>();
         String selectSubStringQuery = "SELECT EMAILID, FOLDERID, FROMADDRESS, SENTDATE, RECEIVEDATE, SUBJECT, MESSAGE, HTMLMESSAGE FROM EMAIL "
                 + "WHERE SUBJECT LIKE ?";
-        try ( Connection connection = DriverManager.getConnection(configBean.getMysqlURL(), configBean.getMysqlUser(), configBean.getMysqlPassword());  PreparedStatement pStatement = connection.prepareStatement(selectSubStringQuery);) {
+        try ( Connection connection = DriverManager.getConnection(url, configBean.getMysqlUser(), configBean.getMysqlPassword());  PreparedStatement pStatement = connection.prepareStatement(selectSubStringQuery);) {
             //checks emails that contain a sub-string of a given subject name
             pStatement.setString(1, "%" + subString + "%");
             try ( ResultSet resultSet = pStatement.executeQuery()) {
@@ -622,7 +630,7 @@ public class EmailDAOImpl implements EmailDAO {
                 + "INNER JOIN EMAILTOADDRESS ON EMAIL.EMAILID = EMAILTOADDRESS.EMAILID "
                 + "INNER JOIN ADDRESS ON EMAILTOADDRESS.ADDRESSID = ADDRESS.ADDRESSID "
                 + "WHERE ADDRESS.EMAILADDRESS LIKE ?";
-        try ( Connection connection = DriverManager.getConnection(configBean.getMysqlURL(), configBean.getMysqlUser(), configBean.getMysqlPassword());  PreparedStatement pStatement = connection.prepareStatement(selectSubStringQuery);) {
+        try ( Connection connection = DriverManager.getConnection(url, configBean.getMysqlUser(), configBean.getMysqlPassword());  PreparedStatement pStatement = connection.prepareStatement(selectSubStringQuery);) {
             //checks emails that contain a sub-string of a given recipient name
             pStatement.setString(1, "%" + subString + "%");
             try ( ResultSet resultSet = pStatement.executeQuery()) {
@@ -648,7 +656,7 @@ public class EmailDAOImpl implements EmailDAO {
 
         ArrayList<String> folders = new ArrayList<>();
         String selectFoldersQuery = "SELECT FOLDERNAME FROM FOLDER";
-        try ( Connection connection = DriverManager.getConnection(configBean.getMysqlURL(), configBean.getMysqlUser(), configBean.getMysqlPassword());  PreparedStatement pStatement = connection.prepareStatement(selectFoldersQuery);) {
+        try ( Connection connection = DriverManager.getConnection(url, configBean.getMysqlUser(), configBean.getMysqlPassword());  PreparedStatement pStatement = connection.prepareStatement(selectFoldersQuery);) {
 
             try ( ResultSet resultSet = pStatement.executeQuery()) {
                 while (resultSet.next()) {
@@ -670,7 +678,7 @@ public class EmailDAOImpl implements EmailDAO {
                 .observableArrayList();
 
         String selectFoldersQuery = "SELECT FOLDERID, FOLDERNAME FROM FOLDER";
-        try ( Connection connection = DriverManager.getConnection(configBean.getMysqlURL(), configBean.getMysqlUser(), configBean.getMysqlPassword());  PreparedStatement pStatement = connection.prepareStatement(selectFoldersQuery);) {
+        try ( Connection connection = DriverManager.getConnection(url, configBean.getMysqlUser(), configBean.getMysqlPassword());  PreparedStatement pStatement = connection.prepareStatement(selectFoldersQuery);) {
 
             try ( ResultSet resultSet = pStatement.executeQuery()) {
                 while (resultSet.next()) {
@@ -693,7 +701,7 @@ public class EmailDAOImpl implements EmailDAO {
         ArrayList<String> addresses = new ArrayList<>();
 
         String selectAddressesQuery = "SELECT EMAILADDRESS FROM ADDRESS";
-        try ( Connection connection = DriverManager.getConnection(configBean.getMysqlURL(), configBean.getMysqlUser(), configBean.getMysqlPassword());  PreparedStatement pStatement = connection.prepareStatement(selectAddressesQuery);) {
+        try ( Connection connection = DriverManager.getConnection(url, configBean.getMysqlUser(), configBean.getMysqlPassword());  PreparedStatement pStatement = connection.prepareStatement(selectAddressesQuery);) {
             try ( ResultSet resultSet = pStatement.executeQuery()) {
                 while (resultSet.next()) {
                     addresses.add(resultSet.getString("EmailAddress"));
@@ -719,7 +727,7 @@ public class EmailDAOImpl implements EmailDAO {
 
         String updateQuery = "UPDATE EMAIL SET SUBJECT = ?, MESSAGE = ?, HTMLMESSAGE = ? WHERE EMAILID = ?";
 
-        try ( Connection connection = DriverManager.getConnection(configBean.getMysqlURL(), configBean.getMysqlUser(), configBean.getMysqlPassword());  PreparedStatement ps = connection.prepareStatement(updateQuery);) {
+        try ( Connection connection = DriverManager.getConnection(url, configBean.getMysqlUser(), configBean.getMysqlPassword());  PreparedStatement ps = connection.prepareStatement(updateQuery);) {
             ps.setString(1, mailData.email.subject());
             List<EmailMessage> sentMessages = mailData.email.messages();
             ArrayList<String> messages = retrieveMessageContent(sentMessages, "text/plain");
@@ -765,14 +773,14 @@ public class EmailDAOImpl implements EmailDAO {
         int folderId = findFolderIdByName("Sent");
         String updateFolderQuery = "UPDATE EMAIL SET FOLDERID = ? WHERE EMAILID = ?";
         int rows = 0;
-        try ( Connection connection = DriverManager.getConnection(configBean.getMysqlURL(), configBean.getMysqlUser(), configBean.getMysqlPassword());  PreparedStatement ps = connection.prepareStatement(updateFolderQuery);) {
+        try ( Connection connection = DriverManager.getConnection(url, configBean.getMysqlUser(), configBean.getMysqlPassword());  PreparedStatement ps = connection.prepareStatement(updateFolderQuery);) {
             ps.setInt(1, folderId);
             ps.setInt(2, mailData.getEmailId());
             rows += ps.executeUpdate();
         }
         //Set the current Sent date 
         String updateDateQuery = "UPDATE EMAIL SET SENTDATE = ? WHERE EMAILID = ?";
-        try ( Connection connection = DriverManager.getConnection(configBean.getMysqlURL(), configBean.getMysqlUser(), configBean.getMysqlPassword());  PreparedStatement ps = connection.prepareStatement(updateDateQuery);) {
+        try ( Connection connection = DriverManager.getConnection(url, configBean.getMysqlUser(), configBean.getMysqlPassword());  PreparedStatement ps = connection.prepareStatement(updateDateQuery);) {
             Date date = new Date();
             Timestamp tsp = new Timestamp(date.getTime());
 
@@ -796,7 +804,7 @@ public class EmailDAOImpl implements EmailDAO {
         String deleteAttachmentsQuery = "DELETE FROM ATTACHMENTS "
                 + "WHERE ATTACHMENTS.EMAILID = ?";
         int rows = 0;
-        try ( Connection connection = DriverManager.getConnection(configBean.getMysqlURL(), configBean.getMysqlUser(), configBean.getMysqlPassword());  PreparedStatement ps = connection.prepareStatement(deleteAttachmentsQuery);) {
+        try ( Connection connection = DriverManager.getConnection(url, configBean.getMysqlUser(), configBean.getMysqlPassword());  PreparedStatement ps = connection.prepareStatement(deleteAttachmentsQuery);) {
             ps.setInt(1, mailData.getEmailId());
             ps.executeUpdate();
         }
@@ -819,7 +827,7 @@ public class EmailDAOImpl implements EmailDAO {
         String deleteToAddressQuery = "DELETE FROM EMAILTOADDRESS "
                 + "WHERE EMAILTOADDRESS.EMAILID = ?";
         int rows = 0;
-        try ( Connection connection = DriverManager.getConnection(configBean.getMysqlURL(), configBean.getMysqlUser(), configBean.getMysqlPassword());  PreparedStatement ps = connection.prepareStatement(deleteToAddressQuery);) {
+        try ( Connection connection = DriverManager.getConnection(url, configBean.getMysqlUser(), configBean.getMysqlPassword());  PreparedStatement ps = connection.prepareStatement(deleteToAddressQuery);) {
             ps.setInt(1, mailData.getEmailId());
             ps.executeUpdate();
         }
@@ -878,7 +886,7 @@ public class EmailDAOImpl implements EmailDAO {
 
         String updateFolderQuery = "UPDATE EMAIL SET FOLDERID = ? WHERE EMAILID = ?";
         int rows = 0;
-        try ( Connection connection = DriverManager.getConnection(configBean.getMysqlURL(), configBean.getMysqlUser(), configBean.getMysqlPassword());  PreparedStatement ps = connection.prepareStatement(updateFolderQuery);) {
+        try ( Connection connection = DriverManager.getConnection(url, configBean.getMysqlUser(), configBean.getMysqlPassword());  PreparedStatement ps = connection.prepareStatement(updateFolderQuery);) {
             ps.setInt(1, folderId);
             ps.setInt(2, emailId);
             rows = ps.executeUpdate();
@@ -897,7 +905,7 @@ public class EmailDAOImpl implements EmailDAO {
     public int findFolderIdByName(String name) throws SQLException {
         int id = -1;
         String selectFolderQuery = "SELECT FOLDERID FROM FOLDER WHERE FOLDERNAME = ?";
-        try ( Connection connection = DriverManager.getConnection(configBean.getMysqlURL(), configBean.getMysqlUser(), configBean.getMysqlPassword());  PreparedStatement pStatement = connection.prepareStatement(selectFolderQuery);) {
+        try ( Connection connection = DriverManager.getConnection(url, configBean.getMysqlUser(), configBean.getMysqlPassword());  PreparedStatement pStatement = connection.prepareStatement(selectFolderQuery);) {
             pStatement.setString(1, name);
             try ( ResultSet resultSet = pStatement.executeQuery()) {
                 if (resultSet.next()) {
@@ -917,6 +925,7 @@ public class EmailDAOImpl implements EmailDAO {
      * @return an int that represents the number of folder names changed (should
      * be 1)
      * @throws SQLException
+     * @throws com.xinjia.exceptions.FolderAlreadyExistsException
      */
     @Override
     public int updateFolderName(String toReplace, String newName) throws SQLException, FolderAlreadyExistsException {
@@ -930,7 +939,7 @@ public class EmailDAOImpl implements EmailDAO {
 
         String updateFolderQuery = "UPDATE FOLDER SET FOLDERNAME = ? WHERE FOLDERNAME = ?";
         int rows = 0;
-        try ( Connection connection = DriverManager.getConnection(configBean.getMysqlURL(), configBean.getMysqlUser(), configBean.getMysqlPassword());  PreparedStatement ps = connection.prepareStatement(updateFolderQuery);) {
+        try ( Connection connection = DriverManager.getConnection(url, configBean.getMysqlUser(), configBean.getMysqlPassword());  PreparedStatement ps = connection.prepareStatement(updateFolderQuery);) {
             ps.setString(1, newName);
             ps.setString(2, toReplace);
             rows = ps.executeUpdate();
@@ -957,7 +966,7 @@ public class EmailDAOImpl implements EmailDAO {
         String deleteFolderQuery = "DELETE FROM FOLDER "
                 + "WHERE FOLDER.FOLDERNAME = ?";
 
-        try ( Connection connection = DriverManager.getConnection(configBean.getMysqlURL(), configBean.getMysqlUser(), configBean.getMysqlPassword());  PreparedStatement ps = connection.prepareStatement(deleteFolderQuery);) {
+        try ( Connection connection = DriverManager.getConnection(url, configBean.getMysqlUser(), configBean.getMysqlPassword());  PreparedStatement ps = connection.prepareStatement(deleteFolderQuery);) {
             ps.setString(1, folderName);
             rows = ps.executeUpdate();
         }
@@ -981,7 +990,7 @@ public class EmailDAOImpl implements EmailDAO {
         String deleteEmailQuery = "DELETE FROM EMAIL "
                 + "WHERE EMAIL.EMAILID = ?";
 
-        try ( Connection connection = DriverManager.getConnection(configBean.getMysqlURL(), configBean.getMysqlUser(), configBean.getMysqlPassword());  PreparedStatement ps = connection.prepareStatement(deleteEmailQuery);) {
+        try ( Connection connection = DriverManager.getConnection(url, configBean.getMysqlUser(), configBean.getMysqlPassword());  PreparedStatement ps = connection.prepareStatement(deleteEmailQuery);) {
             ps.setInt(1, id);
             rows = ps.executeUpdate();
         }

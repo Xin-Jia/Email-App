@@ -12,10 +12,7 @@ import com.xinjia.presentation.treecontroller.TreeLayoutController;
 import com.xinjia.properties.MailConfigBean;
 import com.xinjia.properties.propertybean.EmailFXData;
 import com.xinjia.properties.propertybean.propertiesmanager.MailConfigPropertiesManager;
-import java.io.File;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.StandardCopyOption;
 import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
@@ -38,7 +35,6 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
-import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javax.activation.DataSource;
 import jodd.mail.Email;
@@ -84,7 +80,14 @@ public class RootLayoutSplitController {
 
     private final static Logger LOG = LoggerFactory.getLogger(RootLayoutSplitController.class);
 
-    public void setMailConfigBean(MailConfigBean configBean) throws SQLException {
+    /**
+     * Initialize the emailDAO with the given mail config bean.
+     * Initialize all three controllers and display them.
+     * Retrieve the new received emails and store them in the database.
+     * @param configBean
+     * @throws SQLException 
+     */
+    public void initializeRoot(MailConfigBean configBean) throws SQLException {
 
         emailDAO = new EmailDAOImpl(configBean);
 
@@ -92,7 +95,7 @@ public class RootLayoutSplitController {
         initFormAndEditorLayout();
         initTreeViewLayout();
         initTableViewLayout();
-
+        //get the received emails if any and put them in the database
         reloadInbox();
 
         // Tell the tree about the table
@@ -102,12 +105,10 @@ public class RootLayoutSplitController {
 
     }
 
-    //TODO: Default constructor that initializes an EmailDAO
     /**
      * Called by the FXMLLoader when initialization is complete. When the FXML
      * is loaded, if a control is not present, an exception is thrown and quits
-     * the FXML loading process. Set up the properties. Initialize the
-     * controllers and display each of them.
+     * the FXML loading process. Add items to the comboBox for searching emails.
      */
     @FXML
     private void initialize() {
@@ -198,58 +199,57 @@ public class RootLayoutSplitController {
         }
     }
 
+    /**
+     * Create a new custom email bean and insert the given ReceivedEmail to the database.
+     * @param receivedEmail the ReceivedEmail
+     * @throws SQLException 
+     */
     private void insertReceivedEmail(ReceivedEmail receivedEmail) throws SQLException {
         LOG.info("INSERTING RECEIVED EMAILS");
         EmailData emailBean = new EmailData();
-        //int emailId, int folderId, LocalDateTime receivedDate, Email email
+
         //set the folder to the Inbox folder
         emailBean.setFolderId(1);
+        //create the received date
         Date date = receivedEmail.receivedDate();
         Timestamp timeStamp = new Timestamp(date.getTime());
         LocalDateTime localDateTime = timeStamp.toLocalDateTime();
         emailBean.setReceivedDate(localDateTime);
 
         Email email = new Email();
-
+        
         List<EmailMessage> messages = receivedEmail.messages();
-
+        //get the text messages of the receivedEmail
         ArrayList<String> messagesString = ((EmailDAOImpl) emailDAO).retrieveMessageContent(messages, "text/plain");
         if (!messages.isEmpty()) {
 
             if (!messages.isEmpty()) {
-                LOG.info("TEXT MSG NOT EMPTY");
                 email.textMessage(messagesString.get(0));
             }
-
+            //get the HTML messages of the receivedEmail
             messagesString = ((EmailDAOImpl) emailDAO).retrieveMessageContent(messages, "text/html");
             if (!messages.isEmpty()) {
-                LOG.info("HTML MSG NOT EMPTY");
                 LOG.info(messagesString.get(0));
                 email.htmlMessage(messagesString.get(0));
             }
         }
-        LOG.info("ATTACHMENT SIZE IN RECEIVED EMAIL: " + receivedEmail.attachments().size());
         for (int i = 0; i < receivedEmail.attachments().size(); i++) {
             EmailAttachment attachment = receivedEmail.attachments().get(i);
             if (attachment.isEmbedded() && attachment.getContentId() != null) {
+                //check if the attachment is embedded
                 if (!attachment.getContentId().equals("") && messagesString.get(0).contains("img src=\"cid:" + attachment.getContentId().replaceAll("[<>]", ""))) {
-                    LOG.info("it is embedded");
                     email.embeddedAttachment(attachment);
                 } else {
-                    LOG.info("it is NOT embedded");
                     email.attachment(attachment);
                 }
             } else {
-                LOG.info("it is NOT embedded, contentId is null");
                 email.attachment(attachment);
             }
 
         }
-        LOG.info("ATTACHMENT SIZE IN NEW RECEIVED EMAIL: " + email.attachments().size());
         email.from(receivedEmail.from().getEmail());
         email.subject(receivedEmail.subject());
         email.sentDate(receivedEmail.sentDate());
-        // email.attachments(receivedEmail.attachments());
 
         for (EmailAddress ea : receivedEmail.to()) {
             email.to(ea);
@@ -316,7 +316,6 @@ public class RootLayoutSplitController {
                 RenameFolderController folderPopUpController = loader.getController();
                 //Set the TreeLayoutController to the folderPopUpController so a folder can be renamed
                 folderPopUpController.setTreeController(treeController);
-                //folderPopUpController.setEmailDAO(emailDAO);
 
                 Scene scene = new Scene(renameFolderBox);
                 Stage stage = new Stage();
@@ -370,7 +369,7 @@ public class RootLayoutSplitController {
             loader.setLocation(MainEmailApp.class
                     .getResource("/fxml/MailConfigPropertiesForm.fxml"));
             Parent rootPane = (GridPane) loader.load();
-            PropertiesFormController controller = loader.getController();
+            loader.getController();
 
             //retrieve the saved properties so they can be displayed in the TextFields
             retrieveMailConfig();
@@ -400,22 +399,30 @@ public class RootLayoutSplitController {
 
 
     /**
-     * Called when the user press the Delete Selected Email MenuItem Delete an
-     * email and its row in the TableView
+     * Called when the user press the Delete Selected Email MenuItem. 
+     * Delete an email and its row in the TableView
      */
     @FXML
     private void deleteSelectedEmail() throws SQLException {
         tableController.deleteEmailRow();
     }
 
+    /**
+     * Called when the user press the New Email MenuItem.
+     * Empty the form and enable the buttons to allow the user to save/send the email.
+     * @throws SQLException 
+     */
     @FXML
     private void createNewEmail() throws SQLException {
         formHtmlController.emptyAllFields();
-        //enable the buttons 
         formHtmlController.disableButtons(false);
         tableController.unselectRow();
     }
 
+    /**
+     * Retrieve all received emails from the mail config email address
+     * @throws SQLException 
+     */
     @FXML
     public void reloadInbox() throws SQLException {
         SendAndReceive emailOperations = new SendAndReceive(((EmailDAOImpl) emailDAO).getMailConfigBean());
@@ -428,8 +435,15 @@ public class RootLayoutSplitController {
         }
     }
 
+    /**
+     * Called when the Search button is pressed.
+     * Find all emails based on the chosen item in the comboBox and on the given value in the TextField.
+     * @param event
+     * @throws SQLException 
+     */
     @FXML
     void searchEmails(ActionEvent event) throws SQLException {
+        //if the TextField is empty, show an alert dialog
         if (searchEmailsTextField.getText().trim().isEmpty()) {
             Alert dialog = new Alert(Alert.AlertType.ERROR);
             dialog.setTitle(resources.getString("errorTitle"));
@@ -439,17 +453,18 @@ public class RootLayoutSplitController {
         } else {
             String value = comboBox.getSelectionModel().getSelectedItem();
             switch (value) {
-                case "Subject":
-                    tableController.displayEmailsBySearchValue(convertToJavaFXBean(emailDAO.findEmailsBySubject(searchEmailsTextField.getText())));
-                    break;
-                case "Recipients":
-                    tableController.displayEmailsBySearchValue(convertToJavaFXBean(emailDAO.findEmailsByRecipients(searchEmailsTextField.getText())));
-                    break;
+                case "Subject" -> tableController.displayEmailsBySearchValue(convertToJavaFXBean(emailDAO.findEmailsBySubject(searchEmailsTextField.getText())));
+                case "Recipients" -> tableController.displayEmailsBySearchValue(convertToJavaFXBean(emailDAO.findEmailsByRecipients(searchEmailsTextField.getText())));
             }
 
         }
     }
     
+    /**
+     * Make a JavaFX email bean for each custom email bean.
+     * @param emails
+     * @return 
+     */
     private ObservableList<EmailFXData> convertToJavaFXBean(ArrayList<EmailData> emails) {
         ObservableList<EmailFXData> observableData = FXCollections.observableArrayList();
 
@@ -459,6 +474,11 @@ public class RootLayoutSplitController {
         return observableData;
     }
 
+    /**
+     * Convert a custom email bean to a JavaFX email bean.
+     * @param email the custom bean to be converted
+     * @return the JavaFX bean EmailFXData
+     */
     private EmailFXData convertToSingleJavaFXBean(EmailData email) {
 
         ObservableList<String> to = FXCollections.observableArrayList();
@@ -525,5 +545,6 @@ public class RootLayoutSplitController {
 
         return observableData;
     }
+
 
 }

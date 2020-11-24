@@ -38,7 +38,7 @@ import org.slf4j.LoggerFactory;
  * Unit tests for Emails CRUD operations using JDBC 
  * NOTE : There are no delete and update options for the 3 main folders in the GUI so there are no
  * exception test cases for these situations
- * There will also not have a drag option for Draft emails so no exception would be thrown
+ * There are no drag option for Draft emails so no exception would be thrown
  * @author Xin Jia Cao
  */
 @Ignore
@@ -47,13 +47,22 @@ public class EmailJDBCTest {
     private final static Logger LOG = LoggerFactory.getLogger(EmailJDBCTest.class);
 
     private static MailConfigBean configBean;
+    private static String url;
     private EmailDAOImpl mailFunction;
 
     //Initializes fields and tables before every test
     @Before
     public void initializeTest() {
-        String dbUrl = "jdbc:mysql://localhost:3306/EMAILAPP?characterEncoding=UTF-8&autoReconnect=true&zeroDateTimeBehavior=CONVERT_TO_NULL&useSSL=false&allowPublicKeyRetrieval=true&useTimezone=true&serverTimezone=UTC";
-        configBean = new MailConfigBean("", "", "", "", "", "", "", dbUrl, "EMAILAPP", "3306", "userxj", "dawson2");
+        //String dbUrl = "jdbc:mysql://localhost:3306/EMAILAPP?characterEncoding=UTF-8&autoReconnect=true&zeroDateTimeBehavior=CONVERT_TO_NULL&useSSL=false&allowPublicKeyRetrieval=true&useTimezone=true&serverTimezone=UTC";
+                        // jdbc:mysql//localhost:3306/EMAILAPP?characterEncoding=UTF-8&autoReconnect=true&zeroDateTimeBehavior=CONVERT_TO_NULL&useSSL=false&allowPublicKeyRetrieval=true&useTimezone=true&serverTimezone=UTC
+        configBean = new MailConfigBean("", "", "", "", "", "", "", "localhost", "EMAILAPP", "3306", "userxj", "dawson2");
+        url = "jdbc:mysql://"
+                + configBean.getMysqlURL()
+                + ":"
+                + configBean.getMysqlPort()
+                + "/"
+                + configBean.getMysqlDatabase()
+                + "?characterEncoding=UTF-8&autoReconnect=true&zeroDateTimeBehavior=CONVERT_TO_NULL&useSSL=false&allowPublicKeyRetrieval=true&useTimezone=true&serverTimezone=UTC";
         seedDatabase();
         mailFunction = new EmailDAOImpl(configBean);
     }
@@ -335,7 +344,7 @@ public class EmailJDBCTest {
     private int getLastId() throws SQLException {
         String selectLastIdQuery = "SELECT EMAILID FROM EMAIL";
         int latestId = -1;
-        try ( Connection connection = DriverManager.getConnection(configBean.getMysqlURL(), configBean.getMysqlUser(), configBean.getMysqlPassword());  PreparedStatement pStatement = connection.prepareStatement(selectLastIdQuery);) {
+        try ( Connection connection = DriverManager.getConnection(url, configBean.getMysqlUser(), configBean.getMysqlPassword());  PreparedStatement pStatement = connection.prepareStatement(selectLastIdQuery);) {
             try ( ResultSet resultSet = pStatement.executeQuery()) {
                 while (resultSet.next()) {
                     latestId = resultSet.getInt("EmailId");
@@ -366,8 +375,15 @@ public class EmailJDBCTest {
     @AfterClass
     public static void seedAfterTestCompleted() {
         LOG.info("@AfterClass seeding");
-        String dbUrl = "jdbc:mysql://localhost:3306/EMAILAPP?characterEncoding=UTF-8&autoReconnect=true&zeroDateTimeBehavior=CONVERT_TO_NULL&useSSL=false&allowPublicKeyRetrieval=true&useTimezone=true&serverTimezone=UTC";
-        configBean = new MailConfigBean("", "", "", "", "", "", "", dbUrl, "EMAILAPP", "3306", "userxj", "dawson2");
+        //String dbUrl = "jdbc:mysql://localhost:3306/EMAILAPP?characterEncoding=UTF-8&autoReconnect=true&zeroDateTimeBehavior=CONVERT_TO_NULL&useSSL=false&allowPublicKeyRetrieval=true&useTimezone=true&serverTimezone=UTC";
+        configBean = new MailConfigBean("", "", "", "", "", "", "", "localhost", "EMAILAPP", "3306", "userxj", "dawson2");
+        url = "jdbc:mysql://"
+                + configBean.getMysqlURL()
+                + ":"
+                + configBean.getMysqlPort()
+                + "/"
+                + configBean.getMysqlDatabase()
+                + "?characterEncoding=UTF-8&autoReconnect=true&zeroDateTimeBehavior=CONVERT_TO_NULL&useSSL=false&allowPublicKeyRetrieval=true&useTimezone=true&serverTimezone=UTC";
         new EmailJDBCTest().seedDatabase();
     }
 
@@ -385,7 +401,7 @@ public class EmailJDBCTest {
 
         final String seedDataScript = loadAsString("createEmailTables.sql");
 
-        try ( Connection connection = DriverManager.getConnection(configBean.getMysqlURL(), configBean.getMysqlUser(), configBean.getMysqlPassword());) {
+        try ( Connection connection = DriverManager.getConnection(url, configBean.getMysqlUser(), configBean.getMysqlPassword());) {
             for (String statement : splitStatements(new StringReader(seedDataScript), ";")) {
                 connection.prepareStatement(statement).execute();
             }
