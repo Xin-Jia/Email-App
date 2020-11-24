@@ -6,7 +6,7 @@ import java.util.Objects;
 import jodd.mail.Email;
 
 /**
- * Data bean for email Overrides toString, hashCode and equals
+ * Custom Email bean that overrides toString, hashCode and equals
  *
  * @author Xin Jia Cao
  */
@@ -17,6 +17,13 @@ public class EmailData {
     private LocalDateTime receivedDate;
     public Email email;
 
+    /**
+     * Non-default constructor for the custom Email bean
+     * @param emailId
+     * @param folderId
+     * @param receivedDate
+     * @param email 
+     */
     public EmailData(int emailId, int folderId, LocalDateTime receivedDate, Email email) {
         this.emailId = emailId;
         this.folderId = folderId;
@@ -24,6 +31,9 @@ public class EmailData {
         this.email = email;
     }
 
+    /**
+     * Default constructor for the custom Email bean
+     */
     public EmailData() {
         this.emailId = -1;
         this.folderId = -1;

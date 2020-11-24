@@ -3,9 +3,7 @@ package com.xinjia.jdbc.persistence;
 import com.xinjia.exceptions.FolderAlreadyExistsException;
 import com.xinjia.jdbc.beans.EmailData;
 import com.xinjia.properties.MailConfigBean;
-import com.xinjia.properties.propertybean.EmailFXData;
 import com.xinjia.properties.propertybean.FolderData;
-import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -14,17 +12,13 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.Timestamp;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javax.activation.DataSource;
-import jodd.mail.Email;
 import jodd.mail.EmailAddress;
 import jodd.mail.EmailAttachment;
 import jodd.mail.EmailMessage;
-import jodd.mail.MailException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -50,6 +44,10 @@ public class EmailDAOImpl implements EmailDAO {
         configBean = mailConfigBean;
     }
 
+    /**
+     * Getter to retrieve the mail config bean
+     * @return the MailConfigBean
+     */
     public MailConfigBean getMailConfigBean() {
         return configBean;
     }
@@ -74,95 +72,10 @@ public class EmailDAOImpl implements EmailDAO {
         }
 
         LOG.debug("Total number of emails : " + data.size());
-        //convert to JavaFX bean
-        //ObservableList<EmailFXData> observableData = convertToJavaFXBean(data);
+
         return data;
     }
 
-    private ObservableList<EmailFXData> convertToJavaFXBean(ArrayList<EmailData> emails) {
-        ObservableList<EmailFXData> observableData = FXCollections.observableArrayList();
-
-        emails.forEach(email -> {
-            observableData.add(convertToSingleJavaFXBean(email));
-        });
-        return observableData;
-    }
-
-    private EmailFXData convertToSingleJavaFXBean(EmailData email) {
-
-        ObservableList<String> to = FXCollections.observableArrayList();
-        ObservableList<String> cc = FXCollections.observableArrayList();
-        ObservableList<String> bcc = FXCollections.observableArrayList();
-        Email joddEmail = email.getEmail();
-        String txtMsg = "";
-        String htmlMsg = "";
-        LOG.info("EMAIL SUBJECT: " + joddEmail.subject());
-        LOG.info("EMAIL ATTS: " + joddEmail.attachments());
-        List<String> regAttachmentsList = new ArrayList<>();
-        List<byte[]> regAttachmentsBytes = new ArrayList<>();
-        List<String> embedAttachmentsList = new ArrayList<>();
-        List<byte[]> embedAttachmentsBytes = new ArrayList<>();
-
-        List<EmailMessage> messages = joddEmail.messages();
-        ArrayList<String> messagesString = retrieveMessageContent(messages, "text/plain");
-        if (!messages.isEmpty()) {
-
-            if (!messages.isEmpty()) {
-                txtMsg = messagesString.get(0);
-            }
-
-            messagesString = retrieveMessageContent(messages, "text/html");
-            if (!messages.isEmpty()) {
-                htmlMsg = messagesString.get(0);
-            }
-        }
-
-        List<EmailAttachment<? extends DataSource>> attachments = joddEmail.attachments();
-        LOG.info("ATTACHMENT SIZE IN DAO: " + attachments.size());
-        if (!attachments.isEmpty()) {
-            for (EmailAttachment ea : attachments) {
-                LOG.info(ea.getName());
-                LOG.info("Embedded?: " + ea.isEmbedded());
-                try {
-                    if (ea.isEmbedded() && (ea.toByteArray() != null || ea.toByteArray().length != 0)) {
-                        if (!ea.getContentId().equals("") && messagesString.get(0).contains("img src=\"cid:" + ea.getContentId().replaceAll("[<>]", ""))) {
-                            LOG.info("ADDING EMBEDDED ATTACHMENTS TO FX BEAN: " + email.getEmail());
-                            LOG.info("CONTENT ID IS: "+ea.getContentId());
-                            embedAttachmentsList.add(ea.getName());
-                            embedAttachmentsBytes.add(ea.toByteArray());
-                        }
-                        else{
-                            LOG.info("ADDING REGULAR ATTACHMENTS TO FX BEAN: " + email.getEmail());
-                            regAttachmentsList.add(ea.getName());
-                            regAttachmentsBytes.add(ea.toByteArray());
-                        }
-
-                    } else if (!ea.isEmbedded() && (ea.toByteArray() != null || ea.toByteArray().length != 0)) {
-                        LOG.info("ADDING REGULAR ATTACHMENTS TO FX BEAN: " + email.getEmail());
-                        regAttachmentsList.add(ea.getName());
-                        regAttachmentsBytes.add(ea.toByteArray());
-                    }
-                } catch (MailException e) {
-                    LOG.error("BYTE ARRAY NULL");
-                }
-            }
-        }
-
-        for (EmailAddress address : email.getEmail().to()) {
-            to.add(address.getEmail());
-        }
-        for (EmailAddress address : email.getEmail().cc()) {
-            cc.add(address.getEmail());
-        }
-        for (EmailAddress address : email.getEmail().bcc()) {
-            bcc.add(address.getEmail());
-        }
-
-        EmailFXData observableData = new EmailFXData(email.getEmailId(), email.getFolderId(), email.getReceivedDate(),
-                joddEmail.from().getEmail(), joddEmail.subject(), to, cc, bcc, txtMsg, htmlMsg, regAttachmentsList, regAttachmentsBytes, embedAttachmentsList, embedAttachmentsBytes);
-
-        return observableData;
-    }
 
     /**
      * Creates an EmailData (bean) based on the ResultSet retrieved from a query
@@ -369,11 +282,6 @@ public class EmailDAOImpl implements EmailDAO {
                 mailData.setEmailId(recordNum);
                 LOG.debug("New email ID is: " + recordNum);
             }
-        }
-
-        for (EmailAttachment ea : mailData.email.attachments()) {
-            LOG.info("IS EMBEDDED??? - maildata" + ea.isEmbedded());
-            LOG.info("CONTENT ID: - maildata" + ea.getContentId());
         }
 
         checkIfInAddressTable(mailData);
@@ -620,8 +528,6 @@ public class EmailDAOImpl implements EmailDAO {
         }
         LOG.debug("Email with id: " + id + "?: " + (mailData != null));
 
-        //convert to JavaFX bean
-        //EmailFXData observableData = convertToSingleJavaFXBean(mailData);
         return mailData;
     }
 
@@ -653,11 +559,6 @@ public class EmailDAOImpl implements EmailDAO {
             LOG.debug("Number of emails in: " + folderName + " is: " + emails.size());
 
         }
-        for (EmailData data : emails) {
-            LOG.info("attachment in EmailData : " + data.email.attachments());
-        }
-        //convert to JavaFX bean
-        //ObservableList<EmailFXData> observableData = convertToJavaFXBean(emails);
 
         return emails;
 
@@ -672,10 +573,8 @@ public class EmailDAOImpl implements EmailDAO {
      */
     private boolean containsIgnoreCase(List<String> folders, String name) {
         //equal operation that ignores case sensivity
-        if (folders.stream().anyMatch(folderName -> (folderName.equalsIgnoreCase(name)))) {
-            return true;
-        }
-        return false;
+        
+        return folders.stream().anyMatch(folderName -> (folderName.equalsIgnoreCase(name)));
     }
 
     /**
@@ -703,8 +602,7 @@ public class EmailDAOImpl implements EmailDAO {
             LOG.debug(emails.isEmpty() ? "No emails found with subject substring: " + subString
                     : "Number of emails found with the substring: " + subString + " in Subject is: " + emails.size());
         }
-        //convert to JavaFX bean
-        //ObservableList<EmailFXData> observableData = convertToJavaFXBean(emails);
+
         return emails;
     }
 
@@ -735,8 +633,7 @@ public class EmailDAOImpl implements EmailDAO {
             LOG.debug(emails.isEmpty() ? "No emails found with recipient substring: " + subString
                     : "Number of emails found with the substring: " + subString + " in Subject is: " + emails.size());
         }
-        //convert to JavaFX bean
-        //ObservableList<EmailFXData> observableData = convertToJavaFXBean(emails);
+
         return emails;
     }
 
@@ -748,8 +645,7 @@ public class EmailDAOImpl implements EmailDAO {
      */
     @Override
     public ArrayList<String> findFolderNames() throws SQLException {
-        //ObservableList<String> folders = FXCollections
-                //.observableArrayList();
+
         ArrayList<String> folders = new ArrayList<>();
         String selectFoldersQuery = "SELECT FOLDERNAME FROM FOLDER";
         try ( Connection connection = DriverManager.getConnection(configBean.getMysqlURL(), configBean.getMysqlUser(), configBean.getMysqlPassword());  PreparedStatement pStatement = connection.prepareStatement(selectFoldersQuery);) {
@@ -763,6 +659,11 @@ public class EmailDAOImpl implements EmailDAO {
         return folders;
     }
 
+    /**
+     * Retrieve all folders to make an ObservableList of the javaFX bean FolderData (to be displayed in the TreeView)
+     * @return ObservableList<FolderData> 
+     * @throws SQLException 
+     */
     @Override
     public ObservableList<FolderData> findFolders() throws SQLException {
         ObservableList<FolderData> folders = FXCollections

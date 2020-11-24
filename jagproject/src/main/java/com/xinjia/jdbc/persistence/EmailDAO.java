@@ -3,7 +3,6 @@ package com.xinjia.jdbc.persistence;
 
 import com.xinjia.exceptions.FolderAlreadyExistsException;
 import com.xinjia.jdbc.beans.EmailData;
-import com.xinjia.properties.propertybean.EmailFXData;
 import com.xinjia.properties.propertybean.FolderData;
 import java.sql.SQLException;
 import java.util.ArrayList;

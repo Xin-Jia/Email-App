@@ -9,8 +9,6 @@ import com.xinjia.exceptions.NullToEmailException;
 import com.xinjia.properties.MailConfigBean;
 import java.io.File;
 import java.util.ArrayList;
-import java.util.List;
-import javax.activation.DataSource;
 import javax.mail.Flags;
 import jodd.mail.Email;
 import jodd.mail.EmailAttachment;
@@ -88,11 +86,6 @@ public class SendAndReceive {
         }
 
         if (!toRecipients.isEmpty()) {
-            /*for (String mailTo : toRecipients) {
-                if (mailTo != null) {
-                    email.to(mailTo);
-                }
-            }*/
              email.to(toRecipients.toArray(new String[0]));
         }
         if (!ccRecipients.isEmpty()) {

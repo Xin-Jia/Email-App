@@ -102,10 +102,12 @@ INSERT INTO EmailToAddress(EmailId, AddressId,RecipientType) VALUES
 (3,2,"BCC"),
 (4,3,"To"),
 (5,4,"CC"),
+(6,1,"To"),
 (8,6,"To"),
 (8,3,"To"),
 (9,1,"To"),
-(9,7,"BCC");
+(9,7,"BCC"),
+(10,2,"CC");
 
 
 
