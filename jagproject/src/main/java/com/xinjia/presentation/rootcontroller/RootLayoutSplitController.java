@@ -6,7 +6,6 @@ import com.xinjia.jdbc.persistence.EmailDAO;
 import com.xinjia.jdbc.persistence.EmailDAOImpl;
 import com.xinjia.presentation.MainEmailApp;
 import com.xinjia.presentation.formhtml.FormAndHTMLLayoutController;
-import com.xinjia.presentation.mailconfigcontroller.PropertiesFormController;
 import com.xinjia.presentation.tablecontroller.TableLayoutController;
 import com.xinjia.presentation.treecontroller.TreeLayoutController;
 import com.xinjia.properties.MailConfigBean;
@@ -229,7 +228,6 @@ public class RootLayoutSplitController {
             //get the HTML messages of the receivedEmail
             messagesString = ((EmailDAOImpl) emailDAO).retrieveMessageContent(messages, "text/html");
             if (!messages.isEmpty()) {
-                LOG.info(messagesString.get(0));
                 email.htmlMessage(messagesString.get(0));
             }
         }
@@ -463,7 +461,7 @@ public class RootLayoutSplitController {
     /**
      * Make a JavaFX email bean for each custom email bean.
      * @param emails
-     * @return 
+     * @return an ObservableList<EmailFXData> that represent the JavaFX beans
      */
     private ObservableList<EmailFXData> convertToJavaFXBean(ArrayList<EmailData> emails) {
         ObservableList<EmailFXData> observableData = FXCollections.observableArrayList();

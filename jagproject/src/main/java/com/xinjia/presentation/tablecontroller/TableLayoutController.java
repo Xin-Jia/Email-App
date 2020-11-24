@@ -9,14 +9,12 @@ import com.xinjia.properties.MailConfigBean;
 import com.xinjia.properties.propertybean.propertiesmanager.MailConfigPropertiesManager;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
-import java.util.logging.Level;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -105,8 +103,9 @@ public class TableLayoutController {
     }
 
     /**
-     * Called when the app is being initialized. Set the items in the table to
-     * be the emails in the inbox folder.
+     * Called when the app is being initialized.Set the items in the table to
+        be the emails in the inbox folder.
+     * @throws java.sql.SQLException
      */
     public void displayTheTable() throws SQLException {
         displayEmailsBasedOnFolder("Inbox");
@@ -160,6 +159,10 @@ public class TableLayoutController {
         });
     }
 
+    /**
+     * Saved the selected email's embedded files (if any) to the root of the project so it can be displayed in the editor
+     * @throws IOException 
+     */
     private void saveFileToDisk() throws IOException {
         for (int i = 0; i < clickedRow.getEmbedAttachmentsBytes().size(); i++) {
             BufferedImage img = ImageIO.read(new ByteArrayInputStream(clickedRow.getEmbedAttachmentsBytes().get(i)));
@@ -234,12 +237,18 @@ public class TableLayoutController {
      * Display rows of EmailFXData based on the selected folder.
      *
      * @param folder The selected folder's name
+     * @throws java.sql.SQLException
      */
     public void displayEmailsBasedOnFolder(String folder) throws SQLException {
         emailsToDisplay = convertToJavaFXBean(emailDAO.findEmailsByFolder(folder));
         emailDataTable.setItems(emailsToDisplay);
     }
     
+    /**
+     * Make a JavaFX email bean for each custom email bean.
+     * @param emails
+     * @return an ObservableList<EmailFXData> that represent the JavaFX beans
+     */
     private ObservableList<EmailFXData> convertToJavaFXBean(ArrayList<EmailData> emails) {
         ObservableList<EmailFXData> observableData = FXCollections.observableArrayList();
 
@@ -249,6 +258,11 @@ public class TableLayoutController {
         return observableData;
     }
 
+    /**
+     * Convert a custom email bean to a JavaFX email bean.
+     * @param email the custom bean to be converted
+     * @return the JavaFX bean EmailFXData
+     */
     private EmailFXData convertToSingleJavaFXBean(EmailData email) {
 
         ObservableList<String> to = FXCollections.observableArrayList();
@@ -323,6 +337,7 @@ public class TableLayoutController {
      * dragged EmailFXData to the dropped folder.
      *
      * @param folderId the folder Id to be changed to
+     * @throws java.sql.SQLException
      */
     public void changeEmailFolder(int folderId) throws SQLException {
 
@@ -330,6 +345,10 @@ public class TableLayoutController {
         emailsToDisplay.remove(emailDataDragged);
     }
 
+    /**
+     * Delete the selected email from the table and the database
+     * @throws SQLException 
+     */
     public void deleteEmailRow() throws SQLException {
         if (clickedRow == null) {
             displayEmailError(resources.getString("NoEmailSelectedHeader"), resources.getString("NoEmailSelectedText"));
@@ -342,7 +361,7 @@ public class TableLayoutController {
 
     /**
      * Display an alert dialog with the given header text and content text when
-     * an error occured when trying to create or delete a folder.
+     * an error occured.
      *
      * @param header The header text
      * @param content The content text
@@ -355,11 +374,18 @@ public class TableLayoutController {
         dialog.show();
     }
 
+    /**
+     * Put in the table the given JavaFX beans (when the user wants the search emails based on recipients or subject)
+     * @param emailsToDisplay 
+     */
     public void displayEmailsBySearchValue(ObservableList<EmailFXData> emailsToDisplay) {
         this.emailsToDisplay = emailsToDisplay;
         emailDataTable.setItems(this.emailsToDisplay);
     }
 
+    /**
+     * Unselect the selected row in the table and reset the JavaFX email bean
+     */
     public void unselectRow() {
         emailDataTable.getSelectionModel().clearSelection();
         clickedRow = null;

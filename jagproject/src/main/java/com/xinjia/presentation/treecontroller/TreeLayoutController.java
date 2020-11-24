@@ -3,14 +3,12 @@ package com.xinjia.presentation.treecontroller;
 import com.xinjia.exceptions.FolderAlreadyExistsException;
 import com.xinjia.jdbc.persistence.EmailDAO;
 import com.xinjia.jdbc.persistence.EmailDAOImpl;
-import com.xinjia.presentation.formhtml.FormAndHTMLLayoutController;
 import com.xinjia.presentation.tablecontroller.TableLayoutController;
 import com.xinjia.properties.propertybean.FolderData;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
-import java.util.logging.Level;
 import javafx.collections.ObservableList;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -36,6 +34,10 @@ public class TreeLayoutController {
     private TableLayoutController tableController;
     private ObservableList<FolderData> foldersList;
     private EmailDAO emailDAO;
+    private static final int INBOX_ID = 1;
+    private static final int SENT_ID = 2;
+    private static final int DRAFT_ID = 3;
+    
 
     private final static Logger LOG = LoggerFactory.getLogger(TreeLayoutController.class);
 
@@ -61,13 +63,16 @@ public class TreeLayoutController {
         this.tableController = tableController;
 
     }
-
+    /**
+     * Setter for the EmailDAO so we can use it to manage database operations
+     * @param emailDAO 
+     */
     public void setEmailDAO(EmailDAO emailDAO) {
         this.emailDAO = emailDAO;
     }
 
     /**
-     * Initialize the TreeView.Add event handlers for drag over and drag
+     * Initialize the TreeView. Add event handlers for drag over and drag
      * dropped.
      *
      * @throws java.sql.SQLException
@@ -85,7 +90,7 @@ public class TreeLayoutController {
                     //convert the folder names if needed (locale is french)
                     setText(internationalize(item.getFolderName()));
                     setGraphic(getTreeItem().getGraphic());
-                    if (item.getId() != 3) {
+                    if (item.getId() != DRAFT_ID) {
                         this.setOnDragOver(new EventHandler<DragEvent>() {
                             @Override
                             public void handle(DragEvent dragEvent) {
@@ -111,6 +116,11 @@ public class TreeLayoutController {
         });
     }
 
+    /**
+     * Internationalize the folder names based on the resources
+     * @param name the folder name
+     * @return the internationalized name of the provided name
+     */
     private String internationalize(String name) {
         if (name.equals("Inbox") || name.equals("Draft") || name.equals("Sent")) {
             return resources.getString(name.toLowerCase());
@@ -119,8 +129,8 @@ public class TreeLayoutController {
     }
 
     /**
-     * Populate the TreeView based on the ObservableList of FolderData.Display
-     * an icon next to the folders name.
+     * Populate the TreeView based on the ObservableList of FolderData.
+     * Display a folder icon next to the folders name.
      *
      * @throws java.sql.SQLException
      */
@@ -168,8 +178,8 @@ public class TreeLayoutController {
     }
 
     /**
-     * Called in FolderPopUpController when the Create button is pressed.Check
-     * if the given folder name is valid first.Add a folder to the TreeView.
+     * Called in FolderPopUpController when the Create button is pressed. Check
+     * if the given folder name is valid first. Add a folder to the TreeView.
      *
      * @param folderName
      * @throws java.sql.SQLException
@@ -195,12 +205,17 @@ public class TreeLayoutController {
         }
     }
 
+    /**
+     * Check if the selected folder can be renamed. Only custom folders can be renamed.
+     * Will display an alert dialog if it cannot be renamed.
+     * @return true if the folder can be renamed (not Sent, Draft, Inbox) and false otherwise
+     */
     public boolean checkCanSelectedFolderBeRenamed() {
         TreeItem<FolderData> selectedFolder = folderTree.getSelectionModel().getSelectedItem();
         if (checkIfFolderSelected(selectedFolder)) {
             int folderId = selectedFolder.getValue().getId();
             //Check if the selected folder is one of the default folders
-            boolean isDefaultFolders = (folderId == 1 || folderId == 2 || folderId == 3);
+            boolean isDefaultFolders = (folderId == INBOX_ID || folderId == SENT_ID || folderId == DRAFT_ID);
             if (isDefaultFolders) {
                 displayFolderError(resources.getString("cannotRenameFolderHeader"), resources.getString("errorRenameText"));
                 return false;
@@ -211,6 +226,14 @@ public class TreeLayoutController {
         return true;
     }
 
+    /**
+     * Rename the selected folder and update it in the database.
+     * If the new name for the folder is Sent, Draft or Inbox (not case-sensitive), it will display an alert dialog.
+     * It will do the same if the provided new name is empty.
+     * @param newFolderName the new folder name
+     * @throws SQLException
+     * @throws FolderAlreadyExistsException 
+     */
     public void renameCustomFolder(String newFolderName) throws SQLException, FolderAlreadyExistsException {
         List<String> folderNames = getFolderNames();
         TreeItem<FolderData> selectedFolder = folderTree.getSelectionModel().getSelectedItem();
@@ -231,6 +254,11 @@ public class TreeLayoutController {
 
     }
 
+    /**
+     * Check if a folder has been selected or not. If not, display an alert dialog.
+     * @param selectedFolder the TreeItem of FolderData 
+     * @return true if a folder is selected and false otherwise
+     */
     private boolean checkIfFolderSelected(TreeItem<FolderData> selectedFolder) {
         if (selectedFolder == null) {
             displayFolderError(resources.getString("noFolderSelectedHeader"), resources.getString("errorSelectText"));
@@ -266,7 +294,7 @@ public class TreeLayoutController {
         } else {
             int folderId = selectedFolder.getValue().getId();
             //Check if the selected folder is one of the default folders
-            boolean isDefaultFolders = (folderId == 1 || folderId == 2 || folderId == 3);
+            boolean isDefaultFolders = (folderId == INBOX_ID  || folderId == SENT_ID || folderId == DRAFT_ID);
             if (isDefaultFolders) {
                 displayFolderError(resources.getString("cannotDelFolderHeader"), resources.getString("errorDelText"));
 
