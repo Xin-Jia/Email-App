@@ -52,9 +52,7 @@ public class EmailJDBCTest {
 
     //Initializes fields and tables before every test
     @Before
-    public void initializeTest() {
-        //String dbUrl = "jdbc:mysql://localhost:3306/EMAILAPP?characterEncoding=UTF-8&autoReconnect=true&zeroDateTimeBehavior=CONVERT_TO_NULL&useSSL=false&allowPublicKeyRetrieval=true&useTimezone=true&serverTimezone=UTC";
-                        // jdbc:mysql//localhost:3306/EMAILAPP?characterEncoding=UTF-8&autoReconnect=true&zeroDateTimeBehavior=CONVERT_TO_NULL&useSSL=false&allowPublicKeyRetrieval=true&useTimezone=true&serverTimezone=UTC
+    public void initializeTest() {     
         configBean = new MailConfigBean("", "", "", "", "", "", "", "localhost", "EMAILAPP", "3306", "userxj", "dawson2");
         url = "jdbc:mysql://"
                 + configBean.getMysqlURL()
@@ -375,7 +373,6 @@ public class EmailJDBCTest {
     @AfterClass
     public static void seedAfterTestCompleted() {
         LOG.info("@AfterClass seeding");
-        //String dbUrl = "jdbc:mysql://localhost:3306/EMAILAPP?characterEncoding=UTF-8&autoReconnect=true&zeroDateTimeBehavior=CONVERT_TO_NULL&useSSL=false&allowPublicKeyRetrieval=true&useTimezone=true&serverTimezone=UTC";
         configBean = new MailConfigBean("", "", "", "", "", "", "", "localhost", "EMAILAPP", "3306", "userxj", "dawson2");
         url = "jdbc:mysql://"
                 + configBean.getMysqlURL()
