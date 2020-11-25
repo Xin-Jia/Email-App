@@ -1,15 +1,9 @@
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
-/* 
+
+/*  CSS for the table view
     Created on : Oct. 29, 2020, 5:36:44 p.m.
     Author     : Xin Jia Cao
 */
-/*.table-view{
-   -fx-background-color: transparent;
-}*/
+
 .table-row-cell:selected {
     -fx-background-color: #8BCFFC;
     -fx-textcolor: #000000;
@@ -43,6 +37,3 @@ and open the template in the editor.
     -fx-text-fill: #595858;
 }
 
-/*.table-view .column-header {
-    -fx-background-color: #BFBBBB;
-}*/
