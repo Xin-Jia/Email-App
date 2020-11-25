@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.web.HTMLEditor?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="593.0" prefWidth="890.0" stylesheets="@../styles/htmlform.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.xinjia.presentation.formhtml.FormAndHTMLLayoutController">
+   <top>
+      <GridPane prefHeight="167.0" prefWidth="618.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="295.33331298828125" minWidth="10.0" prefWidth="58.666666666666664" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="295.33331298828125" minWidth="0.0" prefWidth="26.33332316080729" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="789.3333409627279" minWidth="10.0" prefWidth="768.3333435058594" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="538.6666984558105" minWidth="10.0" prefWidth="37.66664632161462" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints maxHeight="55.333333333333336" minHeight="10.0" prefHeight="39.000005086263016" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="56.6666685740153" minHeight="10.0" prefHeight="38.99999491373698" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="62.00001017252603" minHeight="9.0" prefHeight="39.33333079020183" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="51.33335876464844" minHeight="10.0" prefHeight="42.0000025431315" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="51.33335876464844" minHeight="10.0" prefHeight="42.0000025431315" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="%to">
+               <font>
+                  <Font name="Arial Bold" size="11.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets left="30.0" />
+               </GridPane.margin>
+            </Label>
+            <Label text="CC" GridPane.rowIndex="1">
+               <font>
+                  <Font name="Arial Bold" size="11.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets left="30.0" />
+               </GridPane.margin>
+            </Label>
+            <Label text="BCC" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets left="30.0" />
+               </GridPane.margin>
+               <font>
+                  <Font name="Berlin Sans FB" size="12.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="25.0" prefWidth="59.0" text="%subject" textAlignment="CENTER" GridPane.columnSpan="2" GridPane.rowIndex="3">
+               <GridPane.margin>
+                  <Insets left="18.0" />
+               </GridPane.margin>
+               <font>
+                  <Font name="Arial Bold" size="11.0" />
+               </font>
+            </Label>
+            <ScrollPane prefHeight="41.0" prefWidth="521.0" GridPane.columnIndex="2">
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+               <content>
+                  <HBox fx:id="toHBox" alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" prefHeight="34.0" />
+               </content>
+            </ScrollPane>
+            <ScrollPane GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <content>
+                  <HBox fx:id="ccHBox" alignment="CENTER_LEFT" prefHeight="33.0" />
+               </content>
+            </ScrollPane>
+            <HBox alignment="CENTER_LEFT" prefHeight="37.0" prefWidth="525.0" GridPane.columnIndex="2" GridPane.rowIndex="3">
+               <children>
+                  <TextField fx:id="subjectField" prefHeight="20.0" prefWidth="182.0">
+                     <HBox.margin>
+                        <Insets top="5.0" />
+                     </HBox.margin>
+                  </TextField>
+                  <ImageView fitHeight="26.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+                     <HBox.margin>
+                        <Insets left="15.0" top="5.0" />
+                     </HBox.margin>
+                     <image>
+                        <Image url="@../images/attachment.jpg" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="attachmentBtn" mnemonicParsing="false" onAction="#addAttachmentToEmail" text="+">
+                     <font>
+                        <Font name="Arial Black" size="9.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="5.0" />
+                     </HBox.margin>
+                  </Button>
+                  <ScrollPane prefHeight="37.0" prefWidth="465.0">
+                     <content>
+                        <HBox fx:id="attachmentsHBox" alignment="CENTER" prefHeight="34.0">
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                        </HBox>
+                     </content>
+                     <HBox.margin>
+                        <Insets left="7.0" />
+                     </HBox.margin>
+                  </ScrollPane>
+                  <ImageView fx:id="downloadIcon" fitHeight="37.0" fitWidth="37.0" onMouseClicked="#downloadAttachments" pickOnBounds="true" preserveRatio="true" visible="false">
+                     <image>
+                        <Image url="@../images/downloadIcon.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets left="5.0" />
+                     </HBox.margin>
+                  </ImageView>
+               </children>
+            </HBox>
+            <Button fx:id="addCCBtn" alignment="CENTER" contentDisplay="CENTER" minHeight="-Infinity" mnemonicParsing="false" onAction="#addCCTextField" prefHeight="20.0" text="+" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <font>
+                  <Font name="Arial Black" size="9.0" />
+               </font>
+            </Button>
+            <Button fx:id="addToBtn" alignment="CENTER" contentDisplay="CENTER" minHeight="-Infinity" mnemonicParsing="false" onAction="#addToTextField" prefHeight="20.0" text="+" textAlignment="CENTER" GridPane.columnIndex="1">
+               <font>
+                  <Font name="Arial Black" size="9.0" />
+               </font>
+            </Button>
+            <Button fx:id="addBCCBtn" alignment="CENTER" contentDisplay="CENTER" minHeight="-Infinity" mnemonicParsing="false" onAction="#addBCCTextField" prefHeight="20.0" text="+" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <font>
+                  <Font name="Arial Black" size="9.0" />
+               </font>
+            </Button>
+            <ScrollPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
+               <content>
+                  <HBox fx:id="bccHBox" alignment="CENTER_LEFT" prefHeight="34.0" />
+               </content>
+            </ScrollPane>
+            <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnSpan="3" GridPane.rowIndex="4">
+               <children>
+                  <Button fx:id="saveBtn" mnemonicParsing="false" onAction="#saveEmail" prefHeight="25.0" prefWidth="162.0" text="%saveButton">
+                     <HBox.margin>
+                        <Insets left="10.0" top="5.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="sendBtn" alignment="CENTER" mnemonicParsing="false" onAction="#sendEmail" prefHeight="25.0" prefWidth="160.0" text="%send">
+                     <HBox.margin>
+                        <Insets left="10.0" top="5.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="replyBtn" disable="true" mnemonicParsing="false" onAction="#replyEmail" text="%reply">
+                     <HBox.margin>
+                        <Insets left="10.0" top="5.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+            <ImageView fx:id="clearIcon" fitHeight="35.0" fitWidth="39.0" onMouseClicked="#clearAttachments" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="3" GridPane.rowIndex="3">
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+               <image>
+                  <Image url="@../images/clearIcon.png" />
+               </image>
+            </ImageView>
+         </children>
+         <BorderPane.margin>
+            <Insets top="7.0" />
+         </BorderPane.margin>
+      </GridPane>
+   </top>
+   <center>
+      <HTMLEditor fx:id="htmlEditor" htmlText="&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body contenteditable=&quot;true&quot;&gt;&lt;/body&gt;&lt;/html&gt;" prefHeight="264.0" prefWidth="608.0" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets top="5.0" />
+         </BorderPane.margin></HTMLEditor>
+   </center>
+</BorderPane>

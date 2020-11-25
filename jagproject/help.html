@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Help</title>
+</head>
+<body>
+<p style="text-align: center;"><span style="color: #000080;"><strong>Mail Menu</strong></span></p>
+<ul>
+<li><strong>Delete Selected Email</strong>
+<ul>
+<li>Delete the selected email</li>
+<li>If no email has been selected, an alert dialog will pop up</li>
+</ul>
+</li>
+<li><strong>New Email</strong>
+<ul>
+<li>Reset the form to let the user enter new recipients and allow him to Save or Send the email</li>
+<li>If he chooses to Save the email, that email will go to the Draft folder</li>
+</ul>
+</li>
+<li><strong>Reload</strong>
+<ul>
+<li>Reload the Inbox folder to get the received emails</li>
+</ul>
+</li>
+</ul>
+<p style="text-align: center;"><span style="color: #000080;"><strong>Folder Menu</strong></span></p>
+<ul>
+<li><strong><span style="color: #000000;">Add Folder</span></strong>
+<ul>
+<li><span style="color: #000000;">Add a new folder</span></li>
+<li><span style="color: #000000;">If the provided name is empty or is Inbox, Sent or Draft (case-insensitive), an alert dialog will pop up</span></li>
+</ul>
+</li>
+<li><strong><span style="color: #000000;">Delete Selected Folder</span></strong>
+<ul>
+<li><span style="color: #000000;">Delete the selected folder</span></li>
+<li><span style="color: #000000;">If no folder has been selected, an alert dialog will pop up</span></li>
+</ul>
+</li>
+<li><strong><span style="color: #000000;">Rename Selected Folder</span></strong>
+<ul>
+<li><span style="color: #000000;">Rename the selected folder</span></li>
+<li><span style="color: #000000;">Only custom folders can be renamed</span></li>
+<li><span style="color: #000000;">If the user wants to rename the Inbox, Sent or Draft folder, an alert dialog will pop up</span></li>
+</ul>
+</li>
+</ul>
+<p style="text-align: center;"><span style="color: #000080;"><strong>Edit Menu</strong></span></p>
+<ul>
+<li style="text-align: left;"><strong><span style="color: #000000;">Edit Mail Configuration</span></strong>
+<ul>
+<li style="text-align: left;"><span style="color: #000000;">Allow the user to modify and save the fields in the Mail Config Form</span></li>
+</ul>
+</li>
+</ul>
+<p style="text-align: center;"><span style="color: #000080;"><strong>Help Menu</strong></span></p>
+<ul>
+<li style="text-align: left;"><strong><span style="color: #000000;">About</span></strong>
+<ul>
+<li style="text-align: left;"><span style="color: #000000;">The Help (this) page that specifies how to use the Email App</span></li>
+</ul>
+</li>
+</ul>
+<p style="text-align: center;"><span style="color: #800000;"><strong>The Form - Emails Outside Draft</strong></span></p>
+<ul>
+<li style="text-align: left;"><span style="color: #000000;">Emails outside the Draft folder have no access to the Save and Send buttons.</span></li>
+<li style="text-align: left;"><span style="color: #000000;">A <strong>reply</strong> button is enabled for emails outside the Draft folder. When pressed, it allows the user to Save and Send the email.</span>
+<ul>
+<li style="text-align: left;"><span style="color: #000000;">When Save is pressed, it places the email in the Draft folder.</span></li>
+<li><span style="color: #000000;">When Send is pressed, it sends the email to the provided recipients and store it in the database.</span></li>
+</ul>
+</li>
+<li style="text-align: left;"><span style="color: #000000;">If there are regular attachments to an email outside the Draft folder, the user can save them to disk by clicking on the download icon.</span></li>
+<li style="text-align: left;"><span style="color: #000000;">When nothing is pressed while composing a new email, that email will <strong>not be saved</strong>.</span></li>
+</ul>
+<p style="text-align: center;"><span style="color: #800000;"><strong>The Form - Emails In Draft</strong></span></p>
+<ul>
+<li style="text-align: left;"><span style="color: #000000;">The user can Save a draft email and Send it also.</span>
+<ul>
+<li style="text-align: left;"><span style="color: #000000;">When Save is pressed, it updates the draft email.</span></li>
+<li style="text-align: left;"><span style="color: #000000;">When Send is pressed, it sends the email and place the email in the Sent folder.</span></li>
+</ul>
+</li>
+<li style="text-align: left;"><span style="color: #000000;">He cannot reply to the email.</span></li>
+<li style="text-align: left;"><span style="color: #000000;">He can add, remove attachments.</span></li>
+</ul>
+<p style="text-align: center;"><strong><span style="color: #800000;">When</span><span style="color: #800000;">&nbsp;Composing An Email</span></strong></p>
+<ul>
+<li><span style="color: #000000;">Recipients</span>&nbsp;can be added by clicking the + button near the To, CC and BCC labels.</li>
+<li>Attachments can be added by clicking the + button near the paperclip icon.</li>
+     <img src="addRecipients.png" alt="recipients">
+<li>The user can always decide to remove the attachments by clicking on the erase icon on the right. This will remove the attachment added in the root of the project.</li>
+</ul>
+<p style="text-align: center;"><span style="color: #800000;"><strong>Searching For Emails</strong></span></p>
+    <img src="searchField.png" alt="search">
+<ul>
+<li style="text-align: left;"><span style="color: #000000;">The user can search for emails whether by:</span>
+<ul>
+<li style="text-align: left;"><span style="color: #000000;">Email address</span>
+<ul>
+<li style="text-align: left;"><span style="color: #000000;">will look up the given sub-string in the from, to, cc, bcc fields</span></li>
+</ul>
+</li>
+<li style="text-align: left;">Subject</li>
+</ul>
+</li>
+</ul>
+</body>
+</html>

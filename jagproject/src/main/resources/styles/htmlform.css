@@ -1,0 +1,13 @@
+
+/*  CSS for the Form
+    Created on : Oct. 29, 2020, 5:02:22 p.m.
+    Author     : Xin Jia Cao
+*/
+
+.hbox {
+    -fx-background-color: #000000;
+}
+
+.scroll-pane {
+    -fx-background-color:transparent;
+}

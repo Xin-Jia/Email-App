@@ -1,0 +1,14 @@
+
+/*  CSS for the split pane
+    Created on : Oct. 29, 2020, 6:07:32 p.m.
+    Author     : Xin Jia Cao
+*/
+.split-pane:horizontal > .split-pane-divider {
+   -fx-background-color: #DADADA;
+}
+.split-pane:vertical > .split-pane-divider {
+   -fx-background-color: #DADADA;
+}
+.menu-bar {
+    -fx-background-color: #F1F1F1;
+}
