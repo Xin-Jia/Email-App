@@ -31,9 +31,11 @@ public class HelpWebViewController {
         LOG.info("Displaying WebView");
         assert helpWebView != null : "fx:id=\"helpWebView\" was not injected: check your FXML file 'HelpWebView.fxml'.";
         String htmlFile = "";
+        //check if the Locale is in english
         if(resources.getString("help").equals("Help")){
             htmlFile = "help.html";
         }
+        //check if the Locale is in french
         else if(resources.getString("help").equals("Aide")){
                         
             htmlFile = "help_fr.html";

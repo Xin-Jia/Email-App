@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import javafx.collections.ObservableList;
 
 /**
- * Interface for CRUD operations 
+ * Interface for Email and Folder CRUD operations 
  * @author Xin Jia Cao
  */
 public interface EmailDAO {

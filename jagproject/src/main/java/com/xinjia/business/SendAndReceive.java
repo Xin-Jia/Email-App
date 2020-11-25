@@ -26,8 +26,7 @@ import org.slf4j.LoggerFactory;
 
 /**
  * SendAndReceive is class used to send and receive emails using a
- * MailConfigBean that is used to represent the authentication of an email
- * account. The send bean can send emails using To, CC and BCC, and can as well
+ * MailConfigBean. The send bean can send emails using To, CC and BCC, and can as well
  * attach files in its emails.
  *
  * @author Xin Jia Cao

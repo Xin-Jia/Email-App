@@ -156,7 +156,8 @@ public class TreeLayoutController {
         folderTree.getSelectionModel().selectedItemProperty()
                 .addListener((observable, oldValue, newValue) -> {
                     try {
-                        showEmailDetailsTree(newValue);
+                        showEmailDetails(newValue);
+                        
                         tableController.unselectRow();
                     } catch (SQLException ex) {
                         LOG.error("Exception occured when selecting a tree cell", ex);
@@ -171,10 +172,10 @@ public class TreeLayoutController {
      *
      * @param folderData The TreeItem<FolderData>
      */
-    private void showEmailDetailsTree(TreeItem<FolderData> folderData) throws SQLException {
+    private void showEmailDetails(TreeItem<FolderData> folderData) throws SQLException {
         String folderName = folderData.getValue().getFolderName();
-
-        tableController.displayEmailsBasedOnFolder(folderName);
+        int folderId = folderData.getValue().getId();
+        tableController.displayEmailsBasedOnFolder(folderName, folderId);
     }
 
     /**
@@ -192,7 +193,7 @@ public class TreeLayoutController {
         if (folderName.equals("")) {
             displayFolderError(resources.getString("emptyFolderNameHeader"), resources.getString("errorEmptyFolderNameText"));
         } //Check if the folder name already exists
-        else if (folderNames.contains(folderName.toLowerCase())) {
+        else if (folderNames.contains(folderName.toLowerCase().replaceAll("\\s+",""))) {
             displayFolderError(resources.getString("invalidFolderNameHeader"), resources.getString("errorFolderNameText"));
         } else {
             emailDAO.createFolder(folderName);
@@ -242,7 +243,7 @@ public class TreeLayoutController {
         if (newFolderName.equals("")) {
             displayFolderError(resources.getString("emptyFolderNameHeader"), resources.getString("errorEmptyFolderNameText"));
         } //Check if the folder name already exists
-        else if (folderNames.contains(newFolderName.toLowerCase())) {
+        else if (folderNames.contains(newFolderName.toLowerCase().replaceAll("\\s+",""))) {
             displayFolderError(resources.getString("invalidFolderNameHeader"), resources.getString("errorFolderNameText"));
         } else {
 

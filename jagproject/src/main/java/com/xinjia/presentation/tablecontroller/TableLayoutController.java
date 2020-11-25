@@ -103,12 +103,13 @@ public class TableLayoutController {
     }
 
     /**
-     * Called when the app is being initialized.Set the items in the table to
-        be the emails in the inbox folder.
+     * Called when the app is being initialized.Set the items in the table to be
+     * the emails in the inbox folder.
+     *
      * @throws java.sql.SQLException
      */
     public void displayTheTable() throws SQLException {
-        displayEmailsBasedOnFolder("Inbox");
+        displayEmailsBasedOnFolder("Inbox",1);
     }
 
     /**
@@ -160,8 +161,10 @@ public class TableLayoutController {
     }
 
     /**
-     * Saved the selected email's embedded files (if any) to the root of the project so it can be displayed in the editor
-     * @throws IOException 
+     * Saved the selected email's embedded files (if any) to the root of the
+     * project so it can be displayed in the editor
+     *
+     * @throws IOException
      */
     private void saveFileToDisk() throws IOException {
         for (int i = 0; i < clickedRow.getEmbedAttachmentsBytes().size(); i++) {
@@ -231,21 +234,38 @@ public class TableLayoutController {
         subjectColumn.prefWidthProperty().bind(emailDataTable.widthProperty().multiply(0.25));
         dateColumn.prefWidthProperty().bind(emailDataTable.widthProperty().multiply(0.2));
         toColumn.prefWidthProperty().bind(emailDataTable.widthProperty().multiply(0.3));
+
     }
 
     /**
      * Display rows of EmailFXData based on the selected folder.
+     * Removes the From Column when the selected Folder is Sent
      *
      * @param folder The selected folder's name
      * @throws java.sql.SQLException
      */
-    public void displayEmailsBasedOnFolder(String folder) throws SQLException {
+    public void displayEmailsBasedOnFolder(String folder, int id) throws SQLException {
         emailsToDisplay = convertToJavaFXBean(emailDAO.findEmailsByFolder(folder));
         emailDataTable.setItems(emailsToDisplay);
+        //remove the From column for Sent and Draft folders
+        if (id == 2 || id == 3) {
+            emailDataTable.getColumns().remove(fromColumn);
+            subjectColumn.prefWidthProperty().bind(emailDataTable.widthProperty().multiply(0.3));
+            dateColumn.prefWidthProperty().bind(emailDataTable.widthProperty().multiply(0.3));
+            toColumn.prefWidthProperty().bind(emailDataTable.widthProperty().multiply(0.4));
+        } else {
+            //if the selected folder is not Sent or Draft, add the From column back
+            if (!emailDataTable.getColumns().contains(fromColumn)) {
+                emailDataTable.getColumns().add(0, fromColumn);
+                adjustColumnWidths();
+            }
+        }
+
     }
-    
+
     /**
      * Make a JavaFX email bean for each custom email bean.
+     *
      * @param emails
      * @return an ObservableList<EmailFXData> that represent the JavaFX beans
      */
@@ -260,6 +280,7 @@ public class TableLayoutController {
 
     /**
      * Convert a custom email bean to a JavaFX email bean.
+     *
      * @param email the custom bean to be converted
      * @return the JavaFX bean EmailFXData
      */
@@ -278,14 +299,14 @@ public class TableLayoutController {
         List<byte[]> embedAttachmentsBytes = new ArrayList<>();
 
         List<EmailMessage> messages = joddEmail.messages();
-        ArrayList<String> messagesString = ((EmailDAOImpl)emailDAO).retrieveMessageContent(messages, "text/plain");
+        ArrayList<String> messagesString = ((EmailDAOImpl) emailDAO).retrieveMessageContent(messages, "text/plain");
         if (!messages.isEmpty()) {
 
             if (!messages.isEmpty()) {
                 txtMsg = messagesString.get(0);
             }
 
-            messagesString = ((EmailDAOImpl)emailDAO).retrieveMessageContent(messages, "text/html");
+            messagesString = ((EmailDAOImpl) emailDAO).retrieveMessageContent(messages, "text/html");
             if (!messages.isEmpty()) {
                 htmlMsg = messagesString.get(0);
             }
@@ -300,8 +321,7 @@ public class TableLayoutController {
                         if (!ea.getContentId().equals("") && messagesString.get(0).contains("img src=\"cid:" + ea.getContentId().replaceAll("[<>]", ""))) {
                             embedAttachmentsList.add(ea.getName());
                             embedAttachmentsBytes.add(ea.toByteArray());
-                        }
-                        else{
+                        } else {
                             regAttachmentsList.add(ea.getName());
                             regAttachmentsBytes.add(ea.toByteArray());
                         }
@@ -347,7 +367,8 @@ public class TableLayoutController {
 
     /**
      * Delete the selected email from the table and the database
-     * @throws SQLException 
+     *
+     * @throws SQLException
      */
     public void deleteEmailRow() throws SQLException {
         if (clickedRow == null) {
@@ -375,8 +396,10 @@ public class TableLayoutController {
     }
 
     /**
-     * Put in the table the given JavaFX beans (when the user wants the search emails based on recipients or subject)
-     * @param emailsToDisplay 
+     * Put in the table the given JavaFX beans (when the user wants the search
+     * emails based on recipients or subject)
+     *
+     * @param emailsToDisplay
      */
     public void displayEmailsBySearchValue(ObservableList<EmailFXData> emailsToDisplay) {
         this.emailsToDisplay = emailsToDisplay;
